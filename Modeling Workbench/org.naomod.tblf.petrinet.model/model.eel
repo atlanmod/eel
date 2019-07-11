@@ -1,0 +1,13 @@
+Platform HPG4I55200U {
+	targets {
+		class "org.naomod.tblf.petrinet.Transition" (op "fire")
+	}
+	estimations {
+		target "org.naomod.tblf.petrinet.Transition.fire"
+		variables (tdp, called)
+		formula "self.input -> size() * 1.5 * tdp * 5000 + self.output -> size() * 1.5 * called * 4000"
+		
+	}	
+	LOCAL called = 15.0,
+	LOCAL tdp = 15.0
+} 

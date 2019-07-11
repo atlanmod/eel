@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/tree/description/1.0.0" xmlns:petrinet="http://www.example.org/petrinet" xmlns:tree="http://www.eclipse.org/sirius/tree/1.0.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/tree/description/1.0.0 http://www.eclipse.org/sirius/tree/1.0.0#//description">
+  <viewpoint:DAnalysis xmi:id="_0gS_EJ5mEemCs_46gqJF0A" selectedViews="_08tOQJ5mEemCs_46gqJF0A _slnqsJ5qEemnZ4qOOmHqUQ" version="13.0.0.201804031646">
+    <semanticResources>model.petrinet</semanticResources>
+    <semanticResources>model.eel</semanticResources>
+    <ownedViews xmi:type="viewpoint:DView" xmi:id="_08tOQJ5mEemCs_46gqJF0A">
+      <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/fr.tblf.energy.estimation.static.view/description/view.odesign#//@ownedViewpoints[name='energy%20display']"/>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_Tn9TMJ8uEemEnJ8mQGNKNw" name="new treedescription" repPath="#_TTllsJ8uEemEnJ8mQGNKNw">
+        <description xmi:type="description_1:TreeDescription" href="platform:/plugin/fr.tblf.energy.estimation.static.view/description/view.odesign#//@ownedViewpoints[name='energy%20display']/@ownedRepresentations[name='treedescription']"/>
+        <target xmi:type="petrinet:Net" href="model.petrinet#/"/>
+      </ownedRepresentationDescriptors>
+    </ownedViews>
+    <ownedViews xmi:type="viewpoint:DView" xmi:id="_slnqsJ5qEemnZ4qOOmHqUQ">
+      <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.gemoc.activitydiagram.sequential.xactivitydiagram.design/description/ad.odesign#//@ownedViewpoints[name='ActivityDiagram%20viewpoint']"/>
+    </ownedViews>
+  </viewpoint:DAnalysis>
+  <tree:DTree xmi:id="_Tn3zoJ8uEemEnJ8mQGNKNw" name="new treedescription" uid="_TTllsJ8uEemEnJ8mQGNKNw">
+    <target xmi:type="petrinet:Net" href="model.petrinet#/"/>
+    <ownedTreeItems xmi:type="tree:DTreeItem" xmi:id="_Tn3zop8uEemEnJ8mQGNKNw" name="Place :: p1">
+      <target xmi:type="petrinet:Place" href="model.petrinet#//@places.0"/>
+      <semanticElements xmi:type="petrinet:Place" href="model.petrinet#//@places.0"/>
+      <ownedStyle xmi:type="tree:TreeItemStyle" xmi:id="_Tn3zo58uEemEnJ8mQGNKNw"/>
+      <actualMapping xmi:type="description_1:TreeItemMapping" href="platform:/plugin/fr.tblf.energy.estimation.static.view/description/view.odesign#//@ownedViewpoints[name='energy%20display']/@ownedRepresentations[name='treedescription']/@subItemMappings[name='item']"/>
+    </ownedTreeItems>
+    <ownedTreeItems xmi:type="tree:DTreeItem" xmi:id="_Tn3zpJ8uEemEnJ8mQGNKNw" name="Place :: p2">
+      <target xmi:type="petrinet:Place" href="model.petrinet#//@places.1"/>
+      <semanticElements xmi:type="petrinet:Place" href="model.petrinet#//@places.1"/>
+      <ownedStyle xmi:type="tree:TreeItemStyle" xmi:id="_Tn3zpZ8uEemEnJ8mQGNKNw"/>
+      <actualMapping xmi:type="description_1:TreeItemMapping" href="platform:/plugin/fr.tblf.energy.estimation.static.view/description/view.odesign#//@ownedViewpoints[name='energy%20display']/@ownedRepresentations[name='treedescription']/@subItemMappings[name='item']"/>
+    </ownedTreeItems>
+    <ownedTreeItems xmi:type="tree:DTreeItem" xmi:id="_Tn3zpp8uEemEnJ8mQGNKNw" name="Place :: p3">
+      <target xmi:type="petrinet:Place" href="model.petrinet#//@places.2"/>
+      <semanticElements xmi:type="petrinet:Place" href="model.petrinet#//@places.2"/>
+      <ownedStyle xmi:type="tree:TreeItemStyle" xmi:id="_Tn3zp58uEemEnJ8mQGNKNw"/>
+      <actualMapping xmi:type="description_1:TreeItemMapping" href="platform:/plugin/fr.tblf.energy.estimation.static.view/description/view.odesign#//@ownedViewpoints[name='energy%20display']/@ownedRepresentations[name='treedescription']/@subItemMappings[name='item']"/>
+    </ownedTreeItems>
+    <ownedTreeItems xmi:type="tree:DTreeItem" xmi:id="_Tn3zqJ8uEemEnJ8mQGNKNw" name="Place :: p4">
+      <target xmi:type="petrinet:Place" href="model.petrinet#//@places.3"/>
+      <semanticElements xmi:type="petrinet:Place" href="model.petrinet#//@places.3"/>
+      <ownedStyle xmi:type="tree:TreeItemStyle" xmi:id="_Tn3zqZ8uEemEnJ8mQGNKNw"/>
+      <actualMapping xmi:type="description_1:TreeItemMapping" href="platform:/plugin/fr.tblf.energy.estimation.static.view/description/view.odesign#//@ownedViewpoints[name='energy%20display']/@ownedRepresentations[name='treedescription']/@subItemMappings[name='item']"/>
+    </ownedTreeItems>
+    <ownedTreeItems xmi:type="tree:DTreeItem" xmi:id="_Tn3zqp8uEemEnJ8mQGNKNw" name="Transition :: t1 => 292500.0">
+      <target xmi:type="petrinet:Transition" href="model.petrinet#//@transitions.0"/>
+      <semanticElements xmi:type="petrinet:Transition" href="model.petrinet#//@transitions.0"/>
+      <ownedStyle xmi:type="tree:TreeItemStyle" xmi:id="_Tn3zq58uEemEnJ8mQGNKNw"/>
+      <actualMapping xmi:type="description_1:TreeItemMapping" href="platform:/plugin/fr.tblf.energy.estimation.static.view/description/view.odesign#//@ownedViewpoints[name='energy%20display']/@ownedRepresentations[name='treedescription']/@subItemMappings[name='item']"/>
+    </ownedTreeItems>
+    <ownedTreeItems xmi:type="tree:DTreeItem" xmi:id="_Tn3zrJ8uEemEnJ8mQGNKNw" name="Transition :: t2 => 315000.0">
+      <target xmi:type="petrinet:Transition" href="model.petrinet#//@transitions.1"/>
+      <semanticElements xmi:type="petrinet:Transition" href="model.petrinet#//@transitions.1"/>
+      <ownedStyle xmi:type="tree:TreeItemStyle" xmi:id="_Tn3zrZ8uEemEnJ8mQGNKNw"/>
+      <actualMapping xmi:type="description_1:TreeItemMapping" href="platform:/plugin/fr.tblf.energy.estimation.static.view/description/view.odesign#//@ownedViewpoints[name='energy%20display']/@ownedRepresentations[name='treedescription']/@subItemMappings[name='item']"/>
+    </ownedTreeItems>
+    <description xmi:type="description_1:TreeDescription" href="platform:/plugin/fr.tblf.energy.estimation.static.view/description/view.odesign#//@ownedViewpoints[name='energy%20display']/@ownedRepresentations[name='treedescription']"/>
+  </tree:DTree>
+</xmi:XMI>
