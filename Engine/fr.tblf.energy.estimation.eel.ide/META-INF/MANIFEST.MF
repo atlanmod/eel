@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: fr.tblf.energy.estimation.eel.ide
+Bundle-ManifestVersion: 2
+Bundle-Name: fr.tblf.energy.estimation.eel.ide
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: fr.tblf.energy.estimation.eel.ide; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: fr.tblf.energy.estimation.eel,
+ fr.tblf.energy.estimation.metamodel,
+ org.eclipse.xtext.ide,
+ org.eclipse.xtext.xbase.ide,
+ org.antlr.runtime
+Bundle-RequiredExecutionEnvironment: JavaSE-9
+Export-Package: fr.tblf.energy.estimation.eel.ide.contentassist.antlr.internal,
+ fr.tblf.energy.estimation.eel.ide.contentassist.antlr
+

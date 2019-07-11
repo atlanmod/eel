@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         id="extensionId"
+         point="org.eclipse.gemoc.gemoc_language_workbench.engine_addon">
+      <Addon
+            Class="fr.tblf.gemoc.extension.EngineAddon"
+            Name="EnergyEstimation"
+            ShortDescription="requires an energy estimation model as a parameter"
+            id="fr.tblf.gemoc.extension.Addon">
+      </Addon>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="menu:org.eclipse.ui.main.menu?after=additions">
+         <menu
+               label="Energy">
+            <menu
+                  label="Model">
+               <command
+                     commandId="fr.tblf.energy.estimation.engine.setmodelcommand"
+                     label="Set Model"
+                     style="push">
+               </command>
+            </menu>
+         </menu>
+      </menuContribution>
+   </extension>
+   <extension
+         id="fr.tblf.energy.estimation.engine.setModel"
+         point="org.eclipse.ui.commands">
+      <command
+            defaultHandler="fr.tblf.energy.estimation.engine.SetModelCommand"
+            id="fr.tblf.energy.estimation.engine.setmodelcommand"
+            name="setmodel">
+      </command>
+   </extension>
+
+</plugin>

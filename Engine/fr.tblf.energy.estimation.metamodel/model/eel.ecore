@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="eel" nsURI="http://org.atlanmod.activitydiagram.energy.estimation/eel/"
+    nsPrefix="fr.tblf.energy.estimation.eel">
+  <eClassifiers xsi:type="ecore:EClass" name="Platform">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="estimations" upperBound="-1"
+        eType="#//Estimation" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="variables" upperBound="-1"
+        eType="#//Variable" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="targets" upperBound="-1"
+        eType="#//MetaClass" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Estimation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="formula" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
+        eType="#//Target"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="variables" upperBound="-1"
+        eType="#//Variable"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Variable">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="vibility" lowerBound="1"
+        eType="#//Visibility"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Level">
+    <eLiterals name="DESIGN"/>
+    <eLiterals name="SIMULATION" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Target" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MetaClass" eSuperTypes="#//Target">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="operations" upperBound="-1"
+        eType="#//Operation" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Operation" eSuperTypes="#//Target"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="Visibility">
+    <eLiterals name="LOCAL"/>
+    <eLiterals name="GLOBAL" value="1"/>
+  </eClassifiers>
+</ecore:EPackage>

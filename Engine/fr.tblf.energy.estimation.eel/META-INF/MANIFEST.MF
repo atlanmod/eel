@@ -1,0 +1,27 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: fr.tblf.energy.estimation.eel
+Bundle-ManifestVersion: 2
+Bundle-Name: fr.tblf.energy.estimation.eel
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: fr.tblf.energy.estimation.eel; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: fr.tblf.energy.estimation.metamodel,
+ org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
+ org.antlr.runtime,
+ org.eclipse.xtext.util,
+ org.eclipse.xtend.lib;bundle-version="2.14.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-9
+Export-Package: fr.tblf.energy.estimation.eel.serializer,
+ fr.tblf.energy.estimation.eel.formatting2,
+ fr.tblf.energy.estimation.eel.services,
+ fr.tblf.energy.estimation.eel.scoping,
+ fr.tblf.energy.estimation.eel,
+ fr.tblf.energy.estimation.eel.parser.antlr,
+ fr.tblf.energy.estimation.eel.parser.antlr.internal,
+ fr.tblf.energy.estimation.eel.generator,
+ fr.tblf.energy.estimation.eel.validation
+Import-Package: org.apache.log4j
