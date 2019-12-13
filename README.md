@@ -1,5 +1,9 @@
 # EEL
 
+## Dependencies
+
+Gemoc Studio: http://gemoc.org/studio.html
+
 ## How to install
 
 Import all the repositories inside the Engine directory and language workbench into Gemoc Studio, and start a new runtime environment.
