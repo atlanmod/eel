@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<arduino:Project xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:arduino="http://www.obeo.fr/arduino">
+  <boards xsi:type="arduino:ArduinoBoard" name="board">
+    <digitalPins name="2">
+      <module xsi:type="arduino:InfraRedSensor" name="infrared_sensor"/>
+    </digitalPins>
+    <digitalPins name="13">
+      <module xsi:type="arduino:LED" name="built_in_led"/>
+    </digitalPins>
+  </boards>
+  <sketches name="sketch" board="//@boards.0">
+    <block>
+      <instructions xsi:type="arduino:WaitFor" module="//@boards.0/@digitalPins.0/@module"/>
+      <instructions xsi:type="arduino:If">
+        <block>
+          <instructions xsi:type="arduino:ModuleAssignment" module="//@boards.0/@digitalPins.1/@module">
+            <operand xsi:type="arduino:IntegerConstant" value="1"/>
+          </instructions>
+          <instructions xsi:type="arduino:Delay" value="1000"/>
+          <instructions xsi:type="arduino:ModuleAssignment" module="//@boards.0/@digitalPins.1/@module">
+            <operand xsi:type="arduino:IntegerConstant"/>
+          </instructions>
+        </block>
+        <condition xsi:type="arduino:BinaryBooleanExpression" operator="equal">
+          <left xsi:type="arduino:IntegerModuleGet" module="//@boards.0/@digitalPins.0/@module"/>
+          <right xsi:type="arduino:IntegerConstant" value="1"/>
+        </condition>
+      </instructions>
+    </block>
+  </sketches>
+</arduino:Project>

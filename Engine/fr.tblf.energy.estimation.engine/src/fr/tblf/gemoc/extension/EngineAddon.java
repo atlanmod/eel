@@ -16,20 +16,17 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.gemoc.trace.commons.model.trace.Step;
 import org.eclipse.gemoc.xdsmlframework.api.core.IExecutionEngine;
 import org.eclipse.gemoc.xdsmlframework.api.engine_addon.IEngineAddon;
-import org.eclipse.jdt.annotation.NonNull;
 import org.eclipse.ocl.pivot.ExpressionInOCL;
-import org.eclipse.ocl.pivot.OCLExpression;
 import org.eclipse.ocl.pivot.utilities.OCL;
 import org.eclipse.ocl.pivot.utilities.OCLHelper;
 import org.eclipse.ocl.pivot.utilities.ParserException;
-import org.eclipse.ocl.pivot.utilities.Query;
 
-import eel.Measure;
-import eel.MeasureAttribute;
-import eel.MeasureCast;
-import eel.MeasureOCL;
-import eel.MeasureOperation;
-import eel.Platform;
+import fr.tblf.energy.estimation.eel.Measure;
+import fr.tblf.energy.estimation.eel.MeasureAttribute;
+import fr.tblf.energy.estimation.eel.MeasureCast;
+import fr.tblf.energy.estimation.eel.MeasureOCL;
+import fr.tblf.energy.estimation.eel.MeasureOperation;
+import fr.tblf.energy.estimation.eel.Platform;
 
 public class EngineAddon implements IEngineAddon {
 
@@ -133,12 +130,15 @@ public class EngineAddon implements IEngineAddon {
 	private void updateMeasure(Measure m, EObject caller) {
 		if (m instanceof MeasureOperation) {
 			updateMeasure((MeasureOperation) m, caller);
-		}
+		} else
 		if (m instanceof MeasureOCL) {
 			updateMeasure((MeasureOCL) m, caller);
-		}
+		} else
 		if (m instanceof MeasureAttribute) {
 			updateMeasure((MeasureAttribute) m, caller);
+		} else
+		if (m instanceof MeasureCast) {
+			updateMeasure((MeasureCast) m, caller);
 		}
 	}
 	
