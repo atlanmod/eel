@@ -1,6 +1,9 @@
 # Compiled class file
 *.class
-/bin/*
+*._trace
+bin/
+*/xtend-gen/*
+
 # Log file
 *.log
 
