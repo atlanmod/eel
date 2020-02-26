@@ -5,9 +5,9 @@ Platform HPG4I55200U {
 	estimations {
 		target "org.naomod.tblf.petrinet.Transition.fire"
 		variables (tdp, called)
-		formula "self.input -> size() * 1.5 * tdp * 5000 + self.output -> size() * 1.5 * called * 4000"
+		formula "$called * 150 * $tdp" 
 		
 	}	
-	LOCAL called = 15.0,
-	LOCAL tdp = 15.0
+	LOCAL called = 15.0 => "self.value + 1",
+	GLOBAL tdp = 15.0
 } 
