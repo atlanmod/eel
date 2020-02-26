@@ -9,8 +9,8 @@
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <!-- @generated eel -->
       <factory
-            uri="http://org.atlanmod.activitydiagram.energy.estimation/eel/"
-            class="eel.provider.EelItemProviderAdapterFactory"
+            uri="http://fr.tblf.energy.estimation/eel/"
+            class="fr.tblf.energy.estimation.eel.provider.EelItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider

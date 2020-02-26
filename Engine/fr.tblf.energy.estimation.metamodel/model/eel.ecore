@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="eel" nsURI="http://org.atlanmod.activitydiagram.energy.estimation/eel/"
-    nsPrefix="fr.tblf.energy.estimation.eel">
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="eel" nsURI="http://fr.tblf.energy.estimation/eel/" nsPrefix="fr.tblf.energy.estimation.eel">
   <eAnnotations source="http://www.eclipse.org/OCL/Import">
     <details key="ecore" value="http://www.eclipse.org/emf/2002/Ecore"/>
   </eAnnotations>

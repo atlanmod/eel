@@ -1,0 +1,164 @@
+[comment encoding = UTF-8 /]
+[module generate('http://www.obeo.fr/arduino')]
+
+[template public generateProject(project : Project)]
+[comment @main/]
+[genIno()/]
+[/template]
+
+[template public genIno (project : Project) ]
+[for (sketch :Sketch | project.sketches)]
+	[file (sketch.name+'.ino', false, 'UTF-8')]
+#include<avr/sleep.h>
+		[if (sketch.board.oclIsTypeOf(arduino::ArduinoBoard))]
+			[for( pin : DigitalPin | sketch.board.oclAsType(arduino::ArduinoBoard).digitalPins)]
+int [pin.module.name/] = [pin.name/];
+			[/for]
+			[for( pin : AnalogPin | sketch.board.oclAsType(arduino::ArduinoBoard).analogPins)]
+int [pin.module.name/] = [pin.name/];
+			[/for]
+		[/if]
+
+void setup() {
+			[if (sketch.board.oclIsTypeOf(arduino::ArduinoBoard))]
+				[for( pin : DigitalPin | sketch.board.oclAsType(arduino::ArduinoBoard).digitalPins)]					
+					[if (pin.module.oclIsTypeOf(arduino::LED) 
+						or pin.module.oclIsTypeOf(arduino::Buzzer) 
+						or pin.module.oclIsTypeOf(arduino::MicroServo) 
+						or pin.module.oclIsTypeOf(arduino::Fan) 
+						or pin.module.oclIsTypeOf(arduino::ArduinoCommunicationModule))]
+	pinMode([pin.module.name/], OUTPUT);
+					[else]
+	pinMode([pin.module.name/], INPUT);
+					[/if]
+				[/for]
+			[if (arduino::WaitFor.allInstances() -> size() > 0)]	
+				[for (waitFor: WaitFor | arduino::WaitFor.allInstances())] 
+	attachInterrupt(digitalPinToInterrupt([waitFor.pin.name/]), waitFor_[waitFor.pin.name/]_[waitFor.mode/], [waitFor.mode/]);
+				[/for]
+	set_sleep_mode(SLEEP_MODE_PWR_DOWN);
+	sleep_enable();
+			[/if]
+			
+			[/if]
+}
+		
+// the loop routine runs over and over again forever:
+void loop() {
+	[sketch.block.genINO()/]
+}
+
+	[for (waitFor : WaitFor | arduino::WaitFor.allInstances())]
+void waitFor_[waitFor.pin.name/]_[waitFor.mode/]() {
+	sleep_disable();
+}	
+	[/for]
+
+	[/file]
+[/for]
+
+[/template]
+
+
+[template public genINO(block : Block)post (trim())]
+	[for (instruction : Instruction | block.instructions)]
+[instruction.generateInstruction()/]
+	[/for]  
+[/template]
+
+[template public generateInstruction(instruction : If)post (trim())]
+if ([instruction.condition.generateInstruction()/]) {
+	[instruction.block.genINO()/]
+} 
+	[if (not instruction.elseBlock.oclIsUndefined())]
+else {
+	[instruction.elseBlock.genINO()/]
+}	
+[/if]
+[/template]
+
+[template public generateInstruction(instruction : While)post (trim())]
+while ([instruction.condition.generateInstruction()/]) {
+	[instruction.block.genINO()/]
+}
+[/template]
+
+[template public generateInstruction(instruction : Repeat)post (trim())]
+for (int i_iterator_[instruction.iteration/] = 0; i < [instruction.iteration/]; i++) {
+	[instruction.block.genINO()/]
+}	 
+[/template]
+
+[template public generateInstruction(instruction : BooleanExpression)post (trim())]
+
+[/template]
+
+[template public generateInstruction(instruction : IntegerModuleGet)post (trim())]
+digitalRead([instruction.module.name/]) 
+[/template]
+
+[template public generateInstruction(instruction : BinaryBooleanExpression)post (trim())]
+[instruction.left.generateInstruction()/]  [instruction.operator.generateOperator()/] [instruction.right.generateInstruction()/]
+[/template]
+
+[template public generateInstruction(instruction : Expression)post (trim())]		
+[/template]
+
+[template public generateInstruction(instruction : BooleanConstant)post (trim())]
+	[instruction.value/] 
+[/template]
+
+[template public generateInstruction(instruction : IntegerConstant)post (trim())]
+[instruction.value/] 
+[/template]
+
+[template public generateInstruction(instruction : BooleanModuleGet)post (trim())]
+digitalRead([instruction.module.name/]) 
+[/template]
+
+
+[template public generateInstruction(instruction : UnaryBooleanExpression)post (trim())]
+[instruction.operand/]
+[/template]
+
+
+[template public generateOperator(instruction : BinaryBooleanOperatorKind)post (trim())]
+		[if (instruction.toString() = 'inf')]
+<
+		[elseif (instruction.toString() = 'sup')]
+>
+		[elseif (instruction.toString() = 'infOrEqual')]
+<=
+		[elseif (instruction.toString() = 'supOrEqual')]
+>=
+		[elseif (instruction.toString() = 'equal')]
+==
+		[elseif (instruction.toString() = 'and')]
+&&
+		[elseif (instruction.toString() = 'or')]
+||
+		[else]
+!=		
+		[/if]
+[/template]
+
+[template public generateInstruction(instruction : ModuleAssignment)post (trim())]
+	[if (instruction.operand.oclIsTypeOf(arduino::IntegerConstant))]
+digitalWrite([instruction.module.name/], [instruction.operand.oclAsType(arduino::IntegerConstant).value/]);	
+ 	[/if]
+	[if (instruction.operand.oclIsTypeOf(arduino::BooleanConstant))]
+digitalWrite([instruction.module.name/], [instruction.operand.oclAsType(arduino::BooleanConstant).value/]);	
+ 	[/if]
+[/template]
+
+[template public generateInstruction(instruction : Delay)post (trim())]
+delay([instruction.value/]);
+[/template]
+
+[template public generateInstruction(instruction : WaitFor)post (trim())]
+sleep_cpu();
+[/template]
+
+[template public generateInstruction(instruction : Instruction)post (trim())]
+// [instruction.eClass()/] code generation not defined;
+[/template]

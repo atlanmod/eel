@@ -8,7 +8,7 @@ Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: eel.tests
+Export-Package: fr.tblf.energy.estimation.eel.tests
 Require-Bundle: org.eclipse.core.runtime,
  fr.tblf.energy.estimation.metamodel;visibility:=reexport,
  org.eclipse.emf.ecore.xmi;visibility:=reexport,

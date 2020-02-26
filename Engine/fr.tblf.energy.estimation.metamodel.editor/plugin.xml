@@ -12,9 +12,9 @@
             id="org.eclipse.emf.ecore.Wizard.category.ID"
             name="%_UI_Wizard_category"/>
       <wizard
-            id="eel.presentation.EelModelWizardID"
+            id="fr.tblf.energy.estimation.eel.presentation.EelModelWizardID"
             name="%_UI_EelModelWizard_label"
-            class="eel.presentation.EelModelWizard"
+            class="fr.tblf.energy.estimation.eel.presentation.EelModelWizard"
             category="org.eclipse.emf.ecore.Wizard.category.ID"
             icon="icons/full/obj16/EelModelFile.gif">
          <description>%_UI_EelModelWizard_description</description>
@@ -25,13 +25,12 @@
    <extension point="org.eclipse.ui.editors">
       <!-- @generated eel -->
       <editor
-            id="eel.presentation.EelEditorID"
+            id="fr.tblf.energy.estimation.eel.presentation.EelEditorID"
             name="%_UI_EelEditor_label"
             icon="icons/full/obj16/EelModelFile.gif"
             extensions="eel"
-            class="eel.presentation.EelEditor"
-            contributorClass="eel.presentation.EelActionBarContributor">
+            class="fr.tblf.energy.estimation.eel.presentation.EelEditor"
+            contributorClass="fr.tblf.energy.estimation.eel.presentation.EelActionBarContributor">
       </editor>
    </extension>
-
 </plugin>

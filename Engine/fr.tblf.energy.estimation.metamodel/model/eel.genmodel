@@ -5,7 +5,8 @@
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
     operationReflection="true" importOrganizing="true">
   <foreignModel>eel.ecore</foreignModel>
-  <genPackages prefix="Eel" disposableProviderFactory="true" ecorePackage="eel.ecore#/">
+  <genPackages prefix="Eel" basePackage="fr.tblf.energy.estimation" disposableProviderFactory="true"
+      ecorePackage="eel.ecore#/">
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="eel.ecore#//Visibility">
       <genEnumLiterals ecoreEnumLiteral="eel.ecore#//Visibility/LOCAL"/>
       <genEnumLiterals ecoreEnumLiteral="eel.ecore#//Visibility/GLOBAL"/>

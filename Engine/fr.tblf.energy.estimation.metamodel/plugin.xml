@@ -9,8 +9,8 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated eel -->
       <package
-            uri="http://org.atlanmod.activitydiagram.energy.estimation/eel/"
-            class="eel.EelPackage"
+            uri="http://fr.tblf.energy.estimation/eel/"
+            class="fr.tblf.energy.estimation.eel.EelPackage"
             genModel="model/eel.genmodel"/>
    </extension>
 
