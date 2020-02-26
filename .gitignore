@@ -1,8 +1,10 @@
 # Compiled class file
 *.class
 *._trace
+
 bin/
-*/xtend-gen/*
+xtend-gen/
+gemoc-gen/
 
 # Log file
 *.log

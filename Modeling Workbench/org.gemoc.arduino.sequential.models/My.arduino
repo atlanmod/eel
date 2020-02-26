@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<arduino:Project xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:arduino="http://www.obeo.fr/arduino">
+  <boards xsi:type="arduino:ArduinoBoard">
+    <digitalPins name="2">
+      <module xsi:type="arduino:LED" name="led"/>
+    </digitalPins>
+    <digitalPins name="3">
+      <module xsi:type="arduino:InfraRedSensor" name="IR"/>
+    </digitalPins>
+  </boards>
+  <sketches name="board" board="//@boards.0">
+    <block>
+      <instructions xsi:type="arduino:ModuleAssignment" module="//@boards.0/@digitalPins.0/@module">
+        <operand xsi:type="arduino:IntegerConstant" value="1"/>
+      </instructions>
+      <instructions xsi:type="arduino:Delay" value="2000"/>
+      <instructions xsi:type="arduino:ModuleAssignment" module="//@boards.0/@digitalPins.0/@module">
+        <operand xsi:type="arduino:IntegerConstant"/>
+      </instructions>
+      <instructions xsi:type="arduino:Delay" value="2000"/>
+    </block>
+  </sketches>
+</arduino:Project>
