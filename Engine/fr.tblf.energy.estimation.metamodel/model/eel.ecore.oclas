@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pivot:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pivot="http://www.eclipse.org/ocl/2015/Pivot"
+    xsi:schemaLocation="http://www.eclipse.org/ocl/2015/Pivot java://org.eclipse.ocl.pivot.PivotPackage" name="eel.ecore.oclas" externalURI="platform:/resource/fr.tblf.energy.estimation.metamodel/model/eel.ecore.oclas">
+  <ownedImports name="ecore" importedNamespace="pivot:Package http://www.eclipse.org/emf/2002/Ecore.oclas#//@ownedPackages.0"/>
+  <ownedPackages xmi:id="P.eel" name="eel" URI="http://org.atlanmod.activitydiagram.energy.estimation/eel/" nsPrefix="fr.tblf.energy.estimation.eel">
+    <ownedClasses xmi:id="T.eel.Platform" name="Platform" superClasses="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.OclElement">
+      <ownedProperties xmi:id="p.eel.Platform.name" name="name" isRequired="false" type="pivot:PrimitiveType http://www.eclipse.org/ocl/2015/Library.oclas#String"/>
+      <ownedProperties xmi:id="p.eel.Platform.variables" name="variables" type="#//@ownedPackages.2/@ownedClasses.0" isComposite="true"
+          opposite="#p.eel.Variable.Platform"/>
+      <ownedProperties xmi:id="p.eel.Platform.targets" name="targets" type="#//@ownedPackages.2/@ownedClasses.1" isComposite="true" opposite="#p.eel.MetaClass.Platform"/>
+      <ownedProperties xmi:id="p.eel.Platform.measures" name="measures" type="#//@ownedPackages.2/@ownedClasses.2" isComposite="true"
+          opposite="#p.eel.Measure.Platform"/>
+    </ownedClasses>
+    <ownedClasses xmi:id="T.eel.Variable" name="Variable" superClasses="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.OclElement">
+      <ownedProperties xmi:id="p.eel.Variable.value" name="value" isRequired="false" type="pivot:PrimitiveType http://www.eclipse.org/ocl/2015/Library.oclas#Real"/>
+      <ownedProperties xmi:id="p.eel.Variable.name" name="name" type="pivot:PrimitiveType http://www.eclipse.org/ocl/2015/Library.oclas#String"/>
+      <ownedProperties xmi:id="p.eel.Variable.vibility" name="vibility" type="#T.eel.Visibility"/>
+      <ownedProperties xmi:id="p.eel.Variable.Platform" name="Platform" isRequired="false" type="#T.eel.Platform" isImplicit="true" opposite="#p.eel.Platform.variables"/>
+    </ownedClasses>
+    <ownedClasses xmi:id="T.eel.Target" name="Target" isAbstract="true" superClasses="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.OclElement">
+      <ownedProperties xmi:id="p.eel.Target.name" name="name" type="pivot:PrimitiveType http://www.eclipse.org/ocl/2015/Library.oclas#String"/>
+      <ownedProperties xmi:id="p.eel.Target.Measure" name="Measure" type="#//@ownedPackages.2/@ownedClasses.3" isImplicit="true" opposite="#p.eel.Measure.target"/>
+    </ownedClasses>
+    <ownedClasses xmi:id="T.eel.MetaClass" name="MetaClass" superClasses="#T.eel.Target">
+      <ownedProperties xmi:id="p.eel.MetaClass.operations" name="operations" type="#//@ownedPackages.2/@ownedClasses.4" isComposite="true"
+          opposite="#p.eel.Operation.MetaClass"/>
+      <ownedProperties xmi:id="p.eel.MetaClass.target" name="target" type="pivot:Class http://www.eclipse.org/emf/2002/Ecore.oclas#//@ownedPackages.0/@ownedClasses.2"
+          opposite="#p.ecore.EClass.MetaClass"/>
+      <ownedProperties xmi:id="p.eel.MetaClass.Platform" name="Platform" isRequired="false" type="#T.eel.Platform" isImplicit="true" opposite="#p.eel.Platform.targets"/>
+    </ownedClasses>
+    <ownedClasses xmi:id="T.eel.Operation" name="Operation" superClasses="#T.eel.Target">
+      <ownedProperties xmi:id="p.eel.Operation.operations" name="operations" type="#//@ownedPackages.2/@ownedClasses.5" isComposite="true"
+          opposite="#op.eel.Operation.operations"/>
+      <ownedProperties xmi:id="p.eel.Operation.target" name="target" type="pivot:Class http://www.eclipse.org/emf/2002/Ecore.oclas#//@ownedPackages.0/@ownedClasses.11"
+          opposite="#op.eel.Operation.target"/>
+      <ownedProperties xmi:id="p.eel.Operation.MetaClass" name="MetaClass" isRequired="false" type="#T.eel.MetaClass" isImplicit="true"
+          opposite="#p.eel.MetaClass.operations"/>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:Enumeration" xmi:id="T.eel.Visibility" name="Visibility" superClasses="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.OclEnumeration">
+      <ownedLiterals xmi:id="e.eel.Visibility.LOCAL" name="LOCAL"/>
+      <ownedLiterals xmi:id="e.eel.Visibility.GLOBAL" name="GLOBAL" value="1"/>
+    </ownedClasses>
+    <ownedClasses xmi:id="T.eel.Measure" name="Measure" isAbstract="true" superClasses="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.OclElement">
+      <ownedOperations xmi:id="o.eel.Measure.value" name="value" isRequired="false" type="pivot:PrimitiveType http://www.eclipse.org/ocl/2015/Library.oclas#Real">
+        <bodyExpression xsi:type="pivot:ExpressionInOCL" body="0"/>
+      </ownedOperations>
+      <ownedProperties xmi:id="p.eel.Measure.target" name="target" type="#T.eel.Target" opposite="#p.eel.Target.Measure"/>
+      <ownedProperties xmi:id="p.eel.Measure.uncertainty" name="uncertainty" type="#T.eel.MeasurementUncertainty" isComposite="true" opposite="#p.eel.MeasurementUncertainty.Measure"/>
+      <ownedProperties xmi:id="op.eel.MeasureSumOperation.left" name="MeasureSumOperation" type="#//@ownedPackages.2/@ownedClasses.6"
+          isImplicit="true" opposite="#p.eel.MeasureSumOperation.left"/>
+      <ownedProperties xmi:id="op.eel.MeasureSumOperation.right" name="MeasureSumOperation" type="#//@ownedPackages.2/@ownedClasses.6"
+          isImplicit="true" opposite="#p.eel.MeasureSumOperation.right"/>
+      <ownedProperties xmi:id="op.eel.MeasureProductOperation.right" name="MeasureProductOperation" type="#//@ownedPackages.2/@ownedClasses.7"
+          isImplicit="true" opposite="#p.eel.MeasureProductOperation.right"/>
+      <ownedProperties xmi:id="p.eel.Measure.Platform" name="Platform" isRequired="false" type="#T.eel.Platform" isImplicit="true" opposite="#p.eel.Platform.measures"/>
+      <ownedProperties xmi:id="op.eel.Interval.upperEndpoint" name="Interval" isRequired="false" type="#T.eel.Interval" isImplicit="true"
+          opposite="#p.eel.Interval.upperEndpoint"/>
+      <ownedProperties xmi:id="p.eel.Measure.Sample" name="Sample" isRequired="false" type="#T.eel.Sample" isImplicit="true" opposite="#p.eel.Sample.quantity"/>
+      <ownedProperties xmi:id="op.eel.MeasureProductOperation.left" name="MeasureProductOperation" type="#//@ownedPackages.2/@ownedClasses.7"
+          isImplicit="true" opposite="#p.eel.MeasureProductOperation.left"/>
+      <ownedProperties xmi:id="op.eel.Interval.lowerEndpoint" name="Interval" isRequired="false" type="#T.eel.Interval" isImplicit="true"
+          opposite="#p.eel.Interval.lowerEndpoint"/>
+    </ownedClasses>
+    <ownedClasses xmi:id="T.eel.MeasureValue" name="MeasureValue" superClasses="#T.eel.Measure">
+      <ownedOperations xmi:id="o.eel.MeasureValue.value" name="value" isRequired="false" type="pivot:PrimitiveType http://www.eclipse.org/ocl/2015/Library.oclas#Real">
+        <bodyExpression xsi:type="pivot:ExpressionInOCL" body="self.value"/>
+      </ownedOperations>
+      <ownedProperties xmi:id="p.eel.MeasureValue.value" name="value" type="pivot:PrimitiveType http://www.eclipse.org/ocl/2015/Library.oclas#Real"/>
+    </ownedClasses>
+    <ownedClasses xmi:id="T.eel.MeasureOperation" name="MeasureOperation" isAbstract="true" superClasses="#T.eel.Measure"/>
+    <ownedClasses xmi:id="T.eel.MeasureAttribute" name="MeasureAttribute" superClasses="#T.eel.Measure">
+      <ownedOperations xmi:id="o.eel.MeasureAttribute.value" name="value" isRequired="false" type="pivot:PrimitiveType http://www.eclipse.org/ocl/2015/Library.oclas#Real">
+        <bodyExpression xsi:type="pivot:ExpressionInOCL" body="true"/>
+      </ownedOperations>
+      <ownedProperties xmi:id="p.eel.MeasureAttribute.name" name="name" type="pivot:Class http://www.eclipse.org/emf/2002/Ecore.oclas#//@ownedPackages.0/@ownedClasses.0"
+          opposite="#p.ecore.EAttribute.MeasureAttribute"/>
+    </ownedClasses>
+    <ownedClasses xmi:id="T.eel.MeasureOclExpression" name="MeasureOclExpression" superClasses="#T.eel.Measure">
+      <ownedProperties xmi:id="p.eel.MeasureOclExpression.oclExpression" name="oclExpression" isRequired="false" type="pivot:PrimitiveType http://www.eclipse.org/ocl/2015/Library.oclas#String"/>
+    </ownedClasses>
+    <ownedClasses xmi:id="T.eel.MeasureProductOperation" name="MeasureProductOperation" superClasses="#T.eel.MeasureOperation">
+      <ownedOperations xmi:id="o.eel.MeasureProductOperation.value" name="value" isRequired="false" type="pivot:PrimitiveType http://www.eclipse.org/ocl/2015/Library.oclas#Real">
+        <bodyExpression xsi:type="pivot:ExpressionInOCL" body="self.left.value() * self.right.value()"/>
+      </ownedOperations>
+      <ownedProperties xmi:id="p.eel.MeasureProductOperation.left" name="left" type="#T.eel.Measure" opposite="#op.eel.MeasureProductOperation.left"/>
+      <ownedProperties xmi:id="p.eel.MeasureProductOperation.right" name="right" type="#T.eel.Measure" opposite="#op.eel.MeasureProductOperation.right"/>
+    </ownedClasses>
+    <ownedClasses xmi:id="T.eel.MeasureSumOperation" name="MeasureSumOperation" superClasses="#T.eel.MeasureOperation">
+      <ownedOperations xmi:id="o.eel.MeasureSumOperation.value" name="value" isRequired="false" type="pivot:PrimitiveType http://www.eclipse.org/ocl/2015/Library.oclas#Real">
+        <bodyExpression xsi:type="pivot:ExpressionInOCL" body="self.left.value() + self.right.value()"/>
+      </ownedOperations>
+      <ownedProperties xmi:id="p.eel.MeasureSumOperation.left" name="left" type="#T.eel.Measure" opposite="#op.eel.MeasureSumOperation.left"/>
+      <ownedProperties xmi:id="p.eel.MeasureSumOperation.right" name="right" type="#T.eel.Measure" opposite="#op.eel.MeasureSumOperation.right"/>
+    </ownedClasses>
+    <ownedClasses xmi:id="T.eel.EnergyComputation" name="EnergyComputation" superClasses="#T.eel.MeasureProductOperation #T.eel.Energy">
+      <ownedOperations xmi:id="o.eel.EnergyComputation.value" name="value" isRequired="false" type="pivot:PrimitiveType http://www.eclipse.org/ocl/2015/Library.oclas#Real">
+        <bodyExpression xsi:type="pivot:ExpressionInOCL" body="self.left.value() * self.right.value()"/>
+        <ownedPreconditions name="">
+          <ownedSpecification xsi:type="pivot:ExpressionInOCL" body="self.left.oclIsTypeOf(Power) and self.right.oclIsTypeOf(Duration)"/>
+        </ownedPreconditions>
+      </ownedOperations>
+    </ownedClasses>
+    <ownedClasses xmi:id="T.eel.PowerComputation" name="PowerComputation" superClasses="#T.eel.MeasureProductOperation #T.eel.Power">
+      <ownedOperations xmi:id="o.eel.PowerComputation.value" name="value" isRequired="false" type="pivot:PrimitiveType http://www.eclipse.org/ocl/2015/Library.oclas#Real">
+        <bodyExpression xsi:type="pivot:ExpressionInOCL" body="self.left.value() * self.right.value()"/>
+        <ownedPreconditions xmi:id="c-eel.PowerComputation.value.powerAndDuration" name="powerAndDuration">
+          <ownedSpecification xsi:type="pivot:ExpressionInOCL" body="self.left.oclIsTypeOf(Current) and self.right.oclIsTypeOf(Voltage)"/>
+        </ownedPreconditions>
+      </ownedOperations>
+    </ownedClasses>
+    <ownedClasses xmi:id="T.eel.Energy" name="Energy" isAbstract="true" superClasses="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.OclElement"/>
+    <ownedClasses xmi:id="T.eel.Power" name="Power" isAbstract="true" superClasses="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.OclElement"/>
+    <ownedClasses xmi:id="T.eel.Duration" name="Duration" isAbstract="true" superClasses="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.OclElement"/>
+    <ownedClasses xmi:id="T.eel.Current" name="Current" isAbstract="true" superClasses="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.OclElement"/>
+    <ownedClasses xmi:id="T.eel.Voltage" name="Voltage" isAbstract="true" superClasses="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.OclElement"/>
+    <ownedClasses xmi:id="T.eel.Scalar" name="Scalar" isAbstract="true" superClasses="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.OclElement"/>
+    <ownedClasses xmi:id="T.eel.Frequency" name="Frequency" isAbstract="true" superClasses="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.OclElement"/>
+    <ownedClasses xmi:id="T.eel.Unit" name="Unit" isAbstract="true" superClasses="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.OclElement"/>
+    <ownedClasses xmi:id="T.eel.EnergyValue" name="EnergyValue" superClasses="#T.eel.MeasureValue #T.eel.Energy"/>
+    <ownedClasses xmi:id="T.eel.PowerValue" name="PowerValue" superClasses="#T.eel.MeasureValue #T.eel.Power"/>
+    <ownedClasses xmi:id="T.eel.DurationValue" name="DurationValue" superClasses="#T.eel.MeasureValue #T.eel.Duration"/>
+    <ownedClasses xmi:id="T.eel.CurrentValue" name="CurrentValue" superClasses="#T.eel.MeasureValue #T.eel.Current"/>
+    <ownedClasses xmi:id="T.eel.VoltageValue" name="VoltageValue" superClasses="#T.eel.MeasureValue #T.eel.Voltage"/>
+    <ownedClasses xmi:id="T.eel.ScalarValue" name="ScalarValue" superClasses="#T.eel.MeasureValue #T.eel.Scalar"/>
+    <ownedClasses xmi:id="T.eel.FrequencyValue" name="FrequencyValue" superClasses="#T.eel.MeasureValue #T.eel.Frequency"/>
+    <ownedClasses xmi:id="T.eel.MeasurementUncertainty" name="MeasurementUncertainty" superClasses="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.OclElement">
+      <ownedProperties xmi:id="p.eel.MeasurementUncertainty.information" name="information" isRequired="false" type="#T.eel.MeasurementUncertaintyInformation"
+          isComposite="true" opposite="#p.eel.MeasurementUncertaintyInformation.MeasurementUncertainty"/>
+      <ownedProperties xmi:id="p.eel.MeasurementUncertainty.standardUncertainty" name="standardUncertainty" isRequired="false" type="pivot:PrimitiveType http://www.eclipse.org/ocl/2015/Library.oclas#Real"/>
+      <ownedProperties xmi:id="p.eel.MeasurementUncertainty.Measure" name="Measure" isRequired="false" type="#T.eel.Measure" isImplicit="true"
+          opposite="#p.eel.Measure.uncertainty"/>
+    </ownedClasses>
+    <ownedClasses xmi:id="T.eel.NormalDistribution" name="NormalDistribution" superClasses="#T.eel.MeasurementUncertaintyInformation">
+      <ownedProperties xmi:id="p.eel.NormalDistribution.meanValue" name="meanValue" isRequired="false" type="pivot:PrimitiveType http://www.eclipse.org/ocl/2015/Library.oclas#Real"
+          isDerived="true">
+        <ownedExpression xsi:type="pivot:ExpressionInOCL" body="Measure.allInstances()->select(v |&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;v.uncertainty = (MeasurementUncertainty.allInstances()->select(u |&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;u.information = self)->asOrderedSet()->first()))->asOrderedSet()->first().value()"/>
+      </ownedProperties>
+      <ownedProperties xmi:id="p.eel.NormalDistribution.standardDeviation" name="standardDeviation" isRequired="false" type="pivot:PrimitiveType http://www.eclipse.org/ocl/2015/Library.oclas#Real"
+          isDerived="true">
+        <ownedExpression xsi:type="pivot:ExpressionInOCL" body="MeasurementUncertainty.allInstances()->select(u |&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;u.information = self)->asOrderedSet()->first().standardUncertainty"/>
+      </ownedProperties>
+    </ownedClasses>
+    <ownedClasses xmi:id="T.eel.Interval" name="Interval" superClasses="#T.eel.MeasurementUncertaintyInformation">
+      <ownedProperties xmi:id="p.eel.Interval.lowerEndpoint" name="lowerEndpoint" type="#T.eel.Measure" isComposite="true" opposite="#op.eel.Interval.lowerEndpoint"/>
+      <ownedProperties xmi:id="p.eel.Interval.upperEndpoint" name="upperEndpoint" type="#T.eel.Measure" isComposite="true" opposite="#op.eel.Interval.upperEndpoint"/>
+      <ownedProperties xmi:id="p.eel.Interval.Integral" name="Integral" type="#//@ownedPackages.2/@ownedClasses.8" isImplicit="true" opposite="#p.eel.Integral.interval"/>
+    </ownedClasses>
+    <ownedClasses xmi:id="T.eel.MeasurementUncertaintyInformation" name="MeasurementUncertaintyInformation" isAbstract="true" superClasses="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.OclElement">
+      <ownedProperties xmi:id="p.eel.MeasurementUncertaintyInformation.MeasurementUncertainty" name="MeasurementUncertainty" isRequired="false"
+          type="#T.eel.MeasurementUncertainty" isImplicit="true" opposite="#p.eel.MeasurementUncertainty.information"/>
+    </ownedClasses>
+    <ownedClasses xmi:id="T.eel.Sampling" name="Sampling" superClasses="#T.eel.MeasurementUncertaintyInformation">
+      <ownedProperties xmi:id="p.eel.Sampling.samples" name="samples" type="#//@ownedPackages.2/@ownedClasses.9" isComposite="true" opposite="#p.eel.Sample.Sampling"/>
+      <ownedProperties xmi:id="p.eel.Sampling.measurementProcedure" name="measurementProcedure" isRequired="false" type="pivot:PrimitiveType http://www.eclipse.org/ocl/2015/Library.oclas#String"/>
+    </ownedClasses>
+    <ownedClasses xmi:id="T.eel.Integral" name="Integral" superClasses="#T.eel.MeasurementUncertaintyInformation">
+      <ownedInvariants xmi:id="cieel.Integral.isIntervalOfPower" name="isIntervalOfPower">
+        <ownedSpecification xsi:type="pivot:ExpressionInOCL" body="interval.lowerEndpoint.oclIsKindOf(Power) and interval.upperEndpoint.oclIsKindOf(Power)"/>
+      </ownedInvariants>
+      <ownedProperties xmi:id="p.eel.Integral.interval" name="interval" type="#T.eel.Interval" opposite="#p.eel.Interval.Integral"/>
+      <ownedProperties xmi:id="p.eel.Integral.function" name="function" isRequired="false" type="pivot:PrimitiveType http://www.eclipse.org/ocl/2015/Library.oclas#String"/>
+    </ownedClasses>
+    <ownedClasses xmi:id="T.eel.Sample" name="Sample" superClasses="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.OclElement">
+      <ownedProperties xmi:id="p.eel.Sample.quantity" name="quantity" type="#//@ownedPackages.2/@ownedClasses.2" isComposite="true" opposite="#p.eel.Measure.Sample"/>
+      <ownedProperties xmi:id="p.eel.Sample.Sampling" name="Sampling" isRequired="false" type="#T.eel.Sampling" isImplicit="true" opposite="#p.eel.Sampling.samples"/>
+    </ownedClasses>
+    <ownedPackages xmi:id="P.eel.types" name="types" URI="http://org.atlanmod.activitydiagram.energy.estimation/eel/types" nsPrefix="fr.tblf.energy.estimation.eel"/>
+  </ownedPackages>
+  <ownedPackages xmi:id="P.ecore" name="ecore" URI="http://www.eclipse.org/emf/2002/Ecore" nsPrefix="ecore">
+    <ownedClasses xmi:id="T.ecore.EAttribute" name="EAttribute">
+      <ownedProperties xmi:id="p.ecore.EAttribute.MeasureAttribute" name="MeasureAttribute" type="#//@ownedPackages.2/@ownedClasses.10"
+          isImplicit="true" opposite="#p.eel.MeasureAttribute.name"/>
+    </ownedClasses>
+    <ownedClasses xmi:id="T.ecore.EClass" name="EClass">
+      <ownedProperties xmi:id="p.ecore.EClass.MetaClass" name="MetaClass" type="#//@ownedPackages.2/@ownedClasses.11" isImplicit="true"
+          opposite="#p.eel.MetaClass.target"/>
+    </ownedClasses>
+    <ownedClasses xmi:id="T.ecore.EOperation" name="EOperation">
+      <ownedProperties xmi:id="op.eel.Operation.target" name="Operation" type="#//@ownedPackages.2/@ownedClasses.12" isImplicit="true"
+          opposite="#p.eel.Operation.target"/>
+      <ownedProperties xmi:id="op.eel.Operation.operations" name="Operation" isRequired="false" type="#T.eel.Operation" isImplicit="true"
+          opposite="#p.eel.Operation.operations"/>
+    </ownedClasses>
+  </ownedPackages>
+  <ownedPackages xmi:id="P.$$" name="$$" URI="http://www.eclipse.org/ocl/2015/Orphanage" nsPrefix="orphanage">
+    <ownedClasses xsi:type="pivot:OrderedSetType" name="OrderedSet" superClasses="#//@ownedPackages.2/@ownedClasses.13 #//@ownedPackages.2/@ownedClasses.14"
+        elementType="#T.eel.Variable" isNullFree="true">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.eel.Variable" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..OrderedSetT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:OrderedSetType" name="OrderedSet" superClasses="#//@ownedPackages.2/@ownedClasses.15 #//@ownedPackages.2/@ownedClasses.16"
+        elementType="#T.eel.MetaClass" isNullFree="true">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.eel.MetaClass" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..OrderedSetT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:OrderedSetType" name="OrderedSet" superClasses="#//@ownedPackages.2/@ownedClasses.17 #//@ownedPackages.2/@ownedClasses.18"
+        elementType="#T.eel.Measure" isNullFree="true">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.eel.Measure" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..OrderedSetT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:BagType" name="Bag" superClasses="#//@ownedPackages.2/@ownedClasses.19" elementType="#T.eel.Measure">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.eel.Measure" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..BagT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:OrderedSetType" name="OrderedSet" superClasses="#//@ownedPackages.2/@ownedClasses.20 #//@ownedPackages.2/@ownedClasses.21"
+        elementType="#T.eel.Operation" isNullFree="true">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.eel.Operation" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..OrderedSetT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:OrderedSetType" name="OrderedSet" superClasses="#//@ownedPackages.2/@ownedClasses.22 #//@ownedPackages.2/@ownedClasses.23"
+        elementType="pivot:Class http://www.eclipse.org/emf/2002/Ecore.oclas#//@ownedPackages.0/@ownedClasses.11" isNullFree="true">
+      <ownedBindings>
+        <ownedSubstitutions actual="pivot:Class http://www.eclipse.org/emf/2002/Ecore.oclas#//@ownedPackages.0/@ownedClasses.11" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..OrderedSetT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:BagType" name="Bag" superClasses="#//@ownedPackages.2/@ownedClasses.24" elementType="#T.eel.MeasureSumOperation">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.eel.MeasureSumOperation" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..BagT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:BagType" name="Bag" superClasses="#//@ownedPackages.2/@ownedClasses.25" elementType="#T.eel.MeasureProductOperation">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.eel.MeasureProductOperation" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..BagT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:BagType" name="Bag" superClasses="#//@ownedPackages.2/@ownedClasses.26" elementType="#T.eel.Integral">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.eel.Integral" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..BagT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:OrderedSetType" name="OrderedSet" superClasses="#//@ownedPackages.2/@ownedClasses.27 #//@ownedPackages.2/@ownedClasses.28"
+        elementType="#T.eel.Sample" isNullFree="true">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.eel.Sample" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..OrderedSetT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:BagType" name="Bag" superClasses="#//@ownedPackages.2/@ownedClasses.29" elementType="#T.eel.MeasureAttribute">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.eel.MeasureAttribute" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..BagT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:BagType" name="Bag" superClasses="#//@ownedPackages.2/@ownedClasses.30" elementType="#T.eel.MetaClass">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.eel.MetaClass" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..BagT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:BagType" name="Bag" superClasses="#//@ownedPackages.2/@ownedClasses.31" elementType="#T.eel.Operation">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.eel.Operation" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..BagT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="OrderedCollection" superClasses="#//@ownedPackages.2/@ownedClasses.32" elementType="#T.eel.Variable">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.eel.Variable" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..OrderedCollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="UniqueCollection" superClasses="#//@ownedPackages.2/@ownedClasses.32" elementType="#T.eel.Variable">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.eel.Variable" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..UniqueCollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="OrderedCollection" superClasses="#//@ownedPackages.2/@ownedClasses.30" elementType="#T.eel.MetaClass">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.eel.MetaClass" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..OrderedCollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="UniqueCollection" superClasses="#//@ownedPackages.2/@ownedClasses.30" elementType="#T.eel.MetaClass">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.eel.MetaClass" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..UniqueCollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="OrderedCollection" superClasses="#//@ownedPackages.2/@ownedClasses.19" elementType="#T.eel.Measure">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.eel.Measure" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..OrderedCollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="UniqueCollection" superClasses="#//@ownedPackages.2/@ownedClasses.19" elementType="#T.eel.Measure">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.eel.Measure" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..UniqueCollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="Collection" superClasses="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.OclAny"
+        elementType="#T.eel.Measure">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.eel.Measure" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..CollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="OrderedCollection" superClasses="#//@ownedPackages.2/@ownedClasses.31" elementType="#T.eel.Operation">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.eel.Operation" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..OrderedCollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="UniqueCollection" superClasses="#//@ownedPackages.2/@ownedClasses.31" elementType="#T.eel.Operation">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.eel.Operation" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..UniqueCollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="OrderedCollection" superClasses="#//@ownedPackages.2/@ownedClasses.33" elementType="pivot:Class http://www.eclipse.org/emf/2002/Ecore.oclas#//@ownedPackages.0/@ownedClasses.11">
+      <ownedBindings>
+        <ownedSubstitutions actual="pivot:Class http://www.eclipse.org/emf/2002/Ecore.oclas#//@ownedPackages.0/@ownedClasses.11" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..OrderedCollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="UniqueCollection" superClasses="#//@ownedPackages.2/@ownedClasses.33" elementType="pivot:Class http://www.eclipse.org/emf/2002/Ecore.oclas#//@ownedPackages.0/@ownedClasses.11">
+      <ownedBindings>
+        <ownedSubstitutions actual="pivot:Class http://www.eclipse.org/emf/2002/Ecore.oclas#//@ownedPackages.0/@ownedClasses.11" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..UniqueCollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="Collection" superClasses="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.OclAny"
+        elementType="#T.eel.MeasureSumOperation">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.eel.MeasureSumOperation" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..CollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="Collection" superClasses="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.OclAny"
+        elementType="#T.eel.MeasureProductOperation">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.eel.MeasureProductOperation" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..CollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="Collection" superClasses="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.OclAny"
+        elementType="#T.eel.Integral">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.eel.Integral" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..CollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="OrderedCollection" superClasses="#//@ownedPackages.2/@ownedClasses.34" elementType="#T.eel.Sample">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.eel.Sample" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..OrderedCollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="UniqueCollection" superClasses="#//@ownedPackages.2/@ownedClasses.34" elementType="#T.eel.Sample">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.eel.Sample" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..UniqueCollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="Collection" superClasses="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.OclAny"
+        elementType="#T.eel.MeasureAttribute">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.eel.MeasureAttribute" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..CollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="Collection" superClasses="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.OclAny"
+        elementType="#T.eel.MetaClass">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.eel.MetaClass" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..CollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="Collection" superClasses="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.OclAny"
+        elementType="#T.eel.Operation">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.eel.Operation" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..CollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="Collection" superClasses="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.OclAny"
+        elementType="#T.eel.Variable">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.eel.Variable" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..CollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="Collection" superClasses="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.OclAny"
+        elementType="pivot:Class http://www.eclipse.org/emf/2002/Ecore.oclas#//@ownedPackages.0/@ownedClasses.11">
+      <ownedBindings>
+        <ownedSubstitutions actual="pivot:Class http://www.eclipse.org/emf/2002/Ecore.oclas#//@ownedPackages.0/@ownedClasses.11" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..CollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="Collection" superClasses="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.OclAny"
+        elementType="#T.eel.Sample">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.eel.Sample" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..CollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+  </ownedPackages>
+</pivot:Model>

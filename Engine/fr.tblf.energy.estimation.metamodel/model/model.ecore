@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="model" nsURI="http://www.modelexecution.org/quantities" nsPrefix="model">
+  <eAnnotations source="http://www.eclipse.org/OCL/Import">
+    <details key="ecore" value="http://www.eclipse.org/emf/2002/Ecore"/>
+  </eAnnotations>
+  <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+    <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+    <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+    <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+  </eAnnotations>
+  <eClassifiers xsi:type="ecore:EClass" name="Quantity" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="unit" lowerBound="1" eType="#//Unit"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" lowerBound="1" eType="#//QuantityValue"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Length" eSuperTypes="#//BaseQuantity">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="LengthRequiresLengthUnit"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="LengthRequiresLengthUnit" value="Tuple {&#xA;&#x9;message : String = 'Invalid unit: A length needs a lenght unit.',&#xA;&#x9;status : Boolean = self.unit.oclIsKindOf(LengthUnit)&#xA;}.status"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Angle" eSuperTypes="#//BaseQuantity">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="AngleRequiresAngleUnit"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="AngleRequiresAngleUnit" value="Tuple {&#xA;&#x9;message : String = 'Invalid unit: An angle needs an angle unit.',&#xA;&#x9;status : Boolean = self.unit.oclIsKindOf(AngleUnit)&#xA;}.status"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Unit" abstract="true">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="LengthDimensionRequiresLengthConversionFactor MassDimensionRequiresMassConversionFactor TimeDimensionRequiresTimeConversionFactor ElectricCurrentDimensionRequiresElectricCurrentConversionFactor ThermodynamicTemperatureDimensionRequiresThermodynamicTemperatureConversionFactor AmountOfSubstanceDimensionRequiresAmountOfSubstanceConversionFactor LuminousIntensityDimensionRequiresLuminousIntensityConversionFactor AngleDimensionRequiresAngleConversionFactor DataStorageCapacityDimensionRequiresDataStorageCapacityConversionFactor EntropyDimensionRequiresEntropyConversionFactor TrafficIntensityDimensionRequiresTrafficIntensityConversionFactor LevelDimensionRequiresLevelConversionFactor LengthConversionFactorNotAllowedWithoutLengthDimension MassConversionFactorNotAllowedWithoutMassDimension TimeConversionFactorNotAllowedWithoutTimeDimension ElectricCurrentConversionFactorNotAllowedWithoutElectricCurrentDimension ThermodynamicTemperatureConversionFactorNotAllowedWithoutThermodynamicTemperatureDimension AmountOfSubstanceConversionFactorNotAllowedWithoutAmountOfSubstanceDimension LuminousIntensityConversionFactorNotAllowedWithoutLuminousIntensityDimension AngleConversionFactorNotAllowedWithoutAngleDimension DataStorageCapacityConversionFactorNotAllowedWithoutDataStorageCapacityDimension EntropyConversionFactorNotAllowedWithoutEntropyDimension TrafficIntensityConversionFactorNotAllowedWithoutTrafficIntensityDimension LevelConversionFactorNotAllowedWithoutLevelDimension AtMostOneLengthConversionFactor AtMostOneMassConversionFactor AtMostOneTimeConversionFactor AtMostOneElectricCurrentConversionFactor AtMostOneThermodynamicTemperatureConversionFactor AtMostOneAmountOfSubstanceConversionFactor AtMostOneLuminousIntensityConversionFactor AtMostOneAngleConversionFactor AtMostOneDataStorageCapacityConversionFactor AtMostOneEntropyConversionFactor AtMostOneTrafficIntensityConversionFactor AtMostOneLevelConversionFactor AtMostOneLengthDimension AtMostOneMassDimension AtMostOneTimeDimension AtMostOneElectricCurrentDimension AtMostOneThermodynamicTemperatureDimension AtMostOneAmountOfSubstanceDimension AtMostOneLuminousIntensityDimension AtMostOneAngleDimension AtMostOneDataStorageCapacityDimension AtMostOneEntropyDimension AtMostOneTrafficIntensityDimension AtMostOneLevelDimension"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="LengthDimensionRequiresLengthConversionFactor" value="Tuple {&#xA;&#x9;message : String = 'A length conversion factor has to be defined.',&#xA;&#x9;status : Boolean = if&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;((self.dimensions->select(d | d.oclIsKindOf(LengthDimension))->notEmpty())) then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;(self.conversionFactors->select(f | f.oclIsKindOf(LengthConversionFactor))->notEmpty()) else true&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;}.status"/>
+      <details key="MassDimensionRequiresMassConversionFactor" value="Tuple {&#xA;&#x9;message : String = 'A mass conversion factor has to be defined.',&#xA;&#x9;status : Boolean = if&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;(self.dimensions->select(d | d.oclIsKindOf(MassDimension))->notEmpty()) then self.conversionFactors->select(f&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;| f.oclIsKindOf(MassConversionFactor))->notEmpty() else true&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;}.status"/>
+      <details key="TimeDimensionRequiresTimeConversionFactor" value="Tuple {&#xA;&#x9;message : String = 'A time conversion factor has to be defined.',&#xA;&#x9;status : Boolean = if&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;(self.dimensions->select(d | d.oclIsKindOf(TimeDimension))->notEmpty()) then self.conversionFactors->select(f&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;| f.oclIsKindOf(TimeConversionFactor))->notEmpty() else true&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;}.status"/>
+      <details key="ElectricCurrentDimensionRequiresElectricCurrentConversionFactor"
+          value="Tuple {&#xA;&#x9;message : String = 'An electric current conversion factor has to be defined.',&#xA;&#x9;status : Boolean = if&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;(self.dimensions->select(d | d.oclIsKindOf(ElectricCurrentDimension))->notEmpty()) then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;self.conversionFactors->select(f | f.oclIsKindOf(ElectricCurrentConversionFactor))->notEmpty() else true&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;}.status"/>
+      <details key="ThermodynamicTemperatureDimensionRequiresThermodynamicTemperatureConversionFactor"
+          value="Tuple {&#xA;&#x9;message : String = 'A thermodynamic temperature conversion factor has to be defined.',&#xA;&#x9;status : Boolean = if&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;(self.dimensions->select(d | d.oclIsKindOf(ThermodynamicTemperatureDimension))->notEmpty()) then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;self.conversionFactors->select(f | f.oclIsKindOf(ThermodynamicTemperatureConversionFactor))->notEmpty() else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;true&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;}.status"/>
+      <details key="AmountOfSubstanceDimensionRequiresAmountOfSubstanceConversionFactor"
+          value="Tuple {&#xA;&#x9;message : String = 'An amount of substance conversion factor has to be defined.',&#xA;&#x9;status : Boolean = if&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;(self.dimensions->select(d | d.oclIsKindOf(AmountOfSubstanceDimension))->notEmpty()) then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;self.conversionFactors->select(f | f.oclIsKindOf(AmountOfSubstanceConversionFactor))->notEmpty() else true&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;}.status"/>
+      <details key="LuminousIntensityDimensionRequiresLuminousIntensityConversionFactor"
+          value="Tuple {&#xA;&#x9;message : String = 'A luminous intensity conversion factor has to be defined.',&#xA;&#x9;status : Boolean = if&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;(self.dimensions->select(d | d.oclIsKindOf(LuminousIntensityDimension))->notEmpty()) then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;self.conversionFactors->select(f | f.oclIsKindOf(LuminousIntensityConversionFactor))->notEmpty() else true&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;}.status"/>
+      <details key="AngleDimensionRequiresAngleConversionFactor" value="Tuple {&#xA;&#x9;message : String = 'An angle conversion factor has to be defined.',&#xA;&#x9;status : Boolean = if&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;(self.dimensions->select(d | d.oclIsKindOf(AngleDimension))->notEmpty()) then self.conversionFactors->select(f&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;| f.oclIsKindOf(AngleConversionFactor))->notEmpty() else true&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;}.status"/>
+      <details key="DataStorageCapacityDimensionRequiresDataStorageCapacityConversionFactor"
+          value="Tuple {&#xA;&#x9;message : String = 'A data storage capacity conversion factor has to be defined.',&#xA;&#x9;status : Boolean = if&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;(self.dimensions->select(d | d.oclIsKindOf(DataStorageCapacityDimension))->notEmpty()) then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;self.conversionFactors->select(f | f.oclIsKindOf(DataStorageCapacityConversionFactor))->notEmpty() else true&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;}.status"/>
+      <details key="EntropyDimensionRequiresEntropyConversionFactor" value="Tuple {&#xA;&#x9;message : String = 'An entropy conversion factor has to be defined.',&#xA;&#x9;status : Boolean = if&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;(self.dimensions->select(d | d.oclIsKindOf(EntropyDimension))->notEmpty()) then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;self.conversionFactors->select(f | f.oclIsKindOf(EntropyConversionFactor))->notEmpty() else true&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;}.status"/>
+      <details key="TrafficIntensityDimensionRequiresTrafficIntensityConversionFactor"
+          value="Tuple {&#xA;&#x9;message : String = 'A traffic intensity conversion factor has to be defined.',&#xA;&#x9;status : Boolean = if&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;(self.dimensions->select(d | d.oclIsKindOf(TrafficIntensityDimension))->notEmpty()) then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;self.conversionFactors->select(f | f.oclIsKindOf(TrafficIntensityConversionFactor))->notEmpty() else true&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;}.status"/>
+      <details key="LevelDimensionRequiresLevelConversionFactor" value="Tuple {&#xA;&#x9;message : String = 'A level conversion factor has to be defined.',&#xA;&#x9;status : Boolean = if&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;(self.dimensions->select(d | d.oclIsKindOf(LevelDimension))->notEmpty()) then self.conversionFactors->select(f&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;| f.oclIsKindOf(LevelConversionFactor))->notEmpty() else true&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;}.status"/>
+      <details key="LengthConversionFactorNotAllowedWithoutLengthDimension" value="Tuple {&#xA;&#x9;message : String = 'A length conversion factor cannot be defined, since no length dimension is defined.',&#xA;&#x9;status : Boolean = if&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;((self.dimensions->select(d | d.oclIsKindOf(LengthDimension))->isEmpty())) then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;(self.conversionFactors->select(f | f.oclIsKindOf(LengthConversionFactor))->isEmpty()) else true&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;}.status"/>
+      <details key="MassConversionFactorNotAllowedWithoutMassDimension" value="Tuple {&#xA;&#x9;message : String = 'A mass conversion factor cannot be defined, since no mass dimension is defined.',&#xA;&#x9;status : Boolean = if&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;(self.dimensions->select(d | d.oclIsKindOf(MassDimension))->isEmpty()) then self.conversionFactors->select(f |&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;f.oclIsKindOf(MassConversionFactor))->isEmpty() else true&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;}.status"/>
+      <details key="TimeConversionFactorNotAllowedWithoutTimeDimension" value="Tuple {&#xA;&#x9;message : String = 'A time conversion factor cannot be defined, since no time dimension is defined.',&#xA;&#x9;status : Boolean = if&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;(self.dimensions->select(d | d.oclIsKindOf(TimeDimension))->isEmpty()) then self.conversionFactors->select(f |&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;f.oclIsKindOf(TimeConversionFactor))->isEmpty() else true&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;}.status"/>
+      <details key="ElectricCurrentConversionFactorNotAllowedWithoutElectricCurrentDimension"
+          value="Tuple {&#xA;&#x9;message : String = 'An electric current conversion factor cannot be defined, since no electric current dimension is defined.',&#xA;&#x9;status : Boolean = if&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;(self.dimensions->select(d | d.oclIsKindOf(ElectricCurrentDimension))->isEmpty()) then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;self.conversionFactors->select(f | f.oclIsKindOf(ElectricCurrentConversionFactor))->isEmpty() else true&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;}.status"/>
+      <details key="ThermodynamicTemperatureConversionFactorNotAllowedWithoutThermodynamicTemperatureDimension"
+          value="Tuple {&#xA;&#x9;message : String = 'A thermodynamic temperature conversion factor cannot be defined, since no thermodynamic temperature dimension is defined.',&#xA;&#x9;status : Boolean = if&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;(self.dimensions->select(d | d.oclIsKindOf(ThermodynamicTemperatureDimension))->isEmpty()) then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;self.conversionFactors->select(f | f.oclIsKindOf(ThermodynamicTemperatureConversionFactor))->isEmpty() else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;true&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;}.status"/>
+      <details key="AmountOfSubstanceConversionFactorNotAllowedWithoutAmountOfSubstanceDimension"
+          value="Tuple {&#xA;&#x9;message : String = 'An amount of substance conversion factor cannot be defined, since no amount of substance dimension is defined.',&#xA;&#x9;status : Boolean = if&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;(self.dimensions->select(d | d.oclIsKindOf(AmountOfSubstanceDimension))->isEmpty()) then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;self.conversionFactors->select(f | f.oclIsKindOf(AmountOfSubstanceConversionFactor))->isEmpty() else true&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;}.status"/>
+      <details key="LuminousIntensityConversionFactorNotAllowedWithoutLuminousIntensityDimension"
+          value="Tuple {&#xA;&#x9;message : String = 'A luminous intensity conversion factor cannot be defined, since no luminous intensity dimension is defined.',&#xA;&#x9;status : Boolean = if&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;(self.dimensions->select(d | d.oclIsKindOf(LuminousIntensityDimension))->isEmpty()) then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;self.conversionFactors->select(f | f.oclIsKindOf(LuminousIntensityConversionFactor))->isEmpty() else true&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;}.status"/>
+      <details key="AngleConversionFactorNotAllowedWithoutAngleDimension" value="Tuple {&#xA;&#x9;message : String = 'An angle conversion factor cannot be defined, since no angle dimension is defined.',&#xA;&#x9;status : Boolean = if&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;(self.dimensions->select(d | d.oclIsKindOf(AngleDimension))->isEmpty()) then self.conversionFactors->select(f&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;| f.oclIsKindOf(AngleConversionFactor))->isEmpty() else true&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;}.status"/>
+      <details key="DataStorageCapacityConversionFactorNotAllowedWithoutDataStorageCapacityDimension"
+          value="Tuple {&#xA;&#x9;message : String = 'A data storage capacity conversion factor cannot be defined, since no data storage capacity dimension is defined.',&#xA;&#x9;status : Boolean = if&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;(self.dimensions->select(d | d.oclIsKindOf(DataStorageCapacityDimension))->isEmpty()) then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;self.conversionFactors->select(f | f.oclIsKindOf(DataStorageCapacityConversionFactor))->isEmpty() else true&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;}.status"/>
+      <details key="EntropyConversionFactorNotAllowedWithoutEntropyDimension" value="Tuple {&#xA;&#x9;message : String = 'An entropy conversion factor cannot be defined, since no entropy dimension is defined.',&#xA;&#x9;status : Boolean = if&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;(self.dimensions->select(d | d.oclIsKindOf(EntropyDimension))->isEmpty()) then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;self.conversionFactors->select(f | f.oclIsKindOf(EntropyConversionFactor))->isEmpty() else true&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;}.status"/>
+      <details key="TrafficIntensityConversionFactorNotAllowedWithoutTrafficIntensityDimension"
+          value="Tuple {&#xA;&#x9;message : String = 'A traffic intensity conversion factor cannot be defined, since no traffic intensity dimension is defined.',&#xA;&#x9;status : Boolean = if&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;(self.dimensions->select(d | d.oclIsKindOf(TrafficIntensityDimension))->isEmpty()) then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;self.conversionFactors->select(f | f.oclIsKindOf(TrafficIntensityConversionFactor))->isEmpty() else true&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;}.status"/>
+      <details key="LevelConversionFactorNotAllowedWithoutLevelDimension" value="Tuple {&#xA;&#x9;message : String = 'A level conversion factor cannot be defined, since no level dimension is defined.',&#xA;&#x9;status : Boolean = if&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;(self.dimensions->select(d | d.oclIsKindOf(LevelDimension))->isEmpty()) then self.conversionFactors->select(f&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;| f.oclIsKindOf(LevelConversionFactor))->isEmpty() else true&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;}.status"/>
+      <details key="AtMostOneLengthConversionFactor" value="Tuple {&#xA;&#x9;message : String = 'At most one length conversion factor may be defined',&#xA;&#x9;status : Boolean = self.conversionFactors->select(f&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;: ConversionFactor | f.oclIsKindOf(LengthConversionFactor))->size() &lt;= 1&#xA;}.status"/>
+      <details key="AtMostOneMassConversionFactor" value="Tuple {&#xA;&#x9;message : String = 'At most one mass conversion factor may be defined',&#xA;&#x9;status : Boolean = self.conversionFactors->select(f&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;: ConversionFactor | f.oclIsKindOf(MassConversionFactor))->size() &lt;= 1&#xA;}.status"/>
+      <details key="AtMostOneTimeConversionFactor" value="Tuple {&#xA;&#x9;message : String = 'At most one time conversion factor may be defined',&#xA;&#x9;status : Boolean = self.conversionFactors->select(f&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;: ConversionFactor | f.oclIsKindOf(TimeConversionFactor))->size() &lt;= 1&#xA;}.status"/>
+      <details key="AtMostOneElectricCurrentConversionFactor" value="Tuple {&#xA;&#x9;message : String = 'At most one electric current conversion factor may be defined',&#xA;&#x9;status : Boolean = self.conversionFactors->select(f&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;: ConversionFactor | f.oclIsKindOf(ElectricCurrentConversionFactor))->size() &lt;= 1&#xA;}.status"/>
+      <details key="AtMostOneThermodynamicTemperatureConversionFactor" value="Tuple {&#xA;&#x9;message : String = 'At most one thermodynamic temperature conversion factor may be defined',&#xA;&#x9;status : Boolean = self.conversionFactors->select(f&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;: ConversionFactor | f.oclIsKindOf(ThermodynamicTemperatureConversionFactor))->size() &lt;= 1&#xA;}.status"/>
+      <details key="AtMostOneAmountOfSubstanceConversionFactor" value="Tuple {&#xA;&#x9;message : String = 'At most one amount of substance conversion factor may be defined',&#xA;&#x9;status : Boolean = self.conversionFactors->select(f&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;: ConversionFactor | f.oclIsKindOf(AmountOfSubstanceConversionFactor))->size() &lt;= 1&#xA;}.status"/>
+      <details key="AtMostOneLuminousIntensityConversionFactor" value="Tuple {&#xA;&#x9;message : String = 'At most one luminous intensity conversion factor may be defined',&#xA;&#x9;status : Boolean = self.conversionFactors->select(f&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;: ConversionFactor | f.oclIsKindOf(LuminousIntensityConversionFactor))->size() &lt;= 1&#xA;}.status"/>
+      <details key="AtMostOneAngleConversionFactor" value="Tuple {&#xA;&#x9;message : String = 'At most one angle conversion factor may be defined',&#xA;&#x9;status : Boolean = self.conversionFactors->select(f&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;: ConversionFactor | f.oclIsKindOf(AngleConversionFactor))->size() &lt;= 1&#xA;}.status"/>
+      <details key="AtMostOneDataStorageCapacityConversionFactor" value="Tuple {&#xA;&#x9;message : String = 'At most one data storage capacity conversion factor may be defined',&#xA;&#x9;status : Boolean = self.conversionFactors->select(f&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;: ConversionFactor | f.oclIsKindOf(DataStorageCapacityConversionFactor))->size() &lt;= 1&#xA;}.status"/>
+      <details key="AtMostOneEntropyConversionFactor" value="Tuple {&#xA;&#x9;message : String = 'At most one entropy conversion factor may be defined',&#xA;&#x9;status : Boolean = self.conversionFactors->select(f&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;: ConversionFactor | f.oclIsKindOf(EntropyConversionFactor))->size() &lt;= 1&#xA;}.status"/>
+      <details key="AtMostOneTrafficIntensityConversionFactor" value="Tuple {&#xA;&#x9;message : String = 'At most one traffic intensity conversion factor may be defined',&#xA;&#x9;status : Boolean = self.conversionFactors->select(f&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;: ConversionFactor | f.oclIsKindOf(TrafficIntensityConversionFactor))->size() &lt;= 1&#xA;}.status"/>
+      <details key="AtMostOneLevelConversionFactor" value="Tuple {&#xA;&#x9;message : String = 'At most one level conversion factor may be defined',&#xA;&#x9;status : Boolean = self.conversionFactors->select(f&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;: ConversionFactor | f.oclIsKindOf(LevelConversionFactor))->size() &lt;= 1&#xA;}.status"/>
+      <details key="AtMostOneLengthDimension" value="Tuple {&#xA;&#x9;message : String = 'At most one length dimension may be defined',&#xA;&#x9;status : Boolean = self.dimensions->select(d :&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Dimension | d.oclIsKindOf(LengthDimension))->size() &lt;= 1&#xA;}.status"/>
+      <details key="AtMostOneMassDimension" value="Tuple {&#xA;&#x9;message : String = 'At most one mass dimension may be defined',&#xA;&#x9;status : Boolean = self.dimensions->select(d :&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Dimension | d.oclIsKindOf(MassDimension))->size() &lt;= 1&#xA;}.status"/>
+      <details key="AtMostOneTimeDimension" value="Tuple {&#xA;&#x9;message : String = 'At most one time dimension may be defined',&#xA;&#x9;status : Boolean = self.dimensions->select(d :&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Dimension | d.oclIsKindOf(TimeDimension))->size() &lt;= 1&#xA;}.status"/>
+      <details key="AtMostOneElectricCurrentDimension" value="Tuple {&#xA;&#x9;message : String = 'At most one electric current dimension may be defined',&#xA;&#x9;status : Boolean = self.dimensions->select(d&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;: Dimension | d.oclIsKindOf(ElectricCurrentDimension))->size() &lt;= 1&#xA;}.status"/>
+      <details key="AtMostOneThermodynamicTemperatureDimension" value="Tuple {&#xA;&#x9;message : String = 'At most one thermodynamic temperature dimension may be defined',&#xA;&#x9;status : Boolean = self.dimensions->select(d&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;: Dimension | d.oclIsKindOf(ThermodynamicTemperatureDimension))->size() &lt;= 1&#xA;}.status"/>
+      <details key="AtMostOneAmountOfSubstanceDimension" value="Tuple {&#xA;&#x9;message : String = 'At most one amount of substance dimension may be defined',&#xA;&#x9;status : Boolean = self.dimensions->select(d&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;: Dimension | d.oclIsKindOf(AmountOfSubstanceDimension))->size() &lt;= 1&#xA;}.status"/>
+      <details key="AtMostOneLuminousIntensityDimension" value="Tuple {&#xA;&#x9;message : String = 'At most one luminous intensity dimension may be defined',&#xA;&#x9;status : Boolean = self.dimensions->select(d&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;: Dimension | d.oclIsKindOf(LuminousIntensityDimension))->size() &lt;= 1&#xA;}.status"/>
+      <details key="AtMostOneAngleDimension" value="Tuple {&#xA;&#x9;message : String = 'At most one angle dimension may be defined',&#xA;&#x9;status : Boolean = self.dimensions->select(d :&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Dimension | d.oclIsKindOf(AngleDimension))->size() &lt;= 1&#xA;}.status"/>
+      <details key="AtMostOneDataStorageCapacityDimension" value="Tuple {&#xA;&#x9;message : String = 'At most one data storage capacity dimension may be defined',&#xA;&#x9;status : Boolean = self.dimensions->select(d&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;: Dimension | d.oclIsKindOf(DataStorageCapacityDimension))->size() &lt;= 1&#xA;}.status"/>
+      <details key="AtMostOneEntropyDimension" value="Tuple {&#xA;&#x9;message : String = 'At most one entropy dimension may be defined',&#xA;&#x9;status : Boolean = self.dimensions->select(d :&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Dimension | d.oclIsKindOf(EntropyDimension))->size() &lt;= 1&#xA;}.status"/>
+      <details key="AtMostOneTrafficIntensityDimension" value="Tuple {&#xA;&#x9;message : String = 'At most one traffic intensity dimension may be defined',&#xA;&#x9;status : Boolean = self.dimensions->select(d&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;: Dimension | d.oclIsKindOf(TrafficIntensityDimension))->size() &lt;= 1&#xA;}.status"/>
+      <details key="AtMostOneLevelDimension" value="Tuple {&#xA;&#x9;message : String = 'At most one level dimension may be defined',&#xA;&#x9;status : Boolean = self.dimensions->select(d :&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Dimension | d.oclIsKindOf(LevelDimension))->size() &lt;= 1&#xA;}.status"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="symbol" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dimensions" upperBound="-1"
+        eType="#//Dimension" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="conversionFactors" upperBound="-1"
+        eType="#//ConversionFactor" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isRatioScaled" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" changeable="false"
+        defaultValueLiteral="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+        <details key="derivation" value="self.conversionFactors->forAll(f : ConversionFactor | f.offset = 0.0)"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isBaseUnit" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" changeable="false"
+        defaultValueLiteral="false" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+        <details key="derivation" value="self.conversionFactors->size() = 1 and self.conversionFactors->asOrderedSet()->first().multiplicator = 1.0 and self.conversionFactors->asOrderedSet()->first().offset = 0.0 and self.dimensions->size() = 1 and self.dimensions->asOrderedSet()->first().exponent = 1"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isDerivedUnit" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" changeable="false"
+        defaultValueLiteral="false" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+        <details key="derivation" value="not self.isBaseUnit"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isCoherentDerivedUnit"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        changeable="false" defaultValueLiteral="false" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+        <details key="derivation" value="not self.isBaseUnit and self.conversionFactors->forAll(f : ConversionFactor |&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;f.multiplicator = 1.0 and f.offset = 0.0)"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isIntervalScaled" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" changeable="false"
+        derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+        <details key="derivation" value="self.conversionFactors->exists(f : ConversionFactor | f.offset &lt;> 0.0)"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Mass" eSuperTypes="#//BaseQuantity">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="MassRequiresMassUnit"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="MassRequiresMassUnit" value="Tuple {&#xA;&#x9;message : String = 'Invalid unit: A mass needs a mass unit.',&#xA;&#x9;status : Boolean = self.unit.oclIsKindOf(MassUnit)&#xA;}.status"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Time" eSuperTypes="#//BaseQuantity">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="TimeRequiresTimeUnit"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="TimeRequiresTimeUnit" value="Tuple {&#xA;&#x9;message : String = 'Invalid unit: A time needs a time unit.',&#xA;&#x9;status : Boolean = self.unit.oclIsKindOf(TimeUnit)&#xA;}.status"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ElectricCurrent" eSuperTypes="#//BaseQuantity">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="ElectricCurrentRequiresElectricCurrentUnit"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="ElectricCurrentRequiresElectricCurrentUnit" value="Tuple {&#xA;&#x9;message : String = 'Invalid unit: An electric current needs an electric current unit.',&#xA;&#x9;status : Boolean = self.unit.oclIsKindOf(ElectricCurrentUnit)&#xA;}.status"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ThermodynamicTemperature" eSuperTypes="#//BaseQuantity">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="ThermodynamicTemperatureRequiresThermodynamicTemperatureUnit"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="ThermodynamicTemperatureRequiresThermodynamicTemperatureUnit"
+          value="Tuple {&#xA;&#x9;message : String = 'Invalid unit: A thermodynamic temperature needs a thermodynamic temperature unit.',&#xA;&#x9;status : Boolean = self.unit.oclIsKindOf(ThermodynamicTemperatureUnit)&#xA;}.status"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AmountOfSubstance" eSuperTypes="#//BaseQuantity">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="AmountOfSubstanceRequiresAmountOfSubstanceUnit"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="AmountOfSubstanceRequiresAmountOfSubstanceUnit" value="Tuple {&#xA;&#x9;message : String = 'Invalid unit: An amount of substance needs an amount of substance unit.',&#xA;&#x9;status : Boolean = self.unit.oclIsKindOf(AmountOfSubstanceUnit)&#xA;}.status"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LuminousIntensity" eSuperTypes="#//BaseQuantity">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="LuminousIntensityRequiresLuminousIntensityUnit"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="LuminousIntensityRequiresLuminousIntensityUnit" value="Tuple {&#xA;&#x9;message : String = 'Invalid unit: A luminous intensity needs a luminous intensity unit.',&#xA;&#x9;status : Boolean = self.unit.oclIsKindOf(LuminousIntensityUnit)&#xA;}.status"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LengthUnit" eSuperTypes="#//BaseQuantityUnit">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="LengthUnitRequiresLengthDimension"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="LengthUnitRequiresLengthDimension" value="Tuple {&#xA;&#x9;message : String = 'A length unit needs to define exactly one length dimension with exponent 1.0.',&#xA;&#x9;status : Boolean = self.dimensions->select(dim&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;: Dimension | dim.oclIsKindOf(LengthDimension))->size() = 1 and self.dimensions->select(dim : Dimension |&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;dim.oclIsKindOf(LengthDimension))->asOrderedSet()->first().oclAsType(LengthDimension).exponent = 1.0 and self.dimensions->size() = 1&#xA;}.status"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MassUnit" eSuperTypes="#//BaseQuantityUnit">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="MassUnitRequiresMassDimension"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="MassUnitRequiresMassDimension" value="Tuple {&#xA;&#x9;message : String = 'A mass unit needs to define exactly one mass dimension with exponent 1.0.',&#xA;&#x9;status : Boolean = self.dimensions->select(dim&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;: Dimension | dim.oclIsKindOf(MassDimension))->size() = 1 and self.dimensions->select(dim : Dimension |&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;dim.oclIsKindOf(MassDimension))->asOrderedSet()->first().oclAsType(MassDimension).exponent = 1.0 and self.dimensions->size() = 1&#xA;}.status"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TimeUnit" eSuperTypes="#//BaseQuantityUnit">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="TimeUnitRequiresTimeDimension"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="TimeUnitRequiresTimeDimension" value="Tuple {&#xA;&#x9;message : String = 'A time unit needs to define exactly one time dimension with exponent 1.0.',&#xA;&#x9;status : Boolean = self.dimensions->select(dim&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;: Dimension | dim.oclIsKindOf(TimeDimension))->size() = 1 and self.dimensions->select(dim : Dimension |&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;dim.oclIsKindOf(TimeDimension))->asOrderedSet()->first().oclAsType(TimeDimension).exponent = 1.0 and self.dimensions->size() = 1&#xA;}.status"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ElectricCurrentUnit" eSuperTypes="#//BaseQuantityUnit">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="ElectricCurrentUnitRequiresElectricCurrentDimension"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="ElectricCurrentUnitRequiresElectricCurrentDimension" value="Tuple {&#xA;&#x9;message : String = 'An electric current unit needs to define exactly one electric current dimension with exponent 1.0.',&#xA;&#x9;status : Boolean = self.dimensions->select(dim&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;: Dimension | dim.oclIsKindOf(ElectricCurrentDimension))->size() = 1 and self.dimensions->select(dim :&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Dimension |&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;dim.oclIsKindOf(ElectricCurrentDimension))->asOrderedSet()->first().oclAsType(ElectricCurrentDimension).exponent = 1.0 and self.dimensions->size() = 1&#xA;}.status"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ThermodynamicTemperatureUnit" eSuperTypes="#//BaseQuantityUnit">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="ThermodynamicTemperatureUnitRequiresThermodynamicTemperatureDimension"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="ThermodynamicTemperatureUnitRequiresThermodynamicTemperatureDimension"
+          value="Tuple {&#xA;&#x9;message : String = 'A thermodynamic temperature unit needs to define exactly one thermodynamic temperature dimension with exponent 1.0.',&#xA;&#x9;status : Boolean = self.dimensions->select(dim&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;: Dimension | dim.oclIsKindOf(ThermodynamicTemperatureDimension))->size() = 1 and self.dimensions->select(dim&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;: Dimension |&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;dim.oclIsKindOf(ThermodynamicTemperatureDimension))->asOrderedSet()->first().oclAsType(ThermodynamicTemperatureDimension).exponent = 1.0 and self.dimensions->size() = 1&#xA;}.status"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AmountOfSubstanceUnit" eSuperTypes="#//BaseQuantityUnit">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="AmountOfSubstanceUnitRequiresAmountOfSubstanceDimension"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="AmountOfSubstanceUnitRequiresAmountOfSubstanceDimension" value="Tuple {&#xA;&#x9;message : String = 'An amount of substance unit needs to define exactly one amount of substance dimension with exponent 1.0.',&#xA;&#x9;status : Boolean = self.dimensions->select(dim&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;: Dimension | dim.oclIsKindOf(AmountOfSubstanceDimension))->size() = 1 and self.dimensions->select(dim :&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Dimension |&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;dim.oclIsKindOf(AmountOfSubstanceDimension))->asOrderedSet()->first().oclAsType(AmountOfSubstanceDimension).exponent = 1.0 and self.dimensions->size() = 1&#xA;}.status"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LuminousIntensityUnit" eSuperTypes="#//BaseQuantityUnit">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="LuminousIntensityUnitRequiresLuminousIntensityDimension"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="LuminousIntensityUnitRequiresLuminousIntensityDimension" value="Tuple {&#xA;&#x9;message : String = 'A luminous intensity unit needs to define exactly one luminous intensity dimension with exponent 1.0.',&#xA;&#x9;status : Boolean = self.dimensions->select(dim&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;: Dimension | dim.oclIsKindOf(LuminousIntensityDimension))->size() = 1 and self.dimensions->select(dim :&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Dimension |&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;dim.oclIsKindOf(LuminousIntensityDimension))->asOrderedSet()->first().oclAsType(LuminousIntensityDimension).exponent = 1.0 and self.dimensions->size() = 1&#xA;}.status"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AngleUnit" eSuperTypes="#//BaseQuantityUnit">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="AngleUnitRequiresAngleDimension"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="AngleUnitRequiresAngleDimension" value="Tuple {&#xA;&#x9;message : String = 'An angle unit needs to define exactly one angle dimension with exponent 1.0.',&#xA;&#x9;status : Boolean = self.dimensions->select(dim&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;: Dimension | dim.oclIsKindOf(AngleDimension))->size() = 1 and self.dimensions->select(dim : Dimension |&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;dim.oclIsKindOf(AngleDimension))->asOrderedSet()->first().oclAsType(AngleDimension).exponent = 1.0 and self.dimensions->size() = 1&#xA;}.status"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SystemOfUnits">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="units" upperBound="-1"
+        eType="#//Unit" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="standardizationBody" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Dimension" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="exponent" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble" defaultValueLiteral="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LengthDimension" eSuperTypes="#//Dimension"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ConversionFactor" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="baseUnit" lowerBound="1"
+        eType="#//Unit" changeable="false" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+        <details key="derivation" value="if (self.oclIsKindOf(LengthConversionFactor))&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;then if (SystemOfUnits.allInstances().units->select(u : Unit |&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;u.oclIsKindOf(LengthUnit) and u.isBaseUnit)->size() = 1) then SystemOfUnits.allInstances().units->select(u :&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Unit | u.oclIsKindOf(LengthUnit) and u.isBaseUnit)->asOrderedSet()->first() else null&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif else if (self.oclIsKindOf(TimeConversionFactor))&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;then if (SystemOfUnits.allInstances().units->select(u : Unit |&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;u.oclIsKindOf(TimeUnit) and u.isBaseUnit)->size() = 1) then SystemOfUnits.allInstances().units->select(u :&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Unit | u.oclIsKindOf(TimeUnit) and u.isBaseUnit)->asOrderedSet()->first() else null&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif else if (self.oclIsKindOf(MassConversionFactor))&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;then if (SystemOfUnits.allInstances().units->select(u : Unit |&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;u.oclIsKindOf(MassUnit) and u.isBaseUnit)->size() = 1) then SystemOfUnits.allInstances().units->select(u :&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Unit | u.oclIsKindOf(MassUnit) and u.isBaseUnit)->asOrderedSet()->first() else null&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif else if (self.oclIsKindOf(ElectricCurrentConversionFactor))&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;then if (SystemOfUnits.allInstances().units->select(u : Unit |&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;u.oclIsKindOf(ElectricCurrentUnit) and u.isBaseUnit)->size() = 1) then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;SystemOfUnits.allInstances().units->select(u : Unit |&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;u.oclIsKindOf(ElectricCurrentUnit) and u.isBaseUnit)->asOrderedSet()->first() else null&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif else if (self.oclIsKindOf(ThermodynamicTemperatureConversionFactor))&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;then if (SystemOfUnits.allInstances().units->select(u : Unit |&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;u.oclIsKindOf(ThermodynamicTemperatureUnit) and u.isBaseUnit)->size() = 1) then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;SystemOfUnits.allInstances().units->select(u : Unit |&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;u.oclIsKindOf(ThermodynamicTemperatureUnit) and u.isBaseUnit)->asOrderedSet()->first() else null&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif else if (self.oclIsKindOf(AmountOfSubstanceConversionFactor))&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;then if (SystemOfUnits.allInstances().units->select(u : Unit |&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;u.oclIsKindOf(AmountOfSubstanceUnit) and u.isBaseUnit)->size() = 1) then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;SystemOfUnits.allInstances().units->select(u : Unit |&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;u.oclIsKindOf(AmountOfSubstanceUnit) and u.isBaseUnit)->asOrderedSet()->first() else null&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif else if (self.oclIsKindOf(LuminousIntensityConversionFactor))&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;then if (SystemOfUnits.allInstances().units->select(u : Unit |&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;u.oclIsKindOf(LuminousIntensityUnit) and u.isBaseUnit)->size() = 1) then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;SystemOfUnits.allInstances().units->select(u : Unit |&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;u.oclIsKindOf(LuminousIntensityUnit) and u.isBaseUnit)->asOrderedSet()->first() else null&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif else if (self.oclIsKindOf(AngleConversionFactor))&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;then if (SystemOfUnits.allInstances().units->select(u : Unit |&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;u.oclIsKindOf(AngleUnit) and u.isBaseUnit)->size() = 1) then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;SystemOfUnits.allInstances().units->select(u : Unit |&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;u.oclIsKindOf(AngleUnit) and u.isBaseUnit)->asOrderedSet()->first() else null&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif else if (self.oclIsKindOf(DataStorageCapacityConversionFactor))&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;then if (SystemOfUnits.allInstances().units->select(u : Unit |&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;u.oclIsKindOf(DataStorageCapacityUnit) and u.isBaseUnit)->size() = 1) then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;SystemOfUnits.allInstances().units->select(u : Unit |&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;u.oclIsKindOf(DataStorageCapacityUnit) and u.isBaseUnit)->asOrderedSet()->first() else null&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif else if (self.oclIsKindOf(EntropyConversionFactor))&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;then if (SystemOfUnits.allInstances().units->select(u : Unit |&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;u.oclIsKindOf(EntropyUnit) and u.isBaseUnit)->size() = 1) then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;SystemOfUnits.allInstances().units->select(u : Unit |&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;u.oclIsKindOf(EntropyUnit) and u.isBaseUnit)->asOrderedSet()->first() else null&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif else if (self.oclIsKindOf(TrafficIntensityConversionFactor))&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;then if (SystemOfUnits.allInstances().units->select(u : Unit |&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;u.oclIsKindOf(TrafficIntensityUnit) and u.isBaseUnit)->size() = 1) then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;SystemOfUnits.allInstances().units->select(u : Unit |&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;u.oclIsKindOf(TrafficIntensityUnit) and u.isBaseUnit)->asOrderedSet()->first() else null&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif else if (self.oclIsKindOf(LevelConversionFactor))&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;then if (SystemOfUnits.allInstances().units->select(u : Unit |&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;u.oclIsKindOf(LevelUnit) and u.isBaseUnit)->size() = 1) then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;SystemOfUnits.allInstances().units->select(u : Unit |&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;u.oclIsKindOf(LevelUnit) and u.isBaseUnit)->asOrderedSet()->first() else null&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif else null&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif endif endif endif endif endif endif endif endif endif endif endif"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="multiplicator" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble" defaultValueLiteral="1"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="offset" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble" defaultValueLiteral="0"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MassDimension" eSuperTypes="#//Dimension"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TimeDimension" eSuperTypes="#//Dimension"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ElectricCurrentDimension" eSuperTypes="#//Dimension"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ThermodynamicTemperatureDimension" eSuperTypes="#//Dimension"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AmountOfSubstanceDimension" eSuperTypes="#//Dimension"/>
+  <eClassifiers xsi:type="ecore:EClass" name="LuminousIntensityDimension" eSuperTypes="#//Dimension"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AngleDimension" eSuperTypes="#//Dimension"/>
+  <eClassifiers xsi:type="ecore:EClass" name="QuantityValue">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="uncertainty" lowerBound="1"
+        eType="#//MeasurementUncertainty" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MeasurementUncertainty">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="information" eType="#//MeasurementUncertaintyInformation"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="standardUncertainty" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DataStorageCapacity" eSuperTypes="#//BaseQuantity">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="DataStorageCapacityRequiresDataStorageCapacityUnit"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="DataStorageCapacityRequiresDataStorageCapacityUnit" value="Tuple {&#xA;&#x9;message : String = 'Invalid unit: A data storage capacity needs a data storage capacity unit.',&#xA;&#x9;status : Boolean = self.unit.oclIsKindOf(DataStorageCapacityUnit)&#xA;}.status"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Entropy" eSuperTypes="#//BaseQuantity">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="EntropyRequiresEntropyUnit"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="EntropyRequiresEntropyUnit" value="Tuple {&#xA;&#x9;message : String = 'Invalid unit: An entropy needs an entropy unit.',&#xA;&#x9;status : Boolean = self.unit.oclIsKindOf(EntropyUnit)&#xA;}.status"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TrafficIntensity" eSuperTypes="#//BaseQuantity">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="TrafficIntensityRequiresTrafficIntensityUnit"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="TrafficIntensityRequiresTrafficIntensityUnit" value="Tuple {&#xA;&#x9;message : String = 'Invalid unit: A traffic intensity needs a traffic intensity unit.',&#xA;&#x9;status : Boolean = self.unit.oclIsKindOf(TrafficIntensityUnit)&#xA;}.status"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Level" eSuperTypes="#//BaseQuantity">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="LevelRequiresLevelUnit"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="LevelRequiresLevelUnit" value="Tuple {&#xA;&#x9;message : String = 'Invalid unit: A level needs a level unit.',&#xA;&#x9;status : Boolean = self.unit.oclIsKindOf(LevelUnit)&#xA;}.status"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DataStorageCapacityUnit" eSuperTypes="#//BaseQuantityUnit">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="DataStorageCapacityUnitRequiresDataStorageCapacityDimension"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="DataStorageCapacityUnitRequiresDataStorageCapacityDimension" value="Tuple {&#xA;&#x9;message : String = 'A data storage capacity unit needs to define exactly one data storage capacity dimension with exponent 1.0.',&#xA;&#x9;status : Boolean = self.dimensions->select(dim&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;: Dimension | dim.oclIsKindOf(DataStorageCapacityDimension))->size() = 1 and self.dimensions->select(dim :&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Dimension |&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;dim.oclIsKindOf(DataStorageCapacityDimension))->asOrderedSet()->first().oclAsType(DataStorageCapacityDimension).exponent = 1.0 and self.dimensions->size() = 1&#xA;}.status"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EntropyUnit" eSuperTypes="#//BaseQuantityUnit">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="EntropyUnitRequiresEntropyDimension"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="EntropyUnitRequiresEntropyDimension" value="Tuple {&#xA;&#x9;message : String = 'An entropy unit needs to define exactly one entropy dimension with exponent 1.0.',&#xA;&#x9;status : Boolean = self.dimensions->select(dim&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;: Dimension | dim.oclIsKindOf(EntropyDimension))->size() = 1 and self.dimensions->select(dim : Dimension |&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;dim.oclIsKindOf(EntropyDimension))->asOrderedSet()->first().oclAsType(EntropyDimension).exponent = 1.0 and self.dimensions->size() = 1&#xA;}.status"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TrafficIntensityUnit" eSuperTypes="#//BaseQuantityUnit">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="TrafficIntensityUnitRequiresTrafficIntensityDimension"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="TrafficIntensityUnitRequiresTrafficIntensityDimension" value="Tuple {&#xA;&#x9;message : String = 'A traffic intensity unit needs to define exactly one traffic intensity dimension with exponent 1.0.',&#xA;&#x9;status : Boolean = self.dimensions->select(dim&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;: Dimension | dim.oclIsKindOf(TrafficIntensityDimension))->size() = 1 and self.dimensions->select(dim :&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Dimension |&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;dim.oclIsKindOf(TrafficIntensityDimension))->asOrderedSet()->first().oclAsType(TrafficIntensityDimension).exponent = 1.0 and self.dimensions->size() = 1&#xA;}.status"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LevelUnit" eSuperTypes="#//BaseQuantityUnit">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="LevelUnitRequiresLevelDimension"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="LevelUnitRequiresLevelDimension" value="Tuple {&#xA;&#x9;message : String = 'A level unit needs to define exactly one level dimension with exponent 1.0.',&#xA;&#x9;status : Boolean = self.dimensions->select(dim&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;: Dimension | dim.oclIsKindOf(LevelDimension))->size() = 1 and self.dimensions->select(dim : Dimension |&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;dim.oclIsKindOf(LevelDimension))->asOrderedSet()->first().oclAsType(LevelDimension).exponent = 1.0 and self.dimensions->size() = 1&#xA;}.status"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DataStorageCapacityDimension" eSuperTypes="#//Dimension"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EntropyDimension" eSuperTypes="#//Dimension"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TrafficIntensityDimension" eSuperTypes="#//Dimension"/>
+  <eClassifiers xsi:type="ecore:EClass" name="LevelDimension" eSuperTypes="#//Dimension"/>
+  <eClassifiers xsi:type="ecore:EClass" name="LengthConversionFactor" eSuperTypes="#//ConversionFactor"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MassConversionFactor" eSuperTypes="#//ConversionFactor"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TimeConversionFactor" eSuperTypes="#//ConversionFactor"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ElectricCurrentConversionFactor" eSuperTypes="#//ConversionFactor"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ThermodynamicTemperatureConversionFactor"
+      eSuperTypes="#//ConversionFactor"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AmountOfSubstanceConversionFactor" eSuperTypes="#//ConversionFactor"/>
+  <eClassifiers xsi:type="ecore:EClass" name="LuminousIntensityConversionFactor" eSuperTypes="#//ConversionFactor"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AngleConversionFactor" eSuperTypes="#//ConversionFactor"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DataStorageCapacityConversionFactor"
+      eSuperTypes="#//ConversionFactor"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EntropyConversionFactor" eSuperTypes="#//ConversionFactor"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TrafficIntensityConversionFactor" eSuperTypes="#//ConversionFactor"/>
+  <eClassifiers xsi:type="ecore:EClass" name="LevelConversionFactor" eSuperTypes="#//ConversionFactor"/>
+  <eClassifiers xsi:type="ecore:EClass" name="NormalDistribution" eSuperTypes="#//MeasurementUncertaintyInformation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="meanValue" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+        <details key="derivation" value="QuantityValue.allInstances()->select(v |&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;v.uncertainty = (MeasurementUncertainty.allInstances()->select(u |&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;u.information = self)->asOrderedSet()->first()))->asOrderedSet()->first().value"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="standardDeviation" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+        <details key="derivation" value="MeasurementUncertainty.allInstances()->select(u |&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;u.information = self)->asOrderedSet()->first().standardUncertainty"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Interval" eSuperTypes="#//MeasurementUncertaintyInformation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="lowerEndpoint" lowerBound="1"
+        eType="#//Quantity" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="upperEndpoint" lowerBound="1"
+        eType="#//Quantity" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MeasurementUncertaintyInformation" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Sampling" eSuperTypes="#//MeasurementUncertaintyInformation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="samples" upperBound="-1"
+        eType="#//Sample" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="measurementProcedure" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Sample">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="quantity" upperBound="-1"
+        eType="#//Quantity" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BaseQuantity" abstract="true" eSuperTypes="#//Quantity"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DerivedQuantity" abstract="true" eSuperTypes="#//Quantity"/>
+  <eClassifiers xsi:type="ecore:EClass" name="BaseQuantityUnit" abstract="true" eSuperTypes="#//Unit"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DerivedQuantityUnit" abstract="true"
+      eSuperTypes="#//Unit"/>
+</ecore:EPackage>

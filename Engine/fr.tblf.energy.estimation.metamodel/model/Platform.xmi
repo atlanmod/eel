@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fr.tblf.energy.estimation.eel:Platform
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:fr.tblf.energy.estimation.eel="http://org.atlanmod.activitydiagram.energy.estimation/eel/"
+    xsi:schemaLocation="http://org.atlanmod.activitydiagram.energy.estimation/eel/ eel.ecore">
+  <measures
+      xsi:type="fr.tblf.energy.estimation.eel:Voltage"/>
+  <measures
+      xsi:type="fr.tblf.energy.estimation.eel:Duration"/>
+  <measures
+      xsi:type="fr.tblf.energy.estimation.eel:Current"/>
+</fr.tblf.energy.estimation.eel:Platform>
