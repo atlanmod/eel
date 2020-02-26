@@ -31,6 +31,15 @@ public class EelTests extends TestSuite {
 	 */
 	public static Test suite() {
 		TestSuite suite = new EelTests("eel Tests");
+		suite.addTestSuite(MeasureValueTest.class);
+		suite.addTestSuite(MeasureOCLTest.class);
+		suite.addTestSuite(MeasureAttributeTest.class);
+		suite.addTestSuite(MeasureCastTest.class);
+		suite.addTestSuite(MeasureProductOperationTest.class);
+		suite.addTestSuite(MeasureSumOperationTest.class);
+		suite.addTestSuite(EnergyComputationTest.class);
+		suite.addTestSuite(PowerComputationTest.class);
+		suite.addTestSuite(NormalDistributionTest.class);
 		return suite;
 	}
 

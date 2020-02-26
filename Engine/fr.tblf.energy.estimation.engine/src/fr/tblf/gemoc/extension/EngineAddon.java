@@ -1,50 +1,45 @@
 package fr.tblf.gemoc.extension;
 
 import java.io.File;
-import java.util.Collection;
+import java.math.BigDecimal;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
+import java.util.function.Function;
 
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.gemoc.trace.commons.model.trace.Step;
-import org.eclipse.gemoc.xdsmlframework.api.core.IExecutionContext;
 import org.eclipse.gemoc.xdsmlframework.api.core.IExecutionEngine;
 import org.eclipse.gemoc.xdsmlframework.api.engine_addon.IEngineAddon;
+import org.eclipse.jdt.annotation.NonNull;
 import org.eclipse.ocl.pivot.ExpressionInOCL;
+import org.eclipse.ocl.pivot.OCLExpression;
 import org.eclipse.ocl.pivot.utilities.OCL;
 import org.eclipse.ocl.pivot.utilities.OCLHelper;
 import org.eclipse.ocl.pivot.utilities.ParserException;
+import org.eclipse.ocl.pivot.utilities.Query;
 
-import eel.Estimation;
-import eel.MetaClass;
-import eel.Operation;
+import eel.Measure;
+import eel.MeasureAttribute;
+import eel.MeasureCast;
+import eel.MeasureOCL;
+import eel.MeasureOperation;
 import eel.Platform;
-import eel.Variable;
-import eel.Visibility;
 
 public class EngineAddon implements IEngineAddon {
 
 	public static File MODEL;
 	private Platform platform;
-	
-	private Map<Class<?>, Estimation> mapClassEstimation;
-	private Map<Step<?>, Long> mapOperationConsumption;
-	
-	private ClassLoader loader;
-	private OCL ocl;
-	private VariableRegistry variableRegistry;
-	
-	
+	private OCL ocl = OCL.newInstance();
+	private Map<String, Measure> mapClassEstimation;
+		
 	@Override
-	public void engineAboutToStart(IExecutionEngine<?> executionEngine) {
-		ocl = OCL.newInstance();
+	public void engineAboutToStart(IExecutionEngine<?> executionEngine) {	
 		if (MODEL == null) {
 			System.out.println("No model chosen ! Please choose an energy estimation model !");
 		} else {
@@ -62,129 +57,115 @@ public class EngineAddon implements IEngineAddon {
 				}
 				
 				mapClassEstimation = new HashMap<>();
-				
+				resource.getAllContents().forEachRemaining(eObject -> {
+					if (eObject instanceof Measure && ((Measure) eObject).getTargetClass() != null) {
+						mapClassEstimation.put(((Measure) eObject).getTargetClass().getName(), (Measure)eObject);
+					}
+				});
 				System.out.println(platform.getName()+" estimation model loaded");
 			} catch (Exception e) {
 				e.printStackTrace();
 			}									
 		}
-		mapOperationConsumption = new HashMap<>();
 		IEngineAddon.super.engineAboutToStart(executionEngine);
 	}
 	
 	@Override
 	public void engineStarted(IExecutionEngine<?> executionEngine) {
 		
-		// Find the model classloader
-		loader = executionEngine.getExecutionContext().getResourceModel().getContents().get(0).getClass().getClassLoader(); 
-		
-		platform.getEstimations().forEach(estimation -> {
-			// https://www.eclipse.org/forums/index.php/mv/msg/304086/813841/#msg_813841
-			
-			String classQN;
-			if (estimation.getTarget() instanceof Operation) {
-				//If the target is an operation, we fetch the containing meta class 
-				classQN = ((MetaClass)(estimation.getTarget().eContainer())).getName();
-			} else {
-				classQN = estimation.getTarget().getName();	
-			}
-					
-			Class<?> clazz;
-			try {
-				clazz = loader.loadClass(classQN);
-				System.out.println(clazz.getName()+" estimation successfully loaded.");
-				mapClassEstimation.put(clazz, estimation);				
-			} catch (ClassNotFoundException e) {			 
-				e.printStackTrace();
-			}	
-					
-		});
-		
-		variableRegistry = new VariableRegistry();
+		System.out.println("Engine started ");
+		// Find the model classloader		 		
+		//variableRegistry = new VariableRegistry();
+		displayPlatformMeasurement(platform);
 		IEngineAddon.super.engineStarted(executionEngine);
 	}
 
 	@Override
 	public void aboutToExecuteStep(IExecutionEngine<?> engine, Step<?> stepToExecute) {
-		if (!variableRegistry.isInitialized())
-			variableRegistry.initialize(mapClassEstimation, stepToExecute.getMseoccurrence().getMse().getCaller().eResource());
 		
-		EObject caller = stepToExecute.getMseoccurrence().getMse().getCaller();
+		EObject caller = stepToExecute.getMseoccurrence().getMse().getCaller();		
 		EOperation operation = stepToExecute.getMseoccurrence().getMse().getAction(); 								
 		
-		for (Entry<Class<?>, Estimation> entry : mapClassEstimation.entrySet()) {			
-			
-			if (entry.getKey() != null && entry.getKey().isInstance(caller) && entry.getValue().getTarget().getName().equals(operation.getName())) {								
-				evaluateQueryOnObject(engine, caller, entry.getValue());
-			} 
+		System.out.println("Running step on object "+caller);
+				
+		//TODO : Operation estimation. right now this is only the class
+		if (mapClassEstimation.get(caller.eClass().getName()) != null) {
+			System.out.println("Found a measure targeting the executed element");
+			Measure m = mapClassEstimation.get(caller.eClass().getName());
+			updateMeasure(m, caller);
+			System.out.println(m.value());
 		}
-		mapOperationConsumption.put(stepToExecute, RAPLMonitor.getEnergy());
 		IEngineAddon.super.aboutToExecuteStep(engine, stepToExecute);
 	}
-
-	@Override
-	public void stepExecuted(IExecutionEngine<?> engine, Step<?> stepExecuted) {
-		Long after = RAPLMonitor.getEnergy();
-		EOperation eOperation = stepExecuted.getMseoccurrence().getMse().getAction();		
-		System.out.println(eOperation.getName()+" consumed "+String.valueOf(after - mapOperationConsumption.get(stepExecuted))+" uj");
+	
+	private void updateMeasure(MeasureAttribute m, EObject caller) {
+		System.out.println("Updating Measure "+m.getName());
+		EAttribute att = m.getAtt();
+		Object object = caller.eGet(caller.eClass().getEAttributes().stream().filter(eAtt -> eAtt.getName().equals(att.getName())).findFirst().get());
 		
-		IEngineAddon.super.stepExecuted(engine, stepExecuted);		
+		m.setValue(BigDecimal.valueOf(Long.valueOf(object.toString())));
 	}
 	
-	private void evaluateQueryOnObject(IExecutionEngine<?> executionEngine, EObject target, Estimation estimation) {
-		OCLHelper helper;
+	private void updateMeasure(MeasureOCL m, EObject caller) {
+		System.out.println("Updating Measure "+m.getName());
+		String query = m.getOclQuery();
 		try {
-			helper = ocl.createOCLHelper(target.eClass());
-			String formula = sanitizedFormula(estimation);
-			System.out.println(formula);
-			ExpressionInOCL expressionInOCL = helper.createQuery(formula);
-		
-			System.out.println(ocl.evaluate(target, expressionInOCL)+" uJ ");
+			OCLHelper helper = ocl.createOCLHelper(caller.eClass());
+			ExpressionInOCL expression = helper.createQuery(query);
+			m.setValue(BigDecimal.valueOf(Long.valueOf(ocl.evaluate(caller, expression).toString())));			
 		} catch (ParserException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
+		}		
+	}
+	
+	private void updateMeasure(MeasureOperation m, EObject caller) {
+		System.out.println("Updating Measure "+m.getName());
+		updateMeasure(m.getLeft(), caller);
+		updateMeasure(m.getRight(), caller);
+	}
+	
+	private void updateMeasure(MeasureCast m, EObject caller) {
+		System.out.println("Updating Measure "+m.getName());
+		updateMeasure(m.getMeasure(), caller);
+	}
+	
+	private void updateMeasure(Measure m, EObject caller) {
+		if (m instanceof MeasureOperation) {
+			updateMeasure((MeasureOperation) m, caller);
+		}
+		if (m instanceof MeasureOCL) {
+			updateMeasure((MeasureOCL) m, caller);
+		}
+		if (m instanceof MeasureAttribute) {
+			updateMeasure((MeasureAttribute) m, caller);
 		}
 	}
 	
-	/**
-	 * Generates an executable OCL query from the formula of an estimation.
-	 * Clears the variables by their values using the {@link Estimation} {@link Variable}s
-	 * @param estimation an {@link Estimation}
-	 * @return an OCL Query as a {@link String}
-	 */
-	private String sanitizedFormula(Estimation estimation) {
-		StringBuilder formula = new StringBuilder(estimation.getFormula());
-		List<Variable> variables = estimation.getVariables();
+	public static void displayPlatformMeasurement(Platform p) {
 		
-		variables.stream().filter(variable -> Visibility.GLOBAL.equals(variable.getVibility())).forEach(variable -> {
-			replaceAll(formula, variable.getName(), String.valueOf(variable.getValue())); 
+		p.getMeasures().forEach(m -> {
+			topDownTreeAnalysis(m, (Measure measure) -> {
+				System.out.print(measure.getName() +" " +measure.type()+" : "+measure.eClass().getName());
+				if (measure.getTargetClass() != null)
+					System.out.print(" -> "+measure.getTargetClass().getName());
+				if (measure.getTargetOperation() != null)
+					System.out.print(" -> "+measure.getTargetOperation().getName());
+				
+				System.out.println("");
+				return null;
+			}); 
 		});
 		
-		final StringBuilder sb = new StringBuilder();
-		
-		if (variables.stream().filter(variable -> Visibility.LOCAL.equals(variable.getVibility())).count() > 0) {
-			sb.append("let ");
-			
-			variables.stream().filter(variable -> Visibility.LOCAL.equals(variable.getVibility())).forEach(variable -> {
-				sb.append(variable.getName()+" : Real = "+variable.getValue()+" ,");
-			});
-			
-			sb.deleteCharAt(sb.length()-1);
-			sb.append(" in ");
-		}
-		
-		return sb.toString().concat(formula.toString());
+		System.out.println("");
 	}
-
-	//https://stackoverflow.com/a/3472705/7158736
-	public static void replaceAll(StringBuilder builder, String from, String to)
-	{
-	    int index = builder.indexOf(from);
-	    while (index != -1)
-	    {
-	        builder.replace(index, index + from.length(), to);
-	        index += to.length(); // Move to the end of the replacement
-	        index = builder.indexOf(from, index);
-	    }
+	
+	public static void topDownTreeAnalysis(Measure m, Function<Measure, Void> function) {		
+		function.apply(m);
+		System.out.print("\t");
+		m.eContents().stream()
+		.filter(o -> o instanceof Measure)
+		.map(o -> (Measure) o)
+		.forEach(containedMeasure -> topDownTreeAnalysis(containedMeasure, function));
 	}
-
 }

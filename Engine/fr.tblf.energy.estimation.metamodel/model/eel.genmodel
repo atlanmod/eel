@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ASCII"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/fr.tblf.energy.estimation.metamodel/src" modelPluginID="fr.tblf.energy.estimation.metamodel"
     modelName="Eel" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
@@ -6,36 +6,95 @@
     operationReflection="true" importOrganizing="true">
   <foreignModel>eel.ecore</foreignModel>
   <genPackages prefix="Eel" disposableProviderFactory="true" ecorePackage="eel.ecore#/">
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="eel.ecore#//Level">
-      <genEnumLiterals ecoreEnumLiteral="eel.ecore#//Level/DESIGN"/>
-      <genEnumLiterals ecoreEnumLiteral="eel.ecore#//Level/SIMULATION"/>
-    </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="eel.ecore#//Visibility">
       <genEnumLiterals ecoreEnumLiteral="eel.ecore#//Visibility/LOCAL"/>
       <genEnumLiterals ecoreEnumLiteral="eel.ecore#//Visibility/GLOBAL"/>
     </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="eel.ecore#//Type">
+      <genEnumLiterals ecoreEnumLiteral="eel.ecore#//Type/Energy"/>
+      <genEnumLiterals ecoreEnumLiteral="eel.ecore#//Type/Duration"/>
+      <genEnumLiterals ecoreEnumLiteral="eel.ecore#//Type/Power"/>
+      <genEnumLiterals ecoreEnumLiteral="eel.ecore#//Type/Current"/>
+      <genEnumLiterals ecoreEnumLiteral="eel.ecore#//Type/Voltage"/>
+      <genEnumLiterals ecoreEnumLiteral="eel.ecore#//Type/Scalar"/>
+      <genEnumLiterals ecoreEnumLiteral="eel.ecore#//Type/Frequency"/>
+    </genEnums>
     <genClasses ecoreClass="eel.ecore#//Platform">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eel.ecore#//Platform/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eel.ecore#//Platform/estimations"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eel.ecore#//Platform/variables"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eel.ecore#//Platform/targets"/>
-    </genClasses>
-    <genClasses ecoreClass="eel.ecore#//Estimation">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eel.ecore#//Estimation/formula"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eel.ecore#//Estimation/target"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eel.ecore#//Estimation/variables"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eel.ecore#//Platform/measures"/>
     </genClasses>
     <genClasses ecoreClass="eel.ecore#//Variable">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eel.ecore#//Variable/value"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eel.ecore#//Variable/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eel.ecore#//Variable/vibility"/>
     </genClasses>
-    <genClasses image="false" ecoreClass="eel.ecore#//Target">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eel.ecore#//Target/name"/>
+    <genClasses image="false" ecoreClass="eel.ecore#//Measure">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eel.ecore#//Measure/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eel.ecore#//Measure/targetClass"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eel.ecore#//Measure/targetOperation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eel.ecore#//Measure/uncertainty"/>
+      <genOperations ecoreOperation="eel.ecore#//Measure/type"/>
+      <genOperations ecoreOperation="eel.ecore#//Measure/value"/>
     </genClasses>
-    <genClasses ecoreClass="eel.ecore#//MetaClass">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eel.ecore#//MetaClass/operations"/>
+    <genClasses image="false" ecoreClass="eel.ecore#//TypedMeasure">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eel.ecore#//TypedMeasure/type.1"/>
+      <genOperations ecoreOperation="eel.ecore#//TypedMeasure/type"/>
     </genClasses>
-    <genClasses ecoreClass="eel.ecore#//Operation"/>
+    <genClasses ecoreClass="eel.ecore#//MeasureValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eel.ecore#//MeasureValue/value.1"/>
+      <genOperations ecoreOperation="eel.ecore#//MeasureValue/value"/>
+    </genClasses>
+    <genClasses ecoreClass="eel.ecore#//MeasureOCL">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eel.ecore#//MeasureOCL/oclQuery"/>
+    </genClasses>
+    <genClasses ecoreClass="eel.ecore#//MeasureAttribute">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eel.ecore#//MeasureAttribute/att"/>
+    </genClasses>
+    <genClasses ecoreClass="eel.ecore#//MeasureCast">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eel.ecore#//MeasureCast/measure"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="eel.ecore#//MeasureOperation">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eel.ecore#//MeasureOperation/left"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eel.ecore#//MeasureOperation/right"/>
+    </genClasses>
+    <genClasses ecoreClass="eel.ecore#//MeasureProductOperation">
+      <genOperations ecoreOperation="eel.ecore#//MeasureProductOperation/value"/>
+    </genClasses>
+    <genClasses ecoreClass="eel.ecore#//MeasureSumOperation">
+      <genOperations ecoreOperation="eel.ecore#//MeasureSumOperation/value"/>
+    </genClasses>
+    <genClasses ecoreClass="eel.ecore#//EnergyComputation">
+      <genOperations ecoreOperation="eel.ecore#//EnergyComputation/type"/>
+      <genOperations ecoreOperation="eel.ecore#//EnergyComputation/value"/>
+    </genClasses>
+    <genClasses ecoreClass="eel.ecore#//PowerComputation">
+      <genOperations ecoreOperation="eel.ecore#//PowerComputation/type"/>
+      <genOperations ecoreOperation="eel.ecore#//PowerComputation/value"/>
+    </genClasses>
+    <genClasses ecoreClass="eel.ecore#//MeasurementUncertainty">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eel.ecore#//MeasurementUncertainty/information"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eel.ecore#//MeasurementUncertainty/standardUncertainty"/>
+    </genClasses>
+    <genClasses ecoreClass="eel.ecore#//NormalDistribution">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eel.ecore#//NormalDistribution/meanValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eel.ecore#//NormalDistribution/standardDeviation"/>
+    </genClasses>
+    <genClasses ecoreClass="eel.ecore#//Interval">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eel.ecore#//Interval/lowerEndpoint"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eel.ecore#//Interval/upperEndpoint"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="eel.ecore#//MeasurementUncertaintyInformation"/>
+    <genClasses ecoreClass="eel.ecore#//Sampling">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eel.ecore#//Sampling/samples"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eel.ecore#//Sampling/measurementProcedure"/>
+    </genClasses>
+    <genClasses ecoreClass="eel.ecore#//Integral">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eel.ecore#//Integral/interval"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eel.ecore#//Integral/function"/>
+    </genClasses>
+    <genClasses ecoreClass="eel.ecore#//Sample">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eel.ecore#//Sample/quantity"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

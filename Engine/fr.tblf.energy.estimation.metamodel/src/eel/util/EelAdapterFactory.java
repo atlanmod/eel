@@ -72,24 +72,80 @@ public class EelAdapterFactory extends AdapterFactoryImpl {
 				return createPlatformAdapter();
 			}
 			@Override
-			public Adapter caseEstimation(Estimation object) {
-				return createEstimationAdapter();
-			}
-			@Override
 			public Adapter caseVariable(Variable object) {
 				return createVariableAdapter();
 			}
 			@Override
-			public Adapter caseTarget(Target object) {
-				return createTargetAdapter();
+			public Adapter caseMeasure(Measure object) {
+				return createMeasureAdapter();
 			}
 			@Override
-			public Adapter caseMetaClass(MetaClass object) {
-				return createMetaClassAdapter();
+			public Adapter caseTypedMeasure(TypedMeasure object) {
+				return createTypedMeasureAdapter();
 			}
 			@Override
-			public Adapter caseOperation(Operation object) {
-				return createOperationAdapter();
+			public Adapter caseMeasureValue(MeasureValue object) {
+				return createMeasureValueAdapter();
+			}
+			@Override
+			public Adapter caseMeasureOCL(MeasureOCL object) {
+				return createMeasureOCLAdapter();
+			}
+			@Override
+			public Adapter caseMeasureAttribute(MeasureAttribute object) {
+				return createMeasureAttributeAdapter();
+			}
+			@Override
+			public Adapter caseMeasureCast(MeasureCast object) {
+				return createMeasureCastAdapter();
+			}
+			@Override
+			public Adapter caseMeasureOperation(MeasureOperation object) {
+				return createMeasureOperationAdapter();
+			}
+			@Override
+			public Adapter caseMeasureProductOperation(MeasureProductOperation object) {
+				return createMeasureProductOperationAdapter();
+			}
+			@Override
+			public Adapter caseMeasureSumOperation(MeasureSumOperation object) {
+				return createMeasureSumOperationAdapter();
+			}
+			@Override
+			public Adapter caseEnergyComputation(EnergyComputation object) {
+				return createEnergyComputationAdapter();
+			}
+			@Override
+			public Adapter casePowerComputation(PowerComputation object) {
+				return createPowerComputationAdapter();
+			}
+			@Override
+			public Adapter caseMeasurementUncertainty(MeasurementUncertainty object) {
+				return createMeasurementUncertaintyAdapter();
+			}
+			@Override
+			public Adapter caseNormalDistribution(NormalDistribution object) {
+				return createNormalDistributionAdapter();
+			}
+			@Override
+			public Adapter caseInterval(Interval object) {
+				return createIntervalAdapter();
+			}
+			@Override
+			public Adapter caseMeasurementUncertaintyInformation(MeasurementUncertaintyInformation object) {
+				return createMeasurementUncertaintyInformationAdapter();
+			}
+			@Override
+			public Adapter caseSampling(Sampling object) {
+				return createSamplingAdapter();
+			}
+			@Override
+			public Adapter caseIntegral(Integral object) {
+				return createIntegralAdapter();
+			}
+			@Override
+			public Adapter caseSample(Sample object) {
+				return createSampleAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -126,20 +182,6 @@ public class EelAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link eel.Estimation <em>Estimation</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see eel.Estimation
-	 * @generated
-	 */
-	public Adapter createEstimationAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link eel.Variable <em>Variable</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -154,44 +196,254 @@ public class EelAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link eel.Target <em>Target</em>}'.
+	 * Creates a new adapter for an object of class '{@link eel.Measure <em>Measure</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see eel.Target
+	 * @see eel.Measure
 	 * @generated
 	 */
-	public Adapter createTargetAdapter() {
+	public Adapter createMeasureAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link eel.MetaClass <em>Meta Class</em>}'.
+	 * Creates a new adapter for an object of class '{@link eel.TypedMeasure <em>Typed Measure</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see eel.MetaClass
+	 * @see eel.TypedMeasure
 	 * @generated
 	 */
-	public Adapter createMetaClassAdapter() {
+	public Adapter createTypedMeasureAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link eel.Operation <em>Operation</em>}'.
+	 * Creates a new adapter for an object of class '{@link eel.MeasureValue <em>Measure Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see eel.Operation
+	 * @see eel.MeasureValue
 	 * @generated
 	 */
-	public Adapter createOperationAdapter() {
+	public Adapter createMeasureValueAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link eel.MeasureOCL <em>Measure OCL</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see eel.MeasureOCL
+	 * @generated
+	 */
+	public Adapter createMeasureOCLAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link eel.MeasureAttribute <em>Measure Attribute</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see eel.MeasureAttribute
+	 * @generated
+	 */
+	public Adapter createMeasureAttributeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link eel.MeasureCast <em>Measure Cast</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see eel.MeasureCast
+	 * @generated
+	 */
+	public Adapter createMeasureCastAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link eel.MeasureOperation <em>Measure Operation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see eel.MeasureOperation
+	 * @generated
+	 */
+	public Adapter createMeasureOperationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link eel.MeasureProductOperation <em>Measure Product Operation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see eel.MeasureProductOperation
+	 * @generated
+	 */
+	public Adapter createMeasureProductOperationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link eel.MeasureSumOperation <em>Measure Sum Operation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see eel.MeasureSumOperation
+	 * @generated
+	 */
+	public Adapter createMeasureSumOperationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link eel.EnergyComputation <em>Energy Computation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see eel.EnergyComputation
+	 * @generated
+	 */
+	public Adapter createEnergyComputationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link eel.PowerComputation <em>Power Computation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see eel.PowerComputation
+	 * @generated
+	 */
+	public Adapter createPowerComputationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link eel.MeasurementUncertainty <em>Measurement Uncertainty</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see eel.MeasurementUncertainty
+	 * @generated
+	 */
+	public Adapter createMeasurementUncertaintyAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link eel.NormalDistribution <em>Normal Distribution</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see eel.NormalDistribution
+	 * @generated
+	 */
+	public Adapter createNormalDistributionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link eel.Interval <em>Interval</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see eel.Interval
+	 * @generated
+	 */
+	public Adapter createIntervalAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link eel.MeasurementUncertaintyInformation <em>Measurement Uncertainty Information</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see eel.MeasurementUncertaintyInformation
+	 * @generated
+	 */
+	public Adapter createMeasurementUncertaintyInformationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link eel.Sampling <em>Sampling</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see eel.Sampling
+	 * @generated
+	 */
+	public Adapter createSamplingAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link eel.Integral <em>Integral</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see eel.Integral
+	 * @generated
+	 */
+	public Adapter createIntegralAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link eel.Sample <em>Sample</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see eel.Sample
+	 * @generated
+	 */
+	public Adapter createSampleAdapter() {
 		return null;
 	}
 

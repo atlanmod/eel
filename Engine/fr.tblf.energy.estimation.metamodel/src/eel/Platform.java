@@ -16,9 +16,8 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link eel.Platform#getName <em>Name</em>}</li>
- *   <li>{@link eel.Platform#getEstimations <em>Estimations</em>}</li>
  *   <li>{@link eel.Platform#getVariables <em>Variables</em>}</li>
- *   <li>{@link eel.Platform#getTargets <em>Targets</em>}</li>
+ *   <li>{@link eel.Platform#getMeasures <em>Measures</em>}</li>
  * </ul>
  *
  * @see eel.EelPackage#getPlatform()
@@ -53,22 +52,6 @@ public interface Platform extends EObject {
 	void setName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Estimations</b></em>' containment reference list.
-	 * The list contents are of type {@link eel.Estimation}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Estimations</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Estimations</em>' containment reference list.
-	 * @see eel.EelPackage#getPlatform_Estimations()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<Estimation> getEstimations();
-
-	/**
 	 * Returns the value of the '<em><b>Variables</b></em>' containment reference list.
 	 * The list contents are of type {@link eel.Variable}.
 	 * <!-- begin-user-doc -->
@@ -85,19 +68,19 @@ public interface Platform extends EObject {
 	EList<Variable> getVariables();
 
 	/**
-	 * Returns the value of the '<em><b>Targets</b></em>' containment reference list.
-	 * The list contents are of type {@link eel.MetaClass}.
+	 * Returns the value of the '<em><b>Measures</b></em>' containment reference list.
+	 * The list contents are of type {@link eel.Measure}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Targets</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Measures</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Targets</em>' containment reference list.
-	 * @see eel.EelPackage#getPlatform_Targets()
+	 * @return the value of the '<em>Measures</em>' containment reference list.
+	 * @see eel.EelPackage#getPlatform_Measures()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<MetaClass> getTargets();
+	EList<Measure> getMeasures();
 
 } // Platform

@@ -103,6 +103,7 @@ public class Services {
 		try {
 			helper = ocl.createOCLHelper(eObject.eClass());
 			String formula = sanitizedFormula(estimation);
+			System.out.println("Evaluating: "+formula);
 			ExpressionInOCL expressionInOCL = helper.createQuery(formula);
 			Object object = ocl.evaluate(eObject, expressionInOCL);
 			RealValueImpl val = (RealValueImpl) object;

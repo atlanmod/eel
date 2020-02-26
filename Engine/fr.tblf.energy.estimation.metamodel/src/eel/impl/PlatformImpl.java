@@ -3,10 +3,10 @@
 package eel.impl;
 
 import eel.EelPackage;
-import eel.Estimation;
-import eel.MetaClass;
+import eel.Measure;
 import eel.Platform;
 import eel.Variable;
+
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -32,9 +32,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link eel.impl.PlatformImpl#getName <em>Name</em>}</li>
- *   <li>{@link eel.impl.PlatformImpl#getEstimations <em>Estimations</em>}</li>
  *   <li>{@link eel.impl.PlatformImpl#getVariables <em>Variables</em>}</li>
- *   <li>{@link eel.impl.PlatformImpl#getTargets <em>Targets</em>}</li>
+ *   <li>{@link eel.impl.PlatformImpl#getMeasures <em>Measures</em>}</li>
  * </ul>
  *
  * @generated
@@ -61,16 +60,6 @@ public class PlatformImpl extends MinimalEObjectImpl.Container implements Platfo
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getEstimations() <em>Estimations</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEstimations()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Estimation> estimations;
-
-	/**
 	 * The cached value of the '{@link #getVariables() <em>Variables</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -81,14 +70,14 @@ public class PlatformImpl extends MinimalEObjectImpl.Container implements Platfo
 	protected EList<Variable> variables;
 
 	/**
-	 * The cached value of the '{@link #getTargets() <em>Targets</em>}' containment reference list.
+	 * The cached value of the '{@link #getMeasures() <em>Measures</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTargets()
+	 * @see #getMeasures()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<MetaClass> targets;
+	protected EList<Measure> measures;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -135,18 +124,6 @@ public class PlatformImpl extends MinimalEObjectImpl.Container implements Platfo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Estimation> getEstimations() {
-		if (estimations == null) {
-			estimations = new EObjectContainmentEList<Estimation>(Estimation.class, this, EelPackage.PLATFORM__ESTIMATIONS);
-		}
-		return estimations;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EList<Variable> getVariables() {
 		if (variables == null) {
 			variables = new EObjectContainmentEList<Variable>(Variable.class, this, EelPackage.PLATFORM__VARIABLES);
@@ -159,11 +136,11 @@ public class PlatformImpl extends MinimalEObjectImpl.Container implements Platfo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<MetaClass> getTargets() {
-		if (targets == null) {
-			targets = new EObjectContainmentEList<MetaClass>(MetaClass.class, this, EelPackage.PLATFORM__TARGETS);
+	public EList<Measure> getMeasures() {
+		if (measures == null) {
+			measures = new EObjectContainmentEList<Measure>(Measure.class, this, EelPackage.PLATFORM__MEASURES);
 		}
-		return targets;
+		return measures;
 	}
 
 	/**
@@ -174,12 +151,10 @@ public class PlatformImpl extends MinimalEObjectImpl.Container implements Platfo
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case EelPackage.PLATFORM__ESTIMATIONS:
-				return ((InternalEList<?>)getEstimations()).basicRemove(otherEnd, msgs);
 			case EelPackage.PLATFORM__VARIABLES:
 				return ((InternalEList<?>)getVariables()).basicRemove(otherEnd, msgs);
-			case EelPackage.PLATFORM__TARGETS:
-				return ((InternalEList<?>)getTargets()).basicRemove(otherEnd, msgs);
+			case EelPackage.PLATFORM__MEASURES:
+				return ((InternalEList<?>)getMeasures()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -194,12 +169,10 @@ public class PlatformImpl extends MinimalEObjectImpl.Container implements Platfo
 		switch (featureID) {
 			case EelPackage.PLATFORM__NAME:
 				return getName();
-			case EelPackage.PLATFORM__ESTIMATIONS:
-				return getEstimations();
 			case EelPackage.PLATFORM__VARIABLES:
 				return getVariables();
-			case EelPackage.PLATFORM__TARGETS:
-				return getTargets();
+			case EelPackage.PLATFORM__MEASURES:
+				return getMeasures();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -216,17 +189,13 @@ public class PlatformImpl extends MinimalEObjectImpl.Container implements Platfo
 			case EelPackage.PLATFORM__NAME:
 				setName((String)newValue);
 				return;
-			case EelPackage.PLATFORM__ESTIMATIONS:
-				getEstimations().clear();
-				getEstimations().addAll((Collection<? extends Estimation>)newValue);
-				return;
 			case EelPackage.PLATFORM__VARIABLES:
 				getVariables().clear();
 				getVariables().addAll((Collection<? extends Variable>)newValue);
 				return;
-			case EelPackage.PLATFORM__TARGETS:
-				getTargets().clear();
-				getTargets().addAll((Collection<? extends MetaClass>)newValue);
+			case EelPackage.PLATFORM__MEASURES:
+				getMeasures().clear();
+				getMeasures().addAll((Collection<? extends Measure>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -243,14 +212,11 @@ public class PlatformImpl extends MinimalEObjectImpl.Container implements Platfo
 			case EelPackage.PLATFORM__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case EelPackage.PLATFORM__ESTIMATIONS:
-				getEstimations().clear();
-				return;
 			case EelPackage.PLATFORM__VARIABLES:
 				getVariables().clear();
 				return;
-			case EelPackage.PLATFORM__TARGETS:
-				getTargets().clear();
+			case EelPackage.PLATFORM__MEASURES:
+				getMeasures().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -266,12 +232,10 @@ public class PlatformImpl extends MinimalEObjectImpl.Container implements Platfo
 		switch (featureID) {
 			case EelPackage.PLATFORM__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case EelPackage.PLATFORM__ESTIMATIONS:
-				return estimations != null && !estimations.isEmpty();
 			case EelPackage.PLATFORM__VARIABLES:
 				return variables != null && !variables.isEmpty();
-			case EelPackage.PLATFORM__TARGETS:
-				return targets != null && !targets.isEmpty();
+			case EelPackage.PLATFORM__MEASURES:
+				return measures != null && !measures.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

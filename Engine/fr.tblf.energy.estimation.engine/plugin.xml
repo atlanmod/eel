@@ -12,14 +12,16 @@
       </Addon>
    </extension>
    <extension
+         id="fr.tblf.energy.estimation.menu"
          point="org.eclipse.ui.menus">
       <menuContribution
             allPopups="false"
             locationURI="menu:org.eclipse.ui.main.menu?after=additions">
          <menu
+               id="fr.tblf.energy.menu"
                label="Energy">
             <menu
-                  label="Model">
+                  label="Estimation Model">
                <command
                      commandId="fr.tblf.energy.estimation.engine.setmodelcommand"
                      label="Set Model"

@@ -58,10 +58,21 @@ public class EelFactoryImpl extends EFactoryImpl implements EelFactory {
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case EelPackage.PLATFORM: return createPlatform();
-			case EelPackage.ESTIMATION: return createEstimation();
 			case EelPackage.VARIABLE: return createVariable();
-			case EelPackage.META_CLASS: return createMetaClass();
-			case EelPackage.OPERATION: return createOperation();
+			case EelPackage.MEASURE_VALUE: return createMeasureValue();
+			case EelPackage.MEASURE_OCL: return createMeasureOCL();
+			case EelPackage.MEASURE_ATTRIBUTE: return createMeasureAttribute();
+			case EelPackage.MEASURE_CAST: return createMeasureCast();
+			case EelPackage.MEASURE_PRODUCT_OPERATION: return createMeasureProductOperation();
+			case EelPackage.MEASURE_SUM_OPERATION: return createMeasureSumOperation();
+			case EelPackage.ENERGY_COMPUTATION: return createEnergyComputation();
+			case EelPackage.POWER_COMPUTATION: return createPowerComputation();
+			case EelPackage.MEASUREMENT_UNCERTAINTY: return createMeasurementUncertainty();
+			case EelPackage.NORMAL_DISTRIBUTION: return createNormalDistribution();
+			case EelPackage.INTERVAL: return createInterval();
+			case EelPackage.SAMPLING: return createSampling();
+			case EelPackage.INTEGRAL: return createIntegral();
+			case EelPackage.SAMPLE: return createSample();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -75,10 +86,10 @@ public class EelFactoryImpl extends EFactoryImpl implements EelFactory {
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
-			case EelPackage.LEVEL:
-				return createLevelFromString(eDataType, initialValue);
 			case EelPackage.VISIBILITY:
 				return createVisibilityFromString(eDataType, initialValue);
+			case EelPackage.TYPE:
+				return createTypeFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -92,10 +103,10 @@ public class EelFactoryImpl extends EFactoryImpl implements EelFactory {
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
-			case EelPackage.LEVEL:
-				return convertLevelToString(eDataType, instanceValue);
 			case EelPackage.VISIBILITY:
 				return convertVisibilityToString(eDataType, instanceValue);
+			case EelPackage.TYPE:
+				return convertTypeToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -116,16 +127,6 @@ public class EelFactoryImpl extends EFactoryImpl implements EelFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Estimation createEstimation() {
-		EstimationImpl estimation = new EstimationImpl();
-		return estimation;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public Variable createVariable() {
 		VariableImpl variable = new VariableImpl();
 		return variable;
@@ -136,9 +137,9 @@ public class EelFactoryImpl extends EFactoryImpl implements EelFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MetaClass createMetaClass() {
-		MetaClassImpl metaClass = new MetaClassImpl();
-		return metaClass;
+	public MeasureValue createMeasureValue() {
+		MeasureValueImpl measureValue = new MeasureValueImpl();
+		return measureValue;
 	}
 
 	/**
@@ -146,9 +147,9 @@ public class EelFactoryImpl extends EFactoryImpl implements EelFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Operation createOperation() {
-		OperationImpl operation = new OperationImpl();
-		return operation;
+	public MeasureOCL createMeasureOCL() {
+		MeasureOCLImpl measureOCL = new MeasureOCLImpl();
+		return measureOCL;
 	}
 
 	/**
@@ -156,10 +157,9 @@ public class EelFactoryImpl extends EFactoryImpl implements EelFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Level createLevelFromString(EDataType eDataType, String initialValue) {
-		Level result = Level.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		return result;
+	public MeasureAttribute createMeasureAttribute() {
+		MeasureAttributeImpl measureAttribute = new MeasureAttributeImpl();
+		return measureAttribute;
 	}
 
 	/**
@@ -167,8 +167,109 @@ public class EelFactoryImpl extends EFactoryImpl implements EelFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String convertLevelToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+	public MeasureCast createMeasureCast() {
+		MeasureCastImpl measureCast = new MeasureCastImpl();
+		return measureCast;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MeasureProductOperation createMeasureProductOperation() {
+		MeasureProductOperationImpl measureProductOperation = new MeasureProductOperationImpl();
+		return measureProductOperation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MeasureSumOperation createMeasureSumOperation() {
+		MeasureSumOperationImpl measureSumOperation = new MeasureSumOperationImpl();
+		return measureSumOperation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EnergyComputation createEnergyComputation() {
+		EnergyComputationImpl energyComputation = new EnergyComputationImpl();
+		return energyComputation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PowerComputation createPowerComputation() {
+		PowerComputationImpl powerComputation = new PowerComputationImpl();
+		return powerComputation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MeasurementUncertainty createMeasurementUncertainty() {
+		MeasurementUncertaintyImpl measurementUncertainty = new MeasurementUncertaintyImpl();
+		return measurementUncertainty;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NormalDistribution createNormalDistribution() {
+		NormalDistributionImpl normalDistribution = new NormalDistributionImpl();
+		return normalDistribution;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Interval createInterval() {
+		IntervalImpl interval = new IntervalImpl();
+		return interval;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Sampling createSampling() {
+		SamplingImpl sampling = new SamplingImpl();
+		return sampling;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Integral createIntegral() {
+		IntegralImpl integral = new IntegralImpl();
+		return integral;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Sample createSample() {
+		SampleImpl sample = new SampleImpl();
+		return sample;
 	}
 
 	/**
@@ -188,6 +289,26 @@ public class EelFactoryImpl extends EFactoryImpl implements EelFactory {
 	 * @generated
 	 */
 	public String convertVisibilityToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Type createTypeFromString(EDataType eDataType, String initialValue) {
+		Type result = Type.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertTypeToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

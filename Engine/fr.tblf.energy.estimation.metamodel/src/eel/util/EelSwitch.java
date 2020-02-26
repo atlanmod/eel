@@ -72,35 +72,143 @@ public class EelSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case EelPackage.ESTIMATION: {
-				Estimation estimation = (Estimation)theEObject;
-				T result = caseEstimation(estimation);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case EelPackage.VARIABLE: {
 				Variable variable = (Variable)theEObject;
 				T result = caseVariable(variable);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case EelPackage.TARGET: {
-				Target target = (Target)theEObject;
-				T result = caseTarget(target);
+			case EelPackage.MEASURE: {
+				Measure measure = (Measure)theEObject;
+				T result = caseMeasure(measure);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case EelPackage.META_CLASS: {
-				MetaClass metaClass = (MetaClass)theEObject;
-				T result = caseMetaClass(metaClass);
-				if (result == null) result = caseTarget(metaClass);
+			case EelPackage.TYPED_MEASURE: {
+				TypedMeasure typedMeasure = (TypedMeasure)theEObject;
+				T result = caseTypedMeasure(typedMeasure);
+				if (result == null) result = caseMeasure(typedMeasure);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case EelPackage.OPERATION: {
-				Operation operation = (Operation)theEObject;
-				T result = caseOperation(operation);
-				if (result == null) result = caseTarget(operation);
+			case EelPackage.MEASURE_VALUE: {
+				MeasureValue measureValue = (MeasureValue)theEObject;
+				T result = caseMeasureValue(measureValue);
+				if (result == null) result = caseTypedMeasure(measureValue);
+				if (result == null) result = caseMeasure(measureValue);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case EelPackage.MEASURE_OCL: {
+				MeasureOCL measureOCL = (MeasureOCL)theEObject;
+				T result = caseMeasureOCL(measureOCL);
+				if (result == null) result = caseMeasureValue(measureOCL);
+				if (result == null) result = caseTypedMeasure(measureOCL);
+				if (result == null) result = caseMeasure(measureOCL);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case EelPackage.MEASURE_ATTRIBUTE: {
+				MeasureAttribute measureAttribute = (MeasureAttribute)theEObject;
+				T result = caseMeasureAttribute(measureAttribute);
+				if (result == null) result = caseMeasureValue(measureAttribute);
+				if (result == null) result = caseTypedMeasure(measureAttribute);
+				if (result == null) result = caseMeasure(measureAttribute);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case EelPackage.MEASURE_CAST: {
+				MeasureCast measureCast = (MeasureCast)theEObject;
+				T result = caseMeasureCast(measureCast);
+				if (result == null) result = caseTypedMeasure(measureCast);
+				if (result == null) result = caseMeasure(measureCast);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case EelPackage.MEASURE_OPERATION: {
+				MeasureOperation measureOperation = (MeasureOperation)theEObject;
+				T result = caseMeasureOperation(measureOperation);
+				if (result == null) result = caseMeasure(measureOperation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case EelPackage.MEASURE_PRODUCT_OPERATION: {
+				MeasureProductOperation measureProductOperation = (MeasureProductOperation)theEObject;
+				T result = caseMeasureProductOperation(measureProductOperation);
+				if (result == null) result = caseMeasureOperation(measureProductOperation);
+				if (result == null) result = caseMeasure(measureProductOperation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case EelPackage.MEASURE_SUM_OPERATION: {
+				MeasureSumOperation measureSumOperation = (MeasureSumOperation)theEObject;
+				T result = caseMeasureSumOperation(measureSumOperation);
+				if (result == null) result = caseMeasureOperation(measureSumOperation);
+				if (result == null) result = caseMeasure(measureSumOperation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case EelPackage.ENERGY_COMPUTATION: {
+				EnergyComputation energyComputation = (EnergyComputation)theEObject;
+				T result = caseEnergyComputation(energyComputation);
+				if (result == null) result = caseMeasureProductOperation(energyComputation);
+				if (result == null) result = caseMeasureOperation(energyComputation);
+				if (result == null) result = caseMeasure(energyComputation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case EelPackage.POWER_COMPUTATION: {
+				PowerComputation powerComputation = (PowerComputation)theEObject;
+				T result = casePowerComputation(powerComputation);
+				if (result == null) result = caseMeasureProductOperation(powerComputation);
+				if (result == null) result = caseMeasureOperation(powerComputation);
+				if (result == null) result = caseMeasure(powerComputation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case EelPackage.MEASUREMENT_UNCERTAINTY: {
+				MeasurementUncertainty measurementUncertainty = (MeasurementUncertainty)theEObject;
+				T result = caseMeasurementUncertainty(measurementUncertainty);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case EelPackage.NORMAL_DISTRIBUTION: {
+				NormalDistribution normalDistribution = (NormalDistribution)theEObject;
+				T result = caseNormalDistribution(normalDistribution);
+				if (result == null) result = caseMeasurementUncertaintyInformation(normalDistribution);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case EelPackage.INTERVAL: {
+				Interval interval = (Interval)theEObject;
+				T result = caseInterval(interval);
+				if (result == null) result = caseMeasurementUncertaintyInformation(interval);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case EelPackage.MEASUREMENT_UNCERTAINTY_INFORMATION: {
+				MeasurementUncertaintyInformation measurementUncertaintyInformation = (MeasurementUncertaintyInformation)theEObject;
+				T result = caseMeasurementUncertaintyInformation(measurementUncertaintyInformation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case EelPackage.SAMPLING: {
+				Sampling sampling = (Sampling)theEObject;
+				T result = caseSampling(sampling);
+				if (result == null) result = caseMeasurementUncertaintyInformation(sampling);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case EelPackage.INTEGRAL: {
+				Integral integral = (Integral)theEObject;
+				T result = caseIntegral(integral);
+				if (result == null) result = caseMeasurementUncertaintyInformation(integral);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case EelPackage.SAMPLE: {
+				Sample sample = (Sample)theEObject;
+				T result = caseSample(sample);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -124,21 +232,6 @@ public class EelSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Estimation</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Estimation</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseEstimation(Estimation object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Variable</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -154,47 +247,272 @@ public class EelSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Target</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Measure</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Target</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Measure</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseTarget(Target object) {
+	public T caseMeasure(Measure object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Meta Class</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Typed Measure</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Meta Class</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Typed Measure</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseMetaClass(MetaClass object) {
+	public T caseTypedMeasure(TypedMeasure object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Operation</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Measure Value</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Operation</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Measure Value</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseOperation(Operation object) {
+	public T caseMeasureValue(MeasureValue object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Measure OCL</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Measure OCL</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMeasureOCL(MeasureOCL object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Measure Attribute</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Measure Attribute</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMeasureAttribute(MeasureAttribute object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Measure Cast</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Measure Cast</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMeasureCast(MeasureCast object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Measure Operation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Measure Operation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMeasureOperation(MeasureOperation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Measure Product Operation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Measure Product Operation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMeasureProductOperation(MeasureProductOperation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Measure Sum Operation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Measure Sum Operation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMeasureSumOperation(MeasureSumOperation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Energy Computation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Energy Computation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEnergyComputation(EnergyComputation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Power Computation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Power Computation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePowerComputation(PowerComputation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Measurement Uncertainty</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Measurement Uncertainty</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMeasurementUncertainty(MeasurementUncertainty object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Normal Distribution</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Normal Distribution</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseNormalDistribution(NormalDistribution object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Interval</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Interval</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseInterval(Interval object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Measurement Uncertainty Information</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Measurement Uncertainty Information</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMeasurementUncertaintyInformation(MeasurementUncertaintyInformation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Sampling</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Sampling</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSampling(Sampling object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Integral</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Integral</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseIntegral(Integral object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Sample</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Sample</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSample(Sample object) {
 		return null;
 	}
 

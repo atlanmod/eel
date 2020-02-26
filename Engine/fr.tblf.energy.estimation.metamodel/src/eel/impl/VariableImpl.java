@@ -4,8 +4,10 @@ package eel.impl;
 
 import eel.EelPackage;
 import eel.Variable;
-
 import eel.Visibility;
+
+import java.math.BigDecimal;
+
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
@@ -37,7 +39,7 @@ public class VariableImpl extends MinimalEObjectImpl.Container implements Variab
 	 * @generated
 	 * @ordered
 	 */
-	protected static final double VALUE_EDEFAULT = 0.0;
+	protected static final BigDecimal VALUE_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
@@ -47,7 +49,7 @@ public class VariableImpl extends MinimalEObjectImpl.Container implements Variab
 	 * @generated
 	 * @ordered
 	 */
-	protected double value = VALUE_EDEFAULT;
+	protected BigDecimal value = VALUE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -113,7 +115,7 @@ public class VariableImpl extends MinimalEObjectImpl.Container implements Variab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public double getValue() {
+	public BigDecimal getValue() {
 		return value;
 	}
 
@@ -122,8 +124,8 @@ public class VariableImpl extends MinimalEObjectImpl.Container implements Variab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setValue(double newValue) {
-		double oldValue = value;
+	public void setValue(BigDecimal newValue) {
+		BigDecimal oldValue = value;
 		value = newValue;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EelPackage.VARIABLE__VALUE, oldValue, value));
@@ -198,7 +200,7 @@ public class VariableImpl extends MinimalEObjectImpl.Container implements Variab
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case EelPackage.VARIABLE__VALUE:
-				setValue((Double)newValue);
+				setValue((BigDecimal)newValue);
 				return;
 			case EelPackage.VARIABLE__NAME:
 				setName((String)newValue);
@@ -240,7 +242,7 @@ public class VariableImpl extends MinimalEObjectImpl.Container implements Variab
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case EelPackage.VARIABLE__VALUE:
-				return value != VALUE_EDEFAULT;
+				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
 			case EelPackage.VARIABLE__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case EelPackage.VARIABLE__VIBILITY:

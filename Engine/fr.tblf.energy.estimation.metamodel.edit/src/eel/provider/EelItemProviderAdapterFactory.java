@@ -95,29 +95,6 @@ public class EelItemProviderAdapterFactory extends EelAdapterFactory implements 
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link eel.Estimation} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected EstimationItemProvider estimationItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link eel.Estimation}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createEstimationAdapter() {
-		if (estimationItemProvider == null) {
-			estimationItemProvider = new EstimationItemProvider(this);
-		}
-
-		return estimationItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link eel.Variable} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -141,49 +118,325 @@ public class EelItemProviderAdapterFactory extends EelAdapterFactory implements 
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link eel.MetaClass} instances.
+	 * This keeps track of the one adapter used for all {@link eel.MeasureValue} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected MetaClassItemProvider metaClassItemProvider;
+	protected MeasureValueItemProvider measureValueItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link eel.MetaClass}.
+	 * This creates an adapter for a {@link eel.MeasureValue}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createMetaClassAdapter() {
-		if (metaClassItemProvider == null) {
-			metaClassItemProvider = new MetaClassItemProvider(this);
+	public Adapter createMeasureValueAdapter() {
+		if (measureValueItemProvider == null) {
+			measureValueItemProvider = new MeasureValueItemProvider(this);
 		}
 
-		return metaClassItemProvider;
+		return measureValueItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link eel.Operation} instances.
+	 * This keeps track of the one adapter used for all {@link eel.MeasureOCL} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected OperationItemProvider operationItemProvider;
+	protected MeasureOCLItemProvider measureOCLItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link eel.Operation}.
+	 * This creates an adapter for a {@link eel.MeasureOCL}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createOperationAdapter() {
-		if (operationItemProvider == null) {
-			operationItemProvider = new OperationItemProvider(this);
+	public Adapter createMeasureOCLAdapter() {
+		if (measureOCLItemProvider == null) {
+			measureOCLItemProvider = new MeasureOCLItemProvider(this);
 		}
 
-		return operationItemProvider;
+		return measureOCLItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link eel.MeasureAttribute} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected MeasureAttributeItemProvider measureAttributeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link eel.MeasureAttribute}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createMeasureAttributeAdapter() {
+		if (measureAttributeItemProvider == null) {
+			measureAttributeItemProvider = new MeasureAttributeItemProvider(this);
+		}
+
+		return measureAttributeItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link eel.MeasureCast} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected MeasureCastItemProvider measureCastItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link eel.MeasureCast}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createMeasureCastAdapter() {
+		if (measureCastItemProvider == null) {
+			measureCastItemProvider = new MeasureCastItemProvider(this);
+		}
+
+		return measureCastItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link eel.MeasureProductOperation} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected MeasureProductOperationItemProvider measureProductOperationItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link eel.MeasureProductOperation}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createMeasureProductOperationAdapter() {
+		if (measureProductOperationItemProvider == null) {
+			measureProductOperationItemProvider = new MeasureProductOperationItemProvider(this);
+		}
+
+		return measureProductOperationItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link eel.MeasureSumOperation} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected MeasureSumOperationItemProvider measureSumOperationItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link eel.MeasureSumOperation}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createMeasureSumOperationAdapter() {
+		if (measureSumOperationItemProvider == null) {
+			measureSumOperationItemProvider = new MeasureSumOperationItemProvider(this);
+		}
+
+		return measureSumOperationItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link eel.EnergyComputation} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected EnergyComputationItemProvider energyComputationItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link eel.EnergyComputation}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createEnergyComputationAdapter() {
+		if (energyComputationItemProvider == null) {
+			energyComputationItemProvider = new EnergyComputationItemProvider(this);
+		}
+
+		return energyComputationItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link eel.PowerComputation} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected PowerComputationItemProvider powerComputationItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link eel.PowerComputation}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createPowerComputationAdapter() {
+		if (powerComputationItemProvider == null) {
+			powerComputationItemProvider = new PowerComputationItemProvider(this);
+		}
+
+		return powerComputationItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link eel.MeasurementUncertainty} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected MeasurementUncertaintyItemProvider measurementUncertaintyItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link eel.MeasurementUncertainty}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createMeasurementUncertaintyAdapter() {
+		if (measurementUncertaintyItemProvider == null) {
+			measurementUncertaintyItemProvider = new MeasurementUncertaintyItemProvider(this);
+		}
+
+		return measurementUncertaintyItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link eel.NormalDistribution} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected NormalDistributionItemProvider normalDistributionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link eel.NormalDistribution}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createNormalDistributionAdapter() {
+		if (normalDistributionItemProvider == null) {
+			normalDistributionItemProvider = new NormalDistributionItemProvider(this);
+		}
+
+		return normalDistributionItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link eel.Interval} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected IntervalItemProvider intervalItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link eel.Interval}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createIntervalAdapter() {
+		if (intervalItemProvider == null) {
+			intervalItemProvider = new IntervalItemProvider(this);
+		}
+
+		return intervalItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link eel.Sampling} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected SamplingItemProvider samplingItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link eel.Sampling}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createSamplingAdapter() {
+		if (samplingItemProvider == null) {
+			samplingItemProvider = new SamplingItemProvider(this);
+		}
+
+		return samplingItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link eel.Integral} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected IntegralItemProvider integralItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link eel.Integral}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createIntegralAdapter() {
+		if (integralItemProvider == null) {
+			integralItemProvider = new IntegralItemProvider(this);
+		}
+
+		return integralItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link eel.Sample} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected SampleItemProvider sampleItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link eel.Sample}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createSampleAdapter() {
+		if (sampleItemProvider == null) {
+			sampleItemProvider = new SampleItemProvider(this);
+		}
+
+		return sampleItemProvider;
 	}
 
 	/**
@@ -286,10 +539,21 @@ public class EelItemProviderAdapterFactory extends EelAdapterFactory implements 
 	 */
 	public void dispose() {
 		if (platformItemProvider != null) platformItemProvider.dispose();
-		if (estimationItemProvider != null) estimationItemProvider.dispose();
 		if (variableItemProvider != null) variableItemProvider.dispose();
-		if (metaClassItemProvider != null) metaClassItemProvider.dispose();
-		if (operationItemProvider != null) operationItemProvider.dispose();
+		if (measureValueItemProvider != null) measureValueItemProvider.dispose();
+		if (measureOCLItemProvider != null) measureOCLItemProvider.dispose();
+		if (measureAttributeItemProvider != null) measureAttributeItemProvider.dispose();
+		if (measureCastItemProvider != null) measureCastItemProvider.dispose();
+		if (measureProductOperationItemProvider != null) measureProductOperationItemProvider.dispose();
+		if (measureSumOperationItemProvider != null) measureSumOperationItemProvider.dispose();
+		if (energyComputationItemProvider != null) energyComputationItemProvider.dispose();
+		if (powerComputationItemProvider != null) powerComputationItemProvider.dispose();
+		if (measurementUncertaintyItemProvider != null) measurementUncertaintyItemProvider.dispose();
+		if (normalDistributionItemProvider != null) normalDistributionItemProvider.dispose();
+		if (intervalItemProvider != null) intervalItemProvider.dispose();
+		if (samplingItemProvider != null) samplingItemProvider.dispose();
+		if (integralItemProvider != null) integralItemProvider.dispose();
+		if (sampleItemProvider != null) sampleItemProvider.dispose();
 	}
 
 }

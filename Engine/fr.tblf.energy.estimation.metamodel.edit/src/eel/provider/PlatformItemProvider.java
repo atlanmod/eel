@@ -102,9 +102,8 @@ public class PlatformItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(EelPackage.Literals.PLATFORM__ESTIMATIONS);
 			childrenFeatures.add(EelPackage.Literals.PLATFORM__VARIABLES);
-			childrenFeatures.add(EelPackage.Literals.PLATFORM__TARGETS);
+			childrenFeatures.add(EelPackage.Literals.PLATFORM__MEASURES);
 		}
 		return childrenFeatures;
 	}
@@ -163,9 +162,8 @@ public class PlatformItemProvider
 			case EelPackage.PLATFORM__NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case EelPackage.PLATFORM__ESTIMATIONS:
 			case EelPackage.PLATFORM__VARIABLES:
-			case EelPackage.PLATFORM__TARGETS:
+			case EelPackage.PLATFORM__MEASURES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -185,18 +183,48 @@ public class PlatformItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(EelPackage.Literals.PLATFORM__ESTIMATIONS,
-				 EelFactory.eINSTANCE.createEstimation()));
-
-		newChildDescriptors.add
-			(createChildParameter
 				(EelPackage.Literals.PLATFORM__VARIABLES,
 				 EelFactory.eINSTANCE.createVariable()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(EelPackage.Literals.PLATFORM__TARGETS,
-				 EelFactory.eINSTANCE.createMetaClass()));
+				(EelPackage.Literals.PLATFORM__MEASURES,
+				 EelFactory.eINSTANCE.createMeasureValue()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(EelPackage.Literals.PLATFORM__MEASURES,
+				 EelFactory.eINSTANCE.createMeasureOCL()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(EelPackage.Literals.PLATFORM__MEASURES,
+				 EelFactory.eINSTANCE.createMeasureAttribute()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(EelPackage.Literals.PLATFORM__MEASURES,
+				 EelFactory.eINSTANCE.createMeasureCast()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(EelPackage.Literals.PLATFORM__MEASURES,
+				 EelFactory.eINSTANCE.createMeasureProductOperation()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(EelPackage.Literals.PLATFORM__MEASURES,
+				 EelFactory.eINSTANCE.createMeasureSumOperation()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(EelPackage.Literals.PLATFORM__MEASURES,
+				 EelFactory.eINSTANCE.createEnergyComputation()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(EelPackage.Literals.PLATFORM__MEASURES,
+				 EelFactory.eINSTANCE.createPowerComputation()));
 	}
 
 	/**

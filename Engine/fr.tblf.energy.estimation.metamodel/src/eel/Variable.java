@@ -2,6 +2,8 @@
  */
 package eel;
 
+import java.math.BigDecimal;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -32,12 +34,12 @@ public interface Variable extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Value</em>' attribute.
-	 * @see #setValue(double)
+	 * @see #setValue(BigDecimal)
 	 * @see eel.EelPackage#getVariable_Value()
-	 * @model required="true"
+	 * @model
 	 * @generated
 	 */
-	double getValue();
+	BigDecimal getValue();
 
 	/**
 	 * Sets the value of the '{@link eel.Variable#getValue <em>Value</em>}' attribute.
@@ -47,7 +49,7 @@ public interface Variable extends EObject {
 	 * @see #getValue()
 	 * @generated
 	 */
-	void setValue(double value);
+	void setValue(BigDecimal value);
 
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.

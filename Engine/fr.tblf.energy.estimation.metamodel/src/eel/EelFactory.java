@@ -31,15 +31,6 @@ public interface EelFactory extends EFactory {
 	Platform createPlatform();
 
 	/**
-	 * Returns a new object of class '<em>Estimation</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Estimation</em>'.
-	 * @generated
-	 */
-	Estimation createEstimation();
-
-	/**
 	 * Returns a new object of class '<em>Variable</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -49,22 +40,130 @@ public interface EelFactory extends EFactory {
 	Variable createVariable();
 
 	/**
-	 * Returns a new object of class '<em>Meta Class</em>'.
+	 * Returns a new object of class '<em>Measure Value</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Meta Class</em>'.
+	 * @return a new object of class '<em>Measure Value</em>'.
 	 * @generated
 	 */
-	MetaClass createMetaClass();
+	MeasureValue createMeasureValue();
 
 	/**
-	 * Returns a new object of class '<em>Operation</em>'.
+	 * Returns a new object of class '<em>Measure OCL</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Operation</em>'.
+	 * @return a new object of class '<em>Measure OCL</em>'.
 	 * @generated
 	 */
-	Operation createOperation();
+	MeasureOCL createMeasureOCL();
+
+	/**
+	 * Returns a new object of class '<em>Measure Attribute</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Measure Attribute</em>'.
+	 * @generated
+	 */
+	MeasureAttribute createMeasureAttribute();
+
+	/**
+	 * Returns a new object of class '<em>Measure Cast</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Measure Cast</em>'.
+	 * @generated
+	 */
+	MeasureCast createMeasureCast();
+
+	/**
+	 * Returns a new object of class '<em>Measure Product Operation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Measure Product Operation</em>'.
+	 * @generated
+	 */
+	MeasureProductOperation createMeasureProductOperation();
+
+	/**
+	 * Returns a new object of class '<em>Measure Sum Operation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Measure Sum Operation</em>'.
+	 * @generated
+	 */
+	MeasureSumOperation createMeasureSumOperation();
+
+	/**
+	 * Returns a new object of class '<em>Energy Computation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Energy Computation</em>'.
+	 * @generated
+	 */
+	EnergyComputation createEnergyComputation();
+
+	/**
+	 * Returns a new object of class '<em>Power Computation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Power Computation</em>'.
+	 * @generated
+	 */
+	PowerComputation createPowerComputation();
+
+	/**
+	 * Returns a new object of class '<em>Measurement Uncertainty</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Measurement Uncertainty</em>'.
+	 * @generated
+	 */
+	MeasurementUncertainty createMeasurementUncertainty();
+
+	/**
+	 * Returns a new object of class '<em>Normal Distribution</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Normal Distribution</em>'.
+	 * @generated
+	 */
+	NormalDistribution createNormalDistribution();
+
+	/**
+	 * Returns a new object of class '<em>Interval</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Interval</em>'.
+	 * @generated
+	 */
+	Interval createInterval();
+
+	/**
+	 * Returns a new object of class '<em>Sampling</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Sampling</em>'.
+	 * @generated
+	 */
+	Sampling createSampling();
+
+	/**
+	 * Returns a new object of class '<em>Integral</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Integral</em>'.
+	 * @generated
+	 */
+	Integral createIntegral();
+
+	/**
+	 * Returns a new object of class '<em>Sample</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Sample</em>'.
+	 * @generated
+	 */
+	Sample createSample();
 
 	/**
 	 * Returns the package supported by this factory.
