@@ -2,6 +2,8 @@ package fr.tblf.gemoc.extension;
 
 import java.io.File;
 import java.math.BigDecimal;
+import java.net.MalformedURLException;
+import java.nio.file.Files;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Function;
@@ -13,6 +15,7 @@ import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.gemoc.trace.commons.model.trace.Step;
 import org.eclipse.gemoc.xdsmlframework.api.core.IExecutionEngine;
 import org.eclipse.gemoc.xdsmlframework.api.engine_addon.IEngineAddon;
@@ -44,6 +47,17 @@ public class EngineAddon implements IEngineAddon {
 			try {
 				ResourceSet resourceSet = new ResourceSetImpl();
 				resourceSet.getResource(URI.createURI(MODEL.toURI().toString()), true);
+				Files	.walk(MODEL.getParentFile().toPath())
+						.filter(p -> p.toFile().getName().endsWith(".ecore"))
+						.forEach(p -> {
+							try {
+								System.out.println("Loading metamodel "+p.toFile().getName());								
+								resourceSet.getResource(URI.createURI(p.toUri().toURL().toString()), true);
+								
+							} catch (MalformedURLException e) {
+								e.printStackTrace();
+							}
+						});
 				
 				Resource resource = resourceSet.getResources().stream().filter(r -> r.getURI().toString().endsWith(".eel")).findFirst().get();
 				
@@ -56,6 +70,8 @@ public class EngineAddon implements IEngineAddon {
 				mapClassEstimation = new HashMap<>();
 				resource.getAllContents().forEachRemaining(eObject -> {
 					if (eObject instanceof Measure && ((Measure) eObject).getTargetClass() != null) {
+						EObject target = EcoreUtil.resolve(((EObject) ((Measure) eObject).getTargetClass()), resourceSet);
+						System.out.println("Loaded target "+target);
 						mapClassEstimation.put(((Measure) eObject).getTargetClass().getName(), (Measure)eObject);
 					}
 				});
@@ -148,7 +164,7 @@ public class EngineAddon implements IEngineAddon {
 			topDownTreeAnalysis(m, (Measure measure) -> {
 				System.out.print(measure.getName() +" " +measure.type()+" : "+measure.eClass().getName());
 				if (measure.getTargetClass() != null)
-					System.out.print(" -> "+measure.getTargetClass().getName());
+					System.out.print(" -> "+measure.getTargetClass());
 				if (measure.getTargetOperation() != null)
 					System.out.print(" -> "+measure.getTargetOperation().getName());
 				

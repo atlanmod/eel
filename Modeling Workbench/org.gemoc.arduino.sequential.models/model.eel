@@ -1,7 +1,42 @@
 Platform "ATMega328p" {
-	measures {
-		"led power" : 20.0 W, 
-		"delay duration" : 5.0 s,
-		"energy" : "led power" * "delay duration" 
+	measures {			
+		"ATMEGA328ClockPeriod" : 0.000000062 s,
+				
+		"ArduinoVoltage" : 5.0 V,
+		"ArduinoCurrentRunning" : 0.0164 A,
+		"PowerOfArduinoBoard" : ArduinoVoltage * ArduinoCurrentRunning, 
+						
+		"LedCurrent" : 0.0039 A,
+		"NumberOfLedsRunning" ocl: "LED.allInstances() -> select(it | it.oclContainer().oclAsType(Pin).level = 1) -> size()",
+		"CurrentOfAllLedsRunning" : LedCurrent * NumberOfLedsRunning, 
+		"PowerOfLedsRunning": CurrentOfAllLedsRunning * ArduinoVoltage,
+										
+		"NumberOfIRSensors" ocl: "InfraRedSensor.allInstances() -> size()",
+		"NumberOfIRSensorsDetectingObstacle" ocl: "InfraRedSensor.allInstances() -> select(it | it.oclContainer.oclAsType(Pin).level = 0) -> asSequence() -> size()",
+		"VoltageOfIRSensor": 3.3 V,
+		"CurrentIRSensorIdle" : 0.00235 A,
+		"CurrentIRSensorOnObstacle" : 0.00085 A,
+		"CurrentOfAllIRSensorsRunning" : NumberOfIRSensors * CurrentIRSensorIdle,
+		"CurrentOfAllIRSensorsDetectingObstacle" : NumberOfIRSensorsDetectingObstacle * CurrentIRSensorOnObstacle,
+		"CurrentOfAllIRSensors" : CurrentOfAllIRSensorsDetectingObstacle + CurrentOfAllIRSensorsDetectingObstacle,
+		"PowerOfAllIRSensors" : CurrentOfAllIRSensors * VoltageOfIRSensor,
+		 
+		"PowerOfIRSensorsAndLeds" : PowerOfAllIRSensors + PowerOfLedsRunning, 
+		"PowerOfSystem" : PowerOfIRSensorsAndLeds + PowerOfArduinoBoard,
+		
+		"MilliSecondsToSecondsFactor" : 0.001,
+		
+		"NumberOfClockCyclesForDelayInstruction" : 76.0,
+		"DurationOfDelay" attribute: "arduino.Delay.value" s, 
+		"DurationOfDelayInstructionCall" : NumberOfClockCyclesForDelayInstruction * ATMEGA328ClockPeriod,
+		"DurationOfDelayWithCall" : DurationOfDelay + DurationOfDelayInstructionCall,
+		
+		target "arduino.Delay" "EnergyConsumptionOfDelay" : DurationOfDelayWithCall * PowerOfArduinoBoard, 						
+						
+		"NumberOfClockCyclesForDigitalWrite" : 44.0,
+		"DurationOfDigitalWriteCall" : NumberOfClockCyclesForDigitalWrite * PowerOfArduinoBoard,
+		
+		target "arduino.ModuleAssignment" "EnergyDigitalWrite" : DurationOfDigitalWriteCall * PowerOfArduinoBoard	
+		
 	}
 }
