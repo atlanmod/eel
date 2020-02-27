@@ -367,6 +367,1124 @@ public class EelGrammarAccess extends AbstractGrammarElementFinder {
 		//INT
 		public RuleCall getINTTerminalRuleCall_2() { return cINTTerminalRuleCall_2; }
 	}
+	public class MeasureValue_ImplElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.tblf.energy.estimation.Eel.MeasureValue_Impl");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cMeasureValueAction_0 = (Action)cGroup.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Keyword cTargetKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final Assignment cTargetClassAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final CrossReference cTargetClassEClassCrossReference_1_1_0 = (CrossReference)cTargetClassAssignment_1_1.eContents().get(0);
+		private final RuleCall cTargetClassEClassEStringParserRuleCall_1_1_0_1 = (RuleCall)cTargetClassEClassCrossReference_1_1_0.eContents().get(1);
+		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cNameEStringParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final Keyword cColonKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cValueAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cValueEBigDecimalParserRuleCall_4_0 = (RuleCall)cValueAssignment_4.eContents().get(0);
+		private final Assignment cTypeAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cTypeTypeEnumRuleCall_5_0 = (RuleCall)cTypeAssignment_5.eContents().get(0);
+		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
+		private final Keyword cUncertaintyKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
+		private final Assignment cUncertaintyAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
+		private final RuleCall cUncertaintyMeasurementUncertaintyParserRuleCall_6_1_0 = (RuleCall)cUncertaintyAssignment_6_1.eContents().get(0);
+		
+		//MeasureValue_Impl MeasureValue:
+		//	{MeasureValue} ('target' targetClass=[ecore::EClass|EString])? name=EString ":" value=EBigDecimal? type=Type?
+		//	('uncertainty' uncertainty=MeasurementUncertainty)?;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{MeasureValue} ('target' targetClass=[ecore::EClass|EString])? name=EString ":" value=EBigDecimal? type=Type?
+		//('uncertainty' uncertainty=MeasurementUncertainty)?
+		public Group getGroup() { return cGroup; }
+		
+		//{MeasureValue}
+		public Action getMeasureValueAction_0() { return cMeasureValueAction_0; }
+		
+		//('target' targetClass=[ecore::EClass|EString])?
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//'target'
+		public Keyword getTargetKeyword_1_0() { return cTargetKeyword_1_0; }
+		
+		//targetClass=[ecore::EClass|EString]
+		public Assignment getTargetClassAssignment_1_1() { return cTargetClassAssignment_1_1; }
+		
+		//[ecore::EClass|EString]
+		public CrossReference getTargetClassEClassCrossReference_1_1_0() { return cTargetClassEClassCrossReference_1_1_0; }
+		
+		//EString
+		public RuleCall getTargetClassEClassEStringParserRuleCall_1_1_0_1() { return cTargetClassEClassEStringParserRuleCall_1_1_0_1; }
+		
+		//name=EString
+		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+		
+		//EString
+		public RuleCall getNameEStringParserRuleCall_2_0() { return cNameEStringParserRuleCall_2_0; }
+		
+		//":"
+		public Keyword getColonKeyword_3() { return cColonKeyword_3; }
+		
+		//value=EBigDecimal?
+		public Assignment getValueAssignment_4() { return cValueAssignment_4; }
+		
+		//EBigDecimal
+		public RuleCall getValueEBigDecimalParserRuleCall_4_0() { return cValueEBigDecimalParserRuleCall_4_0; }
+		
+		//type=Type?
+		public Assignment getTypeAssignment_5() { return cTypeAssignment_5; }
+		
+		//Type
+		public RuleCall getTypeTypeEnumRuleCall_5_0() { return cTypeTypeEnumRuleCall_5_0; }
+		
+		//('uncertainty' uncertainty=MeasurementUncertainty)?
+		public Group getGroup_6() { return cGroup_6; }
+		
+		//'uncertainty'
+		public Keyword getUncertaintyKeyword_6_0() { return cUncertaintyKeyword_6_0; }
+		
+		//uncertainty=MeasurementUncertainty
+		public Assignment getUncertaintyAssignment_6_1() { return cUncertaintyAssignment_6_1; }
+		
+		//MeasurementUncertainty
+		public RuleCall getUncertaintyMeasurementUncertaintyParserRuleCall_6_1_0() { return cUncertaintyMeasurementUncertaintyParserRuleCall_6_1_0; }
+	}
+	public class MeasureOCLElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.tblf.energy.estimation.Eel.MeasureOCL");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cMeasureOCLAction_0 = (Action)cGroup.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Keyword cTargetKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final Assignment cTargetClassAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final CrossReference cTargetClassEClassCrossReference_1_1_0 = (CrossReference)cTargetClassAssignment_1_1.eContents().get(0);
+		private final RuleCall cTargetClassEClassEStringParserRuleCall_1_1_0_1 = (RuleCall)cTargetClassEClassCrossReference_1_1_0.eContents().get(1);
+		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cNameEStringParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final Keyword cOclKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cOclQueryAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cOclQueryEStringParserRuleCall_4_0 = (RuleCall)cOclQueryAssignment_4.eContents().get(0);
+		private final Assignment cTypeAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cTypeTypeEnumRuleCall_5_0 = (RuleCall)cTypeAssignment_5.eContents().get(0);
+		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
+		private final Keyword cUncertaintyKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
+		private final Assignment cUncertaintyAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
+		private final RuleCall cUncertaintyMeasurementUncertaintyParserRuleCall_6_1_0 = (RuleCall)cUncertaintyAssignment_6_1.eContents().get(0);
+		
+		//MeasureOCL:
+		//	{MeasureOCL} ('target' targetClass=[ecore::EClass|EString])? name=EString "ocl:" oclQuery=EString type=Type?
+		//	('uncertainty' uncertainty=MeasurementUncertainty)?;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{MeasureOCL} ('target' targetClass=[ecore::EClass|EString])? name=EString "ocl:" oclQuery=EString type=Type?
+		//('uncertainty' uncertainty=MeasurementUncertainty)?
+		public Group getGroup() { return cGroup; }
+		
+		//{MeasureOCL}
+		public Action getMeasureOCLAction_0() { return cMeasureOCLAction_0; }
+		
+		//('target' targetClass=[ecore::EClass|EString])?
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//'target'
+		public Keyword getTargetKeyword_1_0() { return cTargetKeyword_1_0; }
+		
+		//targetClass=[ecore::EClass|EString]
+		public Assignment getTargetClassAssignment_1_1() { return cTargetClassAssignment_1_1; }
+		
+		//[ecore::EClass|EString]
+		public CrossReference getTargetClassEClassCrossReference_1_1_0() { return cTargetClassEClassCrossReference_1_1_0; }
+		
+		//EString
+		public RuleCall getTargetClassEClassEStringParserRuleCall_1_1_0_1() { return cTargetClassEClassEStringParserRuleCall_1_1_0_1; }
+		
+		//name=EString
+		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+		
+		//EString
+		public RuleCall getNameEStringParserRuleCall_2_0() { return cNameEStringParserRuleCall_2_0; }
+		
+		//"ocl:"
+		public Keyword getOclKeyword_3() { return cOclKeyword_3; }
+		
+		//oclQuery=EString
+		public Assignment getOclQueryAssignment_4() { return cOclQueryAssignment_4; }
+		
+		//EString
+		public RuleCall getOclQueryEStringParserRuleCall_4_0() { return cOclQueryEStringParserRuleCall_4_0; }
+		
+		//type=Type?
+		public Assignment getTypeAssignment_5() { return cTypeAssignment_5; }
+		
+		//Type
+		public RuleCall getTypeTypeEnumRuleCall_5_0() { return cTypeTypeEnumRuleCall_5_0; }
+		
+		//('uncertainty' uncertainty=MeasurementUncertainty)?
+		public Group getGroup_6() { return cGroup_6; }
+		
+		//'uncertainty'
+		public Keyword getUncertaintyKeyword_6_0() { return cUncertaintyKeyword_6_0; }
+		
+		//uncertainty=MeasurementUncertainty
+		public Assignment getUncertaintyAssignment_6_1() { return cUncertaintyAssignment_6_1; }
+		
+		//MeasurementUncertainty
+		public RuleCall getUncertaintyMeasurementUncertaintyParserRuleCall_6_1_0() { return cUncertaintyMeasurementUncertaintyParserRuleCall_6_1_0; }
+	}
+	public class MeasureAttributeElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.tblf.energy.estimation.Eel.MeasureAttribute");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cMeasureAttributeAction_0 = (Action)cGroup.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Keyword cTargetKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final Assignment cTargetClassAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final CrossReference cTargetClassEClassCrossReference_1_1_0 = (CrossReference)cTargetClassAssignment_1_1.eContents().get(0);
+		private final RuleCall cTargetClassEClassEStringParserRuleCall_1_1_0_1 = (RuleCall)cTargetClassEClassCrossReference_1_1_0.eContents().get(1);
+		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cNameEStringParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final Keyword cAttributeKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cAttAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final CrossReference cAttEAttributeCrossReference_4_0 = (CrossReference)cAttAssignment_4.eContents().get(0);
+		private final RuleCall cAttEAttributeEStringParserRuleCall_4_0_1 = (RuleCall)cAttEAttributeCrossReference_4_0.eContents().get(1);
+		private final Assignment cTypeAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cTypeTypeEnumRuleCall_5_0 = (RuleCall)cTypeAssignment_5.eContents().get(0);
+		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
+		private final Keyword cUncertaintyKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
+		private final Assignment cUncertaintyAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
+		private final RuleCall cUncertaintyMeasurementUncertaintyParserRuleCall_6_1_0 = (RuleCall)cUncertaintyAssignment_6_1.eContents().get(0);
+		
+		//MeasureAttribute:
+		//	{MeasureAttribute} ('target' targetClass=[ecore::EClass|EString])? name=EString "attribute:"
+		//	att=[ecore::EAttribute|EString] type=Type? ('uncertainty' uncertainty=MeasurementUncertainty)?;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{MeasureAttribute} ('target' targetClass=[ecore::EClass|EString])? name=EString "attribute:"
+		//att=[ecore::EAttribute|EString] type=Type? ('uncertainty' uncertainty=MeasurementUncertainty)?
+		public Group getGroup() { return cGroup; }
+		
+		//{MeasureAttribute}
+		public Action getMeasureAttributeAction_0() { return cMeasureAttributeAction_0; }
+		
+		//('target' targetClass=[ecore::EClass|EString])?
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//'target'
+		public Keyword getTargetKeyword_1_0() { return cTargetKeyword_1_0; }
+		
+		//targetClass=[ecore::EClass|EString]
+		public Assignment getTargetClassAssignment_1_1() { return cTargetClassAssignment_1_1; }
+		
+		//[ecore::EClass|EString]
+		public CrossReference getTargetClassEClassCrossReference_1_1_0() { return cTargetClassEClassCrossReference_1_1_0; }
+		
+		//EString
+		public RuleCall getTargetClassEClassEStringParserRuleCall_1_1_0_1() { return cTargetClassEClassEStringParserRuleCall_1_1_0_1; }
+		
+		//name=EString
+		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+		
+		//EString
+		public RuleCall getNameEStringParserRuleCall_2_0() { return cNameEStringParserRuleCall_2_0; }
+		
+		//"attribute:"
+		public Keyword getAttributeKeyword_3() { return cAttributeKeyword_3; }
+		
+		//att=[ecore::EAttribute|EString]
+		public Assignment getAttAssignment_4() { return cAttAssignment_4; }
+		
+		//[ecore::EAttribute|EString]
+		public CrossReference getAttEAttributeCrossReference_4_0() { return cAttEAttributeCrossReference_4_0; }
+		
+		//EString
+		public RuleCall getAttEAttributeEStringParserRuleCall_4_0_1() { return cAttEAttributeEStringParserRuleCall_4_0_1; }
+		
+		//type=Type?
+		public Assignment getTypeAssignment_5() { return cTypeAssignment_5; }
+		
+		//Type
+		public RuleCall getTypeTypeEnumRuleCall_5_0() { return cTypeTypeEnumRuleCall_5_0; }
+		
+		//('uncertainty' uncertainty=MeasurementUncertainty)?
+		public Group getGroup_6() { return cGroup_6; }
+		
+		//'uncertainty'
+		public Keyword getUncertaintyKeyword_6_0() { return cUncertaintyKeyword_6_0; }
+		
+		//uncertainty=MeasurementUncertainty
+		public Assignment getUncertaintyAssignment_6_1() { return cUncertaintyAssignment_6_1; }
+		
+		//MeasurementUncertainty
+		public RuleCall getUncertaintyMeasurementUncertaintyParserRuleCall_6_1_0() { return cUncertaintyMeasurementUncertaintyParserRuleCall_6_1_0; }
+	}
+	public class MeasureCastElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.tblf.energy.estimation.Eel.MeasureCast");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cMeasureCastAction_0 = (Action)cGroup.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Keyword cTargetKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final Assignment cTargetClassAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final CrossReference cTargetClassEClassCrossReference_1_1_0 = (CrossReference)cTargetClassAssignment_1_1.eContents().get(0);
+		private final RuleCall cTargetClassEClassEStringParserRuleCall_1_1_0_1 = (RuleCall)cTargetClassEClassCrossReference_1_1_0.eContents().get(1);
+		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cNameEStringParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final Keyword cColonKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cMeasureAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final CrossReference cMeasureMeasureCrossReference_4_0 = (CrossReference)cMeasureAssignment_4.eContents().get(0);
+		private final RuleCall cMeasureMeasureEStringParserRuleCall_4_0_1 = (RuleCall)cMeasureMeasureCrossReference_4_0.eContents().get(1);
+		private final Keyword cAsKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cTypeAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cTypeTypeEnumRuleCall_6_0 = (RuleCall)cTypeAssignment_6.eContents().get(0);
+		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
+		private final Keyword cUncertaintyKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
+		private final Assignment cUncertaintyAssignment_7_1 = (Assignment)cGroup_7.eContents().get(1);
+		private final RuleCall cUncertaintyMeasurementUncertaintyParserRuleCall_7_1_0 = (RuleCall)cUncertaintyAssignment_7_1.eContents().get(0);
+		
+		//MeasureCast:
+		//	{MeasureCast} ('target' targetClass=[ecore::EClass|EString])? name=EString ":" measure=[Measure|EString] "as"
+		//	type=Type ('uncertainty' uncertainty=MeasurementUncertainty)?;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{MeasureCast} ('target' targetClass=[ecore::EClass|EString])? name=EString ":" measure=[Measure|EString] "as" type=Type
+		//('uncertainty' uncertainty=MeasurementUncertainty)?
+		public Group getGroup() { return cGroup; }
+		
+		//{MeasureCast}
+		public Action getMeasureCastAction_0() { return cMeasureCastAction_0; }
+		
+		//('target' targetClass=[ecore::EClass|EString])?
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//'target'
+		public Keyword getTargetKeyword_1_0() { return cTargetKeyword_1_0; }
+		
+		//targetClass=[ecore::EClass|EString]
+		public Assignment getTargetClassAssignment_1_1() { return cTargetClassAssignment_1_1; }
+		
+		//[ecore::EClass|EString]
+		public CrossReference getTargetClassEClassCrossReference_1_1_0() { return cTargetClassEClassCrossReference_1_1_0; }
+		
+		//EString
+		public RuleCall getTargetClassEClassEStringParserRuleCall_1_1_0_1() { return cTargetClassEClassEStringParserRuleCall_1_1_0_1; }
+		
+		//name=EString
+		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+		
+		//EString
+		public RuleCall getNameEStringParserRuleCall_2_0() { return cNameEStringParserRuleCall_2_0; }
+		
+		//":"
+		public Keyword getColonKeyword_3() { return cColonKeyword_3; }
+		
+		//measure=[Measure|EString]
+		public Assignment getMeasureAssignment_4() { return cMeasureAssignment_4; }
+		
+		//[Measure|EString]
+		public CrossReference getMeasureMeasureCrossReference_4_0() { return cMeasureMeasureCrossReference_4_0; }
+		
+		//EString
+		public RuleCall getMeasureMeasureEStringParserRuleCall_4_0_1() { return cMeasureMeasureEStringParserRuleCall_4_0_1; }
+		
+		//"as"
+		public Keyword getAsKeyword_5() { return cAsKeyword_5; }
+		
+		//type=Type
+		public Assignment getTypeAssignment_6() { return cTypeAssignment_6; }
+		
+		//Type
+		public RuleCall getTypeTypeEnumRuleCall_6_0() { return cTypeTypeEnumRuleCall_6_0; }
+		
+		//('uncertainty' uncertainty=MeasurementUncertainty)?
+		public Group getGroup_7() { return cGroup_7; }
+		
+		//'uncertainty'
+		public Keyword getUncertaintyKeyword_7_0() { return cUncertaintyKeyword_7_0; }
+		
+		//uncertainty=MeasurementUncertainty
+		public Assignment getUncertaintyAssignment_7_1() { return cUncertaintyAssignment_7_1; }
+		
+		//MeasurementUncertainty
+		public RuleCall getUncertaintyMeasurementUncertaintyParserRuleCall_7_1_0() { return cUncertaintyMeasurementUncertaintyParserRuleCall_7_1_0; }
+	}
+	public class MeasureProductOperation_ImplElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.tblf.energy.estimation.Eel.MeasureProductOperation_Impl");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cMeasureProductOperationAction_0 = (Action)cGroup.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Keyword cTargetKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final Assignment cTargetClassAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final CrossReference cTargetClassEClassCrossReference_1_1_0 = (CrossReference)cTargetClassAssignment_1_1.eContents().get(0);
+		private final RuleCall cTargetClassEClassEStringParserRuleCall_1_1_0_1 = (RuleCall)cTargetClassEClassCrossReference_1_1_0.eContents().get(1);
+		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cNameEStringParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final Keyword cColonKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cLeftAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final CrossReference cLeftMeasureCrossReference_4_0 = (CrossReference)cLeftAssignment_4.eContents().get(0);
+		private final RuleCall cLeftMeasureEStringParserRuleCall_4_0_1 = (RuleCall)cLeftMeasureCrossReference_4_0.eContents().get(1);
+		private final Keyword cAsteriskKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cRightAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final CrossReference cRightMeasureCrossReference_6_0 = (CrossReference)cRightAssignment_6.eContents().get(0);
+		private final RuleCall cRightMeasureEStringParserRuleCall_6_0_1 = (RuleCall)cRightMeasureCrossReference_6_0.eContents().get(1);
+		
+		//MeasureProductOperation_Impl MeasureProductOperation:
+		//	{MeasureProductOperation} ('target' targetClass=[ecore::EClass|EString])? name=EString ':' left=[Measure|EString] '*'
+		//	right=[Measure|EString];
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{MeasureProductOperation} ('target' targetClass=[ecore::EClass|EString])? name=EString ':' left=[Measure|EString] '*'
+		//right=[Measure|EString]
+		public Group getGroup() { return cGroup; }
+		
+		//{MeasureProductOperation}
+		public Action getMeasureProductOperationAction_0() { return cMeasureProductOperationAction_0; }
+		
+		//('target' targetClass=[ecore::EClass|EString])?
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//'target'
+		public Keyword getTargetKeyword_1_0() { return cTargetKeyword_1_0; }
+		
+		//targetClass=[ecore::EClass|EString]
+		public Assignment getTargetClassAssignment_1_1() { return cTargetClassAssignment_1_1; }
+		
+		//[ecore::EClass|EString]
+		public CrossReference getTargetClassEClassCrossReference_1_1_0() { return cTargetClassEClassCrossReference_1_1_0; }
+		
+		//EString
+		public RuleCall getTargetClassEClassEStringParserRuleCall_1_1_0_1() { return cTargetClassEClassEStringParserRuleCall_1_1_0_1; }
+		
+		//name=EString
+		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+		
+		//EString
+		public RuleCall getNameEStringParserRuleCall_2_0() { return cNameEStringParserRuleCall_2_0; }
+		
+		//':'
+		public Keyword getColonKeyword_3() { return cColonKeyword_3; }
+		
+		//left=[Measure|EString]
+		public Assignment getLeftAssignment_4() { return cLeftAssignment_4; }
+		
+		//[Measure|EString]
+		public CrossReference getLeftMeasureCrossReference_4_0() { return cLeftMeasureCrossReference_4_0; }
+		
+		//EString
+		public RuleCall getLeftMeasureEStringParserRuleCall_4_0_1() { return cLeftMeasureEStringParserRuleCall_4_0_1; }
+		
+		//'*'
+		public Keyword getAsteriskKeyword_5() { return cAsteriskKeyword_5; }
+		
+		//right=[Measure|EString]
+		public Assignment getRightAssignment_6() { return cRightAssignment_6; }
+		
+		//[Measure|EString]
+		public CrossReference getRightMeasureCrossReference_6_0() { return cRightMeasureCrossReference_6_0; }
+		
+		//EString
+		public RuleCall getRightMeasureEStringParserRuleCall_6_0_1() { return cRightMeasureEStringParserRuleCall_6_0_1; }
+	}
+	public class MeasureSumOperationElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.tblf.energy.estimation.Eel.MeasureSumOperation");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cMeasureSumOperationAction_0 = (Action)cGroup.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Keyword cTargetKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final Assignment cTargetClassAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final CrossReference cTargetClassEClassCrossReference_1_1_0 = (CrossReference)cTargetClassAssignment_1_1.eContents().get(0);
+		private final RuleCall cTargetClassEClassEStringParserRuleCall_1_1_0_1 = (RuleCall)cTargetClassEClassCrossReference_1_1_0.eContents().get(1);
+		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cNameEStringParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final Keyword cColonKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cLeftAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final CrossReference cLeftMeasureCrossReference_4_0 = (CrossReference)cLeftAssignment_4.eContents().get(0);
+		private final RuleCall cLeftMeasureEStringParserRuleCall_4_0_1 = (RuleCall)cLeftMeasureCrossReference_4_0.eContents().get(1);
+		private final Keyword cPlusSignKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cRightAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final CrossReference cRightMeasureCrossReference_6_0 = (CrossReference)cRightAssignment_6.eContents().get(0);
+		private final RuleCall cRightMeasureEStringParserRuleCall_6_0_1 = (RuleCall)cRightMeasureCrossReference_6_0.eContents().get(1);
+		
+		//MeasureSumOperation:
+		//	{MeasureSumOperation} ('target' targetClass=[ecore::EClass|EString])? name=EString ':' left=[Measure|EString] '+'
+		//	right=[Measure|EString];
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{MeasureSumOperation} ('target' targetClass=[ecore::EClass|EString])? name=EString ':' left=[Measure|EString] '+'
+		//right=[Measure|EString]
+		public Group getGroup() { return cGroup; }
+		
+		//{MeasureSumOperation}
+		public Action getMeasureSumOperationAction_0() { return cMeasureSumOperationAction_0; }
+		
+		//('target' targetClass=[ecore::EClass|EString])?
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//'target'
+		public Keyword getTargetKeyword_1_0() { return cTargetKeyword_1_0; }
+		
+		//targetClass=[ecore::EClass|EString]
+		public Assignment getTargetClassAssignment_1_1() { return cTargetClassAssignment_1_1; }
+		
+		//[ecore::EClass|EString]
+		public CrossReference getTargetClassEClassCrossReference_1_1_0() { return cTargetClassEClassCrossReference_1_1_0; }
+		
+		//EString
+		public RuleCall getTargetClassEClassEStringParserRuleCall_1_1_0_1() { return cTargetClassEClassEStringParserRuleCall_1_1_0_1; }
+		
+		//name=EString
+		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+		
+		//EString
+		public RuleCall getNameEStringParserRuleCall_2_0() { return cNameEStringParserRuleCall_2_0; }
+		
+		//':'
+		public Keyword getColonKeyword_3() { return cColonKeyword_3; }
+		
+		//left=[Measure|EString]
+		public Assignment getLeftAssignment_4() { return cLeftAssignment_4; }
+		
+		//[Measure|EString]
+		public CrossReference getLeftMeasureCrossReference_4_0() { return cLeftMeasureCrossReference_4_0; }
+		
+		//EString
+		public RuleCall getLeftMeasureEStringParserRuleCall_4_0_1() { return cLeftMeasureEStringParserRuleCall_4_0_1; }
+		
+		//'+'
+		public Keyword getPlusSignKeyword_5() { return cPlusSignKeyword_5; }
+		
+		//right=[Measure|EString]
+		public Assignment getRightAssignment_6() { return cRightAssignment_6; }
+		
+		//[Measure|EString]
+		public CrossReference getRightMeasureCrossReference_6_0() { return cRightMeasureCrossReference_6_0; }
+		
+		//EString
+		public RuleCall getRightMeasureEStringParserRuleCall_6_0_1() { return cRightMeasureEStringParserRuleCall_6_0_1; }
+	}
+	public class EnergyComputationElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.tblf.energy.estimation.Eel.EnergyComputation");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cEnergyComputationAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cEnergyComputationKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cNameEStringParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Keyword cTargetClassKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Assignment cTargetClassAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final CrossReference cTargetClassEClassCrossReference_4_1_0 = (CrossReference)cTargetClassAssignment_4_1.eContents().get(0);
+		private final RuleCall cTargetClassEClassEStringParserRuleCall_4_1_0_1 = (RuleCall)cTargetClassEClassCrossReference_4_1_0.eContents().get(1);
+		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
+		private final Keyword cTargetOperationKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Assignment cTargetOperationAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
+		private final CrossReference cTargetOperationEOperationCrossReference_5_1_0 = (CrossReference)cTargetOperationAssignment_5_1.eContents().get(0);
+		private final RuleCall cTargetOperationEOperationEStringParserRuleCall_5_1_0_1 = (RuleCall)cTargetOperationEOperationCrossReference_5_1_0.eContents().get(1);
+		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
+		private final Keyword cLeftKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
+		private final Assignment cLeftAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
+		private final CrossReference cLeftMeasureCrossReference_6_1_0 = (CrossReference)cLeftAssignment_6_1.eContents().get(0);
+		private final RuleCall cLeftMeasureEStringParserRuleCall_6_1_0_1 = (RuleCall)cLeftMeasureCrossReference_6_1_0.eContents().get(1);
+		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
+		private final Keyword cRightKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
+		private final Assignment cRightAssignment_7_1 = (Assignment)cGroup_7.eContents().get(1);
+		private final CrossReference cRightMeasureCrossReference_7_1_0 = (CrossReference)cRightAssignment_7_1.eContents().get(0);
+		private final RuleCall cRightMeasureEStringParserRuleCall_7_1_0_1 = (RuleCall)cRightMeasureCrossReference_7_1_0.eContents().get(1);
+		private final Group cGroup_8 = (Group)cGroup.eContents().get(8);
+		private final Keyword cUncertaintyKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
+		private final Assignment cUncertaintyAssignment_8_1 = (Assignment)cGroup_8.eContents().get(1);
+		private final RuleCall cUncertaintyMeasurementUncertaintyParserRuleCall_8_1_0 = (RuleCall)cUncertaintyAssignment_8_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_9 = (Keyword)cGroup.eContents().get(9);
+		
+		//EnergyComputation:
+		//	{EnergyComputation}
+		//	'EnergyComputation'
+		//	name=EString
+		//	'{' ('targetClass' targetClass=[ecore::EClass|EString])? ('targetOperation'
+		//	targetOperation=[ecore::EOperation|EString])? ('left' left=[Measure|EString])? ('right' right=[Measure|EString])?
+		//	('uncertainty' uncertainty=MeasurementUncertainty)?
+		//	'}';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{EnergyComputation} 'EnergyComputation' name=EString '{' ('targetClass' targetClass=[ecore::EClass|EString])?
+		//('targetOperation' targetOperation=[ecore::EOperation|EString])? ('left' left=[Measure|EString])? ('right'
+		//right=[Measure|EString])? ('uncertainty' uncertainty=MeasurementUncertainty)? '}'
+		public Group getGroup() { return cGroup; }
+		
+		//{EnergyComputation}
+		public Action getEnergyComputationAction_0() { return cEnergyComputationAction_0; }
+		
+		//'EnergyComputation'
+		public Keyword getEnergyComputationKeyword_1() { return cEnergyComputationKeyword_1; }
+		
+		//name=EString
+		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+		
+		//EString
+		public RuleCall getNameEStringParserRuleCall_2_0() { return cNameEStringParserRuleCall_2_0; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
+		
+		//('targetClass' targetClass=[ecore::EClass|EString])?
+		public Group getGroup_4() { return cGroup_4; }
+		
+		//'targetClass'
+		public Keyword getTargetClassKeyword_4_0() { return cTargetClassKeyword_4_0; }
+		
+		//targetClass=[ecore::EClass|EString]
+		public Assignment getTargetClassAssignment_4_1() { return cTargetClassAssignment_4_1; }
+		
+		//[ecore::EClass|EString]
+		public CrossReference getTargetClassEClassCrossReference_4_1_0() { return cTargetClassEClassCrossReference_4_1_0; }
+		
+		//EString
+		public RuleCall getTargetClassEClassEStringParserRuleCall_4_1_0_1() { return cTargetClassEClassEStringParserRuleCall_4_1_0_1; }
+		
+		//('targetOperation' targetOperation=[ecore::EOperation|EString])?
+		public Group getGroup_5() { return cGroup_5; }
+		
+		//'targetOperation'
+		public Keyword getTargetOperationKeyword_5_0() { return cTargetOperationKeyword_5_0; }
+		
+		//targetOperation=[ecore::EOperation|EString]
+		public Assignment getTargetOperationAssignment_5_1() { return cTargetOperationAssignment_5_1; }
+		
+		//[ecore::EOperation|EString]
+		public CrossReference getTargetOperationEOperationCrossReference_5_1_0() { return cTargetOperationEOperationCrossReference_5_1_0; }
+		
+		//EString
+		public RuleCall getTargetOperationEOperationEStringParserRuleCall_5_1_0_1() { return cTargetOperationEOperationEStringParserRuleCall_5_1_0_1; }
+		
+		//('left' left=[Measure|EString])?
+		public Group getGroup_6() { return cGroup_6; }
+		
+		//'left'
+		public Keyword getLeftKeyword_6_0() { return cLeftKeyword_6_0; }
+		
+		//left=[Measure|EString]
+		public Assignment getLeftAssignment_6_1() { return cLeftAssignment_6_1; }
+		
+		//[Measure|EString]
+		public CrossReference getLeftMeasureCrossReference_6_1_0() { return cLeftMeasureCrossReference_6_1_0; }
+		
+		//EString
+		public RuleCall getLeftMeasureEStringParserRuleCall_6_1_0_1() { return cLeftMeasureEStringParserRuleCall_6_1_0_1; }
+		
+		//('right' right=[Measure|EString])?
+		public Group getGroup_7() { return cGroup_7; }
+		
+		//'right'
+		public Keyword getRightKeyword_7_0() { return cRightKeyword_7_0; }
+		
+		//right=[Measure|EString]
+		public Assignment getRightAssignment_7_1() { return cRightAssignment_7_1; }
+		
+		//[Measure|EString]
+		public CrossReference getRightMeasureCrossReference_7_1_0() { return cRightMeasureCrossReference_7_1_0; }
+		
+		//EString
+		public RuleCall getRightMeasureEStringParserRuleCall_7_1_0_1() { return cRightMeasureEStringParserRuleCall_7_1_0_1; }
+		
+		//('uncertainty' uncertainty=MeasurementUncertainty)?
+		public Group getGroup_8() { return cGroup_8; }
+		
+		//'uncertainty'
+		public Keyword getUncertaintyKeyword_8_0() { return cUncertaintyKeyword_8_0; }
+		
+		//uncertainty=MeasurementUncertainty
+		public Assignment getUncertaintyAssignment_8_1() { return cUncertaintyAssignment_8_1; }
+		
+		//MeasurementUncertainty
+		public RuleCall getUncertaintyMeasurementUncertaintyParserRuleCall_8_1_0() { return cUncertaintyMeasurementUncertaintyParserRuleCall_8_1_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_9() { return cRightCurlyBracketKeyword_9; }
+	}
+	public class PowerComputationElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.tblf.energy.estimation.Eel.PowerComputation");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cPowerComputationAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cPowerComputationKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cNameEStringParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Keyword cTargetClassKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Assignment cTargetClassAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final CrossReference cTargetClassEClassCrossReference_4_1_0 = (CrossReference)cTargetClassAssignment_4_1.eContents().get(0);
+		private final RuleCall cTargetClassEClassEStringParserRuleCall_4_1_0_1 = (RuleCall)cTargetClassEClassCrossReference_4_1_0.eContents().get(1);
+		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
+		private final Keyword cTargetOperationKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Assignment cTargetOperationAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
+		private final CrossReference cTargetOperationEOperationCrossReference_5_1_0 = (CrossReference)cTargetOperationAssignment_5_1.eContents().get(0);
+		private final RuleCall cTargetOperationEOperationEStringParserRuleCall_5_1_0_1 = (RuleCall)cTargetOperationEOperationCrossReference_5_1_0.eContents().get(1);
+		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
+		private final Keyword cLeftKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
+		private final Assignment cLeftAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
+		private final CrossReference cLeftMeasureCrossReference_6_1_0 = (CrossReference)cLeftAssignment_6_1.eContents().get(0);
+		private final RuleCall cLeftMeasureEStringParserRuleCall_6_1_0_1 = (RuleCall)cLeftMeasureCrossReference_6_1_0.eContents().get(1);
+		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
+		private final Keyword cRightKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
+		private final Assignment cRightAssignment_7_1 = (Assignment)cGroup_7.eContents().get(1);
+		private final CrossReference cRightMeasureCrossReference_7_1_0 = (CrossReference)cRightAssignment_7_1.eContents().get(0);
+		private final RuleCall cRightMeasureEStringParserRuleCall_7_1_0_1 = (RuleCall)cRightMeasureCrossReference_7_1_0.eContents().get(1);
+		private final Group cGroup_8 = (Group)cGroup.eContents().get(8);
+		private final Keyword cUncertaintyKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
+		private final Assignment cUncertaintyAssignment_8_1 = (Assignment)cGroup_8.eContents().get(1);
+		private final RuleCall cUncertaintyMeasurementUncertaintyParserRuleCall_8_1_0 = (RuleCall)cUncertaintyAssignment_8_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_9 = (Keyword)cGroup.eContents().get(9);
+		
+		//PowerComputation:
+		//	{PowerComputation}
+		//	'PowerComputation'
+		//	name=EString
+		//	'{' ('targetClass' targetClass=[ecore::EClass|EString])? ('targetOperation'
+		//	targetOperation=[ecore::EOperation|EString])? ('left' left=[Measure|EString])? ('right' right=[Measure|EString])?
+		//	('uncertainty' uncertainty=MeasurementUncertainty)?
+		//	'}';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{PowerComputation} 'PowerComputation' name=EString '{' ('targetClass' targetClass=[ecore::EClass|EString])?
+		//('targetOperation' targetOperation=[ecore::EOperation|EString])? ('left' left=[Measure|EString])? ('right'
+		//right=[Measure|EString])? ('uncertainty' uncertainty=MeasurementUncertainty)? '}'
+		public Group getGroup() { return cGroup; }
+		
+		//{PowerComputation}
+		public Action getPowerComputationAction_0() { return cPowerComputationAction_0; }
+		
+		//'PowerComputation'
+		public Keyword getPowerComputationKeyword_1() { return cPowerComputationKeyword_1; }
+		
+		//name=EString
+		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+		
+		//EString
+		public RuleCall getNameEStringParserRuleCall_2_0() { return cNameEStringParserRuleCall_2_0; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
+		
+		//('targetClass' targetClass=[ecore::EClass|EString])?
+		public Group getGroup_4() { return cGroup_4; }
+		
+		//'targetClass'
+		public Keyword getTargetClassKeyword_4_0() { return cTargetClassKeyword_4_0; }
+		
+		//targetClass=[ecore::EClass|EString]
+		public Assignment getTargetClassAssignment_4_1() { return cTargetClassAssignment_4_1; }
+		
+		//[ecore::EClass|EString]
+		public CrossReference getTargetClassEClassCrossReference_4_1_0() { return cTargetClassEClassCrossReference_4_1_0; }
+		
+		//EString
+		public RuleCall getTargetClassEClassEStringParserRuleCall_4_1_0_1() { return cTargetClassEClassEStringParserRuleCall_4_1_0_1; }
+		
+		//('targetOperation' targetOperation=[ecore::EOperation|EString])?
+		public Group getGroup_5() { return cGroup_5; }
+		
+		//'targetOperation'
+		public Keyword getTargetOperationKeyword_5_0() { return cTargetOperationKeyword_5_0; }
+		
+		//targetOperation=[ecore::EOperation|EString]
+		public Assignment getTargetOperationAssignment_5_1() { return cTargetOperationAssignment_5_1; }
+		
+		//[ecore::EOperation|EString]
+		public CrossReference getTargetOperationEOperationCrossReference_5_1_0() { return cTargetOperationEOperationCrossReference_5_1_0; }
+		
+		//EString
+		public RuleCall getTargetOperationEOperationEStringParserRuleCall_5_1_0_1() { return cTargetOperationEOperationEStringParserRuleCall_5_1_0_1; }
+		
+		//('left' left=[Measure|EString])?
+		public Group getGroup_6() { return cGroup_6; }
+		
+		//'left'
+		public Keyword getLeftKeyword_6_0() { return cLeftKeyword_6_0; }
+		
+		//left=[Measure|EString]
+		public Assignment getLeftAssignment_6_1() { return cLeftAssignment_6_1; }
+		
+		//[Measure|EString]
+		public CrossReference getLeftMeasureCrossReference_6_1_0() { return cLeftMeasureCrossReference_6_1_0; }
+		
+		//EString
+		public RuleCall getLeftMeasureEStringParserRuleCall_6_1_0_1() { return cLeftMeasureEStringParserRuleCall_6_1_0_1; }
+		
+		//('right' right=[Measure|EString])?
+		public Group getGroup_7() { return cGroup_7; }
+		
+		//'right'
+		public Keyword getRightKeyword_7_0() { return cRightKeyword_7_0; }
+		
+		//right=[Measure|EString]
+		public Assignment getRightAssignment_7_1() { return cRightAssignment_7_1; }
+		
+		//[Measure|EString]
+		public CrossReference getRightMeasureCrossReference_7_1_0() { return cRightMeasureCrossReference_7_1_0; }
+		
+		//EString
+		public RuleCall getRightMeasureEStringParserRuleCall_7_1_0_1() { return cRightMeasureEStringParserRuleCall_7_1_0_1; }
+		
+		//('uncertainty' uncertainty=MeasurementUncertainty)?
+		public Group getGroup_8() { return cGroup_8; }
+		
+		//'uncertainty'
+		public Keyword getUncertaintyKeyword_8_0() { return cUncertaintyKeyword_8_0; }
+		
+		//uncertainty=MeasurementUncertainty
+		public Assignment getUncertaintyAssignment_8_1() { return cUncertaintyAssignment_8_1; }
+		
+		//MeasurementUncertainty
+		public RuleCall getUncertaintyMeasurementUncertaintyParserRuleCall_8_1_0() { return cUncertaintyMeasurementUncertaintyParserRuleCall_8_1_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_9() { return cRightCurlyBracketKeyword_9; }
+	}
+	public class MeasurementUncertaintyElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.tblf.energy.estimation.Eel.MeasurementUncertainty");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cMeasurementUncertaintyAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cMeasurementUncertaintyKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Keyword cStandardUncertaintyKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Assignment cStandardUncertaintyAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final RuleCall cStandardUncertaintyEBigDecimalParserRuleCall_3_1_0 = (RuleCall)cStandardUncertaintyAssignment_3_1.eContents().get(0);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Keyword cInformationKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Assignment cInformationAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final RuleCall cInformationMeasurementUncertaintyInformationParserRuleCall_4_1_0 = (RuleCall)cInformationAssignment_4_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		
+		//MeasurementUncertainty:
+		//	{MeasurementUncertainty}
+		//	'MeasurementUncertainty'
+		//	'{' ('standardUncertainty' standardUncertainty=EBigDecimal)? ('information'
+		//	information=MeasurementUncertaintyInformation)?
+		//	'}';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{MeasurementUncertainty} 'MeasurementUncertainty' '{' ('standardUncertainty' standardUncertainty=EBigDecimal)?
+		//('information' information=MeasurementUncertaintyInformation)? '}'
+		public Group getGroup() { return cGroup; }
+		
+		//{MeasurementUncertainty}
+		public Action getMeasurementUncertaintyAction_0() { return cMeasurementUncertaintyAction_0; }
+		
+		//'MeasurementUncertainty'
+		public Keyword getMeasurementUncertaintyKeyword_1() { return cMeasurementUncertaintyKeyword_1; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
+		
+		//('standardUncertainty' standardUncertainty=EBigDecimal)?
+		public Group getGroup_3() { return cGroup_3; }
+		
+		//'standardUncertainty'
+		public Keyword getStandardUncertaintyKeyword_3_0() { return cStandardUncertaintyKeyword_3_0; }
+		
+		//standardUncertainty=EBigDecimal
+		public Assignment getStandardUncertaintyAssignment_3_1() { return cStandardUncertaintyAssignment_3_1; }
+		
+		//EBigDecimal
+		public RuleCall getStandardUncertaintyEBigDecimalParserRuleCall_3_1_0() { return cStandardUncertaintyEBigDecimalParserRuleCall_3_1_0; }
+		
+		//('information' information=MeasurementUncertaintyInformation)?
+		public Group getGroup_4() { return cGroup_4; }
+		
+		//'information'
+		public Keyword getInformationKeyword_4_0() { return cInformationKeyword_4_0; }
+		
+		//information=MeasurementUncertaintyInformation
+		public Assignment getInformationAssignment_4_1() { return cInformationAssignment_4_1; }
+		
+		//MeasurementUncertaintyInformation
+		public RuleCall getInformationMeasurementUncertaintyInformationParserRuleCall_4_1_0() { return cInformationMeasurementUncertaintyInformationParserRuleCall_4_1_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
+	}
+	public class NormalDistributionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.tblf.energy.estimation.Eel.NormalDistribution");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cNormalDistributionAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cNormalDistributionKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		
+		//NormalDistribution:
+		//	{NormalDistribution}
+		//	'NormalDistribution';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{NormalDistribution} 'NormalDistribution'
+		public Group getGroup() { return cGroup; }
+		
+		//{NormalDistribution}
+		public Action getNormalDistributionAction_0() { return cNormalDistributionAction_0; }
+		
+		//'NormalDistribution'
+		public Keyword getNormalDistributionKeyword_1() { return cNormalDistributionKeyword_1; }
+	}
+	public class IntervalElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.tblf.energy.estimation.Eel.Interval");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cIntervalKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cLowerEndpointKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cLowerEndpointAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cLowerEndpointMeasureParserRuleCall_3_0 = (RuleCall)cLowerEndpointAssignment_3.eContents().get(0);
+		private final Keyword cUpperEndpointKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cUpperEndpointAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cUpperEndpointMeasureParserRuleCall_5_0 = (RuleCall)cUpperEndpointAssignment_5.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		
+		//Interval:
+		//	'Interval'
+		//	'{'
+		//	'lowerEndpoint' lowerEndpoint=Measure
+		//	'upperEndpoint' upperEndpoint=Measure
+		//	'}';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'Interval' '{' 'lowerEndpoint' lowerEndpoint=Measure 'upperEndpoint' upperEndpoint=Measure '}'
+		public Group getGroup() { return cGroup; }
+		
+		//'Interval'
+		public Keyword getIntervalKeyword_0() { return cIntervalKeyword_0; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
+		
+		//'lowerEndpoint'
+		public Keyword getLowerEndpointKeyword_2() { return cLowerEndpointKeyword_2; }
+		
+		//lowerEndpoint=Measure
+		public Assignment getLowerEndpointAssignment_3() { return cLowerEndpointAssignment_3; }
+		
+		//Measure
+		public RuleCall getLowerEndpointMeasureParserRuleCall_3_0() { return cLowerEndpointMeasureParserRuleCall_3_0; }
+		
+		//'upperEndpoint'
+		public Keyword getUpperEndpointKeyword_4() { return cUpperEndpointKeyword_4; }
+		
+		//upperEndpoint=Measure
+		public Assignment getUpperEndpointAssignment_5() { return cUpperEndpointAssignment_5; }
+		
+		//Measure
+		public RuleCall getUpperEndpointMeasureParserRuleCall_5_0() { return cUpperEndpointMeasureParserRuleCall_5_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
+	}
+	public class SamplingElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.tblf.energy.estimation.Eel.Sampling");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cSamplingAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cSamplingKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Keyword cMeasurementProcedureKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Assignment cMeasurementProcedureAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final RuleCall cMeasurementProcedureEStringParserRuleCall_3_1_0 = (RuleCall)cMeasurementProcedureAssignment_3_1.eContents().get(0);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Keyword cSamplesKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
+		private final Assignment cSamplesAssignment_4_2 = (Assignment)cGroup_4.eContents().get(2);
+		private final RuleCall cSamplesSampleParserRuleCall_4_2_0 = (RuleCall)cSamplesAssignment_4_2.eContents().get(0);
+		private final Group cGroup_4_3 = (Group)cGroup_4.eContents().get(3);
+		private final Keyword cCommaKeyword_4_3_0 = (Keyword)cGroup_4_3.eContents().get(0);
+		private final Assignment cSamplesAssignment_4_3_1 = (Assignment)cGroup_4_3.eContents().get(1);
+		private final RuleCall cSamplesSampleParserRuleCall_4_3_1_0 = (RuleCall)cSamplesAssignment_4_3_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_4_4 = (Keyword)cGroup_4.eContents().get(4);
+		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		
+		//Sampling:
+		//	{Sampling}
+		//	'Sampling'
+		//	'{' ('measurementProcedure' measurementProcedure=EString)? ('samples' '{' samples+=Sample ("," samples+=Sample)* '}')?
+		//	'}';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{Sampling} 'Sampling' '{' ('measurementProcedure' measurementProcedure=EString)? ('samples' '{' samples+=Sample (","
+		//samples+=Sample)* '}')? '}'
+		public Group getGroup() { return cGroup; }
+		
+		//{Sampling}
+		public Action getSamplingAction_0() { return cSamplingAction_0; }
+		
+		//'Sampling'
+		public Keyword getSamplingKeyword_1() { return cSamplingKeyword_1; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
+		
+		//('measurementProcedure' measurementProcedure=EString)?
+		public Group getGroup_3() { return cGroup_3; }
+		
+		//'measurementProcedure'
+		public Keyword getMeasurementProcedureKeyword_3_0() { return cMeasurementProcedureKeyword_3_0; }
+		
+		//measurementProcedure=EString
+		public Assignment getMeasurementProcedureAssignment_3_1() { return cMeasurementProcedureAssignment_3_1; }
+		
+		//EString
+		public RuleCall getMeasurementProcedureEStringParserRuleCall_3_1_0() { return cMeasurementProcedureEStringParserRuleCall_3_1_0; }
+		
+		//('samples' '{' samples+=Sample ("," samples+=Sample)* '}')?
+		public Group getGroup_4() { return cGroup_4; }
+		
+		//'samples'
+		public Keyword getSamplesKeyword_4_0() { return cSamplesKeyword_4_0; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_4_1() { return cLeftCurlyBracketKeyword_4_1; }
+		
+		//samples+=Sample
+		public Assignment getSamplesAssignment_4_2() { return cSamplesAssignment_4_2; }
+		
+		//Sample
+		public RuleCall getSamplesSampleParserRuleCall_4_2_0() { return cSamplesSampleParserRuleCall_4_2_0; }
+		
+		//("," samples+=Sample)*
+		public Group getGroup_4_3() { return cGroup_4_3; }
+		
+		//","
+		public Keyword getCommaKeyword_4_3_0() { return cCommaKeyword_4_3_0; }
+		
+		//samples+=Sample
+		public Assignment getSamplesAssignment_4_3_1() { return cSamplesAssignment_4_3_1; }
+		
+		//Sample
+		public RuleCall getSamplesSampleParserRuleCall_4_3_1_0() { return cSamplesSampleParserRuleCall_4_3_1_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_4_4() { return cRightCurlyBracketKeyword_4_4; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
+	}
+	public class IntegralElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.tblf.energy.estimation.Eel.Integral");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cIntegralKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Keyword cFunctionKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Assignment cFunctionAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final RuleCall cFunctionEStringParserRuleCall_2_1_0 = (RuleCall)cFunctionAssignment_2_1.eContents().get(0);
+		private final Keyword cIntervalKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cIntervalAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final CrossReference cIntervalIntervalCrossReference_4_0 = (CrossReference)cIntervalAssignment_4.eContents().get(0);
+		private final RuleCall cIntervalIntervalEStringParserRuleCall_4_0_1 = (RuleCall)cIntervalIntervalCrossReference_4_0.eContents().get(1);
+		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		
+		//Integral:
+		//	'Integral'
+		//	'{' ('function' function=EString)?
+		//	'interval' interval=[Interval|EString]
+		//	'}';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'Integral' '{' ('function' function=EString)? 'interval' interval=[Interval|EString] '}'
+		public Group getGroup() { return cGroup; }
+		
+		//'Integral'
+		public Keyword getIntegralKeyword_0() { return cIntegralKeyword_0; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
+		
+		//('function' function=EString)?
+		public Group getGroup_2() { return cGroup_2; }
+		
+		//'function'
+		public Keyword getFunctionKeyword_2_0() { return cFunctionKeyword_2_0; }
+		
+		//function=EString
+		public Assignment getFunctionAssignment_2_1() { return cFunctionAssignment_2_1; }
+		
+		//EString
+		public RuleCall getFunctionEStringParserRuleCall_2_1_0() { return cFunctionEStringParserRuleCall_2_1_0; }
+		
+		//'interval'
+		public Keyword getIntervalKeyword_3() { return cIntervalKeyword_3; }
+		
+		//interval=[Interval|EString]
+		public Assignment getIntervalAssignment_4() { return cIntervalAssignment_4; }
+		
+		//[Interval|EString]
+		public CrossReference getIntervalIntervalCrossReference_4_0() { return cIntervalIntervalCrossReference_4_0; }
+		
+		//EString
+		public RuleCall getIntervalIntervalEStringParserRuleCall_4_0_1() { return cIntervalIntervalEStringParserRuleCall_4_0_1; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
+	}
+	public class SampleElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.tblf.energy.estimation.Eel.Sample");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cSampleAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cSampleKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Keyword cQuantityKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_3_1 = (Keyword)cGroup_3.eContents().get(1);
+		private final Assignment cQuantityAssignment_3_2 = (Assignment)cGroup_3.eContents().get(2);
+		private final RuleCall cQuantityMeasureParserRuleCall_3_2_0 = (RuleCall)cQuantityAssignment_3_2.eContents().get(0);
+		private final Group cGroup_3_3 = (Group)cGroup_3.eContents().get(3);
+		private final Keyword cCommaKeyword_3_3_0 = (Keyword)cGroup_3_3.eContents().get(0);
+		private final Assignment cQuantityAssignment_3_3_1 = (Assignment)cGroup_3_3.eContents().get(1);
+		private final RuleCall cQuantityMeasureParserRuleCall_3_3_1_0 = (RuleCall)cQuantityAssignment_3_3_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_3_4 = (Keyword)cGroup_3.eContents().get(4);
+		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		
+		//Sample:
+		//	{Sample}
+		//	'Sample'
+		//	'{' ('quantity' '{' quantity+=Measure ("," quantity+=Measure)* '}')?
+		//	'}';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{Sample} 'Sample' '{' ('quantity' '{' quantity+=Measure ("," quantity+=Measure)* '}')? '}'
+		public Group getGroup() { return cGroup; }
+		
+		//{Sample}
+		public Action getSampleAction_0() { return cSampleAction_0; }
+		
+		//'Sample'
+		public Keyword getSampleKeyword_1() { return cSampleKeyword_1; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
+		
+		//('quantity' '{' quantity+=Measure ("," quantity+=Measure)* '}')?
+		public Group getGroup_3() { return cGroup_3; }
+		
+		//'quantity'
+		public Keyword getQuantityKeyword_3_0() { return cQuantityKeyword_3_0; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_3_1() { return cLeftCurlyBracketKeyword_3_1; }
+		
+		//quantity+=Measure
+		public Assignment getQuantityAssignment_3_2() { return cQuantityAssignment_3_2; }
+		
+		//Measure
+		public RuleCall getQuantityMeasureParserRuleCall_3_2_0() { return cQuantityMeasureParserRuleCall_3_2_0; }
+		
+		//("," quantity+=Measure)*
+		public Group getGroup_3_3() { return cGroup_3_3; }
+		
+		//","
+		public Keyword getCommaKeyword_3_3_0() { return cCommaKeyword_3_3_0; }
+		
+		//quantity+=Measure
+		public Assignment getQuantityAssignment_3_3_1() { return cQuantityAssignment_3_3_1; }
+		
+		//Measure
+		public RuleCall getQuantityMeasureParserRuleCall_3_3_1_0() { return cQuantityMeasureParserRuleCall_3_3_1_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_3_4() { return cRightCurlyBracketKeyword_3_4; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
+	}
 	public class EClassElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.tblf.energy.estimation.Eel.EClass");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -1073,966 +2191,6 @@ public class EelGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_15() { return cRightCurlyBracketKeyword_15; }
-	}
-	public class MeasurementUncertaintyElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.tblf.energy.estimation.Eel.MeasurementUncertainty");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cMeasurementUncertaintyAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cMeasurementUncertaintyKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Keyword cStandardUncertaintyKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final Assignment cStandardUncertaintyAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final RuleCall cStandardUncertaintyEBigDecimalParserRuleCall_3_1_0 = (RuleCall)cStandardUncertaintyAssignment_3_1.eContents().get(0);
-		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Keyword cInformationKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
-		private final Assignment cInformationAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
-		private final RuleCall cInformationMeasurementUncertaintyInformationParserRuleCall_4_1_0 = (RuleCall)cInformationAssignment_4_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		
-		//MeasurementUncertainty:
-		//	{MeasurementUncertainty}
-		//	'MeasurementUncertainty'
-		//	'{' ('standardUncertainty' standardUncertainty=EBigDecimal)? ('information'
-		//	information=MeasurementUncertaintyInformation)?
-		//	'}';
-		@Override public ParserRule getRule() { return rule; }
-		
-		//{MeasurementUncertainty} 'MeasurementUncertainty' '{' ('standardUncertainty' standardUncertainty=EBigDecimal)?
-		//('information' information=MeasurementUncertaintyInformation)? '}'
-		public Group getGroup() { return cGroup; }
-		
-		//{MeasurementUncertainty}
-		public Action getMeasurementUncertaintyAction_0() { return cMeasurementUncertaintyAction_0; }
-		
-		//'MeasurementUncertainty'
-		public Keyword getMeasurementUncertaintyKeyword_1() { return cMeasurementUncertaintyKeyword_1; }
-		
-		//'{'
-		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
-		
-		//('standardUncertainty' standardUncertainty=EBigDecimal)?
-		public Group getGroup_3() { return cGroup_3; }
-		
-		//'standardUncertainty'
-		public Keyword getStandardUncertaintyKeyword_3_0() { return cStandardUncertaintyKeyword_3_0; }
-		
-		//standardUncertainty=EBigDecimal
-		public Assignment getStandardUncertaintyAssignment_3_1() { return cStandardUncertaintyAssignment_3_1; }
-		
-		//EBigDecimal
-		public RuleCall getStandardUncertaintyEBigDecimalParserRuleCall_3_1_0() { return cStandardUncertaintyEBigDecimalParserRuleCall_3_1_0; }
-		
-		//('information' information=MeasurementUncertaintyInformation)?
-		public Group getGroup_4() { return cGroup_4; }
-		
-		//'information'
-		public Keyword getInformationKeyword_4_0() { return cInformationKeyword_4_0; }
-		
-		//information=MeasurementUncertaintyInformation
-		public Assignment getInformationAssignment_4_1() { return cInformationAssignment_4_1; }
-		
-		//MeasurementUncertaintyInformation
-		public RuleCall getInformationMeasurementUncertaintyInformationParserRuleCall_4_1_0() { return cInformationMeasurementUncertaintyInformationParserRuleCall_4_1_0; }
-		
-		//'}'
-		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
-	}
-	public class MeasureValue_ImplElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.tblf.energy.estimation.Eel.MeasureValue_Impl");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cMeasureValueAction_0 = (Action)cGroup.eContents().get(0);
-		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
-		private final Keyword cTargetKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
-		private final Assignment cTargetClassAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
-		private final CrossReference cTargetClassEClassCrossReference_1_1_0 = (CrossReference)cTargetClassAssignment_1_1.eContents().get(0);
-		private final RuleCall cTargetClassEClassEStringParserRuleCall_1_1_0_1 = (RuleCall)cTargetClassEClassCrossReference_1_1_0.eContents().get(1);
-		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cNameEStringParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
-		private final Keyword cColonKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cValueAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cValueEBigDecimalParserRuleCall_4_0 = (RuleCall)cValueAssignment_4.eContents().get(0);
-		private final Assignment cTypeAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cTypeTypeEnumRuleCall_5_0 = (RuleCall)cTypeAssignment_5.eContents().get(0);
-		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
-		private final Keyword cUncertaintyKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
-		private final Assignment cUncertaintyAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
-		private final RuleCall cUncertaintyMeasurementUncertaintyParserRuleCall_6_1_0 = (RuleCall)cUncertaintyAssignment_6_1.eContents().get(0);
-		
-		//MeasureValue_Impl MeasureValue:
-		//	{MeasureValue} ('target' targetClass=[ecore::EClass|EString])? name=EString ":" value=EBigDecimal? type=Type?
-		//	('uncertainty' uncertainty=MeasurementUncertainty)?;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//{MeasureValue} ('target' targetClass=[ecore::EClass|EString])? name=EString ":" value=EBigDecimal? type=Type?
-		//('uncertainty' uncertainty=MeasurementUncertainty)?
-		public Group getGroup() { return cGroup; }
-		
-		//{MeasureValue}
-		public Action getMeasureValueAction_0() { return cMeasureValueAction_0; }
-		
-		//('target' targetClass=[ecore::EClass|EString])?
-		public Group getGroup_1() { return cGroup_1; }
-		
-		//'target'
-		public Keyword getTargetKeyword_1_0() { return cTargetKeyword_1_0; }
-		
-		//targetClass=[ecore::EClass|EString]
-		public Assignment getTargetClassAssignment_1_1() { return cTargetClassAssignment_1_1; }
-		
-		//[ecore::EClass|EString]
-		public CrossReference getTargetClassEClassCrossReference_1_1_0() { return cTargetClassEClassCrossReference_1_1_0; }
-		
-		//EString
-		public RuleCall getTargetClassEClassEStringParserRuleCall_1_1_0_1() { return cTargetClassEClassEStringParserRuleCall_1_1_0_1; }
-		
-		//name=EString
-		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
-		
-		//EString
-		public RuleCall getNameEStringParserRuleCall_2_0() { return cNameEStringParserRuleCall_2_0; }
-		
-		//":"
-		public Keyword getColonKeyword_3() { return cColonKeyword_3; }
-		
-		//value=EBigDecimal?
-		public Assignment getValueAssignment_4() { return cValueAssignment_4; }
-		
-		//EBigDecimal
-		public RuleCall getValueEBigDecimalParserRuleCall_4_0() { return cValueEBigDecimalParserRuleCall_4_0; }
-		
-		//type=Type?
-		public Assignment getTypeAssignment_5() { return cTypeAssignment_5; }
-		
-		//Type
-		public RuleCall getTypeTypeEnumRuleCall_5_0() { return cTypeTypeEnumRuleCall_5_0; }
-		
-		//('uncertainty' uncertainty=MeasurementUncertainty)?
-		public Group getGroup_6() { return cGroup_6; }
-		
-		//'uncertainty'
-		public Keyword getUncertaintyKeyword_6_0() { return cUncertaintyKeyword_6_0; }
-		
-		//uncertainty=MeasurementUncertainty
-		public Assignment getUncertaintyAssignment_6_1() { return cUncertaintyAssignment_6_1; }
-		
-		//MeasurementUncertainty
-		public RuleCall getUncertaintyMeasurementUncertaintyParserRuleCall_6_1_0() { return cUncertaintyMeasurementUncertaintyParserRuleCall_6_1_0; }
-	}
-	public class MeasureOCLElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.tblf.energy.estimation.Eel.MeasureOCL");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cMeasureOCLAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cMeasureOCLKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cNameEStringParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Keyword cValueKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
-		private final Assignment cValueAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
-		private final RuleCall cValueEBigDecimalParserRuleCall_4_1_0 = (RuleCall)cValueAssignment_4_1.eContents().get(0);
-		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Keyword cOclQueryKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
-		private final Assignment cOclQueryAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
-		private final RuleCall cOclQueryEStringParserRuleCall_5_1_0 = (RuleCall)cOclQueryAssignment_5_1.eContents().get(0);
-		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
-		private final Keyword cTargetClassKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
-		private final Assignment cTargetClassAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
-		private final CrossReference cTargetClassEClassCrossReference_6_1_0 = (CrossReference)cTargetClassAssignment_6_1.eContents().get(0);
-		private final RuleCall cTargetClassEClassEStringParserRuleCall_6_1_0_1 = (RuleCall)cTargetClassEClassCrossReference_6_1_0.eContents().get(1);
-		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
-		private final Keyword cTargetOperationKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
-		private final Assignment cTargetOperationAssignment_7_1 = (Assignment)cGroup_7.eContents().get(1);
-		private final CrossReference cTargetOperationEOperationCrossReference_7_1_0 = (CrossReference)cTargetOperationAssignment_7_1.eContents().get(0);
-		private final RuleCall cTargetOperationEOperationEStringParserRuleCall_7_1_0_1 = (RuleCall)cTargetOperationEOperationCrossReference_7_1_0.eContents().get(1);
-		private final Group cGroup_8 = (Group)cGroup.eContents().get(8);
-		private final Keyword cUncertaintyKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
-		private final Assignment cUncertaintyAssignment_8_1 = (Assignment)cGroup_8.eContents().get(1);
-		private final RuleCall cUncertaintyMeasurementUncertaintyParserRuleCall_8_1_0 = (RuleCall)cUncertaintyAssignment_8_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_9 = (Keyword)cGroup.eContents().get(9);
-		
-		//MeasureOCL:
-		//	{MeasureOCL}
-		//	'MeasureOCL'
-		//	name=EString
-		//	'{' ('value' value=EBigDecimal)? ('oclQuery' oclQuery=EString)? ('targetClass' targetClass=[ecore::EClass|EString])?
-		//	('targetOperation' targetOperation=[ecore::EOperation|EString])? ('uncertainty' uncertainty=MeasurementUncertainty)?
-		//	'}';
-		@Override public ParserRule getRule() { return rule; }
-		
-		//{MeasureOCL} 'MeasureOCL' name=EString '{' ('value' value=EBigDecimal)? ('oclQuery' oclQuery=EString)? ('targetClass'
-		//targetClass=[ecore::EClass|EString])? ('targetOperation' targetOperation=[ecore::EOperation|EString])? ('uncertainty'
-		//uncertainty=MeasurementUncertainty)? '}'
-		public Group getGroup() { return cGroup; }
-		
-		//{MeasureOCL}
-		public Action getMeasureOCLAction_0() { return cMeasureOCLAction_0; }
-		
-		//'MeasureOCL'
-		public Keyword getMeasureOCLKeyword_1() { return cMeasureOCLKeyword_1; }
-		
-		//name=EString
-		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
-		
-		//EString
-		public RuleCall getNameEStringParserRuleCall_2_0() { return cNameEStringParserRuleCall_2_0; }
-		
-		//'{'
-		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
-		
-		//('value' value=EBigDecimal)?
-		public Group getGroup_4() { return cGroup_4; }
-		
-		//'value'
-		public Keyword getValueKeyword_4_0() { return cValueKeyword_4_0; }
-		
-		//value=EBigDecimal
-		public Assignment getValueAssignment_4_1() { return cValueAssignment_4_1; }
-		
-		//EBigDecimal
-		public RuleCall getValueEBigDecimalParserRuleCall_4_1_0() { return cValueEBigDecimalParserRuleCall_4_1_0; }
-		
-		//('oclQuery' oclQuery=EString)?
-		public Group getGroup_5() { return cGroup_5; }
-		
-		//'oclQuery'
-		public Keyword getOclQueryKeyword_5_0() { return cOclQueryKeyword_5_0; }
-		
-		//oclQuery=EString
-		public Assignment getOclQueryAssignment_5_1() { return cOclQueryAssignment_5_1; }
-		
-		//EString
-		public RuleCall getOclQueryEStringParserRuleCall_5_1_0() { return cOclQueryEStringParserRuleCall_5_1_0; }
-		
-		//('targetClass' targetClass=[ecore::EClass|EString])?
-		public Group getGroup_6() { return cGroup_6; }
-		
-		//'targetClass'
-		public Keyword getTargetClassKeyword_6_0() { return cTargetClassKeyword_6_0; }
-		
-		//targetClass=[ecore::EClass|EString]
-		public Assignment getTargetClassAssignment_6_1() { return cTargetClassAssignment_6_1; }
-		
-		//[ecore::EClass|EString]
-		public CrossReference getTargetClassEClassCrossReference_6_1_0() { return cTargetClassEClassCrossReference_6_1_0; }
-		
-		//EString
-		public RuleCall getTargetClassEClassEStringParserRuleCall_6_1_0_1() { return cTargetClassEClassEStringParserRuleCall_6_1_0_1; }
-		
-		//('targetOperation' targetOperation=[ecore::EOperation|EString])?
-		public Group getGroup_7() { return cGroup_7; }
-		
-		//'targetOperation'
-		public Keyword getTargetOperationKeyword_7_0() { return cTargetOperationKeyword_7_0; }
-		
-		//targetOperation=[ecore::EOperation|EString]
-		public Assignment getTargetOperationAssignment_7_1() { return cTargetOperationAssignment_7_1; }
-		
-		//[ecore::EOperation|EString]
-		public CrossReference getTargetOperationEOperationCrossReference_7_1_0() { return cTargetOperationEOperationCrossReference_7_1_0; }
-		
-		//EString
-		public RuleCall getTargetOperationEOperationEStringParserRuleCall_7_1_0_1() { return cTargetOperationEOperationEStringParserRuleCall_7_1_0_1; }
-		
-		//('uncertainty' uncertainty=MeasurementUncertainty)?
-		public Group getGroup_8() { return cGroup_8; }
-		
-		//'uncertainty'
-		public Keyword getUncertaintyKeyword_8_0() { return cUncertaintyKeyword_8_0; }
-		
-		//uncertainty=MeasurementUncertainty
-		public Assignment getUncertaintyAssignment_8_1() { return cUncertaintyAssignment_8_1; }
-		
-		//MeasurementUncertainty
-		public RuleCall getUncertaintyMeasurementUncertaintyParserRuleCall_8_1_0() { return cUncertaintyMeasurementUncertaintyParserRuleCall_8_1_0; }
-		
-		//'}'
-		public Keyword getRightCurlyBracketKeyword_9() { return cRightCurlyBracketKeyword_9; }
-	}
-	public class MeasureAttributeElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.tblf.energy.estimation.Eel.MeasureAttribute");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cMeasureAttributeAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cMeasureAttributeKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cNameEStringParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Keyword cValueKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
-		private final Assignment cValueAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
-		private final RuleCall cValueEBigDecimalParserRuleCall_4_1_0 = (RuleCall)cValueAssignment_4_1.eContents().get(0);
-		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Keyword cTargetClassKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
-		private final Assignment cTargetClassAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
-		private final CrossReference cTargetClassEClassCrossReference_5_1_0 = (CrossReference)cTargetClassAssignment_5_1.eContents().get(0);
-		private final RuleCall cTargetClassEClassEStringParserRuleCall_5_1_0_1 = (RuleCall)cTargetClassEClassCrossReference_5_1_0.eContents().get(1);
-		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
-		private final Keyword cTargetOperationKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
-		private final Assignment cTargetOperationAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
-		private final CrossReference cTargetOperationEOperationCrossReference_6_1_0 = (CrossReference)cTargetOperationAssignment_6_1.eContents().get(0);
-		private final RuleCall cTargetOperationEOperationEStringParserRuleCall_6_1_0_1 = (RuleCall)cTargetOperationEOperationCrossReference_6_1_0.eContents().get(1);
-		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
-		private final Keyword cAttKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
-		private final Assignment cAttAssignment_7_1 = (Assignment)cGroup_7.eContents().get(1);
-		private final CrossReference cAttEAttributeCrossReference_7_1_0 = (CrossReference)cAttAssignment_7_1.eContents().get(0);
-		private final RuleCall cAttEAttributeEStringParserRuleCall_7_1_0_1 = (RuleCall)cAttEAttributeCrossReference_7_1_0.eContents().get(1);
-		private final Group cGroup_8 = (Group)cGroup.eContents().get(8);
-		private final Keyword cUncertaintyKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
-		private final Assignment cUncertaintyAssignment_8_1 = (Assignment)cGroup_8.eContents().get(1);
-		private final RuleCall cUncertaintyMeasurementUncertaintyParserRuleCall_8_1_0 = (RuleCall)cUncertaintyAssignment_8_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_9 = (Keyword)cGroup.eContents().get(9);
-		
-		//MeasureAttribute:
-		//	{MeasureAttribute}
-		//	'MeasureAttribute'
-		//	name=EString
-		//	'{' ('value' value=EBigDecimal)? ('targetClass' targetClass=[ecore::EClass|EString])? ('targetOperation'
-		//	targetOperation=[ecore::EOperation|EString])? ('att' att=[ecore::EAttribute|EString])? ('uncertainty'
-		//	uncertainty=MeasurementUncertainty)?
-		//	'}';
-		@Override public ParserRule getRule() { return rule; }
-		
-		//{MeasureAttribute} 'MeasureAttribute' name=EString '{' ('value' value=EBigDecimal)? ('targetClass'
-		//targetClass=[ecore::EClass|EString])? ('targetOperation' targetOperation=[ecore::EOperation|EString])? ('att'
-		//att=[ecore::EAttribute|EString])? ('uncertainty' uncertainty=MeasurementUncertainty)? '}'
-		public Group getGroup() { return cGroup; }
-		
-		//{MeasureAttribute}
-		public Action getMeasureAttributeAction_0() { return cMeasureAttributeAction_0; }
-		
-		//'MeasureAttribute'
-		public Keyword getMeasureAttributeKeyword_1() { return cMeasureAttributeKeyword_1; }
-		
-		//name=EString
-		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
-		
-		//EString
-		public RuleCall getNameEStringParserRuleCall_2_0() { return cNameEStringParserRuleCall_2_0; }
-		
-		//'{'
-		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
-		
-		//('value' value=EBigDecimal)?
-		public Group getGroup_4() { return cGroup_4; }
-		
-		//'value'
-		public Keyword getValueKeyword_4_0() { return cValueKeyword_4_0; }
-		
-		//value=EBigDecimal
-		public Assignment getValueAssignment_4_1() { return cValueAssignment_4_1; }
-		
-		//EBigDecimal
-		public RuleCall getValueEBigDecimalParserRuleCall_4_1_0() { return cValueEBigDecimalParserRuleCall_4_1_0; }
-		
-		//('targetClass' targetClass=[ecore::EClass|EString])?
-		public Group getGroup_5() { return cGroup_5; }
-		
-		//'targetClass'
-		public Keyword getTargetClassKeyword_5_0() { return cTargetClassKeyword_5_0; }
-		
-		//targetClass=[ecore::EClass|EString]
-		public Assignment getTargetClassAssignment_5_1() { return cTargetClassAssignment_5_1; }
-		
-		//[ecore::EClass|EString]
-		public CrossReference getTargetClassEClassCrossReference_5_1_0() { return cTargetClassEClassCrossReference_5_1_0; }
-		
-		//EString
-		public RuleCall getTargetClassEClassEStringParserRuleCall_5_1_0_1() { return cTargetClassEClassEStringParserRuleCall_5_1_0_1; }
-		
-		//('targetOperation' targetOperation=[ecore::EOperation|EString])?
-		public Group getGroup_6() { return cGroup_6; }
-		
-		//'targetOperation'
-		public Keyword getTargetOperationKeyword_6_0() { return cTargetOperationKeyword_6_0; }
-		
-		//targetOperation=[ecore::EOperation|EString]
-		public Assignment getTargetOperationAssignment_6_1() { return cTargetOperationAssignment_6_1; }
-		
-		//[ecore::EOperation|EString]
-		public CrossReference getTargetOperationEOperationCrossReference_6_1_0() { return cTargetOperationEOperationCrossReference_6_1_0; }
-		
-		//EString
-		public RuleCall getTargetOperationEOperationEStringParserRuleCall_6_1_0_1() { return cTargetOperationEOperationEStringParserRuleCall_6_1_0_1; }
-		
-		//('att' att=[ecore::EAttribute|EString])?
-		public Group getGroup_7() { return cGroup_7; }
-		
-		//'att'
-		public Keyword getAttKeyword_7_0() { return cAttKeyword_7_0; }
-		
-		//att=[ecore::EAttribute|EString]
-		public Assignment getAttAssignment_7_1() { return cAttAssignment_7_1; }
-		
-		//[ecore::EAttribute|EString]
-		public CrossReference getAttEAttributeCrossReference_7_1_0() { return cAttEAttributeCrossReference_7_1_0; }
-		
-		//EString
-		public RuleCall getAttEAttributeEStringParserRuleCall_7_1_0_1() { return cAttEAttributeEStringParserRuleCall_7_1_0_1; }
-		
-		//('uncertainty' uncertainty=MeasurementUncertainty)?
-		public Group getGroup_8() { return cGroup_8; }
-		
-		//'uncertainty'
-		public Keyword getUncertaintyKeyword_8_0() { return cUncertaintyKeyword_8_0; }
-		
-		//uncertainty=MeasurementUncertainty
-		public Assignment getUncertaintyAssignment_8_1() { return cUncertaintyAssignment_8_1; }
-		
-		//MeasurementUncertainty
-		public RuleCall getUncertaintyMeasurementUncertaintyParserRuleCall_8_1_0() { return cUncertaintyMeasurementUncertaintyParserRuleCall_8_1_0; }
-		
-		//'}'
-		public Keyword getRightCurlyBracketKeyword_9() { return cRightCurlyBracketKeyword_9; }
-	}
-	public class MeasureCastElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.tblf.energy.estimation.Eel.MeasureCast");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cMeasureCastKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameEStringParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Keyword cTargetClassKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final Assignment cTargetClassAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final CrossReference cTargetClassEClassCrossReference_3_1_0 = (CrossReference)cTargetClassAssignment_3_1.eContents().get(0);
-		private final RuleCall cTargetClassEClassEStringParserRuleCall_3_1_0_1 = (RuleCall)cTargetClassEClassCrossReference_3_1_0.eContents().get(1);
-		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Keyword cTargetOperationKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
-		private final Assignment cTargetOperationAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
-		private final CrossReference cTargetOperationEOperationCrossReference_4_1_0 = (CrossReference)cTargetOperationAssignment_4_1.eContents().get(0);
-		private final RuleCall cTargetOperationEOperationEStringParserRuleCall_4_1_0_1 = (RuleCall)cTargetOperationEOperationCrossReference_4_1_0.eContents().get(1);
-		private final Keyword cMeasureKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Assignment cMeasureAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final CrossReference cMeasureMeasureCrossReference_6_0 = (CrossReference)cMeasureAssignment_6.eContents().get(0);
-		private final RuleCall cMeasureMeasureEStringParserRuleCall_6_0_1 = (RuleCall)cMeasureMeasureCrossReference_6_0.eContents().get(1);
-		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
-		private final Keyword cUncertaintyKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
-		private final Assignment cUncertaintyAssignment_7_1 = (Assignment)cGroup_7.eContents().get(1);
-		private final RuleCall cUncertaintyMeasurementUncertaintyParserRuleCall_7_1_0 = (RuleCall)cUncertaintyAssignment_7_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
-		
-		//MeasureCast:
-		//	'MeasureCast'
-		//	name=EString
-		//	'{' ('targetClass' targetClass=[ecore::EClass|EString])? ('targetOperation'
-		//	targetOperation=[ecore::EOperation|EString])?
-		//	'measure' measure=[Measure|EString] ('uncertainty' uncertainty=MeasurementUncertainty)?
-		//	'}';
-		@Override public ParserRule getRule() { return rule; }
-		
-		//'MeasureCast' name=EString '{' ('targetClass' targetClass=[ecore::EClass|EString])? ('targetOperation'
-		//targetOperation=[ecore::EOperation|EString])? 'measure' measure=[Measure|EString] ('uncertainty'
-		//uncertainty=MeasurementUncertainty)? '}'
-		public Group getGroup() { return cGroup; }
-		
-		//'MeasureCast'
-		public Keyword getMeasureCastKeyword_0() { return cMeasureCastKeyword_0; }
-		
-		//name=EString
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
-		
-		//EString
-		public RuleCall getNameEStringParserRuleCall_1_0() { return cNameEStringParserRuleCall_1_0; }
-		
-		//'{'
-		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
-		
-		//('targetClass' targetClass=[ecore::EClass|EString])?
-		public Group getGroup_3() { return cGroup_3; }
-		
-		//'targetClass'
-		public Keyword getTargetClassKeyword_3_0() { return cTargetClassKeyword_3_0; }
-		
-		//targetClass=[ecore::EClass|EString]
-		public Assignment getTargetClassAssignment_3_1() { return cTargetClassAssignment_3_1; }
-		
-		//[ecore::EClass|EString]
-		public CrossReference getTargetClassEClassCrossReference_3_1_0() { return cTargetClassEClassCrossReference_3_1_0; }
-		
-		//EString
-		public RuleCall getTargetClassEClassEStringParserRuleCall_3_1_0_1() { return cTargetClassEClassEStringParserRuleCall_3_1_0_1; }
-		
-		//('targetOperation' targetOperation=[ecore::EOperation|EString])?
-		public Group getGroup_4() { return cGroup_4; }
-		
-		//'targetOperation'
-		public Keyword getTargetOperationKeyword_4_0() { return cTargetOperationKeyword_4_0; }
-		
-		//targetOperation=[ecore::EOperation|EString]
-		public Assignment getTargetOperationAssignment_4_1() { return cTargetOperationAssignment_4_1; }
-		
-		//[ecore::EOperation|EString]
-		public CrossReference getTargetOperationEOperationCrossReference_4_1_0() { return cTargetOperationEOperationCrossReference_4_1_0; }
-		
-		//EString
-		public RuleCall getTargetOperationEOperationEStringParserRuleCall_4_1_0_1() { return cTargetOperationEOperationEStringParserRuleCall_4_1_0_1; }
-		
-		//'measure'
-		public Keyword getMeasureKeyword_5() { return cMeasureKeyword_5; }
-		
-		//measure=[Measure|EString]
-		public Assignment getMeasureAssignment_6() { return cMeasureAssignment_6; }
-		
-		//[Measure|EString]
-		public CrossReference getMeasureMeasureCrossReference_6_0() { return cMeasureMeasureCrossReference_6_0; }
-		
-		//EString
-		public RuleCall getMeasureMeasureEStringParserRuleCall_6_0_1() { return cMeasureMeasureEStringParserRuleCall_6_0_1; }
-		
-		//('uncertainty' uncertainty=MeasurementUncertainty)?
-		public Group getGroup_7() { return cGroup_7; }
-		
-		//'uncertainty'
-		public Keyword getUncertaintyKeyword_7_0() { return cUncertaintyKeyword_7_0; }
-		
-		//uncertainty=MeasurementUncertainty
-		public Assignment getUncertaintyAssignment_7_1() { return cUncertaintyAssignment_7_1; }
-		
-		//MeasurementUncertainty
-		public RuleCall getUncertaintyMeasurementUncertaintyParserRuleCall_7_1_0() { return cUncertaintyMeasurementUncertaintyParserRuleCall_7_1_0; }
-		
-		//'}'
-		public Keyword getRightCurlyBracketKeyword_8() { return cRightCurlyBracketKeyword_8; }
-	}
-	public class MeasureProductOperation_ImplElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.tblf.energy.estimation.Eel.MeasureProductOperation_Impl");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cMeasureProductOperationAction_0 = (Action)cGroup.eContents().get(0);
-		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
-		private final Keyword cTargetClassKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
-		private final Assignment cTargetClassAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
-		private final CrossReference cTargetClassEClassCrossReference_1_1_0 = (CrossReference)cTargetClassAssignment_1_1.eContents().get(0);
-		private final RuleCall cTargetClassEClassEStringParserRuleCall_1_1_0_1 = (RuleCall)cTargetClassEClassCrossReference_1_1_0.eContents().get(1);
-		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cNameEStringParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
-		private final Keyword cColonKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cLeftAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final CrossReference cLeftMeasureCrossReference_4_0 = (CrossReference)cLeftAssignment_4.eContents().get(0);
-		private final RuleCall cLeftMeasureEStringParserRuleCall_4_0_1 = (RuleCall)cLeftMeasureCrossReference_4_0.eContents().get(1);
-		private final Keyword cAsteriskKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Assignment cRightAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final CrossReference cRightMeasureCrossReference_6_0 = (CrossReference)cRightAssignment_6.eContents().get(0);
-		private final RuleCall cRightMeasureEStringParserRuleCall_6_0_1 = (RuleCall)cRightMeasureCrossReference_6_0.eContents().get(1);
-		
-		//MeasureProductOperation_Impl MeasureProductOperation:
-		//	{MeasureProductOperation} ('targetClass' targetClass=[ecore::EClass|EString])? name=EString ':' left=[Measure|EString]
-		//	'*' right=[Measure|EString];
-		@Override public ParserRule getRule() { return rule; }
-		
-		//{MeasureProductOperation} ('targetClass' targetClass=[ecore::EClass|EString])? name=EString ':' left=[Measure|EString]
-		//'*' right=[Measure|EString]
-		public Group getGroup() { return cGroup; }
-		
-		//{MeasureProductOperation}
-		public Action getMeasureProductOperationAction_0() { return cMeasureProductOperationAction_0; }
-		
-		//('targetClass' targetClass=[ecore::EClass|EString])?
-		public Group getGroup_1() { return cGroup_1; }
-		
-		//'targetClass'
-		public Keyword getTargetClassKeyword_1_0() { return cTargetClassKeyword_1_0; }
-		
-		//targetClass=[ecore::EClass|EString]
-		public Assignment getTargetClassAssignment_1_1() { return cTargetClassAssignment_1_1; }
-		
-		//[ecore::EClass|EString]
-		public CrossReference getTargetClassEClassCrossReference_1_1_0() { return cTargetClassEClassCrossReference_1_1_0; }
-		
-		//EString
-		public RuleCall getTargetClassEClassEStringParserRuleCall_1_1_0_1() { return cTargetClassEClassEStringParserRuleCall_1_1_0_1; }
-		
-		//name=EString
-		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
-		
-		//EString
-		public RuleCall getNameEStringParserRuleCall_2_0() { return cNameEStringParserRuleCall_2_0; }
-		
-		//':'
-		public Keyword getColonKeyword_3() { return cColonKeyword_3; }
-		
-		//left=[Measure|EString]
-		public Assignment getLeftAssignment_4() { return cLeftAssignment_4; }
-		
-		//[Measure|EString]
-		public CrossReference getLeftMeasureCrossReference_4_0() { return cLeftMeasureCrossReference_4_0; }
-		
-		//EString
-		public RuleCall getLeftMeasureEStringParserRuleCall_4_0_1() { return cLeftMeasureEStringParserRuleCall_4_0_1; }
-		
-		//'*'
-		public Keyword getAsteriskKeyword_5() { return cAsteriskKeyword_5; }
-		
-		//right=[Measure|EString]
-		public Assignment getRightAssignment_6() { return cRightAssignment_6; }
-		
-		//[Measure|EString]
-		public CrossReference getRightMeasureCrossReference_6_0() { return cRightMeasureCrossReference_6_0; }
-		
-		//EString
-		public RuleCall getRightMeasureEStringParserRuleCall_6_0_1() { return cRightMeasureEStringParserRuleCall_6_0_1; }
-	}
-	public class MeasureSumOperationElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.tblf.energy.estimation.Eel.MeasureSumOperation");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cMeasureSumOperationAction_0 = (Action)cGroup.eContents().get(0);
-		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
-		private final Keyword cTargetClassKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
-		private final Assignment cTargetClassAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
-		private final CrossReference cTargetClassEClassCrossReference_1_1_0 = (CrossReference)cTargetClassAssignment_1_1.eContents().get(0);
-		private final RuleCall cTargetClassEClassEStringParserRuleCall_1_1_0_1 = (RuleCall)cTargetClassEClassCrossReference_1_1_0.eContents().get(1);
-		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cNameEStringParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
-		private final Keyword cColonKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cLeftAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final CrossReference cLeftMeasureCrossReference_4_0 = (CrossReference)cLeftAssignment_4.eContents().get(0);
-		private final RuleCall cLeftMeasureEStringParserRuleCall_4_0_1 = (RuleCall)cLeftMeasureCrossReference_4_0.eContents().get(1);
-		private final Keyword cPlusSignKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Assignment cRightAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final CrossReference cRightMeasureCrossReference_6_0 = (CrossReference)cRightAssignment_6.eContents().get(0);
-		private final RuleCall cRightMeasureEStringParserRuleCall_6_0_1 = (RuleCall)cRightMeasureCrossReference_6_0.eContents().get(1);
-		private final Assignment cNameAssignment_7 = (Assignment)cGroup.eContents().get(7);
-		private final RuleCall cNameEStringParserRuleCall_7_0 = (RuleCall)cNameAssignment_7.eContents().get(0);
-		
-		//MeasureSumOperation:
-		//	{MeasureSumOperation} ('targetClass' targetClass=[ecore::EClass|EString])? name=EString ':' left=[Measure|EString] '+'
-		//	right=[Measure|EString] name=EString;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//{MeasureSumOperation} ('targetClass' targetClass=[ecore::EClass|EString])? name=EString ':' left=[Measure|EString] '+'
-		//right=[Measure|EString] name=EString
-		public Group getGroup() { return cGroup; }
-		
-		//{MeasureSumOperation}
-		public Action getMeasureSumOperationAction_0() { return cMeasureSumOperationAction_0; }
-		
-		//('targetClass' targetClass=[ecore::EClass|EString])?
-		public Group getGroup_1() { return cGroup_1; }
-		
-		//'targetClass'
-		public Keyword getTargetClassKeyword_1_0() { return cTargetClassKeyword_1_0; }
-		
-		//targetClass=[ecore::EClass|EString]
-		public Assignment getTargetClassAssignment_1_1() { return cTargetClassAssignment_1_1; }
-		
-		//[ecore::EClass|EString]
-		public CrossReference getTargetClassEClassCrossReference_1_1_0() { return cTargetClassEClassCrossReference_1_1_0; }
-		
-		//EString
-		public RuleCall getTargetClassEClassEStringParserRuleCall_1_1_0_1() { return cTargetClassEClassEStringParserRuleCall_1_1_0_1; }
-		
-		//name=EString
-		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
-		
-		//EString
-		public RuleCall getNameEStringParserRuleCall_2_0() { return cNameEStringParserRuleCall_2_0; }
-		
-		//':'
-		public Keyword getColonKeyword_3() { return cColonKeyword_3; }
-		
-		//left=[Measure|EString]
-		public Assignment getLeftAssignment_4() { return cLeftAssignment_4; }
-		
-		//[Measure|EString]
-		public CrossReference getLeftMeasureCrossReference_4_0() { return cLeftMeasureCrossReference_4_0; }
-		
-		//EString
-		public RuleCall getLeftMeasureEStringParserRuleCall_4_0_1() { return cLeftMeasureEStringParserRuleCall_4_0_1; }
-		
-		//'+'
-		public Keyword getPlusSignKeyword_5() { return cPlusSignKeyword_5; }
-		
-		//right=[Measure|EString]
-		public Assignment getRightAssignment_6() { return cRightAssignment_6; }
-		
-		//[Measure|EString]
-		public CrossReference getRightMeasureCrossReference_6_0() { return cRightMeasureCrossReference_6_0; }
-		
-		//EString
-		public RuleCall getRightMeasureEStringParserRuleCall_6_0_1() { return cRightMeasureEStringParserRuleCall_6_0_1; }
-		
-		//name=EString
-		public Assignment getNameAssignment_7() { return cNameAssignment_7; }
-		
-		//EString
-		public RuleCall getNameEStringParserRuleCall_7_0() { return cNameEStringParserRuleCall_7_0; }
-	}
-	public class EnergyComputationElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.tblf.energy.estimation.Eel.EnergyComputation");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cEnergyComputationAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cEnergyComputationKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cNameEStringParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Keyword cTargetClassKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
-		private final Assignment cTargetClassAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
-		private final CrossReference cTargetClassEClassCrossReference_4_1_0 = (CrossReference)cTargetClassAssignment_4_1.eContents().get(0);
-		private final RuleCall cTargetClassEClassEStringParserRuleCall_4_1_0_1 = (RuleCall)cTargetClassEClassCrossReference_4_1_0.eContents().get(1);
-		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Keyword cTargetOperationKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
-		private final Assignment cTargetOperationAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
-		private final CrossReference cTargetOperationEOperationCrossReference_5_1_0 = (CrossReference)cTargetOperationAssignment_5_1.eContents().get(0);
-		private final RuleCall cTargetOperationEOperationEStringParserRuleCall_5_1_0_1 = (RuleCall)cTargetOperationEOperationCrossReference_5_1_0.eContents().get(1);
-		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
-		private final Keyword cLeftKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
-		private final Assignment cLeftAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
-		private final CrossReference cLeftMeasureCrossReference_6_1_0 = (CrossReference)cLeftAssignment_6_1.eContents().get(0);
-		private final RuleCall cLeftMeasureEStringParserRuleCall_6_1_0_1 = (RuleCall)cLeftMeasureCrossReference_6_1_0.eContents().get(1);
-		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
-		private final Keyword cRightKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
-		private final Assignment cRightAssignment_7_1 = (Assignment)cGroup_7.eContents().get(1);
-		private final CrossReference cRightMeasureCrossReference_7_1_0 = (CrossReference)cRightAssignment_7_1.eContents().get(0);
-		private final RuleCall cRightMeasureEStringParserRuleCall_7_1_0_1 = (RuleCall)cRightMeasureCrossReference_7_1_0.eContents().get(1);
-		private final Group cGroup_8 = (Group)cGroup.eContents().get(8);
-		private final Keyword cUncertaintyKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
-		private final Assignment cUncertaintyAssignment_8_1 = (Assignment)cGroup_8.eContents().get(1);
-		private final RuleCall cUncertaintyMeasurementUncertaintyParserRuleCall_8_1_0 = (RuleCall)cUncertaintyAssignment_8_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_9 = (Keyword)cGroup.eContents().get(9);
-		
-		//EnergyComputation:
-		//	{EnergyComputation}
-		//	'EnergyComputation'
-		//	name=EString
-		//	'{' ('targetClass' targetClass=[ecore::EClass|EString])? ('targetOperation'
-		//	targetOperation=[ecore::EOperation|EString])? ('left' left=[Measure|EString])? ('right' right=[Measure|EString])?
-		//	('uncertainty' uncertainty=MeasurementUncertainty)?
-		//	'}';
-		@Override public ParserRule getRule() { return rule; }
-		
-		//{EnergyComputation} 'EnergyComputation' name=EString '{' ('targetClass' targetClass=[ecore::EClass|EString])?
-		//('targetOperation' targetOperation=[ecore::EOperation|EString])? ('left' left=[Measure|EString])? ('right'
-		//right=[Measure|EString])? ('uncertainty' uncertainty=MeasurementUncertainty)? '}'
-		public Group getGroup() { return cGroup; }
-		
-		//{EnergyComputation}
-		public Action getEnergyComputationAction_0() { return cEnergyComputationAction_0; }
-		
-		//'EnergyComputation'
-		public Keyword getEnergyComputationKeyword_1() { return cEnergyComputationKeyword_1; }
-		
-		//name=EString
-		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
-		
-		//EString
-		public RuleCall getNameEStringParserRuleCall_2_0() { return cNameEStringParserRuleCall_2_0; }
-		
-		//'{'
-		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
-		
-		//('targetClass' targetClass=[ecore::EClass|EString])?
-		public Group getGroup_4() { return cGroup_4; }
-		
-		//'targetClass'
-		public Keyword getTargetClassKeyword_4_0() { return cTargetClassKeyword_4_0; }
-		
-		//targetClass=[ecore::EClass|EString]
-		public Assignment getTargetClassAssignment_4_1() { return cTargetClassAssignment_4_1; }
-		
-		//[ecore::EClass|EString]
-		public CrossReference getTargetClassEClassCrossReference_4_1_0() { return cTargetClassEClassCrossReference_4_1_0; }
-		
-		//EString
-		public RuleCall getTargetClassEClassEStringParserRuleCall_4_1_0_1() { return cTargetClassEClassEStringParserRuleCall_4_1_0_1; }
-		
-		//('targetOperation' targetOperation=[ecore::EOperation|EString])?
-		public Group getGroup_5() { return cGroup_5; }
-		
-		//'targetOperation'
-		public Keyword getTargetOperationKeyword_5_0() { return cTargetOperationKeyword_5_0; }
-		
-		//targetOperation=[ecore::EOperation|EString]
-		public Assignment getTargetOperationAssignment_5_1() { return cTargetOperationAssignment_5_1; }
-		
-		//[ecore::EOperation|EString]
-		public CrossReference getTargetOperationEOperationCrossReference_5_1_0() { return cTargetOperationEOperationCrossReference_5_1_0; }
-		
-		//EString
-		public RuleCall getTargetOperationEOperationEStringParserRuleCall_5_1_0_1() { return cTargetOperationEOperationEStringParserRuleCall_5_1_0_1; }
-		
-		//('left' left=[Measure|EString])?
-		public Group getGroup_6() { return cGroup_6; }
-		
-		//'left'
-		public Keyword getLeftKeyword_6_0() { return cLeftKeyword_6_0; }
-		
-		//left=[Measure|EString]
-		public Assignment getLeftAssignment_6_1() { return cLeftAssignment_6_1; }
-		
-		//[Measure|EString]
-		public CrossReference getLeftMeasureCrossReference_6_1_0() { return cLeftMeasureCrossReference_6_1_0; }
-		
-		//EString
-		public RuleCall getLeftMeasureEStringParserRuleCall_6_1_0_1() { return cLeftMeasureEStringParserRuleCall_6_1_0_1; }
-		
-		//('right' right=[Measure|EString])?
-		public Group getGroup_7() { return cGroup_7; }
-		
-		//'right'
-		public Keyword getRightKeyword_7_0() { return cRightKeyword_7_0; }
-		
-		//right=[Measure|EString]
-		public Assignment getRightAssignment_7_1() { return cRightAssignment_7_1; }
-		
-		//[Measure|EString]
-		public CrossReference getRightMeasureCrossReference_7_1_0() { return cRightMeasureCrossReference_7_1_0; }
-		
-		//EString
-		public RuleCall getRightMeasureEStringParserRuleCall_7_1_0_1() { return cRightMeasureEStringParserRuleCall_7_1_0_1; }
-		
-		//('uncertainty' uncertainty=MeasurementUncertainty)?
-		public Group getGroup_8() { return cGroup_8; }
-		
-		//'uncertainty'
-		public Keyword getUncertaintyKeyword_8_0() { return cUncertaintyKeyword_8_0; }
-		
-		//uncertainty=MeasurementUncertainty
-		public Assignment getUncertaintyAssignment_8_1() { return cUncertaintyAssignment_8_1; }
-		
-		//MeasurementUncertainty
-		public RuleCall getUncertaintyMeasurementUncertaintyParserRuleCall_8_1_0() { return cUncertaintyMeasurementUncertaintyParserRuleCall_8_1_0; }
-		
-		//'}'
-		public Keyword getRightCurlyBracketKeyword_9() { return cRightCurlyBracketKeyword_9; }
-	}
-	public class PowerComputationElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.tblf.energy.estimation.Eel.PowerComputation");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cPowerComputationAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cPowerComputationKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cNameEStringParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Keyword cTargetClassKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
-		private final Assignment cTargetClassAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
-		private final CrossReference cTargetClassEClassCrossReference_4_1_0 = (CrossReference)cTargetClassAssignment_4_1.eContents().get(0);
-		private final RuleCall cTargetClassEClassEStringParserRuleCall_4_1_0_1 = (RuleCall)cTargetClassEClassCrossReference_4_1_0.eContents().get(1);
-		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Keyword cTargetOperationKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
-		private final Assignment cTargetOperationAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
-		private final CrossReference cTargetOperationEOperationCrossReference_5_1_0 = (CrossReference)cTargetOperationAssignment_5_1.eContents().get(0);
-		private final RuleCall cTargetOperationEOperationEStringParserRuleCall_5_1_0_1 = (RuleCall)cTargetOperationEOperationCrossReference_5_1_0.eContents().get(1);
-		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
-		private final Keyword cLeftKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
-		private final Assignment cLeftAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
-		private final CrossReference cLeftMeasureCrossReference_6_1_0 = (CrossReference)cLeftAssignment_6_1.eContents().get(0);
-		private final RuleCall cLeftMeasureEStringParserRuleCall_6_1_0_1 = (RuleCall)cLeftMeasureCrossReference_6_1_0.eContents().get(1);
-		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
-		private final Keyword cRightKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
-		private final Assignment cRightAssignment_7_1 = (Assignment)cGroup_7.eContents().get(1);
-		private final CrossReference cRightMeasureCrossReference_7_1_0 = (CrossReference)cRightAssignment_7_1.eContents().get(0);
-		private final RuleCall cRightMeasureEStringParserRuleCall_7_1_0_1 = (RuleCall)cRightMeasureCrossReference_7_1_0.eContents().get(1);
-		private final Group cGroup_8 = (Group)cGroup.eContents().get(8);
-		private final Keyword cUncertaintyKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
-		private final Assignment cUncertaintyAssignment_8_1 = (Assignment)cGroup_8.eContents().get(1);
-		private final RuleCall cUncertaintyMeasurementUncertaintyParserRuleCall_8_1_0 = (RuleCall)cUncertaintyAssignment_8_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_9 = (Keyword)cGroup.eContents().get(9);
-		
-		//PowerComputation:
-		//	{PowerComputation}
-		//	'PowerComputation'
-		//	name=EString
-		//	'{' ('targetClass' targetClass=[ecore::EClass|EString])? ('targetOperation'
-		//	targetOperation=[ecore::EOperation|EString])? ('left' left=[Measure|EString])? ('right' right=[Measure|EString])?
-		//	('uncertainty' uncertainty=MeasurementUncertainty)?
-		//	'}';
-		@Override public ParserRule getRule() { return rule; }
-		
-		//{PowerComputation} 'PowerComputation' name=EString '{' ('targetClass' targetClass=[ecore::EClass|EString])?
-		//('targetOperation' targetOperation=[ecore::EOperation|EString])? ('left' left=[Measure|EString])? ('right'
-		//right=[Measure|EString])? ('uncertainty' uncertainty=MeasurementUncertainty)? '}'
-		public Group getGroup() { return cGroup; }
-		
-		//{PowerComputation}
-		public Action getPowerComputationAction_0() { return cPowerComputationAction_0; }
-		
-		//'PowerComputation'
-		public Keyword getPowerComputationKeyword_1() { return cPowerComputationKeyword_1; }
-		
-		//name=EString
-		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
-		
-		//EString
-		public RuleCall getNameEStringParserRuleCall_2_0() { return cNameEStringParserRuleCall_2_0; }
-		
-		//'{'
-		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
-		
-		//('targetClass' targetClass=[ecore::EClass|EString])?
-		public Group getGroup_4() { return cGroup_4; }
-		
-		//'targetClass'
-		public Keyword getTargetClassKeyword_4_0() { return cTargetClassKeyword_4_0; }
-		
-		//targetClass=[ecore::EClass|EString]
-		public Assignment getTargetClassAssignment_4_1() { return cTargetClassAssignment_4_1; }
-		
-		//[ecore::EClass|EString]
-		public CrossReference getTargetClassEClassCrossReference_4_1_0() { return cTargetClassEClassCrossReference_4_1_0; }
-		
-		//EString
-		public RuleCall getTargetClassEClassEStringParserRuleCall_4_1_0_1() { return cTargetClassEClassEStringParserRuleCall_4_1_0_1; }
-		
-		//('targetOperation' targetOperation=[ecore::EOperation|EString])?
-		public Group getGroup_5() { return cGroup_5; }
-		
-		//'targetOperation'
-		public Keyword getTargetOperationKeyword_5_0() { return cTargetOperationKeyword_5_0; }
-		
-		//targetOperation=[ecore::EOperation|EString]
-		public Assignment getTargetOperationAssignment_5_1() { return cTargetOperationAssignment_5_1; }
-		
-		//[ecore::EOperation|EString]
-		public CrossReference getTargetOperationEOperationCrossReference_5_1_0() { return cTargetOperationEOperationCrossReference_5_1_0; }
-		
-		//EString
-		public RuleCall getTargetOperationEOperationEStringParserRuleCall_5_1_0_1() { return cTargetOperationEOperationEStringParserRuleCall_5_1_0_1; }
-		
-		//('left' left=[Measure|EString])?
-		public Group getGroup_6() { return cGroup_6; }
-		
-		//'left'
-		public Keyword getLeftKeyword_6_0() { return cLeftKeyword_6_0; }
-		
-		//left=[Measure|EString]
-		public Assignment getLeftAssignment_6_1() { return cLeftAssignment_6_1; }
-		
-		//[Measure|EString]
-		public CrossReference getLeftMeasureCrossReference_6_1_0() { return cLeftMeasureCrossReference_6_1_0; }
-		
-		//EString
-		public RuleCall getLeftMeasureEStringParserRuleCall_6_1_0_1() { return cLeftMeasureEStringParserRuleCall_6_1_0_1; }
-		
-		//('right' right=[Measure|EString])?
-		public Group getGroup_7() { return cGroup_7; }
-		
-		//'right'
-		public Keyword getRightKeyword_7_0() { return cRightKeyword_7_0; }
-		
-		//right=[Measure|EString]
-		public Assignment getRightAssignment_7_1() { return cRightAssignment_7_1; }
-		
-		//[Measure|EString]
-		public CrossReference getRightMeasureCrossReference_7_1_0() { return cRightMeasureCrossReference_7_1_0; }
-		
-		//EString
-		public RuleCall getRightMeasureEStringParserRuleCall_7_1_0_1() { return cRightMeasureEStringParserRuleCall_7_1_0_1; }
-		
-		//('uncertainty' uncertainty=MeasurementUncertainty)?
-		public Group getGroup_8() { return cGroup_8; }
-		
-		//'uncertainty'
-		public Keyword getUncertaintyKeyword_8_0() { return cUncertaintyKeyword_8_0; }
-		
-		//uncertainty=MeasurementUncertainty
-		public Assignment getUncertaintyAssignment_8_1() { return cUncertaintyAssignment_8_1; }
-		
-		//MeasurementUncertainty
-		public RuleCall getUncertaintyMeasurementUncertaintyParserRuleCall_8_1_0() { return cUncertaintyMeasurementUncertaintyParserRuleCall_8_1_0; }
-		
-		//'}'
-		public Keyword getRightCurlyBracketKeyword_9() { return cRightCurlyBracketKeyword_9; }
 	}
 	public class EAnnotationElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.tblf.energy.estimation.Eel.EAnnotation");
@@ -3937,292 +4095,6 @@ public class EelGrammarAccess extends AbstractGrammarElementFinder {
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_11() { return cRightCurlyBracketKeyword_11; }
 	}
-	public class NormalDistributionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.tblf.energy.estimation.Eel.NormalDistribution");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cNormalDistributionAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cNormalDistributionKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		
-		//NormalDistribution:
-		//	{NormalDistribution}
-		//	'NormalDistribution';
-		@Override public ParserRule getRule() { return rule; }
-		
-		//{NormalDistribution} 'NormalDistribution'
-		public Group getGroup() { return cGroup; }
-		
-		//{NormalDistribution}
-		public Action getNormalDistributionAction_0() { return cNormalDistributionAction_0; }
-		
-		//'NormalDistribution'
-		public Keyword getNormalDistributionKeyword_1() { return cNormalDistributionKeyword_1; }
-	}
-	public class IntervalElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.tblf.energy.estimation.Eel.Interval");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cIntervalKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Keyword cLowerEndpointKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cLowerEndpointAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cLowerEndpointMeasureParserRuleCall_3_0 = (RuleCall)cLowerEndpointAssignment_3.eContents().get(0);
-		private final Keyword cUpperEndpointKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Assignment cUpperEndpointAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cUpperEndpointMeasureParserRuleCall_5_0 = (RuleCall)cUpperEndpointAssignment_5.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
-		
-		//Interval:
-		//	'Interval'
-		//	'{'
-		//	'lowerEndpoint' lowerEndpoint=Measure
-		//	'upperEndpoint' upperEndpoint=Measure
-		//	'}';
-		@Override public ParserRule getRule() { return rule; }
-		
-		//'Interval' '{' 'lowerEndpoint' lowerEndpoint=Measure 'upperEndpoint' upperEndpoint=Measure '}'
-		public Group getGroup() { return cGroup; }
-		
-		//'Interval'
-		public Keyword getIntervalKeyword_0() { return cIntervalKeyword_0; }
-		
-		//'{'
-		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
-		
-		//'lowerEndpoint'
-		public Keyword getLowerEndpointKeyword_2() { return cLowerEndpointKeyword_2; }
-		
-		//lowerEndpoint=Measure
-		public Assignment getLowerEndpointAssignment_3() { return cLowerEndpointAssignment_3; }
-		
-		//Measure
-		public RuleCall getLowerEndpointMeasureParserRuleCall_3_0() { return cLowerEndpointMeasureParserRuleCall_3_0; }
-		
-		//'upperEndpoint'
-		public Keyword getUpperEndpointKeyword_4() { return cUpperEndpointKeyword_4; }
-		
-		//upperEndpoint=Measure
-		public Assignment getUpperEndpointAssignment_5() { return cUpperEndpointAssignment_5; }
-		
-		//Measure
-		public RuleCall getUpperEndpointMeasureParserRuleCall_5_0() { return cUpperEndpointMeasureParserRuleCall_5_0; }
-		
-		//'}'
-		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
-	}
-	public class SamplingElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.tblf.energy.estimation.Eel.Sampling");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cSamplingAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cSamplingKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Keyword cMeasurementProcedureKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final Assignment cMeasurementProcedureAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final RuleCall cMeasurementProcedureEStringParserRuleCall_3_1_0 = (RuleCall)cMeasurementProcedureAssignment_3_1.eContents().get(0);
-		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Keyword cSamplesKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
-		private final Assignment cSamplesAssignment_4_2 = (Assignment)cGroup_4.eContents().get(2);
-		private final RuleCall cSamplesSampleParserRuleCall_4_2_0 = (RuleCall)cSamplesAssignment_4_2.eContents().get(0);
-		private final Group cGroup_4_3 = (Group)cGroup_4.eContents().get(3);
-		private final Keyword cCommaKeyword_4_3_0 = (Keyword)cGroup_4_3.eContents().get(0);
-		private final Assignment cSamplesAssignment_4_3_1 = (Assignment)cGroup_4_3.eContents().get(1);
-		private final RuleCall cSamplesSampleParserRuleCall_4_3_1_0 = (RuleCall)cSamplesAssignment_4_3_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_4_4 = (Keyword)cGroup_4.eContents().get(4);
-		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		
-		//Sampling:
-		//	{Sampling}
-		//	'Sampling'
-		//	'{' ('measurementProcedure' measurementProcedure=EString)? ('samples' '{' samples+=Sample ("," samples+=Sample)* '}')?
-		//	'}';
-		@Override public ParserRule getRule() { return rule; }
-		
-		//{Sampling} 'Sampling' '{' ('measurementProcedure' measurementProcedure=EString)? ('samples' '{' samples+=Sample (","
-		//samples+=Sample)* '}')? '}'
-		public Group getGroup() { return cGroup; }
-		
-		//{Sampling}
-		public Action getSamplingAction_0() { return cSamplingAction_0; }
-		
-		//'Sampling'
-		public Keyword getSamplingKeyword_1() { return cSamplingKeyword_1; }
-		
-		//'{'
-		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
-		
-		//('measurementProcedure' measurementProcedure=EString)?
-		public Group getGroup_3() { return cGroup_3; }
-		
-		//'measurementProcedure'
-		public Keyword getMeasurementProcedureKeyword_3_0() { return cMeasurementProcedureKeyword_3_0; }
-		
-		//measurementProcedure=EString
-		public Assignment getMeasurementProcedureAssignment_3_1() { return cMeasurementProcedureAssignment_3_1; }
-		
-		//EString
-		public RuleCall getMeasurementProcedureEStringParserRuleCall_3_1_0() { return cMeasurementProcedureEStringParserRuleCall_3_1_0; }
-		
-		//('samples' '{' samples+=Sample ("," samples+=Sample)* '}')?
-		public Group getGroup_4() { return cGroup_4; }
-		
-		//'samples'
-		public Keyword getSamplesKeyword_4_0() { return cSamplesKeyword_4_0; }
-		
-		//'{'
-		public Keyword getLeftCurlyBracketKeyword_4_1() { return cLeftCurlyBracketKeyword_4_1; }
-		
-		//samples+=Sample
-		public Assignment getSamplesAssignment_4_2() { return cSamplesAssignment_4_2; }
-		
-		//Sample
-		public RuleCall getSamplesSampleParserRuleCall_4_2_0() { return cSamplesSampleParserRuleCall_4_2_0; }
-		
-		//("," samples+=Sample)*
-		public Group getGroup_4_3() { return cGroup_4_3; }
-		
-		//","
-		public Keyword getCommaKeyword_4_3_0() { return cCommaKeyword_4_3_0; }
-		
-		//samples+=Sample
-		public Assignment getSamplesAssignment_4_3_1() { return cSamplesAssignment_4_3_1; }
-		
-		//Sample
-		public RuleCall getSamplesSampleParserRuleCall_4_3_1_0() { return cSamplesSampleParserRuleCall_4_3_1_0; }
-		
-		//'}'
-		public Keyword getRightCurlyBracketKeyword_4_4() { return cRightCurlyBracketKeyword_4_4; }
-		
-		//'}'
-		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
-	}
-	public class IntegralElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.tblf.energy.estimation.Eel.Integral");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cIntegralKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final Keyword cFunctionKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
-		private final Assignment cFunctionAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
-		private final RuleCall cFunctionEStringParserRuleCall_2_1_0 = (RuleCall)cFunctionAssignment_2_1.eContents().get(0);
-		private final Keyword cIntervalKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cIntervalAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final CrossReference cIntervalIntervalCrossReference_4_0 = (CrossReference)cIntervalAssignment_4.eContents().get(0);
-		private final RuleCall cIntervalIntervalEStringParserRuleCall_4_0_1 = (RuleCall)cIntervalIntervalCrossReference_4_0.eContents().get(1);
-		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		
-		//Integral:
-		//	'Integral'
-		//	'{' ('function' function=EString)?
-		//	'interval' interval=[Interval|EString]
-		//	'}';
-		@Override public ParserRule getRule() { return rule; }
-		
-		//'Integral' '{' ('function' function=EString)? 'interval' interval=[Interval|EString] '}'
-		public Group getGroup() { return cGroup; }
-		
-		//'Integral'
-		public Keyword getIntegralKeyword_0() { return cIntegralKeyword_0; }
-		
-		//'{'
-		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
-		
-		//('function' function=EString)?
-		public Group getGroup_2() { return cGroup_2; }
-		
-		//'function'
-		public Keyword getFunctionKeyword_2_0() { return cFunctionKeyword_2_0; }
-		
-		//function=EString
-		public Assignment getFunctionAssignment_2_1() { return cFunctionAssignment_2_1; }
-		
-		//EString
-		public RuleCall getFunctionEStringParserRuleCall_2_1_0() { return cFunctionEStringParserRuleCall_2_1_0; }
-		
-		//'interval'
-		public Keyword getIntervalKeyword_3() { return cIntervalKeyword_3; }
-		
-		//interval=[Interval|EString]
-		public Assignment getIntervalAssignment_4() { return cIntervalAssignment_4; }
-		
-		//[Interval|EString]
-		public CrossReference getIntervalIntervalCrossReference_4_0() { return cIntervalIntervalCrossReference_4_0; }
-		
-		//EString
-		public RuleCall getIntervalIntervalEStringParserRuleCall_4_0_1() { return cIntervalIntervalEStringParserRuleCall_4_0_1; }
-		
-		//'}'
-		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
-	}
-	public class SampleElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.tblf.energy.estimation.Eel.Sample");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cSampleAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cSampleKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Keyword cQuantityKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_3_1 = (Keyword)cGroup_3.eContents().get(1);
-		private final Assignment cQuantityAssignment_3_2 = (Assignment)cGroup_3.eContents().get(2);
-		private final RuleCall cQuantityMeasureParserRuleCall_3_2_0 = (RuleCall)cQuantityAssignment_3_2.eContents().get(0);
-		private final Group cGroup_3_3 = (Group)cGroup_3.eContents().get(3);
-		private final Keyword cCommaKeyword_3_3_0 = (Keyword)cGroup_3_3.eContents().get(0);
-		private final Assignment cQuantityAssignment_3_3_1 = (Assignment)cGroup_3_3.eContents().get(1);
-		private final RuleCall cQuantityMeasureParserRuleCall_3_3_1_0 = (RuleCall)cQuantityAssignment_3_3_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_3_4 = (Keyword)cGroup_3.eContents().get(4);
-		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		
-		//Sample:
-		//	{Sample}
-		//	'Sample'
-		//	'{' ('quantity' '{' quantity+=Measure ("," quantity+=Measure)* '}')?
-		//	'}';
-		@Override public ParserRule getRule() { return rule; }
-		
-		//{Sample} 'Sample' '{' ('quantity' '{' quantity+=Measure ("," quantity+=Measure)* '}')? '}'
-		public Group getGroup() { return cGroup; }
-		
-		//{Sample}
-		public Action getSampleAction_0() { return cSampleAction_0; }
-		
-		//'Sample'
-		public Keyword getSampleKeyword_1() { return cSampleKeyword_1; }
-		
-		//'{'
-		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
-		
-		//('quantity' '{' quantity+=Measure ("," quantity+=Measure)* '}')?
-		public Group getGroup_3() { return cGroup_3; }
-		
-		//'quantity'
-		public Keyword getQuantityKeyword_3_0() { return cQuantityKeyword_3_0; }
-		
-		//'{'
-		public Keyword getLeftCurlyBracketKeyword_3_1() { return cLeftCurlyBracketKeyword_3_1; }
-		
-		//quantity+=Measure
-		public Assignment getQuantityAssignment_3_2() { return cQuantityAssignment_3_2; }
-		
-		//Measure
-		public RuleCall getQuantityMeasureParserRuleCall_3_2_0() { return cQuantityMeasureParserRuleCall_3_2_0; }
-		
-		//("," quantity+=Measure)*
-		public Group getGroup_3_3() { return cGroup_3_3; }
-		
-		//","
-		public Keyword getCommaKeyword_3_3_0() { return cCommaKeyword_3_3_0; }
-		
-		//quantity+=Measure
-		public Assignment getQuantityAssignment_3_3_1() { return cQuantityAssignment_3_3_1; }
-		
-		//Measure
-		public RuleCall getQuantityMeasureParserRuleCall_3_3_1_0() { return cQuantityMeasureParserRuleCall_3_3_1_0; }
-		
-		//'}'
-		public Keyword getRightCurlyBracketKeyword_3_4() { return cRightCurlyBracketKeyword_3_4; }
-		
-		//'}'
-		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
-	}
 	
 	public class TypeElements extends AbstractEnumRuleElementFinder {
 		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "fr.tblf.energy.estimation.Eel.Type");
@@ -4326,9 +4198,6 @@ public class EelGrammarAccess extends AbstractGrammarElementFinder {
 	private final EBigDecimalElements pEBigDecimal;
 	private final TypeElements eType;
 	private final VisibilityElements eVisibility;
-	private final EClassElements pEClass;
-	private final EOperationElements pEOperation;
-	private final MeasurementUncertaintyElements pMeasurementUncertainty;
 	private final MeasureValue_ImplElements pMeasureValue_Impl;
 	private final MeasureOCLElements pMeasureOCL;
 	private final MeasureAttributeElements pMeasureAttribute;
@@ -4337,6 +4206,14 @@ public class EelGrammarAccess extends AbstractGrammarElementFinder {
 	private final MeasureSumOperationElements pMeasureSumOperation;
 	private final EnergyComputationElements pEnergyComputation;
 	private final PowerComputationElements pPowerComputation;
+	private final MeasurementUncertaintyElements pMeasurementUncertainty;
+	private final NormalDistributionElements pNormalDistribution;
+	private final IntervalElements pInterval;
+	private final SamplingElements pSampling;
+	private final IntegralElements pIntegral;
+	private final SampleElements pSample;
+	private final EClassElements pEClass;
+	private final EOperationElements pEOperation;
 	private final EAnnotationElements pEAnnotation;
 	private final ETypeParameterElements pETypeParameter;
 	private final EBooleanElements pEBoolean;
@@ -4350,11 +4227,6 @@ public class EelGrammarAccess extends AbstractGrammarElementFinder {
 	private final EEnumElements pEEnum;
 	private final EEnumLiteralElements pEEnumLiteral;
 	private final EParameterElements pEParameter;
-	private final NormalDistributionElements pNormalDistribution;
-	private final IntervalElements pInterval;
-	private final SamplingElements pSampling;
-	private final IntegralElements pIntegral;
-	private final SampleElements pSample;
 	
 	private final Grammar grammar;
 	
@@ -4375,9 +4247,6 @@ public class EelGrammarAccess extends AbstractGrammarElementFinder {
 		this.pEBigDecimal = new EBigDecimalElements();
 		this.eType = new TypeElements();
 		this.eVisibility = new VisibilityElements();
-		this.pEClass = new EClassElements();
-		this.pEOperation = new EOperationElements();
-		this.pMeasurementUncertainty = new MeasurementUncertaintyElements();
 		this.pMeasureValue_Impl = new MeasureValue_ImplElements();
 		this.pMeasureOCL = new MeasureOCLElements();
 		this.pMeasureAttribute = new MeasureAttributeElements();
@@ -4386,6 +4255,14 @@ public class EelGrammarAccess extends AbstractGrammarElementFinder {
 		this.pMeasureSumOperation = new MeasureSumOperationElements();
 		this.pEnergyComputation = new EnergyComputationElements();
 		this.pPowerComputation = new PowerComputationElements();
+		this.pMeasurementUncertainty = new MeasurementUncertaintyElements();
+		this.pNormalDistribution = new NormalDistributionElements();
+		this.pInterval = new IntervalElements();
+		this.pSampling = new SamplingElements();
+		this.pIntegral = new IntegralElements();
+		this.pSample = new SampleElements();
+		this.pEClass = new EClassElements();
+		this.pEOperation = new EOperationElements();
 		this.pEAnnotation = new EAnnotationElements();
 		this.pETypeParameter = new ETypeParameterElements();
 		this.pEBoolean = new EBooleanElements();
@@ -4399,11 +4276,6 @@ public class EelGrammarAccess extends AbstractGrammarElementFinder {
 		this.pEEnum = new EEnumElements();
 		this.pEEnumLiteral = new EEnumLiteralElements();
 		this.pEParameter = new EParameterElements();
-		this.pNormalDistribution = new NormalDistributionElements();
-		this.pInterval = new IntervalElements();
-		this.pSampling = new SamplingElements();
-		this.pIntegral = new IntegralElements();
-		this.pSample = new SampleElements();
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -4548,6 +4420,182 @@ public class EelGrammarAccess extends AbstractGrammarElementFinder {
 		return getVisibilityAccess().getRule();
 	}
 	
+	//MeasureValue_Impl MeasureValue:
+	//	{MeasureValue} ('target' targetClass=[ecore::EClass|EString])? name=EString ":" value=EBigDecimal? type=Type?
+	//	('uncertainty' uncertainty=MeasurementUncertainty)?;
+	public MeasureValue_ImplElements getMeasureValue_ImplAccess() {
+		return pMeasureValue_Impl;
+	}
+	
+	public ParserRule getMeasureValue_ImplRule() {
+		return getMeasureValue_ImplAccess().getRule();
+	}
+	
+	//MeasureOCL:
+	//	{MeasureOCL} ('target' targetClass=[ecore::EClass|EString])? name=EString "ocl:" oclQuery=EString type=Type?
+	//	('uncertainty' uncertainty=MeasurementUncertainty)?;
+	public MeasureOCLElements getMeasureOCLAccess() {
+		return pMeasureOCL;
+	}
+	
+	public ParserRule getMeasureOCLRule() {
+		return getMeasureOCLAccess().getRule();
+	}
+	
+	//MeasureAttribute:
+	//	{MeasureAttribute} ('target' targetClass=[ecore::EClass|EString])? name=EString "attribute:"
+	//	att=[ecore::EAttribute|EString] type=Type? ('uncertainty' uncertainty=MeasurementUncertainty)?;
+	public MeasureAttributeElements getMeasureAttributeAccess() {
+		return pMeasureAttribute;
+	}
+	
+	public ParserRule getMeasureAttributeRule() {
+		return getMeasureAttributeAccess().getRule();
+	}
+	
+	//MeasureCast:
+	//	{MeasureCast} ('target' targetClass=[ecore::EClass|EString])? name=EString ":" measure=[Measure|EString] "as"
+	//	type=Type ('uncertainty' uncertainty=MeasurementUncertainty)?;
+	public MeasureCastElements getMeasureCastAccess() {
+		return pMeasureCast;
+	}
+	
+	public ParserRule getMeasureCastRule() {
+		return getMeasureCastAccess().getRule();
+	}
+	
+	//MeasureProductOperation_Impl MeasureProductOperation:
+	//	{MeasureProductOperation} ('target' targetClass=[ecore::EClass|EString])? name=EString ':' left=[Measure|EString] '*'
+	//	right=[Measure|EString];
+	public MeasureProductOperation_ImplElements getMeasureProductOperation_ImplAccess() {
+		return pMeasureProductOperation_Impl;
+	}
+	
+	public ParserRule getMeasureProductOperation_ImplRule() {
+		return getMeasureProductOperation_ImplAccess().getRule();
+	}
+	
+	//MeasureSumOperation:
+	//	{MeasureSumOperation} ('target' targetClass=[ecore::EClass|EString])? name=EString ':' left=[Measure|EString] '+'
+	//	right=[Measure|EString];
+	public MeasureSumOperationElements getMeasureSumOperationAccess() {
+		return pMeasureSumOperation;
+	}
+	
+	public ParserRule getMeasureSumOperationRule() {
+		return getMeasureSumOperationAccess().getRule();
+	}
+	
+	//EnergyComputation:
+	//	{EnergyComputation}
+	//	'EnergyComputation'
+	//	name=EString
+	//	'{' ('targetClass' targetClass=[ecore::EClass|EString])? ('targetOperation'
+	//	targetOperation=[ecore::EOperation|EString])? ('left' left=[Measure|EString])? ('right' right=[Measure|EString])?
+	//	('uncertainty' uncertainty=MeasurementUncertainty)?
+	//	'}';
+	public EnergyComputationElements getEnergyComputationAccess() {
+		return pEnergyComputation;
+	}
+	
+	public ParserRule getEnergyComputationRule() {
+		return getEnergyComputationAccess().getRule();
+	}
+	
+	//PowerComputation:
+	//	{PowerComputation}
+	//	'PowerComputation'
+	//	name=EString
+	//	'{' ('targetClass' targetClass=[ecore::EClass|EString])? ('targetOperation'
+	//	targetOperation=[ecore::EOperation|EString])? ('left' left=[Measure|EString])? ('right' right=[Measure|EString])?
+	//	('uncertainty' uncertainty=MeasurementUncertainty)?
+	//	'}';
+	public PowerComputationElements getPowerComputationAccess() {
+		return pPowerComputation;
+	}
+	
+	public ParserRule getPowerComputationRule() {
+		return getPowerComputationAccess().getRule();
+	}
+	
+	//MeasurementUncertainty:
+	//	{MeasurementUncertainty}
+	//	'MeasurementUncertainty'
+	//	'{' ('standardUncertainty' standardUncertainty=EBigDecimal)? ('information'
+	//	information=MeasurementUncertaintyInformation)?
+	//	'}';
+	public MeasurementUncertaintyElements getMeasurementUncertaintyAccess() {
+		return pMeasurementUncertainty;
+	}
+	
+	public ParserRule getMeasurementUncertaintyRule() {
+		return getMeasurementUncertaintyAccess().getRule();
+	}
+	
+	//NormalDistribution:
+	//	{NormalDistribution}
+	//	'NormalDistribution';
+	public NormalDistributionElements getNormalDistributionAccess() {
+		return pNormalDistribution;
+	}
+	
+	public ParserRule getNormalDistributionRule() {
+		return getNormalDistributionAccess().getRule();
+	}
+	
+	//Interval:
+	//	'Interval'
+	//	'{'
+	//	'lowerEndpoint' lowerEndpoint=Measure
+	//	'upperEndpoint' upperEndpoint=Measure
+	//	'}';
+	public IntervalElements getIntervalAccess() {
+		return pInterval;
+	}
+	
+	public ParserRule getIntervalRule() {
+		return getIntervalAccess().getRule();
+	}
+	
+	//Sampling:
+	//	{Sampling}
+	//	'Sampling'
+	//	'{' ('measurementProcedure' measurementProcedure=EString)? ('samples' '{' samples+=Sample ("," samples+=Sample)* '}')?
+	//	'}';
+	public SamplingElements getSamplingAccess() {
+		return pSampling;
+	}
+	
+	public ParserRule getSamplingRule() {
+		return getSamplingAccess().getRule();
+	}
+	
+	//Integral:
+	//	'Integral'
+	//	'{' ('function' function=EString)?
+	//	'interval' interval=[Interval|EString]
+	//	'}';
+	public IntegralElements getIntegralAccess() {
+		return pIntegral;
+	}
+	
+	public ParserRule getIntegralRule() {
+		return getIntegralAccess().getRule();
+	}
+	
+	//Sample:
+	//	{Sample}
+	//	'Sample'
+	//	'{' ('quantity' '{' quantity+=Measure ("," quantity+=Measure)* '}')?
+	//	'}';
+	public SampleElements getSampleAccess() {
+		return pSample;
+	}
+	
+	public ParserRule getSampleRule() {
+		return getSampleAccess().getRule();
+	}
+	
 	//EClass ecore::EClass:
 	//	{ecore::EClass} abstract?='abstract'?
 	//	interface?='interface'?
@@ -4587,131 +4635,6 @@ public class EelGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getEOperationRule() {
 		return getEOperationAccess().getRule();
-	}
-	
-	//MeasurementUncertainty:
-	//	{MeasurementUncertainty}
-	//	'MeasurementUncertainty'
-	//	'{' ('standardUncertainty' standardUncertainty=EBigDecimal)? ('information'
-	//	information=MeasurementUncertaintyInformation)?
-	//	'}';
-	public MeasurementUncertaintyElements getMeasurementUncertaintyAccess() {
-		return pMeasurementUncertainty;
-	}
-	
-	public ParserRule getMeasurementUncertaintyRule() {
-		return getMeasurementUncertaintyAccess().getRule();
-	}
-	
-	//MeasureValue_Impl MeasureValue:
-	//	{MeasureValue} ('target' targetClass=[ecore::EClass|EString])? name=EString ":" value=EBigDecimal? type=Type?
-	//	('uncertainty' uncertainty=MeasurementUncertainty)?;
-	public MeasureValue_ImplElements getMeasureValue_ImplAccess() {
-		return pMeasureValue_Impl;
-	}
-	
-	public ParserRule getMeasureValue_ImplRule() {
-		return getMeasureValue_ImplAccess().getRule();
-	}
-	
-	//MeasureOCL:
-	//	{MeasureOCL}
-	//	'MeasureOCL'
-	//	name=EString
-	//	'{' ('value' value=EBigDecimal)? ('oclQuery' oclQuery=EString)? ('targetClass' targetClass=[ecore::EClass|EString])?
-	//	('targetOperation' targetOperation=[ecore::EOperation|EString])? ('uncertainty' uncertainty=MeasurementUncertainty)?
-	//	'}';
-	public MeasureOCLElements getMeasureOCLAccess() {
-		return pMeasureOCL;
-	}
-	
-	public ParserRule getMeasureOCLRule() {
-		return getMeasureOCLAccess().getRule();
-	}
-	
-	//MeasureAttribute:
-	//	{MeasureAttribute}
-	//	'MeasureAttribute'
-	//	name=EString
-	//	'{' ('value' value=EBigDecimal)? ('targetClass' targetClass=[ecore::EClass|EString])? ('targetOperation'
-	//	targetOperation=[ecore::EOperation|EString])? ('att' att=[ecore::EAttribute|EString])? ('uncertainty'
-	//	uncertainty=MeasurementUncertainty)?
-	//	'}';
-	public MeasureAttributeElements getMeasureAttributeAccess() {
-		return pMeasureAttribute;
-	}
-	
-	public ParserRule getMeasureAttributeRule() {
-		return getMeasureAttributeAccess().getRule();
-	}
-	
-	//MeasureCast:
-	//	'MeasureCast'
-	//	name=EString
-	//	'{' ('targetClass' targetClass=[ecore::EClass|EString])? ('targetOperation'
-	//	targetOperation=[ecore::EOperation|EString])?
-	//	'measure' measure=[Measure|EString] ('uncertainty' uncertainty=MeasurementUncertainty)?
-	//	'}';
-	public MeasureCastElements getMeasureCastAccess() {
-		return pMeasureCast;
-	}
-	
-	public ParserRule getMeasureCastRule() {
-		return getMeasureCastAccess().getRule();
-	}
-	
-	//MeasureProductOperation_Impl MeasureProductOperation:
-	//	{MeasureProductOperation} ('targetClass' targetClass=[ecore::EClass|EString])? name=EString ':' left=[Measure|EString]
-	//	'*' right=[Measure|EString];
-	public MeasureProductOperation_ImplElements getMeasureProductOperation_ImplAccess() {
-		return pMeasureProductOperation_Impl;
-	}
-	
-	public ParserRule getMeasureProductOperation_ImplRule() {
-		return getMeasureProductOperation_ImplAccess().getRule();
-	}
-	
-	//MeasureSumOperation:
-	//	{MeasureSumOperation} ('targetClass' targetClass=[ecore::EClass|EString])? name=EString ':' left=[Measure|EString] '+'
-	//	right=[Measure|EString] name=EString;
-	public MeasureSumOperationElements getMeasureSumOperationAccess() {
-		return pMeasureSumOperation;
-	}
-	
-	public ParserRule getMeasureSumOperationRule() {
-		return getMeasureSumOperationAccess().getRule();
-	}
-	
-	//EnergyComputation:
-	//	{EnergyComputation}
-	//	'EnergyComputation'
-	//	name=EString
-	//	'{' ('targetClass' targetClass=[ecore::EClass|EString])? ('targetOperation'
-	//	targetOperation=[ecore::EOperation|EString])? ('left' left=[Measure|EString])? ('right' right=[Measure|EString])?
-	//	('uncertainty' uncertainty=MeasurementUncertainty)?
-	//	'}';
-	public EnergyComputationElements getEnergyComputationAccess() {
-		return pEnergyComputation;
-	}
-	
-	public ParserRule getEnergyComputationRule() {
-		return getEnergyComputationAccess().getRule();
-	}
-	
-	//PowerComputation:
-	//	{PowerComputation}
-	//	'PowerComputation'
-	//	name=EString
-	//	'{' ('targetClass' targetClass=[ecore::EClass|EString])? ('targetOperation'
-	//	targetOperation=[ecore::EOperation|EString])? ('left' left=[Measure|EString])? ('right' right=[Measure|EString])?
-	//	('uncertainty' uncertainty=MeasurementUncertainty)?
-	//	'}';
-	public PowerComputationElements getPowerComputationAccess() {
-		return pPowerComputation;
-	}
-	
-	public ParserRule getPowerComputationRule() {
-		return getPowerComputationAccess().getRule();
 	}
 	
 	//EAnnotation ecore::EAnnotation:
@@ -4910,70 +4833,6 @@ public class EelGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getEParameterRule() {
 		return getEParameterAccess().getRule();
-	}
-	
-	//NormalDistribution:
-	//	{NormalDistribution}
-	//	'NormalDistribution';
-	public NormalDistributionElements getNormalDistributionAccess() {
-		return pNormalDistribution;
-	}
-	
-	public ParserRule getNormalDistributionRule() {
-		return getNormalDistributionAccess().getRule();
-	}
-	
-	//Interval:
-	//	'Interval'
-	//	'{'
-	//	'lowerEndpoint' lowerEndpoint=Measure
-	//	'upperEndpoint' upperEndpoint=Measure
-	//	'}';
-	public IntervalElements getIntervalAccess() {
-		return pInterval;
-	}
-	
-	public ParserRule getIntervalRule() {
-		return getIntervalAccess().getRule();
-	}
-	
-	//Sampling:
-	//	{Sampling}
-	//	'Sampling'
-	//	'{' ('measurementProcedure' measurementProcedure=EString)? ('samples' '{' samples+=Sample ("," samples+=Sample)* '}')?
-	//	'}';
-	public SamplingElements getSamplingAccess() {
-		return pSampling;
-	}
-	
-	public ParserRule getSamplingRule() {
-		return getSamplingAccess().getRule();
-	}
-	
-	//Integral:
-	//	'Integral'
-	//	'{' ('function' function=EString)?
-	//	'interval' interval=[Interval|EString]
-	//	'}';
-	public IntegralElements getIntegralAccess() {
-		return pIntegral;
-	}
-	
-	public ParserRule getIntegralRule() {
-		return getIntegralAccess().getRule();
-	}
-	
-	//Sample:
-	//	{Sample}
-	//	'Sample'
-	//	'{' ('quantity' '{' quantity+=Measure ("," quantity+=Measure)* '}')?
-	//	'}';
-	public SampleElements getSampleAccess() {
-		return pSample;
-	}
-	
-	public ParserRule getSampleRule() {
-		return getSampleAccess().getRule();
 	}
 	
 	//terminal ID:

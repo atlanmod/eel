@@ -54,14 +54,6 @@ enum Visibility returns Visibility:
 				LOCAL = 'LOCAL' | GLOBAL = 'GLOBAL';
 
 
-MeasurementUncertainty returns MeasurementUncertainty:
-	{MeasurementUncertainty}
-	'MeasurementUncertainty'
-	'{'
-		('standardUncertainty' standardUncertainty=EBigDecimal)?
-		('information' information=MeasurementUncertaintyInformation)?
-	'}';
-
 MeasureValue_Impl returns MeasureValue:
 	{MeasureValue}
 	('target' targetClass=[ecore::EClass|EString])? name=EString ":" (value=EBigDecimal)? (type=Type)? ('uncertainty' uncertainty=MeasurementUncertainty)?
@@ -69,47 +61,27 @@ MeasureValue_Impl returns MeasureValue:
 
 MeasureOCL returns MeasureOCL:
 	{MeasureOCL}
-	'MeasureOCL'
-	name=EString
-	'{'
-		('value' value=EBigDecimal)?
-		('oclQuery' oclQuery=EString)?
-		('targetClass' targetClass=[ecore::EClass|EString])?
-		('targetOperation' targetOperation=[ecore::EOperation|EString])?
-		('uncertainty' uncertainty=MeasurementUncertainty)?
-	'}';
+	('target' targetClass=[ecore::EClass|EString])? name=EString "ocl:" oclQuery=EString (type=Type)? ('uncertainty' uncertainty=MeasurementUncertainty)?	
+;
 
 MeasureAttribute returns MeasureAttribute:
 	{MeasureAttribute}
-	'MeasureAttribute'
-	name=EString
-	'{'
-		('value' value=EBigDecimal)?
-		('targetClass' targetClass=[ecore::EClass|EString])?
-		('targetOperation' targetOperation=[ecore::EOperation|EString])?
-		('att' att=[ecore::EAttribute|EString])?
-		('uncertainty' uncertainty=MeasurementUncertainty)?
-	'}';
+	('target' targetClass=[ecore::EClass|EString])? name=EString "attribute:" att=[ecore::EAttribute|EString] (type=Type)? ('uncertainty' uncertainty=MeasurementUncertainty)?	
+;
 
 MeasureCast returns MeasureCast:
-	'MeasureCast'
-	name=EString
-	'{'
-		('targetClass' targetClass=[ecore::EClass|EString])?
-		('targetOperation' targetOperation=[ecore::EOperation|EString])?
-		'measure' measure=[Measure|EString]
-		('uncertainty' uncertainty=MeasurementUncertainty)?
-	'}';
+	{MeasureCast}
+	('target' targetClass=[ecore::EClass|EString])? name=EString ":" measure=[Measure|EString] "as" type=Type ('uncertainty' uncertainty=MeasurementUncertainty)?	
+;
 
 MeasureProductOperation_Impl returns MeasureProductOperation:
 	{MeasureProductOperation}
-	('targetClass' targetClass=[ecore::EClass|EString])? name=EString ':' left=[Measure|EString] '*' right=[Measure|EString]
+	('target' targetClass=[ecore::EClass|EString])? name=EString ':' left=[Measure|EString] '*' right=[Measure|EString]
 ;
 
 MeasureSumOperation returns MeasureSumOperation:
 	{MeasureSumOperation}
-	('targetClass' targetClass=[ecore::EClass|EString])? name=EString ':' left=[Measure|EString] '+' right=[Measure|EString]
-	name=EString
+	('target' targetClass=[ecore::EClass|EString])? name=EString ':' left=[Measure|EString] '+' right=[Measure|EString]	
 ;
 
 EnergyComputation returns EnergyComputation:
@@ -135,6 +107,16 @@ PowerComputation returns PowerComputation:
 		('right' right=[Measure|EString])?
 		('uncertainty' uncertainty=MeasurementUncertainty)?
 	'}';
+
+
+MeasurementUncertainty returns MeasurementUncertainty:
+	{MeasurementUncertainty}
+	'MeasurementUncertainty'
+	'{'
+		('standardUncertainty' standardUncertainty=EBigDecimal)?
+		('information' information=MeasurementUncertaintyInformation)?
+	'}';
+
 	
 NormalDistribution returns NormalDistribution:
 	{NormalDistribution}
