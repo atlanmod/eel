@@ -1,0 +1,7 @@
+Platform "ATMega328p" {
+	measures {
+		"led power" : 20.0 W, 
+		"delay duration" : 5.0 s,
+		"energy" : "led power" * "delay duration" 
+	}
+}
