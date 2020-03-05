@@ -6,7 +6,6 @@ import java.math.BigDecimal;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EOperation;
 
 /**
  * <!-- begin-user-doc -->
@@ -85,30 +84,30 @@ public interface Measure extends EObject {
 	void setTargetClass(EClass value);
 
 	/**
-	 * Returns the value of the '<em><b>Target Operation</b></em>' reference.
+	 * Returns the value of the '<em><b>Target Operation</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Target Operation</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Target Operation</em>' reference.
-	 * @see #setTargetOperation(EOperation)
+	 * @return the value of the '<em>Target Operation</em>' attribute.
+	 * @see #setTargetOperation(String)
 	 * @see fr.tblf.energy.estimation.eel.EelPackage#getMeasure_TargetOperation()
 	 * @model
 	 * @generated
 	 */
-	EOperation getTargetOperation();
+	String getTargetOperation();
 
 	/**
-	 * Sets the value of the '{@link fr.tblf.energy.estimation.eel.Measure#getTargetOperation <em>Target Operation</em>}' reference.
+	 * Sets the value of the '{@link fr.tblf.energy.estimation.eel.Measure#getTargetOperation <em>Target Operation</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Target Operation</em>' reference.
+	 * @param value the new value of the '<em>Target Operation</em>' attribute.
 	 * @see #getTargetOperation()
 	 * @generated
 	 */
-	void setTargetOperation(EOperation value);
+	void setTargetOperation(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Uncertainty</b></em>' containment reference.

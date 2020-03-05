@@ -9,7 +9,9 @@ Platform ATMega328p {
 		"arduino.LED".voltage = 5.0,
 		"arduino.LED".current = 0.0039,
 		"arduino.Board".voltage = 5.5,		
-		"arduino.LED".numberOfLedsRunning = ocl:"LED.allInstances() -> select(it | it.oclContainer().oclAsType(Pin).level = 1) -> size()"		
+		"arduino.LED".numberOfLedsRunning = ocl:"LED.allInstances() -> select(it | it.oclContainer().oclAsType(Pin).level = 1) -> size()",				
+		"arduino.Delay"#"execute".current = 5.5,
+		
 				
 		
 		

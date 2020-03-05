@@ -46,7 +46,7 @@
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="targetClass" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="targetOperation" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EOperation"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="targetOperation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="uncertainty" eType="#//MeasurementUncertainty"
         containment="true"/>
   </eClassifiers>

@@ -199,7 +199,7 @@ public interface EelPackage extends EPackage {
 	int MEASURE__TARGET_CLASS = 1;
 
 	/**
-	 * The feature id for the '<em><b>Target Operation</b></em>' reference.
+	 * The feature id for the '<em><b>Target Operation</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -281,7 +281,7 @@ public interface EelPackage extends EPackage {
 	int TYPED_MEASURE__TARGET_CLASS = MEASURE__TARGET_CLASS;
 
 	/**
-	 * The feature id for the '<em><b>Target Operation</b></em>' reference.
+	 * The feature id for the '<em><b>Target Operation</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -372,7 +372,7 @@ public interface EelPackage extends EPackage {
 	int MEASURE_VALUE__TARGET_CLASS = TYPED_MEASURE__TARGET_CLASS;
 
 	/**
-	 * The feature id for the '<em><b>Target Operation</b></em>' reference.
+	 * The feature id for the '<em><b>Target Operation</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -472,7 +472,7 @@ public interface EelPackage extends EPackage {
 	int MEASURE_OCL__TARGET_CLASS = MEASURE_VALUE__TARGET_CLASS;
 
 	/**
-	 * The feature id for the '<em><b>Target Operation</b></em>' reference.
+	 * The feature id for the '<em><b>Target Operation</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -581,7 +581,7 @@ public interface EelPackage extends EPackage {
 	int MEASURE_ATTRIBUTE__TARGET_CLASS = MEASURE_VALUE__TARGET_CLASS;
 
 	/**
-	 * The feature id for the '<em><b>Target Operation</b></em>' reference.
+	 * The feature id for the '<em><b>Target Operation</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -690,7 +690,7 @@ public interface EelPackage extends EPackage {
 	int MEASURE_CAST__TARGET_CLASS = TYPED_MEASURE__TARGET_CLASS;
 
 	/**
-	 * The feature id for the '<em><b>Target Operation</b></em>' reference.
+	 * The feature id for the '<em><b>Target Operation</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -790,7 +790,7 @@ public interface EelPackage extends EPackage {
 	int MEASURE_BINARY_OPERATION__TARGET_CLASS = TYPED_MEASURE__TARGET_CLASS;
 
 	/**
-	 * The feature id for the '<em><b>Target Operation</b></em>' reference.
+	 * The feature id for the '<em><b>Target Operation</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -899,7 +899,7 @@ public interface EelPackage extends EPackage {
 	int MEASURE_BINARY_PRODUCT_OPERATION__TARGET_CLASS = MEASURE_BINARY_OPERATION__TARGET_CLASS;
 
 	/**
-	 * The feature id for the '<em><b>Target Operation</b></em>' reference.
+	 * The feature id for the '<em><b>Target Operation</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1008,7 +1008,7 @@ public interface EelPackage extends EPackage {
 	int MEASURE_BINARY_SUM_OPERATION__TARGET_CLASS = MEASURE_BINARY_OPERATION__TARGET_CLASS;
 
 	/**
-	 * The feature id for the '<em><b>Target Operation</b></em>' reference.
+	 * The feature id for the '<em><b>Target Operation</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1117,7 +1117,7 @@ public interface EelPackage extends EPackage {
 	int ENERGY_COMPUTATION__TARGET_CLASS = MEASURE_BINARY_PRODUCT_OPERATION__TARGET_CLASS;
 
 	/**
-	 * The feature id for the '<em><b>Target Operation</b></em>' reference.
+	 * The feature id for the '<em><b>Target Operation</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1226,7 +1226,7 @@ public interface EelPackage extends EPackage {
 	int POWER_COMPUTATION__TARGET_CLASS = MEASURE_BINARY_PRODUCT_OPERATION__TARGET_CLASS;
 
 	/**
-	 * The feature id for the '<em><b>Target Operation</b></em>' reference.
+	 * The feature id for the '<em><b>Target Operation</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1335,7 +1335,7 @@ public interface EelPackage extends EPackage {
 	int REAL_TIME_DURATION__TARGET_CLASS = MEASURE_VALUE__TARGET_CLASS;
 
 	/**
-	 * The feature id for the '<em><b>Target Operation</b></em>' reference.
+	 * The feature id for the '<em><b>Target Operation</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1435,7 +1435,7 @@ public interface EelPackage extends EPackage {
 	int MEASURE_UNBOUND_OPERATION__TARGET_CLASS = TYPED_MEASURE__TARGET_CLASS;
 
 	/**
-	 * The feature id for the '<em><b>Target Operation</b></em>' reference.
+	 * The feature id for the '<em><b>Target Operation</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1535,7 +1535,7 @@ public interface EelPackage extends EPackage {
 	int MEASURE_UNBOUND_SUM_OPERATION__TARGET_CLASS = MEASURE_UNBOUND_OPERATION__TARGET_CLASS;
 
 	/**
-	 * The feature id for the '<em><b>Target Operation</b></em>' reference.
+	 * The feature id for the '<em><b>Target Operation</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1635,7 +1635,7 @@ public interface EelPackage extends EPackage {
 	int MEASURE_UNBOUND_PRODUCT_OPERATION__TARGET_CLASS = MEASURE_UNBOUND_OPERATION__TARGET_CLASS;
 
 	/**
-	 * The feature id for the '<em><b>Target Operation</b></em>' reference.
+	 * The feature id for the '<em><b>Target Operation</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2141,15 +2141,15 @@ public interface EelPackage extends EPackage {
 	EReference getMeasure_TargetClass();
 
 	/**
-	 * Returns the meta object for the reference '{@link fr.tblf.energy.estimation.eel.Measure#getTargetOperation <em>Target Operation</em>}'.
+	 * Returns the meta object for the attribute '{@link fr.tblf.energy.estimation.eel.Measure#getTargetOperation <em>Target Operation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Target Operation</em>'.
+	 * @return the meta object for the attribute '<em>Target Operation</em>'.
 	 * @see fr.tblf.energy.estimation.eel.Measure#getTargetOperation()
 	 * @see #getMeasure()
 	 * @generated
 	 */
-	EReference getMeasure_TargetOperation();
+	EAttribute getMeasure_TargetOperation();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link fr.tblf.energy.estimation.eel.Measure#getUncertainty <em>Uncertainty</em>}'.
@@ -2849,12 +2849,12 @@ public interface EelPackage extends EPackage {
 		EReference MEASURE__TARGET_CLASS = eINSTANCE.getMeasure_TargetClass();
 
 		/**
-		 * The meta object literal for the '<em><b>Target Operation</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Target Operation</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference MEASURE__TARGET_OPERATION = eINSTANCE.getMeasure_TargetOperation();
+		EAttribute MEASURE__TARGET_OPERATION = eINSTANCE.getMeasure_TargetOperation();
 
 		/**
 		 * The meta object literal for the '<em><b>Uncertainty</b></em>' containment reference feature.

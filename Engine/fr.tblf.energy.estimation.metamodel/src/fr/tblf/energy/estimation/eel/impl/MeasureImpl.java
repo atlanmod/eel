@@ -63,14 +63,24 @@ public abstract class MeasureImpl extends MinimalEObjectImpl.Container implement
 	protected EClass targetClass;
 
 	/**
-	 * The cached value of the '{@link #getTargetOperation() <em>Target Operation</em>}' reference.
+	 * The default value of the '{@link #getTargetOperation() <em>Target Operation</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getTargetOperation()
 	 * @generated
 	 * @ordered
 	 */
-	protected EOperation targetOperation;
+	protected static final String TARGET_OPERATION_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getTargetOperation() <em>Target Operation</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTargetOperation()
+	 * @generated
+	 * @ordered
+	 */
+	protected String targetOperation = TARGET_OPERATION_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getUncertainty() <em>Uncertainty</em>}' containment reference.
@@ -162,15 +172,7 @@ public abstract class MeasureImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getTargetOperation() {
-		if (targetOperation != null && targetOperation.eIsProxy()) {
-			InternalEObject oldTargetOperation = (InternalEObject)targetOperation;
-			targetOperation = (EOperation)eResolveProxy(oldTargetOperation);
-			if (targetOperation != oldTargetOperation) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EelPackage.MEASURE__TARGET_OPERATION, oldTargetOperation, targetOperation));
-			}
-		}
+	public String getTargetOperation() {
 		return targetOperation;
 	}
 
@@ -179,17 +181,8 @@ public abstract class MeasureImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation basicGetTargetOperation() {
-		return targetOperation;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setTargetOperation(EOperation newTargetOperation) {
-		EOperation oldTargetOperation = targetOperation;
+	public void setTargetOperation(String newTargetOperation) {
+		String oldTargetOperation = targetOperation;
 		targetOperation = newTargetOperation;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EelPackage.MEASURE__TARGET_OPERATION, oldTargetOperation, targetOperation));
@@ -314,8 +307,7 @@ public abstract class MeasureImpl extends MinimalEObjectImpl.Container implement
 				if (resolve) return getTargetClass();
 				return basicGetTargetClass();
 			case EelPackage.MEASURE__TARGET_OPERATION:
-				if (resolve) return getTargetOperation();
-				return basicGetTargetOperation();
+				return getTargetOperation();
 			case EelPackage.MEASURE__UNCERTAINTY:
 				return getUncertainty();
 		}
@@ -337,7 +329,7 @@ public abstract class MeasureImpl extends MinimalEObjectImpl.Container implement
 				setTargetClass((EClass)newValue);
 				return;
 			case EelPackage.MEASURE__TARGET_OPERATION:
-				setTargetOperation((EOperation)newValue);
+				setTargetOperation((String)newValue);
 				return;
 			case EelPackage.MEASURE__UNCERTAINTY:
 				setUncertainty((MeasurementUncertainty)newValue);
@@ -361,7 +353,7 @@ public abstract class MeasureImpl extends MinimalEObjectImpl.Container implement
 				setTargetClass((EClass)null);
 				return;
 			case EelPackage.MEASURE__TARGET_OPERATION:
-				setTargetOperation((EOperation)null);
+				setTargetOperation(TARGET_OPERATION_EDEFAULT);
 				return;
 			case EelPackage.MEASURE__UNCERTAINTY:
 				setUncertainty((MeasurementUncertainty)null);
@@ -383,7 +375,7 @@ public abstract class MeasureImpl extends MinimalEObjectImpl.Container implement
 			case EelPackage.MEASURE__TARGET_CLASS:
 				return targetClass != null;
 			case EelPackage.MEASURE__TARGET_OPERATION:
-				return targetOperation != null;
+				return TARGET_OPERATION_EDEFAULT == null ? targetOperation != null : !TARGET_OPERATION_EDEFAULT.equals(targetOperation);
 			case EelPackage.MEASURE__UNCERTAINTY:
 				return uncertainty != null;
 		}
@@ -404,6 +396,22 @@ public abstract class MeasureImpl extends MinimalEObjectImpl.Container implement
 				return value();
 		}
 		return super.eInvoke(operationID, arguments);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (targetOperation: ");
+		result.append(targetOperation);
+		result.append(')');
+		return result.toString();
 	}
 
 } //MeasureImpl

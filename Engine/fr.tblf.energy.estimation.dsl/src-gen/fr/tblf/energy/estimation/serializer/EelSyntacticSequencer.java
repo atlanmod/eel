@@ -11,8 +11,6 @@ import org.eclipse.xtext.IGrammarAccess;
 import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.nodemodel.INode;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.AbstractElementAlias;
-import org.eclipse.xtext.serializer.analysis.GrammarAlias.TokenAlias;
-import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynNavigable;
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynTransition;
 import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 
@@ -20,22 +18,10 @@ import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 public class EelSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected EelGrammarAccess grammarAccess;
-	protected AbstractElementAlias match_MeasureAttribute_FullStopKeyword_2_q;
-	protected AbstractElementAlias match_MeasureCast_FullStopKeyword_2_q;
-	protected AbstractElementAlias match_MeasureOCL_FullStopKeyword_2_q;
-	protected AbstractElementAlias match_MeasureProductOperation_Impl_FullStopKeyword_2_q;
-	protected AbstractElementAlias match_MeasureSumOperation_FullStopKeyword_2_q;
-	protected AbstractElementAlias match_MeasureValue_Impl_FullStopKeyword_2_q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (EelGrammarAccess) access;
-		match_MeasureAttribute_FullStopKeyword_2_q = new TokenAlias(false, true, grammarAccess.getMeasureAttributeAccess().getFullStopKeyword_2());
-		match_MeasureCast_FullStopKeyword_2_q = new TokenAlias(false, true, grammarAccess.getMeasureCastAccess().getFullStopKeyword_2());
-		match_MeasureOCL_FullStopKeyword_2_q = new TokenAlias(false, true, grammarAccess.getMeasureOCLAccess().getFullStopKeyword_2());
-		match_MeasureProductOperation_Impl_FullStopKeyword_2_q = new TokenAlias(false, true, grammarAccess.getMeasureProductOperation_ImplAccess().getFullStopKeyword_2());
-		match_MeasureSumOperation_FullStopKeyword_2_q = new TokenAlias(false, true, grammarAccess.getMeasureSumOperationAccess().getFullStopKeyword_2());
-		match_MeasureValue_Impl_FullStopKeyword_2_q = new TokenAlias(false, true, grammarAccess.getMeasureValue_ImplAccess().getFullStopKeyword_2());
 	}
 	
 	@Override
@@ -50,113 +36,8 @@ public class EelSyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if (match_MeasureAttribute_FullStopKeyword_2_q.equals(syntax))
-				emit_MeasureAttribute_FullStopKeyword_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_MeasureCast_FullStopKeyword_2_q.equals(syntax))
-				emit_MeasureCast_FullStopKeyword_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_MeasureOCL_FullStopKeyword_2_q.equals(syntax))
-				emit_MeasureOCL_FullStopKeyword_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_MeasureProductOperation_Impl_FullStopKeyword_2_q.equals(syntax))
-				emit_MeasureProductOperation_Impl_FullStopKeyword_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_MeasureSumOperation_FullStopKeyword_2_q.equals(syntax))
-				emit_MeasureSumOperation_FullStopKeyword_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_MeasureValue_Impl_FullStopKeyword_2_q.equals(syntax))
-				emit_MeasureValue_Impl_FullStopKeyword_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else acceptNodes(getLastNavigableState(), syntaxNodes);
+			acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
 
-	/**
-	 * Ambiguous syntax:
-	 *     '.'?
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     (rule start) (ambiguity) name=EString
-	 *     (rule start) (ambiguity) type=Type
-	 *     targetClass=[EClass|EString] (ambiguity) name=EString
-	 *     targetClass=[EClass|EString] (ambiguity) type=Type
-	 *     targetOperation=[EOperation|EString] (ambiguity) name=EString
-	 *     targetOperation=[EOperation|EString] (ambiguity) type=Type
-	 */
-	protected void emit_MeasureAttribute_FullStopKeyword_2_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Ambiguous syntax:
-	 *     '.'?
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     (rule start) (ambiguity) name=EString
-	 *     targetClass=[EClass|EString] (ambiguity) name=EString
-	 *     targetOperation=[EOperation|EString] (ambiguity) name=EString
-	 */
-	protected void emit_MeasureCast_FullStopKeyword_2_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Ambiguous syntax:
-	 *     '.'?
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     (rule start) (ambiguity) name=EString
-	 *     (rule start) (ambiguity) type=Type
-	 *     targetClass=[EClass|EString] (ambiguity) name=EString
-	 *     targetClass=[EClass|EString] (ambiguity) type=Type
-	 *     targetOperation=[EOperation|EString] (ambiguity) name=EString
-	 *     targetOperation=[EOperation|EString] (ambiguity) type=Type
-	 */
-	protected void emit_MeasureOCL_FullStopKeyword_2_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Ambiguous syntax:
-	 *     '.'?
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     (rule start) (ambiguity) name=EString
-	 *     (rule start) (ambiguity) type=Type
-	 *     targetClass=[EClass|EString] (ambiguity) name=EString
-	 *     targetClass=[EClass|EString] (ambiguity) type=Type
-	 *     targetOperation=[EOperation|EString] (ambiguity) name=EString
-	 *     targetOperation=[EOperation|EString] (ambiguity) type=Type
-	 */
-	protected void emit_MeasureProductOperation_Impl_FullStopKeyword_2_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Ambiguous syntax:
-	 *     '.'?
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     (rule start) (ambiguity) name=EString
-	 *     (rule start) (ambiguity) type=Type
-	 *     targetClass=[EClass|EString] (ambiguity) name=EString
-	 *     targetClass=[EClass|EString] (ambiguity) type=Type
-	 *     targetOperation=[EOperation|EString] (ambiguity) name=EString
-	 *     targetOperation=[EOperation|EString] (ambiguity) type=Type
-	 */
-	protected void emit_MeasureSumOperation_FullStopKeyword_2_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Ambiguous syntax:
-	 *     '.'?
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     (rule start) (ambiguity) name=EString
-	 *     (rule start) (ambiguity) type=Type
-	 *     targetClass=[EClass|EString] (ambiguity) name=EString
-	 *     targetClass=[EClass|EString] (ambiguity) type=Type
-	 *     targetOperation=[EOperation|EString] (ambiguity) name=EString
-	 *     targetOperation=[EOperation|EString] (ambiguity) type=Type
-	 */
-	protected void emit_MeasureValue_Impl_FullStopKeyword_2_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
 }

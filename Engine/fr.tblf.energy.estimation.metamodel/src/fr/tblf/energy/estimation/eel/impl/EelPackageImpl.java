@@ -406,8 +406,8 @@ public class EelPackageImpl extends EPackageImpl implements EelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getMeasure_TargetOperation() {
-		return (EReference)measureEClass.getEStructuralFeatures().get(2);
+	public EAttribute getMeasure_TargetOperation() {
+		return (EAttribute)measureEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -955,7 +955,7 @@ public class EelPackageImpl extends EPackageImpl implements EelPackage {
 		measureEClass = createEClass(MEASURE);
 		createEAttribute(measureEClass, MEASURE__NAME);
 		createEReference(measureEClass, MEASURE__TARGET_CLASS);
-		createEReference(measureEClass, MEASURE__TARGET_OPERATION);
+		createEAttribute(measureEClass, MEASURE__TARGET_OPERATION);
 		createEReference(measureEClass, MEASURE__UNCERTAINTY);
 		createEOperation(measureEClass, MEASURE___TYPE);
 		createEOperation(measureEClass, MEASURE___VALUE);
@@ -1098,7 +1098,7 @@ public class EelPackageImpl extends EPackageImpl implements EelPackage {
 		initEClass(measureEClass, Measure.class, "Measure", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getMeasure_Name(), ecorePackage.getEString(), "name", null, 0, 1, Measure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMeasure_TargetClass(), ecorePackage.getEClass(), null, "targetClass", null, 0, 1, Measure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMeasure_TargetOperation(), ecorePackage.getEOperation(), null, "targetOperation", null, 0, 1, Measure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMeasure_TargetOperation(), ecorePackage.getEString(), "targetOperation", null, 0, 1, Measure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMeasure_Uncertainty(), this.getMeasurementUncertainty(), null, "uncertainty", null, 0, 1, Measure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEOperation(getMeasure__Type(), this.getType(), "type", 0, 1, IS_UNIQUE, IS_ORDERED);

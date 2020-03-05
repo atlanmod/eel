@@ -37,7 +37,8 @@ public class EngineAddon implements IEngineAddon {
 	private Platform platform;
 	private OCL ocl = OCL.newInstance();
 	private Map<String, Measure> mapClassEstimation;
-		
+	private long durationOfSequentialStep;
+	
 	@Override
 	public void engineAboutToStart(IExecutionEngine<?> executionEngine) {	
 		if (MODEL == null) {
@@ -95,6 +96,13 @@ public class EngineAddon implements IEngineAddon {
 
 	@Override
 	public void aboutToExecuteStep(IExecutionEngine<?> engine, Step<?> stepToExecute) {
+		durationOfSequentialStep = System.currentTimeMillis();		
+	}
+	
+	
+	public void stepExecuted(IExecutionEngine<?> engine, Step<?> stepToExecute) {
+		durationOfSequentialStep = System.currentTimeMillis() - durationOfSequentialStep;
+		System.out.println("Step lasted "+durationOfSequentialStep);
 		
 		EObject caller = stepToExecute.getMseoccurrence().getMse().getCaller();		
 		EOperation operation = stepToExecute.getMseoccurrence().getMse().getAction(); 								
@@ -166,7 +174,7 @@ public class EngineAddon implements IEngineAddon {
 				if (measure.getTargetClass() != null)
 					System.out.print(" -> "+measure.getTargetClass());
 				if (measure.getTargetOperation() != null)
-					System.out.print(" -> "+measure.getTargetOperation().getName());
+					System.out.print(" -> "+measure.getTargetOperation());
 				
 				System.out.println("");
 				return null;

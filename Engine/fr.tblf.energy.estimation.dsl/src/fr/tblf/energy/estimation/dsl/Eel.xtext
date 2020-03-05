@@ -16,7 +16,7 @@ Platform returns Platform:
 
 
 Measure returns Measure:
-	MeasureValue_Impl  | MeasureOCL | MeasureAttribute | MeasureCast | MeasureBinaryProductOperation | MeasureBinarySumOperation | MeasureUnboundSumOperation ;
+	MeasureValue_Impl  | MeasureOCL | MeasureAttribute | MeasureCast | MeasureBinaryProductOperation | MeasureBinarySumOperation | RealTimeDuration/*| MeasureUnboundSumOperation | MeasureUnboundProductOperation */ ;
 
 EStructuralFeature returns ecore::EStructuralFeature:
 	EAttribute | EReference;
@@ -56,48 +56,55 @@ enum Visibility returns Visibility:
 
 MeasureValue_Impl returns MeasureValue:
 	{MeasureValue}	
-	(targetClass=[ecore::EClass|EString]('#' targetOperation=[ecore::EOperation|EString])?)?('.')? (type=Type | name = EString) "=" (value=EBigDecimal)? ('uncertainty' uncertainty=MeasurementUncertainty)?	
+	targetClass=[ecore::EClass|EString]('#' targetOperation=EString)? ('.') (type=Type | name = EString) "=" (value=EBigDecimal)? ('uncertainty' uncertainty=MeasurementUncertainty)?	
 ;
 
 MeasureOCL returns MeasureOCL:
 	{MeasureOCL}
-	(targetClass=[ecore::EClass|EString]('#' targetOperation=[ecore::EOperation|EString])?)?('.')? (type=Type | name = EString) "=" 'ocl:' oclQuery=EString  ('uncertainty' uncertainty=MeasurementUncertainty)?	
+	targetClass=[ecore::EClass|EString]('#' targetOperation=EString)?('.') (type=Type | name = EString) "=" 'ocl:' oclQuery=EString  ('uncertainty' uncertainty=MeasurementUncertainty)?	
 ;
 
 
 MeasureAttribute returns MeasureAttribute:
 	{MeasureAttribute}
-	(targetClass=[ecore::EClass|EString]('#' targetOperation=[ecore::EOperation|EString])?)?('.')? (type=Type | name = EString) "=" "attribute:" att=[ecore::EAttribute|EString]  ('uncertainty' uncertainty=MeasurementUncertainty)?		
+	targetClass=[ecore::EClass|EString]('#' targetOperation=EString)?('.') (type=Type | name = EString) "=" "attribute:" att=[ecore::EAttribute|EString]  ('uncertainty' uncertainty=MeasurementUncertainty)?		
 ;
 
 
 MeasureCast returns MeasureCast:
 	{MeasureCast}
-	(targetClass=[ecore::EClass|EString]('#' targetOperation=[ecore::EOperation|EString])?)?('.')? name=EString "=" measure=[Measure|EString] "as" type=Type ('uncertainty' uncertainty=MeasurementUncertainty)?	
+	targetClass=[ecore::EClass|EString]('#' targetOperation=EString)?('.') name=EString "=" measure=[Measure|EString] "as" type=Type ('uncertainty' uncertainty=MeasurementUncertainty)?	
 ;
 
 
 MeasureBinaryProductOperation returns MeasureBinaryProductOperation:
 	{MeasureBinaryProductOperation}
-	(targetClass=[ecore::EClass|EString]('#' targetOperation=[ecore::EOperation|EString])?)?('.')? (type=Type | name = EString) "="  left=[Measure|EString] '*' right=[Measure|EString] ('uncertainty' uncertainty=MeasurementUncertainty)?	
+	targetClass=[ecore::EClass|EString]('#' targetOperation=EString)?('.') (type=Type | name = EString) "="  left=[Measure|EString] '*' right=[Measure|EString] ('uncertainty' uncertainty=MeasurementUncertainty)?	
 ;
 
 
 MeasureBinarySumOperation returns MeasureBinarySumOperation:
 	{MeasureBinarySumOperation}
-	(targetClass=[ecore::EClass|EString]('#' targetOperation=[ecore::EOperation|EString])?)?('.')? (type=Type | name = EString) "=" left=[Measure|EString] '+' right=[Measure|EString] ('uncertainty' uncertainty=MeasurementUncertainty)?		
+	targetClass=[ecore::EClass|EString]('#' targetOperation=EString)?('.') (type=Type | name = EString) "=" left=[Measure|EString] '+' right=[Measure|EString] ('uncertainty' uncertainty=MeasurementUncertainty)?		
 ;
 
+RealTimeDuration returns RealTimeDuration:
+	{RealTimeDuration}
+	targetClass=[ecore::EClass|EString]('#' targetOperation=EString)?('.duration') ('uncertainty' uncertainty=MeasurementUncertainty)?
+;
+
+/*
 MeasureUnboundSumOperation returns MeasureUnboundSumOperation:
 	{MeasureUnboundSumOperation}
-	(targetClass=[ecore::EClass|EString]('#' targetOperation=[ecore::EOperation|EString])?)?('.')? (type=Type | name = EString) "="  measures+=[Measure|EString] ('+' measures+=[Measure|EString])+ ('uncertainty' uncertainty=MeasurementUncertainty)?		
+	targetClass=[ecore::EClass|EString]('.') (type=Type | name = EString) "="  measures+=[Measure|EString] ('+' measures+=[Measure|EString])+ ('uncertainty' uncertainty=MeasurementUncertainty)?		
 ;
 
 MeasureUnboundProductOperation returns MeasureUnboundProductOperation:
 	{MeasureUnboundProductOperation}
-	(targetClass=[ecore::EClass|EString]('#' targetOperation=[ecore::EOperation|EString])?)?('.')? (type=Type | name = EString) "="  measures+=[Measure|EString] ('*' measures+=[Measure|EString])+ ('uncertainty' uncertainty=MeasurementUncertainty)?		
+	targetClass=[ecore::EClass|EString]('.') (type=Type | name = EString) "="  measures+=[Measure|EString] ('*' measures+=[Measure|EString])+ ('uncertainty' uncertainty=MeasurementUncertainty)?		
 ;
-
+ */
+ 
 MeasurementUncertainty returns MeasurementUncertainty:
 	{MeasurementUncertainty}
 	'MeasurementUncertainty'
