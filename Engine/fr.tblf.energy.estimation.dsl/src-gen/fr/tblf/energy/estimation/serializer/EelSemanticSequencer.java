@@ -5,19 +5,17 @@ package fr.tblf.energy.estimation.serializer;
 
 import com.google.inject.Inject;
 import fr.tblf.energy.estimation.eel.EelPackage;
-import fr.tblf.energy.estimation.eel.EnergyComputation;
 import fr.tblf.energy.estimation.eel.Integral;
 import fr.tblf.energy.estimation.eel.Interval;
 import fr.tblf.energy.estimation.eel.MeasureAttribute;
+import fr.tblf.energy.estimation.eel.MeasureBinaryProductOperation;
+import fr.tblf.energy.estimation.eel.MeasureBinarySumOperation;
 import fr.tblf.energy.estimation.eel.MeasureCast;
 import fr.tblf.energy.estimation.eel.MeasureOCL;
-import fr.tblf.energy.estimation.eel.MeasureProductOperation;
-import fr.tblf.energy.estimation.eel.MeasureSumOperation;
 import fr.tblf.energy.estimation.eel.MeasureValue;
 import fr.tblf.energy.estimation.eel.MeasurementUncertainty;
 import fr.tblf.energy.estimation.eel.NormalDistribution;
 import fr.tblf.energy.estimation.eel.Platform;
-import fr.tblf.energy.estimation.eel.PowerComputation;
 import fr.tblf.energy.estimation.eel.Sample;
 import fr.tblf.energy.estimation.eel.Sampling;
 import fr.tblf.energy.estimation.eel.Variable;
@@ -102,9 +100,6 @@ public class EelSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			}
 		else if (epackage == EelPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
-			case EelPackage.ENERGY_COMPUTATION:
-				sequence_EnergyComputation(context, (EnergyComputation) semanticObject); 
-				return; 
 			case EelPackage.INTEGRAL:
 				sequence_Integral(context, (Integral) semanticObject); 
 				return; 
@@ -114,17 +109,17 @@ public class EelSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			case EelPackage.MEASURE_ATTRIBUTE:
 				sequence_MeasureAttribute(context, (MeasureAttribute) semanticObject); 
 				return; 
+			case EelPackage.MEASURE_BINARY_PRODUCT_OPERATION:
+				sequence_MeasureProductOperation_Impl(context, (MeasureBinaryProductOperation) semanticObject); 
+				return; 
+			case EelPackage.MEASURE_BINARY_SUM_OPERATION:
+				sequence_MeasureSumOperation(context, (MeasureBinarySumOperation) semanticObject); 
+				return; 
 			case EelPackage.MEASURE_CAST:
 				sequence_MeasureCast(context, (MeasureCast) semanticObject); 
 				return; 
 			case EelPackage.MEASURE_OCL:
 				sequence_MeasureOCL(context, (MeasureOCL) semanticObject); 
-				return; 
-			case EelPackage.MEASURE_PRODUCT_OPERATION:
-				sequence_MeasureProductOperation_Impl(context, (MeasureProductOperation) semanticObject); 
-				return; 
-			case EelPackage.MEASURE_SUM_OPERATION:
-				sequence_MeasureSumOperation(context, (MeasureSumOperation) semanticObject); 
 				return; 
 			case EelPackage.MEASURE_VALUE:
 				sequence_MeasureValue_Impl(context, (MeasureValue) semanticObject); 
@@ -137,9 +132,6 @@ public class EelSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				return; 
 			case EelPackage.PLATFORM:
 				sequence_Platform(context, (Platform) semanticObject); 
-				return; 
-			case EelPackage.POWER_COMPUTATION:
-				sequence_PowerComputation(context, (PowerComputation) semanticObject); 
 				return; 
 			case EelPackage.SAMPLE:
 				sequence_Sample(context, (Sample) semanticObject); 
@@ -414,26 +406,6 @@ public class EelSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Contexts:
-	 *     Measure returns EnergyComputation
-	 *     EnergyComputation returns EnergyComputation
-	 *
-	 * Constraint:
-	 *     (
-	 *         name=EString 
-	 *         targetClass=[EClass|EString]? 
-	 *         targetOperation=[EOperation|EString]? 
-	 *         left=[Measure|EString]? 
-	 *         right=[Measure|EString]? 
-	 *         uncertainty=MeasurementUncertainty?
-	 *     )
-	 */
-	protected void sequence_EnergyComputation(ISerializationContext context, EnergyComputation semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
 	 *     MeasurementUncertaintyInformation returns Integral
 	 *     Integral returns Integral
 	 *
@@ -473,7 +445,12 @@ public class EelSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     MeasureAttribute returns MeasureAttribute
 	 *
 	 * Constraint:
-	 *     (targetClass=[EClass|EString]? name=EString att=[EAttribute|EString] type=Type? uncertainty=MeasurementUncertainty?)
+	 *     (
+	 *         (targetClass=[EClass|EString] targetOperation=[EOperation|EString]?)? 
+	 *         (type=Type | name=EString) 
+	 *         att=[EAttribute|EString] 
+	 *         uncertainty=MeasurementUncertainty?
+	 *     )
 	 */
 	protected void sequence_MeasureAttribute(ISerializationContext context, MeasureAttribute semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -486,7 +463,13 @@ public class EelSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     MeasureCast returns MeasureCast
 	 *
 	 * Constraint:
-	 *     (targetClass=[EClass|EString]? name=EString measure=[Measure|EString] type=Type uncertainty=MeasurementUncertainty?)
+	 *     (
+	 *         (targetClass=[EClass|EString] targetOperation=[EOperation|EString]?)? 
+	 *         name=EString 
+	 *         measure=[Measure|EString] 
+	 *         type=Type 
+	 *         uncertainty=MeasurementUncertainty?
+	 *     )
 	 */
 	protected void sequence_MeasureCast(ISerializationContext context, MeasureCast semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -499,7 +482,12 @@ public class EelSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     MeasureOCL returns MeasureOCL
 	 *
 	 * Constraint:
-	 *     (targetClass=[EClass|EString]? name=EString oclQuery=EString type=Type? uncertainty=MeasurementUncertainty?)
+	 *     (
+	 *         (targetClass=[EClass|EString] targetOperation=[EOperation|EString]?)? 
+	 *         (type=Type | name=EString) 
+	 *         oclQuery=EString 
+	 *         uncertainty=MeasurementUncertainty?
+	 *     )
 	 */
 	protected void sequence_MeasureOCL(ISerializationContext context, MeasureOCL semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -508,26 +496,38 @@ public class EelSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Contexts:
-	 *     Measure returns MeasureProductOperation
-	 *     MeasureProductOperation_Impl returns MeasureProductOperation
+	 *     Measure returns MeasureBinaryProductOperation
+	 *     MeasureProductOperation_Impl returns MeasureBinaryProductOperation
 	 *
 	 * Constraint:
-	 *     (targetClass=[EClass|EString]? name=EString left=[Measure|EString] right=[Measure|EString])
+	 *     (
+	 *         (targetClass=[EClass|EString] targetOperation=[EOperation|EString]?)? 
+	 *         (type=Type | name=EString) 
+	 *         left=[Measure|EString] 
+	 *         right=[Measure|EString] 
+	 *         uncertainty=MeasurementUncertainty?
+	 *     )
 	 */
-	protected void sequence_MeasureProductOperation_Impl(ISerializationContext context, MeasureProductOperation semanticObject) {
+	protected void sequence_MeasureProductOperation_Impl(ISerializationContext context, MeasureBinaryProductOperation semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Contexts:
-	 *     Measure returns MeasureSumOperation
-	 *     MeasureSumOperation returns MeasureSumOperation
+	 *     Measure returns MeasureBinarySumOperation
+	 *     MeasureSumOperation returns MeasureBinarySumOperation
 	 *
 	 * Constraint:
-	 *     (targetClass=[EClass|EString]? name=EString left=[Measure|EString] right=[Measure|EString])
+	 *     (
+	 *         (targetClass=[EClass|EString] targetOperation=[EOperation|EString]?)? 
+	 *         (type=Type | name=EString) 
+	 *         left=[Measure|EString] 
+	 *         right=[Measure|EString] 
+	 *         uncertainty=MeasurementUncertainty?
+	 *     )
 	 */
-	protected void sequence_MeasureSumOperation(ISerializationContext context, MeasureSumOperation semanticObject) {
+	protected void sequence_MeasureSumOperation(ISerializationContext context, MeasureBinarySumOperation semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -538,7 +538,12 @@ public class EelSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     MeasureValue_Impl returns MeasureValue
 	 *
 	 * Constraint:
-	 *     (targetClass=[EClass|EString]? name=EString value=EBigDecimal? type=Type? uncertainty=MeasurementUncertainty?)
+	 *     (
+	 *         (targetClass=[EClass|EString] targetOperation=[EOperation|EString]?)? 
+	 *         (type=Type | name=EString) 
+	 *         value=EBigDecimal? 
+	 *         uncertainty=MeasurementUncertainty?
+	 *     )
 	 */
 	protected void sequence_MeasureValue_Impl(ISerializationContext context, MeasureValue semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -578,26 +583,6 @@ public class EelSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     (name=EString (variables+=Variable variables+=Variable*)? (measures+=Measure measures+=Measure*)?)
 	 */
 	protected void sequence_Platform(ISerializationContext context, Platform semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     Measure returns PowerComputation
-	 *     PowerComputation returns PowerComputation
-	 *
-	 * Constraint:
-	 *     (
-	 *         name=EString 
-	 *         targetClass=[EClass|EString]? 
-	 *         targetOperation=[EOperation|EString]? 
-	 *         left=[Measure|EString]? 
-	 *         right=[Measure|EString]? 
-	 *         uncertainty=MeasurementUncertainty?
-	 *     )
-	 */
-	protected void sequence_PowerComputation(ISerializationContext context, PowerComputation semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

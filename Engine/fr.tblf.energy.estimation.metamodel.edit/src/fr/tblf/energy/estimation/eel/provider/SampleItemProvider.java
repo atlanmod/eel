@@ -171,12 +171,12 @@ public class SampleItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(EelPackage.Literals.SAMPLE__QUANTITY,
-				 EelFactory.eINSTANCE.createMeasureProductOperation()));
+				 EelFactory.eINSTANCE.createMeasureBinaryProductOperation()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(EelPackage.Literals.SAMPLE__QUANTITY,
-				 EelFactory.eINSTANCE.createMeasureSumOperation()));
+				 EelFactory.eINSTANCE.createMeasureBinarySumOperation()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -187,6 +187,16 @@ public class SampleItemProvider
 			(createChildParameter
 				(EelPackage.Literals.SAMPLE__QUANTITY,
 				 EelFactory.eINSTANCE.createPowerComputation()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(EelPackage.Literals.SAMPLE__QUANTITY,
+				 EelFactory.eINSTANCE.createMeasureUnboundSumOperation()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(EelPackage.Literals.SAMPLE__QUANTITY,
+				 EelFactory.eINSTANCE.createMeasureUnboundProductOperation()));
 	}
 
 	/**

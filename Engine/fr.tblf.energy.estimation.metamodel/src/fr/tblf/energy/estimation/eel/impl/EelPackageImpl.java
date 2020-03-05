@@ -9,11 +9,14 @@ import fr.tblf.energy.estimation.eel.Integral;
 import fr.tblf.energy.estimation.eel.Interval;
 import fr.tblf.energy.estimation.eel.Measure;
 import fr.tblf.energy.estimation.eel.MeasureAttribute;
+import fr.tblf.energy.estimation.eel.MeasureBinaryOperation;
+import fr.tblf.energy.estimation.eel.MeasureBinaryProductOperation;
+import fr.tblf.energy.estimation.eel.MeasureBinarySumOperation;
 import fr.tblf.energy.estimation.eel.MeasureCast;
 import fr.tblf.energy.estimation.eel.MeasureOCL;
-import fr.tblf.energy.estimation.eel.MeasureOperation;
-import fr.tblf.energy.estimation.eel.MeasureProductOperation;
-import fr.tblf.energy.estimation.eel.MeasureSumOperation;
+import fr.tblf.energy.estimation.eel.MeasureUnboundOperation;
+import fr.tblf.energy.estimation.eel.MeasureUnboundProductOperation;
+import fr.tblf.energy.estimation.eel.MeasureUnboundSumOperation;
 import fr.tblf.energy.estimation.eel.MeasureValue;
 import fr.tblf.energy.estimation.eel.MeasurementUncertainty;
 import fr.tblf.energy.estimation.eel.MeasurementUncertaintyInformation;
@@ -107,21 +110,21 @@ public class EelPackageImpl extends EPackageImpl implements EelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass measureOperationEClass = null;
+	private EClass measureBinaryOperationEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass measureProductOperationEClass = null;
+	private EClass measureBinaryProductOperationEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass measureSumOperationEClass = null;
+	private EClass measureBinarySumOperationEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -136,6 +139,27 @@ public class EelPackageImpl extends EPackageImpl implements EelPackage {
 	 * @generated
 	 */
 	private EClass powerComputationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass measureUnboundOperationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass measureUnboundSumOperationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass measureUnboundProductOperationEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -518,8 +542,8 @@ public class EelPackageImpl extends EPackageImpl implements EelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getMeasureOperation() {
-		return measureOperationEClass;
+	public EClass getMeasureBinaryOperation() {
+		return measureBinaryOperationEClass;
 	}
 
 	/**
@@ -527,8 +551,8 @@ public class EelPackageImpl extends EPackageImpl implements EelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getMeasureOperation_Left() {
-		return (EReference)measureOperationEClass.getEStructuralFeatures().get(0);
+	public EReference getMeasureBinaryOperation_Left() {
+		return (EReference)measureBinaryOperationEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -536,8 +560,8 @@ public class EelPackageImpl extends EPackageImpl implements EelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getMeasureOperation_Right() {
-		return (EReference)measureOperationEClass.getEStructuralFeatures().get(1);
+	public EReference getMeasureBinaryOperation_Right() {
+		return (EReference)measureBinaryOperationEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -545,8 +569,8 @@ public class EelPackageImpl extends EPackageImpl implements EelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getMeasureProductOperation() {
-		return measureProductOperationEClass;
+	public EClass getMeasureBinaryProductOperation() {
+		return measureBinaryProductOperationEClass;
 	}
 
 	/**
@@ -554,8 +578,8 @@ public class EelPackageImpl extends EPackageImpl implements EelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getMeasureProductOperation__Value() {
-		return measureProductOperationEClass.getEOperations().get(0);
+	public EOperation getMeasureBinaryProductOperation__Value() {
+		return measureBinaryProductOperationEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -563,8 +587,8 @@ public class EelPackageImpl extends EPackageImpl implements EelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getMeasureSumOperation() {
-		return measureSumOperationEClass;
+	public EClass getMeasureBinarySumOperation() {
+		return measureBinarySumOperationEClass;
 	}
 
 	/**
@@ -572,8 +596,8 @@ public class EelPackageImpl extends EPackageImpl implements EelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getMeasureSumOperation__Value() {
-		return measureSumOperationEClass.getEOperations().get(0);
+	public EOperation getMeasureBinarySumOperation__Value() {
+		return measureBinarySumOperationEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -628,6 +652,60 @@ public class EelPackageImpl extends EPackageImpl implements EelPackage {
 	 */
 	public EOperation getPowerComputation__Value() {
 		return powerComputationEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getMeasureUnboundOperation() {
+		return measureUnboundOperationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getMeasureUnboundOperation_Measures() {
+		return (EReference)measureUnboundOperationEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getMeasureUnboundSumOperation() {
+		return measureUnboundSumOperationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getMeasureUnboundSumOperation__Value() {
+		return measureUnboundSumOperationEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getMeasureUnboundProductOperation() {
+		return measureUnboundProductOperationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getMeasureUnboundProductOperation__Value() {
+		return measureUnboundProductOperationEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -873,15 +951,15 @@ public class EelPackageImpl extends EPackageImpl implements EelPackage {
 		measureCastEClass = createEClass(MEASURE_CAST);
 		createEReference(measureCastEClass, MEASURE_CAST__MEASURE);
 
-		measureOperationEClass = createEClass(MEASURE_OPERATION);
-		createEReference(measureOperationEClass, MEASURE_OPERATION__LEFT);
-		createEReference(measureOperationEClass, MEASURE_OPERATION__RIGHT);
+		measureBinaryOperationEClass = createEClass(MEASURE_BINARY_OPERATION);
+		createEReference(measureBinaryOperationEClass, MEASURE_BINARY_OPERATION__LEFT);
+		createEReference(measureBinaryOperationEClass, MEASURE_BINARY_OPERATION__RIGHT);
 
-		measureProductOperationEClass = createEClass(MEASURE_PRODUCT_OPERATION);
-		createEOperation(measureProductOperationEClass, MEASURE_PRODUCT_OPERATION___VALUE);
+		measureBinaryProductOperationEClass = createEClass(MEASURE_BINARY_PRODUCT_OPERATION);
+		createEOperation(measureBinaryProductOperationEClass, MEASURE_BINARY_PRODUCT_OPERATION___VALUE);
 
-		measureSumOperationEClass = createEClass(MEASURE_SUM_OPERATION);
-		createEOperation(measureSumOperationEClass, MEASURE_SUM_OPERATION___VALUE);
+		measureBinarySumOperationEClass = createEClass(MEASURE_BINARY_SUM_OPERATION);
+		createEOperation(measureBinarySumOperationEClass, MEASURE_BINARY_SUM_OPERATION___VALUE);
 
 		energyComputationEClass = createEClass(ENERGY_COMPUTATION);
 		createEOperation(energyComputationEClass, ENERGY_COMPUTATION___TYPE);
@@ -890,6 +968,15 @@ public class EelPackageImpl extends EPackageImpl implements EelPackage {
 		powerComputationEClass = createEClass(POWER_COMPUTATION);
 		createEOperation(powerComputationEClass, POWER_COMPUTATION___TYPE);
 		createEOperation(powerComputationEClass, POWER_COMPUTATION___VALUE);
+
+		measureUnboundOperationEClass = createEClass(MEASURE_UNBOUND_OPERATION);
+		createEReference(measureUnboundOperationEClass, MEASURE_UNBOUND_OPERATION__MEASURES);
+
+		measureUnboundSumOperationEClass = createEClass(MEASURE_UNBOUND_SUM_OPERATION);
+		createEOperation(measureUnboundSumOperationEClass, MEASURE_UNBOUND_SUM_OPERATION___VALUE);
+
+		measureUnboundProductOperationEClass = createEClass(MEASURE_UNBOUND_PRODUCT_OPERATION);
+		createEOperation(measureUnboundProductOperationEClass, MEASURE_UNBOUND_PRODUCT_OPERATION___VALUE);
 
 		measurementUncertaintyEClass = createEClass(MEASUREMENT_UNCERTAINTY);
 		createEReference(measurementUncertaintyEClass, MEASUREMENT_UNCERTAINTY__INFORMATION);
@@ -954,11 +1041,14 @@ public class EelPackageImpl extends EPackageImpl implements EelPackage {
 		measureOCLEClass.getESuperTypes().add(this.getMeasureValue());
 		measureAttributeEClass.getESuperTypes().add(this.getMeasureValue());
 		measureCastEClass.getESuperTypes().add(this.getTypedMeasure());
-		measureOperationEClass.getESuperTypes().add(this.getMeasure());
-		measureProductOperationEClass.getESuperTypes().add(this.getMeasureOperation());
-		measureSumOperationEClass.getESuperTypes().add(this.getMeasureOperation());
-		energyComputationEClass.getESuperTypes().add(this.getMeasureProductOperation());
-		powerComputationEClass.getESuperTypes().add(this.getMeasureProductOperation());
+		measureBinaryOperationEClass.getESuperTypes().add(this.getTypedMeasure());
+		measureBinaryProductOperationEClass.getESuperTypes().add(this.getMeasureBinaryOperation());
+		measureBinarySumOperationEClass.getESuperTypes().add(this.getMeasureBinaryOperation());
+		energyComputationEClass.getESuperTypes().add(this.getMeasureBinaryProductOperation());
+		powerComputationEClass.getESuperTypes().add(this.getMeasureBinaryProductOperation());
+		measureUnboundOperationEClass.getESuperTypes().add(this.getTypedMeasure());
+		measureUnboundSumOperationEClass.getESuperTypes().add(this.getMeasureUnboundOperation());
+		measureUnboundProductOperationEClass.getESuperTypes().add(this.getMeasureUnboundOperation());
 		normalDistributionEClass.getESuperTypes().add(this.getMeasurementUncertaintyInformation());
 		intervalEClass.getESuperTypes().add(this.getMeasurementUncertaintyInformation());
 		samplingEClass.getESuperTypes().add(this.getMeasurementUncertaintyInformation());
@@ -1004,17 +1094,17 @@ public class EelPackageImpl extends EPackageImpl implements EelPackage {
 		initEClass(measureCastEClass, MeasureCast.class, "MeasureCast", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMeasureCast_Measure(), this.getMeasure(), null, "measure", null, 1, 1, MeasureCast.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(measureOperationEClass, MeasureOperation.class, "MeasureOperation", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getMeasureOperation_Left(), this.getMeasure(), null, "left", null, 0, 1, MeasureOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMeasureOperation_Right(), this.getMeasure(), null, "right", null, 0, 1, MeasureOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(measureBinaryOperationEClass, MeasureBinaryOperation.class, "MeasureBinaryOperation", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getMeasureBinaryOperation_Left(), this.getMeasure(), null, "left", null, 0, 1, MeasureBinaryOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMeasureBinaryOperation_Right(), this.getMeasure(), null, "right", null, 0, 1, MeasureBinaryOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(measureProductOperationEClass, MeasureProductOperation.class, "MeasureProductOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(measureBinaryProductOperationEClass, MeasureBinaryProductOperation.class, "MeasureBinaryProductOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEOperation(getMeasureProductOperation__Value(), ecorePackage.getEBigDecimal(), "value", 0, 1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getMeasureBinaryProductOperation__Value(), ecorePackage.getEBigDecimal(), "value", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		initEClass(measureSumOperationEClass, MeasureSumOperation.class, "MeasureSumOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(measureBinarySumOperationEClass, MeasureBinarySumOperation.class, "MeasureBinarySumOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEOperation(getMeasureSumOperation__Value(), ecorePackage.getEBigDecimal(), "value", 0, 1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getMeasureBinarySumOperation__Value(), ecorePackage.getEBigDecimal(), "value", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(energyComputationEClass, EnergyComputation.class, "EnergyComputation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1027,6 +1117,17 @@ public class EelPackageImpl extends EPackageImpl implements EelPackage {
 		initEOperation(getPowerComputation__Type(), this.getType(), "type", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEOperation(getPowerComputation__Value(), ecorePackage.getEBigDecimal(), "value", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEClass(measureUnboundOperationEClass, MeasureUnboundOperation.class, "MeasureUnboundOperation", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getMeasureUnboundOperation_Measures(), this.getMeasure(), null, "measures", null, 1, -1, MeasureUnboundOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		initEClass(measureUnboundSumOperationEClass, MeasureUnboundSumOperation.class, "MeasureUnboundSumOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEOperation(getMeasureUnboundSumOperation__Value(), ecorePackage.getEBigDecimal(), "value", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEClass(measureUnboundProductOperationEClass, MeasureUnboundProductOperation.class, "MeasureUnboundProductOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEOperation(getMeasureUnboundProductOperation__Value(), ecorePackage.getEBigDecimal(), "value", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(measurementUncertaintyEClass, MeasurementUncertainty.class, "MeasurementUncertainty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMeasurementUncertainty_Information(), this.getMeasurementUncertaintyInformation(), null, "information", null, 0, 1, MeasurementUncertainty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1077,6 +1178,8 @@ public class EelPackageImpl extends EPackageImpl implements EelPackage {
 		createEcoreAnnotations();
 		// http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot
 		createPivotAnnotations();
+		// http://www.eclipse.org/OCL/Collection
+		createCollectionAnnotations();
 	}
 
 	/**
@@ -1140,6 +1243,12 @@ public class EelPackageImpl extends EPackageImpl implements EelPackage {
 			   "body", "0"
 		   });
 		addAnnotation
+		  (getMeasure_Name(),
+		   source,
+		   new String[] {
+			   "derivation", "type().toString()+\' \'+value().toString()"
+		   });
+		addAnnotation
 		  (getTypedMeasure__Type(),
 		   source,
 		   new String[] {
@@ -1158,13 +1267,13 @@ public class EelPackageImpl extends EPackageImpl implements EelPackage {
 			   "isAttribute", "self.att.oclIsKindOf(ecore::EAttribute)"
 		   });
 		addAnnotation
-		  (getMeasureProductOperation__Value(),
+		  (getMeasureBinaryProductOperation__Value(),
 		   source,
 		   new String[] {
 			   "body", "self.left.value() * self.right.value()"
 		   });
 		addAnnotation
-		  (getMeasureSumOperation__Value(),
+		  (getMeasureBinarySumOperation__Value(),
 		   source,
 		   new String[] {
 			   "body", "self.left.value() + self.right.value()"
@@ -1196,6 +1305,18 @@ public class EelPackageImpl extends EPackageImpl implements EelPackage {
 			   "pre_isCurrentAndVoltage", "(self.left.type() = Type::Voltage and self.right.type() = Type::Current) or (self.right.type() = Type::Current and self.left.type() = Type::Voltage)"
 		   });
 		addAnnotation
+		  (getMeasureUnboundSumOperation__Value(),
+		   source,
+		   new String[] {
+			   "body", "self.measures -> collect(m | m.oclAsType(Measure).value()) -> sum()"
+		   });
+		addAnnotation
+		  (getMeasureUnboundProductOperation__Value(),
+		   source,
+		   new String[] {
+			   "body", "self.measures -> iterate(m: Measure; acc: Real = 1.0 | acc * m.value())"
+		   });
+		addAnnotation
 		  (getNormalDistribution_MeanValue(),
 		   source,
 		   new String[] {
@@ -1206,6 +1327,22 @@ public class EelPackageImpl extends EPackageImpl implements EelPackage {
 		   source,
 		   new String[] {
 			   "derivation", "MeasurementUncertainty.allInstances()->select(u |\n\t\t\t\t\t\tu.information = self)->asOrderedSet()->first().standardUncertainty"
+		   });
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/OCL/Collection</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createCollectionAnnotations() {
+		String source = "http://www.eclipse.org/OCL/Collection";
+		addAnnotation
+		  (getMeasureUnboundOperation_Measures(),
+		   source,
+		   new String[] {
+			   "nullFree", "false"
 		   });
 	}
 

@@ -159,12 +159,12 @@ public class MeasureCastItemProvider extends TypedMeasureItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(EelPackage.Literals.MEASURE_CAST__MEASURE,
-				 EelFactory.eINSTANCE.createMeasureProductOperation()));
+				 EelFactory.eINSTANCE.createMeasureBinaryProductOperation()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(EelPackage.Literals.MEASURE_CAST__MEASURE,
-				 EelFactory.eINSTANCE.createMeasureSumOperation()));
+				 EelFactory.eINSTANCE.createMeasureBinarySumOperation()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -175,6 +175,16 @@ public class MeasureCastItemProvider extends TypedMeasureItemProvider {
 			(createChildParameter
 				(EelPackage.Literals.MEASURE_CAST__MEASURE,
 				 EelFactory.eINSTANCE.createPowerComputation()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(EelPackage.Literals.MEASURE_CAST__MEASURE,
+				 EelFactory.eINSTANCE.createMeasureUnboundSumOperation()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(EelPackage.Literals.MEASURE_CAST__MEASURE,
+				 EelFactory.eINSTANCE.createMeasureUnboundProductOperation()));
 	}
 
 }

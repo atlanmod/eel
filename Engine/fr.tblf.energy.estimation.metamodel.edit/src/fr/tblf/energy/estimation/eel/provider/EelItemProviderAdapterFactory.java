@@ -210,49 +210,49 @@ public class EelItemProviderAdapterFactory extends EelAdapterFactory implements 
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link fr.tblf.energy.estimation.eel.MeasureProductOperation} instances.
+	 * This keeps track of the one adapter used for all {@link fr.tblf.energy.estimation.eel.MeasureBinaryProductOperation} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected MeasureProductOperationItemProvider measureProductOperationItemProvider;
+	protected MeasureBinaryProductOperationItemProvider measureBinaryProductOperationItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link fr.tblf.energy.estimation.eel.MeasureProductOperation}.
+	 * This creates an adapter for a {@link fr.tblf.energy.estimation.eel.MeasureBinaryProductOperation}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createMeasureProductOperationAdapter() {
-		if (measureProductOperationItemProvider == null) {
-			measureProductOperationItemProvider = new MeasureProductOperationItemProvider(this);
+	public Adapter createMeasureBinaryProductOperationAdapter() {
+		if (measureBinaryProductOperationItemProvider == null) {
+			measureBinaryProductOperationItemProvider = new MeasureBinaryProductOperationItemProvider(this);
 		}
 
-		return measureProductOperationItemProvider;
+		return measureBinaryProductOperationItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link fr.tblf.energy.estimation.eel.MeasureSumOperation} instances.
+	 * This keeps track of the one adapter used for all {@link fr.tblf.energy.estimation.eel.MeasureBinarySumOperation} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected MeasureSumOperationItemProvider measureSumOperationItemProvider;
+	protected MeasureBinarySumOperationItemProvider measureBinarySumOperationItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link fr.tblf.energy.estimation.eel.MeasureSumOperation}.
+	 * This creates an adapter for a {@link fr.tblf.energy.estimation.eel.MeasureBinarySumOperation}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createMeasureSumOperationAdapter() {
-		if (measureSumOperationItemProvider == null) {
-			measureSumOperationItemProvider = new MeasureSumOperationItemProvider(this);
+	public Adapter createMeasureBinarySumOperationAdapter() {
+		if (measureBinarySumOperationItemProvider == null) {
+			measureBinarySumOperationItemProvider = new MeasureBinarySumOperationItemProvider(this);
 		}
 
-		return measureSumOperationItemProvider;
+		return measureBinarySumOperationItemProvider;
 	}
 
 	/**
@@ -299,6 +299,52 @@ public class EelItemProviderAdapterFactory extends EelAdapterFactory implements 
 		}
 
 		return powerComputationItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link fr.tblf.energy.estimation.eel.MeasureUnboundSumOperation} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected MeasureUnboundSumOperationItemProvider measureUnboundSumOperationItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link fr.tblf.energy.estimation.eel.MeasureUnboundSumOperation}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createMeasureUnboundSumOperationAdapter() {
+		if (measureUnboundSumOperationItemProvider == null) {
+			measureUnboundSumOperationItemProvider = new MeasureUnboundSumOperationItemProvider(this);
+		}
+
+		return measureUnboundSumOperationItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link fr.tblf.energy.estimation.eel.MeasureUnboundProductOperation} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected MeasureUnboundProductOperationItemProvider measureUnboundProductOperationItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link fr.tblf.energy.estimation.eel.MeasureUnboundProductOperation}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createMeasureUnboundProductOperationAdapter() {
+		if (measureUnboundProductOperationItemProvider == null) {
+			measureUnboundProductOperationItemProvider = new MeasureUnboundProductOperationItemProvider(this);
+		}
+
+		return measureUnboundProductOperationItemProvider;
 	}
 
 	/**
@@ -544,10 +590,12 @@ public class EelItemProviderAdapterFactory extends EelAdapterFactory implements 
 		if (measureOCLItemProvider != null) measureOCLItemProvider.dispose();
 		if (measureAttributeItemProvider != null) measureAttributeItemProvider.dispose();
 		if (measureCastItemProvider != null) measureCastItemProvider.dispose();
-		if (measureProductOperationItemProvider != null) measureProductOperationItemProvider.dispose();
-		if (measureSumOperationItemProvider != null) measureSumOperationItemProvider.dispose();
+		if (measureBinaryProductOperationItemProvider != null) measureBinaryProductOperationItemProvider.dispose();
+		if (measureBinarySumOperationItemProvider != null) measureBinarySumOperationItemProvider.dispose();
 		if (energyComputationItemProvider != null) energyComputationItemProvider.dispose();
 		if (powerComputationItemProvider != null) powerComputationItemProvider.dispose();
+		if (measureUnboundSumOperationItemProvider != null) measureUnboundSumOperationItemProvider.dispose();
+		if (measureUnboundProductOperationItemProvider != null) measureUnboundProductOperationItemProvider.dispose();
 		if (measurementUncertaintyItemProvider != null) measurementUncertaintyItemProvider.dispose();
 		if (normalDistributionItemProvider != null) normalDistributionItemProvider.dispose();
 		if (intervalItemProvider != null) intervalItemProvider.dispose();

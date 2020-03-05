@@ -102,16 +102,22 @@ public class EelValidator extends EObjectValidator {
 				return validateMeasureAttribute((MeasureAttribute)value, diagnostics, context);
 			case EelPackage.MEASURE_CAST:
 				return validateMeasureCast((MeasureCast)value, diagnostics, context);
-			case EelPackage.MEASURE_OPERATION:
-				return validateMeasureOperation((MeasureOperation)value, diagnostics, context);
-			case EelPackage.MEASURE_PRODUCT_OPERATION:
-				return validateMeasureProductOperation((MeasureProductOperation)value, diagnostics, context);
-			case EelPackage.MEASURE_SUM_OPERATION:
-				return validateMeasureSumOperation((MeasureSumOperation)value, diagnostics, context);
+			case EelPackage.MEASURE_BINARY_OPERATION:
+				return validateMeasureBinaryOperation((MeasureBinaryOperation)value, diagnostics, context);
+			case EelPackage.MEASURE_BINARY_PRODUCT_OPERATION:
+				return validateMeasureBinaryProductOperation((MeasureBinaryProductOperation)value, diagnostics, context);
+			case EelPackage.MEASURE_BINARY_SUM_OPERATION:
+				return validateMeasureBinarySumOperation((MeasureBinarySumOperation)value, diagnostics, context);
 			case EelPackage.ENERGY_COMPUTATION:
 				return validateEnergyComputation((EnergyComputation)value, diagnostics, context);
 			case EelPackage.POWER_COMPUTATION:
 				return validatePowerComputation((PowerComputation)value, diagnostics, context);
+			case EelPackage.MEASURE_UNBOUND_OPERATION:
+				return validateMeasureUnboundOperation((MeasureUnboundOperation)value, diagnostics, context);
+			case EelPackage.MEASURE_UNBOUND_SUM_OPERATION:
+				return validateMeasureUnboundSumOperation((MeasureUnboundSumOperation)value, diagnostics, context);
+			case EelPackage.MEASURE_UNBOUND_PRODUCT_OPERATION:
+				return validateMeasureUnboundProductOperation((MeasureUnboundProductOperation)value, diagnostics, context);
 			case EelPackage.MEASUREMENT_UNCERTAINTY:
 				return validateMeasurementUncertainty((MeasurementUncertainty)value, diagnostics, context);
 			case EelPackage.NORMAL_DISTRIBUTION:
@@ -251,8 +257,8 @@ public class EelValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateMeasureOperation(MeasureOperation measureOperation, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(measureOperation, diagnostics, context);
+	public boolean validateMeasureBinaryOperation(MeasureBinaryOperation measureBinaryOperation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(measureBinaryOperation, diagnostics, context);
 	}
 
 	/**
@@ -260,8 +266,8 @@ public class EelValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateMeasureProductOperation(MeasureProductOperation measureProductOperation, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(measureProductOperation, diagnostics, context);
+	public boolean validateMeasureBinaryProductOperation(MeasureBinaryProductOperation measureBinaryProductOperation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(measureBinaryProductOperation, diagnostics, context);
 	}
 
 	/**
@@ -269,8 +275,8 @@ public class EelValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateMeasureSumOperation(MeasureSumOperation measureSumOperation, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(measureSumOperation, diagnostics, context);
+	public boolean validateMeasureBinarySumOperation(MeasureBinarySumOperation measureBinarySumOperation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(measureBinarySumOperation, diagnostics, context);
 	}
 
 	/**
@@ -289,6 +295,33 @@ public class EelValidator extends EObjectValidator {
 	 */
 	public boolean validatePowerComputation(PowerComputation powerComputation, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(powerComputation, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateMeasureUnboundOperation(MeasureUnboundOperation measureUnboundOperation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(measureUnboundOperation, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateMeasureUnboundSumOperation(MeasureUnboundSumOperation measureUnboundSumOperation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(measureUnboundSumOperation, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateMeasureUnboundProductOperation(MeasureUnboundProductOperation measureUnboundProductOperation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(measureUnboundProductOperation, diagnostics, context);
 	}
 
 	/**

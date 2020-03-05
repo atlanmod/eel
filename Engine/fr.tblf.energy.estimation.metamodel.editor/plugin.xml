@@ -33,4 +33,5 @@
             contributorClass="fr.tblf.energy.estimation.eel.presentation.EelActionBarContributor">
       </editor>
    </extension>
+
 </plugin>

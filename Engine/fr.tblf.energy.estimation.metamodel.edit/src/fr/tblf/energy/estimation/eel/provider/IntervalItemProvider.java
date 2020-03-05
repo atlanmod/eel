@@ -158,12 +158,12 @@ public class IntervalItemProvider extends MeasurementUncertaintyInformationItemP
 		newChildDescriptors.add
 			(createChildParameter
 				(EelPackage.Literals.INTERVAL__LOWER_ENDPOINT,
-				 EelFactory.eINSTANCE.createMeasureProductOperation()));
+				 EelFactory.eINSTANCE.createMeasureBinaryProductOperation()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(EelPackage.Literals.INTERVAL__LOWER_ENDPOINT,
-				 EelFactory.eINSTANCE.createMeasureSumOperation()));
+				 EelFactory.eINSTANCE.createMeasureBinarySumOperation()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -174,6 +174,16 @@ public class IntervalItemProvider extends MeasurementUncertaintyInformationItemP
 			(createChildParameter
 				(EelPackage.Literals.INTERVAL__LOWER_ENDPOINT,
 				 EelFactory.eINSTANCE.createPowerComputation()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(EelPackage.Literals.INTERVAL__LOWER_ENDPOINT,
+				 EelFactory.eINSTANCE.createMeasureUnboundSumOperation()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(EelPackage.Literals.INTERVAL__LOWER_ENDPOINT,
+				 EelFactory.eINSTANCE.createMeasureUnboundProductOperation()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -198,12 +208,12 @@ public class IntervalItemProvider extends MeasurementUncertaintyInformationItemP
 		newChildDescriptors.add
 			(createChildParameter
 				(EelPackage.Literals.INTERVAL__UPPER_ENDPOINT,
-				 EelFactory.eINSTANCE.createMeasureProductOperation()));
+				 EelFactory.eINSTANCE.createMeasureBinaryProductOperation()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(EelPackage.Literals.INTERVAL__UPPER_ENDPOINT,
-				 EelFactory.eINSTANCE.createMeasureSumOperation()));
+				 EelFactory.eINSTANCE.createMeasureBinarySumOperation()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -214,6 +224,16 @@ public class IntervalItemProvider extends MeasurementUncertaintyInformationItemP
 			(createChildParameter
 				(EelPackage.Literals.INTERVAL__UPPER_ENDPOINT,
 				 EelFactory.eINSTANCE.createPowerComputation()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(EelPackage.Literals.INTERVAL__UPPER_ENDPOINT,
+				 EelFactory.eINSTANCE.createMeasureUnboundSumOperation()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(EelPackage.Literals.INTERVAL__UPPER_ENDPOINT,
+				 EelFactory.eINSTANCE.createMeasureUnboundProductOperation()));
 	}
 
 	/**

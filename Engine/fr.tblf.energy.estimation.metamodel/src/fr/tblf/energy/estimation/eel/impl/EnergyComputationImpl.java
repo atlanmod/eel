@@ -5,8 +5,9 @@ package fr.tblf.energy.estimation.eel.impl;
 import fr.tblf.energy.estimation.eel.EelPackage;
 import fr.tblf.energy.estimation.eel.EnergyComputation;
 import fr.tblf.energy.estimation.eel.Measure;
-import fr.tblf.energy.estimation.eel.MeasureProductOperation;
+import fr.tblf.energy.estimation.eel.MeasureBinaryProductOperation;
 import fr.tblf.energy.estimation.eel.Type;
+import fr.tblf.energy.estimation.eel.TypedMeasure;
 
 import java.lang.reflect.InvocationTargetException;
 
@@ -25,7 +26,7 @@ import org.eclipse.emf.ecore.EOperation;
  *
  * @generated
  */
-public class EnergyComputationImpl extends MeasureProductOperationImpl implements EnergyComputation {
+public class EnergyComputationImpl extends MeasureBinaryProductOperationImpl implements EnergyComputation {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -107,9 +108,15 @@ public class EnergyComputationImpl extends MeasureProductOperationImpl implement
 				default: return super.eDerivedOperationID(baseOperationID, baseClass);
 			}
 		}
-		if (baseClass == MeasureProductOperation.class) {
+		if (baseClass == TypedMeasure.class) {
 			switch (baseOperationID) {
-				case EelPackage.MEASURE_PRODUCT_OPERATION___VALUE: return EelPackage.ENERGY_COMPUTATION___VALUE;
+				case EelPackage.TYPED_MEASURE___TYPE: return EelPackage.ENERGY_COMPUTATION___TYPE;
+				default: return super.eDerivedOperationID(baseOperationID, baseClass);
+			}
+		}
+		if (baseClass == MeasureBinaryProductOperation.class) {
+			switch (baseOperationID) {
+				case EelPackage.MEASURE_BINARY_PRODUCT_OPERATION___VALUE: return EelPackage.ENERGY_COMPUTATION___VALUE;
 				default: return super.eDerivedOperationID(baseOperationID, baseClass);
 			}
 		}

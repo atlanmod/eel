@@ -209,12 +209,12 @@ public class PlatformItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(EelPackage.Literals.PLATFORM__MEASURES,
-				 EelFactory.eINSTANCE.createMeasureProductOperation()));
+				 EelFactory.eINSTANCE.createMeasureBinaryProductOperation()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(EelPackage.Literals.PLATFORM__MEASURES,
-				 EelFactory.eINSTANCE.createMeasureSumOperation()));
+				 EelFactory.eINSTANCE.createMeasureBinarySumOperation()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -225,6 +225,16 @@ public class PlatformItemProvider
 			(createChildParameter
 				(EelPackage.Literals.PLATFORM__MEASURES,
 				 EelFactory.eINSTANCE.createPowerComputation()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(EelPackage.Literals.PLATFORM__MEASURES,
+				 EelFactory.eINSTANCE.createMeasureUnboundSumOperation()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(EelPackage.Literals.PLATFORM__MEASURES,
+				 EelFactory.eINSTANCE.createMeasureUnboundProductOperation()));
 	}
 
 	/**

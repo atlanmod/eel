@@ -43,7 +43,7 @@ public interface Measure extends EObject {
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see fr.tblf.energy.estimation.eel.EelPackage#getMeasure_Name()
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot derivation='type().toString()+\' \'+value().toString()'"
 	 * @generated
 	 */
 	String getName();

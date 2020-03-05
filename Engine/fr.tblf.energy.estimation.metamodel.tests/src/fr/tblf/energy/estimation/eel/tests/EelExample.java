@@ -25,7 +25,7 @@ import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
 /**
  * <!-- begin-user-doc -->
- * A sample utility for the '<em><b>fr.tblf.energy.estimation.eel</b></em>' package.
+ * A sample utility for the '<em><b>eel</b></em>' package.
  * <!-- end-user-doc -->
  * @generated
  */

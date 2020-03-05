@@ -6,4 +6,5 @@
   <semanticResources>model/My.ecore</semanticResources>
   <semanticResources>model/Platform.xmi</semanticResources>
   <semanticResources>model/model.ecore</semanticResources>
+  <semanticResources>model/Ecore.ecore</semanticResources>
 </viewpoint:DAnalysis>

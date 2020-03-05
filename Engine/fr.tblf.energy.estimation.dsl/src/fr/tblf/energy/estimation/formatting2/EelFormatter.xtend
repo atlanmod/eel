@@ -4,9 +4,9 @@
 package fr.tblf.energy.estimation.formatting2
 
 import com.google.inject.Inject
+import fr.tblf.energy.estimation.eel.MeasureValue
 import fr.tblf.energy.estimation.eel.Platform
 import fr.tblf.energy.estimation.services.EelGrammarAccess
-import org.eclipse.emf.ecore.EClass
 import org.eclipse.xtext.formatting2.AbstractFormatter2
 import org.eclipse.xtext.formatting2.IFormattableDocument
 
@@ -24,24 +24,10 @@ class EelFormatter extends AbstractFormatter2 {
 		}
 	}
 
-	def dispatch void format(EClass eClass, extension IFormattableDocument document) {
+	def dispatch void format(MeasureValue measureValue, extension IFormattableDocument document) {
 		// TODO: format HiddenRegions around keywords, attributes, cross references, etc. 
-		for (eAnnotation : eClass.eAnnotations) {
-			eAnnotation.format
-		}
-		for (eTypeParameter : eClass.eTypeParameters) {
-			eTypeParameter.format
-		}
-		for (eOperation : eClass.eOperations) {
-			eOperation.format
-		}
-		for (eStructuralFeature : eClass.eStructuralFeatures) {
-			eStructuralFeature.format
-		}
-		for (eGenericType : eClass.eGenericSuperTypes) {
-			eGenericType.format
-		}
+		measureValue.uncertainty.format
 	}
 	
-	// TODO: implement for EOperation, MeasurementUncertainty, MeasureValue, MeasureOCL, MeasureAttribute, MeasureCast, MeasureProductOperation, MeasureSumOperation, EnergyComputation, PowerComputation, EAnnotation, ETypeParameter, EGenericType, EAttribute, EReference, EDataType, EEnum, EEnumLiteral, EParameter, Interval, Sampling, Sample
+	// TODO: implement for MeasureOCL, MeasureAttribute, MeasureCast, MeasureBinaryProductOperation, MeasureBinarySumOperation, MeasurementUncertainty, Interval, Sampling, Sample, EClass, EOperation, EAnnotation, ETypeParameter, EGenericType, EAttribute, EReference, EDataType, EEnum, EEnumLiteral, EParameter
 }

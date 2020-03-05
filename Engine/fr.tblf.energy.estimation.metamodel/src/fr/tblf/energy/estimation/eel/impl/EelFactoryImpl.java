@@ -63,10 +63,12 @@ public class EelFactoryImpl extends EFactoryImpl implements EelFactory {
 			case EelPackage.MEASURE_OCL: return createMeasureOCL();
 			case EelPackage.MEASURE_ATTRIBUTE: return createMeasureAttribute();
 			case EelPackage.MEASURE_CAST: return createMeasureCast();
-			case EelPackage.MEASURE_PRODUCT_OPERATION: return createMeasureProductOperation();
-			case EelPackage.MEASURE_SUM_OPERATION: return createMeasureSumOperation();
+			case EelPackage.MEASURE_BINARY_PRODUCT_OPERATION: return createMeasureBinaryProductOperation();
+			case EelPackage.MEASURE_BINARY_SUM_OPERATION: return createMeasureBinarySumOperation();
 			case EelPackage.ENERGY_COMPUTATION: return createEnergyComputation();
 			case EelPackage.POWER_COMPUTATION: return createPowerComputation();
+			case EelPackage.MEASURE_UNBOUND_SUM_OPERATION: return createMeasureUnboundSumOperation();
+			case EelPackage.MEASURE_UNBOUND_PRODUCT_OPERATION: return createMeasureUnboundProductOperation();
 			case EelPackage.MEASUREMENT_UNCERTAINTY: return createMeasurementUncertainty();
 			case EelPackage.NORMAL_DISTRIBUTION: return createNormalDistribution();
 			case EelPackage.INTERVAL: return createInterval();
@@ -177,9 +179,9 @@ public class EelFactoryImpl extends EFactoryImpl implements EelFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MeasureProductOperation createMeasureProductOperation() {
-		MeasureProductOperationImpl measureProductOperation = new MeasureProductOperationImpl();
-		return measureProductOperation;
+	public MeasureBinaryProductOperation createMeasureBinaryProductOperation() {
+		MeasureBinaryProductOperationImpl measureBinaryProductOperation = new MeasureBinaryProductOperationImpl();
+		return measureBinaryProductOperation;
 	}
 
 	/**
@@ -187,9 +189,9 @@ public class EelFactoryImpl extends EFactoryImpl implements EelFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MeasureSumOperation createMeasureSumOperation() {
-		MeasureSumOperationImpl measureSumOperation = new MeasureSumOperationImpl();
-		return measureSumOperation;
+	public MeasureBinarySumOperation createMeasureBinarySumOperation() {
+		MeasureBinarySumOperationImpl measureBinarySumOperation = new MeasureBinarySumOperationImpl();
+		return measureBinarySumOperation;
 	}
 
 	/**
@@ -210,6 +212,26 @@ public class EelFactoryImpl extends EFactoryImpl implements EelFactory {
 	public PowerComputation createPowerComputation() {
 		PowerComputationImpl powerComputation = new PowerComputationImpl();
 		return powerComputation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MeasureUnboundSumOperation createMeasureUnboundSumOperation() {
+		MeasureUnboundSumOperationImpl measureUnboundSumOperation = new MeasureUnboundSumOperationImpl();
+		return measureUnboundSumOperation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MeasureUnboundProductOperation createMeasureUnboundProductOperation() {
+		MeasureUnboundProductOperationImpl measureUnboundProductOperation = new MeasureUnboundProductOperationImpl();
+		return measureUnboundProductOperation;
 	}
 
 	/**

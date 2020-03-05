@@ -762,14 +762,14 @@ public interface EelPackage extends EPackage {
 	int MEASURE_CAST_OPERATION_COUNT = TYPED_MEASURE_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link fr.tblf.energy.estimation.eel.impl.MeasureOperationImpl <em>Measure Operation</em>}' class.
+	 * The meta object id for the '{@link fr.tblf.energy.estimation.eel.impl.MeasureBinaryOperationImpl <em>Measure Binary Operation</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see fr.tblf.energy.estimation.eel.impl.MeasureOperationImpl
-	 * @see fr.tblf.energy.estimation.eel.impl.EelPackageImpl#getMeasureOperation()
+	 * @see fr.tblf.energy.estimation.eel.impl.MeasureBinaryOperationImpl
+	 * @see fr.tblf.energy.estimation.eel.impl.EelPackageImpl#getMeasureBinaryOperation()
 	 * @generated
 	 */
-	int MEASURE_OPERATION = 8;
+	int MEASURE_BINARY_OPERATION = 8;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -778,7 +778,7 @@ public interface EelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MEASURE_OPERATION__NAME = MEASURE__NAME;
+	int MEASURE_BINARY_OPERATION__NAME = TYPED_MEASURE__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Target Class</b></em>' reference.
@@ -787,7 +787,7 @@ public interface EelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MEASURE_OPERATION__TARGET_CLASS = MEASURE__TARGET_CLASS;
+	int MEASURE_BINARY_OPERATION__TARGET_CLASS = TYPED_MEASURE__TARGET_CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Target Operation</b></em>' reference.
@@ -796,7 +796,7 @@ public interface EelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MEASURE_OPERATION__TARGET_OPERATION = MEASURE__TARGET_OPERATION;
+	int MEASURE_BINARY_OPERATION__TARGET_OPERATION = TYPED_MEASURE__TARGET_OPERATION;
 
 	/**
 	 * The feature id for the '<em><b>Uncertainty</b></em>' containment reference.
@@ -805,7 +805,16 @@ public interface EelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MEASURE_OPERATION__UNCERTAINTY = MEASURE__UNCERTAINTY;
+	int MEASURE_BINARY_OPERATION__UNCERTAINTY = TYPED_MEASURE__UNCERTAINTY;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE_BINARY_OPERATION__TYPE = TYPED_MEASURE__TYPE;
 
 	/**
 	 * The feature id for the '<em><b>Left</b></em>' reference.
@@ -814,7 +823,7 @@ public interface EelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MEASURE_OPERATION__LEFT = MEASURE_FEATURE_COUNT + 0;
+	int MEASURE_BINARY_OPERATION__LEFT = TYPED_MEASURE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Right</b></em>' reference.
@@ -823,25 +832,16 @@ public interface EelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MEASURE_OPERATION__RIGHT = MEASURE_FEATURE_COUNT + 1;
+	int MEASURE_BINARY_OPERATION__RIGHT = TYPED_MEASURE_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of structural features of the '<em>Measure Operation</em>' class.
+	 * The number of structural features of the '<em>Measure Binary Operation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MEASURE_OPERATION_FEATURE_COUNT = MEASURE_FEATURE_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>Type</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MEASURE_OPERATION___TYPE = MEASURE___TYPE;
+	int MEASURE_BINARY_OPERATION_FEATURE_COUNT = TYPED_MEASURE_FEATURE_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>Value</em>' operation.
@@ -850,26 +850,35 @@ public interface EelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MEASURE_OPERATION___VALUE = MEASURE___VALUE;
+	int MEASURE_BINARY_OPERATION___VALUE = TYPED_MEASURE___VALUE;
 
 	/**
-	 * The number of operations of the '<em>Measure Operation</em>' class.
+	 * The operation id for the '<em>Type</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MEASURE_OPERATION_OPERATION_COUNT = MEASURE_OPERATION_COUNT + 0;
+	int MEASURE_BINARY_OPERATION___TYPE = TYPED_MEASURE___TYPE;
 
 	/**
-	 * The meta object id for the '{@link fr.tblf.energy.estimation.eel.impl.MeasureProductOperationImpl <em>Measure Product Operation</em>}' class.
+	 * The number of operations of the '<em>Measure Binary Operation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see fr.tblf.energy.estimation.eel.impl.MeasureProductOperationImpl
-	 * @see fr.tblf.energy.estimation.eel.impl.EelPackageImpl#getMeasureProductOperation()
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE_BINARY_OPERATION_OPERATION_COUNT = TYPED_MEASURE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link fr.tblf.energy.estimation.eel.impl.MeasureBinaryProductOperationImpl <em>Measure Binary Product Operation</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fr.tblf.energy.estimation.eel.impl.MeasureBinaryProductOperationImpl
+	 * @see fr.tblf.energy.estimation.eel.impl.EelPackageImpl#getMeasureBinaryProductOperation()
 	 * @generated
 	 */
-	int MEASURE_PRODUCT_OPERATION = 9;
+	int MEASURE_BINARY_PRODUCT_OPERATION = 9;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -878,7 +887,7 @@ public interface EelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MEASURE_PRODUCT_OPERATION__NAME = MEASURE_OPERATION__NAME;
+	int MEASURE_BINARY_PRODUCT_OPERATION__NAME = MEASURE_BINARY_OPERATION__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Target Class</b></em>' reference.
@@ -887,7 +896,7 @@ public interface EelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MEASURE_PRODUCT_OPERATION__TARGET_CLASS = MEASURE_OPERATION__TARGET_CLASS;
+	int MEASURE_BINARY_PRODUCT_OPERATION__TARGET_CLASS = MEASURE_BINARY_OPERATION__TARGET_CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Target Operation</b></em>' reference.
@@ -896,7 +905,7 @@ public interface EelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MEASURE_PRODUCT_OPERATION__TARGET_OPERATION = MEASURE_OPERATION__TARGET_OPERATION;
+	int MEASURE_BINARY_PRODUCT_OPERATION__TARGET_OPERATION = MEASURE_BINARY_OPERATION__TARGET_OPERATION;
 
 	/**
 	 * The feature id for the '<em><b>Uncertainty</b></em>' containment reference.
@@ -905,7 +914,16 @@ public interface EelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MEASURE_PRODUCT_OPERATION__UNCERTAINTY = MEASURE_OPERATION__UNCERTAINTY;
+	int MEASURE_BINARY_PRODUCT_OPERATION__UNCERTAINTY = MEASURE_BINARY_OPERATION__UNCERTAINTY;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE_BINARY_PRODUCT_OPERATION__TYPE = MEASURE_BINARY_OPERATION__TYPE;
 
 	/**
 	 * The feature id for the '<em><b>Left</b></em>' reference.
@@ -914,7 +932,7 @@ public interface EelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MEASURE_PRODUCT_OPERATION__LEFT = MEASURE_OPERATION__LEFT;
+	int MEASURE_BINARY_PRODUCT_OPERATION__LEFT = MEASURE_BINARY_OPERATION__LEFT;
 
 	/**
 	 * The feature id for the '<em><b>Right</b></em>' reference.
@@ -923,16 +941,16 @@ public interface EelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MEASURE_PRODUCT_OPERATION__RIGHT = MEASURE_OPERATION__RIGHT;
+	int MEASURE_BINARY_PRODUCT_OPERATION__RIGHT = MEASURE_BINARY_OPERATION__RIGHT;
 
 	/**
-	 * The number of structural features of the '<em>Measure Product Operation</em>' class.
+	 * The number of structural features of the '<em>Measure Binary Product Operation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MEASURE_PRODUCT_OPERATION_FEATURE_COUNT = MEASURE_OPERATION_FEATURE_COUNT + 0;
+	int MEASURE_BINARY_PRODUCT_OPERATION_FEATURE_COUNT = MEASURE_BINARY_OPERATION_FEATURE_COUNT + 0;
 
 	/**
 	 * The operation id for the '<em>Type</em>' operation.
@@ -941,7 +959,7 @@ public interface EelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MEASURE_PRODUCT_OPERATION___TYPE = MEASURE_OPERATION___TYPE;
+	int MEASURE_BINARY_PRODUCT_OPERATION___TYPE = MEASURE_BINARY_OPERATION___TYPE;
 
 	/**
 	 * The operation id for the '<em>Value</em>' operation.
@@ -950,26 +968,26 @@ public interface EelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MEASURE_PRODUCT_OPERATION___VALUE = MEASURE_OPERATION_OPERATION_COUNT + 0;
+	int MEASURE_BINARY_PRODUCT_OPERATION___VALUE = MEASURE_BINARY_OPERATION_OPERATION_COUNT + 0;
 
 	/**
-	 * The number of operations of the '<em>Measure Product Operation</em>' class.
+	 * The number of operations of the '<em>Measure Binary Product Operation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MEASURE_PRODUCT_OPERATION_OPERATION_COUNT = MEASURE_OPERATION_OPERATION_COUNT + 1;
+	int MEASURE_BINARY_PRODUCT_OPERATION_OPERATION_COUNT = MEASURE_BINARY_OPERATION_OPERATION_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link fr.tblf.energy.estimation.eel.impl.MeasureSumOperationImpl <em>Measure Sum Operation</em>}' class.
+	 * The meta object id for the '{@link fr.tblf.energy.estimation.eel.impl.MeasureBinarySumOperationImpl <em>Measure Binary Sum Operation</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see fr.tblf.energy.estimation.eel.impl.MeasureSumOperationImpl
-	 * @see fr.tblf.energy.estimation.eel.impl.EelPackageImpl#getMeasureSumOperation()
+	 * @see fr.tblf.energy.estimation.eel.impl.MeasureBinarySumOperationImpl
+	 * @see fr.tblf.energy.estimation.eel.impl.EelPackageImpl#getMeasureBinarySumOperation()
 	 * @generated
 	 */
-	int MEASURE_SUM_OPERATION = 10;
+	int MEASURE_BINARY_SUM_OPERATION = 10;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -978,7 +996,7 @@ public interface EelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MEASURE_SUM_OPERATION__NAME = MEASURE_OPERATION__NAME;
+	int MEASURE_BINARY_SUM_OPERATION__NAME = MEASURE_BINARY_OPERATION__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Target Class</b></em>' reference.
@@ -987,7 +1005,7 @@ public interface EelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MEASURE_SUM_OPERATION__TARGET_CLASS = MEASURE_OPERATION__TARGET_CLASS;
+	int MEASURE_BINARY_SUM_OPERATION__TARGET_CLASS = MEASURE_BINARY_OPERATION__TARGET_CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Target Operation</b></em>' reference.
@@ -996,7 +1014,7 @@ public interface EelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MEASURE_SUM_OPERATION__TARGET_OPERATION = MEASURE_OPERATION__TARGET_OPERATION;
+	int MEASURE_BINARY_SUM_OPERATION__TARGET_OPERATION = MEASURE_BINARY_OPERATION__TARGET_OPERATION;
 
 	/**
 	 * The feature id for the '<em><b>Uncertainty</b></em>' containment reference.
@@ -1005,7 +1023,16 @@ public interface EelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MEASURE_SUM_OPERATION__UNCERTAINTY = MEASURE_OPERATION__UNCERTAINTY;
+	int MEASURE_BINARY_SUM_OPERATION__UNCERTAINTY = MEASURE_BINARY_OPERATION__UNCERTAINTY;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE_BINARY_SUM_OPERATION__TYPE = MEASURE_BINARY_OPERATION__TYPE;
 
 	/**
 	 * The feature id for the '<em><b>Left</b></em>' reference.
@@ -1014,7 +1041,7 @@ public interface EelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MEASURE_SUM_OPERATION__LEFT = MEASURE_OPERATION__LEFT;
+	int MEASURE_BINARY_SUM_OPERATION__LEFT = MEASURE_BINARY_OPERATION__LEFT;
 
 	/**
 	 * The feature id for the '<em><b>Right</b></em>' reference.
@@ -1023,16 +1050,16 @@ public interface EelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MEASURE_SUM_OPERATION__RIGHT = MEASURE_OPERATION__RIGHT;
+	int MEASURE_BINARY_SUM_OPERATION__RIGHT = MEASURE_BINARY_OPERATION__RIGHT;
 
 	/**
-	 * The number of structural features of the '<em>Measure Sum Operation</em>' class.
+	 * The number of structural features of the '<em>Measure Binary Sum Operation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MEASURE_SUM_OPERATION_FEATURE_COUNT = MEASURE_OPERATION_FEATURE_COUNT + 0;
+	int MEASURE_BINARY_SUM_OPERATION_FEATURE_COUNT = MEASURE_BINARY_OPERATION_FEATURE_COUNT + 0;
 
 	/**
 	 * The operation id for the '<em>Type</em>' operation.
@@ -1041,7 +1068,7 @@ public interface EelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MEASURE_SUM_OPERATION___TYPE = MEASURE_OPERATION___TYPE;
+	int MEASURE_BINARY_SUM_OPERATION___TYPE = MEASURE_BINARY_OPERATION___TYPE;
 
 	/**
 	 * The operation id for the '<em>Value</em>' operation.
@@ -1050,16 +1077,16 @@ public interface EelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MEASURE_SUM_OPERATION___VALUE = MEASURE_OPERATION_OPERATION_COUNT + 0;
+	int MEASURE_BINARY_SUM_OPERATION___VALUE = MEASURE_BINARY_OPERATION_OPERATION_COUNT + 0;
 
 	/**
-	 * The number of operations of the '<em>Measure Sum Operation</em>' class.
+	 * The number of operations of the '<em>Measure Binary Sum Operation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MEASURE_SUM_OPERATION_OPERATION_COUNT = MEASURE_OPERATION_OPERATION_COUNT + 1;
+	int MEASURE_BINARY_SUM_OPERATION_OPERATION_COUNT = MEASURE_BINARY_OPERATION_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link fr.tblf.energy.estimation.eel.impl.EnergyComputationImpl <em>Energy Computation</em>}' class.
@@ -1078,7 +1105,7 @@ public interface EelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENERGY_COMPUTATION__NAME = MEASURE_PRODUCT_OPERATION__NAME;
+	int ENERGY_COMPUTATION__NAME = MEASURE_BINARY_PRODUCT_OPERATION__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Target Class</b></em>' reference.
@@ -1087,7 +1114,7 @@ public interface EelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENERGY_COMPUTATION__TARGET_CLASS = MEASURE_PRODUCT_OPERATION__TARGET_CLASS;
+	int ENERGY_COMPUTATION__TARGET_CLASS = MEASURE_BINARY_PRODUCT_OPERATION__TARGET_CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Target Operation</b></em>' reference.
@@ -1096,7 +1123,7 @@ public interface EelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENERGY_COMPUTATION__TARGET_OPERATION = MEASURE_PRODUCT_OPERATION__TARGET_OPERATION;
+	int ENERGY_COMPUTATION__TARGET_OPERATION = MEASURE_BINARY_PRODUCT_OPERATION__TARGET_OPERATION;
 
 	/**
 	 * The feature id for the '<em><b>Uncertainty</b></em>' containment reference.
@@ -1105,7 +1132,16 @@ public interface EelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENERGY_COMPUTATION__UNCERTAINTY = MEASURE_PRODUCT_OPERATION__UNCERTAINTY;
+	int ENERGY_COMPUTATION__UNCERTAINTY = MEASURE_BINARY_PRODUCT_OPERATION__UNCERTAINTY;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENERGY_COMPUTATION__TYPE = MEASURE_BINARY_PRODUCT_OPERATION__TYPE;
 
 	/**
 	 * The feature id for the '<em><b>Left</b></em>' reference.
@@ -1114,7 +1150,7 @@ public interface EelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENERGY_COMPUTATION__LEFT = MEASURE_PRODUCT_OPERATION__LEFT;
+	int ENERGY_COMPUTATION__LEFT = MEASURE_BINARY_PRODUCT_OPERATION__LEFT;
 
 	/**
 	 * The feature id for the '<em><b>Right</b></em>' reference.
@@ -1123,7 +1159,7 @@ public interface EelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENERGY_COMPUTATION__RIGHT = MEASURE_PRODUCT_OPERATION__RIGHT;
+	int ENERGY_COMPUTATION__RIGHT = MEASURE_BINARY_PRODUCT_OPERATION__RIGHT;
 
 	/**
 	 * The number of structural features of the '<em>Energy Computation</em>' class.
@@ -1132,7 +1168,7 @@ public interface EelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENERGY_COMPUTATION_FEATURE_COUNT = MEASURE_PRODUCT_OPERATION_FEATURE_COUNT + 0;
+	int ENERGY_COMPUTATION_FEATURE_COUNT = MEASURE_BINARY_PRODUCT_OPERATION_FEATURE_COUNT + 0;
 
 	/**
 	 * The operation id for the '<em>Type</em>' operation.
@@ -1141,7 +1177,7 @@ public interface EelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENERGY_COMPUTATION___TYPE = MEASURE_PRODUCT_OPERATION_OPERATION_COUNT + 0;
+	int ENERGY_COMPUTATION___TYPE = MEASURE_BINARY_PRODUCT_OPERATION_OPERATION_COUNT + 0;
 
 	/**
 	 * The operation id for the '<em>Value</em>' operation.
@@ -1150,7 +1186,7 @@ public interface EelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENERGY_COMPUTATION___VALUE = MEASURE_PRODUCT_OPERATION_OPERATION_COUNT + 1;
+	int ENERGY_COMPUTATION___VALUE = MEASURE_BINARY_PRODUCT_OPERATION_OPERATION_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Energy Computation</em>' class.
@@ -1159,7 +1195,7 @@ public interface EelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENERGY_COMPUTATION_OPERATION_COUNT = MEASURE_PRODUCT_OPERATION_OPERATION_COUNT + 2;
+	int ENERGY_COMPUTATION_OPERATION_COUNT = MEASURE_BINARY_PRODUCT_OPERATION_OPERATION_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link fr.tblf.energy.estimation.eel.impl.PowerComputationImpl <em>Power Computation</em>}' class.
@@ -1178,7 +1214,7 @@ public interface EelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int POWER_COMPUTATION__NAME = MEASURE_PRODUCT_OPERATION__NAME;
+	int POWER_COMPUTATION__NAME = MEASURE_BINARY_PRODUCT_OPERATION__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Target Class</b></em>' reference.
@@ -1187,7 +1223,7 @@ public interface EelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int POWER_COMPUTATION__TARGET_CLASS = MEASURE_PRODUCT_OPERATION__TARGET_CLASS;
+	int POWER_COMPUTATION__TARGET_CLASS = MEASURE_BINARY_PRODUCT_OPERATION__TARGET_CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Target Operation</b></em>' reference.
@@ -1196,7 +1232,7 @@ public interface EelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int POWER_COMPUTATION__TARGET_OPERATION = MEASURE_PRODUCT_OPERATION__TARGET_OPERATION;
+	int POWER_COMPUTATION__TARGET_OPERATION = MEASURE_BINARY_PRODUCT_OPERATION__TARGET_OPERATION;
 
 	/**
 	 * The feature id for the '<em><b>Uncertainty</b></em>' containment reference.
@@ -1205,7 +1241,16 @@ public interface EelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int POWER_COMPUTATION__UNCERTAINTY = MEASURE_PRODUCT_OPERATION__UNCERTAINTY;
+	int POWER_COMPUTATION__UNCERTAINTY = MEASURE_BINARY_PRODUCT_OPERATION__UNCERTAINTY;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POWER_COMPUTATION__TYPE = MEASURE_BINARY_PRODUCT_OPERATION__TYPE;
 
 	/**
 	 * The feature id for the '<em><b>Left</b></em>' reference.
@@ -1214,7 +1259,7 @@ public interface EelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int POWER_COMPUTATION__LEFT = MEASURE_PRODUCT_OPERATION__LEFT;
+	int POWER_COMPUTATION__LEFT = MEASURE_BINARY_PRODUCT_OPERATION__LEFT;
 
 	/**
 	 * The feature id for the '<em><b>Right</b></em>' reference.
@@ -1223,7 +1268,7 @@ public interface EelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int POWER_COMPUTATION__RIGHT = MEASURE_PRODUCT_OPERATION__RIGHT;
+	int POWER_COMPUTATION__RIGHT = MEASURE_BINARY_PRODUCT_OPERATION__RIGHT;
 
 	/**
 	 * The number of structural features of the '<em>Power Computation</em>' class.
@@ -1232,7 +1277,7 @@ public interface EelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int POWER_COMPUTATION_FEATURE_COUNT = MEASURE_PRODUCT_OPERATION_FEATURE_COUNT + 0;
+	int POWER_COMPUTATION_FEATURE_COUNT = MEASURE_BINARY_PRODUCT_OPERATION_FEATURE_COUNT + 0;
 
 	/**
 	 * The operation id for the '<em>Type</em>' operation.
@@ -1241,7 +1286,7 @@ public interface EelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int POWER_COMPUTATION___TYPE = MEASURE_PRODUCT_OPERATION_OPERATION_COUNT + 0;
+	int POWER_COMPUTATION___TYPE = MEASURE_BINARY_PRODUCT_OPERATION_OPERATION_COUNT + 0;
 
 	/**
 	 * The operation id for the '<em>Value</em>' operation.
@@ -1250,7 +1295,7 @@ public interface EelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int POWER_COMPUTATION___VALUE = MEASURE_PRODUCT_OPERATION_OPERATION_COUNT + 1;
+	int POWER_COMPUTATION___VALUE = MEASURE_BINARY_PRODUCT_OPERATION_OPERATION_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Power Computation</em>' class.
@@ -1259,7 +1304,307 @@ public interface EelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int POWER_COMPUTATION_OPERATION_COUNT = MEASURE_PRODUCT_OPERATION_OPERATION_COUNT + 2;
+	int POWER_COMPUTATION_OPERATION_COUNT = MEASURE_BINARY_PRODUCT_OPERATION_OPERATION_COUNT + 2;
+
+	/**
+	 * The meta object id for the '{@link fr.tblf.energy.estimation.eel.impl.MeasureUnboundOperationImpl <em>Measure Unbound Operation</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fr.tblf.energy.estimation.eel.impl.MeasureUnboundOperationImpl
+	 * @see fr.tblf.energy.estimation.eel.impl.EelPackageImpl#getMeasureUnboundOperation()
+	 * @generated
+	 */
+	int MEASURE_UNBOUND_OPERATION = 13;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE_UNBOUND_OPERATION__NAME = TYPED_MEASURE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Target Class</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE_UNBOUND_OPERATION__TARGET_CLASS = TYPED_MEASURE__TARGET_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Target Operation</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE_UNBOUND_OPERATION__TARGET_OPERATION = TYPED_MEASURE__TARGET_OPERATION;
+
+	/**
+	 * The feature id for the '<em><b>Uncertainty</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE_UNBOUND_OPERATION__UNCERTAINTY = TYPED_MEASURE__UNCERTAINTY;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE_UNBOUND_OPERATION__TYPE = TYPED_MEASURE__TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Measures</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE_UNBOUND_OPERATION__MEASURES = TYPED_MEASURE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Measure Unbound Operation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE_UNBOUND_OPERATION_FEATURE_COUNT = TYPED_MEASURE_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Value</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE_UNBOUND_OPERATION___VALUE = TYPED_MEASURE___VALUE;
+
+	/**
+	 * The operation id for the '<em>Type</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE_UNBOUND_OPERATION___TYPE = TYPED_MEASURE___TYPE;
+
+	/**
+	 * The number of operations of the '<em>Measure Unbound Operation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE_UNBOUND_OPERATION_OPERATION_COUNT = TYPED_MEASURE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link fr.tblf.energy.estimation.eel.impl.MeasureUnboundSumOperationImpl <em>Measure Unbound Sum Operation</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fr.tblf.energy.estimation.eel.impl.MeasureUnboundSumOperationImpl
+	 * @see fr.tblf.energy.estimation.eel.impl.EelPackageImpl#getMeasureUnboundSumOperation()
+	 * @generated
+	 */
+	int MEASURE_UNBOUND_SUM_OPERATION = 14;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE_UNBOUND_SUM_OPERATION__NAME = MEASURE_UNBOUND_OPERATION__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Target Class</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE_UNBOUND_SUM_OPERATION__TARGET_CLASS = MEASURE_UNBOUND_OPERATION__TARGET_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Target Operation</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE_UNBOUND_SUM_OPERATION__TARGET_OPERATION = MEASURE_UNBOUND_OPERATION__TARGET_OPERATION;
+
+	/**
+	 * The feature id for the '<em><b>Uncertainty</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE_UNBOUND_SUM_OPERATION__UNCERTAINTY = MEASURE_UNBOUND_OPERATION__UNCERTAINTY;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE_UNBOUND_SUM_OPERATION__TYPE = MEASURE_UNBOUND_OPERATION__TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Measures</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE_UNBOUND_SUM_OPERATION__MEASURES = MEASURE_UNBOUND_OPERATION__MEASURES;
+
+	/**
+	 * The number of structural features of the '<em>Measure Unbound Sum Operation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE_UNBOUND_SUM_OPERATION_FEATURE_COUNT = MEASURE_UNBOUND_OPERATION_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Type</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE_UNBOUND_SUM_OPERATION___TYPE = MEASURE_UNBOUND_OPERATION___TYPE;
+
+	/**
+	 * The operation id for the '<em>Value</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE_UNBOUND_SUM_OPERATION___VALUE = MEASURE_UNBOUND_OPERATION_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Measure Unbound Sum Operation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE_UNBOUND_SUM_OPERATION_OPERATION_COUNT = MEASURE_UNBOUND_OPERATION_OPERATION_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link fr.tblf.energy.estimation.eel.impl.MeasureUnboundProductOperationImpl <em>Measure Unbound Product Operation</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fr.tblf.energy.estimation.eel.impl.MeasureUnboundProductOperationImpl
+	 * @see fr.tblf.energy.estimation.eel.impl.EelPackageImpl#getMeasureUnboundProductOperation()
+	 * @generated
+	 */
+	int MEASURE_UNBOUND_PRODUCT_OPERATION = 15;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE_UNBOUND_PRODUCT_OPERATION__NAME = MEASURE_UNBOUND_OPERATION__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Target Class</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE_UNBOUND_PRODUCT_OPERATION__TARGET_CLASS = MEASURE_UNBOUND_OPERATION__TARGET_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Target Operation</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE_UNBOUND_PRODUCT_OPERATION__TARGET_OPERATION = MEASURE_UNBOUND_OPERATION__TARGET_OPERATION;
+
+	/**
+	 * The feature id for the '<em><b>Uncertainty</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE_UNBOUND_PRODUCT_OPERATION__UNCERTAINTY = MEASURE_UNBOUND_OPERATION__UNCERTAINTY;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE_UNBOUND_PRODUCT_OPERATION__TYPE = MEASURE_UNBOUND_OPERATION__TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Measures</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE_UNBOUND_PRODUCT_OPERATION__MEASURES = MEASURE_UNBOUND_OPERATION__MEASURES;
+
+	/**
+	 * The number of structural features of the '<em>Measure Unbound Product Operation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE_UNBOUND_PRODUCT_OPERATION_FEATURE_COUNT = MEASURE_UNBOUND_OPERATION_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Type</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE_UNBOUND_PRODUCT_OPERATION___TYPE = MEASURE_UNBOUND_OPERATION___TYPE;
+
+	/**
+	 * The operation id for the '<em>Value</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE_UNBOUND_PRODUCT_OPERATION___VALUE = MEASURE_UNBOUND_OPERATION_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Measure Unbound Product Operation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE_UNBOUND_PRODUCT_OPERATION_OPERATION_COUNT = MEASURE_UNBOUND_OPERATION_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link fr.tblf.energy.estimation.eel.impl.MeasurementUncertaintyImpl <em>Measurement Uncertainty</em>}' class.
@@ -1269,7 +1614,7 @@ public interface EelPackage extends EPackage {
 	 * @see fr.tblf.energy.estimation.eel.impl.EelPackageImpl#getMeasurementUncertainty()
 	 * @generated
 	 */
-	int MEASUREMENT_UNCERTAINTY = 13;
+	int MEASUREMENT_UNCERTAINTY = 16;
 
 	/**
 	 * The feature id for the '<em><b>Information</b></em>' containment reference.
@@ -1315,7 +1660,7 @@ public interface EelPackage extends EPackage {
 	 * @see fr.tblf.energy.estimation.eel.impl.EelPackageImpl#getMeasurementUncertaintyInformation()
 	 * @generated
 	 */
-	int MEASUREMENT_UNCERTAINTY_INFORMATION = 16;
+	int MEASUREMENT_UNCERTAINTY_INFORMATION = 19;
 
 	/**
 	 * The number of structural features of the '<em>Measurement Uncertainty Information</em>' class.
@@ -1343,7 +1688,7 @@ public interface EelPackage extends EPackage {
 	 * @see fr.tblf.energy.estimation.eel.impl.EelPackageImpl#getNormalDistribution()
 	 * @generated
 	 */
-	int NORMAL_DISTRIBUTION = 14;
+	int NORMAL_DISTRIBUTION = 17;
 
 	/**
 	 * The feature id for the '<em><b>Mean Value</b></em>' attribute.
@@ -1389,7 +1734,7 @@ public interface EelPackage extends EPackage {
 	 * @see fr.tblf.energy.estimation.eel.impl.EelPackageImpl#getInterval()
 	 * @generated
 	 */
-	int INTERVAL = 15;
+	int INTERVAL = 18;
 
 	/**
 	 * The feature id for the '<em><b>Lower Endpoint</b></em>' containment reference.
@@ -1435,7 +1780,7 @@ public interface EelPackage extends EPackage {
 	 * @see fr.tblf.energy.estimation.eel.impl.EelPackageImpl#getSampling()
 	 * @generated
 	 */
-	int SAMPLING = 17;
+	int SAMPLING = 20;
 
 	/**
 	 * The feature id for the '<em><b>Samples</b></em>' containment reference list.
@@ -1481,7 +1826,7 @@ public interface EelPackage extends EPackage {
 	 * @see fr.tblf.energy.estimation.eel.impl.EelPackageImpl#getIntegral()
 	 * @generated
 	 */
-	int INTEGRAL = 18;
+	int INTEGRAL = 21;
 
 	/**
 	 * The feature id for the '<em><b>Interval</b></em>' reference.
@@ -1527,7 +1872,7 @@ public interface EelPackage extends EPackage {
 	 * @see fr.tblf.energy.estimation.eel.impl.EelPackageImpl#getSample()
 	 * @generated
 	 */
-	int SAMPLE = 19;
+	int SAMPLE = 22;
 
 	/**
 	 * The feature id for the '<em><b>Quantity</b></em>' containment reference list.
@@ -1564,7 +1909,7 @@ public interface EelPackage extends EPackage {
 	 * @see fr.tblf.energy.estimation.eel.impl.EelPackageImpl#getVisibility()
 	 * @generated
 	 */
-	int VISIBILITY = 20;
+	int VISIBILITY = 23;
 
 	/**
 	 * The meta object id for the '{@link fr.tblf.energy.estimation.eel.Type <em>Type</em>}' enum.
@@ -1574,7 +1919,7 @@ public interface EelPackage extends EPackage {
 	 * @see fr.tblf.energy.estimation.eel.impl.EelPackageImpl#getType()
 	 * @generated
 	 */
-	int TYPE = 21;
+	int TYPE = 24;
 
 
 	/**
@@ -1863,76 +2208,76 @@ public interface EelPackage extends EPackage {
 	EReference getMeasureCast_Measure();
 
 	/**
-	 * Returns the meta object for class '{@link fr.tblf.energy.estimation.eel.MeasureOperation <em>Measure Operation</em>}'.
+	 * Returns the meta object for class '{@link fr.tblf.energy.estimation.eel.MeasureBinaryOperation <em>Measure Binary Operation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Measure Operation</em>'.
-	 * @see fr.tblf.energy.estimation.eel.MeasureOperation
+	 * @return the meta object for class '<em>Measure Binary Operation</em>'.
+	 * @see fr.tblf.energy.estimation.eel.MeasureBinaryOperation
 	 * @generated
 	 */
-	EClass getMeasureOperation();
+	EClass getMeasureBinaryOperation();
 
 	/**
-	 * Returns the meta object for the reference '{@link fr.tblf.energy.estimation.eel.MeasureOperation#getLeft <em>Left</em>}'.
+	 * Returns the meta object for the reference '{@link fr.tblf.energy.estimation.eel.MeasureBinaryOperation#getLeft <em>Left</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Left</em>'.
-	 * @see fr.tblf.energy.estimation.eel.MeasureOperation#getLeft()
-	 * @see #getMeasureOperation()
+	 * @see fr.tblf.energy.estimation.eel.MeasureBinaryOperation#getLeft()
+	 * @see #getMeasureBinaryOperation()
 	 * @generated
 	 */
-	EReference getMeasureOperation_Left();
+	EReference getMeasureBinaryOperation_Left();
 
 	/**
-	 * Returns the meta object for the reference '{@link fr.tblf.energy.estimation.eel.MeasureOperation#getRight <em>Right</em>}'.
+	 * Returns the meta object for the reference '{@link fr.tblf.energy.estimation.eel.MeasureBinaryOperation#getRight <em>Right</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Right</em>'.
-	 * @see fr.tblf.energy.estimation.eel.MeasureOperation#getRight()
-	 * @see #getMeasureOperation()
+	 * @see fr.tblf.energy.estimation.eel.MeasureBinaryOperation#getRight()
+	 * @see #getMeasureBinaryOperation()
 	 * @generated
 	 */
-	EReference getMeasureOperation_Right();
+	EReference getMeasureBinaryOperation_Right();
 
 	/**
-	 * Returns the meta object for class '{@link fr.tblf.energy.estimation.eel.MeasureProductOperation <em>Measure Product Operation</em>}'.
+	 * Returns the meta object for class '{@link fr.tblf.energy.estimation.eel.MeasureBinaryProductOperation <em>Measure Binary Product Operation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Measure Product Operation</em>'.
-	 * @see fr.tblf.energy.estimation.eel.MeasureProductOperation
+	 * @return the meta object for class '<em>Measure Binary Product Operation</em>'.
+	 * @see fr.tblf.energy.estimation.eel.MeasureBinaryProductOperation
 	 * @generated
 	 */
-	EClass getMeasureProductOperation();
+	EClass getMeasureBinaryProductOperation();
 
 	/**
-	 * Returns the meta object for the '{@link fr.tblf.energy.estimation.eel.MeasureProductOperation#value() <em>Value</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Value</em>' operation.
-	 * @see fr.tblf.energy.estimation.eel.MeasureProductOperation#value()
-	 * @generated
-	 */
-	EOperation getMeasureProductOperation__Value();
-
-	/**
-	 * Returns the meta object for class '{@link fr.tblf.energy.estimation.eel.MeasureSumOperation <em>Measure Sum Operation</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Measure Sum Operation</em>'.
-	 * @see fr.tblf.energy.estimation.eel.MeasureSumOperation
-	 * @generated
-	 */
-	EClass getMeasureSumOperation();
-
-	/**
-	 * Returns the meta object for the '{@link fr.tblf.energy.estimation.eel.MeasureSumOperation#value() <em>Value</em>}' operation.
+	 * Returns the meta object for the '{@link fr.tblf.energy.estimation.eel.MeasureBinaryProductOperation#value() <em>Value</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Value</em>' operation.
-	 * @see fr.tblf.energy.estimation.eel.MeasureSumOperation#value()
+	 * @see fr.tblf.energy.estimation.eel.MeasureBinaryProductOperation#value()
 	 * @generated
 	 */
-	EOperation getMeasureSumOperation__Value();
+	EOperation getMeasureBinaryProductOperation__Value();
+
+	/**
+	 * Returns the meta object for class '{@link fr.tblf.energy.estimation.eel.MeasureBinarySumOperation <em>Measure Binary Sum Operation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Measure Binary Sum Operation</em>'.
+	 * @see fr.tblf.energy.estimation.eel.MeasureBinarySumOperation
+	 * @generated
+	 */
+	EClass getMeasureBinarySumOperation();
+
+	/**
+	 * Returns the meta object for the '{@link fr.tblf.energy.estimation.eel.MeasureBinarySumOperation#value() <em>Value</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Value</em>' operation.
+	 * @see fr.tblf.energy.estimation.eel.MeasureBinarySumOperation#value()
+	 * @generated
+	 */
+	EOperation getMeasureBinarySumOperation__Value();
 
 	/**
 	 * Returns the meta object for class '{@link fr.tblf.energy.estimation.eel.EnergyComputation <em>Energy Computation</em>}'.
@@ -1993,6 +2338,67 @@ public interface EelPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getPowerComputation__Value();
+
+	/**
+	 * Returns the meta object for class '{@link fr.tblf.energy.estimation.eel.MeasureUnboundOperation <em>Measure Unbound Operation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Measure Unbound Operation</em>'.
+	 * @see fr.tblf.energy.estimation.eel.MeasureUnboundOperation
+	 * @generated
+	 */
+	EClass getMeasureUnboundOperation();
+
+	/**
+	 * Returns the meta object for the reference list '{@link fr.tblf.energy.estimation.eel.MeasureUnboundOperation#getMeasures <em>Measures</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Measures</em>'.
+	 * @see fr.tblf.energy.estimation.eel.MeasureUnboundOperation#getMeasures()
+	 * @see #getMeasureUnboundOperation()
+	 * @generated
+	 */
+	EReference getMeasureUnboundOperation_Measures();
+
+	/**
+	 * Returns the meta object for class '{@link fr.tblf.energy.estimation.eel.MeasureUnboundSumOperation <em>Measure Unbound Sum Operation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Measure Unbound Sum Operation</em>'.
+	 * @see fr.tblf.energy.estimation.eel.MeasureUnboundSumOperation
+	 * @generated
+	 */
+	EClass getMeasureUnboundSumOperation();
+
+	/**
+	 * Returns the meta object for the '{@link fr.tblf.energy.estimation.eel.MeasureUnboundSumOperation#value() <em>Value</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Value</em>' operation.
+	 * @see fr.tblf.energy.estimation.eel.MeasureUnboundSumOperation#value()
+	 * @generated
+	 */
+	EOperation getMeasureUnboundSumOperation__Value();
+
+	/**
+	 * Returns the meta object for class '{@link fr.tblf.energy.estimation.eel.MeasureUnboundProductOperation <em>Measure Unbound Product Operation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Measure Unbound Product Operation</em>'.
+	 * @see fr.tblf.energy.estimation.eel.MeasureUnboundProductOperation
+	 * @generated
+	 */
+	EClass getMeasureUnboundProductOperation();
+
+	/**
+	 * Returns the meta object for the '{@link fr.tblf.energy.estimation.eel.MeasureUnboundProductOperation#value() <em>Value</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Value</em>' operation.
+	 * @see fr.tblf.energy.estimation.eel.MeasureUnboundProductOperation#value()
+	 * @generated
+	 */
+	EOperation getMeasureUnboundProductOperation__Value();
 
 	/**
 	 * Returns the meta object for class '{@link fr.tblf.energy.estimation.eel.MeasurementUncertainty <em>Measurement Uncertainty</em>}'.
@@ -2461,14 +2867,14 @@ public interface EelPackage extends EPackage {
 		EReference MEASURE_CAST__MEASURE = eINSTANCE.getMeasureCast_Measure();
 
 		/**
-		 * The meta object literal for the '{@link fr.tblf.energy.estimation.eel.impl.MeasureOperationImpl <em>Measure Operation</em>}' class.
+		 * The meta object literal for the '{@link fr.tblf.energy.estimation.eel.impl.MeasureBinaryOperationImpl <em>Measure Binary Operation</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see fr.tblf.energy.estimation.eel.impl.MeasureOperationImpl
-		 * @see fr.tblf.energy.estimation.eel.impl.EelPackageImpl#getMeasureOperation()
+		 * @see fr.tblf.energy.estimation.eel.impl.MeasureBinaryOperationImpl
+		 * @see fr.tblf.energy.estimation.eel.impl.EelPackageImpl#getMeasureBinaryOperation()
 		 * @generated
 		 */
-		EClass MEASURE_OPERATION = eINSTANCE.getMeasureOperation();
+		EClass MEASURE_BINARY_OPERATION = eINSTANCE.getMeasureBinaryOperation();
 
 		/**
 		 * The meta object literal for the '<em><b>Left</b></em>' reference feature.
@@ -2476,7 +2882,7 @@ public interface EelPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference MEASURE_OPERATION__LEFT = eINSTANCE.getMeasureOperation_Left();
+		EReference MEASURE_BINARY_OPERATION__LEFT = eINSTANCE.getMeasureBinaryOperation_Left();
 
 		/**
 		 * The meta object literal for the '<em><b>Right</b></em>' reference feature.
@@ -2484,35 +2890,17 @@ public interface EelPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference MEASURE_OPERATION__RIGHT = eINSTANCE.getMeasureOperation_Right();
+		EReference MEASURE_BINARY_OPERATION__RIGHT = eINSTANCE.getMeasureBinaryOperation_Right();
 
 		/**
-		 * The meta object literal for the '{@link fr.tblf.energy.estimation.eel.impl.MeasureProductOperationImpl <em>Measure Product Operation</em>}' class.
+		 * The meta object literal for the '{@link fr.tblf.energy.estimation.eel.impl.MeasureBinaryProductOperationImpl <em>Measure Binary Product Operation</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see fr.tblf.energy.estimation.eel.impl.MeasureProductOperationImpl
-		 * @see fr.tblf.energy.estimation.eel.impl.EelPackageImpl#getMeasureProductOperation()
+		 * @see fr.tblf.energy.estimation.eel.impl.MeasureBinaryProductOperationImpl
+		 * @see fr.tblf.energy.estimation.eel.impl.EelPackageImpl#getMeasureBinaryProductOperation()
 		 * @generated
 		 */
-		EClass MEASURE_PRODUCT_OPERATION = eINSTANCE.getMeasureProductOperation();
-
-		/**
-		 * The meta object literal for the '<em><b>Value</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation MEASURE_PRODUCT_OPERATION___VALUE = eINSTANCE.getMeasureProductOperation__Value();
-
-		/**
-		 * The meta object literal for the '{@link fr.tblf.energy.estimation.eel.impl.MeasureSumOperationImpl <em>Measure Sum Operation</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see fr.tblf.energy.estimation.eel.impl.MeasureSumOperationImpl
-		 * @see fr.tblf.energy.estimation.eel.impl.EelPackageImpl#getMeasureSumOperation()
-		 * @generated
-		 */
-		EClass MEASURE_SUM_OPERATION = eINSTANCE.getMeasureSumOperation();
+		EClass MEASURE_BINARY_PRODUCT_OPERATION = eINSTANCE.getMeasureBinaryProductOperation();
 
 		/**
 		 * The meta object literal for the '<em><b>Value</b></em>' operation.
@@ -2520,7 +2908,25 @@ public interface EelPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation MEASURE_SUM_OPERATION___VALUE = eINSTANCE.getMeasureSumOperation__Value();
+		EOperation MEASURE_BINARY_PRODUCT_OPERATION___VALUE = eINSTANCE.getMeasureBinaryProductOperation__Value();
+
+		/**
+		 * The meta object literal for the '{@link fr.tblf.energy.estimation.eel.impl.MeasureBinarySumOperationImpl <em>Measure Binary Sum Operation</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see fr.tblf.energy.estimation.eel.impl.MeasureBinarySumOperationImpl
+		 * @see fr.tblf.energy.estimation.eel.impl.EelPackageImpl#getMeasureBinarySumOperation()
+		 * @generated
+		 */
+		EClass MEASURE_BINARY_SUM_OPERATION = eINSTANCE.getMeasureBinarySumOperation();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation MEASURE_BINARY_SUM_OPERATION___VALUE = eINSTANCE.getMeasureBinarySumOperation__Value();
 
 		/**
 		 * The meta object literal for the '{@link fr.tblf.energy.estimation.eel.impl.EnergyComputationImpl <em>Energy Computation</em>}' class.
@@ -2573,6 +2979,60 @@ public interface EelPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation POWER_COMPUTATION___VALUE = eINSTANCE.getPowerComputation__Value();
+
+		/**
+		 * The meta object literal for the '{@link fr.tblf.energy.estimation.eel.impl.MeasureUnboundOperationImpl <em>Measure Unbound Operation</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see fr.tblf.energy.estimation.eel.impl.MeasureUnboundOperationImpl
+		 * @see fr.tblf.energy.estimation.eel.impl.EelPackageImpl#getMeasureUnboundOperation()
+		 * @generated
+		 */
+		EClass MEASURE_UNBOUND_OPERATION = eINSTANCE.getMeasureUnboundOperation();
+
+		/**
+		 * The meta object literal for the '<em><b>Measures</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MEASURE_UNBOUND_OPERATION__MEASURES = eINSTANCE.getMeasureUnboundOperation_Measures();
+
+		/**
+		 * The meta object literal for the '{@link fr.tblf.energy.estimation.eel.impl.MeasureUnboundSumOperationImpl <em>Measure Unbound Sum Operation</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see fr.tblf.energy.estimation.eel.impl.MeasureUnboundSumOperationImpl
+		 * @see fr.tblf.energy.estimation.eel.impl.EelPackageImpl#getMeasureUnboundSumOperation()
+		 * @generated
+		 */
+		EClass MEASURE_UNBOUND_SUM_OPERATION = eINSTANCE.getMeasureUnboundSumOperation();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation MEASURE_UNBOUND_SUM_OPERATION___VALUE = eINSTANCE.getMeasureUnboundSumOperation__Value();
+
+		/**
+		 * The meta object literal for the '{@link fr.tblf.energy.estimation.eel.impl.MeasureUnboundProductOperationImpl <em>Measure Unbound Product Operation</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see fr.tblf.energy.estimation.eel.impl.MeasureUnboundProductOperationImpl
+		 * @see fr.tblf.energy.estimation.eel.impl.EelPackageImpl#getMeasureUnboundProductOperation()
+		 * @generated
+		 */
+		EClass MEASURE_UNBOUND_PRODUCT_OPERATION = eINSTANCE.getMeasureUnboundProductOperation();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation MEASURE_UNBOUND_PRODUCT_OPERATION___VALUE = eINSTANCE.getMeasureUnboundProductOperation__Value();
 
 		/**
 		 * The meta object literal for the '{@link fr.tblf.energy.estimation.eel.impl.MeasurementUncertaintyImpl <em>Measurement Uncertainty</em>}' class.

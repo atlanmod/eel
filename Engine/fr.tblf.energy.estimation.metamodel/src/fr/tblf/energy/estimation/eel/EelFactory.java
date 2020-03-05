@@ -76,22 +76,22 @@ public interface EelFactory extends EFactory {
 	MeasureCast createMeasureCast();
 
 	/**
-	 * Returns a new object of class '<em>Measure Product Operation</em>'.
+	 * Returns a new object of class '<em>Measure Binary Product Operation</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Measure Product Operation</em>'.
+	 * @return a new object of class '<em>Measure Binary Product Operation</em>'.
 	 * @generated
 	 */
-	MeasureProductOperation createMeasureProductOperation();
+	MeasureBinaryProductOperation createMeasureBinaryProductOperation();
 
 	/**
-	 * Returns a new object of class '<em>Measure Sum Operation</em>'.
+	 * Returns a new object of class '<em>Measure Binary Sum Operation</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Measure Sum Operation</em>'.
+	 * @return a new object of class '<em>Measure Binary Sum Operation</em>'.
 	 * @generated
 	 */
-	MeasureSumOperation createMeasureSumOperation();
+	MeasureBinarySumOperation createMeasureBinarySumOperation();
 
 	/**
 	 * Returns a new object of class '<em>Energy Computation</em>'.
@@ -110,6 +110,24 @@ public interface EelFactory extends EFactory {
 	 * @generated
 	 */
 	PowerComputation createPowerComputation();
+
+	/**
+	 * Returns a new object of class '<em>Measure Unbound Sum Operation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Measure Unbound Sum Operation</em>'.
+	 * @generated
+	 */
+	MeasureUnboundSumOperation createMeasureUnboundSumOperation();
+
+	/**
+	 * Returns a new object of class '<em>Measure Unbound Product Operation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Measure Unbound Product Operation</em>'.
+	 * @generated
+	 */
+	MeasureUnboundProductOperation createMeasureUnboundProductOperation();
 
 	/**
 	 * Returns a new object of class '<em>Measurement Uncertainty</em>'.

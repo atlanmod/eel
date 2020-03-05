@@ -18,7 +18,7 @@ import java.math.BigDecimal;
  * @model
  * @generated
  */
-public interface EnergyComputation extends MeasureProductOperation {
+public interface EnergyComputation extends MeasureBinaryProductOperation {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -26,9 +26,9 @@ import org.eclipse.ocl.pivot.utilities.ParserException;
 
 import fr.tblf.energy.estimation.eel.Measure;
 import fr.tblf.energy.estimation.eel.MeasureAttribute;
+import fr.tblf.energy.estimation.eel.MeasureBinaryOperation;
 import fr.tblf.energy.estimation.eel.MeasureCast;
 import fr.tblf.energy.estimation.eel.MeasureOCL;
-import fr.tblf.energy.estimation.eel.MeasureOperation;
 import fr.tblf.energy.estimation.eel.Platform;
 
 public class EngineAddon implements IEngineAddon {
@@ -52,7 +52,7 @@ public class EngineAddon implements IEngineAddon {
 						.forEach(p -> {
 							try {
 								System.out.println("Loading metamodel "+p.toFile().getName());								
-								resourceSet.getResource(URI.createURI(p.toUri().toURL().toString()), true);
+								resourceSet.getResource(URI.createFileURI(p.toUri().toURL().toString()), true);
 								
 							} catch (MalformedURLException e) {
 								e.printStackTrace();
@@ -132,7 +132,7 @@ public class EngineAddon implements IEngineAddon {
 		}		
 	}
 	
-	private void updateMeasure(MeasureOperation m, EObject caller) {
+	private void updateMeasure(MeasureBinaryOperation m, EObject caller) {
 		System.out.println("Updating Measure "+m.getName());
 		updateMeasure(m.getLeft(), caller);
 		updateMeasure(m.getRight(), caller);
@@ -144,8 +144,8 @@ public class EngineAddon implements IEngineAddon {
 	}
 	
 	private void updateMeasure(Measure m, EObject caller) {
-		if (m instanceof MeasureOperation) {
-			updateMeasure((MeasureOperation) m, caller);
+		if (m instanceof MeasureBinaryOperation) {
+			updateMeasure((MeasureBinaryOperation) m, caller);
 		} else
 		if (m instanceof MeasureOCL) {
 			updateMeasure((MeasureOCL) m, caller);

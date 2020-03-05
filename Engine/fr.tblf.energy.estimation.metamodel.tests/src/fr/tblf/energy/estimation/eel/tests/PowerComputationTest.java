@@ -20,7 +20,7 @@ import junit.textui.TestRunner;
  * </p>
  * @generated
  */
-public class PowerComputationTest extends MeasureProductOperationTest {
+public class PowerComputationTest extends MeasureBinaryProductOperationTest {
 
 	/**
 	 * <!-- begin-user-doc -->

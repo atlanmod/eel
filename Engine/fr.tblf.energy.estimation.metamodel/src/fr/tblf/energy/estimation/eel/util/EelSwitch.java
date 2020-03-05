@@ -125,34 +125,38 @@ public class EelSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case EelPackage.MEASURE_OPERATION: {
-				MeasureOperation measureOperation = (MeasureOperation)theEObject;
-				T result = caseMeasureOperation(measureOperation);
-				if (result == null) result = caseMeasure(measureOperation);
+			case EelPackage.MEASURE_BINARY_OPERATION: {
+				MeasureBinaryOperation measureBinaryOperation = (MeasureBinaryOperation)theEObject;
+				T result = caseMeasureBinaryOperation(measureBinaryOperation);
+				if (result == null) result = caseTypedMeasure(measureBinaryOperation);
+				if (result == null) result = caseMeasure(measureBinaryOperation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case EelPackage.MEASURE_PRODUCT_OPERATION: {
-				MeasureProductOperation measureProductOperation = (MeasureProductOperation)theEObject;
-				T result = caseMeasureProductOperation(measureProductOperation);
-				if (result == null) result = caseMeasureOperation(measureProductOperation);
-				if (result == null) result = caseMeasure(measureProductOperation);
+			case EelPackage.MEASURE_BINARY_PRODUCT_OPERATION: {
+				MeasureBinaryProductOperation measureBinaryProductOperation = (MeasureBinaryProductOperation)theEObject;
+				T result = caseMeasureBinaryProductOperation(measureBinaryProductOperation);
+				if (result == null) result = caseMeasureBinaryOperation(measureBinaryProductOperation);
+				if (result == null) result = caseTypedMeasure(measureBinaryProductOperation);
+				if (result == null) result = caseMeasure(measureBinaryProductOperation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case EelPackage.MEASURE_SUM_OPERATION: {
-				MeasureSumOperation measureSumOperation = (MeasureSumOperation)theEObject;
-				T result = caseMeasureSumOperation(measureSumOperation);
-				if (result == null) result = caseMeasureOperation(measureSumOperation);
-				if (result == null) result = caseMeasure(measureSumOperation);
+			case EelPackage.MEASURE_BINARY_SUM_OPERATION: {
+				MeasureBinarySumOperation measureBinarySumOperation = (MeasureBinarySumOperation)theEObject;
+				T result = caseMeasureBinarySumOperation(measureBinarySumOperation);
+				if (result == null) result = caseMeasureBinaryOperation(measureBinarySumOperation);
+				if (result == null) result = caseTypedMeasure(measureBinarySumOperation);
+				if (result == null) result = caseMeasure(measureBinarySumOperation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case EelPackage.ENERGY_COMPUTATION: {
 				EnergyComputation energyComputation = (EnergyComputation)theEObject;
 				T result = caseEnergyComputation(energyComputation);
-				if (result == null) result = caseMeasureProductOperation(energyComputation);
-				if (result == null) result = caseMeasureOperation(energyComputation);
+				if (result == null) result = caseMeasureBinaryProductOperation(energyComputation);
+				if (result == null) result = caseMeasureBinaryOperation(energyComputation);
+				if (result == null) result = caseTypedMeasure(energyComputation);
 				if (result == null) result = caseMeasure(energyComputation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -160,9 +164,36 @@ public class EelSwitch<T> extends Switch<T> {
 			case EelPackage.POWER_COMPUTATION: {
 				PowerComputation powerComputation = (PowerComputation)theEObject;
 				T result = casePowerComputation(powerComputation);
-				if (result == null) result = caseMeasureProductOperation(powerComputation);
-				if (result == null) result = caseMeasureOperation(powerComputation);
+				if (result == null) result = caseMeasureBinaryProductOperation(powerComputation);
+				if (result == null) result = caseMeasureBinaryOperation(powerComputation);
+				if (result == null) result = caseTypedMeasure(powerComputation);
 				if (result == null) result = caseMeasure(powerComputation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case EelPackage.MEASURE_UNBOUND_OPERATION: {
+				MeasureUnboundOperation measureUnboundOperation = (MeasureUnboundOperation)theEObject;
+				T result = caseMeasureUnboundOperation(measureUnboundOperation);
+				if (result == null) result = caseTypedMeasure(measureUnboundOperation);
+				if (result == null) result = caseMeasure(measureUnboundOperation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case EelPackage.MEASURE_UNBOUND_SUM_OPERATION: {
+				MeasureUnboundSumOperation measureUnboundSumOperation = (MeasureUnboundSumOperation)theEObject;
+				T result = caseMeasureUnboundSumOperation(measureUnboundSumOperation);
+				if (result == null) result = caseMeasureUnboundOperation(measureUnboundSumOperation);
+				if (result == null) result = caseTypedMeasure(measureUnboundSumOperation);
+				if (result == null) result = caseMeasure(measureUnboundSumOperation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case EelPackage.MEASURE_UNBOUND_PRODUCT_OPERATION: {
+				MeasureUnboundProductOperation measureUnboundProductOperation = (MeasureUnboundProductOperation)theEObject;
+				T result = caseMeasureUnboundProductOperation(measureUnboundProductOperation);
+				if (result == null) result = caseMeasureUnboundOperation(measureUnboundProductOperation);
+				if (result == null) result = caseTypedMeasure(measureUnboundProductOperation);
+				if (result == null) result = caseMeasure(measureUnboundProductOperation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -337,47 +368,47 @@ public class EelSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Measure Operation</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Measure Binary Operation</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Measure Operation</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Measure Binary Operation</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseMeasureOperation(MeasureOperation object) {
+	public T caseMeasureBinaryOperation(MeasureBinaryOperation object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Measure Product Operation</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Measure Binary Product Operation</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Measure Product Operation</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Measure Binary Product Operation</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseMeasureProductOperation(MeasureProductOperation object) {
+	public T caseMeasureBinaryProductOperation(MeasureBinaryProductOperation object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Measure Sum Operation</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Measure Binary Sum Operation</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Measure Sum Operation</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Measure Binary Sum Operation</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseMeasureSumOperation(MeasureSumOperation object) {
+	public T caseMeasureBinarySumOperation(MeasureBinarySumOperation object) {
 		return null;
 	}
 
@@ -408,6 +439,51 @@ public class EelSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T casePowerComputation(PowerComputation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Measure Unbound Operation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Measure Unbound Operation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMeasureUnboundOperation(MeasureUnboundOperation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Measure Unbound Sum Operation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Measure Unbound Sum Operation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMeasureUnboundSumOperation(MeasureUnboundSumOperation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Measure Unbound Product Operation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Measure Unbound Product Operation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMeasureUnboundProductOperation(MeasureUnboundProductOperation object) {
 		return null;
 	}
 

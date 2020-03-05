@@ -100,16 +100,16 @@ public class EelAdapterFactory extends AdapterFactoryImpl {
 				return createMeasureCastAdapter();
 			}
 			@Override
-			public Adapter caseMeasureOperation(MeasureOperation object) {
-				return createMeasureOperationAdapter();
+			public Adapter caseMeasureBinaryOperation(MeasureBinaryOperation object) {
+				return createMeasureBinaryOperationAdapter();
 			}
 			@Override
-			public Adapter caseMeasureProductOperation(MeasureProductOperation object) {
-				return createMeasureProductOperationAdapter();
+			public Adapter caseMeasureBinaryProductOperation(MeasureBinaryProductOperation object) {
+				return createMeasureBinaryProductOperationAdapter();
 			}
 			@Override
-			public Adapter caseMeasureSumOperation(MeasureSumOperation object) {
-				return createMeasureSumOperationAdapter();
+			public Adapter caseMeasureBinarySumOperation(MeasureBinarySumOperation object) {
+				return createMeasureBinarySumOperationAdapter();
 			}
 			@Override
 			public Adapter caseEnergyComputation(EnergyComputation object) {
@@ -118,6 +118,18 @@ public class EelAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter casePowerComputation(PowerComputation object) {
 				return createPowerComputationAdapter();
+			}
+			@Override
+			public Adapter caseMeasureUnboundOperation(MeasureUnboundOperation object) {
+				return createMeasureUnboundOperationAdapter();
+			}
+			@Override
+			public Adapter caseMeasureUnboundSumOperation(MeasureUnboundSumOperation object) {
+				return createMeasureUnboundSumOperationAdapter();
+			}
+			@Override
+			public Adapter caseMeasureUnboundProductOperation(MeasureUnboundProductOperation object) {
+				return createMeasureUnboundProductOperationAdapter();
 			}
 			@Override
 			public Adapter caseMeasurementUncertainty(MeasurementUncertainty object) {
@@ -280,44 +292,44 @@ public class EelAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link fr.tblf.energy.estimation.eel.MeasureOperation <em>Measure Operation</em>}'.
+	 * Creates a new adapter for an object of class '{@link fr.tblf.energy.estimation.eel.MeasureBinaryOperation <em>Measure Binary Operation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see fr.tblf.energy.estimation.eel.MeasureOperation
+	 * @see fr.tblf.energy.estimation.eel.MeasureBinaryOperation
 	 * @generated
 	 */
-	public Adapter createMeasureOperationAdapter() {
+	public Adapter createMeasureBinaryOperationAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link fr.tblf.energy.estimation.eel.MeasureProductOperation <em>Measure Product Operation</em>}'.
+	 * Creates a new adapter for an object of class '{@link fr.tblf.energy.estimation.eel.MeasureBinaryProductOperation <em>Measure Binary Product Operation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see fr.tblf.energy.estimation.eel.MeasureProductOperation
+	 * @see fr.tblf.energy.estimation.eel.MeasureBinaryProductOperation
 	 * @generated
 	 */
-	public Adapter createMeasureProductOperationAdapter() {
+	public Adapter createMeasureBinaryProductOperationAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link fr.tblf.energy.estimation.eel.MeasureSumOperation <em>Measure Sum Operation</em>}'.
+	 * Creates a new adapter for an object of class '{@link fr.tblf.energy.estimation.eel.MeasureBinarySumOperation <em>Measure Binary Sum Operation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see fr.tblf.energy.estimation.eel.MeasureSumOperation
+	 * @see fr.tblf.energy.estimation.eel.MeasureBinarySumOperation
 	 * @generated
 	 */
-	public Adapter createMeasureSumOperationAdapter() {
+	public Adapter createMeasureBinarySumOperationAdapter() {
 		return null;
 	}
 
@@ -346,6 +358,48 @@ public class EelAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createPowerComputationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.tblf.energy.estimation.eel.MeasureUnboundOperation <em>Measure Unbound Operation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.tblf.energy.estimation.eel.MeasureUnboundOperation
+	 * @generated
+	 */
+	public Adapter createMeasureUnboundOperationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.tblf.energy.estimation.eel.MeasureUnboundSumOperation <em>Measure Unbound Sum Operation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.tblf.energy.estimation.eel.MeasureUnboundSumOperation
+	 * @generated
+	 */
+	public Adapter createMeasureUnboundSumOperationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.tblf.energy.estimation.eel.MeasureUnboundProductOperation <em>Measure Unbound Product Operation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.tblf.energy.estimation.eel.MeasureUnboundProductOperation
+	 * @generated
+	 */
+	public Adapter createMeasureUnboundProductOperationAdapter() {
 		return null;
 	}
 

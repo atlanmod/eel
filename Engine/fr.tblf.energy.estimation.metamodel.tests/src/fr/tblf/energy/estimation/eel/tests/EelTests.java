@@ -9,7 +9,7 @@ import junit.textui.TestRunner;
 
 /**
  * <!-- begin-user-doc -->
- * A test suite for the '<em><b>fr.tblf.energy.estimation.eel</b></em>' package.
+ * A test suite for the '<em><b>eel</b></em>' package.
  * <!-- end-user-doc -->
  * @generated
  */
@@ -35,10 +35,12 @@ public class EelTests extends TestSuite {
 		suite.addTestSuite(MeasureOCLTest.class);
 		suite.addTestSuite(MeasureAttributeTest.class);
 		suite.addTestSuite(MeasureCastTest.class);
-		suite.addTestSuite(MeasureProductOperationTest.class);
-		suite.addTestSuite(MeasureSumOperationTest.class);
+		suite.addTestSuite(MeasureBinaryProductOperationTest.class);
+		suite.addTestSuite(MeasureBinarySumOperationTest.class);
 		suite.addTestSuite(EnergyComputationTest.class);
 		suite.addTestSuite(PowerComputationTest.class);
+		suite.addTestSuite(MeasureUnboundSumOperationTest.class);
+		suite.addTestSuite(MeasureUnboundProductOperationTest.class);
 		suite.addTestSuite(NormalDistributionTest.class);
 		return suite;
 	}
