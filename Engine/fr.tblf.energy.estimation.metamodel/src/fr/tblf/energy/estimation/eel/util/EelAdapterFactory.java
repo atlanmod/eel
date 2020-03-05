@@ -120,6 +120,10 @@ public class EelAdapterFactory extends AdapterFactoryImpl {
 				return createPowerComputationAdapter();
 			}
 			@Override
+			public Adapter caseRealTimeDuration(RealTimeDuration object) {
+				return createRealTimeDurationAdapter();
+			}
+			@Override
 			public Adapter caseMeasureUnboundOperation(MeasureUnboundOperation object) {
 				return createMeasureUnboundOperationAdapter();
 			}
@@ -358,6 +362,20 @@ public class EelAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createPowerComputationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.tblf.energy.estimation.eel.RealTimeDuration <em>Real Time Duration</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.tblf.energy.estimation.eel.RealTimeDuration
+	 * @generated
+	 */
+	public Adapter createRealTimeDurationAdapter() {
 		return null;
 	}
 

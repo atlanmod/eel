@@ -112,6 +112,15 @@ public interface EelFactory extends EFactory {
 	PowerComputation createPowerComputation();
 
 	/**
+	 * Returns a new object of class '<em>Real Time Duration</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Real Time Duration</em>'.
+	 * @generated
+	 */
+	RealTimeDuration createRealTimeDuration();
+
+	/**
 	 * Returns a new object of class '<em>Measure Unbound Sum Operation</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

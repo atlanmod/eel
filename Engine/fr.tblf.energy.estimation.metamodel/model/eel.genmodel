@@ -73,6 +73,9 @@
       <genOperations ecoreOperation="eel.ecore#//PowerComputation/type"/>
       <genOperations ecoreOperation="eel.ecore#//PowerComputation/value"/>
     </genClasses>
+    <genClasses ecoreClass="eel.ecore#//RealTimeDuration">
+      <genOperations ecoreOperation="eel.ecore#//RealTimeDuration/type"/>
+    </genClasses>
     <genClasses image="false" ecoreClass="eel.ecore#//MeasureUnboundOperation">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eel.ecore#//MeasureUnboundOperation/measures"/>
     </genClasses>

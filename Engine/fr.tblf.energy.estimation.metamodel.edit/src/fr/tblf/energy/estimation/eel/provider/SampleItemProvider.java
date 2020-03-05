@@ -191,6 +191,11 @@ public class SampleItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(EelPackage.Literals.SAMPLE__QUANTITY,
+				 EelFactory.eINSTANCE.createRealTimeDuration()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(EelPackage.Literals.SAMPLE__QUANTITY,
 				 EelFactory.eINSTANCE.createMeasureUnboundSumOperation()));
 
 		newChildDescriptors.add

@@ -67,6 +67,7 @@ public class EelFactoryImpl extends EFactoryImpl implements EelFactory {
 			case EelPackage.MEASURE_BINARY_SUM_OPERATION: return createMeasureBinarySumOperation();
 			case EelPackage.ENERGY_COMPUTATION: return createEnergyComputation();
 			case EelPackage.POWER_COMPUTATION: return createPowerComputation();
+			case EelPackage.REAL_TIME_DURATION: return createRealTimeDuration();
 			case EelPackage.MEASURE_UNBOUND_SUM_OPERATION: return createMeasureUnboundSumOperation();
 			case EelPackage.MEASURE_UNBOUND_PRODUCT_OPERATION: return createMeasureUnboundProductOperation();
 			case EelPackage.MEASUREMENT_UNCERTAINTY: return createMeasurementUncertainty();
@@ -212,6 +213,16 @@ public class EelFactoryImpl extends EFactoryImpl implements EelFactory {
 	public PowerComputation createPowerComputation() {
 		PowerComputationImpl powerComputation = new PowerComputationImpl();
 		return powerComputation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RealTimeDuration createRealTimeDuration() {
+		RealTimeDurationImpl realTimeDuration = new RealTimeDurationImpl();
+		return realTimeDuration;
 	}
 
 	/**

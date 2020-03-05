@@ -9,6 +9,10 @@ import org.eclipse.emf.common.util.EList;
  * A representation of the model object '<em><b>Measure Unbound Operation</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * Measures computed by a non-finite set of measures
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * </p>

@@ -1307,6 +1307,106 @@ public interface EelPackage extends EPackage {
 	int POWER_COMPUTATION_OPERATION_COUNT = MEASURE_BINARY_PRODUCT_OPERATION_OPERATION_COUNT + 2;
 
 	/**
+	 * The meta object id for the '{@link fr.tblf.energy.estimation.eel.impl.RealTimeDurationImpl <em>Real Time Duration</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fr.tblf.energy.estimation.eel.impl.RealTimeDurationImpl
+	 * @see fr.tblf.energy.estimation.eel.impl.EelPackageImpl#getRealTimeDuration()
+	 * @generated
+	 */
+	int REAL_TIME_DURATION = 13;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REAL_TIME_DURATION__NAME = MEASURE_VALUE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Target Class</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REAL_TIME_DURATION__TARGET_CLASS = MEASURE_VALUE__TARGET_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Target Operation</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REAL_TIME_DURATION__TARGET_OPERATION = MEASURE_VALUE__TARGET_OPERATION;
+
+	/**
+	 * The feature id for the '<em><b>Uncertainty</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REAL_TIME_DURATION__UNCERTAINTY = MEASURE_VALUE__UNCERTAINTY;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REAL_TIME_DURATION__TYPE = MEASURE_VALUE__TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REAL_TIME_DURATION__VALUE = MEASURE_VALUE__VALUE;
+
+	/**
+	 * The number of structural features of the '<em>Real Time Duration</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REAL_TIME_DURATION_FEATURE_COUNT = MEASURE_VALUE_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Value</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REAL_TIME_DURATION___VALUE = MEASURE_VALUE___VALUE;
+
+	/**
+	 * The operation id for the '<em>Type</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REAL_TIME_DURATION___TYPE = MEASURE_VALUE_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Real Time Duration</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REAL_TIME_DURATION_OPERATION_COUNT = MEASURE_VALUE_OPERATION_COUNT + 1;
+
+	/**
 	 * The meta object id for the '{@link fr.tblf.energy.estimation.eel.impl.MeasureUnboundOperationImpl <em>Measure Unbound Operation</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1314,7 +1414,7 @@ public interface EelPackage extends EPackage {
 	 * @see fr.tblf.energy.estimation.eel.impl.EelPackageImpl#getMeasureUnboundOperation()
 	 * @generated
 	 */
-	int MEASURE_UNBOUND_OPERATION = 13;
+	int MEASURE_UNBOUND_OPERATION = 14;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1414,7 +1514,7 @@ public interface EelPackage extends EPackage {
 	 * @see fr.tblf.energy.estimation.eel.impl.EelPackageImpl#getMeasureUnboundSumOperation()
 	 * @generated
 	 */
-	int MEASURE_UNBOUND_SUM_OPERATION = 14;
+	int MEASURE_UNBOUND_SUM_OPERATION = 15;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1514,7 +1614,7 @@ public interface EelPackage extends EPackage {
 	 * @see fr.tblf.energy.estimation.eel.impl.EelPackageImpl#getMeasureUnboundProductOperation()
 	 * @generated
 	 */
-	int MEASURE_UNBOUND_PRODUCT_OPERATION = 15;
+	int MEASURE_UNBOUND_PRODUCT_OPERATION = 16;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1614,7 +1714,7 @@ public interface EelPackage extends EPackage {
 	 * @see fr.tblf.energy.estimation.eel.impl.EelPackageImpl#getMeasurementUncertainty()
 	 * @generated
 	 */
-	int MEASUREMENT_UNCERTAINTY = 16;
+	int MEASUREMENT_UNCERTAINTY = 17;
 
 	/**
 	 * The feature id for the '<em><b>Information</b></em>' containment reference.
@@ -1660,7 +1760,7 @@ public interface EelPackage extends EPackage {
 	 * @see fr.tblf.energy.estimation.eel.impl.EelPackageImpl#getMeasurementUncertaintyInformation()
 	 * @generated
 	 */
-	int MEASUREMENT_UNCERTAINTY_INFORMATION = 19;
+	int MEASUREMENT_UNCERTAINTY_INFORMATION = 20;
 
 	/**
 	 * The number of structural features of the '<em>Measurement Uncertainty Information</em>' class.
@@ -1688,7 +1788,7 @@ public interface EelPackage extends EPackage {
 	 * @see fr.tblf.energy.estimation.eel.impl.EelPackageImpl#getNormalDistribution()
 	 * @generated
 	 */
-	int NORMAL_DISTRIBUTION = 17;
+	int NORMAL_DISTRIBUTION = 18;
 
 	/**
 	 * The feature id for the '<em><b>Mean Value</b></em>' attribute.
@@ -1734,7 +1834,7 @@ public interface EelPackage extends EPackage {
 	 * @see fr.tblf.energy.estimation.eel.impl.EelPackageImpl#getInterval()
 	 * @generated
 	 */
-	int INTERVAL = 18;
+	int INTERVAL = 19;
 
 	/**
 	 * The feature id for the '<em><b>Lower Endpoint</b></em>' containment reference.
@@ -1780,7 +1880,7 @@ public interface EelPackage extends EPackage {
 	 * @see fr.tblf.energy.estimation.eel.impl.EelPackageImpl#getSampling()
 	 * @generated
 	 */
-	int SAMPLING = 20;
+	int SAMPLING = 21;
 
 	/**
 	 * The feature id for the '<em><b>Samples</b></em>' containment reference list.
@@ -1826,7 +1926,7 @@ public interface EelPackage extends EPackage {
 	 * @see fr.tblf.energy.estimation.eel.impl.EelPackageImpl#getIntegral()
 	 * @generated
 	 */
-	int INTEGRAL = 21;
+	int INTEGRAL = 22;
 
 	/**
 	 * The feature id for the '<em><b>Interval</b></em>' reference.
@@ -1872,7 +1972,7 @@ public interface EelPackage extends EPackage {
 	 * @see fr.tblf.energy.estimation.eel.impl.EelPackageImpl#getSample()
 	 * @generated
 	 */
-	int SAMPLE = 22;
+	int SAMPLE = 23;
 
 	/**
 	 * The feature id for the '<em><b>Quantity</b></em>' containment reference list.
@@ -1909,7 +2009,7 @@ public interface EelPackage extends EPackage {
 	 * @see fr.tblf.energy.estimation.eel.impl.EelPackageImpl#getVisibility()
 	 * @generated
 	 */
-	int VISIBILITY = 23;
+	int VISIBILITY = 24;
 
 	/**
 	 * The meta object id for the '{@link fr.tblf.energy.estimation.eel.Type <em>Type</em>}' enum.
@@ -1919,7 +2019,7 @@ public interface EelPackage extends EPackage {
 	 * @see fr.tblf.energy.estimation.eel.impl.EelPackageImpl#getType()
 	 * @generated
 	 */
-	int TYPE = 24;
+	int TYPE = 25;
 
 
 	/**
@@ -2338,6 +2438,26 @@ public interface EelPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getPowerComputation__Value();
+
+	/**
+	 * Returns the meta object for class '{@link fr.tblf.energy.estimation.eel.RealTimeDuration <em>Real Time Duration</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Real Time Duration</em>'.
+	 * @see fr.tblf.energy.estimation.eel.RealTimeDuration
+	 * @generated
+	 */
+	EClass getRealTimeDuration();
+
+	/**
+	 * Returns the meta object for the '{@link fr.tblf.energy.estimation.eel.RealTimeDuration#type() <em>Type</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Type</em>' operation.
+	 * @see fr.tblf.energy.estimation.eel.RealTimeDuration#type()
+	 * @generated
+	 */
+	EOperation getRealTimeDuration__Type();
 
 	/**
 	 * Returns the meta object for class '{@link fr.tblf.energy.estimation.eel.MeasureUnboundOperation <em>Measure Unbound Operation</em>}'.
@@ -2979,6 +3099,24 @@ public interface EelPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation POWER_COMPUTATION___VALUE = eINSTANCE.getPowerComputation__Value();
+
+		/**
+		 * The meta object literal for the '{@link fr.tblf.energy.estimation.eel.impl.RealTimeDurationImpl <em>Real Time Duration</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see fr.tblf.energy.estimation.eel.impl.RealTimeDurationImpl
+		 * @see fr.tblf.energy.estimation.eel.impl.EelPackageImpl#getRealTimeDuration()
+		 * @generated
+		 */
+		EClass REAL_TIME_DURATION = eINSTANCE.getRealTimeDuration();
+
+		/**
+		 * The meta object literal for the '<em><b>Type</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation REAL_TIME_DURATION___TYPE = eINSTANCE.getRealTimeDuration__Type();
 
 		/**
 		 * The meta object literal for the '{@link fr.tblf.energy.estimation.eel.impl.MeasureUnboundOperationImpl <em>Measure Unbound Operation</em>}' class.

@@ -178,6 +178,11 @@ public class IntervalItemProvider extends MeasurementUncertaintyInformationItemP
 		newChildDescriptors.add
 			(createChildParameter
 				(EelPackage.Literals.INTERVAL__LOWER_ENDPOINT,
+				 EelFactory.eINSTANCE.createRealTimeDuration()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(EelPackage.Literals.INTERVAL__LOWER_ENDPOINT,
 				 EelFactory.eINSTANCE.createMeasureUnboundSumOperation()));
 
 		newChildDescriptors.add
@@ -224,6 +229,11 @@ public class IntervalItemProvider extends MeasurementUncertaintyInformationItemP
 			(createChildParameter
 				(EelPackage.Literals.INTERVAL__UPPER_ENDPOINT,
 				 EelFactory.eINSTANCE.createPowerComputation()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(EelPackage.Literals.INTERVAL__UPPER_ENDPOINT,
+				 EelFactory.eINSTANCE.createRealTimeDuration()));
 
 		newChildDescriptors.add
 			(createChildParameter

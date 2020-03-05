@@ -112,6 +112,8 @@ public class EelValidator extends EObjectValidator {
 				return validateEnergyComputation((EnergyComputation)value, diagnostics, context);
 			case EelPackage.POWER_COMPUTATION:
 				return validatePowerComputation((PowerComputation)value, diagnostics, context);
+			case EelPackage.REAL_TIME_DURATION:
+				return validateRealTimeDuration((RealTimeDuration)value, diagnostics, context);
 			case EelPackage.MEASURE_UNBOUND_OPERATION:
 				return validateMeasureUnboundOperation((MeasureUnboundOperation)value, diagnostics, context);
 			case EelPackage.MEASURE_UNBOUND_SUM_OPERATION:
@@ -295,6 +297,15 @@ public class EelValidator extends EObjectValidator {
 	 */
 	public boolean validatePowerComputation(PowerComputation powerComputation, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(powerComputation, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateRealTimeDuration(RealTimeDuration realTimeDuration, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(realTimeDuration, diagnostics, context);
 	}
 
 	/**

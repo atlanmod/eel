@@ -229,6 +229,11 @@ public class PlatformItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(EelPackage.Literals.PLATFORM__MEASURES,
+				 EelFactory.eINSTANCE.createRealTimeDuration()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(EelPackage.Literals.PLATFORM__MEASURES,
 				 EelFactory.eINSTANCE.createMeasureUnboundSumOperation()));
 
 		newChildDescriptors.add

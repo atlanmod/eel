@@ -171,6 +171,15 @@ public class EelSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case EelPackage.REAL_TIME_DURATION: {
+				RealTimeDuration realTimeDuration = (RealTimeDuration)theEObject;
+				T result = caseRealTimeDuration(realTimeDuration);
+				if (result == null) result = caseMeasureValue(realTimeDuration);
+				if (result == null) result = caseTypedMeasure(realTimeDuration);
+				if (result == null) result = caseMeasure(realTimeDuration);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case EelPackage.MEASURE_UNBOUND_OPERATION: {
 				MeasureUnboundOperation measureUnboundOperation = (MeasureUnboundOperation)theEObject;
 				T result = caseMeasureUnboundOperation(measureUnboundOperation);
@@ -439,6 +448,21 @@ public class EelSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T casePowerComputation(PowerComputation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Real Time Duration</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Real Time Duration</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRealTimeDuration(RealTimeDuration object) {
 		return null;
 	}
 

@@ -23,6 +23,7 @@ import fr.tblf.energy.estimation.eel.MeasurementUncertaintyInformation;
 import fr.tblf.energy.estimation.eel.NormalDistribution;
 import fr.tblf.energy.estimation.eel.Platform;
 import fr.tblf.energy.estimation.eel.PowerComputation;
+import fr.tblf.energy.estimation.eel.RealTimeDuration;
 import fr.tblf.energy.estimation.eel.Sample;
 import fr.tblf.energy.estimation.eel.Sampling;
 import fr.tblf.energy.estimation.eel.Type;
@@ -139,6 +140,13 @@ public class EelPackageImpl extends EPackageImpl implements EelPackage {
 	 * @generated
 	 */
 	private EClass powerComputationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass realTimeDurationEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -659,6 +667,24 @@ public class EelPackageImpl extends EPackageImpl implements EelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getRealTimeDuration() {
+		return realTimeDurationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getRealTimeDuration__Type() {
+		return realTimeDurationEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getMeasureUnboundOperation() {
 		return measureUnboundOperationEClass;
 	}
@@ -969,6 +995,9 @@ public class EelPackageImpl extends EPackageImpl implements EelPackage {
 		createEOperation(powerComputationEClass, POWER_COMPUTATION___TYPE);
 		createEOperation(powerComputationEClass, POWER_COMPUTATION___VALUE);
 
+		realTimeDurationEClass = createEClass(REAL_TIME_DURATION);
+		createEOperation(realTimeDurationEClass, REAL_TIME_DURATION___TYPE);
+
 		measureUnboundOperationEClass = createEClass(MEASURE_UNBOUND_OPERATION);
 		createEReference(measureUnboundOperationEClass, MEASURE_UNBOUND_OPERATION__MEASURES);
 
@@ -1046,6 +1075,7 @@ public class EelPackageImpl extends EPackageImpl implements EelPackage {
 		measureBinarySumOperationEClass.getESuperTypes().add(this.getMeasureBinaryOperation());
 		energyComputationEClass.getESuperTypes().add(this.getMeasureBinaryProductOperation());
 		powerComputationEClass.getESuperTypes().add(this.getMeasureBinaryProductOperation());
+		realTimeDurationEClass.getESuperTypes().add(this.getMeasureValue());
 		measureUnboundOperationEClass.getESuperTypes().add(this.getTypedMeasure());
 		measureUnboundSumOperationEClass.getESuperTypes().add(this.getMeasureUnboundOperation());
 		measureUnboundProductOperationEClass.getESuperTypes().add(this.getMeasureUnboundOperation());
@@ -1117,6 +1147,10 @@ public class EelPackageImpl extends EPackageImpl implements EelPackage {
 		initEOperation(getPowerComputation__Type(), this.getType(), "type", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEOperation(getPowerComputation__Value(), ecorePackage.getEBigDecimal(), "value", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEClass(realTimeDurationEClass, RealTimeDuration.class, "RealTimeDuration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEOperation(getRealTimeDuration__Type(), this.getType(), "type", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(measureUnboundOperationEClass, MeasureUnboundOperation.class, "MeasureUnboundOperation", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMeasureUnboundOperation_Measures(), this.getMeasure(), null, "measures", null, 1, -1, MeasureUnboundOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -1303,6 +1337,12 @@ public class EelPackageImpl extends EPackageImpl implements EelPackage {
 		   new String[] {
 			   "body", "self.left.value() * self.right.value()",
 			   "pre_isCurrentAndVoltage", "(self.left.type() = Type::Voltage and self.right.type() = Type::Current) or (self.right.type() = Type::Current and self.left.type() = Type::Voltage)"
+		   });
+		addAnnotation
+		  (getRealTimeDuration__Type(),
+		   source,
+		   new String[] {
+			   "body", "Type::Duration"
 		   });
 		addAnnotation
 		  (getMeasureUnboundSumOperation__Value(),

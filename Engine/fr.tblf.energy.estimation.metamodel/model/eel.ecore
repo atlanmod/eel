@@ -155,8 +155,21 @@
       </eAnnotations>
     </eOperations>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RealTimeDuration" eSuperTypes="#//MeasureValue">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Corresponds to the simulator's duration. Has to be specified by the execution engine."/>
+    </eAnnotations>
+    <eOperations name="type" eType="#//Type">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+        <details key="body" value="Type::Duration"/>
+      </eAnnotations>
+    </eOperations>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MeasureUnboundOperation" abstract="true"
       eSuperTypes="#//TypedMeasure">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Measures computed by a non-finite set of measures"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="measures" ordered="false"
         lowerBound="1" upperBound="-1" eType="#//Measure">
       <eAnnotations source="http://www.eclipse.org/OCL/Collection">
@@ -165,6 +178,9 @@
     </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MeasureUnboundSumOperation" eSuperTypes="#//MeasureUnboundOperation">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Measures computed by the addition of a non-finite set of measures"/>
+    </eAnnotations>
     <eOperations name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
         <details key="body" value="self.measures -> collect(m | m.oclAsType(Measure).value()) -> sum()"/>
@@ -172,6 +188,9 @@
     </eOperations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MeasureUnboundProductOperation" eSuperTypes="#//MeasureUnboundOperation">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Measures computed by product of a non-finite set of measures"/>
+    </eAnnotations>
     <eOperations name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
         <details key="body" value="self.measures -> iterate(m: Measure; acc: Real = 1.0 | acc * m.value())"/>

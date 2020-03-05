@@ -302,6 +302,29 @@ public class EelItemProviderAdapterFactory extends EelAdapterFactory implements 
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link fr.tblf.energy.estimation.eel.RealTimeDuration} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected RealTimeDurationItemProvider realTimeDurationItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link fr.tblf.energy.estimation.eel.RealTimeDuration}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createRealTimeDurationAdapter() {
+		if (realTimeDurationItemProvider == null) {
+			realTimeDurationItemProvider = new RealTimeDurationItemProvider(this);
+		}
+
+		return realTimeDurationItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link fr.tblf.energy.estimation.eel.MeasureUnboundSumOperation} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -594,6 +617,7 @@ public class EelItemProviderAdapterFactory extends EelAdapterFactory implements 
 		if (measureBinarySumOperationItemProvider != null) measureBinarySumOperationItemProvider.dispose();
 		if (energyComputationItemProvider != null) energyComputationItemProvider.dispose();
 		if (powerComputationItemProvider != null) powerComputationItemProvider.dispose();
+		if (realTimeDurationItemProvider != null) realTimeDurationItemProvider.dispose();
 		if (measureUnboundSumOperationItemProvider != null) measureUnboundSumOperationItemProvider.dispose();
 		if (measureUnboundProductOperationItemProvider != null) measureUnboundProductOperationItemProvider.dispose();
 		if (measurementUncertaintyItemProvider != null) measurementUncertaintyItemProvider.dispose();

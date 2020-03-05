@@ -39,6 +39,7 @@ public class EelTests extends TestSuite {
 		suite.addTestSuite(MeasureBinarySumOperationTest.class);
 		suite.addTestSuite(EnergyComputationTest.class);
 		suite.addTestSuite(PowerComputationTest.class);
+		suite.addTestSuite(RealTimeDurationTest.class);
 		suite.addTestSuite(MeasureUnboundSumOperationTest.class);
 		suite.addTestSuite(MeasureUnboundProductOperationTest.class);
 		suite.addTestSuite(NormalDistributionTest.class);

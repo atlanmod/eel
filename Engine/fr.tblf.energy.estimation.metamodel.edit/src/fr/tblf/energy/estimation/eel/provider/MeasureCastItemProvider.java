@@ -179,6 +179,11 @@ public class MeasureCastItemProvider extends TypedMeasureItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(EelPackage.Literals.MEASURE_CAST__MEASURE,
+				 EelFactory.eINSTANCE.createRealTimeDuration()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(EelPackage.Literals.MEASURE_CAST__MEASURE,
 				 EelFactory.eINSTANCE.createMeasureUnboundSumOperation()));
 
 		newChildDescriptors.add

@@ -9,6 +9,10 @@ import java.math.BigDecimal;
  * A representation of the model object '<em><b>Measure Unbound Sum Operation</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * Measures computed by the addition of a non-finite set of measures
+ * <!-- end-model-doc -->
+ *
  *
  * @see fr.tblf.energy.estimation.eel.EelPackage#getMeasureUnboundSumOperation()
  * @model
