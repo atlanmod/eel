@@ -18,6 +18,7 @@ import fr.tblf.energy.estimation.eel.TypedMeasure;
  * The following operations are tested:
  * <ul>
  *   <li>{@link fr.tblf.energy.estimation.eel.TypedMeasure#type() <em>Type</em>}</li>
+ *   <li>{@link fr.tblf.energy.estimation.eel.TypedMeasure#name() <em>Name</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -79,6 +80,19 @@ public abstract class TypedMeasureTest extends MeasureTest {
 	 * @generated
 	 */
 	public void testType() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link fr.tblf.energy.estimation.eel.TypedMeasure#name() <em>Name</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fr.tblf.energy.estimation.eel.TypedMeasure#name()
+	 * @generated
+	 */
+	public void testName() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

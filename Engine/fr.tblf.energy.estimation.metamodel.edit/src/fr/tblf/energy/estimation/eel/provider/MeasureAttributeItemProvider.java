@@ -14,6 +14,7 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 
 /**
  * This is the item provider adapter for a {@link fr.tblf.energy.estimation.eel.MeasureAttribute} object.
@@ -65,7 +66,7 @@ public class MeasureAttributeItemProvider extends MeasureValueItemProvider {
 				 true,
 				 false,
 				 true,
-				 null,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}

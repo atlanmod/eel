@@ -6,6 +6,7 @@ import java.net.MalformedURLException;
 import java.nio.file.Files;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.TreeMap;
 import java.util.function.Function;
 
 import org.eclipse.emf.common.util.URI;
@@ -29,7 +30,10 @@ import fr.tblf.energy.estimation.eel.MeasureAttribute;
 import fr.tblf.energy.estimation.eel.MeasureBinaryOperation;
 import fr.tblf.energy.estimation.eel.MeasureCast;
 import fr.tblf.energy.estimation.eel.MeasureOCL;
+import fr.tblf.energy.estimation.eel.MeasureUnboundProductOperation;
+import fr.tblf.energy.estimation.eel.MeasureUnboundSumOperation;
 import fr.tblf.energy.estimation.eel.Platform;
+import fr.tblf.energy.estimation.eel.RealTimeDuration;
 
 public class EngineAddon implements IEngineAddon {
 
@@ -37,8 +41,8 @@ public class EngineAddon implements IEngineAddon {
 	private Platform platform;
 	private OCL ocl = OCL.newInstance();
 	private Map<String, Measure> mapClassEstimation;
-	private long durationOfSequentialStep;
-	
+	private long durationBeforeExecution;
+	private long durationAfterExecution;
 	@Override
 	public void engineAboutToStart(IExecutionEngine<?> executionEngine) {	
 		if (MODEL == null) {
@@ -53,9 +57,9 @@ public class EngineAddon implements IEngineAddon {
 						.forEach(p -> {
 							try {
 								System.out.println("Loading metamodel "+p.toFile().getName());								
-								resourceSet.getResource(URI.createFileURI(p.toUri().toURL().toString()), true);
+								resourceSet.createResource(URI.createFileURI(p.toUri().toURL().toString()));
 								
-							} catch (MalformedURLException e) {
+							} catch (MalformedURLException  e) {
 								e.printStackTrace();
 							}
 						});
@@ -68,12 +72,13 @@ public class EngineAddon implements IEngineAddon {
 					throw new Exception("Could not load the model in the resource set");
 				}
 				
-				mapClassEstimation = new HashMap<>();
+				mapClassEstimation = new TreeMap<>();
+				
 				resource.getAllContents().forEachRemaining(eObject -> {
 					if (eObject instanceof Measure && ((Measure) eObject).getTargetClass() != null) {
-						EObject target = EcoreUtil.resolve(((EObject) ((Measure) eObject).getTargetClass()), resourceSet);
-						System.out.println("Loaded target "+target);
-						mapClassEstimation.put(((Measure) eObject).getTargetClass().getName(), (Measure)eObject);
+						//EObject target = EcoreUtil.resolve(((EObject) ((Measure) eObject).getTargetClass()), resourceSet);
+						//System.out.println("Loaded target "+target);
+						mapClassEstimation.put(((Measure) eObject).getTargetClass(), (Measure)eObject);
 					}
 				});
 				System.out.println(platform.getName()+" estimation model loaded");
@@ -96,34 +101,35 @@ public class EngineAddon implements IEngineAddon {
 
 	@Override
 	public void aboutToExecuteStep(IExecutionEngine<?> engine, Step<?> stepToExecute) {
-		durationOfSequentialStep = System.currentTimeMillis();		
+		durationBeforeExecution = System.currentTimeMillis();		
 	}
 	
 	
 	public void stepExecuted(IExecutionEngine<?> engine, Step<?> stepToExecute) {
-		durationOfSequentialStep = System.currentTimeMillis() - durationOfSequentialStep;
-		System.out.println("Step lasted "+durationOfSequentialStep);
+		durationAfterExecution = System.currentTimeMillis() - durationBeforeExecution;
 		
 		EObject caller = stepToExecute.getMseoccurrence().getMse().getCaller();		
+		String callerClass = caller.getClass().getInterfaces()[0].getTypeName();
+		
 		EOperation operation = stepToExecute.getMseoccurrence().getMse().getAction(); 								
 		
-		System.out.println("Running step on object "+caller);
-				
-		//TODO : Operation estimation. right now this is only the class
-		if (mapClassEstimation.get(caller.eClass().getName()) != null) {
-			System.out.println("Found a measure targeting the executed element");
-			Measure m = mapClassEstimation.get(caller.eClass().getName());
-			updateMeasure(m, caller);
-			System.out.println(m.value());
-		}
-		IEngineAddon.super.aboutToExecuteStep(engine, stepToExecute);
+		mapClassEstimation	.keySet()
+							.stream()
+							.filter(s -> callerClass.contains(s))
+							.map(s -> mapClassEstimation.get(s))
+							.forEach(m -> {
+								updateMeasure(m, caller);
+								System.out.println(m+" consumed "+m.value()+" J");
+								
+							});					
+		
+		IEngineAddon.super.stepExecuted(engine, stepToExecute);
 	}
 	
 	private void updateMeasure(MeasureAttribute m, EObject caller) {
 		System.out.println("Updating Measure "+m.getName());
-		EAttribute att = m.getAtt();
-		Object object = caller.eGet(caller.eClass().getEAttributes().stream().filter(eAtt -> eAtt.getName().equals(att.getName())).findFirst().get());
-		
+		String att = m.getAtt();
+		Object object = caller.eGet(caller.eClass().getEAttributes().stream().filter(eAtt -> eAtt.getName().equals(att)).findFirst().get());		
 		m.setValue(BigDecimal.valueOf(Long.valueOf(object.toString())));
 	}
 	
@@ -140,6 +146,14 @@ public class EngineAddon implements IEngineAddon {
 		}		
 	}
 	
+	private void updateMeasure(MeasureUnboundProductOperation m, EObject caller) {
+		m.getMeasures().forEach(measure -> updateMeasure(measure, caller));		
+	}
+	
+	private void updateMeasure(MeasureUnboundSumOperation m, EObject caller) {
+		m.getMeasures().forEach(measure -> updateMeasure(measure, caller));
+	}
+
 	private void updateMeasure(MeasureBinaryOperation m, EObject caller) {
 		System.out.println("Updating Measure "+m.getName());
 		updateMeasure(m.getLeft(), caller);
@@ -163,9 +177,22 @@ public class EngineAddon implements IEngineAddon {
 		} else
 		if (m instanceof MeasureCast) {
 			updateMeasure((MeasureCast) m, caller);
-		}
+		} else 
+		if (m instanceof RealTimeDuration) {
+			updateMeasure((RealTimeDuration) m, caller);
+		} else 
+		if (m instanceof MeasureUnboundProductOperation) {
+			updateMeasure((MeasureUnboundProductOperation) m, caller);
+		} else 
+		if (m instanceof MeasureUnboundSumOperation) {
+			updateMeasure((MeasureUnboundSumOperation) m, caller);
+		}		
 	}
 	
+	private void updateMeasure(RealTimeDuration m, EObject caller) {
+		System.out.println("Updating Measure "+m.getName());
+		m.setValue(BigDecimal.valueOf(durationAfterExecution));
+	}
 	public static void displayPlatformMeasurement(Platform p) {
 		
 		p.getMeasures().forEach(m -> {
@@ -175,13 +202,10 @@ public class EngineAddon implements IEngineAddon {
 					System.out.print(" -> "+measure.getTargetClass());
 				if (measure.getTargetOperation() != null)
 					System.out.print(" -> "+measure.getTargetOperation());
-				
-				System.out.println("");
+								
 				return null;
 			}); 
-		});
-		
-		System.out.println("");
+		});			
 	}
 	
 	public static void topDownTreeAnalysis(Measure m, Function<Measure, Void> function) {		

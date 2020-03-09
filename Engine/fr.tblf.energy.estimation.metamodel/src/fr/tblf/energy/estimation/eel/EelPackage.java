@@ -190,13 +190,22 @@ public interface EelPackage extends EPackage {
 	int MEASURE__NAME = 0;
 
 	/**
-	 * The feature id for the '<em><b>Target Class</b></em>' reference.
+	 * The feature id for the '<em><b>Subname</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MEASURE__TARGET_CLASS = 1;
+	int MEASURE__SUBNAME = 1;
+
+	/**
+	 * The feature id for the '<em><b>Target Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE__TARGET_CLASS = 2;
 
 	/**
 	 * The feature id for the '<em><b>Target Operation</b></em>' attribute.
@@ -205,7 +214,7 @@ public interface EelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MEASURE__TARGET_OPERATION = 2;
+	int MEASURE__TARGET_OPERATION = 3;
 
 	/**
 	 * The feature id for the '<em><b>Uncertainty</b></em>' containment reference.
@@ -214,7 +223,7 @@ public interface EelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MEASURE__UNCERTAINTY = 3;
+	int MEASURE__UNCERTAINTY = 4;
 
 	/**
 	 * The number of structural features of the '<em>Measure</em>' class.
@@ -223,7 +232,7 @@ public interface EelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MEASURE_FEATURE_COUNT = 4;
+	int MEASURE_FEATURE_COUNT = 5;
 
 	/**
 	 * The operation id for the '<em>Type</em>' operation.
@@ -244,13 +253,22 @@ public interface EelPackage extends EPackage {
 	int MEASURE___VALUE = 1;
 
 	/**
+	 * The operation id for the '<em>Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE___NAME = 2;
+
+	/**
 	 * The number of operations of the '<em>Measure</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MEASURE_OPERATION_COUNT = 2;
+	int MEASURE_OPERATION_COUNT = 3;
 
 	/**
 	 * The meta object id for the '{@link fr.tblf.energy.estimation.eel.impl.TypedMeasureImpl <em>Typed Measure</em>}' class.
@@ -272,7 +290,16 @@ public interface EelPackage extends EPackage {
 	int TYPED_MEASURE__NAME = MEASURE__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Target Class</b></em>' reference.
+	 * The feature id for the '<em><b>Subname</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TYPED_MEASURE__SUBNAME = MEASURE__SUBNAME;
+
+	/**
+	 * The feature id for the '<em><b>Target Class</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -335,13 +362,22 @@ public interface EelPackage extends EPackage {
 	int TYPED_MEASURE___TYPE = MEASURE_OPERATION_COUNT + 0;
 
 	/**
+	 * The operation id for the '<em>Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TYPED_MEASURE___NAME = MEASURE_OPERATION_COUNT + 1;
+
+	/**
 	 * The number of operations of the '<em>Typed Measure</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TYPED_MEASURE_OPERATION_COUNT = MEASURE_OPERATION_COUNT + 1;
+	int TYPED_MEASURE_OPERATION_COUNT = MEASURE_OPERATION_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link fr.tblf.energy.estimation.eel.impl.MeasureValueImpl <em>Measure Value</em>}' class.
@@ -363,7 +399,16 @@ public interface EelPackage extends EPackage {
 	int MEASURE_VALUE__NAME = TYPED_MEASURE__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Target Class</b></em>' reference.
+	 * The feature id for the '<em><b>Subname</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE_VALUE__SUBNAME = TYPED_MEASURE__SUBNAME;
+
+	/**
+	 * The feature id for the '<em><b>Target Class</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -426,6 +471,15 @@ public interface EelPackage extends EPackage {
 	int MEASURE_VALUE___TYPE = TYPED_MEASURE___TYPE;
 
 	/**
+	 * The operation id for the '<em>Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE_VALUE___NAME = TYPED_MEASURE___NAME;
+
+	/**
 	 * The operation id for the '<em>Value</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -463,7 +517,16 @@ public interface EelPackage extends EPackage {
 	int MEASURE_OCL__NAME = MEASURE_VALUE__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Target Class</b></em>' reference.
+	 * The feature id for the '<em><b>Subname</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE_OCL__SUBNAME = MEASURE_VALUE__SUBNAME;
+
+	/**
+	 * The feature id for the '<em><b>Target Class</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -535,6 +598,15 @@ public interface EelPackage extends EPackage {
 	int MEASURE_OCL___TYPE = MEASURE_VALUE___TYPE;
 
 	/**
+	 * The operation id for the '<em>Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE_OCL___NAME = MEASURE_VALUE___NAME;
+
+	/**
 	 * The operation id for the '<em>Value</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -572,7 +644,16 @@ public interface EelPackage extends EPackage {
 	int MEASURE_ATTRIBUTE__NAME = MEASURE_VALUE__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Target Class</b></em>' reference.
+	 * The feature id for the '<em><b>Subname</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE_ATTRIBUTE__SUBNAME = MEASURE_VALUE__SUBNAME;
+
+	/**
+	 * The feature id for the '<em><b>Target Class</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -617,7 +698,7 @@ public interface EelPackage extends EPackage {
 	int MEASURE_ATTRIBUTE__VALUE = MEASURE_VALUE__VALUE;
 
 	/**
-	 * The feature id for the '<em><b>Att</b></em>' reference.
+	 * The feature id for the '<em><b>Att</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -642,6 +723,15 @@ public interface EelPackage extends EPackage {
 	 * @ordered
 	 */
 	int MEASURE_ATTRIBUTE___TYPE = MEASURE_VALUE___TYPE;
+
+	/**
+	 * The operation id for the '<em>Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE_ATTRIBUTE___NAME = MEASURE_VALUE___NAME;
 
 	/**
 	 * The operation id for the '<em>Value</em>' operation.
@@ -681,7 +771,16 @@ public interface EelPackage extends EPackage {
 	int MEASURE_CAST__NAME = TYPED_MEASURE__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Target Class</b></em>' reference.
+	 * The feature id for the '<em><b>Subname</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE_CAST__SUBNAME = TYPED_MEASURE__SUBNAME;
+
+	/**
+	 * The feature id for the '<em><b>Target Class</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -753,6 +852,15 @@ public interface EelPackage extends EPackage {
 	int MEASURE_CAST___TYPE = TYPED_MEASURE___TYPE;
 
 	/**
+	 * The operation id for the '<em>Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE_CAST___NAME = TYPED_MEASURE___NAME;
+
+	/**
 	 * The number of operations of the '<em>Measure Cast</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -781,7 +889,16 @@ public interface EelPackage extends EPackage {
 	int MEASURE_BINARY_OPERATION__NAME = TYPED_MEASURE__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Target Class</b></em>' reference.
+	 * The feature id for the '<em><b>Subname</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE_BINARY_OPERATION__SUBNAME = TYPED_MEASURE__SUBNAME;
+
+	/**
+	 * The feature id for the '<em><b>Target Class</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -862,6 +979,15 @@ public interface EelPackage extends EPackage {
 	int MEASURE_BINARY_OPERATION___TYPE = TYPED_MEASURE___TYPE;
 
 	/**
+	 * The operation id for the '<em>Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE_BINARY_OPERATION___NAME = TYPED_MEASURE___NAME;
+
+	/**
 	 * The number of operations of the '<em>Measure Binary Operation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -890,7 +1016,16 @@ public interface EelPackage extends EPackage {
 	int MEASURE_BINARY_PRODUCT_OPERATION__NAME = MEASURE_BINARY_OPERATION__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Target Class</b></em>' reference.
+	 * The feature id for the '<em><b>Subname</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE_BINARY_PRODUCT_OPERATION__SUBNAME = MEASURE_BINARY_OPERATION__SUBNAME;
+
+	/**
+	 * The feature id for the '<em><b>Target Class</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -962,6 +1097,15 @@ public interface EelPackage extends EPackage {
 	int MEASURE_BINARY_PRODUCT_OPERATION___TYPE = MEASURE_BINARY_OPERATION___TYPE;
 
 	/**
+	 * The operation id for the '<em>Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE_BINARY_PRODUCT_OPERATION___NAME = MEASURE_BINARY_OPERATION___NAME;
+
+	/**
 	 * The operation id for the '<em>Value</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -999,7 +1143,16 @@ public interface EelPackage extends EPackage {
 	int MEASURE_BINARY_SUM_OPERATION__NAME = MEASURE_BINARY_OPERATION__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Target Class</b></em>' reference.
+	 * The feature id for the '<em><b>Subname</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE_BINARY_SUM_OPERATION__SUBNAME = MEASURE_BINARY_OPERATION__SUBNAME;
+
+	/**
+	 * The feature id for the '<em><b>Target Class</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1071,6 +1224,15 @@ public interface EelPackage extends EPackage {
 	int MEASURE_BINARY_SUM_OPERATION___TYPE = MEASURE_BINARY_OPERATION___TYPE;
 
 	/**
+	 * The operation id for the '<em>Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE_BINARY_SUM_OPERATION___NAME = MEASURE_BINARY_OPERATION___NAME;
+
+	/**
 	 * The operation id for the '<em>Value</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1108,7 +1270,16 @@ public interface EelPackage extends EPackage {
 	int ENERGY_COMPUTATION__NAME = MEASURE_BINARY_PRODUCT_OPERATION__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Target Class</b></em>' reference.
+	 * The feature id for the '<em><b>Subname</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENERGY_COMPUTATION__SUBNAME = MEASURE_BINARY_PRODUCT_OPERATION__SUBNAME;
+
+	/**
+	 * The feature id for the '<em><b>Target Class</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1171,6 +1342,15 @@ public interface EelPackage extends EPackage {
 	int ENERGY_COMPUTATION_FEATURE_COUNT = MEASURE_BINARY_PRODUCT_OPERATION_FEATURE_COUNT + 0;
 
 	/**
+	 * The operation id for the '<em>Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENERGY_COMPUTATION___NAME = MEASURE_BINARY_PRODUCT_OPERATION___NAME;
+
+	/**
 	 * The operation id for the '<em>Type</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1217,7 +1397,16 @@ public interface EelPackage extends EPackage {
 	int POWER_COMPUTATION__NAME = MEASURE_BINARY_PRODUCT_OPERATION__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Target Class</b></em>' reference.
+	 * The feature id for the '<em><b>Subname</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POWER_COMPUTATION__SUBNAME = MEASURE_BINARY_PRODUCT_OPERATION__SUBNAME;
+
+	/**
+	 * The feature id for the '<em><b>Target Class</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1280,6 +1469,15 @@ public interface EelPackage extends EPackage {
 	int POWER_COMPUTATION_FEATURE_COUNT = MEASURE_BINARY_PRODUCT_OPERATION_FEATURE_COUNT + 0;
 
 	/**
+	 * The operation id for the '<em>Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POWER_COMPUTATION___NAME = MEASURE_BINARY_PRODUCT_OPERATION___NAME;
+
+	/**
 	 * The operation id for the '<em>Type</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1326,7 +1524,16 @@ public interface EelPackage extends EPackage {
 	int REAL_TIME_DURATION__NAME = MEASURE_VALUE__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Target Class</b></em>' reference.
+	 * The feature id for the '<em><b>Subname</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REAL_TIME_DURATION__SUBNAME = MEASURE_VALUE__SUBNAME;
+
+	/**
+	 * The feature id for the '<em><b>Target Class</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1380,6 +1587,15 @@ public interface EelPackage extends EPackage {
 	int REAL_TIME_DURATION_FEATURE_COUNT = MEASURE_VALUE_FEATURE_COUNT + 0;
 
 	/**
+	 * The operation id for the '<em>Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REAL_TIME_DURATION___NAME = MEASURE_VALUE___NAME;
+
+	/**
 	 * The operation id for the '<em>Value</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1426,7 +1642,16 @@ public interface EelPackage extends EPackage {
 	int MEASURE_UNBOUND_OPERATION__NAME = TYPED_MEASURE__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Target Class</b></em>' reference.
+	 * The feature id for the '<em><b>Subname</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE_UNBOUND_OPERATION__SUBNAME = TYPED_MEASURE__SUBNAME;
+
+	/**
+	 * The feature id for the '<em><b>Target Class</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1498,6 +1723,15 @@ public interface EelPackage extends EPackage {
 	int MEASURE_UNBOUND_OPERATION___TYPE = TYPED_MEASURE___TYPE;
 
 	/**
+	 * The operation id for the '<em>Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE_UNBOUND_OPERATION___NAME = TYPED_MEASURE___NAME;
+
+	/**
 	 * The number of operations of the '<em>Measure Unbound Operation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1526,7 +1760,16 @@ public interface EelPackage extends EPackage {
 	int MEASURE_UNBOUND_SUM_OPERATION__NAME = MEASURE_UNBOUND_OPERATION__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Target Class</b></em>' reference.
+	 * The feature id for the '<em><b>Subname</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE_UNBOUND_SUM_OPERATION__SUBNAME = MEASURE_UNBOUND_OPERATION__SUBNAME;
+
+	/**
+	 * The feature id for the '<em><b>Target Class</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1589,6 +1832,15 @@ public interface EelPackage extends EPackage {
 	int MEASURE_UNBOUND_SUM_OPERATION___TYPE = MEASURE_UNBOUND_OPERATION___TYPE;
 
 	/**
+	 * The operation id for the '<em>Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE_UNBOUND_SUM_OPERATION___NAME = MEASURE_UNBOUND_OPERATION___NAME;
+
+	/**
 	 * The operation id for the '<em>Value</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1626,7 +1878,16 @@ public interface EelPackage extends EPackage {
 	int MEASURE_UNBOUND_PRODUCT_OPERATION__NAME = MEASURE_UNBOUND_OPERATION__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Target Class</b></em>' reference.
+	 * The feature id for the '<em><b>Subname</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE_UNBOUND_PRODUCT_OPERATION__SUBNAME = MEASURE_UNBOUND_OPERATION__SUBNAME;
+
+	/**
+	 * The feature id for the '<em><b>Target Class</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1687,6 +1948,15 @@ public interface EelPackage extends EPackage {
 	 * @ordered
 	 */
 	int MEASURE_UNBOUND_PRODUCT_OPERATION___TYPE = MEASURE_UNBOUND_OPERATION___TYPE;
+
+	/**
+	 * The operation id for the '<em>Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE_UNBOUND_PRODUCT_OPERATION___NAME = MEASURE_UNBOUND_OPERATION___NAME;
 
 	/**
 	 * The operation id for the '<em>Value</em>' operation.
@@ -2130,15 +2400,26 @@ public interface EelPackage extends EPackage {
 	EAttribute getMeasure_Name();
 
 	/**
-	 * Returns the meta object for the reference '{@link fr.tblf.energy.estimation.eel.Measure#getTargetClass <em>Target Class</em>}'.
+	 * Returns the meta object for the attribute '{@link fr.tblf.energy.estimation.eel.Measure#getSubname <em>Subname</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Target Class</em>'.
+	 * @return the meta object for the attribute '<em>Subname</em>'.
+	 * @see fr.tblf.energy.estimation.eel.Measure#getSubname()
+	 * @see #getMeasure()
+	 * @generated
+	 */
+	EAttribute getMeasure_Subname();
+
+	/**
+	 * Returns the meta object for the attribute '{@link fr.tblf.energy.estimation.eel.Measure#getTargetClass <em>Target Class</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Target Class</em>'.
 	 * @see fr.tblf.energy.estimation.eel.Measure#getTargetClass()
 	 * @see #getMeasure()
 	 * @generated
 	 */
-	EReference getMeasure_TargetClass();
+	EAttribute getMeasure_TargetClass();
 
 	/**
 	 * Returns the meta object for the attribute '{@link fr.tblf.energy.estimation.eel.Measure#getTargetOperation <em>Target Operation</em>}'.
@@ -2183,6 +2464,16 @@ public interface EelPackage extends EPackage {
 	EOperation getMeasure__Value();
 
 	/**
+	 * Returns the meta object for the '{@link fr.tblf.energy.estimation.eel.Measure#name() <em>Name</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Name</em>' operation.
+	 * @see fr.tblf.energy.estimation.eel.Measure#name()
+	 * @generated
+	 */
+	EOperation getMeasure__Name();
+
+	/**
 	 * Returns the meta object for class '{@link fr.tblf.energy.estimation.eel.TypedMeasure <em>Typed Measure</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2212,6 +2503,16 @@ public interface EelPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getTypedMeasure__Type();
+
+	/**
+	 * Returns the meta object for the '{@link fr.tblf.energy.estimation.eel.TypedMeasure#name() <em>Name</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Name</em>' operation.
+	 * @see fr.tblf.energy.estimation.eel.TypedMeasure#name()
+	 * @generated
+	 */
+	EOperation getTypedMeasure__Name();
 
 	/**
 	 * Returns the meta object for class '{@link fr.tblf.energy.estimation.eel.MeasureValue <em>Measure Value</em>}'.
@@ -2276,15 +2577,15 @@ public interface EelPackage extends EPackage {
 	EClass getMeasureAttribute();
 
 	/**
-	 * Returns the meta object for the reference '{@link fr.tblf.energy.estimation.eel.MeasureAttribute#getAtt <em>Att</em>}'.
+	 * Returns the meta object for the attribute '{@link fr.tblf.energy.estimation.eel.MeasureAttribute#getAtt <em>Att</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Att</em>'.
+	 * @return the meta object for the attribute '<em>Att</em>'.
 	 * @see fr.tblf.energy.estimation.eel.MeasureAttribute#getAtt()
 	 * @see #getMeasureAttribute()
 	 * @generated
 	 */
-	EReference getMeasureAttribute_Att();
+	EAttribute getMeasureAttribute_Att();
 
 	/**
 	 * Returns the meta object for class '{@link fr.tblf.energy.estimation.eel.MeasureCast <em>Measure Cast</em>}'.
@@ -2841,12 +3142,20 @@ public interface EelPackage extends EPackage {
 		EAttribute MEASURE__NAME = eINSTANCE.getMeasure_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>Target Class</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Subname</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference MEASURE__TARGET_CLASS = eINSTANCE.getMeasure_TargetClass();
+		EAttribute MEASURE__SUBNAME = eINSTANCE.getMeasure_Subname();
+
+		/**
+		 * The meta object literal for the '<em><b>Target Class</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MEASURE__TARGET_CLASS = eINSTANCE.getMeasure_TargetClass();
 
 		/**
 		 * The meta object literal for the '<em><b>Target Operation</b></em>' attribute feature.
@@ -2881,6 +3190,14 @@ public interface EelPackage extends EPackage {
 		EOperation MEASURE___VALUE = eINSTANCE.getMeasure__Value();
 
 		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation MEASURE___NAME = eINSTANCE.getMeasure__Name();
+
+		/**
 		 * The meta object literal for the '{@link fr.tblf.energy.estimation.eel.impl.TypedMeasureImpl <em>Typed Measure</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2905,6 +3222,14 @@ public interface EelPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation TYPED_MEASURE___TYPE = eINSTANCE.getTypedMeasure__Type();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation TYPED_MEASURE___NAME = eINSTANCE.getTypedMeasure__Name();
 
 		/**
 		 * The meta object literal for the '{@link fr.tblf.energy.estimation.eel.impl.MeasureValueImpl <em>Measure Value</em>}' class.
@@ -2961,12 +3286,12 @@ public interface EelPackage extends EPackage {
 		EClass MEASURE_ATTRIBUTE = eINSTANCE.getMeasureAttribute();
 
 		/**
-		 * The meta object literal for the '<em><b>Att</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Att</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference MEASURE_ATTRIBUTE__ATT = eINSTANCE.getMeasureAttribute_Att();
+		EAttribute MEASURE_ATTRIBUTE__ATT = eINSTANCE.getMeasureAttribute_Att();
 
 		/**
 		 * The meta object literal for the '{@link fr.tblf.energy.estimation.eel.impl.MeasureCastImpl <em>Measure Cast</em>}' class.

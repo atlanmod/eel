@@ -61,4 +61,12 @@ public interface TypedMeasure extends Measure {
 	 */
 	Type type();
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='targetClass+\'.\'+ if subname &lt;&gt; null then subname else type().toString() endif'"
+	 * @generated
+	 */
+	String name();
+
 } // TypedMeasure

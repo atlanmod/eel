@@ -118,6 +118,30 @@ public abstract class TypedMeasureImpl extends MeasureImpl implements TypedMeasu
 	}
 
 	/**
+	 * The cached invocation delegate for the '{@link #name() <em>Name</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #name()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final EOperation.Internal.InvocationDelegate NAME__EINVOCATION_DELEGATE = ((EOperation.Internal)EelPackage.Literals.TYPED_MEASURE___NAME).getInvocationDelegate();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String name() {
+		try {
+			return (String)NAME__EINVOCATION_DELEGATE.dynamicInvoke(this, null);
+		}
+		catch (InvocationTargetException ite) {
+			throw new WrappedException(ite);
+		}
+	}
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -134,7 +158,7 @@ public abstract class TypedMeasureImpl extends MeasureImpl implements TypedMeasu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated@jeremia
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
@@ -185,6 +209,7 @@ public abstract class TypedMeasureImpl extends MeasureImpl implements TypedMeasu
 		if (baseClass == Measure.class) {
 			switch (baseOperationID) {
 				case EelPackage.MEASURE___TYPE: return EelPackage.TYPED_MEASURE___TYPE;
+				case EelPackage.MEASURE___NAME: return EelPackage.TYPED_MEASURE___NAME;
 				default: return super.eDerivedOperationID(baseOperationID, baseClass);
 			}
 		}
@@ -201,6 +226,8 @@ public abstract class TypedMeasureImpl extends MeasureImpl implements TypedMeasu
 		switch (operationID) {
 			case EelPackage.TYPED_MEASURE___TYPE:
 				return type();
+			case EelPackage.TYPED_MEASURE___NAME:
+				return name();
 		}
 		return super.eInvoke(operationID, arguments);
 	}

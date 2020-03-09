@@ -31,16 +31,19 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eel.ecore#//Variable/vibility"/>
     </genClasses>
     <genClasses image="false" ecoreClass="eel.ecore#//Measure">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eel.ecore#//Measure/name"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eel.ecore#//Measure/targetClass"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eel.ecore#//Measure/targetOperation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eel.ecore#//Measure/name.1"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eel.ecore#//Measure/subname"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EAttribute eel.ecore#//Measure/targetClass"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eel.ecore#//Measure/targetOperation"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eel.ecore#//Measure/uncertainty"/>
       <genOperations ecoreOperation="eel.ecore#//Measure/type"/>
       <genOperations ecoreOperation="eel.ecore#//Measure/value"/>
+      <genOperations ecoreOperation="eel.ecore#//Measure/name"/>
     </genClasses>
     <genClasses image="false" ecoreClass="eel.ecore#//TypedMeasure">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eel.ecore#//TypedMeasure/type.1"/>
       <genOperations ecoreOperation="eel.ecore#//TypedMeasure/type"/>
+      <genOperations ecoreOperation="eel.ecore#//TypedMeasure/name"/>
     </genClasses>
     <genClasses ecoreClass="eel.ecore#//MeasureValue">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eel.ecore#//MeasureValue/value.1"/>
@@ -50,7 +53,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eel.ecore#//MeasureOCL/oclQuery"/>
     </genClasses>
     <genClasses ecoreClass="eel.ecore#//MeasureAttribute">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eel.ecore#//MeasureAttribute/att"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EAttribute eel.ecore#//MeasureAttribute/att"/>
     </genClasses>
     <genClasses ecoreClass="eel.ecore#//MeasureCast">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eel.ecore#//MeasureCast/measure"/>

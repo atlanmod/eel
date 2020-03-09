@@ -5,13 +5,10 @@ package fr.tblf.energy.estimation.eel.impl;
 import fr.tblf.energy.estimation.eel.EelPackage;
 import fr.tblf.energy.estimation.eel.Measure;
 import fr.tblf.energy.estimation.eel.MeasureUnboundOperation;
-
 import java.util.Collection;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**

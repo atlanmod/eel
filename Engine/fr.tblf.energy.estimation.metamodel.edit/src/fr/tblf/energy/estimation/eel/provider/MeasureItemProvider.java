@@ -64,6 +64,7 @@ public class MeasureItemProvider
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
+			addSubnamePropertyDescriptor(object);
 			addTargetClassPropertyDescriptor(object);
 			addTargetOperationPropertyDescriptor(object);
 		}
@@ -93,6 +94,28 @@ public class MeasureItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Subname feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSubnamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Measure_subname_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Measure_subname_feature", "_UI_Measure_type"),
+				 EelPackage.Literals.MEASURE__SUBNAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Target Class feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -109,7 +132,7 @@ public class MeasureItemProvider
 				 true,
 				 false,
 				 true,
-				 null,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -130,7 +153,7 @@ public class MeasureItemProvider
 				 EelPackage.Literals.MEASURE__TARGET_OPERATION,
 				 true,
 				 false,
-				 true,
+				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
@@ -194,6 +217,8 @@ public class MeasureItemProvider
 
 		switch (notification.getFeatureID(Measure.class)) {
 			case EelPackage.MEASURE__NAME:
+			case EelPackage.MEASURE__SUBNAME:
+			case EelPackage.MEASURE__TARGET_OPERATION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case EelPackage.MEASURE__UNCERTAINTY:

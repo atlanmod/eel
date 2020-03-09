@@ -3,8 +3,6 @@
 package fr.tblf.energy.estimation.eel;
 
 import java.math.BigDecimal;
-
-import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -21,6 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link fr.tblf.energy.estimation.eel.Measure#getName <em>Name</em>}</li>
+ *   <li>{@link fr.tblf.energy.estimation.eel.Measure#getSubname <em>Subname</em>}</li>
  *   <li>{@link fr.tblf.energy.estimation.eel.Measure#getTargetClass <em>Target Class</em>}</li>
  *   <li>{@link fr.tblf.energy.estimation.eel.Measure#getTargetOperation <em>Target Operation</em>}</li>
  *   <li>{@link fr.tblf.energy.estimation.eel.Measure#getUncertainty <em>Uncertainty</em>}</li>
@@ -42,7 +41,7 @@ public interface Measure extends EObject {
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see fr.tblf.energy.estimation.eel.EelPackage#getMeasure_Name()
-	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot derivation='type().toString()+\' \'+value().toString()'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot derivation='name()'"
 	 * @generated
 	 */
 	String getName();
@@ -58,30 +57,56 @@ public interface Measure extends EObject {
 	void setName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Target Class</b></em>' reference.
+	 * Returns the value of the '<em><b>Subname</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Subname</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Subname</em>' attribute.
+	 * @see #setSubname(String)
+	 * @see fr.tblf.energy.estimation.eel.EelPackage#getMeasure_Subname()
+	 * @model
+	 * @generated
+	 */
+	String getSubname();
+
+	/**
+	 * Sets the value of the '{@link fr.tblf.energy.estimation.eel.Measure#getSubname <em>Subname</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Subname</em>' attribute.
+	 * @see #getSubname()
+	 * @generated
+	 */
+	void setSubname(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Target Class</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Target Class</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Target Class</em>' reference.
-	 * @see #setTargetClass(EClass)
+	 * @return the value of the '<em>Target Class</em>' attribute.
+	 * @see #setTargetClass(String)
 	 * @see fr.tblf.energy.estimation.eel.EelPackage#getMeasure_TargetClass()
 	 * @model
 	 * @generated
 	 */
-	EClass getTargetClass();
+	String getTargetClass();
 
 	/**
-	 * Sets the value of the '{@link fr.tblf.energy.estimation.eel.Measure#getTargetClass <em>Target Class</em>}' reference.
+	 * Sets the value of the '{@link fr.tblf.energy.estimation.eel.Measure#getTargetClass <em>Target Class</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Target Class</em>' reference.
+	 * @param value the new value of the '<em>Target Class</em>' attribute.
 	 * @see #getTargetClass()
 	 * @generated
 	 */
-	void setTargetClass(EClass value);
+	void setTargetClass(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Target Operation</b></em>' attribute.
@@ -150,5 +175,13 @@ public interface Measure extends EObject {
 	 * @generated
 	 */
 	BigDecimal value();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='\'\''"
+	 * @generated
+	 */
+	String name();
 
 } // Measure

@@ -4,13 +4,8 @@ package fr.tblf.energy.estimation.eel.impl;
 
 import fr.tblf.energy.estimation.eel.EelPackage;
 import fr.tblf.energy.estimation.eel.MeasureAttribute;
-
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -28,14 +23,23 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class MeasureAttributeImpl extends MeasureValueImpl implements MeasureAttribute {
 	/**
-	 * The cached value of the '{@link #getAtt() <em>Att</em>}' reference.
+	 * The default value of the '{@link #getAtt() <em>Att</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getAtt()
 	 * @generated
 	 * @ordered
 	 */
-	protected EAttribute att;
+	protected static final String ATT_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getAtt() <em>Att</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAtt()
+	 * @generated
+	 * @ordered
+	 */
+	protected String att = ATT_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -61,15 +65,7 @@ public class MeasureAttributeImpl extends MeasureValueImpl implements MeasureAtt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getAtt() {
-		if (att != null && att.eIsProxy()) {
-			InternalEObject oldAtt = (InternalEObject)att;
-			att = (EAttribute)eResolveProxy(oldAtt);
-			if (att != oldAtt) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EelPackage.MEASURE_ATTRIBUTE__ATT, oldAtt, att));
-			}
-		}
+	public String getAtt() {
 		return att;
 	}
 
@@ -78,17 +74,8 @@ public class MeasureAttributeImpl extends MeasureValueImpl implements MeasureAtt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute basicGetAtt() {
-		return att;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setAtt(EAttribute newAtt) {
-		EAttribute oldAtt = att;
+	public void setAtt(String newAtt) {
+		String oldAtt = att;
 		att = newAtt;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EelPackage.MEASURE_ATTRIBUTE__ATT, oldAtt, att));
@@ -103,8 +90,7 @@ public class MeasureAttributeImpl extends MeasureValueImpl implements MeasureAtt
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case EelPackage.MEASURE_ATTRIBUTE__ATT:
-				if (resolve) return getAtt();
-				return basicGetAtt();
+				return getAtt();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -118,7 +104,7 @@ public class MeasureAttributeImpl extends MeasureValueImpl implements MeasureAtt
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case EelPackage.MEASURE_ATTRIBUTE__ATT:
-				setAtt((EAttribute)newValue);
+				setAtt((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -133,7 +119,7 @@ public class MeasureAttributeImpl extends MeasureValueImpl implements MeasureAtt
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case EelPackage.MEASURE_ATTRIBUTE__ATT:
-				setAtt((EAttribute)null);
+				setAtt(ATT_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -148,9 +134,25 @@ public class MeasureAttributeImpl extends MeasureValueImpl implements MeasureAtt
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case EelPackage.MEASURE_ATTRIBUTE__ATT:
-				return att != null;
+				return ATT_EDEFAULT == null ? att != null : !ATT_EDEFAULT.equals(att);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (att: ");
+		result.append(att);
+		result.append(')');
+		return result.toString();
 	}
 
 } //MeasureAttributeImpl

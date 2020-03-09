@@ -34,6 +34,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * </p>
  * <ul>
  *   <li>{@link fr.tblf.energy.estimation.eel.impl.MeasureImpl#getName <em>Name</em>}</li>
+ *   <li>{@link fr.tblf.energy.estimation.eel.impl.MeasureImpl#getSubname <em>Subname</em>}</li>
  *   <li>{@link fr.tblf.energy.estimation.eel.impl.MeasureImpl#getTargetClass <em>Target Class</em>}</li>
  *   <li>{@link fr.tblf.energy.estimation.eel.impl.MeasureImpl#getTargetOperation <em>Target Operation</em>}</li>
  *   <li>{@link fr.tblf.energy.estimation.eel.impl.MeasureImpl#getUncertainty <em>Uncertainty</em>}</li>
@@ -53,14 +54,44 @@ public abstract class MeasureImpl extends MinimalEObjectImpl.Container implement
 	protected EStructuralFeature.Internal.SettingDelegate NAME__ESETTING_DELEGATE = ((EStructuralFeature.Internal)EelPackage.Literals.MEASURE__NAME).getSettingDelegate();
 
 	/**
-	 * The cached value of the '{@link #getTargetClass() <em>Target Class</em>}' reference.
+	 * The default value of the '{@link #getSubname() <em>Subname</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSubname()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String SUBNAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getSubname() <em>Subname</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSubname()
+	 * @generated
+	 * @ordered
+	 */
+	protected String subname = SUBNAME_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getTargetClass() <em>Target Class</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getTargetClass()
 	 * @generated
 	 * @ordered
 	 */
-	protected EClass targetClass;
+	protected static final String TARGET_CLASS_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getTargetClass() <em>Target Class</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTargetClass()
+	 * @generated
+	 * @ordered
+	 */
+	protected String targetClass = TARGET_CLASS_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getTargetOperation() <em>Target Operation</em>}' attribute.
@@ -134,15 +165,28 @@ public abstract class MeasureImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getTargetClass() {
-		if (targetClass != null && targetClass.eIsProxy()) {
-			InternalEObject oldTargetClass = (InternalEObject)targetClass;
-			targetClass = (EClass)eResolveProxy(oldTargetClass);
-			if (targetClass != oldTargetClass) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EelPackage.MEASURE__TARGET_CLASS, oldTargetClass, targetClass));
-			}
-		}
+	public String getSubname() {
+		return subname;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSubname(String newSubname) {
+		String oldSubname = subname;
+		subname = newSubname;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EelPackage.MEASURE__SUBNAME, oldSubname, subname));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getTargetClass() {
 		return targetClass;
 	}
 
@@ -151,17 +195,8 @@ public abstract class MeasureImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass basicGetTargetClass() {
-		return targetClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setTargetClass(EClass newTargetClass) {
-		EClass oldTargetClass = targetClass;
+	public void setTargetClass(String newTargetClass) {
+		String oldTargetClass = targetClass;
 		targetClass = newTargetClass;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EelPackage.MEASURE__TARGET_CLASS, oldTargetClass, targetClass));
@@ -280,6 +315,30 @@ public abstract class MeasureImpl extends MinimalEObjectImpl.Container implement
 	}
 
 	/**
+	 * The cached invocation delegate for the '{@link #name() <em>Name</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #name()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final EOperation.Internal.InvocationDelegate NAME__EINVOCATION_DELEGATE = ((EOperation.Internal)EelPackage.Literals.MEASURE___NAME).getInvocationDelegate();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String name() {
+		try {
+			return (String)NAME__EINVOCATION_DELEGATE.dynamicInvoke(this, null);
+		}
+		catch (InvocationTargetException ite) {
+			throw new WrappedException(ite);
+		}
+	}
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -303,9 +362,10 @@ public abstract class MeasureImpl extends MinimalEObjectImpl.Container implement
 		switch (featureID) {
 			case EelPackage.MEASURE__NAME:
 				return getName();
+			case EelPackage.MEASURE__SUBNAME:
+				return getSubname();
 			case EelPackage.MEASURE__TARGET_CLASS:
-				if (resolve) return getTargetClass();
-				return basicGetTargetClass();
+				return getTargetClass();
 			case EelPackage.MEASURE__TARGET_OPERATION:
 				return getTargetOperation();
 			case EelPackage.MEASURE__UNCERTAINTY:
@@ -325,8 +385,11 @@ public abstract class MeasureImpl extends MinimalEObjectImpl.Container implement
 			case EelPackage.MEASURE__NAME:
 				setName((String)newValue);
 				return;
+			case EelPackage.MEASURE__SUBNAME:
+				setSubname((String)newValue);
+				return;
 			case EelPackage.MEASURE__TARGET_CLASS:
-				setTargetClass((EClass)newValue);
+				setTargetClass((String)newValue);
 				return;
 			case EelPackage.MEASURE__TARGET_OPERATION:
 				setTargetOperation((String)newValue);
@@ -349,8 +412,11 @@ public abstract class MeasureImpl extends MinimalEObjectImpl.Container implement
 			case EelPackage.MEASURE__NAME:
 				NAME__ESETTING_DELEGATE.dynamicUnset(this, null, 0);
 				return;
+			case EelPackage.MEASURE__SUBNAME:
+				setSubname(SUBNAME_EDEFAULT);
+				return;
 			case EelPackage.MEASURE__TARGET_CLASS:
-				setTargetClass((EClass)null);
+				setTargetClass(TARGET_CLASS_EDEFAULT);
 				return;
 			case EelPackage.MEASURE__TARGET_OPERATION:
 				setTargetOperation(TARGET_OPERATION_EDEFAULT);
@@ -372,8 +438,10 @@ public abstract class MeasureImpl extends MinimalEObjectImpl.Container implement
 		switch (featureID) {
 			case EelPackage.MEASURE__NAME:
 				return NAME__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+			case EelPackage.MEASURE__SUBNAME:
+				return SUBNAME_EDEFAULT == null ? subname != null : !SUBNAME_EDEFAULT.equals(subname);
 			case EelPackage.MEASURE__TARGET_CLASS:
-				return targetClass != null;
+				return TARGET_CLASS_EDEFAULT == null ? targetClass != null : !TARGET_CLASS_EDEFAULT.equals(targetClass);
 			case EelPackage.MEASURE__TARGET_OPERATION:
 				return TARGET_OPERATION_EDEFAULT == null ? targetOperation != null : !TARGET_OPERATION_EDEFAULT.equals(targetOperation);
 			case EelPackage.MEASURE__UNCERTAINTY:
@@ -394,6 +462,8 @@ public abstract class MeasureImpl extends MinimalEObjectImpl.Container implement
 				return type();
 			case EelPackage.MEASURE___VALUE:
 				return value();
+			case EelPackage.MEASURE___NAME:
+				return name();
 		}
 		return super.eInvoke(operationID, arguments);
 	}
@@ -408,7 +478,11 @@ public abstract class MeasureImpl extends MinimalEObjectImpl.Container implement
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (targetOperation: ");
+		result.append(" (subname: ");
+		result.append(subname);
+		result.append(", targetClass: ");
+		result.append(targetClass);
+		result.append(", targetOperation: ");
 		result.append(targetOperation);
 		result.append(')');
 		return result.toString();

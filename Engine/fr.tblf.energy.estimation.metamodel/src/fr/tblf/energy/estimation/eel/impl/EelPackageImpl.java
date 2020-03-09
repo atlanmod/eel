@@ -30,17 +30,12 @@ import fr.tblf.energy.estimation.eel.Type;
 import fr.tblf.energy.estimation.eel.TypedMeasure;
 import fr.tblf.energy.estimation.eel.Variable;
 import fr.tblf.energy.estimation.eel.Visibility;
-
-import fr.tblf.energy.estimation.eel.util.EelValidator;
-
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-import org.eclipse.emf.ecore.EValidator;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
@@ -285,15 +280,6 @@ public class EelPackageImpl extends EPackageImpl implements EelPackage {
 		// Initialize created meta-data
 		theEelPackage.initializePackageContents();
 
-		// Register package validator
-		EValidator.Registry.INSTANCE.put
-			(theEelPackage,
-			 new EValidator.Descriptor() {
-				 public EValidator getEValidator() {
-					 return EelValidator.INSTANCE;
-				 }
-			 });
-
 		// Mark meta-data to indicate it can't be changed
 		theEelPackage.freeze();
 
@@ -397,8 +383,8 @@ public class EelPackageImpl extends EPackageImpl implements EelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getMeasure_TargetClass() {
-		return (EReference)measureEClass.getEStructuralFeatures().get(1);
+	public EAttribute getMeasure_Subname() {
+		return (EAttribute)measureEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -406,7 +392,7 @@ public class EelPackageImpl extends EPackageImpl implements EelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getMeasure_TargetOperation() {
+	public EAttribute getMeasure_TargetClass() {
 		return (EAttribute)measureEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -415,8 +401,17 @@ public class EelPackageImpl extends EPackageImpl implements EelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getMeasure_TargetOperation() {
+		return (EAttribute)measureEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getMeasure_Uncertainty() {
-		return (EReference)measureEClass.getEStructuralFeatures().get(3);
+		return (EReference)measureEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -435,6 +430,15 @@ public class EelPackageImpl extends EPackageImpl implements EelPackage {
 	 */
 	public EOperation getMeasure__Value() {
 		return measureEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getMeasure__Name() {
+		return measureEClass.getEOperations().get(2);
 	}
 
 	/**
@@ -462,6 +466,15 @@ public class EelPackageImpl extends EPackageImpl implements EelPackage {
 	 */
 	public EOperation getTypedMeasure__Type() {
 		return typedMeasureEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getTypedMeasure__Name() {
+		return typedMeasureEClass.getEOperations().get(1);
 	}
 
 	/**
@@ -523,8 +536,8 @@ public class EelPackageImpl extends EPackageImpl implements EelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getMeasureAttribute_Att() {
-		return (EReference)measureAttributeEClass.getEStructuralFeatures().get(0);
+	public EAttribute getMeasureAttribute_Att() {
+		return (EAttribute)measureAttributeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -954,15 +967,18 @@ public class EelPackageImpl extends EPackageImpl implements EelPackage {
 
 		measureEClass = createEClass(MEASURE);
 		createEAttribute(measureEClass, MEASURE__NAME);
-		createEReference(measureEClass, MEASURE__TARGET_CLASS);
+		createEAttribute(measureEClass, MEASURE__SUBNAME);
+		createEAttribute(measureEClass, MEASURE__TARGET_CLASS);
 		createEAttribute(measureEClass, MEASURE__TARGET_OPERATION);
 		createEReference(measureEClass, MEASURE__UNCERTAINTY);
 		createEOperation(measureEClass, MEASURE___TYPE);
 		createEOperation(measureEClass, MEASURE___VALUE);
+		createEOperation(measureEClass, MEASURE___NAME);
 
 		typedMeasureEClass = createEClass(TYPED_MEASURE);
 		createEAttribute(typedMeasureEClass, TYPED_MEASURE__TYPE);
 		createEOperation(typedMeasureEClass, TYPED_MEASURE___TYPE);
+		createEOperation(typedMeasureEClass, TYPED_MEASURE___NAME);
 
 		measureValueEClass = createEClass(MEASURE_VALUE);
 		createEAttribute(measureValueEClass, MEASURE_VALUE__VALUE);
@@ -972,7 +988,7 @@ public class EelPackageImpl extends EPackageImpl implements EelPackage {
 		createEAttribute(measureOCLEClass, MEASURE_OCL__OCL_QUERY);
 
 		measureAttributeEClass = createEClass(MEASURE_ATTRIBUTE);
-		createEReference(measureAttributeEClass, MEASURE_ATTRIBUTE__ATT);
+		createEAttribute(measureAttributeEClass, MEASURE_ATTRIBUTE__ATT);
 
 		measureCastEClass = createEClass(MEASURE_CAST);
 		createEReference(measureCastEClass, MEASURE_CAST__MEASURE);
@@ -1097,7 +1113,8 @@ public class EelPackageImpl extends EPackageImpl implements EelPackage {
 
 		initEClass(measureEClass, Measure.class, "Measure", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getMeasure_Name(), ecorePackage.getEString(), "name", null, 0, 1, Measure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMeasure_TargetClass(), ecorePackage.getEClass(), null, "targetClass", null, 0, 1, Measure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMeasure_Subname(), ecorePackage.getEString(), "subname", null, 0, 1, Measure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMeasure_TargetClass(), ecorePackage.getEString(), "targetClass", null, 0, 1, Measure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMeasure_TargetOperation(), ecorePackage.getEString(), "targetOperation", null, 0, 1, Measure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMeasure_Uncertainty(), this.getMeasurementUncertainty(), null, "uncertainty", null, 0, 1, Measure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -1105,10 +1122,14 @@ public class EelPackageImpl extends EPackageImpl implements EelPackage {
 
 		initEOperation(getMeasure__Value(), ecorePackage.getEBigDecimal(), "value", 0, 1, IS_UNIQUE, IS_ORDERED);
 
+		initEOperation(getMeasure__Name(), ecorePackage.getEString(), "name", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(typedMeasureEClass, TypedMeasure.class, "TypedMeasure", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTypedMeasure_Type(), this.getType(), "type", null, 1, 1, TypedMeasure.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEOperation(getTypedMeasure__Type(), this.getType(), "type", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEOperation(getTypedMeasure__Name(), ecorePackage.getEString(), "name", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(measureValueEClass, MeasureValue.class, "MeasureValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getMeasureValue_Value(), ecorePackage.getEBigDecimal(), "value", null, 0, 1, MeasureValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1119,7 +1140,7 @@ public class EelPackageImpl extends EPackageImpl implements EelPackage {
 		initEAttribute(getMeasureOCL_OclQuery(), ecorePackage.getEString(), "oclQuery", null, 0, 1, MeasureOCL.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(measureAttributeEClass, MeasureAttribute.class, "MeasureAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getMeasureAttribute_Att(), ecorePackage.getEAttribute(), null, "att", null, 0, 1, MeasureAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMeasureAttribute_Att(), ecorePackage.getEString(), "att", null, 0, 1, MeasureAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(measureCastEClass, MeasureCast.class, "MeasureCast", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMeasureCast_Measure(), this.getMeasure(), null, "measure", null, 1, 1, MeasureCast.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1248,12 +1269,6 @@ public class EelPackageImpl extends EPackageImpl implements EelPackage {
 			   "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
 			   "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"
 		   });
-		addAnnotation
-		  (measureAttributeEClass,
-		   source,
-		   new String[] {
-			   "constraints", "isAttribute"
-		   });
 	}
 
 	/**
@@ -1277,10 +1292,16 @@ public class EelPackageImpl extends EPackageImpl implements EelPackage {
 			   "body", "0"
 		   });
 		addAnnotation
+		  (getMeasure__Name(),
+		   source,
+		   new String[] {
+			   "body", "\'\'"
+		   });
+		addAnnotation
 		  (getMeasure_Name(),
 		   source,
 		   new String[] {
-			   "derivation", "type().toString()+\' \'+value().toString()"
+			   "derivation", "name()"
 		   });
 		addAnnotation
 		  (getTypedMeasure__Type(),
@@ -1289,16 +1310,16 @@ public class EelPackageImpl extends EPackageImpl implements EelPackage {
 			   "body", "self.type"
 		   });
 		addAnnotation
+		  (getTypedMeasure__Name(),
+		   source,
+		   new String[] {
+			   "body", "targetClass+\'.\'+ if subname <> null then subname else type().toString() endif"
+		   });
+		addAnnotation
 		  (getMeasureValue__Value(),
 		   source,
 		   new String[] {
 			   "body", "self.value"
-		   });
-		addAnnotation
-		  (measureAttributeEClass,
-		   source,
-		   new String[] {
-			   "isAttribute", "self.att.oclIsKindOf(ecore::EAttribute)"
 		   });
 		addAnnotation
 		  (getMeasureBinaryProductOperation__Value(),
@@ -1348,7 +1369,7 @@ public class EelPackageImpl extends EPackageImpl implements EelPackage {
 		  (getMeasureUnboundSumOperation__Value(),
 		   source,
 		   new String[] {
-			   "body", "self.measures -> collect(m | m.oclAsType(Measure).value()) -> sum()"
+			   "body", "self.measures -> iterate(m: Measure; acc: Real = 1.0 | acc + m.value())"
 		   });
 		addAnnotation
 		  (getMeasureUnboundProductOperation__Value(),

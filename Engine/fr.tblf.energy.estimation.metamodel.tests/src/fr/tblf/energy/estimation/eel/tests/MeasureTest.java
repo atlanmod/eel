@@ -15,6 +15,7 @@ import junit.framework.TestCase;
  * <ul>
  *   <li>{@link fr.tblf.energy.estimation.eel.Measure#type() <em>Type</em>}</li>
  *   <li>{@link fr.tblf.energy.estimation.eel.Measure#value() <em>Value</em>}</li>
+ *   <li>{@link fr.tblf.energy.estimation.eel.Measure#name() <em>Name</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -80,6 +81,19 @@ public abstract class MeasureTest extends TestCase {
 	 * @generated
 	 */
 	public void testValue() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link fr.tblf.energy.estimation.eel.Measure#name() <em>Name</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fr.tblf.energy.estimation.eel.Measure#name()
+	 * @generated
+	 */
+	public void testName() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

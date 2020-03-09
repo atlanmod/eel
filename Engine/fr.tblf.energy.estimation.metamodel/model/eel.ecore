@@ -40,12 +40,18 @@
         <details key="body" value="0"/>
       </eAnnotations>
     </eOperations>
+    <eOperations name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+        <details key="body" value="''"/>
+      </eAnnotations>
+    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
-        <details key="derivation" value="type().toString()+' '+value().toString()"/>
+        <details key="derivation" value="name()"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="targetClass" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="subname" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="targetClass" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="targetOperation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="uncertainty" eType="#//MeasurementUncertainty"
         containment="true"/>
@@ -57,6 +63,11 @@
     <eOperations name="type" eType="#//Type">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
         <details key="body" value="self.type"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+        <details key="body" value="targetClass+'.'+ if subname &lt;> null then subname else type().toString() endif"/>
       </eAnnotations>
     </eOperations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="#//Type"
@@ -80,13 +91,7 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Measure where the value corresponds to the value of an attribute in the decorated model"/>
     </eAnnotations>
-    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="constraints" value="isAttribute"/>
-    </eAnnotations>
-    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
-      <details key="isAttribute" value="self.att.oclIsKindOf(ecore::EAttribute)"/>
-    </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="att" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EAttribute"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="att" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MeasureCast" eSuperTypes="#//TypedMeasure">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -183,7 +188,7 @@
     </eAnnotations>
     <eOperations name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
-        <details key="body" value="self.measures -> collect(m | m.oclAsType(Measure).value()) -> sum()"/>
+        <details key="body" value="self.measures -> iterate(m: Measure; acc: Real = 1.0 | acc + m.value())"/>
       </eAnnotations>
     </eOperations>
   </eClassifiers>
