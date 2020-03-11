@@ -24,7 +24,7 @@ Platform ATMega328p {
 		"arduino.InfraRedSensor".powerOfInfraRedSensorsOnObstacle = "arduino.InfraRedSensor.numberOnObstacle" * "arduino.InfraRedSensor.internalLedCurrent" * "arduino.InfraRedSensor.\'http://fr.tblf.energy.estimation/eel/\'::Type::Voltage", 
 		"arduino.InfraRedSensor".powerOfInfraRedSensors = "arduino.InfraRedSensor.powerOfInfraRedSensorsOnIdle" + "arduino.InfraRedSensor.powerOfInfraRedSensorsOnObstacle",
 				 
-		"arduino.Delay".delayDurationMs = attribute:"value", // milliseconds
+		"arduino.Delay".delayDurationMs = ocl:"self.value", // milliseconds
 		"arduino.Delay".delayDuration = "arduino.Delay.delayDurationMs" * "variables.milliToUnitFactor",	
 		"arduino.Delay".clockCyles = 76.0,
 		"arduino.Delay".callDuration = "arduino.Delay.clockCyles" * "arduino.Board.clockPeriod",
@@ -36,7 +36,7 @@ Platform ATMega328p {
 		"arduino.WaitFor".totalDuration = "arduino.WaitFor.\'http://fr.tblf.energy.estimation/eel/\'::Type::Duration" + "arduino.WaitFor.callDuration",
 		
 		"arduino.ModuleAssignment".clockCycles = 44.0,
-		"arduino.ModuleAssignment".callDuration = "arduino.ModuleAssignment.clockCycles" * "arduino.Board.clockPeriod",
+		"arduino.ModuleAssignment".callDuration = "arduino.ModuleAssignment.clockCycles" * "arduino.Board.clockPeriod",					
 		
 		"arduino.BooleanModuleGet".clockCycles = 51.0, 
 		"arduino.BooleanModuleGet".callDuration = "arduino.BooleanModuleGet.clockCycles" * "arduino.Board.clockPeriod",

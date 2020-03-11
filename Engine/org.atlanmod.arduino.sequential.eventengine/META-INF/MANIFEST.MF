@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Eventengine
+Bundle-SymbolicName: org.atlanmod.arduino.sequential.eventengine;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: org.atlanmod.arduino.sequential.eventengine.Activator
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.gemoc.xdsmlframework.api;bundle-version="4.0.0",
+ org.gemoc.arduino.sequential.model;bundle-version="1.0.0",
+ org.eclipse.gemoc.trace.commons.model;bundle-version="3.0.1",
+ org.gemoc.arduino.sequential.k3dsa;bundle-version="1.0.0",
+ org.eclipse.emf.transaction;bundle-version="1.9.1"
+Bundle-RequiredExecutionEnvironment: JavaSE-9
+Automatic-Module-Name: org.atlanmod.arduino.sequential.eventengine
+Bundle-ActivationPolicy: lazy
+Import-Package: fr.inria.diverse.k3.al.annotationprocessor

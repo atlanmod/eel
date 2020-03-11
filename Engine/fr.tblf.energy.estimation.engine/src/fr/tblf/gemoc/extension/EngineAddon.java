@@ -119,7 +119,7 @@ public class EngineAddon implements IEngineAddon {
 							.map(s -> mapClassEstimation.get(s))
 							.forEach(m -> {
 								updateMeasure(m, caller);
-								System.out.println(m+" consumed "+m.value()+" J");
+								System.out.println(m+" consumed "+m.value()+" J in "+durationAfterExecution+" ms");
 								
 							});					
 		
@@ -127,14 +127,13 @@ public class EngineAddon implements IEngineAddon {
 	}
 	
 	private void updateMeasure(MeasureAttribute m, EObject caller) {
-		System.out.println("Updating Measure "+m.getName());
+		
 		String att = m.getAtt();
 		Object object = caller.eGet(caller.eClass().getEAttributes().stream().filter(eAtt -> eAtt.getName().equals(att)).findFirst().get());		
 		m.setValue(BigDecimal.valueOf(Long.valueOf(object.toString())));
 	}
 	
 	private void updateMeasure(MeasureOCL m, EObject caller) {
-		System.out.println("Updating Measure "+m.getName());
 		String query = m.getOclQuery();
 		try {
 			OCLHelper helper = ocl.createOCLHelper(caller.eClass());
@@ -155,13 +154,11 @@ public class EngineAddon implements IEngineAddon {
 	}
 
 	private void updateMeasure(MeasureBinaryOperation m, EObject caller) {
-		System.out.println("Updating Measure "+m.getName());
 		updateMeasure(m.getLeft(), caller);
 		updateMeasure(m.getRight(), caller);
 	}
 	
 	private void updateMeasure(MeasureCast m, EObject caller) {
-		System.out.println("Updating Measure "+m.getName());
 		updateMeasure(m.getMeasure(), caller);
 	}
 	
@@ -190,14 +187,13 @@ public class EngineAddon implements IEngineAddon {
 	}
 	
 	private void updateMeasure(RealTimeDuration m, EObject caller) {
-		System.out.println("Updating Measure "+m.getName());
 		m.setValue(BigDecimal.valueOf(durationAfterExecution));
 	}
+	
 	public static void displayPlatformMeasurement(Platform p) {
 		
 		p.getMeasures().forEach(m -> {
-			topDownTreeAnalysis(m, (Measure measure) -> {
-				System.out.print(measure.getName() +" " +measure.type()+" : "+measure.eClass().getName());
+			topDownTreeAnalysis(m, (Measure measure) -> {				
 				if (measure.getTargetClass() != null)
 					System.out.print(" -> "+measure.getTargetClass());
 				if (measure.getTargetOperation() != null)
@@ -208,7 +204,7 @@ public class EngineAddon implements IEngineAddon {
 		});			
 	}
 	
-	public static void topDownTreeAnalysis(Measure m, Function<Measure, Void> function) {		
+	public static void topDownTreeAnalysis(Measure m, Function<Measure, Void> function) {
 		function.apply(m);
 		System.out.print("\t");
 		m.eContents().stream()

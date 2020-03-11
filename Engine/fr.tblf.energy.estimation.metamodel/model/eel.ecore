@@ -188,7 +188,7 @@
     </eAnnotations>
     <eOperations name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
-        <details key="body" value="self.measures -> iterate(m: Measure; acc: Real = 1.0 | acc + m.value())"/>
+        <details key="body" value="self.measures -> iterate(m: Measure; acc: Real = 0.0 | acc + m.value())"/>
       </eAnnotations>
     </eOperations>
   </eClassifiers>

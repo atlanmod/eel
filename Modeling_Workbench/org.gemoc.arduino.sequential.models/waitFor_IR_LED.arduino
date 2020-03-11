@@ -10,7 +10,7 @@
   </boards>
   <sketches name="sketch" board="//@boards.0">
     <block>
-      <instructions xsi:type="arduino:WaitFor" pin="//@boards.0/@digitalPins.1"/>
+      <instructions xsi:type="arduino:WaitFor" pin="//@boards.0/@digitalPins.1" mode="CHANGE"/>
       <instructions xsi:type="arduino:ModuleAssignment" module="//@boards.0/@digitalPins.0/@module">
         <operand xsi:type="arduino:IntegerConstant" value="1"/>
       </instructions>

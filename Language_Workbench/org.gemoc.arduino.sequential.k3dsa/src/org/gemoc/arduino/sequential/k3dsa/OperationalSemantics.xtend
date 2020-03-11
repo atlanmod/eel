@@ -370,9 +370,9 @@ class WaitFor_ExecutableAspect extends Utilities_ExecutableAspect {
 		}			
 	}
 	
-	@Step
+	
 	private def void loop() {
-		Thread.sleep(100)
+		Thread.sleep(10)
 	}
 	
 	def void setActivated() {
