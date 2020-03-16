@@ -2,55 +2,55 @@ Platform ATMega328p {
 	measures {				
 		"variables".milliToUnitFactor = 0.001,	
 			
-		"arduino.Board".clockPeriod = 0.000000062,
-		"arduino.Board".Voltage = 5.0,		
-		"arduino.Board".Current = 0.0164,
-		"arduino.Board".currentIdle = 0.008, //Not right 
-		"arduino.Board".cpuPower = "arduino.Board.\'http://fr.tblf.energy.estimation/eel/\'::Type::Current" * "arduino.Board.\'http://fr.tblf.energy.estimation/eel/\'::Type::Voltage",
-		"arduino.Board".cpuPowerIdle ="arduino.Board.currentIdle" * "arduino.Board.\'http://fr.tblf.energy.estimation/eel/\'::Type::Voltage",  
+		"Board".clockPeriod = 0.000000062,
+		"Board".Voltage = 5.0,		
+		"Board".Current = 0.0164,
+		"Board".currentIdle = 0.008, //Not right 
+		"Board".cpuPower = "Board.\'http://fr.tblf.energy.estimation/eel/\'::Type::Current" * "Board.\'http://fr.tblf.energy.estimation/eel/\'::Type::Voltage",
+		"Board".cpuPowerIdle ="Board.currentIdle" * "Board.\'http://fr.tblf.energy.estimation/eel/\'::Type::Voltage",  
 				
-		"arduino.LED".Voltage = 5.0,
-		"arduino.LED".Current = 0.0039,		 		
-		"arduino.LED".numberOfLedsRunning = ocl:"LED.allInstances() -> select(it | it.oclContainer().oclAsType(Pin).level = 1) -> size()",						
-		"arduino.LED".currentOfLedsRunning = "arduino.LED.\'http://fr.tblf.energy.estimation/eel/\'::Type::Current" * "arduino.LED.numberOfLedsRunning",
-		"arduino.LED".powerOfLedsRunning = "arduino.LED.currentOfLedsRunning" * "arduino.LED.numberOfLedsRunning" * "arduino.LED.\'http://fr.tblf.energy.estimation/eel/\'::Type::Voltage",
+		"LED".Voltage = 5.0,
+		"LED".Current = 0.0039,		 		
+		"LED".numberOfLedsRunning = ocl:"LED.allInstances() -> select(it | it.oclContainer().oclAsType(Pin).level = 1) -> size()",						
+		"LED".currentOfLedsRunning = "LED.\'http://fr.tblf.energy.estimation/eel/\'::Type::Current" * "LED.numberOfLedsRunning",
+		"LED".powerOfLedsRunning = "LED.currentOfLedsRunning" * "LED.numberOfLedsRunning" * "LED.\'http://fr.tblf.energy.estimation/eel/\'::Type::Voltage",
 		
-		"arduino.InfraRedSensor".Voltage = 3.3,
-		"arduino.InfraRedSensor".Current = 0.00235,			
-		"arduino.InfraRedSensor".internalLedCurrent = 0.00085,
-		"arduino.InfraRedSensor".numberOfSensorsRunning = ocl: "InfraRedSensor.allInstances() -> size()",
-		"arduino.InfraRedSensor".numberOnObstacle = ocl:"InfraRedSensor.allInstances() -> select(it | it.oclContainer.oclAsType(Pin).level = 0) -> asSequence() -> size()",
-		"arduino.InfraRedSensor".powerOfInfraRedSensorsOnIdle = "arduino.InfraRedSensor.numberOfSensorsRunning" * "arduino.InfraRedSensor.\'http://fr.tblf.energy.estimation/eel/\'::Type::Voltage" * "arduino.InfraRedSensor.\'http://fr.tblf.energy.estimation/eel/\'::Type::Current", 
-		"arduino.InfraRedSensor".powerOfInfraRedSensorsOnObstacle = "arduino.InfraRedSensor.numberOnObstacle" * "arduino.InfraRedSensor.internalLedCurrent" * "arduino.InfraRedSensor.\'http://fr.tblf.energy.estimation/eel/\'::Type::Voltage", 
-		"arduino.InfraRedSensor".powerOfInfraRedSensors = "arduino.InfraRedSensor.powerOfInfraRedSensorsOnIdle" + "arduino.InfraRedSensor.powerOfInfraRedSensorsOnObstacle",
+		"InfraRedSensor".Voltage = 3.3,
+		"InfraRedSensor".Current = 0.00235,			
+		"InfraRedSensor".internalLedCurrent = 0.00085,
+		"InfraRedSensor".numberOfSensorsRunning = ocl: "InfraRedSensor.allInstances() -> size()",
+		"InfraRedSensor".numberOnObstacle = ocl:"InfraRedSensor.allInstances() -> select(it | it.oclContainer.oclAsType(Pin).level = 0) -> asSequence() -> size()",
+		"InfraRedSensor".powerOfInfraRedSensorsOnIdle = "InfraRedSensor.numberOfSensorsRunning" * "InfraRedSensor.\'http://fr.tblf.energy.estimation/eel/\'::Type::Voltage" * "InfraRedSensor.\'http://fr.tblf.energy.estimation/eel/\'::Type::Current", 
+		"InfraRedSensor".powerOfInfraRedSensorsOnObstacle = "InfraRedSensor.numberOnObstacle" * "InfraRedSensor.internalLedCurrent" * "InfraRedSensor.\'http://fr.tblf.energy.estimation/eel/\'::Type::Voltage", 
+		"InfraRedSensor".powerOfInfraRedSensors = "InfraRedSensor.powerOfInfraRedSensorsOnIdle" + "InfraRedSensor.powerOfInfraRedSensorsOnObstacle",
 				 
-		"arduino.Delay".delayDurationMs = ocl:"self.value", // milliseconds
-		"arduino.Delay".delayDuration = "arduino.Delay.delayDurationMs" * "variables.milliToUnitFactor",	
-		"arduino.Delay".clockCyles = 76.0,
-		"arduino.Delay".callDuration = "arduino.Delay.clockCyles" * "arduino.Board.clockPeriod",
-		"arduino.Delay".Duration = "arduino.Delay.callDuration" + "arduino.Delay.delayDuration",
+		"Delay".delayDurationMs = ocl:"self.value", // milliseconds
+		"Delay".delayDuration = "Delay.delayDurationMs" * "variables.milliToUnitFactor",	
+		"Delay".clockCyles = 76.0,
+		"Delay".callDuration = "Delay.clockCyles" * "Board.clockPeriod",
+		"Delay".Duration = "Delay.callDuration" + "Delay.delayDuration",
 		
-		"arduino.WaitFor".clockCycles = 55.0, // NOT TRUE
-		"arduino.WaitFor".callDuration = "arduino.WaitFor.clockCycles" * "arduino.Board.clockPeriod",
-		"arduino.WaitFor".RealDuration,
-		"arduino.WaitFor".totalDuration = "arduino.WaitFor.\'http://fr.tblf.energy.estimation/eel/\'::Type::Duration" + "arduino.WaitFor.callDuration",
+		"WaitFor".clockCycles = 55.0, // NOT TRUE
+		"WaitFor".callDuration = "WaitFor.clockCycles" * "Board.clockPeriod",
+		"WaitFor".RealDuration,
+		"WaitFor".totalDuration = "WaitFor.\'http://fr.tblf.energy.estimation/eel/\'::Type::Duration" + "WaitFor.callDuration",
 		
-		"arduino.ModuleAssignment".clockCycles = 44.0,
-		"arduino.ModuleAssignment".callDuration = "arduino.ModuleAssignment.clockCycles" * "arduino.Board.clockPeriod",					
+		"ModuleAssignment".clockCycles = 44.0,
+		"ModuleAssignment".callDuration = "ModuleAssignment.clockCycles" * "Board.clockPeriod",					
+				
+		"BooleanModuleGet".clockCycles = 51.0, 
+		"BooleanModuleGet".callDuration = "BooleanModuleGet.clockCycles" * "Board.clockPeriod",
 		
-		"arduino.BooleanModuleGet".clockCycles = 51.0, 
-		"arduino.BooleanModuleGet".callDuration = "arduino.BooleanModuleGet.clockCycles" * "arduino.Board.clockPeriod",
-		
-		"arduino.IntegerModuleGet".clockCycles = 51.0,
-		"arduino.IntegerModuleGet".callDuration = "arduino.IntegerModuleGet.clockCycles" * "arduino.Board.clockPeriod",
+		"IntegerModuleGet".clockCycles = 51.0,
+		"IntegerModuleGet".callDuration = "IntegerModuleGet.clockCycles" * "Board.clockPeriod",
 						
-		"arduino.Board".systemPower = "arduino.Board.cpuPower" + "arduino.LED.powerOfLedsRunning" + "arduino.InfraRedSensor.powerOfInfraRedSensors",
-		"arduino.Board".systemPowerOnIdle = "arduino.Board.cpuPowerIdle" + "arduino.LED.powerOfLedsRunning" + "arduino.InfraRedSensor.powerOfInfraRedSensors",
+		"Board".systemPower = "Board.cpuPower" + "LED.powerOfLedsRunning" + "InfraRedSensor.powerOfInfraRedSensors",
+		"Board".systemPowerOnIdle = "Board.cpuPowerIdle" + "LED.powerOfLedsRunning" + "InfraRedSensor.powerOfInfraRedSensors",	
 		
-		"arduino.WaitFor"#execute.Energy = "arduino.Board.systemPowerOnIdle" * "arduino.WaitFor.totalDuration",
-		"arduino.Delay"#execute.Energy = "arduino.Delay.\'http://fr.tblf.energy.estimation/eel/\'::Type::Duration" * "arduino.Board.systemPower",			
-		"arduino.ModuleAssignment"#execute.Energy = "arduino.ModuleAssignment.callDuration" * "arduino.Board.systemPower",
-		"arduino.IntegerModuleGet"#execute.Energy = "arduino.IntegerModuleGet.callDuration" * "arduino.Board.systemPower",
-		"arduino.BooleanModuleGet"#execute.Energy = "arduino.BooleanModuleGet.callDuration" * "arduino.Board.systemPower" 				 		 		
+		"WaitFor"#execute.Energy = "Board.systemPowerOnIdle" * "WaitFor.totalDuration",
+		"Delay"#execute.Energy = "Delay.\'http://fr.tblf.energy.estimation/eel/\'::Type::Duration" * "Board.systemPower",			
+		"ModuleAssignment"#execute.Energy = "ModuleAssignment.callDuration" * "Board.systemPower",
+		"IntegerModuleGet"#execute.Energy = "IntegerModuleGet.callDuration" * "Board.systemPower",
+		"BooleanModuleGet"#execute.Energy = "BooleanModuleGet.callDuration" * "Board.systemPower" 				 		 		
 	}
 }

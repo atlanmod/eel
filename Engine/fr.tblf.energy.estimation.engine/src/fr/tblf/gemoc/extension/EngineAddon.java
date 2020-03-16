@@ -30,6 +30,7 @@ import fr.tblf.energy.estimation.eel.MeasureAttribute;
 import fr.tblf.energy.estimation.eel.MeasureBinaryOperation;
 import fr.tblf.energy.estimation.eel.MeasureCast;
 import fr.tblf.energy.estimation.eel.MeasureOCL;
+import fr.tblf.energy.estimation.eel.MeasureUnboundOperation;
 import fr.tblf.energy.estimation.eel.MeasureUnboundProductOperation;
 import fr.tblf.energy.estimation.eel.MeasureUnboundSumOperation;
 import fr.tblf.energy.estimation.eel.Platform;
@@ -41,6 +42,7 @@ public class EngineAddon implements IEngineAddon {
 	private Platform platform;
 	private OCL ocl = OCL.newInstance();
 	private Map<String, Measure> mapClassEstimation;
+	private Map<String, Long> stepDurations;
 	private long durationBeforeExecution;
 	private long durationAfterExecution;
 	@Override
@@ -73,12 +75,12 @@ public class EngineAddon implements IEngineAddon {
 				}
 				
 				mapClassEstimation = new TreeMap<>();
-				
+				stepDurations = new HashMap<>();
 				resource.getAllContents().forEachRemaining(eObject -> {
-					if (eObject instanceof Measure && ((Measure) eObject).getTargetClass() != null) {
+					if (eObject instanceof Measure && ((Measure) eObject).getTargetClass() != null && ((Measure) eObject).getTargetOperation() != null) {
 						//EObject target = EcoreUtil.resolve(((EObject) ((Measure) eObject).getTargetClass()), resourceSet);
 						//System.out.println("Loaded target "+target);
-						mapClassEstimation.put(((Measure) eObject).getTargetClass(), (Measure)eObject);
+						mapClassEstimation.put(((Measure) eObject).getTargetClass()+"#"+((Measure) eObject).getTargetOperation(), (Measure)eObject);
 					}
 				});
 				System.out.println(platform.getName()+" estimation model loaded");
@@ -95,45 +97,60 @@ public class EngineAddon implements IEngineAddon {
 		System.out.println("Engine started ");
 		// Find the model classloader		 		
 		//variableRegistry = new VariableRegistry();
-		displayPlatformMeasurement(platform);
+		//displayPlatformMeasurement(platform);
 		IEngineAddon.super.engineStarted(executionEngine);
 	}
 
 	@Override
-	public void aboutToExecuteStep(IExecutionEngine<?> engine, Step<?> stepToExecute) {
-		durationBeforeExecution = System.currentTimeMillis();		
+	public void aboutToExecuteStep(IExecutionEngine<?> engine, Step<?> stepToExecute) {	
+		EObject caller = stepToExecute.getMseoccurrence().getMse().getCaller();		
+		EOperation operation = stepToExecute.getMseoccurrence().getMse().getAction();
+		String callerClass = caller.getClass().getInterfaces()[0].getSimpleName();		
+		String callerOperation = operation.getName();
+		String classOperation = callerClass.concat("#").concat(callerOperation);	
+		Measure m = mapClassEstimation.get(classOperation);
+		
+		stepDurations.put(classOperation, Long.valueOf(System.currentTimeMillis()));
+		
+		if (m != null && !(hasRealTimeDuration(m))) {			
+			System.out.println(m.getClass().getSimpleName());
+			updateMeasure(m, caller, operation);
+			System.out.println(classOperation+" consumed "+m.value());
+		}
+		
+		IEngineAddon.super.aboutToExecuteStep(engine, stepToExecute);
 	}
 	
 	
+
+
 	public void stepExecuted(IExecutionEngine<?> engine, Step<?> stepToExecute) {
-		durationAfterExecution = System.currentTimeMillis() - durationBeforeExecution;
+		EObject caller = stepToExecute.getMseoccurrence().getMse().getCaller();						
+		EOperation operation = stepToExecute.getMseoccurrence().getMse().getAction();
+		String callerClass = caller.getClass().getInterfaces()[0].getSimpleName();
+		String callerOperation = operation.getName();
+		String classOperation = callerClass.concat("#").concat(callerOperation);
+		Measure m = mapClassEstimation.get(classOperation);		
+		Long before = stepDurations.get(classOperation);
 		
-		EObject caller = stepToExecute.getMseoccurrence().getMse().getCaller();		
-		String callerClass = caller.getClass().getInterfaces()[0].getTypeName();
+		stepDurations.put(classOperation, Long.valueOf(System.currentTimeMillis() - before));
 		
-		EOperation operation = stepToExecute.getMseoccurrence().getMse().getAction(); 								
-		
-		mapClassEstimation	.keySet()
-							.stream()
-							.filter(s -> callerClass.contains(s))
-							.map(s -> mapClassEstimation.get(s))
-							.forEach(m -> {
-								updateMeasure(m, caller);
-								System.out.println(m+" consumed "+m.value()+" J in "+durationAfterExecution+" ms");
-								
-							});					
+		if (m != null && (hasRealTimeDuration(m))) {			
+			updateMeasure(m, caller, operation);
+			System.out.println(classOperation+" consumed "+m.value());			
+		}		
 		
 		IEngineAddon.super.stepExecuted(engine, stepToExecute);
 	}
 	
-	private void updateMeasure(MeasureAttribute m, EObject caller) {
+	private void updateMeasure(MeasureAttribute m, EObject caller, EOperation operation) {
 		
 		String att = m.getAtt();
 		Object object = caller.eGet(caller.eClass().getEAttributes().stream().filter(eAtt -> eAtt.getName().equals(att)).findFirst().get());		
 		m.setValue(BigDecimal.valueOf(Long.valueOf(object.toString())));
 	}
 	
-	private void updateMeasure(MeasureOCL m, EObject caller) {
+	private void updateMeasure(MeasureOCL m, EObject caller, EOperation operation) {
 		String query = m.getOclQuery();
 		try {
 			OCLHelper helper = ocl.createOCLHelper(caller.eClass());
@@ -145,59 +162,77 @@ public class EngineAddon implements IEngineAddon {
 		}		
 	}
 	
-	private void updateMeasure(MeasureUnboundProductOperation m, EObject caller) {
-		m.getMeasures().forEach(measure -> updateMeasure(measure, caller));		
+	private void updateMeasure(MeasureUnboundProductOperation m, EObject caller, EOperation operation) {
+		m.getMeasures().forEach(measure -> updateMeasure(measure, caller, operation));		
 	}
 	
-	private void updateMeasure(MeasureUnboundSumOperation m, EObject caller) {
-		m.getMeasures().forEach(measure -> updateMeasure(measure, caller));
+	private void updateMeasure(MeasureUnboundSumOperation m, EObject caller, EOperation operation) {
+		m.getMeasures().forEach(measure -> updateMeasure(measure, caller, operation));
 	}
 
-	private void updateMeasure(MeasureBinaryOperation m, EObject caller) {
-		updateMeasure(m.getLeft(), caller);
-		updateMeasure(m.getRight(), caller);
+	private void updateMeasure(MeasureBinaryOperation m, EObject caller, EOperation operation) {
+		updateMeasure(m.getLeft(), caller, operation);
+		updateMeasure(m.getRight(), caller, operation);
 	}
 	
-	private void updateMeasure(MeasureCast m, EObject caller) {
-		updateMeasure(m.getMeasure(), caller);
+	private void updateMeasure(MeasureCast m, EObject caller, EOperation operation) {
+		updateMeasure(m.getMeasure(), caller, operation);
 	}
 	
-	private void updateMeasure(Measure m, EObject caller) {
+	private void updateMeasure(RealTimeDuration m, EObject caller, EOperation operation) {
+		String callerClass = caller.getClass().getInterfaces()[0].getSimpleName();		
+		String callerOperation = operation.getName();
+		String classOperation = callerClass.concat("#").concat(callerOperation);
+		m.setValue(BigDecimal.valueOf(stepDurations.get(classOperation)));
+	}
+	private void updateMeasure(Measure m, EObject caller, EOperation operation) {
 		if (m instanceof MeasureBinaryOperation) {
-			updateMeasure((MeasureBinaryOperation) m, caller);
+			updateMeasure((MeasureBinaryOperation) m, caller, operation);
 		} else
 		if (m instanceof MeasureOCL) {
-			updateMeasure((MeasureOCL) m, caller);
+			updateMeasure((MeasureOCL) m, caller, operation);
 		} else
 		if (m instanceof MeasureAttribute) {
-			updateMeasure((MeasureAttribute) m, caller);
+			updateMeasure((MeasureAttribute) m, caller, operation);
 		} else
 		if (m instanceof MeasureCast) {
-			updateMeasure((MeasureCast) m, caller);
+			updateMeasure((MeasureCast) m, caller, operation);
 		} else 
 		if (m instanceof RealTimeDuration) {
-			updateMeasure((RealTimeDuration) m, caller);
+			updateMeasure((RealTimeDuration) m, caller, operation);
 		} else 
 		if (m instanceof MeasureUnboundProductOperation) {
-			updateMeasure((MeasureUnboundProductOperation) m, caller);
+			updateMeasure((MeasureUnboundProductOperation) m, caller, operation);
 		} else 
 		if (m instanceof MeasureUnboundSumOperation) {
-			updateMeasure((MeasureUnboundSumOperation) m, caller);
+			updateMeasure((MeasureUnboundSumOperation) m, caller, operation);
 		}		
-	}
+	}	
 	
-	private void updateMeasure(RealTimeDuration m, EObject caller) {
-		m.setValue(BigDecimal.valueOf(durationAfterExecution));
+	public static boolean hasRealTimeDuration(Measure m) {			
+		if (m instanceof RealTimeDuration) {
+			return true;
+		} 
+		
+		if (m instanceof MeasureUnboundOperation) {
+			return ((MeasureUnboundOperation) m).getMeasures().stream().anyMatch(EngineAddon::hasRealTimeDuration); 
+		}
+		
+		if (m instanceof MeasureBinaryOperation) {
+			return hasRealTimeDuration(((MeasureBinaryOperation) m).getLeft()) || hasRealTimeDuration(((MeasureBinaryOperation) m).getRight());
+		}
+		
+		return false;		
 	}
-	
+
 	public static void displayPlatformMeasurement(Platform p) {
 		
 		p.getMeasures().forEach(m -> {
 			topDownTreeAnalysis(m, (Measure measure) -> {				
 				if (measure.getTargetClass() != null)
-					System.out.print(" -> "+measure.getTargetClass());
+					System.out.println(" -> "+measure.getTargetClass());
 				if (measure.getTargetOperation() != null)
-					System.out.print(" -> "+measure.getTargetOperation());
+					System.out.println(" -> "+measure.getTargetOperation());
 								
 				return null;
 			}); 
