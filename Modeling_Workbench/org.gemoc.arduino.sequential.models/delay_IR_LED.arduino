@@ -4,7 +4,7 @@
     <digitalPins name="2">
       <module xsi:type="arduino:LED" name="blue_led_1"/>
     </digitalPins>
-    <digitalPins name="3">
+    <digitalPins name="3" level="1">
       <module xsi:type="arduino:InfraRedSensor" name="IR_sensor_1"/>
     </digitalPins>
   </boards>
@@ -21,8 +21,8 @@
           </instructions>
         </block>
         <condition xsi:type="arduino:BinaryBooleanExpression" operator="equal">
-          <left xsi:type="arduino:BooleanModuleGet" module="//@boards.0/@digitalPins.1/@module"/>
-          <right xsi:type="arduino:IntegerConstant" value="1"/>
+          <left xsi:type="arduino:IntegerConstant"/>
+          <right xsi:type="arduino:IntegerModuleGet" module="//@boards.0/@digitalPins.1/@module"/>
         </condition>
       </instructions>
     </block>

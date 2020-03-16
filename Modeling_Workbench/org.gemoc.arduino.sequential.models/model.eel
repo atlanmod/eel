@@ -5,7 +5,7 @@ Platform ATMega328p {
 		"Board".clockPeriod = 0.000000062,
 		"Board".Voltage = 5.0,		
 		"Board".Current = 0.0164,
-		"Board".currentIdle = 0.008, //Not right 
+		"Board".currentIdle = 0.0075, 
 		"Board".cpuPower = "Board.\'http://fr.tblf.energy.estimation/eel/\'::Type::Current" * "Board.\'http://fr.tblf.energy.estimation/eel/\'::Type::Voltage",
 		"Board".cpuPowerIdle ="Board.currentIdle" * "Board.\'http://fr.tblf.energy.estimation/eel/\'::Type::Voltage",  
 				
@@ -45,7 +45,7 @@ Platform ATMega328p {
 		"IntegerModuleGet".clockCycles = 51.0,
 		"IntegerModuleGet".callDuration = "IntegerModuleGet.clockCycles" * "Board.clockPeriod",
 						
-		"Board".systemPower = "Board.cpuPower" + "LED.powerOfLedsRunning" + "InfraRedSensor.powerOfInfraRedSensors",
+		"Board".systemPower = "Board.cpuPower" + "LED.powerOfLedsRunning" + "InfraRedSensor.powerOfInfraRedSensors",		
 		"Board".systemPowerOnIdle = "Board.cpuPowerIdle" + "LED.powerOfLedsRunning" + "InfraRedSensor.powerOfInfraRedSensors",	
 		
 		"WaitFor"#execute.Energy = "Board.systemPowerOnIdle" * "WaitFor.totalDuration",
