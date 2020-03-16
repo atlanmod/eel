@@ -30,10 +30,11 @@ Platform ATMega328p {
 		"Delay".callDuration = "Delay.clockCyles" * "Board.clockPeriod",
 		"Delay".Duration = "Delay.callDuration" + "Delay.delayDuration",
 		
-		"WaitFor".clockCycles = 55.0, // NOT TRUE
+		"WaitFor".clockCycles = 10.0, 
 		"WaitFor".callDuration = "WaitFor.clockCycles" * "Board.clockPeriod",
-		"WaitFor".RealDuration,
-		"WaitFor".totalDuration = "WaitFor.\'http://fr.tblf.energy.estimation/eel/\'::Type::Duration" + "WaitFor.callDuration",
+		"WaitFor".RealDuration, //milliseconds
+		"WaitFor".realDurationAsSeconds = "WaitFor.\'http://fr.tblf.energy.estimation/eel/\'::Type::Duration" * "variables.milliToUnitFactor",
+		"WaitFor".totalDuration = "WaitFor.realDurationAsSeconds" + "WaitFor.callDuration",
 		
 		"ModuleAssignment".clockCycles = 44.0,
 		"ModuleAssignment".callDuration = "ModuleAssignment.clockCycles" * "Board.clockPeriod",					

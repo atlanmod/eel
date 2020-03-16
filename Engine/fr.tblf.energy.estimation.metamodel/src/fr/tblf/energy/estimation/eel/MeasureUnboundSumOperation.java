@@ -22,7 +22,7 @@ public interface MeasureUnboundSumOperation extends MeasureUnboundOperation {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='self.measures -&gt; iterate(m: Measure; acc: Real = 1.0 | acc + m.value())'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='self.measures -&gt; iterate(m: Measure; acc: Real = 0.0 | acc + m.value())'"
 	 * @generated
 	 */
 	BigDecimal value();

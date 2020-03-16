@@ -1369,7 +1369,7 @@ public class EelPackageImpl extends EPackageImpl implements EelPackage {
 		  (getMeasureUnboundSumOperation__Value(),
 		   source,
 		   new String[] {
-			   "body", "self.measures -> iterate(m: Measure; acc: Real = 1.0 | acc + m.value())"
+			   "body", "self.measures -> iterate(m: Measure; acc: Real = 0.0 | acc + m.value())"
 		   });
 		addAnnotation
 		  (getMeasureUnboundProductOperation__Value(),

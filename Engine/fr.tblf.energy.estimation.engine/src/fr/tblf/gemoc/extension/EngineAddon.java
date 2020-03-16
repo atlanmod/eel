@@ -131,11 +131,12 @@ public class EngineAddon implements IEngineAddon {
 		String callerOperation = operation.getName();
 		String classOperation = callerClass.concat("#").concat(callerOperation);
 		Measure m = mapClassEstimation.get(classOperation);		
-		Long before = stepDurations.get(classOperation);
+		Long duration = System.currentTimeMillis() - stepDurations.get(classOperation);
 		
-		stepDurations.put(classOperation, Long.valueOf(System.currentTimeMillis() - before));
+		stepDurations.put(classOperation, Long.valueOf(duration));
 		
-		if (m != null && (hasRealTimeDuration(m))) {			
+		if (m != null && (hasRealTimeDuration(m))) {
+			System.out.println("lasted "+duration);
 			updateMeasure(m, caller, operation);
 			System.out.println(classOperation+" consumed "+m.value());			
 		}		
@@ -162,11 +163,7 @@ public class EngineAddon implements IEngineAddon {
 		}		
 	}
 	
-	private void updateMeasure(MeasureUnboundProductOperation m, EObject caller, EOperation operation) {
-		m.getMeasures().forEach(measure -> updateMeasure(measure, caller, operation));		
-	}
-	
-	private void updateMeasure(MeasureUnboundSumOperation m, EObject caller, EOperation operation) {
+	private void updateMeasure(MeasureUnboundOperation m, EObject caller, EOperation operation) {
 		m.getMeasures().forEach(measure -> updateMeasure(measure, caller, operation));
 	}
 
@@ -185,6 +182,7 @@ public class EngineAddon implements IEngineAddon {
 		String classOperation = callerClass.concat("#").concat(callerOperation);
 		m.setValue(BigDecimal.valueOf(stepDurations.get(classOperation)));
 	}
+	
 	private void updateMeasure(Measure m, EObject caller, EOperation operation) {
 		if (m instanceof MeasureBinaryOperation) {
 			updateMeasure((MeasureBinaryOperation) m, caller, operation);
@@ -201,12 +199,11 @@ public class EngineAddon implements IEngineAddon {
 		if (m instanceof RealTimeDuration) {
 			updateMeasure((RealTimeDuration) m, caller, operation);
 		} else 
-		if (m instanceof MeasureUnboundProductOperation) {
-			updateMeasure((MeasureUnboundProductOperation) m, caller, operation);
-		} else 
-		if (m instanceof MeasureUnboundSumOperation) {
-			updateMeasure((MeasureUnboundSumOperation) m, caller, operation);
-		}		
+		if (m instanceof MeasureUnboundOperation) {
+			updateMeasure((MeasureUnboundOperation) m, caller, operation);
+		} 	
+		
+		System.out.println(m.getName()+" : "+m.value()+" "+m.type().getLiteral());
 	}	
 	
 	public static boolean hasRealTimeDuration(Measure m) {			
