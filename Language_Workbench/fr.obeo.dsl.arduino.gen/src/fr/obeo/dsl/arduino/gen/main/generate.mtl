@@ -38,9 +38,8 @@ void setup() {
 				[/for]
 	set_sleep_mode(SLEEP_MODE_PWR_DOWN);
 	sleep_enable();
-			[/if]
-			
-			[/if]
+[/if]
+[/if]
 }
 		
 // the loop routine runs over and over again forever:
@@ -62,16 +61,14 @@ void waitFor_[waitFor.pin.name/]_[waitFor.mode/]() {
 
 [template public genINO(block : Block)post (trim())]
 	[for (instruction : Instruction | block.instructions)]
-[instruction.generateInstruction()/]
+[instruction.generateInstruction()/][if (not instruction.oclIsKindOf(arduino::Control))];[/if] 
 	[/for]  
 [/template]
 
 [template public generateInstruction(instruction : If)post (trim())]
 if ([instruction.condition.generateInstruction()/]) {
 	[instruction.block.genINO()/]
-} 
-	[if (not instruction.elseBlock.oclIsUndefined())]
-else {
+}[if (not instruction.elseBlock.oclIsUndefined())] else {
 	[instruction.elseBlock.genINO()/]
 }	
 [/if]
@@ -89,9 +86,6 @@ for (int i_iterator_[instruction.iteration/] = 0; i < [instruction.iteration/]; 
 }	 
 [/template]
 
-[template public generateInstruction(instruction : BooleanExpression)post (trim())]
-
-[/template]
 
 [template public generateInstruction(instruction : IntegerModuleGet)post (trim())]
 digitalRead([instruction.module.name/]) 
@@ -101,11 +95,28 @@ digitalRead([instruction.module.name/])
 [instruction.left.generateInstruction()/]  [instruction.operator.generateOperator()/] [instruction.right.generateInstruction()/]
 [/template]
 
-[template public generateInstruction(instruction : Expression)post (trim())]		
+[template public generateInstruction(instruction : BinaryIntegerExpression)post (trim())]
+[instruction.left.generateInstruction()/]  [instruction.operator.oclAsType(arduino::BinaryIntegerOperatorKind).generateOperator()/] [instruction.right.generateInstruction()/]
+[/template]
+
+
+[template public generateInstruction(instruction : VariableRef)post (trim())]
+[if (instruction.oclIsKindOf(arduino::IntegerVariableRef))]
+[instruction.oclAsType(arduino::IntegerVariableRef).variable.name/]
+[/if]
+[if (instruction.oclIsKindOf(arduino::BooleanVariableRef))]
+[instruction.oclAsType(arduino::BooleanVariableRef).variable.name/]
+[/if]
+[/template]
+
+[template public generateInstruction(instruction : Expression)]
+	[if (instruction.oclIsTypeOf(arduino::BooleanConstant) or instruction.oclIsTypeOf(arduino::IntegerConstant))]
+[instruction.generateInstruction()/]		
+	[/if]	
 [/template]
 
 [template public generateInstruction(instruction : BooleanConstant)post (trim())]
-	[instruction.value/] 
+[instruction.value/] 
 [/template]
 
 [template public generateInstruction(instruction : IntegerConstant)post (trim())]
@@ -137,26 +148,71 @@ digitalRead([instruction.module.name/])
 &&
 		[elseif (instruction.toString() = 'or')]
 ||
-		[else]
-!=		
+		[elseif (instruction.toString() = 'different')]
+!=
+		[elseif (instruction.toString() = 'minus')]
+-
+		[elseif (instruction.toString() = 'plus')]
++
+		[elseif (instruction.toString() = 'mul')]
+*
+		[elseif (instruction.toString() = 'div')]
+/
+		[elseif (instruction.toString() = 'min')]
+min
+		[elseif (instruction.toString() = 'max')]
+max
+		[elseif (instruction.toString() = 'pourcent')]
+%
+		[/if]
+[/template]
+
+[template public generateOperator(instruction : BinaryIntegerOperatorKind)post (trim())]
+		[if (instruction.toString() = 'minus')]
+-
+		[elseif (instruction.toString() = 'plus')]
++
+		[elseif (instruction.toString() = 'mul')]
+*
+		[elseif (instruction.toString() = 'div')]
+/
+		[elseif (instruction.toString() = 'min')]
+min
+		[elseif (instruction.toString() = 'max')]
+max
+		[elseif (instruction.toString() = 'pourcent')]
+%
 		[/if]
 [/template]
 
 [template public generateInstruction(instruction : ModuleAssignment)post (trim())]
 	[if (instruction.operand.oclIsTypeOf(arduino::IntegerConstant))]
-digitalWrite([instruction.module.name/], [instruction.operand.oclAsType(arduino::IntegerConstant).value/]);	
+digitalWrite([instruction.module.name/], [instruction.operand.oclAsType(arduino::IntegerConstant).value/])
  	[/if]
 	[if (instruction.operand.oclIsTypeOf(arduino::BooleanConstant))]
-digitalWrite([instruction.module.name/], [instruction.operand.oclAsType(arduino::BooleanConstant).value/]);	
+digitalWrite([instruction.module.name/], [instruction.operand.oclAsType(arduino::BooleanConstant).value/])
  	[/if]
 [/template]
 
 [template public generateInstruction(instruction : Delay)post (trim())]
-delay([instruction.value/]);
+delay([instruction.value/])
+[/template]
+
+[template public generateInstruction(instruction : VariableDeclaration)post (trim())]
+	[if (instruction.variable.oclIsTypeOf(arduino::BooleanVariable))]
+bool [instruction.variable.name/] = [instruction.variable.oclAsType(arduino::BooleanVariable).initialValue/]
+	[/if]
+	[if (instruction.variable.oclIsTypeOf(arduino::IntegerVariable))]
+int [instruction.variable.name/] = [instruction.variable.oclAsType(arduino::IntegerVariable).initialValue/]
+	[/if]
+[/template]
+
+[template public generateInstruction(instruction : VariableAssignment)post (trim())]
+[instruction.variable.name/] = [instruction.operand.generateInstruction()/]
 [/template]
 
 [template public generateInstruction(instruction : WaitFor)post (trim())]
-sleep_cpu();
+sleep_cpu()
 [/template]
 
 [template public generateInstruction(instruction : Instruction)post (trim())]
