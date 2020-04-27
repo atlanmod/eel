@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalEelParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Platform'", "'{'", "'variables'", "','", "'}'", "'measures'", "'Variable'", "'value'", "'vibility'", "'.'", "'#'", "'='", "'uncertainty'", "'ocl:'", "'attribute:'", "'as'", "'.RealDuration'", "'+'", "'*'", "'MeasurementUncertainty'", "'standardUncertainty'", "'information'", "'NormalDistribution'", "'Interval'", "'lowerEndpoint'", "'upperEndpoint'", "'Sampling'", "'measurementProcedure'", "'samples'", "'Integral'", "'function'", "'interval'", "'Sample'", "'quantity'", "'abstract'", "'interface'", "'EClass'", "'instanceClassName'", "'instanceTypeName'", "'eSuperTypes'", "'('", "')'", "'eAnnotations'", "'eTypeParameters'", "'eOperations'", "'eStructuralFeatures'", "'eGenericSuperTypes'", "'EOperation'", "'ordered'", "'unique'", "'lowerBound'", "'upperBound'", "'eType'", "'eExceptions'", "'eGenericType'", "'eParameters'", "'eGenericExceptions'", "'EAnnotation'", "'source'", "'references'", "'details'", "'contents'", "'ETypeParameter'", "'eBounds'", "'true'", "'false'", "'EGenericType'", "'eTypeParameter'", "'eClassifier'", "'eUpperBound'", "'eTypeArguments'", "'eLowerBound'", "'EStringToStringMapEntry'", "'key'", "'EObject'", "'-'", "'volatile'", "'transient'", "'unsettable'", "'derived'", "'iD'", "'EAttribute'", "'changeable'", "'defaultValueLiteral'", "'containment'", "'EReference'", "'resolveProxies'", "'eOpposite'", "'eKeys'", "'EDataType'", "'serializable'", "'EEnum'", "'eLiterals'", "'EEnumLiteral'", "'literal'", "'EParameter'", "'Current'", "'Duration'", "'Energy'", "'Frequency'", "'Power'", "'Voltage'", "'Scalar'", "'LOCAL'", "'GLOBAL'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Platform'", "'{'", "'variables'", "','", "'}'", "'measures'", "'Variable'", "'value'", "'vibility'", "'.'", "'#'", "'='", "'uncertainty'", "'ocl:'", "'attribute:'", "'as'", "'.RealDuration'", "'+'", "'*'", "'MeasurementUncertainty'", "'standardUncertainty'", "'information'", "'NormalDistribution'", "'Interval'", "'lowerEndpoint'", "'upperEndpoint'", "'Sampling'", "'measurementProcedure'", "'samples'", "'Integral'", "'function'", "'interval'", "'Sample'", "'quantity'", "'abstract'", "'interface'", "'EClass'", "'instanceClassName'", "'instanceTypeName'", "'eSuperTypes'", "'('", "')'", "'eAnnotations'", "'eTypeParameters'", "'eOperations'", "'eStructuralFeatures'", "'eGenericSuperTypes'", "'EOperation'", "'ordered'", "'unique'", "'lowerBound'", "'upperBound'", "'eType'", "'eExceptions'", "'eGenericType'", "'eParameters'", "'eGenericExceptions'", "'EAnnotation'", "'source'", "'references'", "'details'", "'contents'", "'ETypeParameter'", "'eBounds'", "'true'", "'false'", "'EGenericType'", "'eTypeParameter'", "'eClassifier'", "'eUpperBound'", "'eTypeArguments'", "'eLowerBound'", "'EStringToStringMapEntry'", "'key'", "'EObject'", "'-'", "'volatile'", "'transient'", "'unsettable'", "'derived'", "'iD'", "'EAttribute'", "'changeable'", "'defaultValueLiteral'", "'containment'", "'EReference'", "'resolveProxies'", "'eOpposite'", "'eKeys'", "'EDataType'", "'serializable'", "'EEnum'", "'eLiterals'", "'EEnumLiteral'", "'literal'", "'EParameter'", "'current'", "'Duration'", "'Energy'", "'Frequency'", "'Power'", "'Voltage'", "'Scalar'", "'LOCAL'", "'GLOBAL'"
     };
     public static final int T__50=50;
     public static final int T__59=59;
@@ -13830,7 +13830,7 @@ public class InternalEelParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleType"
-    // InternalEel.g:5832:1: ruleType returns [Enumerator current=null] : ( (enumLiteral_0= 'Current' ) | (enumLiteral_1= 'Duration' ) | (enumLiteral_2= 'Energy' ) | (enumLiteral_3= 'Frequency' ) | (enumLiteral_4= 'Power' ) | (enumLiteral_5= 'Voltage' ) | (enumLiteral_6= 'Scalar' ) ) ;
+    // InternalEel.g:5832:1: ruleType returns [Enumerator current=null] : ( (enumLiteral_0= 'current' ) | (enumLiteral_1= 'Duration' ) | (enumLiteral_2= 'Energy' ) | (enumLiteral_3= 'Frequency' ) | (enumLiteral_4= 'Power' ) | (enumLiteral_5= 'Voltage' ) | (enumLiteral_6= 'Scalar' ) ) ;
     public final Enumerator ruleType() throws RecognitionException {
         Enumerator current = null;
 
@@ -13846,10 +13846,10 @@ public class InternalEelParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalEel.g:5838:2: ( ( (enumLiteral_0= 'Current' ) | (enumLiteral_1= 'Duration' ) | (enumLiteral_2= 'Energy' ) | (enumLiteral_3= 'Frequency' ) | (enumLiteral_4= 'Power' ) | (enumLiteral_5= 'Voltage' ) | (enumLiteral_6= 'Scalar' ) ) )
-            // InternalEel.g:5839:2: ( (enumLiteral_0= 'Current' ) | (enumLiteral_1= 'Duration' ) | (enumLiteral_2= 'Energy' ) | (enumLiteral_3= 'Frequency' ) | (enumLiteral_4= 'Power' ) | (enumLiteral_5= 'Voltage' ) | (enumLiteral_6= 'Scalar' ) )
+            // InternalEel.g:5838:2: ( ( (enumLiteral_0= 'current' ) | (enumLiteral_1= 'Duration' ) | (enumLiteral_2= 'Energy' ) | (enumLiteral_3= 'Frequency' ) | (enumLiteral_4= 'Power' ) | (enumLiteral_5= 'Voltage' ) | (enumLiteral_6= 'Scalar' ) ) )
+            // InternalEel.g:5839:2: ( (enumLiteral_0= 'current' ) | (enumLiteral_1= 'Duration' ) | (enumLiteral_2= 'Energy' ) | (enumLiteral_3= 'Frequency' ) | (enumLiteral_4= 'Power' ) | (enumLiteral_5= 'Voltage' ) | (enumLiteral_6= 'Scalar' ) )
             {
-            // InternalEel.g:5839:2: ( (enumLiteral_0= 'Current' ) | (enumLiteral_1= 'Duration' ) | (enumLiteral_2= 'Energy' ) | (enumLiteral_3= 'Frequency' ) | (enumLiteral_4= 'Power' ) | (enumLiteral_5= 'Voltage' ) | (enumLiteral_6= 'Scalar' ) )
+            // InternalEel.g:5839:2: ( (enumLiteral_0= 'current' ) | (enumLiteral_1= 'Duration' ) | (enumLiteral_2= 'Energy' ) | (enumLiteral_3= 'Frequency' ) | (enumLiteral_4= 'Power' ) | (enumLiteral_5= 'Voltage' ) | (enumLiteral_6= 'Scalar' ) )
             int alt158=7;
             switch ( input.LA(1) ) {
             case 107:
@@ -13896,10 +13896,10 @@ public class InternalEelParser extends AbstractInternalAntlrParser {
 
             switch (alt158) {
                 case 1 :
-                    // InternalEel.g:5840:3: (enumLiteral_0= 'Current' )
+                    // InternalEel.g:5840:3: (enumLiteral_0= 'current' )
                     {
-                    // InternalEel.g:5840:3: (enumLiteral_0= 'Current' )
-                    // InternalEel.g:5841:4: enumLiteral_0= 'Current'
+                    // InternalEel.g:5840:3: (enumLiteral_0= 'current' )
+                    // InternalEel.g:5841:4: enumLiteral_0= 'current'
                     {
                     enumLiteral_0=(Token)match(input,107,FOLLOW_2); 
 

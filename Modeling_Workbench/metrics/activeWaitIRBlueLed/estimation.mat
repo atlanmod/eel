@@ -1,0 +1,13 @@
+# Created by Octave 4.2.2, Wed Apr 22 10:15:08 2020 CEST <thibaultblf@thibaultblf-HP-EliteBook-840-G4>
+# name: estimation
+# type: matrix
+# rows: 6
+# columns: 2
+ 0 25.3004428
+ 9.999000000000001 25.3004428
+ 10 34.662
+ 11.999 34.662
+ 12 25.3004428
+ 14 25.3004428
+
+

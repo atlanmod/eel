@@ -8,7 +8,6 @@
 '.'=31
 '.RealDuration'=38
 '='=32
-'Current'=13
 'Duration'=14
 'EAnnotation'=77
 'EAttribute'=94
@@ -44,6 +43,7 @@
 'changeable'=95
 'containment'=115
 'contents'=81
+'current'=13
 'defaultValueLiteral'=96
 'derived'=113
 'details'=80

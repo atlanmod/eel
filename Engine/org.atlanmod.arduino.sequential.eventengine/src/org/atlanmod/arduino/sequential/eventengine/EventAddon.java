@@ -48,7 +48,6 @@ public class EventAddon implements IEngineAddon {
 			
 	}
 	
-	
 
 	public void waitForChangePin(WaitFor waitFor) throws NoSuchFieldException, SecurityException, IllegalArgumentException, IllegalAccessException {
 		System.out.println("Changing pin value");

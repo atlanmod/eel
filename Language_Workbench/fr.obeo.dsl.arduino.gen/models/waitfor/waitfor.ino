@@ -1,11 +1,11 @@
 #include<avr/sleep.h>
-int blue_led_1 = 2;
-int IR_sensor_1 = 3;
+int blue_led_1 = 9;
+int IR_sensor_1 = 2;
 
 void setup() {
 	pinMode(blue_led_1, OUTPUT);
 	pinMode(IR_sensor_1, INPUT);
-	attachInterrupt(digitalPinToInterrupt(3), waitFor_3_CHANGE, CHANGE);
+	attachInterrupt(digitalPinToInterrupt(2), waitFor_3_CHANGE, CHANGE);
 	set_sleep_mode(SLEEP_MODE_PWR_DOWN);
 	
 			

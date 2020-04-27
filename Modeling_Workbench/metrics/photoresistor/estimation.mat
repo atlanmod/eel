@@ -1,0 +1,13 @@
+# Created by Octave 4.2.2, Wed Apr 22 11:28:02 2020 CEST <thibaultblf@thibaultblf-HP-EliteBook-840-G4>
+# name: estimation
+# type: matrix
+# rows: 6
+# columns: 2
+ 0 27.99
+ 1.99 27.99
+ 2 33.88
+ 3.99 33.88
+ 4 27.99
+ 6 27.99
+
+

@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalEelParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'true'", "'false'", "'Current'", "'Duration'", "'Energy'", "'Frequency'", "'Power'", "'Voltage'", "'Scalar'", "'LOCAL'", "'GLOBAL'", "'Platform'", "'{'", "'}'", "'variables'", "','", "'measures'", "'Variable'", "'vibility'", "'value'", "'.'", "'='", "'#'", "'uncertainty'", "'ocl:'", "'attribute:'", "'as'", "'.RealDuration'", "'+'", "'*'", "'MeasurementUncertainty'", "'standardUncertainty'", "'information'", "'NormalDistribution'", "'Interval'", "'lowerEndpoint'", "'upperEndpoint'", "'Sampling'", "'measurementProcedure'", "'samples'", "'Integral'", "'interval'", "'function'", "'Sample'", "'quantity'", "'EClass'", "'instanceClassName'", "'instanceTypeName'", "'eSuperTypes'", "'('", "')'", "'eAnnotations'", "'eTypeParameters'", "'eOperations'", "'eStructuralFeatures'", "'eGenericSuperTypes'", "'EOperation'", "'ordered'", "'unique'", "'lowerBound'", "'upperBound'", "'eType'", "'eExceptions'", "'eGenericType'", "'eParameters'", "'eGenericExceptions'", "'EAnnotation'", "'source'", "'references'", "'details'", "'contents'", "'ETypeParameter'", "'eBounds'", "'EGenericType'", "'eTypeParameter'", "'eClassifier'", "'eUpperBound'", "'eTypeArguments'", "'eLowerBound'", "'EStringToStringMapEntry'", "'key'", "'EObject'", "'-'", "'EAttribute'", "'changeable'", "'defaultValueLiteral'", "'EReference'", "'resolveProxies'", "'eOpposite'", "'eKeys'", "'EDataType'", "'serializable'", "'EEnum'", "'eLiterals'", "'EEnumLiteral'", "'literal'", "'EParameter'", "'abstract'", "'interface'", "'volatile'", "'transient'", "'unsettable'", "'derived'", "'iD'", "'containment'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'true'", "'false'", "'current'", "'Duration'", "'Energy'", "'Frequency'", "'Power'", "'Voltage'", "'Scalar'", "'LOCAL'", "'GLOBAL'", "'Platform'", "'{'", "'}'", "'variables'", "','", "'measures'", "'Variable'", "'vibility'", "'value'", "'.'", "'='", "'#'", "'uncertainty'", "'ocl:'", "'attribute:'", "'as'", "'.RealDuration'", "'+'", "'*'", "'MeasurementUncertainty'", "'standardUncertainty'", "'information'", "'NormalDistribution'", "'Interval'", "'lowerEndpoint'", "'upperEndpoint'", "'Sampling'", "'measurementProcedure'", "'samples'", "'Integral'", "'interval'", "'function'", "'Sample'", "'quantity'", "'EClass'", "'instanceClassName'", "'instanceTypeName'", "'eSuperTypes'", "'('", "')'", "'eAnnotations'", "'eTypeParameters'", "'eOperations'", "'eStructuralFeatures'", "'eGenericSuperTypes'", "'EOperation'", "'ordered'", "'unique'", "'lowerBound'", "'upperBound'", "'eType'", "'eExceptions'", "'eGenericType'", "'eParameters'", "'eGenericExceptions'", "'EAnnotation'", "'source'", "'references'", "'details'", "'contents'", "'ETypeParameter'", "'eBounds'", "'EGenericType'", "'eTypeParameter'", "'eClassifier'", "'eUpperBound'", "'eTypeArguments'", "'eLowerBound'", "'EStringToStringMapEntry'", "'key'", "'EObject'", "'-'", "'EAttribute'", "'changeable'", "'defaultValueLiteral'", "'EReference'", "'resolveProxies'", "'eOpposite'", "'eKeys'", "'EDataType'", "'serializable'", "'EEnum'", "'eLiterals'", "'EEnumLiteral'", "'literal'", "'EParameter'", "'abstract'", "'interface'", "'volatile'", "'transient'", "'unsettable'", "'derived'", "'iD'", "'containment'"
     };
     public static final int T__50=50;
     public static final int T__59=59;
@@ -4249,13 +4249,13 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Type__Alternatives"
-    // InternalEel.g:1211:1: rule__Type__Alternatives : ( ( ( 'Current' ) ) | ( ( 'Duration' ) ) | ( ( 'Energy' ) ) | ( ( 'Frequency' ) ) | ( ( 'Power' ) ) | ( ( 'Voltage' ) ) | ( ( 'Scalar' ) ) );
+    // InternalEel.g:1211:1: rule__Type__Alternatives : ( ( ( 'current' ) ) | ( ( 'Duration' ) ) | ( ( 'Energy' ) ) | ( ( 'Frequency' ) ) | ( ( 'Power' ) ) | ( ( 'Voltage' ) ) | ( ( 'Scalar' ) ) );
     public final void rule__Type__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:1215:1: ( ( ( 'Current' ) ) | ( ( 'Duration' ) ) | ( ( 'Energy' ) ) | ( ( 'Frequency' ) ) | ( ( 'Power' ) ) | ( ( 'Voltage' ) ) | ( ( 'Scalar' ) ) )
+            // InternalEel.g:1215:1: ( ( ( 'current' ) ) | ( ( 'Duration' ) ) | ( ( 'Energy' ) ) | ( ( 'Frequency' ) ) | ( ( 'Power' ) ) | ( ( 'Voltage' ) ) | ( ( 'Scalar' ) ) )
             int alt11=7;
             switch ( input.LA(1) ) {
             case 13:
@@ -4302,14 +4302,14 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
             switch (alt11) {
                 case 1 :
-                    // InternalEel.g:1216:2: ( ( 'Current' ) )
+                    // InternalEel.g:1216:2: ( ( 'current' ) )
                     {
-                    // InternalEel.g:1216:2: ( ( 'Current' ) )
-                    // InternalEel.g:1217:3: ( 'Current' )
+                    // InternalEel.g:1216:2: ( ( 'current' ) )
+                    // InternalEel.g:1217:3: ( 'current' )
                     {
                      before(grammarAccess.getTypeAccess().getCurrentEnumLiteralDeclaration_0()); 
-                    // InternalEel.g:1218:3: ( 'Current' )
-                    // InternalEel.g:1218:4: 'Current'
+                    // InternalEel.g:1218:3: ( 'current' )
+                    // InternalEel.g:1218:4: 'current'
                     {
                     match(input,13,FOLLOW_2); 
 

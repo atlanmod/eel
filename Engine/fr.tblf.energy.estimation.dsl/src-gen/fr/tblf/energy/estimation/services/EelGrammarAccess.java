@@ -4034,7 +4034,7 @@ public class EelGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cScalarScalarKeyword_6_0 = (Keyword)cScalarEnumLiteralDeclaration_6.eContents().get(0);
 		
 		//enum Type:
-		//	Current |
+		//	Current="current" |
 		//	Duration |
 		//	Energy |
 		//	Frequency |
@@ -4043,13 +4043,13 @@ public class EelGrammarAccess extends AbstractGrammarElementFinder {
 		//	Scalar;
 		public EnumRule getRule() { return rule; }
 		
-		//Current | Duration | Energy | Frequency | Power | Voltage | Scalar
+		//Current="current" | Duration | Energy | Frequency | Power | Voltage | Scalar
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//Current
+		//Current="current"
 		public EnumLiteralDeclaration getCurrentEnumLiteralDeclaration_0() { return cCurrentEnumLiteralDeclaration_0; }
 		
-		//"Current"
+		//"current"
 		public Keyword getCurrentCurrentKeyword_0_0() { return cCurrentCurrentKeyword_0_0; }
 		
 		//Duration
@@ -4302,7 +4302,7 @@ public class EelGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//enum Type:
-	//	Current |
+	//	Current="current" |
 	//	Duration |
 	//	Energy |
 	//	Frequency |

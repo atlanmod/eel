@@ -1215,7 +1215,7 @@ rule__Type__Alternatives
 :
 	(
 		{ before(grammarAccess.getTypeAccess().getCurrentEnumLiteralDeclaration_0()); }
-		('Current')
+		('current')
 		{ after(grammarAccess.getTypeAccess().getCurrentEnumLiteralDeclaration_0()); }
 	)
 	|

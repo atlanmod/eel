@@ -35,7 +35,7 @@ EBigDecimal returns ecore::EBigDecimal:
 	INT? '.' INT;
 
 enum Type returns Type:
-	Current |
+	Current="current" |
 	Duration |
 	Energy |
 	Frequency |

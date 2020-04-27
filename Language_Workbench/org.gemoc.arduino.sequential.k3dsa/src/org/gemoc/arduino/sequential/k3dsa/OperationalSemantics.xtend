@@ -131,9 +131,7 @@ class Project_ExecutableAspect {
 				o.value = o.initialValue
 			} else if (o instanceof BooleanVariable) {
 				o.value = o.initialValue
-			} else if (o instanceof Pin) {
-				(o as Pin).level = 0
-			}
+			} 
 		}]
 	}
 	
@@ -148,8 +146,9 @@ class VariableAssignment_ExecutableAspect extends Instruction_ExecutableAspect {
 	@Step
 	@OverrideAspectMethod
 	def void execute() {
-		val variable = _self.variable
+		val variable = _self.variable	
 		val value = _self.operand.evaluate
+		
 		if (variable instanceof IntegerVariable){
 			variable.value = value as Integer
 		}
@@ -252,7 +251,7 @@ class Control_EvaluableAspect extends Instruction_ExecutableAspect {
 @Aspect(className=If)
 class If_EvaluableAspect extends Control_EvaluableAspect {
 	@OverrideAspectMethod
-	def Boolean evaluate() {
+	def Boolean evaluate() { 
 		var Boolean resCond = false
 		if (_self.condition instanceof BooleanExpression){
 			resCond = _self.condition.evaluate as Boolean
@@ -351,7 +350,6 @@ class WaitFor_ExecutableAspect extends Utilities_ExecutableAspect {
 		if ( _self.isValidated) {
 			_self.moduleActivated = false
 			_self.waiting = false
-			println("VALIDATED")
 			return
 		}
 		_self.moduleActivated = false
@@ -385,7 +383,7 @@ class WaitFor_ExecutableAspect extends Utilities_ExecutableAspect {
 @Aspect(className=BinaryIntegerExpression)
 class BinaryIntegerExpression_EvaluableAspect extends Expression_EvaluableAspect {
 	@OverrideAspectMethod
-	def Object evaluate() {
+	def Object evaluate() {		
 		var Integer res
 		var bLeft = false
 		var iLeft = 0
@@ -432,6 +430,7 @@ class BinaryIntegerExpression_EvaluableAspect extends Expression_EvaluableAspect
 
 @Aspect(className=BooleanModuleGet) 
 class BooleanModuleGet_ExecutableAspect extends Expression_EvaluableAspect{
+	@Step
 	@OverrideAspectMethod
 	def Object evaluate() {
 		
@@ -461,6 +460,7 @@ class IntegerConstant_ExecutableAspect extends Expression_EvaluableAspect{
 
 @Aspect(className=IntegerModuleGet) 
 class IntegerModuleGet_ExecutableAspect extends Expression_EvaluableAspect{
+	@Step
 	@OverrideAspectMethod
 	def Object evaluate() {
 		
@@ -499,12 +499,14 @@ class BinaryBooleanExpression_EvaluableAspect extends Expression_EvaluableAspect
 		}
 		var bRight = false
 		var iRight = 0
-		switch (_self.right){
+		switch (_self.right){			
 			BooleanExpression: {
 				bRight = _self.right.evaluate as Boolean 
 				rightIsBoolean = true
 			}
-			IntegerExpression: iRight = _self.right.evaluate as Integer
+			IntegerExpression: {
+				iRight = _self.right.evaluate as Integer				
+			}
 		}
 		if (leftIsBoolean != rightIsBoolean) {
 			throw new IllegalArgumentException("left operand type does not match right operand type.")
@@ -619,7 +621,9 @@ class VariableRef_EvaluableAspect extends Expression_EvaluableAspect{
 	def Object evaluate(){
 		switch _self{
 			BooleanVariableRef: return (_self as BooleanVariableRef).variable.evaluate
-			IntegerVariableRef: return (_self as IntegerVariableRef).variable.evaluate
+			IntegerVariableRef: {
+				return (_self as IntegerVariableRef).variable.evaluate			
+			}
 			default: throw new ClassCastException("type not expected: "+_self.eClass.name)
 		}
 	}

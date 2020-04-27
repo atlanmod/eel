@@ -45,6 +45,8 @@ public class EngineAddon implements IEngineAddon {
 	private Map<String, Long> stepDurations;
 	private long durationBeforeExecution;
 	private long durationAfterExecution;
+	private Measure systemPower;
+	
 	@Override
 	public void engineAboutToStart(IExecutionEngine<?> executionEngine) {	
 		if (MODEL == null) {
@@ -80,9 +82,11 @@ public class EngineAddon implements IEngineAddon {
 					if (eObject instanceof Measure && ((Measure) eObject).getTargetClass() != null && ((Measure) eObject).getTargetOperation() != null) {
 						//EObject target = EcoreUtil.resolve(((EObject) ((Measure) eObject).getTargetClass()), resourceSet);
 						//System.out.println("Loaded target "+target);
+						
 						mapClassEstimation.put(((Measure) eObject).getTargetClass()+"#"+((Measure) eObject).getTargetOperation(), (Measure)eObject);
 					}
 				});
+				systemPower = platform.getMeasures().stream().filter(m -> m.getName().equals("Board.systemPower")).findAny().get();				
 				System.out.println(platform.getName()+" estimation model loaded");
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -102,28 +106,33 @@ public class EngineAddon implements IEngineAddon {
 	}
 
 	@Override
-	public void aboutToExecuteStep(IExecutionEngine<?> engine, Step<?> stepToExecute) {	
+	public void aboutToExecuteStep(IExecutionEngine<?> engine, Step<?> stepToExecute) {			
 		EObject caller = stepToExecute.getMseoccurrence().getMse().getCaller();		
 		EOperation operation = stepToExecute.getMseoccurrence().getMse().getAction();
 		String callerClass = caller.getClass().getInterfaces()[0].getSimpleName();		
 		String callerOperation = operation.getName();
-		String classOperation = callerClass.concat("#").concat(callerOperation);	
+		String classOperation = callerClass.concat("#").concat(callerOperation);
+		System.out.println(classOperation);
 		Measure m = mapClassEstimation.get(classOperation);
 		
 		stepDurations.put(classOperation, Long.valueOf(System.currentTimeMillis()));
 		
 		if (m != null && !(hasRealTimeDuration(m))) {			
-			System.out.println(m.getClass().getSimpleName());
 			updateMeasure(m, caller, operation);
-			System.out.println(classOperation+" consumed "+m.value());
+			try {
+				System.out.println(classOperation+" consumed "+m.value());	
+			} catch (Exception e) {
+				System.out.println(m.getName()+" - "+m.getSubname()+" cannot compute energy consumption");
+			}
+			
 		}
 		
+//		updateMeasure(systemPower, caller, operation);
+//		System.out.println("power: "+systemPower.value());
 		IEngineAddon.super.aboutToExecuteStep(engine, stepToExecute);
 	}
 	
 	
-
-
 	public void stepExecuted(IExecutionEngine<?> engine, Step<?> stepToExecute) {
 		EObject caller = stepToExecute.getMseoccurrence().getMse().getCaller();						
 		EOperation operation = stepToExecute.getMseoccurrence().getMse().getAction();
@@ -153,12 +162,13 @@ public class EngineAddon implements IEngineAddon {
 	
 	private void updateMeasure(MeasureOCL m, EObject caller, EOperation operation) {
 		String query = m.getOclQuery();
+		
 		try {
 			OCLHelper helper = ocl.createOCLHelper(caller.eClass());
 			ExpressionInOCL expression = helper.createQuery(query);
-			m.setValue(BigDecimal.valueOf(Long.valueOf(ocl.evaluate(caller, expression).toString())));			
+			m.setValue(new BigDecimal(ocl.evaluate(caller, expression).toString()));
 		} catch (ParserException e) {
-			// TODO Auto-generated catch block
+			System.err.println("Could not run query "+query+" \n on "+caller.getClass());
 			e.printStackTrace();
 		}		
 	}
@@ -203,7 +213,7 @@ public class EngineAddon implements IEngineAddon {
 			updateMeasure((MeasureUnboundOperation) m, caller, operation);
 		} 	
 		
-		System.out.println(m.getName()+" : "+m.value()+" "+m.type().getLiteral());
+		//System.out.println(m.getName()+" : "+m.value()+" "+m.type().getLiteral());
 	}	
 	
 	public static boolean hasRealTimeDuration(Measure m) {			

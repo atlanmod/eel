@@ -7,13 +7,13 @@ Platform ATMega328p {
 		"Board".Voltage = 5.0,		
 		"Board".Current = 0.0241,
 		"Board".currentIdle = 0.0099, 
-		"Board".cpuPower = "Board.\'http://fr.tblf.energy.estimation/eel/\'::Type::Current" * "Board.\'http://fr.tblf.energy.estimation/eel/\'::Type::Voltage",
+		"Board".cpuPower = "Board.Current" * "Board.\'http://fr.tblf.energy.estimation/eel/\'::Type::Voltage",
 		"Board".cpuPowerIdle ="Board.currentIdle" * "Board.\'http://fr.tblf.energy.estimation/eel/\'::Type::Voltage",  
 						
 		"LED".Voltage = 5.0,
 		"LED".Current = 0.00845,		 		
 		"LED".numberOfLedsRunning = ocl:"LED.allInstances() -> select(it | it.oclContainer().oclAsType(Pin).level = 1) -> size()",						
-		"LED".currentOfLedsRunning = "LED.\'http://fr.tblf.energy.estimation/eel/\'::Type::Current" * "LED.numberOfLedsRunning",
+		"LED".currentOfLedsRunning = "LED.Current" * "LED.numberOfLedsRunning",
 		"LED".powerOfLedsRunning = "LED.currentOfLedsRunning" * "LED.numberOfLedsRunning" * "LED.\'http://fr.tblf.energy.estimation/eel/\'::Type::Voltage",
 		
 		"InfraRedSensor".Voltage = 3.3,
@@ -21,13 +21,25 @@ Platform ATMega328p {
 		"InfraRedSensor".internalLedCurrent = 0.00085,
 		"InfraRedSensor".numberOfSensorsRunning = ocl: "InfraRedSensor.allInstances() -> size()",
 		"InfraRedSensor".numberOnObstacle = ocl:"InfraRedSensor.allInstances() -> select(it | it.oclContainer.oclAsType(Pin).level = 0) -> asSequence() -> size()",
-		"InfraRedSensor".powerOfInfraRedSensorsOnIdle = "InfraRedSensor.numberOfSensorsRunning" * "InfraRedSensor.\'http://fr.tblf.energy.estimation/eel/\'::Type::Voltage" * "InfraRedSensor.\'http://fr.tblf.energy.estimation/eel/\'::Type::Current", 
+		"InfraRedSensor".powerOfInfraRedSensorsOnIdle = "InfraRedSensor.numberOfSensorsRunning" * "InfraRedSensor.\'http://fr.tblf.energy.estimation/eel/\'::Type::Voltage" * "InfraRedSensor.Current", 
 		"InfraRedSensor".powerOfInfraRedSensorsOnObstacle = "InfraRedSensor.numberOnObstacle" * "InfraRedSensor.internalLedCurrent" * "InfraRedSensor.\'http://fr.tblf.energy.estimation/eel/\'::Type::Voltage", 
 		"InfraRedSensor".powerOfInfraRedSensors = "InfraRedSensor.powerOfInfraRedSensorsOnIdle" + "InfraRedSensor.powerOfInfraRedSensorsOnObstacle",
 		
+		"MicroServo".Current = 0.0025704,		
+		"MicroServo".numberOfServoRunning = ocl: "MicroServo.allInstances() -> size()",
+		"MicroServo".currentOfServoRunning = "MicroServo.numberOfServoRunning" * "MicroServo.Current",
+		"MicroServo".Power = "MicroServo.currentOfServoRunning" * "Board.\'http://fr.tblf.energy.estimation/eel/\'::Type::Voltage", 
+		"MicroServo".energyPerDegreeHigh = 0.0020415, 
+		"MicroServo".energyPerDegreeLow = 0.000901, 		
+		"MicroServo".degreesHigh = ocl:"let rotation = (self.operand.oclAsType(IntegerConstant).value - self.module.oclContainer().oclAsType(Pin).level).abs() in if (rotation <= 39) then rotation else 39.0 endif",
+		"MicroServo".degreesLow = ocl:"let rotation = (self.operand.oclAsType(IntegerConstant).value - self.module.oclContainer().oclAsType(Pin).level).abs() in if (rotation > 39) then (rotation - 39) else 0.0 endif",
+		"MicroServo".energyHigh = "MicroServo.energyPerDegreeHigh" * "MicroServo.degreesHigh",
+		"MicroServo".energyLow = "MicroServo.energyPerDegreeLow" * "MicroServo.degreesLow",
+		"MicroServo".Energy = "MicroServo.energyHigh" + "MicroServo.energyLow",
+		
 		// value * voltsPerUnit = internalVoltage, * conductance = Intensity, * board voltage = power consumption for all sensors 		
 		"AmbientLightSensor".Current = ocl:"AmbientLightSensor.allInstances() -> iterate( it: AmbientLightSensor; acc: Real = 0.0 | acc + it.oclContainer.oclAsType(Pin).level * 0.0049 * 0.004545455)",		
-		"AmbientLightSensor".Power = "Board.\'http://fr.tblf.energy.estimation/eel/\'::Type::Voltage" * "AmbientLightSensor.\'http://fr.tblf.energy.estimation/eel/\'::Type::Current",
+		"AmbientLightSensor".Power = "Board.\'http://fr.tblf.energy.estimation/eel/\'::Type::Voltage" * "AmbientLightSensor.Current",
 		
 		"Delay".delayDurationMs = ocl:"self.value", // milliseconds
 		"Delay".delayDuration = "Delay.delayDurationMs" * "variables.milliToUnitFactor",	
@@ -43,7 +55,10 @@ Platform ATMega328p {
 		
 		"ModuleAssignment".clockCycles = 44.0, //digitalWrite
 		"ModuleAssignment".callDuration = "ModuleAssignment.clockCycles" * "Board.clockPeriod",					
-				
+		"ModuleAssignment".controlsServo = ocl:"if (self.module.oclIsKindOf(MicroServo)) then 1.0 else 0.0 endif",
+		"ModuleAssignment".energyImpact = "ModuleAssignment.controlsServo" * "MicroServo.\'http://fr.tblf.energy.estimation/eel/\'::Type::Energy",		
+		"ModuleAssignment".energyFromCall = "ModuleAssignment.callDuration" * "Board.systemPower",
+		
 		"BooleanModuleGet".clockCycles = 51.0, //digitalRead
 		"BooleanModuleGet".callDuration = "BooleanModuleGet.clockCycles" * "Board.clockPeriod",
 		
@@ -60,16 +75,16 @@ Platform ATMega328p {
 		"VariableAssignement".callDuration = "VariableAssignement.clockCycles" * "Board.clockPeriod",
 			
 		"Board".devicesPower = "LED.powerOfLedsRunning" + "InfraRedSensor.powerOfInfraRedSensors" + "AmbientLightSensor.\'http://fr.tblf.energy.estimation/eel/\'::Type::Power",
-		"Board".systemPower = "Board.cpuPower" + "Board.devicesPower",			
+		"Board".systemPower = "Board.cpuPower" + "Board.devicesPower",				
 		"Board".systemPowerOnIdle = "Board.cpuPowerIdle" + "Board.devicesPower",	
 		
 		"WaitFor"#execute.Energy = "Board.systemPowerOnIdle" * "WaitFor.totalDuration",
 		"Delay"#execute.Energy = "Delay.\'http://fr.tblf.energy.estimation/eel/\'::Type::Duration" * "Board.systemPower",			
-		"ModuleAssignment"#execute.Energy = "ModuleAssignment.callDuration" * "Board.systemPower",
+		"ModuleAssignment"#execute.Energy = "ModuleAssignment.energyFromCall" + "ModuleAssignment.energyImpact",
 		"IntegerModuleGet"#evaluate.Energy = "IntegerModuleGet.callDuration" * "Board.systemPower",
 		"VariableAssignment"#execute.Energy = "VariableAssignement.callDuration" * "Board.systemPower",
 		"VariableDeclaration"#execute.Energy = "VariableDeclaration.callDuration" * "Board.systemPower",		
 		"BinaryIntegerExpression"#evaluate.Energy = "BinaryIntegerExpression.callDuration" * "Board.systemPower",
-		"BooleanModuleGet"#evaluate.Energy = "BooleanModuleGet.callDuration" * "Board.systemPower" 				 		 		
+		"BooleanModuleGet"#evaluate.Energy = "BooleanModuleGet.callDuration" * "Board.systemPower"				 		 	
 	}
 }

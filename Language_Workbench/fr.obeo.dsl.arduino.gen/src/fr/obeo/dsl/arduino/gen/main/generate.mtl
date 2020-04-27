@@ -11,6 +11,10 @@
 	[file (sketch.name+'.ino', false, 'UTF-8')]
 #include<avr/sleep.h>
 		[if (sketch.board.oclIsTypeOf(arduino::ArduinoBoard))]
+			[if (sketch.board.eContents() -> collect(e | e.oclIsKindOf(arduino::MicroServo)) -> size() > 0)]
+#include <Servo.h>  
+Servo servo;				
+			[/if]
 			[for( pin : DigitalPin | sketch.board.oclAsType(arduino::ArduinoBoard).digitalPins)]
 int [pin.module.name/] = [pin.name/];
 			[/for]
@@ -18,16 +22,17 @@ int [pin.module.name/] = [pin.name/];
 int [pin.module.name/] = [pin.name/];
 			[/for]
 		[/if]
-
 void setup() {
 			[if (sketch.board.oclIsTypeOf(arduino::ArduinoBoard))]
 				[for( pin : DigitalPin | sketch.board.oclAsType(arduino::ArduinoBoard).digitalPins)]					
 					[if (pin.module.oclIsTypeOf(arduino::LED) 
 						or pin.module.oclIsTypeOf(arduino::Buzzer) 
-						or pin.module.oclIsTypeOf(arduino::MicroServo) 
 						or pin.module.oclIsTypeOf(arduino::Fan) 
 						or pin.module.oclIsTypeOf(arduino::ArduinoCommunicationModule))]
 	pinMode([pin.module.name/], OUTPUT);
+					[elseif (pin.module.oclIsKindOf(arduino::MicroServo))]
+	servo.attach([pin.module.name/]);					
+					
 					[else]
 	pinMode([pin.module.name/], INPUT);
 					[/if]
@@ -186,12 +191,16 @@ max
 [/template]
 
 [template public generateInstruction(instruction : ModuleAssignment)post (trim())]
-	[if (instruction.operand.oclIsTypeOf(arduino::IntegerConstant))]
+	[if (instruction.module.oclIsKindOf(arduino::MicroServo))]
+servo.write([instruction.operand.oclAsType(arduino::IntegerConstant).value/])
+	[else]
+		[if (instruction.operand.oclIsTypeOf(arduino::IntegerConstant))]
 digitalWrite([instruction.module.name/], [instruction.operand.oclAsType(arduino::IntegerConstant).value/])
- 	[/if]
-	[if (instruction.operand.oclIsTypeOf(arduino::BooleanConstant))]
+ 		[/if]
+		[if (instruction.operand.oclIsTypeOf(arduino::BooleanConstant))]
 digitalWrite([instruction.module.name/], [instruction.operand.oclAsType(arduino::BooleanConstant).value/])
- 	[/if]
+ 		[/if]
+	[/if]
 [/template]
 
 [template public generateInstruction(instruction : Delay)post (trim())]
