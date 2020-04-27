@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<arduino:Project xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:arduino="http://www.obeo.fr/arduino">
+  <boards xsi:type="arduino:ArduinoBoard">
+    <digitalPins name="9">
+      <module xsi:type="arduino:LED" name="blueLed"/>
+    </digitalPins>
+    <analogPins name="0" level="175">
+      <module xsi:type="arduino:AmbientLightSensor" name="sensor"/>
+    </analogPins>
+  </boards>
+  <sketches name="photoResitorTriggersLedWhenLow" board="//@boards.0">
+    <block>
+      <instructions xsi:type="arduino:VariableDeclaration">
+        <variable xsi:type="arduino:IntegerVariable" name="lightCal"/>
+      </instructions>
+      <instructions xsi:type="arduino:VariableAssignment" variable="//@sketches.0/@block/@instructions.0/@variable">
+        <operand xsi:type="arduino:IntegerModuleGet" module="//@boards.0/@analogPins.0/@module"/>
+      </instructions>
+      <instructions xsi:type="arduino:VariableDeclaration">
+        <variable xsi:type="arduino:IntegerVariable" name="minLightChange"/>
+      </instructions>
+      <instructions xsi:type="arduino:VariableAssignment" variable="//@sketches.0/@block/@instructions.2/@variable">
+        <operand xsi:type="arduino:BinaryIntegerExpression">
+          <left xsi:type="arduino:IntegerVariableRef" variable="//@sketches.0/@block/@instructions.0/@variable"/>
+          <right xsi:type="arduino:IntegerConstant" value="50"/>
+        </operand>
+      </instructions>
+      <instructions xsi:type="arduino:While">
+        <block>
+          <instructions xsi:type="arduino:VariableDeclaration">
+            <variable xsi:type="arduino:IntegerVariable" name="lightVal"/>
+          </instructions>
+          <instructions xsi:type="arduino:VariableAssignment" variable="//@sketches.0/@block/@instructions.4/@block/@instructions.0/@variable">
+            <operand xsi:type="arduino:IntegerModuleGet" module="//@boards.0/@analogPins.0/@module"/>
+          </instructions>
+          <instructions xsi:type="arduino:If">
+            <block>
+              <instructions xsi:type="arduino:ModuleAssignment" module="//@boards.0/@digitalPins.0/@module">
+                <operand xsi:type="arduino:IntegerConstant" value="1"/>
+              </instructions>
+            </block>
+            <condition xsi:type="arduino:BinaryBooleanExpression">
+              <left xsi:type="arduino:IntegerVariableRef" variable="//@sketches.0/@block/@instructions.4/@block/@instructions.0/@variable"/>
+              <right xsi:type="arduino:IntegerVariableRef" variable="//@sketches.0/@block/@instructions.2/@variable"/>
+            </condition>
+            <elseBlock>
+              <instructions xsi:type="arduino:ModuleAssignment" module="//@boards.0/@digitalPins.0/@module">
+                <operand xsi:type="arduino:IntegerConstant"/>
+              </instructions>
+            </elseBlock>
+          </instructions>
+          <instructions xsi:type="arduino:Delay" value="2000"/>
+        </block>
+        <condition xsi:type="arduino:BooleanConstant" value="true"/>
+      </instructions>
+    </block>
+  </sketches>
+</arduino:Project>
