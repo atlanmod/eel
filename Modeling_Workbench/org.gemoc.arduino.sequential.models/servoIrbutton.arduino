@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<arduino:Project xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:arduino="http://www.obeo.fr/arduino">
+  <boards xsi:type="arduino:ArduinoBoard" name="board">
+    <digitalPins name="0">
+      <module xsi:type="arduino:PushButton" name="button"/>
+    </digitalPins>
+    <digitalPins name="3">
+      <module xsi:type="arduino:InfraRedSensor" name="IRSensor1"/>
+    </digitalPins>
+    <digitalPins name="13">
+      <module xsi:type="arduino:LED" name="LED1"/>
+    </digitalPins>
+    <digitalPins name="10">
+      <module xsi:type="arduino:MicroServo" name="Servo1"/>
+    </digitalPins>
+  </boards>
+  <sketches name="sketch" board="//@boards.0">
+    <block>
+      <instructions xsi:type="arduino:If">
+        <block>
+          <instructions xsi:type="arduino:While">
+            <block>
+              <instructions xsi:type="arduino:ModuleAssignment" module="//@boards.0/@digitalPins.3/@module">
+                <operand xsi:type="arduino:IntegerVariableRef" variable="//@sketches.0/@block/@instructions.1/@variable"/>
+              </instructions>
+              <instructions xsi:type="arduino:Delay" value="15"/>
+              <instructions xsi:type="arduino:VariableAssignment" variable="//@sketches.0/@block/@instructions.1/@variable">
+                <operand xsi:type="arduino:BinaryIntegerExpression" operator="plus">
+                  <left xsi:type="arduino:IntegerVariableRef" variable="//@sketches.0/@block/@instructions.1/@variable"/>
+                  <right xsi:type="arduino:IntegerConstant" value="1"/>
+                </operand>
+              </instructions>
+            </block>
+            <condition xsi:type="arduino:BinaryBooleanExpression" operator="and">
+              <left xsi:type="arduino:BooleanModuleGet" module="//@boards.0/@digitalPins.1/@module"/>
+              <right xsi:type="arduino:BinaryBooleanExpression" operator="infOrEqual">
+                <left xsi:type="arduino:IntegerVariableRef" variable="//@sketches.0/@block/@instructions.1/@variable"/>
+                <right xsi:type="arduino:IntegerConstant" value="180"/>
+              </right>
+            </condition>
+          </instructions>
+          <instructions xsi:type="arduino:If">
+            <block>
+              <instructions xsi:type="arduino:ModuleAssignment" module="//@boards.0/@digitalPins.2/@module">
+                <operand xsi:type="arduino:IntegerConstant" value="1"/>
+              </instructions>
+              <instructions xsi:type="arduino:Delay" value="500"/>
+              <instructions xsi:type="arduino:ModuleAssignment" module="//@boards.0/@digitalPins.2/@module">
+                <operand xsi:type="arduino:IntegerConstant"/>
+              </instructions>
+              <instructions xsi:type="arduino:Delay" value="500"/>
+              <instructions xsi:type="arduino:ModuleAssignment" module="//@boards.0/@digitalPins.2/@module">
+                <operand xsi:type="arduino:IntegerConstant" value="1"/>
+              </instructions>
+              <instructions xsi:type="arduino:Delay" value="500"/>
+              <instructions xsi:type="arduino:ModuleAssignment" module="//@boards.0/@digitalPins.2/@module">
+                <operand xsi:type="arduino:IntegerConstant"/>
+              </instructions>
+              <instructions xsi:type="arduino:Delay" value="500"/>
+              <instructions xsi:type="arduino:ModuleAssignment" module="//@boards.0/@digitalPins.2/@module">
+                <operand xsi:type="arduino:IntegerConstant" value="1"/>
+              </instructions>
+              <instructions xsi:type="arduino:Delay" value="500"/>
+              <instructions xsi:type="arduino:ModuleAssignment" module="//@boards.0/@digitalPins.2/@module">
+                <operand xsi:type="arduino:IntegerConstant"/>
+              </instructions>
+              <instructions xsi:type="arduino:Delay" value="500"/>
+              <instructions xsi:type="arduino:ModuleAssignment" module="//@boards.0/@digitalPins.2/@module">
+                <operand xsi:type="arduino:IntegerConstant" value="1"/>
+              </instructions>
+              <instructions xsi:type="arduino:Delay" value="500"/>
+              <instructions xsi:type="arduino:ModuleAssignment" module="//@boards.0/@digitalPins.2/@module">
+                <operand xsi:type="arduino:IntegerConstant"/>
+              </instructions>
+              <instructions xsi:type="arduino:Delay" value="500"/>
+            </block>
+            <condition xsi:type="arduino:UnaryBooleanExpression">
+              <operand xsi:type="arduino:BooleanModuleGet" module="//@boards.0/@digitalPins.1/@module"/>
+            </condition>
+          </instructions>
+        </block>
+        <condition xsi:type="arduino:BooleanModuleGet" module="//@boards.0/@digitalPins.0/@module"/>
+      </instructions>
+      <instructions xsi:type="arduino:VariableDeclaration">
+        <variable xsi:type="arduino:IntegerVariable" name="i"/>
+      </instructions>
+    </block>
+  </sketches>
+</arduino:Project>
