@@ -54,6 +54,8 @@ import static extension org.gemoc.arduino.sequential.k3dsa.IntegerVariable_Evalu
 import static extension org.gemoc.arduino.sequential.k3dsa.Pin_EvaluableAspect.*
 import org.gemoc.sequential.model.arduino.WaitFor
 import org.gemoc.sequential.model.arduino.ChangeType
+import org.gemoc.sequential.model.arduino.UnaryBooleanExpression
+import org.gemoc.sequential.model.arduino.UnaryBooleanOperatorKind
 
 @Aspect(className=Instruction)
 class Instruction_UtilitesAspect {
@@ -413,8 +415,9 @@ class BinaryIntegerExpression_EvaluableAspect extends Expression_EvaluableAspect
 			case MUL: {
 				res = iLeft * iRight
 			}
-			case PLUS: {
+			case PLUS: {				
 				res = iLeft + iRight
+				println(res)
 			}
 			case POURCENT: {
 				res = iLeft % iRight
@@ -647,5 +650,17 @@ abstract class Expression_EvaluableAspect {
 		return instruction
 	}
 	
-	def abstract Object evaluate()
+	def Object evaluate() {		
+	}
+}
+
+@Aspect(className=UnaryBooleanExpression)
+class UnaryBooleanExpression_EvaluableAspect extends Expression_EvaluableAspect {
+	def Object evaluate() {
+		if (_self.operator == UnaryBooleanOperatorKind.NOT) {		
+			return ! (_self.operand.evaluate as Boolean)	
+		}
+		
+		return _self.operand.evaluate
+	}
 }

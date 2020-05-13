@@ -5,7 +5,7 @@
          id="eventextensionid"
          point="org.eclipse.gemoc.gemoc_language_workbench.engine_addon">
       <Addon
-            Class="org.atlanmod.arduino.sequential.eventengine.EventAddon"
+            Class="org.atlanmod.arduino.sequential.eventengine.EventButtonIRSensor"
             Name="EventAddon"
             id="org.atlanmod.arduino.sequential.eventengine.Addon">
       </Addon>

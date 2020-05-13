@@ -11,6 +11,7 @@ import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.gemoc.trace.commons.model.trace.Step;
 import org.eclipse.gemoc.xdsmlframework.api.core.IExecutionEngine;
 import org.eclipse.gemoc.xdsmlframework.api.engine_addon.IEngineAddon;
+import org.gemoc.sequential.model.arduino.BooleanModuleGet;
 import org.gemoc.sequential.model.arduino.IntegerModuleGet;
 import org.gemoc.sequential.model.arduino.Pin;
 import org.gemoc.sequential.model.arduino.WaitFor;
@@ -32,13 +33,14 @@ public class EventIRLoopAddon implements IEngineAddon {
 		
 		EObject caller = stepToExecute.getMseoccurrence().getMse().getCaller();
 		String name = stepToExecute.getMseoccurrence().getMse().getAction().getName();
-		if (caller instanceof IntegerModuleGet && name.equals("evaluate") && !running) {
+		System.out.println(name+" <- "+caller);
+		if (caller instanceof BooleanModuleGet && !running) {
 			running = true;
 			new Thread(() -> {
 				System.out.println("Created thread for changing IntegerModuleGet pin value");
 				try {
 					Thread.sleep(2000);
-					waitForChangePin((IntegerModuleGet) caller);				
+					waitForChangePin((BooleanModuleGet) caller);				
 				} catch (InterruptedException | NoSuchFieldException | SecurityException | IllegalArgumentException | IllegalAccessException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -51,7 +53,7 @@ public class EventIRLoopAddon implements IEngineAddon {
 	}
 	
 
-	public void waitForChangePin(IntegerModuleGet module) throws NoSuchFieldException, SecurityException, IllegalArgumentException, IllegalAccessException {
+	public void waitForChangePin(BooleanModuleGet module) throws NoSuchFieldException, SecurityException, IllegalArgumentException, IllegalAccessException {
 		System.out.println("Changing pin value");
 		
 		Pin pin = ((Pin) module.getModule().eContainer());

@@ -58,6 +58,11 @@
 			org.gemoc.arduino.sequential.k3dsa.Delay_ExecutableAspect.execute((org.gemoc.sequential.model.arduino.Delay)_self);
 		} else
 		// EndInjectInto org.gemoc.arduino.sequential.k3dsa.Instruction_ExecutableAspect#void execute() from org.gemoc.arduino.sequential.k3dsa.Delay_ExecutableAspect
+	// BeginInjectInto org.gemoc.arduino.sequential.k3dsa.Expression_EvaluableAspect#Object evaluate() from org.gemoc.arduino.sequential.k3dsa.UnaryBooleanExpression_EvaluableAspect
+		if (_self instanceof org.gemoc.sequential.model.arduino.UnaryBooleanExpression){
+			result = org.gemoc.arduino.sequential.k3dsa.UnaryBooleanExpression_EvaluableAspect.evaluate((org.gemoc.sequential.model.arduino.UnaryBooleanExpression)_self);
+		} else
+		// EndInjectInto org.gemoc.arduino.sequential.k3dsa.Expression_EvaluableAspect#Object evaluate() from org.gemoc.arduino.sequential.k3dsa.UnaryBooleanExpression_EvaluableAspect
 	// BeginInjectInto org.gemoc.arduino.sequential.k3dsa.Instruction_ExecutableAspect#void execute() from org.gemoc.arduino.sequential.k3dsa.WaitFor_ExecutableAspect
 		if (_self instanceof org.gemoc.sequential.model.arduino.WaitFor){
 			org.gemoc.arduino.sequential.k3dsa.WaitFor_ExecutableAspect.execute((org.gemoc.sequential.model.arduino.WaitFor)_self);
