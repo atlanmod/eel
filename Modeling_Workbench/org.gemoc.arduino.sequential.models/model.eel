@@ -30,9 +30,9 @@ Platform ATMega328p {
 		"MicroServo".numberOfServoRunning = ocl: "MicroServo.allInstances() -> size()",
 		"MicroServo".currentOfServoRunning = "MicroServo.numberOfServoRunning" * "MicroServo.Current",
 		"MicroServo".Power = "MicroServo.currentOfServoRunning" * "Board.\'http://fr.tblf.energy.estimation/eel/\'::Type::Voltage", 
-		"MicroServo".mahRise = ocl:"let rotation = (self.operand.oclAsType(IntegerConstant).value) in if (rotation >= 6) then 11189.0 * 0.002 * 6.0 else 11189 * 0.002 * rotation endif", 	
-		"MicroServo".mahFall = ocl:"let rotation = (self.operand.oclAsType(IntegerConstant).value) in if (rotation >= 6) then if (rotation >= 70) then 16.949 else (80.346*rotation + 5.82474) endif else 0.0 endif",
-		"MicroServo".mahConstant = ocl:"let rotation = (self.operand.oclAsType(IntegerConstant).value) in if (rotation >= 70) then 83.5 * (rotation * 0.002 - 0.14) endif",
+		"MicroServo".mahRise = ocl:"let rotation = if (self.operand.oclIsKindOf(IntegerVariableRef)) then (self.operand.oclAsType(IntegerVariableRef).variable.initialValue - self.module.oclContainer.oclAsType(Pin).level) else 0.0 endif in if (rotation >= 6) then 11189.0 * 0.002 * 6.0 else 11189 * 0.002 * rotation endif", 	
+		"MicroServo".mahFall = ocl:"let rotation = if (self.operand.oclIsKindOf(IntegerVariableRef)) then (self.operand.oclAsType(IntegerVariableRef).variable.initialValue - self.module.oclContainer.oclAsType(Pin).level) else 0.0 endif in if (rotation >= 6) then if (rotation >= 70) then 16.949 else (80.346*rotation + 5.82474) endif else 0.0 endif",
+		"MicroServo".mahConstant = ocl:"let rotation = if (self.operand.oclIsKindOf(IntegerVariableRef)) then (self.operand.oclAsType(IntegerVariableRef).variable.initialValue - self.module.oclContainer.oclAsType(Pin).level) else 0.0 endif in if (rotation >= 70) then 83.5 * (rotation * 0.002 - 0.14) else 0.0 endif",
 		"MicroServo".rotationMah = "MicroServo.mahRise" + "MicroServo.mahFall" + "MicroServo.mahConstant",
 		"MicroServo".Energy = "MicroServo.rotationMah" * "MicroServo.\'http://fr.tblf.energy.estimation/eel/\'::Type::Power",
 		 

@@ -152,6 +152,7 @@ class VariableAssignment_ExecutableAspect extends Instruction_ExecutableAspect {
 		val value = _self.operand.evaluate
 		
 		if (variable instanceof IntegerVariable){
+			variable.initialValue = value as Integer
 			variable.value = value as Integer
 		}
 		if (variable instanceof BooleanVariable){

@@ -49,9 +49,9 @@ public class EventButtonIRSensor implements IEngineAddon {
 			new Thread(() -> {
 				System.out.println("Created thread for changing InfraredSensor pin value");
 				try {
-					Thread.sleep(1000);					
+					Thread.sleep(4000);					
 					detectPresence((InfraRedSensor) ((BooleanModuleGet) caller).getModule());					
-					Thread.sleep(4000);
+					Thread.sleep(6000);
 					cancelPresence((InfraRedSensor) ((BooleanModuleGet) caller).getModule());
 				} catch (InterruptedException | NoSuchFieldException | SecurityException | IllegalArgumentException | IllegalAccessException e) {
 					// TODO Auto-generated catch block
