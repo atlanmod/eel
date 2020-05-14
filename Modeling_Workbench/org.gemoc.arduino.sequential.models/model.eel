@@ -5,19 +5,19 @@ Platform ATMega328p {
 			
 		"Board".clockPeriod = 0.000000062,
 		"Board".Voltage = 5.0,		
-		"Board".Current = 0.0241,
+		"Board".Current = 0.0244,
 		"Board".currentIdle = 0.0099, 
 		"Board".cpuPower = "Board.Current" * "Board.\'http://fr.tblf.energy.estimation/eel/\'::Type::Voltage",
 		"Board".cpuPowerIdle ="Board.currentIdle" * "Board.\'http://fr.tblf.energy.estimation/eel/\'::Type::Voltage",  
 						
 		"LED".Voltage = 5.0,
-		"LED".Current = 0.00845,		 		
+		"LED".Current = 0.0088,		 		
 		"LED".numberOfLedsRunning = ocl:"LED.allInstances() -> select(it | it.oclContainer().oclAsType(Pin).level = 1) -> size()",						
 		"LED".currentOfLedsRunning = "LED.Current" * "LED.numberOfLedsRunning",
 		"LED".powerOfLedsRunning = "LED.currentOfLedsRunning" * "LED.numberOfLedsRunning" * "LED.\'http://fr.tblf.energy.estimation/eel/\'::Type::Voltage",
 		
-		"InfraRedSensor".Voltage = 3.3,
-		"InfraRedSensor".Current = 0.00235,			
+		"InfraRedSensor".Voltage = 5.0,
+		"InfraRedSensor".Current = 0.0043,			
 		"InfraRedSensor".internalLedCurrent = 0.00085,
 		"InfraRedSensor".numberOfSensorsRunning = ocl: "InfraRedSensor.allInstances() -> size()",
 		"InfraRedSensor".numberOnObstacle = ocl:"InfraRedSensor.allInstances() -> select(it | it.oclContainer.oclAsType(Pin).level = 0) -> asSequence() -> size()",
@@ -30,11 +30,10 @@ Platform ATMega328p {
 		"MicroServo".numberOfServoRunning = ocl: "MicroServo.allInstances() -> size()",
 		"MicroServo".currentOfServoRunning = "MicroServo.numberOfServoRunning" * "MicroServo.Current",
 		"MicroServo".Power = "MicroServo.currentOfServoRunning" * "Board.\'http://fr.tblf.energy.estimation/eel/\'::Type::Voltage", 
-		"MicroServo".mahRise = ocl:"let rotation = if (self.operand.oclIsKindOf(IntegerVariableRef)) then (self.operand.oclAsType(IntegerVariableRef).variable.initialValue - self.module.oclContainer.oclAsType(Pin).level) else 0.0 endif in if (rotation >= 6) then 11189.0 * 0.002 * 6.0 else 11189 * 0.002 * rotation endif", 	
-		"MicroServo".mahFall = ocl:"let rotation = if (self.operand.oclIsKindOf(IntegerVariableRef)) then (self.operand.oclAsType(IntegerVariableRef).variable.initialValue - self.module.oclContainer.oclAsType(Pin).level) else 0.0 endif in if (rotation >= 6) then if (rotation >= 70) then 16.949 else (80.346*rotation + 5.82474) endif else 0.0 endif",
-		"MicroServo".mahConstant = ocl:"let rotation = if (self.operand.oclIsKindOf(IntegerVariableRef)) then (self.operand.oclAsType(IntegerVariableRef).variable.initialValue - self.module.oclContainer.oclAsType(Pin).level) else 0.0 endif in if (rotation >= 70) then 83.5 * (rotation * 0.002 - 0.14) else 0.0 endif",
-		"MicroServo".rotationMah = "MicroServo.mahRise" + "MicroServo.mahFall" + "MicroServo.mahConstant",
-		"MicroServo".Energy = "MicroServo.rotationMah" * "MicroServo.\'http://fr.tblf.energy.estimation/eel/\'::Type::Power",
+		"MicroServo".mahRise = ocl:"let rotation = if (self.operand.oclIsKindOf(IntegerVariableRef)) then (self.operand.oclAsType(IntegerVariableRef).variable.initialValue - self.module.oclContainer.oclAsType(Pin).level) else 0.0 endif in if (rotation > 6) then 0.00805608 else 11189 * 0.000004 * rotation * rotation * 5 / 1000 endif", 	
+		"MicroServo".mahFall = ocl:"let rotation = if (self.operand.oclIsKindOf(IntegerVariableRef)) then (self.operand.oclAsType(IntegerVariableRef).variable.initialValue - self.module.oclContainer.oclAsType(Pin).level) else 0.0 endif in if (rotation > 6) then if (rotation > 70) then 16.949*5/1000 else (80.346*rotation + 5.82474) *5 / 1000 endif else 0.0 endif",
+		"MicroServo".mahConstant = ocl:"let rotation = if (self.operand.oclIsKindOf(IntegerVariableRef)) then (self.operand.oclAsType(IntegerVariableRef).variable.initialValue - self.module.oclContainer.oclAsType(Pin).level) else 0.0 endif in if (rotation > 70) then 83.5 * (rotation * 0.002 - 0.14) * 5 / 1000 else 0.0 endif",
+		"MicroServo".Energy = "MicroServo.mahRise" + "MicroServo.mahFall" + "MicroServo.mahConstant",		
 		 
 		// value * voltsPerUnit = internalVoltage, * conductance = Intensity, * board voltage = power consumption for all sensors 		
 		"AmbientLightSensor".Current = ocl:"AmbientLightSensor.allInstances() -> iterate( it: AmbientLightSensor; acc: Real = 0.0 | acc + it.oclContainer.oclAsType(Pin).level * 0.0049 * 0.004545455)",		
@@ -60,7 +59,7 @@ Platform ATMega328p {
 		
 		"BooleanModuleGet".clockCycles = 51.0, //digitalRead
 		"BooleanModuleGet".callDuration = "BooleanModuleGet.clockCycles" * "Board.clockPeriod",
-		
+
 		"IntegerModuleGet".clockCycles = 51.0, //digitalRead
 		"IntegerModuleGet".callDuration = "IntegerModuleGet.clockCycles" * "Board.clockPeriod",	
 				

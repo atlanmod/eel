@@ -26,11 +26,11 @@
               <instructions xsi:type="arduino:ModuleAssignment" module="//@boards.0/@digitalPins.3/@module">
                 <operand xsi:type="arduino:IntegerVariableRef" variable="//@sketches.0/@block/@instructions.0/@variable"/>
               </instructions>
-              <instructions xsi:type="arduino:Delay" value="15"/>
+              <instructions xsi:type="arduino:Delay" value="90"/>
               <instructions xsi:type="arduino:VariableAssignment" variable="//@sketches.0/@block/@instructions.0/@variable">
                 <operand xsi:type="arduino:BinaryIntegerExpression" operator="plus">
                   <left xsi:type="arduino:IntegerVariableRef" variable="//@sketches.0/@block/@instructions.0/@variable"/>
-                  <right xsi:type="arduino:IntegerConstant" value="1"/>
+                  <right xsi:type="arduino:IntegerConstant" value="6"/>
                 </operand>
               </instructions>
             </block>
