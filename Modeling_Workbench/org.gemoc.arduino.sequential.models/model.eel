@@ -72,7 +72,7 @@ Platform ATMega328p {
 		"VariableAssignement".clockCycles = 2.0,
 		"VariableAssignement".callDuration = "VariableAssignement.clockCycles" * "Board.clockPeriod",
 			
-		"Board".devicesPower = "LED.powerOfLedsRunning" + "InfraRedSensor.powerOfInfraRedSensors" + "AmbientLightSensor.\'http://fr.tblf.energy.estimation/eel/\'::Type::Power",
+		"Board".devicesPower = "LED.powerOfLedsRunning" + "InfraRedSensor.powerOfInfraRedSensors" + "AmbientLightSensor.\'http://fr.tblf.energy.estimation/eel/\'::Type::Power" + "MicroServo.\'http://fr.tblf.energy.estimation/eel/\'::Type::Power",
 		"Board".systemPower = "Board.cpuPower" + "Board.devicesPower",				
 		"Board".systemPowerOnIdle = "Board.cpuPowerIdle" + "Board.devicesPower",	
 		
