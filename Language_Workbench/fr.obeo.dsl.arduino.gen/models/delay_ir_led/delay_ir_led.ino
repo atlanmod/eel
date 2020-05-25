@@ -12,7 +12,7 @@ void setup() {
 void loop() {
 	if (digitalRead(IR_sensor_1) == 0) {
 		digitalWrite(blue_led_1, 1);
-		delay(2000);
+		delay(1000);
 		digitalWrite(blue_led_1, 0);
 	}
 }
