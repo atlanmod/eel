@@ -32,6 +32,7 @@ public class EelParser extends AbstractContentAssistParser {
 		
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, EelGrammarAccess grammarAccess) {
 			builder.put(grammarAccess.getMeasureAccess().getAlternatives(), "rule__Measure__Alternatives");
+			builder.put(grammarAccess.getCompositeMeasureAccess().getAlternatives(), "rule__CompositeMeasure__Alternatives");
 			builder.put(grammarAccess.getMeasurementUncertaintyInformationAccess().getAlternatives(), "rule__MeasurementUncertaintyInformation__Alternatives");
 			builder.put(grammarAccess.getEStringAccess().getAlternatives(), "rule__EString__Alternatives");
 			builder.put(grammarAccess.getMeasureValue_ImplAccess().getAlternatives_5(), "rule__MeasureValue_Impl__Alternatives_5");
@@ -39,6 +40,9 @@ public class EelParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getMeasureAttributeAccess().getAlternatives_5(), "rule__MeasureAttribute__Alternatives_5");
 			builder.put(grammarAccess.getMeasureUnboundSumOperationAccess().getAlternatives_5(), "rule__MeasureUnboundSumOperation__Alternatives_5");
 			builder.put(grammarAccess.getMeasureUnboundProductOperationAccess().getAlternatives_5(), "rule__MeasureUnboundProductOperation__Alternatives_5");
+			builder.put(grammarAccess.getExponentialMeasureAccess().getAlternatives_5(), "rule__ExponentialMeasure__Alternatives_5");
+			builder.put(grammarAccess.getLogisticMeasureAccess().getAlternatives_5(), "rule__LogisticMeasure__Alternatives_5");
+			builder.put(grammarAccess.getIntegrationMeasureAccess().getAlternatives_5(), "rule__IntegrationMeasure__Alternatives_5");
 			builder.put(grammarAccess.getEStructuralFeatureAccess().getAlternatives(), "rule__EStructuralFeature__Alternatives");
 			builder.put(grammarAccess.getEClassifierAccess().getAlternatives(), "rule__EClassifier__Alternatives");
 			builder.put(grammarAccess.getEBooleanAccess().getAlternatives(), "rule__EBoolean__Alternatives");
@@ -68,6 +72,12 @@ public class EelParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getMeasureUnboundProductOperationAccess().getGroup(), "rule__MeasureUnboundProductOperation__Group__0");
 			builder.put(grammarAccess.getMeasureUnboundProductOperationAccess().getGroup_3(), "rule__MeasureUnboundProductOperation__Group_3__0");
 			builder.put(grammarAccess.getMeasureUnboundProductOperationAccess().getGroup_8(), "rule__MeasureUnboundProductOperation__Group_8__0");
+			builder.put(grammarAccess.getExponentialMeasureAccess().getGroup(), "rule__ExponentialMeasure__Group__0");
+			builder.put(grammarAccess.getExponentialMeasureAccess().getGroup_3(), "rule__ExponentialMeasure__Group_3__0");
+			builder.put(grammarAccess.getLogisticMeasureAccess().getGroup(), "rule__LogisticMeasure__Group__0");
+			builder.put(grammarAccess.getLogisticMeasureAccess().getGroup_3(), "rule__LogisticMeasure__Group_3__0");
+			builder.put(grammarAccess.getIntegrationMeasureAccess().getGroup(), "rule__IntegrationMeasure__Group__0");
+			builder.put(grammarAccess.getIntegrationMeasureAccess().getGroup_3(), "rule__IntegrationMeasure__Group_3__0");
 			builder.put(grammarAccess.getMeasurementUncertaintyAccess().getGroup(), "rule__MeasurementUncertainty__Group__0");
 			builder.put(grammarAccess.getMeasurementUncertaintyAccess().getGroup_3(), "rule__MeasurementUncertainty__Group_3__0");
 			builder.put(grammarAccess.getMeasurementUncertaintyAccess().getGroup_4(), "rule__MeasurementUncertainty__Group_4__0");
@@ -248,6 +258,29 @@ public class EelParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getMeasureUnboundProductOperationAccess().getSubnameAssignment_5_1(), "rule__MeasureUnboundProductOperation__SubnameAssignment_5_1");
 			builder.put(grammarAccess.getMeasureUnboundProductOperationAccess().getMeasuresAssignment_7(), "rule__MeasureUnboundProductOperation__MeasuresAssignment_7");
 			builder.put(grammarAccess.getMeasureUnboundProductOperationAccess().getMeasuresAssignment_8_1(), "rule__MeasureUnboundProductOperation__MeasuresAssignment_8_1");
+			builder.put(grammarAccess.getExponentialMeasureAccess().getPostAssignment_1(), "rule__ExponentialMeasure__PostAssignment_1");
+			builder.put(grammarAccess.getExponentialMeasureAccess().getTargetClassAssignment_2(), "rule__ExponentialMeasure__TargetClassAssignment_2");
+			builder.put(grammarAccess.getExponentialMeasureAccess().getTargetOperationAssignment_3_1(), "rule__ExponentialMeasure__TargetOperationAssignment_3_1");
+			builder.put(grammarAccess.getExponentialMeasureAccess().getTypeAssignment_5_0(), "rule__ExponentialMeasure__TypeAssignment_5_0");
+			builder.put(grammarAccess.getExponentialMeasureAccess().getSubnameAssignment_5_1(), "rule__ExponentialMeasure__SubnameAssignment_5_1");
+			builder.put(grammarAccess.getExponentialMeasureAccess().getXAssignment_7(), "rule__ExponentialMeasure__XAssignment_7");
+			builder.put(grammarAccess.getLogisticMeasureAccess().getPostAssignment_1(), "rule__LogisticMeasure__PostAssignment_1");
+			builder.put(grammarAccess.getLogisticMeasureAccess().getTargetClassAssignment_2(), "rule__LogisticMeasure__TargetClassAssignment_2");
+			builder.put(grammarAccess.getLogisticMeasureAccess().getTargetOperationAssignment_3_1(), "rule__LogisticMeasure__TargetOperationAssignment_3_1");
+			builder.put(grammarAccess.getLogisticMeasureAccess().getTypeAssignment_5_0(), "rule__LogisticMeasure__TypeAssignment_5_0");
+			builder.put(grammarAccess.getLogisticMeasureAccess().getSubnameAssignment_5_1(), "rule__LogisticMeasure__SubnameAssignment_5_1");
+			builder.put(grammarAccess.getLogisticMeasureAccess().getLAssignment_7(), "rule__LogisticMeasure__LAssignment_7");
+			builder.put(grammarAccess.getLogisticMeasureAccess().getKAssignment_8(), "rule__LogisticMeasure__KAssignment_8");
+			builder.put(grammarAccess.getLogisticMeasureAccess().getXAssignment_9(), "rule__LogisticMeasure__XAssignment_9");
+			builder.put(grammarAccess.getLogisticMeasureAccess().getX0Assignment_10(), "rule__LogisticMeasure__X0Assignment_10");
+			builder.put(grammarAccess.getIntegrationMeasureAccess().getPostAssignment_1(), "rule__IntegrationMeasure__PostAssignment_1");
+			builder.put(grammarAccess.getIntegrationMeasureAccess().getTargetClassAssignment_2(), "rule__IntegrationMeasure__TargetClassAssignment_2");
+			builder.put(grammarAccess.getIntegrationMeasureAccess().getTargetOperationAssignment_3_1(), "rule__IntegrationMeasure__TargetOperationAssignment_3_1");
+			builder.put(grammarAccess.getIntegrationMeasureAccess().getTypeAssignment_5_0(), "rule__IntegrationMeasure__TypeAssignment_5_0");
+			builder.put(grammarAccess.getIntegrationMeasureAccess().getSubnameAssignment_5_1(), "rule__IntegrationMeasure__SubnameAssignment_5_1");
+			builder.put(grammarAccess.getIntegrationMeasureAccess().getFunctionAssignment_7(), "rule__IntegrationMeasure__FunctionAssignment_7");
+			builder.put(grammarAccess.getIntegrationMeasureAccess().getLeftBoundAssignment_9(), "rule__IntegrationMeasure__LeftBoundAssignment_9");
+			builder.put(grammarAccess.getIntegrationMeasureAccess().getRightBoundAssignment_11(), "rule__IntegrationMeasure__RightBoundAssignment_11");
 			builder.put(grammarAccess.getMeasurementUncertaintyAccess().getStandardUncertaintyAssignment_3_1(), "rule__MeasurementUncertainty__StandardUncertaintyAssignment_3_1");
 			builder.put(grammarAccess.getMeasurementUncertaintyAccess().getInformationAssignment_4_1(), "rule__MeasurementUncertainty__InformationAssignment_4_1");
 			builder.put(grammarAccess.getIntervalAccess().getLowerEndpointAssignment_3(), "rule__Interval__LowerEndpointAssignment_3");

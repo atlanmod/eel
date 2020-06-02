@@ -252,6 +252,50 @@ public class EelSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case EelPackage.COMPOSITE_MEASURE: {
+				CompositeMeasure compositeMeasure = (CompositeMeasure)theEObject;
+				T result = caseCompositeMeasure(compositeMeasure);
+				if (result == null) result = caseTypedMeasure(compositeMeasure);
+				if (result == null) result = caseMeasure(compositeMeasure);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case EelPackage.LOGISTIC_MEASURE: {
+				LogisticMeasure logisticMeasure = (LogisticMeasure)theEObject;
+				T result = caseLogisticMeasure(logisticMeasure);
+				if (result == null) result = caseCompositeMeasure(logisticMeasure);
+				if (result == null) result = caseTypedMeasure(logisticMeasure);
+				if (result == null) result = caseMeasure(logisticMeasure);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case EelPackage.EXPONENTIAL_MEASURE: {
+				ExponentialMeasure exponentialMeasure = (ExponentialMeasure)theEObject;
+				T result = caseExponentialMeasure(exponentialMeasure);
+				if (result == null) result = caseCompositeMeasure(exponentialMeasure);
+				if (result == null) result = caseTypedMeasure(exponentialMeasure);
+				if (result == null) result = caseMeasure(exponentialMeasure);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case EelPackage.TAIL_MEASURE: {
+				TailMeasure tailMeasure = (TailMeasure)theEObject;
+				T result = caseTailMeasure(tailMeasure);
+				if (result == null) result = caseCompositeMeasure(tailMeasure);
+				if (result == null) result = caseTypedMeasure(tailMeasure);
+				if (result == null) result = caseMeasure(tailMeasure);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case EelPackage.INTEGRATION_MEASURE: {
+				IntegrationMeasure integrationMeasure = (IntegrationMeasure)theEObject;
+				T result = caseIntegrationMeasure(integrationMeasure);
+				if (result == null) result = caseCompositeMeasure(integrationMeasure);
+				if (result == null) result = caseTypedMeasure(integrationMeasure);
+				if (result == null) result = caseMeasure(integrationMeasure);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -613,6 +657,81 @@ public class EelSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseSample(Sample object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Composite Measure</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Composite Measure</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCompositeMeasure(CompositeMeasure object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Logistic Measure</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Logistic Measure</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseLogisticMeasure(LogisticMeasure object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Exponential Measure</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Exponential Measure</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseExponentialMeasure(ExponentialMeasure object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Tail Measure</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Tail Measure</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTailMeasure(TailMeasure object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Integration Measure</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Integration Measure</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseIntegrationMeasure(IntegrationMeasure object) {
 		return null;
 	}
 

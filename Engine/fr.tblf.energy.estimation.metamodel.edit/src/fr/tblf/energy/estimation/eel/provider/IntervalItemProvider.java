@@ -192,6 +192,26 @@ public class IntervalItemProvider extends MeasurementUncertaintyInformationItemP
 
 		newChildDescriptors.add
 			(createChildParameter
+				(EelPackage.Literals.INTERVAL__LOWER_ENDPOINT,
+				 EelFactory.eINSTANCE.createCompositeMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(EelPackage.Literals.INTERVAL__LOWER_ENDPOINT,
+				 EelFactory.eINSTANCE.createLogisticMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(EelPackage.Literals.INTERVAL__LOWER_ENDPOINT,
+				 EelFactory.eINSTANCE.createExponentialMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(EelPackage.Literals.INTERVAL__LOWER_ENDPOINT,
+				 EelFactory.eINSTANCE.createIntegrationMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
 				(EelPackage.Literals.INTERVAL__UPPER_ENDPOINT,
 				 EelFactory.eINSTANCE.createMeasureValue()));
 
@@ -244,6 +264,26 @@ public class IntervalItemProvider extends MeasurementUncertaintyInformationItemP
 			(createChildParameter
 				(EelPackage.Literals.INTERVAL__UPPER_ENDPOINT,
 				 EelFactory.eINSTANCE.createMeasureUnboundProductOperation()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(EelPackage.Literals.INTERVAL__UPPER_ENDPOINT,
+				 EelFactory.eINSTANCE.createCompositeMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(EelPackage.Literals.INTERVAL__UPPER_ENDPOINT,
+				 EelFactory.eINSTANCE.createLogisticMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(EelPackage.Literals.INTERVAL__UPPER_ENDPOINT,
+				 EelFactory.eINSTANCE.createExponentialMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(EelPackage.Literals.INTERVAL__UPPER_ENDPOINT,
+				 EelFactory.eINSTANCE.createIntegrationMeasure()));
 	}
 
 	/**

@@ -76,6 +76,10 @@ public class EelFactoryImpl extends EFactoryImpl implements EelFactory {
 			case EelPackage.SAMPLING: return createSampling();
 			case EelPackage.INTEGRAL: return createIntegral();
 			case EelPackage.SAMPLE: return createSample();
+			case EelPackage.COMPOSITE_MEASURE: return createCompositeMeasure();
+			case EelPackage.LOGISTIC_MEASURE: return createLogisticMeasure();
+			case EelPackage.EXPONENTIAL_MEASURE: return createExponentialMeasure();
+			case EelPackage.INTEGRATION_MEASURE: return createIntegrationMeasure();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -303,6 +307,46 @@ public class EelFactoryImpl extends EFactoryImpl implements EelFactory {
 	public Sample createSample() {
 		SampleImpl sample = new SampleImpl();
 		return sample;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CompositeMeasure createCompositeMeasure() {
+		CompositeMeasureImpl compositeMeasure = new CompositeMeasureImpl();
+		return compositeMeasure;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public LogisticMeasure createLogisticMeasure() {
+		LogisticMeasureImpl logisticMeasure = new LogisticMeasureImpl();
+		return logisticMeasure;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ExponentialMeasure createExponentialMeasure() {
+		ExponentialMeasureImpl exponentialMeasure = new ExponentialMeasureImpl();
+		return exponentialMeasure;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public IntegrationMeasure createIntegrationMeasure() {
+		IntegrationMeasureImpl integrationMeasure = new IntegrationMeasureImpl();
+		return integrationMeasure;
 	}
 
 	/**

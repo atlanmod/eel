@@ -202,6 +202,26 @@ public class SampleItemProvider
 			(createChildParameter
 				(EelPackage.Literals.SAMPLE__QUANTITY,
 				 EelFactory.eINSTANCE.createMeasureUnboundProductOperation()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(EelPackage.Literals.SAMPLE__QUANTITY,
+				 EelFactory.eINSTANCE.createCompositeMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(EelPackage.Literals.SAMPLE__QUANTITY,
+				 EelFactory.eINSTANCE.createLogisticMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(EelPackage.Literals.SAMPLE__QUANTITY,
+				 EelFactory.eINSTANCE.createExponentialMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(EelPackage.Literals.SAMPLE__QUANTITY,
+				 EelFactory.eINSTANCE.createIntegrationMeasure()));
 	}
 
 	/**

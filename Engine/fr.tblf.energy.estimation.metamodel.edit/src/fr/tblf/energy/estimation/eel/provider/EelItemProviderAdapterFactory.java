@@ -509,6 +509,98 @@ public class EelItemProviderAdapterFactory extends EelAdapterFactory implements 
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link fr.tblf.energy.estimation.eel.CompositeMeasure} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected CompositeMeasureItemProvider compositeMeasureItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link fr.tblf.energy.estimation.eel.CompositeMeasure}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createCompositeMeasureAdapter() {
+		if (compositeMeasureItemProvider == null) {
+			compositeMeasureItemProvider = new CompositeMeasureItemProvider(this);
+		}
+
+		return compositeMeasureItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link fr.tblf.energy.estimation.eel.LogisticMeasure} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected LogisticMeasureItemProvider logisticMeasureItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link fr.tblf.energy.estimation.eel.LogisticMeasure}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createLogisticMeasureAdapter() {
+		if (logisticMeasureItemProvider == null) {
+			logisticMeasureItemProvider = new LogisticMeasureItemProvider(this);
+		}
+
+		return logisticMeasureItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link fr.tblf.energy.estimation.eel.ExponentialMeasure} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ExponentialMeasureItemProvider exponentialMeasureItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link fr.tblf.energy.estimation.eel.ExponentialMeasure}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createExponentialMeasureAdapter() {
+		if (exponentialMeasureItemProvider == null) {
+			exponentialMeasureItemProvider = new ExponentialMeasureItemProvider(this);
+		}
+
+		return exponentialMeasureItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link fr.tblf.energy.estimation.eel.IntegrationMeasure} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected IntegrationMeasureItemProvider integrationMeasureItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link fr.tblf.energy.estimation.eel.IntegrationMeasure}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createIntegrationMeasureAdapter() {
+		if (integrationMeasureItemProvider == null) {
+			integrationMeasureItemProvider = new IntegrationMeasureItemProvider(this);
+		}
+
+		return integrationMeasureItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -626,6 +718,10 @@ public class EelItemProviderAdapterFactory extends EelAdapterFactory implements 
 		if (samplingItemProvider != null) samplingItemProvider.dispose();
 		if (integralItemProvider != null) integralItemProvider.dispose();
 		if (sampleItemProvider != null) sampleItemProvider.dispose();
+		if (compositeMeasureItemProvider != null) compositeMeasureItemProvider.dispose();
+		if (logisticMeasureItemProvider != null) logisticMeasureItemProvider.dispose();
+		if (exponentialMeasureItemProvider != null) exponentialMeasureItemProvider.dispose();
+		if (integrationMeasureItemProvider != null) integrationMeasureItemProvider.dispose();
 	}
 
 }

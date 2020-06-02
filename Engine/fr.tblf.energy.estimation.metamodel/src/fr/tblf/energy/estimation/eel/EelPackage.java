@@ -2407,6 +2407,668 @@ public interface EelPackage extends EPackage {
 	int SAMPLE_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link fr.tblf.energy.estimation.eel.impl.CompositeMeasureImpl <em>Composite Measure</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fr.tblf.energy.estimation.eel.impl.CompositeMeasureImpl
+	 * @see fr.tblf.energy.estimation.eel.impl.EelPackageImpl#getCompositeMeasure()
+	 * @generated
+	 */
+	int COMPOSITE_MEASURE = 24;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_MEASURE__NAME = TYPED_MEASURE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Subname</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_MEASURE__SUBNAME = TYPED_MEASURE__SUBNAME;
+
+	/**
+	 * The feature id for the '<em><b>Target Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_MEASURE__TARGET_CLASS = TYPED_MEASURE__TARGET_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Target Operation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_MEASURE__TARGET_OPERATION = TYPED_MEASURE__TARGET_OPERATION;
+
+	/**
+	 * The feature id for the '<em><b>Post</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_MEASURE__POST = TYPED_MEASURE__POST;
+
+	/**
+	 * The feature id for the '<em><b>Uncertainty</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_MEASURE__UNCERTAINTY = TYPED_MEASURE__UNCERTAINTY;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_MEASURE__TYPE = TYPED_MEASURE__TYPE;
+
+	/**
+	 * The number of structural features of the '<em>Composite Measure</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_MEASURE_FEATURE_COUNT = TYPED_MEASURE_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Value</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_MEASURE___VALUE = TYPED_MEASURE___VALUE;
+
+	/**
+	 * The operation id for the '<em>Type</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_MEASURE___TYPE = TYPED_MEASURE___TYPE;
+
+	/**
+	 * The operation id for the '<em>Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_MEASURE___NAME = TYPED_MEASURE___NAME;
+
+	/**
+	 * The number of operations of the '<em>Composite Measure</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_MEASURE_OPERATION_COUNT = TYPED_MEASURE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link fr.tblf.energy.estimation.eel.impl.LogisticMeasureImpl <em>Logistic Measure</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fr.tblf.energy.estimation.eel.impl.LogisticMeasureImpl
+	 * @see fr.tblf.energy.estimation.eel.impl.EelPackageImpl#getLogisticMeasure()
+	 * @generated
+	 */
+	int LOGISTIC_MEASURE = 25;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOGISTIC_MEASURE__NAME = COMPOSITE_MEASURE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Subname</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOGISTIC_MEASURE__SUBNAME = COMPOSITE_MEASURE__SUBNAME;
+
+	/**
+	 * The feature id for the '<em><b>Target Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOGISTIC_MEASURE__TARGET_CLASS = COMPOSITE_MEASURE__TARGET_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Target Operation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOGISTIC_MEASURE__TARGET_OPERATION = COMPOSITE_MEASURE__TARGET_OPERATION;
+
+	/**
+	 * The feature id for the '<em><b>Post</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOGISTIC_MEASURE__POST = COMPOSITE_MEASURE__POST;
+
+	/**
+	 * The feature id for the '<em><b>Uncertainty</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOGISTIC_MEASURE__UNCERTAINTY = COMPOSITE_MEASURE__UNCERTAINTY;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOGISTIC_MEASURE__TYPE = COMPOSITE_MEASURE__TYPE;
+
+	/**
+	 * The feature id for the '<em><b>L</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOGISTIC_MEASURE__L = COMPOSITE_MEASURE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>K</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOGISTIC_MEASURE__K = COMPOSITE_MEASURE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>X0</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOGISTIC_MEASURE__X0 = COMPOSITE_MEASURE_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>X</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOGISTIC_MEASURE__X = COMPOSITE_MEASURE_FEATURE_COUNT + 3;
+
+	/**
+	 * The number of structural features of the '<em>Logistic Measure</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOGISTIC_MEASURE_FEATURE_COUNT = COMPOSITE_MEASURE_FEATURE_COUNT + 4;
+
+	/**
+	 * The operation id for the '<em>Value</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOGISTIC_MEASURE___VALUE = COMPOSITE_MEASURE___VALUE;
+
+	/**
+	 * The operation id for the '<em>Type</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOGISTIC_MEASURE___TYPE = COMPOSITE_MEASURE___TYPE;
+
+	/**
+	 * The operation id for the '<em>Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOGISTIC_MEASURE___NAME = COMPOSITE_MEASURE___NAME;
+
+	/**
+	 * The number of operations of the '<em>Logistic Measure</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOGISTIC_MEASURE_OPERATION_COUNT = COMPOSITE_MEASURE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link fr.tblf.energy.estimation.eel.impl.ExponentialMeasureImpl <em>Exponential Measure</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fr.tblf.energy.estimation.eel.impl.ExponentialMeasureImpl
+	 * @see fr.tblf.energy.estimation.eel.impl.EelPackageImpl#getExponentialMeasure()
+	 * @generated
+	 */
+	int EXPONENTIAL_MEASURE = 26;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXPONENTIAL_MEASURE__NAME = COMPOSITE_MEASURE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Subname</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXPONENTIAL_MEASURE__SUBNAME = COMPOSITE_MEASURE__SUBNAME;
+
+	/**
+	 * The feature id for the '<em><b>Target Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXPONENTIAL_MEASURE__TARGET_CLASS = COMPOSITE_MEASURE__TARGET_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Target Operation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXPONENTIAL_MEASURE__TARGET_OPERATION = COMPOSITE_MEASURE__TARGET_OPERATION;
+
+	/**
+	 * The feature id for the '<em><b>Post</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXPONENTIAL_MEASURE__POST = COMPOSITE_MEASURE__POST;
+
+	/**
+	 * The feature id for the '<em><b>Uncertainty</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXPONENTIAL_MEASURE__UNCERTAINTY = COMPOSITE_MEASURE__UNCERTAINTY;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXPONENTIAL_MEASURE__TYPE = COMPOSITE_MEASURE__TYPE;
+
+	/**
+	 * The feature id for the '<em><b>X</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXPONENTIAL_MEASURE__X = COMPOSITE_MEASURE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Exponential Measure</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXPONENTIAL_MEASURE_FEATURE_COUNT = COMPOSITE_MEASURE_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Value</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXPONENTIAL_MEASURE___VALUE = COMPOSITE_MEASURE___VALUE;
+
+	/**
+	 * The operation id for the '<em>Type</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXPONENTIAL_MEASURE___TYPE = COMPOSITE_MEASURE___TYPE;
+
+	/**
+	 * The operation id for the '<em>Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXPONENTIAL_MEASURE___NAME = COMPOSITE_MEASURE___NAME;
+
+	/**
+	 * The number of operations of the '<em>Exponential Measure</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXPONENTIAL_MEASURE_OPERATION_COUNT = COMPOSITE_MEASURE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link fr.tblf.energy.estimation.eel.impl.TailMeasureImpl <em>Tail Measure</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fr.tblf.energy.estimation.eel.impl.TailMeasureImpl
+	 * @see fr.tblf.energy.estimation.eel.impl.EelPackageImpl#getTailMeasure()
+	 * @generated
+	 */
+	int TAIL_MEASURE = 27;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TAIL_MEASURE__NAME = COMPOSITE_MEASURE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Subname</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TAIL_MEASURE__SUBNAME = COMPOSITE_MEASURE__SUBNAME;
+
+	/**
+	 * The feature id for the '<em><b>Target Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TAIL_MEASURE__TARGET_CLASS = COMPOSITE_MEASURE__TARGET_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Target Operation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TAIL_MEASURE__TARGET_OPERATION = COMPOSITE_MEASURE__TARGET_OPERATION;
+
+	/**
+	 * The feature id for the '<em><b>Post</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TAIL_MEASURE__POST = COMPOSITE_MEASURE__POST;
+
+	/**
+	 * The feature id for the '<em><b>Uncertainty</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TAIL_MEASURE__UNCERTAINTY = COMPOSITE_MEASURE__UNCERTAINTY;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TAIL_MEASURE__TYPE = COMPOSITE_MEASURE__TYPE;
+
+	/**
+	 * The number of structural features of the '<em>Tail Measure</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TAIL_MEASURE_FEATURE_COUNT = COMPOSITE_MEASURE_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Value</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TAIL_MEASURE___VALUE = COMPOSITE_MEASURE___VALUE;
+
+	/**
+	 * The operation id for the '<em>Type</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TAIL_MEASURE___TYPE = COMPOSITE_MEASURE___TYPE;
+
+	/**
+	 * The operation id for the '<em>Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TAIL_MEASURE___NAME = COMPOSITE_MEASURE___NAME;
+
+	/**
+	 * The number of operations of the '<em>Tail Measure</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TAIL_MEASURE_OPERATION_COUNT = COMPOSITE_MEASURE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link fr.tblf.energy.estimation.eel.impl.IntegrationMeasureImpl <em>Integration Measure</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fr.tblf.energy.estimation.eel.impl.IntegrationMeasureImpl
+	 * @see fr.tblf.energy.estimation.eel.impl.EelPackageImpl#getIntegrationMeasure()
+	 * @generated
+	 */
+	int INTEGRATION_MEASURE = 28;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTEGRATION_MEASURE__NAME = COMPOSITE_MEASURE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Subname</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTEGRATION_MEASURE__SUBNAME = COMPOSITE_MEASURE__SUBNAME;
+
+	/**
+	 * The feature id for the '<em><b>Target Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTEGRATION_MEASURE__TARGET_CLASS = COMPOSITE_MEASURE__TARGET_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Target Operation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTEGRATION_MEASURE__TARGET_OPERATION = COMPOSITE_MEASURE__TARGET_OPERATION;
+
+	/**
+	 * The feature id for the '<em><b>Post</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTEGRATION_MEASURE__POST = COMPOSITE_MEASURE__POST;
+
+	/**
+	 * The feature id for the '<em><b>Uncertainty</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTEGRATION_MEASURE__UNCERTAINTY = COMPOSITE_MEASURE__UNCERTAINTY;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTEGRATION_MEASURE__TYPE = COMPOSITE_MEASURE__TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Function</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTEGRATION_MEASURE__FUNCTION = COMPOSITE_MEASURE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Left Bound</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTEGRATION_MEASURE__LEFT_BOUND = COMPOSITE_MEASURE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Right Bound</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTEGRATION_MEASURE__RIGHT_BOUND = COMPOSITE_MEASURE_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>Integration Measure</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTEGRATION_MEASURE_FEATURE_COUNT = COMPOSITE_MEASURE_FEATURE_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Value</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTEGRATION_MEASURE___VALUE = COMPOSITE_MEASURE___VALUE;
+
+	/**
+	 * The operation id for the '<em>Type</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTEGRATION_MEASURE___TYPE = COMPOSITE_MEASURE___TYPE;
+
+	/**
+	 * The operation id for the '<em>Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTEGRATION_MEASURE___NAME = COMPOSITE_MEASURE___NAME;
+
+	/**
+	 * The number of operations of the '<em>Integration Measure</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTEGRATION_MEASURE_OPERATION_COUNT = COMPOSITE_MEASURE_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link fr.tblf.energy.estimation.eel.Visibility <em>Visibility</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2414,7 +3076,7 @@ public interface EelPackage extends EPackage {
 	 * @see fr.tblf.energy.estimation.eel.impl.EelPackageImpl#getVisibility()
 	 * @generated
 	 */
-	int VISIBILITY = 24;
+	int VISIBILITY = 29;
 
 	/**
 	 * The meta object id for the '{@link fr.tblf.energy.estimation.eel.Type <em>Type</em>}' enum.
@@ -2424,7 +3086,7 @@ public interface EelPackage extends EPackage {
 	 * @see fr.tblf.energy.estimation.eel.impl.EelPackageImpl#getType()
 	 * @generated
 	 */
-	int TYPE = 25;
+	int TYPE = 30;
 
 
 	/**
@@ -3159,6 +3821,144 @@ public interface EelPackage extends EPackage {
 	EReference getSample_Quantity();
 
 	/**
+	 * Returns the meta object for class '{@link fr.tblf.energy.estimation.eel.CompositeMeasure <em>Composite Measure</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Composite Measure</em>'.
+	 * @see fr.tblf.energy.estimation.eel.CompositeMeasure
+	 * @generated
+	 */
+	EClass getCompositeMeasure();
+
+	/**
+	 * Returns the meta object for class '{@link fr.tblf.energy.estimation.eel.LogisticMeasure <em>Logistic Measure</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Logistic Measure</em>'.
+	 * @see fr.tblf.energy.estimation.eel.LogisticMeasure
+	 * @generated
+	 */
+	EClass getLogisticMeasure();
+
+	/**
+	 * Returns the meta object for the reference '{@link fr.tblf.energy.estimation.eel.LogisticMeasure#getL <em>L</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>L</em>'.
+	 * @see fr.tblf.energy.estimation.eel.LogisticMeasure#getL()
+	 * @see #getLogisticMeasure()
+	 * @generated
+	 */
+	EReference getLogisticMeasure_L();
+
+	/**
+	 * Returns the meta object for the reference '{@link fr.tblf.energy.estimation.eel.LogisticMeasure#getK <em>K</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>K</em>'.
+	 * @see fr.tblf.energy.estimation.eel.LogisticMeasure#getK()
+	 * @see #getLogisticMeasure()
+	 * @generated
+	 */
+	EReference getLogisticMeasure_K();
+
+	/**
+	 * Returns the meta object for the reference '{@link fr.tblf.energy.estimation.eel.LogisticMeasure#getX0 <em>X0</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>X0</em>'.
+	 * @see fr.tblf.energy.estimation.eel.LogisticMeasure#getX0()
+	 * @see #getLogisticMeasure()
+	 * @generated
+	 */
+	EReference getLogisticMeasure_X0();
+
+	/**
+	 * Returns the meta object for the reference '{@link fr.tblf.energy.estimation.eel.LogisticMeasure#getX <em>X</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>X</em>'.
+	 * @see fr.tblf.energy.estimation.eel.LogisticMeasure#getX()
+	 * @see #getLogisticMeasure()
+	 * @generated
+	 */
+	EReference getLogisticMeasure_X();
+
+	/**
+	 * Returns the meta object for class '{@link fr.tblf.energy.estimation.eel.ExponentialMeasure <em>Exponential Measure</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Exponential Measure</em>'.
+	 * @see fr.tblf.energy.estimation.eel.ExponentialMeasure
+	 * @generated
+	 */
+	EClass getExponentialMeasure();
+
+	/**
+	 * Returns the meta object for the reference '{@link fr.tblf.energy.estimation.eel.ExponentialMeasure#getX <em>X</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>X</em>'.
+	 * @see fr.tblf.energy.estimation.eel.ExponentialMeasure#getX()
+	 * @see #getExponentialMeasure()
+	 * @generated
+	 */
+	EReference getExponentialMeasure_X();
+
+	/**
+	 * Returns the meta object for class '{@link fr.tblf.energy.estimation.eel.TailMeasure <em>Tail Measure</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Tail Measure</em>'.
+	 * @see fr.tblf.energy.estimation.eel.TailMeasure
+	 * @generated
+	 */
+	EClass getTailMeasure();
+
+	/**
+	 * Returns the meta object for class '{@link fr.tblf.energy.estimation.eel.IntegrationMeasure <em>Integration Measure</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Integration Measure</em>'.
+	 * @see fr.tblf.energy.estimation.eel.IntegrationMeasure
+	 * @generated
+	 */
+	EClass getIntegrationMeasure();
+
+	/**
+	 * Returns the meta object for the reference '{@link fr.tblf.energy.estimation.eel.IntegrationMeasure#getFunction <em>Function</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Function</em>'.
+	 * @see fr.tblf.energy.estimation.eel.IntegrationMeasure#getFunction()
+	 * @see #getIntegrationMeasure()
+	 * @generated
+	 */
+	EReference getIntegrationMeasure_Function();
+
+	/**
+	 * Returns the meta object for the attribute '{@link fr.tblf.energy.estimation.eel.IntegrationMeasure#getLeftBound <em>Left Bound</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Left Bound</em>'.
+	 * @see fr.tblf.energy.estimation.eel.IntegrationMeasure#getLeftBound()
+	 * @see #getIntegrationMeasure()
+	 * @generated
+	 */
+	EAttribute getIntegrationMeasure_LeftBound();
+
+	/**
+	 * Returns the meta object for the attribute '{@link fr.tblf.energy.estimation.eel.IntegrationMeasure#getRightBound <em>Right Bound</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Right Bound</em>'.
+	 * @see fr.tblf.energy.estimation.eel.IntegrationMeasure#getRightBound()
+	 * @see #getIntegrationMeasure()
+	 * @generated
+	 */
+	EAttribute getIntegrationMeasure_RightBound();
+
+	/**
 	 * Returns the meta object for enum '{@link fr.tblf.energy.estimation.eel.Visibility <em>Visibility</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3808,6 +4608,120 @@ public interface EelPackage extends EPackage {
 		 * @generated
 		 */
 		EReference SAMPLE__QUANTITY = eINSTANCE.getSample_Quantity();
+
+		/**
+		 * The meta object literal for the '{@link fr.tblf.energy.estimation.eel.impl.CompositeMeasureImpl <em>Composite Measure</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see fr.tblf.energy.estimation.eel.impl.CompositeMeasureImpl
+		 * @see fr.tblf.energy.estimation.eel.impl.EelPackageImpl#getCompositeMeasure()
+		 * @generated
+		 */
+		EClass COMPOSITE_MEASURE = eINSTANCE.getCompositeMeasure();
+
+		/**
+		 * The meta object literal for the '{@link fr.tblf.energy.estimation.eel.impl.LogisticMeasureImpl <em>Logistic Measure</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see fr.tblf.energy.estimation.eel.impl.LogisticMeasureImpl
+		 * @see fr.tblf.energy.estimation.eel.impl.EelPackageImpl#getLogisticMeasure()
+		 * @generated
+		 */
+		EClass LOGISTIC_MEASURE = eINSTANCE.getLogisticMeasure();
+
+		/**
+		 * The meta object literal for the '<em><b>L</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference LOGISTIC_MEASURE__L = eINSTANCE.getLogisticMeasure_L();
+
+		/**
+		 * The meta object literal for the '<em><b>K</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference LOGISTIC_MEASURE__K = eINSTANCE.getLogisticMeasure_K();
+
+		/**
+		 * The meta object literal for the '<em><b>X0</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference LOGISTIC_MEASURE__X0 = eINSTANCE.getLogisticMeasure_X0();
+
+		/**
+		 * The meta object literal for the '<em><b>X</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference LOGISTIC_MEASURE__X = eINSTANCE.getLogisticMeasure_X();
+
+		/**
+		 * The meta object literal for the '{@link fr.tblf.energy.estimation.eel.impl.ExponentialMeasureImpl <em>Exponential Measure</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see fr.tblf.energy.estimation.eel.impl.ExponentialMeasureImpl
+		 * @see fr.tblf.energy.estimation.eel.impl.EelPackageImpl#getExponentialMeasure()
+		 * @generated
+		 */
+		EClass EXPONENTIAL_MEASURE = eINSTANCE.getExponentialMeasure();
+
+		/**
+		 * The meta object literal for the '<em><b>X</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EXPONENTIAL_MEASURE__X = eINSTANCE.getExponentialMeasure_X();
+
+		/**
+		 * The meta object literal for the '{@link fr.tblf.energy.estimation.eel.impl.TailMeasureImpl <em>Tail Measure</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see fr.tblf.energy.estimation.eel.impl.TailMeasureImpl
+		 * @see fr.tblf.energy.estimation.eel.impl.EelPackageImpl#getTailMeasure()
+		 * @generated
+		 */
+		EClass TAIL_MEASURE = eINSTANCE.getTailMeasure();
+
+		/**
+		 * The meta object literal for the '{@link fr.tblf.energy.estimation.eel.impl.IntegrationMeasureImpl <em>Integration Measure</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see fr.tblf.energy.estimation.eel.impl.IntegrationMeasureImpl
+		 * @see fr.tblf.energy.estimation.eel.impl.EelPackageImpl#getIntegrationMeasure()
+		 * @generated
+		 */
+		EClass INTEGRATION_MEASURE = eINSTANCE.getIntegrationMeasure();
+
+		/**
+		 * The meta object literal for the '<em><b>Function</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference INTEGRATION_MEASURE__FUNCTION = eINSTANCE.getIntegrationMeasure_Function();
+
+		/**
+		 * The meta object literal for the '<em><b>Left Bound</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute INTEGRATION_MEASURE__LEFT_BOUND = eINSTANCE.getIntegrationMeasure_LeftBound();
+
+		/**
+		 * The meta object literal for the '<em><b>Right Bound</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute INTEGRATION_MEASURE__RIGHT_BOUND = eINSTANCE.getIntegrationMeasure_RightBound();
 
 		/**
 		 * The meta object literal for the '{@link fr.tblf.energy.estimation.eel.Visibility <em>Visibility</em>}' enum.

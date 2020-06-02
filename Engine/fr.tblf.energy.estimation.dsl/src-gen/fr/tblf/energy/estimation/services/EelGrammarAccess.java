@@ -158,14 +158,16 @@ public class EelGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cMeasureUnboundProductOperationParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
 		private final RuleCall cMeasureUnboundSumOperationParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
 		private final RuleCall cRealTimeDurationParserRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
+		private final RuleCall cCompositeMeasureParserRuleCall_7 = (RuleCall)cAlternatives.eContents().get(7);
 		
 		//Measure:
 		//	MeasureValue_Impl | MeasureOCL | MeasureAttribute | MeasureCast | MeasureUnboundProductOperation |
-		//	MeasureUnboundSumOperation | RealTimeDuration /*| MeasureUnboundSumOperation | MeasureUnboundProductOperation */;
+		//	MeasureUnboundSumOperation | RealTimeDuration | CompositeMeasure
+		//	/*| MeasureUnboundSumOperation | MeasureUnboundProductOperation */;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//MeasureValue_Impl | MeasureOCL | MeasureAttribute | MeasureCast | MeasureUnboundProductOperation |
-		//MeasureUnboundSumOperation | RealTimeDuration
+		//MeasureUnboundSumOperation | RealTimeDuration | CompositeMeasure
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//MeasureValue_Impl
@@ -188,6 +190,28 @@ public class EelGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//RealTimeDuration
 		public RuleCall getRealTimeDurationParserRuleCall_6() { return cRealTimeDurationParserRuleCall_6; }
+		
+		//CompositeMeasure
+		public RuleCall getCompositeMeasureParserRuleCall_7() { return cCompositeMeasureParserRuleCall_7; }
+	}
+	public class CompositeMeasureElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.tblf.energy.estimation.Eel.CompositeMeasure");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cExponentialMeasureParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cLogisticMeasureParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		
+		//CompositeMeasure:
+		//	ExponentialMeasure | LogisticMeasure;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//ExponentialMeasure | LogisticMeasure
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//ExponentialMeasure
+		public RuleCall getExponentialMeasureParserRuleCall_0() { return cExponentialMeasureParserRuleCall_0; }
+		
+		//LogisticMeasure
+		public RuleCall getLogisticMeasureParserRuleCall_1() { return cLogisticMeasureParserRuleCall_1; }
 	}
 	public class MeasurementUncertaintyInformationElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.tblf.energy.estimation.Eel.MeasurementUncertaintyInformation");
@@ -941,6 +965,337 @@ public class EelGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//EString
 		public RuleCall getMeasuresMeasureEStringParserRuleCall_8_1_0_1() { return cMeasuresMeasureEStringParserRuleCall_8_1_0_1; }
+	}
+	public class ExponentialMeasureElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.tblf.energy.estimation.Eel.ExponentialMeasure");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cExponentialMeasureAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cPostAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final Keyword cPostPostKeyword_1_0 = (Keyword)cPostAssignment_1.eContents().get(0);
+		private final Assignment cTargetClassAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cTargetClassEStringParserRuleCall_2_0 = (RuleCall)cTargetClassAssignment_2.eContents().get(0);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Keyword cNumberSignKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Assignment cTargetOperationAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final RuleCall cTargetOperationEStringParserRuleCall_3_1_0 = (RuleCall)cTargetOperationAssignment_3_1.eContents().get(0);
+		private final Keyword cFullStopKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Alternatives cAlternatives_5 = (Alternatives)cGroup.eContents().get(5);
+		private final Assignment cTypeAssignment_5_0 = (Assignment)cAlternatives_5.eContents().get(0);
+		private final RuleCall cTypeTypeEnumRuleCall_5_0_0 = (RuleCall)cTypeAssignment_5_0.eContents().get(0);
+		private final Assignment cSubnameAssignment_5_1 = (Assignment)cAlternatives_5.eContents().get(1);
+		private final RuleCall cSubnameEStringParserRuleCall_5_1_0 = (RuleCall)cSubnameAssignment_5_1.eContents().get(0);
+		private final Keyword cEqualsSignKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Assignment cXAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final CrossReference cXMeasureCrossReference_7_0 = (CrossReference)cXAssignment_7.eContents().get(0);
+		private final RuleCall cXMeasureIDTerminalRuleCall_7_0_1 = (RuleCall)cXMeasureCrossReference_7_0.eContents().get(1);
+		
+		//ExponentialMeasure:
+		//	{ExponentialMeasure} post?='post'? targetClass=EString ('#' targetOperation=EString)? '.' (type=Type |
+		//	subname=EString) "=" x=[Measure];
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{ExponentialMeasure} post?='post'? targetClass=EString ('#' targetOperation=EString)? '.' (type=Type | subname=EString)
+		//"=" x=[Measure]
+		public Group getGroup() { return cGroup; }
+		
+		//{ExponentialMeasure}
+		public Action getExponentialMeasureAction_0() { return cExponentialMeasureAction_0; }
+		
+		//post?='post'?
+		public Assignment getPostAssignment_1() { return cPostAssignment_1; }
+		
+		//'post'
+		public Keyword getPostPostKeyword_1_0() { return cPostPostKeyword_1_0; }
+		
+		//targetClass=EString
+		public Assignment getTargetClassAssignment_2() { return cTargetClassAssignment_2; }
+		
+		//EString
+		public RuleCall getTargetClassEStringParserRuleCall_2_0() { return cTargetClassEStringParserRuleCall_2_0; }
+		
+		//('#' targetOperation=EString)?
+		public Group getGroup_3() { return cGroup_3; }
+		
+		//'#'
+		public Keyword getNumberSignKeyword_3_0() { return cNumberSignKeyword_3_0; }
+		
+		//targetOperation=EString
+		public Assignment getTargetOperationAssignment_3_1() { return cTargetOperationAssignment_3_1; }
+		
+		//EString
+		public RuleCall getTargetOperationEStringParserRuleCall_3_1_0() { return cTargetOperationEStringParserRuleCall_3_1_0; }
+		
+		//'.'
+		public Keyword getFullStopKeyword_4() { return cFullStopKeyword_4; }
+		
+		//type=Type | subname=EString
+		public Alternatives getAlternatives_5() { return cAlternatives_5; }
+		
+		//type=Type
+		public Assignment getTypeAssignment_5_0() { return cTypeAssignment_5_0; }
+		
+		//Type
+		public RuleCall getTypeTypeEnumRuleCall_5_0_0() { return cTypeTypeEnumRuleCall_5_0_0; }
+		
+		//subname=EString
+		public Assignment getSubnameAssignment_5_1() { return cSubnameAssignment_5_1; }
+		
+		//EString
+		public RuleCall getSubnameEStringParserRuleCall_5_1_0() { return cSubnameEStringParserRuleCall_5_1_0; }
+		
+		//"="
+		public Keyword getEqualsSignKeyword_6() { return cEqualsSignKeyword_6; }
+		
+		//x=[Measure]
+		public Assignment getXAssignment_7() { return cXAssignment_7; }
+		
+		//[Measure]
+		public CrossReference getXMeasureCrossReference_7_0() { return cXMeasureCrossReference_7_0; }
+		
+		//ID
+		public RuleCall getXMeasureIDTerminalRuleCall_7_0_1() { return cXMeasureIDTerminalRuleCall_7_0_1; }
+	}
+	public class LogisticMeasureElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.tblf.energy.estimation.Eel.LogisticMeasure");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cLogisticMeasureAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cPostAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final Keyword cPostPostKeyword_1_0 = (Keyword)cPostAssignment_1.eContents().get(0);
+		private final Assignment cTargetClassAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cTargetClassEStringParserRuleCall_2_0 = (RuleCall)cTargetClassAssignment_2.eContents().get(0);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Keyword cNumberSignKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Assignment cTargetOperationAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final RuleCall cTargetOperationEStringParserRuleCall_3_1_0 = (RuleCall)cTargetOperationAssignment_3_1.eContents().get(0);
+		private final Keyword cFullStopKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Alternatives cAlternatives_5 = (Alternatives)cGroup.eContents().get(5);
+		private final Assignment cTypeAssignment_5_0 = (Assignment)cAlternatives_5.eContents().get(0);
+		private final RuleCall cTypeTypeEnumRuleCall_5_0_0 = (RuleCall)cTypeAssignment_5_0.eContents().get(0);
+		private final Assignment cSubnameAssignment_5_1 = (Assignment)cAlternatives_5.eContents().get(1);
+		private final RuleCall cSubnameEStringParserRuleCall_5_1_0 = (RuleCall)cSubnameAssignment_5_1.eContents().get(0);
+		private final Keyword cEqualsSignKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Assignment cLAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final CrossReference cLMeasureCrossReference_7_0 = (CrossReference)cLAssignment_7.eContents().get(0);
+		private final RuleCall cLMeasureIDTerminalRuleCall_7_0_1 = (RuleCall)cLMeasureCrossReference_7_0.eContents().get(1);
+		private final Assignment cKAssignment_8 = (Assignment)cGroup.eContents().get(8);
+		private final CrossReference cKMeasureCrossReference_8_0 = (CrossReference)cKAssignment_8.eContents().get(0);
+		private final RuleCall cKMeasureIDTerminalRuleCall_8_0_1 = (RuleCall)cKMeasureCrossReference_8_0.eContents().get(1);
+		private final Assignment cXAssignment_9 = (Assignment)cGroup.eContents().get(9);
+		private final CrossReference cXMeasureCrossReference_9_0 = (CrossReference)cXAssignment_9.eContents().get(0);
+		private final RuleCall cXMeasureIDTerminalRuleCall_9_0_1 = (RuleCall)cXMeasureCrossReference_9_0.eContents().get(1);
+		private final Assignment cX0Assignment_10 = (Assignment)cGroup.eContents().get(10);
+		private final CrossReference cX0MeasureCrossReference_10_0 = (CrossReference)cX0Assignment_10.eContents().get(0);
+		private final RuleCall cX0MeasureIDTerminalRuleCall_10_0_1 = (RuleCall)cX0MeasureCrossReference_10_0.eContents().get(1);
+		
+		//LogisticMeasure:
+		//	{LogisticMeasure} post?='post'? targetClass=EString ('#' targetOperation=EString)? '.' (type=Type | subname=EString)
+		//	"=" L=[Measure] k=[Measure] x=[Measure] x0=[Measure];
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{LogisticMeasure} post?='post'? targetClass=EString ('#' targetOperation=EString)? '.' (type=Type | subname=EString) "="
+		//L=[Measure] k=[Measure] x=[Measure] x0=[Measure]
+		public Group getGroup() { return cGroup; }
+		
+		//{LogisticMeasure}
+		public Action getLogisticMeasureAction_0() { return cLogisticMeasureAction_0; }
+		
+		//post?='post'?
+		public Assignment getPostAssignment_1() { return cPostAssignment_1; }
+		
+		//'post'
+		public Keyword getPostPostKeyword_1_0() { return cPostPostKeyword_1_0; }
+		
+		//targetClass=EString
+		public Assignment getTargetClassAssignment_2() { return cTargetClassAssignment_2; }
+		
+		//EString
+		public RuleCall getTargetClassEStringParserRuleCall_2_0() { return cTargetClassEStringParserRuleCall_2_0; }
+		
+		//('#' targetOperation=EString)?
+		public Group getGroup_3() { return cGroup_3; }
+		
+		//'#'
+		public Keyword getNumberSignKeyword_3_0() { return cNumberSignKeyword_3_0; }
+		
+		//targetOperation=EString
+		public Assignment getTargetOperationAssignment_3_1() { return cTargetOperationAssignment_3_1; }
+		
+		//EString
+		public RuleCall getTargetOperationEStringParserRuleCall_3_1_0() { return cTargetOperationEStringParserRuleCall_3_1_0; }
+		
+		//'.'
+		public Keyword getFullStopKeyword_4() { return cFullStopKeyword_4; }
+		
+		//type=Type | subname=EString
+		public Alternatives getAlternatives_5() { return cAlternatives_5; }
+		
+		//type=Type
+		public Assignment getTypeAssignment_5_0() { return cTypeAssignment_5_0; }
+		
+		//Type
+		public RuleCall getTypeTypeEnumRuleCall_5_0_0() { return cTypeTypeEnumRuleCall_5_0_0; }
+		
+		//subname=EString
+		public Assignment getSubnameAssignment_5_1() { return cSubnameAssignment_5_1; }
+		
+		//EString
+		public RuleCall getSubnameEStringParserRuleCall_5_1_0() { return cSubnameEStringParserRuleCall_5_1_0; }
+		
+		//"="
+		public Keyword getEqualsSignKeyword_6() { return cEqualsSignKeyword_6; }
+		
+		//L=[Measure]
+		public Assignment getLAssignment_7() { return cLAssignment_7; }
+		
+		//[Measure]
+		public CrossReference getLMeasureCrossReference_7_0() { return cLMeasureCrossReference_7_0; }
+		
+		//ID
+		public RuleCall getLMeasureIDTerminalRuleCall_7_0_1() { return cLMeasureIDTerminalRuleCall_7_0_1; }
+		
+		//k=[Measure]
+		public Assignment getKAssignment_8() { return cKAssignment_8; }
+		
+		//[Measure]
+		public CrossReference getKMeasureCrossReference_8_0() { return cKMeasureCrossReference_8_0; }
+		
+		//ID
+		public RuleCall getKMeasureIDTerminalRuleCall_8_0_1() { return cKMeasureIDTerminalRuleCall_8_0_1; }
+		
+		//x=[Measure]
+		public Assignment getXAssignment_9() { return cXAssignment_9; }
+		
+		//[Measure]
+		public CrossReference getXMeasureCrossReference_9_0() { return cXMeasureCrossReference_9_0; }
+		
+		//ID
+		public RuleCall getXMeasureIDTerminalRuleCall_9_0_1() { return cXMeasureIDTerminalRuleCall_9_0_1; }
+		
+		//x0=[Measure]
+		public Assignment getX0Assignment_10() { return cX0Assignment_10; }
+		
+		//[Measure]
+		public CrossReference getX0MeasureCrossReference_10_0() { return cX0MeasureCrossReference_10_0; }
+		
+		//ID
+		public RuleCall getX0MeasureIDTerminalRuleCall_10_0_1() { return cX0MeasureIDTerminalRuleCall_10_0_1; }
+	}
+	public class IntegrationMeasureElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.tblf.energy.estimation.Eel.IntegrationMeasure");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cIntegrationMeasureAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cPostAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final Keyword cPostPostKeyword_1_0 = (Keyword)cPostAssignment_1.eContents().get(0);
+		private final Assignment cTargetClassAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cTargetClassEStringParserRuleCall_2_0 = (RuleCall)cTargetClassAssignment_2.eContents().get(0);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Keyword cNumberSignKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Assignment cTargetOperationAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final RuleCall cTargetOperationEStringParserRuleCall_3_1_0 = (RuleCall)cTargetOperationAssignment_3_1.eContents().get(0);
+		private final Keyword cFullStopKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Alternatives cAlternatives_5 = (Alternatives)cGroup.eContents().get(5);
+		private final Assignment cTypeAssignment_5_0 = (Assignment)cAlternatives_5.eContents().get(0);
+		private final RuleCall cTypeTypeEnumRuleCall_5_0_0 = (RuleCall)cTypeAssignment_5_0.eContents().get(0);
+		private final Assignment cSubnameAssignment_5_1 = (Assignment)cAlternatives_5.eContents().get(1);
+		private final RuleCall cSubnameEStringParserRuleCall_5_1_0 = (RuleCall)cSubnameAssignment_5_1.eContents().get(0);
+		private final Keyword cEqualsSignKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Assignment cFunctionAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final CrossReference cFunctionCompositeMeasureCrossReference_7_0 = (CrossReference)cFunctionAssignment_7.eContents().get(0);
+		private final RuleCall cFunctionCompositeMeasureIDTerminalRuleCall_7_0_1 = (RuleCall)cFunctionCompositeMeasureCrossReference_7_0.eContents().get(1);
+		private final Keyword cLeftSquareBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final Assignment cLeftBoundAssignment_9 = (Assignment)cGroup.eContents().get(9);
+		private final RuleCall cLeftBoundEBigDecimalParserRuleCall_9_0 = (RuleCall)cLeftBoundAssignment_9.eContents().get(0);
+		private final Keyword cSemicolonKeyword_10 = (Keyword)cGroup.eContents().get(10);
+		private final Assignment cRightBoundAssignment_11 = (Assignment)cGroup.eContents().get(11);
+		private final RuleCall cRightBoundEBigDecimalParserRuleCall_11_0 = (RuleCall)cRightBoundAssignment_11.eContents().get(0);
+		private final Keyword cRightSquareBracketKeyword_12 = (Keyword)cGroup.eContents().get(12);
+		
+		//IntegrationMeasure:
+		//	{IntegrationMeasure} post?='post'? targetClass=EString ('#' targetOperation=EString)? '.' (type=Type |
+		//	subname=EString) "=" function=[CompositeMeasure] '[' leftBound=EBigDecimal ';' rightBound=EBigDecimal ']';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{IntegrationMeasure} post?='post'? targetClass=EString ('#' targetOperation=EString)? '.' (type=Type | subname=EString)
+		//"=" function=[CompositeMeasure] '[' leftBound=EBigDecimal ';' rightBound=EBigDecimal ']'
+		public Group getGroup() { return cGroup; }
+		
+		//{IntegrationMeasure}
+		public Action getIntegrationMeasureAction_0() { return cIntegrationMeasureAction_0; }
+		
+		//post?='post'?
+		public Assignment getPostAssignment_1() { return cPostAssignment_1; }
+		
+		//'post'
+		public Keyword getPostPostKeyword_1_0() { return cPostPostKeyword_1_0; }
+		
+		//targetClass=EString
+		public Assignment getTargetClassAssignment_2() { return cTargetClassAssignment_2; }
+		
+		//EString
+		public RuleCall getTargetClassEStringParserRuleCall_2_0() { return cTargetClassEStringParserRuleCall_2_0; }
+		
+		//('#' targetOperation=EString)?
+		public Group getGroup_3() { return cGroup_3; }
+		
+		//'#'
+		public Keyword getNumberSignKeyword_3_0() { return cNumberSignKeyword_3_0; }
+		
+		//targetOperation=EString
+		public Assignment getTargetOperationAssignment_3_1() { return cTargetOperationAssignment_3_1; }
+		
+		//EString
+		public RuleCall getTargetOperationEStringParserRuleCall_3_1_0() { return cTargetOperationEStringParserRuleCall_3_1_0; }
+		
+		//'.'
+		public Keyword getFullStopKeyword_4() { return cFullStopKeyword_4; }
+		
+		//type=Type | subname=EString
+		public Alternatives getAlternatives_5() { return cAlternatives_5; }
+		
+		//type=Type
+		public Assignment getTypeAssignment_5_0() { return cTypeAssignment_5_0; }
+		
+		//Type
+		public RuleCall getTypeTypeEnumRuleCall_5_0_0() { return cTypeTypeEnumRuleCall_5_0_0; }
+		
+		//subname=EString
+		public Assignment getSubnameAssignment_5_1() { return cSubnameAssignment_5_1; }
+		
+		//EString
+		public RuleCall getSubnameEStringParserRuleCall_5_1_0() { return cSubnameEStringParserRuleCall_5_1_0; }
+		
+		//"="
+		public Keyword getEqualsSignKeyword_6() { return cEqualsSignKeyword_6; }
+		
+		//function=[CompositeMeasure]
+		public Assignment getFunctionAssignment_7() { return cFunctionAssignment_7; }
+		
+		//[CompositeMeasure]
+		public CrossReference getFunctionCompositeMeasureCrossReference_7_0() { return cFunctionCompositeMeasureCrossReference_7_0; }
+		
+		//ID
+		public RuleCall getFunctionCompositeMeasureIDTerminalRuleCall_7_0_1() { return cFunctionCompositeMeasureIDTerminalRuleCall_7_0_1; }
+		
+		//'['
+		public Keyword getLeftSquareBracketKeyword_8() { return cLeftSquareBracketKeyword_8; }
+		
+		//leftBound=EBigDecimal
+		public Assignment getLeftBoundAssignment_9() { return cLeftBoundAssignment_9; }
+		
+		//EBigDecimal
+		public RuleCall getLeftBoundEBigDecimalParserRuleCall_9_0() { return cLeftBoundEBigDecimalParserRuleCall_9_0; }
+		
+		//';'
+		public Keyword getSemicolonKeyword_10() { return cSemicolonKeyword_10; }
+		
+		//rightBound=EBigDecimal
+		public Assignment getRightBoundAssignment_11() { return cRightBoundAssignment_11; }
+		
+		//EBigDecimal
+		public RuleCall getRightBoundEBigDecimalParserRuleCall_11_0() { return cRightBoundEBigDecimalParserRuleCall_11_0; }
+		
+		//']'
+		public Keyword getRightSquareBracketKeyword_12() { return cRightSquareBracketKeyword_12; }
 	}
 	public class MeasurementUncertaintyElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.tblf.energy.estimation.Eel.MeasurementUncertainty");
@@ -4049,6 +4404,7 @@ public class EelGrammarAccess extends AbstractGrammarElementFinder {
 	
 	private final PlatformElements pPlatform;
 	private final MeasureElements pMeasure;
+	private final CompositeMeasureElements pCompositeMeasure;
 	private final MeasurementUncertaintyInformationElements pMeasurementUncertaintyInformation;
 	private final EStringElements pEString;
 	private final VariableElements pVariable;
@@ -4062,6 +4418,9 @@ public class EelGrammarAccess extends AbstractGrammarElementFinder {
 	private final RealTimeDurationElements pRealTimeDuration;
 	private final MeasureUnboundSumOperationElements pMeasureUnboundSumOperation;
 	private final MeasureUnboundProductOperationElements pMeasureUnboundProductOperation;
+	private final ExponentialMeasureElements pExponentialMeasure;
+	private final LogisticMeasureElements pLogisticMeasure;
+	private final IntegrationMeasureElements pIntegrationMeasure;
 	private final MeasurementUncertaintyElements pMeasurementUncertainty;
 	private final NormalDistributionElements pNormalDistribution;
 	private final IntervalElements pInterval;
@@ -4097,6 +4456,7 @@ public class EelGrammarAccess extends AbstractGrammarElementFinder {
 		this.gaTerminals = gaTerminals;
 		this.pPlatform = new PlatformElements();
 		this.pMeasure = new MeasureElements();
+		this.pCompositeMeasure = new CompositeMeasureElements();
 		this.pMeasurementUncertaintyInformation = new MeasurementUncertaintyInformationElements();
 		this.pEString = new EStringElements();
 		this.pVariable = new VariableElements();
@@ -4110,6 +4470,9 @@ public class EelGrammarAccess extends AbstractGrammarElementFinder {
 		this.pRealTimeDuration = new RealTimeDurationElements();
 		this.pMeasureUnboundSumOperation = new MeasureUnboundSumOperationElements();
 		this.pMeasureUnboundProductOperation = new MeasureUnboundProductOperationElements();
+		this.pExponentialMeasure = new ExponentialMeasureElements();
+		this.pLogisticMeasure = new LogisticMeasureElements();
+		this.pIntegrationMeasure = new IntegrationMeasureElements();
 		this.pMeasurementUncertainty = new MeasurementUncertaintyElements();
 		this.pNormalDistribution = new NormalDistributionElements();
 		this.pInterval = new IntervalElements();
@@ -4179,13 +4542,24 @@ public class EelGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//Measure:
 	//	MeasureValue_Impl | MeasureOCL | MeasureAttribute | MeasureCast | MeasureUnboundProductOperation |
-	//	MeasureUnboundSumOperation | RealTimeDuration /*| MeasureUnboundSumOperation | MeasureUnboundProductOperation */;
+	//	MeasureUnboundSumOperation | RealTimeDuration | CompositeMeasure
+	//	/*| MeasureUnboundSumOperation | MeasureUnboundProductOperation */;
 	public MeasureElements getMeasureAccess() {
 		return pMeasure;
 	}
 	
 	public ParserRule getMeasureRule() {
 		return getMeasureAccess().getRule();
+	}
+	
+	//CompositeMeasure:
+	//	ExponentialMeasure | LogisticMeasure;
+	public CompositeMeasureElements getCompositeMeasureAccess() {
+		return pCompositeMeasure;
+	}
+	
+	public ParserRule getCompositeMeasureRule() {
+		return getCompositeMeasureAccess().getRule();
 	}
 	
 	//MeasurementUncertaintyInformation:
@@ -4332,6 +4706,39 @@ public class EelGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getMeasureUnboundProductOperationRule() {
 		return getMeasureUnboundProductOperationAccess().getRule();
+	}
+	
+	//ExponentialMeasure:
+	//	{ExponentialMeasure} post?='post'? targetClass=EString ('#' targetOperation=EString)? '.' (type=Type |
+	//	subname=EString) "=" x=[Measure];
+	public ExponentialMeasureElements getExponentialMeasureAccess() {
+		return pExponentialMeasure;
+	}
+	
+	public ParserRule getExponentialMeasureRule() {
+		return getExponentialMeasureAccess().getRule();
+	}
+	
+	//LogisticMeasure:
+	//	{LogisticMeasure} post?='post'? targetClass=EString ('#' targetOperation=EString)? '.' (type=Type | subname=EString)
+	//	"=" L=[Measure] k=[Measure] x=[Measure] x0=[Measure];
+	public LogisticMeasureElements getLogisticMeasureAccess() {
+		return pLogisticMeasure;
+	}
+	
+	public ParserRule getLogisticMeasureRule() {
+		return getLogisticMeasureAccess().getRule();
+	}
+	
+	//IntegrationMeasure:
+	//	{IntegrationMeasure} post?='post'? targetClass=EString ('#' targetOperation=EString)? '.' (type=Type |
+	//	subname=EString) "=" function=[CompositeMeasure] '[' leftBound=EBigDecimal ';' rightBound=EBigDecimal ']';
+	public IntegrationMeasureElements getIntegrationMeasureAccess() {
+		return pIntegrationMeasure;
+	}
+	
+	public ParserRule getIntegrationMeasureRule() {
+		return getIntegrationMeasureAccess().getRule();
 	}
 	
 	//MeasurementUncertainty:

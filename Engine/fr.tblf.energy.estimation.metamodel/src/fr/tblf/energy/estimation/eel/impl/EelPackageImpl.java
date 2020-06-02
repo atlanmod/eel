@@ -2,11 +2,15 @@
  */
 package fr.tblf.energy.estimation.eel.impl;
 
+import fr.tblf.energy.estimation.eel.CompositeMeasure;
 import fr.tblf.energy.estimation.eel.EelFactory;
 import fr.tblf.energy.estimation.eel.EelPackage;
 import fr.tblf.energy.estimation.eel.EnergyComputation;
+import fr.tblf.energy.estimation.eel.ExponentialMeasure;
 import fr.tblf.energy.estimation.eel.Integral;
+import fr.tblf.energy.estimation.eel.IntegrationMeasure;
 import fr.tblf.energy.estimation.eel.Interval;
+import fr.tblf.energy.estimation.eel.LogisticMeasure;
 import fr.tblf.energy.estimation.eel.Measure;
 import fr.tblf.energy.estimation.eel.MeasureAttribute;
 import fr.tblf.energy.estimation.eel.MeasureBinaryOperation;
@@ -26,6 +30,7 @@ import fr.tblf.energy.estimation.eel.PowerComputation;
 import fr.tblf.energy.estimation.eel.RealTimeDuration;
 import fr.tblf.energy.estimation.eel.Sample;
 import fr.tblf.energy.estimation.eel.Sampling;
+import fr.tblf.energy.estimation.eel.TailMeasure;
 import fr.tblf.energy.estimation.eel.Type;
 import fr.tblf.energy.estimation.eel.TypedMeasure;
 import fr.tblf.energy.estimation.eel.Variable;
@@ -212,6 +217,41 @@ public class EelPackageImpl extends EPackageImpl implements EelPackage {
 	 * @generated
 	 */
 	private EClass sampleEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass compositeMeasureEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass logisticMeasureEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass exponentialMeasureEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass tailMeasureEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass integrationMeasureEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -923,6 +963,123 @@ public class EelPackageImpl extends EPackageImpl implements EelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getCompositeMeasure() {
+		return compositeMeasureEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getLogisticMeasure() {
+		return logisticMeasureEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getLogisticMeasure_L() {
+		return (EReference)logisticMeasureEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getLogisticMeasure_K() {
+		return (EReference)logisticMeasureEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getLogisticMeasure_X0() {
+		return (EReference)logisticMeasureEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getLogisticMeasure_X() {
+		return (EReference)logisticMeasureEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getExponentialMeasure() {
+		return exponentialMeasureEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getExponentialMeasure_X() {
+		return (EReference)exponentialMeasureEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getTailMeasure() {
+		return tailMeasureEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getIntegrationMeasure() {
+		return integrationMeasureEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getIntegrationMeasure_Function() {
+		return (EReference)integrationMeasureEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getIntegrationMeasure_LeftBound() {
+		return (EAttribute)integrationMeasureEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getIntegrationMeasure_RightBound() {
+		return (EAttribute)integrationMeasureEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getVisibility() {
 		return visibilityEEnum;
 	}
@@ -1058,6 +1215,24 @@ public class EelPackageImpl extends EPackageImpl implements EelPackage {
 		sampleEClass = createEClass(SAMPLE);
 		createEReference(sampleEClass, SAMPLE__QUANTITY);
 
+		compositeMeasureEClass = createEClass(COMPOSITE_MEASURE);
+
+		logisticMeasureEClass = createEClass(LOGISTIC_MEASURE);
+		createEReference(logisticMeasureEClass, LOGISTIC_MEASURE__L);
+		createEReference(logisticMeasureEClass, LOGISTIC_MEASURE__K);
+		createEReference(logisticMeasureEClass, LOGISTIC_MEASURE__X0);
+		createEReference(logisticMeasureEClass, LOGISTIC_MEASURE__X);
+
+		exponentialMeasureEClass = createEClass(EXPONENTIAL_MEASURE);
+		createEReference(exponentialMeasureEClass, EXPONENTIAL_MEASURE__X);
+
+		tailMeasureEClass = createEClass(TAIL_MEASURE);
+
+		integrationMeasureEClass = createEClass(INTEGRATION_MEASURE);
+		createEReference(integrationMeasureEClass, INTEGRATION_MEASURE__FUNCTION);
+		createEAttribute(integrationMeasureEClass, INTEGRATION_MEASURE__LEFT_BOUND);
+		createEAttribute(integrationMeasureEClass, INTEGRATION_MEASURE__RIGHT_BOUND);
+
 		// Create enums
 		visibilityEEnum = createEEnum(VISIBILITY);
 		typeEEnum = createEEnum(TYPE);
@@ -1109,6 +1284,11 @@ public class EelPackageImpl extends EPackageImpl implements EelPackage {
 		intervalEClass.getESuperTypes().add(this.getMeasurementUncertaintyInformation());
 		samplingEClass.getESuperTypes().add(this.getMeasurementUncertaintyInformation());
 		integralEClass.getESuperTypes().add(this.getMeasurementUncertaintyInformation());
+		compositeMeasureEClass.getESuperTypes().add(this.getTypedMeasure());
+		logisticMeasureEClass.getESuperTypes().add(this.getCompositeMeasure());
+		exponentialMeasureEClass.getESuperTypes().add(this.getCompositeMeasure());
+		tailMeasureEClass.getESuperTypes().add(this.getCompositeMeasure());
+		integrationMeasureEClass.getESuperTypes().add(this.getCompositeMeasure());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(platformEClass, Platform.class, "Platform", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1219,6 +1399,24 @@ public class EelPackageImpl extends EPackageImpl implements EelPackage {
 
 		initEClass(sampleEClass, Sample.class, "Sample", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSample_Quantity(), this.getMeasure(), null, "quantity", null, 0, -1, Sample.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(compositeMeasureEClass, CompositeMeasure.class, "CompositeMeasure", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(logisticMeasureEClass, LogisticMeasure.class, "LogisticMeasure", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getLogisticMeasure_L(), this.getMeasure(), null, "L", null, 1, 1, LogisticMeasure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getLogisticMeasure_K(), this.getMeasure(), null, "k", null, 1, 1, LogisticMeasure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getLogisticMeasure_X0(), this.getMeasure(), null, "x0", null, 1, 1, LogisticMeasure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getLogisticMeasure_X(), this.getMeasure(), null, "x", null, 1, 1, LogisticMeasure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(exponentialMeasureEClass, ExponentialMeasure.class, "ExponentialMeasure", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getExponentialMeasure_X(), this.getMeasure(), null, "x", null, 1, 1, ExponentialMeasure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(tailMeasureEClass, TailMeasure.class, "TailMeasure", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(integrationMeasureEClass, IntegrationMeasure.class, "IntegrationMeasure", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getIntegrationMeasure_Function(), this.getCompositeMeasure(), null, "function", null, 1, 1, IntegrationMeasure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getIntegrationMeasure_LeftBound(), ecorePackage.getEBigDecimal(), "leftBound", null, 1, 1, IntegrationMeasure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getIntegrationMeasure_RightBound(), ecorePackage.getEBigDecimal(), "rightBound", null, 1, 1, IntegrationMeasure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(visibilityEEnum, Visibility.class, "Visibility");

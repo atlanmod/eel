@@ -113,5 +113,21 @@
     <genClasses ecoreClass="eel.ecore#//Sample">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eel.ecore#//Sample/quantity"/>
     </genClasses>
+    <genClasses ecoreClass="eel.ecore#//CompositeMeasure"/>
+    <genClasses ecoreClass="eel.ecore#//LogisticMeasure">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eel.ecore#//LogisticMeasure/L"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eel.ecore#//LogisticMeasure/k"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eel.ecore#//LogisticMeasure/x0"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eel.ecore#//LogisticMeasure/x"/>
+    </genClasses>
+    <genClasses ecoreClass="eel.ecore#//ExponentialMeasure">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eel.ecore#//ExponentialMeasure/x"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="eel.ecore#//TailMeasure"/>
+    <genClasses ecoreClass="eel.ecore#//IntegrationMeasure">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eel.ecore#//IntegrationMeasure/function"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eel.ecore#//IntegrationMeasure/leftBound"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eel.ecore#//IntegrationMeasure/rightBound"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

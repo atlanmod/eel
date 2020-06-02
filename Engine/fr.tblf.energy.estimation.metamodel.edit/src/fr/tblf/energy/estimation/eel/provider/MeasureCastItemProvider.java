@@ -190,6 +190,26 @@ public class MeasureCastItemProvider extends TypedMeasureItemProvider {
 			(createChildParameter
 				(EelPackage.Literals.MEASURE_CAST__MEASURE,
 				 EelFactory.eINSTANCE.createMeasureUnboundProductOperation()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(EelPackage.Literals.MEASURE_CAST__MEASURE,
+				 EelFactory.eINSTANCE.createCompositeMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(EelPackage.Literals.MEASURE_CAST__MEASURE,
+				 EelFactory.eINSTANCE.createLogisticMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(EelPackage.Literals.MEASURE_CAST__MEASURE,
+				 EelFactory.eINSTANCE.createExponentialMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(EelPackage.Literals.MEASURE_CAST__MEASURE,
+				 EelFactory.eINSTANCE.createIntegrationMeasure()));
 	}
 
 }

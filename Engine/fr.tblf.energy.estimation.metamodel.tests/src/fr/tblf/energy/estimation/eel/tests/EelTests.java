@@ -43,6 +43,10 @@ public class EelTests extends TestSuite {
 		suite.addTestSuite(MeasureUnboundSumOperationTest.class);
 		suite.addTestSuite(MeasureUnboundProductOperationTest.class);
 		suite.addTestSuite(NormalDistributionTest.class);
+		suite.addTestSuite(CompositeMeasureTest.class);
+		suite.addTestSuite(LogisticMeasureTest.class);
+		suite.addTestSuite(ExponentialMeasureTest.class);
+		suite.addTestSuite(IntegrationMeasureTest.class);
 		return suite;
 	}
 

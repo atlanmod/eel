@@ -164,6 +164,26 @@ public class EelAdapterFactory extends AdapterFactoryImpl {
 				return createSampleAdapter();
 			}
 			@Override
+			public Adapter caseCompositeMeasure(CompositeMeasure object) {
+				return createCompositeMeasureAdapter();
+			}
+			@Override
+			public Adapter caseLogisticMeasure(LogisticMeasure object) {
+				return createLogisticMeasureAdapter();
+			}
+			@Override
+			public Adapter caseExponentialMeasure(ExponentialMeasure object) {
+				return createExponentialMeasureAdapter();
+			}
+			@Override
+			public Adapter caseTailMeasure(TailMeasure object) {
+				return createTailMeasureAdapter();
+			}
+			@Override
+			public Adapter caseIntegrationMeasure(IntegrationMeasure object) {
+				return createIntegrationMeasureAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -516,6 +536,76 @@ public class EelAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createSampleAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.tblf.energy.estimation.eel.CompositeMeasure <em>Composite Measure</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.tblf.energy.estimation.eel.CompositeMeasure
+	 * @generated
+	 */
+	public Adapter createCompositeMeasureAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.tblf.energy.estimation.eel.LogisticMeasure <em>Logistic Measure</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.tblf.energy.estimation.eel.LogisticMeasure
+	 * @generated
+	 */
+	public Adapter createLogisticMeasureAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.tblf.energy.estimation.eel.ExponentialMeasure <em>Exponential Measure</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.tblf.energy.estimation.eel.ExponentialMeasure
+	 * @generated
+	 */
+	public Adapter createExponentialMeasureAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.tblf.energy.estimation.eel.TailMeasure <em>Tail Measure</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.tblf.energy.estimation.eel.TailMeasure
+	 * @generated
+	 */
+	public Adapter createTailMeasureAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.tblf.energy.estimation.eel.IntegrationMeasure <em>Integration Measure</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.tblf.energy.estimation.eel.IntegrationMeasure
+	 * @generated
+	 */
+	public Adapter createIntegrationMeasureAdapter() {
 		return null;
 	}
 

@@ -193,6 +193,42 @@ public interface EelFactory extends EFactory {
 	Sample createSample();
 
 	/**
+	 * Returns a new object of class '<em>Composite Measure</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Composite Measure</em>'.
+	 * @generated
+	 */
+	CompositeMeasure createCompositeMeasure();
+
+	/**
+	 * Returns a new object of class '<em>Logistic Measure</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Logistic Measure</em>'.
+	 * @generated
+	 */
+	LogisticMeasure createLogisticMeasure();
+
+	/**
+	 * Returns a new object of class '<em>Exponential Measure</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Exponential Measure</em>'.
+	 * @generated
+	 */
+	ExponentialMeasure createExponentialMeasure();
+
+	/**
+	 * Returns a new object of class '<em>Integration Measure</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Integration Measure</em>'.
+	 * @generated
+	 */
+	IntegrationMeasure createIntegrationMeasure();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

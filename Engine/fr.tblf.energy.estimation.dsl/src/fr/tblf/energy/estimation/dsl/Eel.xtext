@@ -15,7 +15,11 @@ Platform returns Platform:
 	'}';
 
 Measure returns Measure:
-	MeasureValue_Impl  | MeasureOCL | MeasureAttribute | MeasureCast | MeasureUnboundProductOperation | MeasureUnboundSumOperation | RealTimeDuration/*| MeasureUnboundSumOperation | MeasureUnboundProductOperation */ ;
+	MeasureValue_Impl  | MeasureOCL | MeasureAttribute | MeasureCast | MeasureUnboundProductOperation | MeasureUnboundSumOperation | RealTimeDuration | CompositeMeasure /*| MeasureUnboundSumOperation | MeasureUnboundProductOperation */ ;
+
+CompositeMeasure returns CompositeMeasure:
+	ExponentialMeasure | LogisticMeasure
+;
 
 MeasurementUncertaintyInformation returns MeasurementUncertaintyInformation:
 	NormalDistribution | Interval | Sampling | Integral;
@@ -72,7 +76,6 @@ RealTimeDuration returns RealTimeDuration:
 	(post ?= 'post')? targetClass=EString ('#' targetOperation=EString)? ('.absoluteTime') 
 ;
 
-
 MeasureUnboundSumOperation returns MeasureUnboundSumOperation:
 	{MeasureUnboundSumOperation}
 	(post ?= 'post')? targetClass=EString ('#' targetOperation=EString)? ('.') (type=Type | subname = EString) "="  measures+=[Measure|EString] ('+' measures+=[Measure|EString])+ 		
@@ -82,8 +85,22 @@ MeasureUnboundProductOperation returns MeasureUnboundProductOperation:
 	{MeasureUnboundProductOperation}
 	(post ?= 'post')? targetClass=EString ('#' targetOperation=EString)? ('.') (type=Type | subname = EString) "="  measures+=[Measure|EString] ('*' measures+=[Measure|EString])+ 		
 ;
- 
- 
+
+ExponentialMeasure returns ExponentialMeasure:
+	{ExponentialMeasure}
+	(post ?= 'post')? targetClass=EString ('#' targetOperation=EString)? ('.') (type=Type | subname = EString) "=" 	x=[Measure]
+;	
+
+LogisticMeasure returns LogisticMeasure:
+	{LogisticMeasure} 
+	(post ?= 'post')? targetClass=EString ('#' targetOperation=EString)? ('.') (type=Type | subname = EString) "=" 	L=[Measure] k=[Measure] x=[Measure] x0=[Measure]	
+;
+
+IntegrationMeasure returns IntegrationMeasure:
+	{IntegrationMeasure}
+	(post ?= 'post')? targetClass=EString ('#' targetOperation=EString)? ('.') (type=Type | subname = EString) "=" function=[CompositeMeasure] '['leftBound=EBigDecimal';'rightBound=EBigDecimal']';
+
+
 MeasurementUncertainty returns MeasurementUncertainty:
 	{MeasurementUncertainty}
 	'MeasurementUncertainty'
@@ -92,7 +109,6 @@ MeasurementUncertainty returns MeasurementUncertainty:
 		('information' information=MeasurementUncertaintyInformation)?
 	'}';
 
-	
 NormalDistribution returns NormalDistribution:
 	{NormalDistribution}
 	'NormalDistribution'

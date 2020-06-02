@@ -5,8 +5,11 @@ package fr.tblf.energy.estimation.serializer;
 
 import com.google.inject.Inject;
 import fr.tblf.energy.estimation.eel.EelPackage;
+import fr.tblf.energy.estimation.eel.ExponentialMeasure;
 import fr.tblf.energy.estimation.eel.Integral;
+import fr.tblf.energy.estimation.eel.IntegrationMeasure;
 import fr.tblf.energy.estimation.eel.Interval;
+import fr.tblf.energy.estimation.eel.LogisticMeasure;
 import fr.tblf.energy.estimation.eel.MeasureAttribute;
 import fr.tblf.energy.estimation.eel.MeasureCast;
 import fr.tblf.energy.estimation.eel.MeasureOCL;
@@ -101,11 +104,20 @@ public class EelSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			}
 		else if (epackage == EelPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
+			case EelPackage.EXPONENTIAL_MEASURE:
+				sequence_ExponentialMeasure(context, (ExponentialMeasure) semanticObject); 
+				return; 
 			case EelPackage.INTEGRAL:
 				sequence_Integral(context, (Integral) semanticObject); 
 				return; 
+			case EelPackage.INTEGRATION_MEASURE:
+				sequence_IntegrationMeasure(context, (IntegrationMeasure) semanticObject); 
+				return; 
 			case EelPackage.INTERVAL:
 				sequence_Interval(context, (Interval) semanticObject); 
+				return; 
+			case EelPackage.LOGISTIC_MEASURE:
+				sequence_LogisticMeasure(context, (LogisticMeasure) semanticObject); 
 				return; 
 			case EelPackage.MEASURE_ATTRIBUTE:
 				sequence_MeasureAttribute(context, (MeasureAttribute) semanticObject); 
@@ -410,6 +422,20 @@ public class EelSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Contexts:
+	 *     Measure returns ExponentialMeasure
+	 *     CompositeMeasure returns ExponentialMeasure
+	 *     ExponentialMeasure returns ExponentialMeasure
+	 *
+	 * Constraint:
+	 *     (post?='post'? targetClass=EString targetOperation=EString? (type=Type | subname=EString) x=[Measure|ID])
+	 */
+	protected void sequence_ExponentialMeasure(ISerializationContext context, ExponentialMeasure semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     MeasurementUncertaintyInformation returns Integral
 	 *     Integral returns Integral
 	 *
@@ -417,6 +443,26 @@ public class EelSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     (function=EString? interval=[Interval|EString])
 	 */
 	protected void sequence_Integral(ISerializationContext context, Integral semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     IntegrationMeasure returns IntegrationMeasure
+	 *
+	 * Constraint:
+	 *     (
+	 *         post?='post'? 
+	 *         targetClass=EString 
+	 *         targetOperation=EString? 
+	 *         (type=Type | subname=EString) 
+	 *         function=[CompositeMeasure|ID] 
+	 *         leftBound=EBigDecimal 
+	 *         rightBound=EBigDecimal
+	 *     )
+	 */
+	protected void sequence_IntegrationMeasure(ISerializationContext context, IntegrationMeasure semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -440,6 +486,29 @@ public class EelSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		feeder.accept(grammarAccess.getIntervalAccess().getLowerEndpointMeasureParserRuleCall_3_0(), semanticObject.getLowerEndpoint());
 		feeder.accept(grammarAccess.getIntervalAccess().getUpperEndpointMeasureParserRuleCall_5_0(), semanticObject.getUpperEndpoint());
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Measure returns LogisticMeasure
+	 *     CompositeMeasure returns LogisticMeasure
+	 *     LogisticMeasure returns LogisticMeasure
+	 *
+	 * Constraint:
+	 *     (
+	 *         post?='post'? 
+	 *         targetClass=EString 
+	 *         targetOperation=EString? 
+	 *         (type=Type | subname=EString) 
+	 *         L=[Measure|ID] 
+	 *         k=[Measure|ID] 
+	 *         x=[Measure|ID] 
+	 *         x0=[Measure|ID]
+	 *     )
+	 */
+	protected void sequence_LogisticMeasure(ISerializationContext context, LogisticMeasure semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

@@ -240,6 +240,26 @@ public class PlatformItemProvider
 			(createChildParameter
 				(EelPackage.Literals.PLATFORM__MEASURES,
 				 EelFactory.eINSTANCE.createMeasureUnboundProductOperation()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(EelPackage.Literals.PLATFORM__MEASURES,
+				 EelFactory.eINSTANCE.createCompositeMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(EelPackage.Literals.PLATFORM__MEASURES,
+				 EelFactory.eINSTANCE.createLogisticMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(EelPackage.Literals.PLATFORM__MEASURES,
+				 EelFactory.eINSTANCE.createExponentialMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(EelPackage.Literals.PLATFORM__MEASURES,
+				 EelFactory.eINSTANCE.createIntegrationMeasure()));
 	}
 
 	/**
