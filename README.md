@@ -19,10 +19,13 @@ A second one considering a Arduino Pro mini with L-7113ID red LEDs.
 
 ## How to run
 
-Before running the Arduino executable model, be sure to set the current energy-estimation model using the `Energy > Set model` button located on the tool bar.
-
+Before running the Arduino executable model, be sure to set the current energy-estimation model using the `Energy > Set model` button located on the tool bar:
 ![image](https://user-images.githubusercontent.com/6909730/83507178-7ca7af00-a4c8-11ea-930a-4e0cd01df1b1.png)
 
+Set the energy estimation addon in the corresponding view:
+![image](https://user-images.githubusercontent.com/6909730/83507530-f8096080-a4c8-11ea-9ef5-c65df61c42c2.png)
+
+Then the Arduino model can be executed, as shown here:
 ![image](https://user-images.githubusercontent.com/6909730/83507311-b082d480-a4c8-11ea-8253-4464d1b09a4d.png)
 
 Running the model will dynamically perform the Energy measurements, and print them in your console. Feel free to extend the engine for enabling more energy estimation management.
