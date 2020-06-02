@@ -217,13 +217,22 @@ public interface EelPackage extends EPackage {
 	int MEASURE__TARGET_OPERATION = 3;
 
 	/**
+	 * The feature id for the '<em><b>Post</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE__POST = 4;
+
+	/**
 	 * The feature id for the '<em><b>Uncertainty</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MEASURE__UNCERTAINTY = 4;
+	int MEASURE__UNCERTAINTY = 5;
 
 	/**
 	 * The number of structural features of the '<em>Measure</em>' class.
@@ -232,7 +241,7 @@ public interface EelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MEASURE_FEATURE_COUNT = 5;
+	int MEASURE_FEATURE_COUNT = 6;
 
 	/**
 	 * The operation id for the '<em>Type</em>' operation.
@@ -315,6 +324,15 @@ public interface EelPackage extends EPackage {
 	 * @ordered
 	 */
 	int TYPED_MEASURE__TARGET_OPERATION = MEASURE__TARGET_OPERATION;
+
+	/**
+	 * The feature id for the '<em><b>Post</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TYPED_MEASURE__POST = MEASURE__POST;
 
 	/**
 	 * The feature id for the '<em><b>Uncertainty</b></em>' containment reference.
@@ -424,6 +442,15 @@ public interface EelPackage extends EPackage {
 	 * @ordered
 	 */
 	int MEASURE_VALUE__TARGET_OPERATION = TYPED_MEASURE__TARGET_OPERATION;
+
+	/**
+	 * The feature id for the '<em><b>Post</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE_VALUE__POST = TYPED_MEASURE__POST;
 
 	/**
 	 * The feature id for the '<em><b>Uncertainty</b></em>' containment reference.
@@ -542,6 +569,15 @@ public interface EelPackage extends EPackage {
 	 * @ordered
 	 */
 	int MEASURE_OCL__TARGET_OPERATION = MEASURE_VALUE__TARGET_OPERATION;
+
+	/**
+	 * The feature id for the '<em><b>Post</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE_OCL__POST = MEASURE_VALUE__POST;
 
 	/**
 	 * The feature id for the '<em><b>Uncertainty</b></em>' containment reference.
@@ -671,6 +707,15 @@ public interface EelPackage extends EPackage {
 	int MEASURE_ATTRIBUTE__TARGET_OPERATION = MEASURE_VALUE__TARGET_OPERATION;
 
 	/**
+	 * The feature id for the '<em><b>Post</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE_ATTRIBUTE__POST = MEASURE_VALUE__POST;
+
+	/**
 	 * The feature id for the '<em><b>Uncertainty</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -798,6 +843,15 @@ public interface EelPackage extends EPackage {
 	int MEASURE_CAST__TARGET_OPERATION = TYPED_MEASURE__TARGET_OPERATION;
 
 	/**
+	 * The feature id for the '<em><b>Post</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE_CAST__POST = TYPED_MEASURE__POST;
+
+	/**
 	 * The feature id for the '<em><b>Uncertainty</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -914,6 +968,15 @@ public interface EelPackage extends EPackage {
 	 * @ordered
 	 */
 	int MEASURE_BINARY_OPERATION__TARGET_OPERATION = TYPED_MEASURE__TARGET_OPERATION;
+
+	/**
+	 * The feature id for the '<em><b>Post</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE_BINARY_OPERATION__POST = TYPED_MEASURE__POST;
 
 	/**
 	 * The feature id for the '<em><b>Uncertainty</b></em>' containment reference.
@@ -1043,6 +1106,15 @@ public interface EelPackage extends EPackage {
 	int MEASURE_BINARY_PRODUCT_OPERATION__TARGET_OPERATION = MEASURE_BINARY_OPERATION__TARGET_OPERATION;
 
 	/**
+	 * The feature id for the '<em><b>Post</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE_BINARY_PRODUCT_OPERATION__POST = MEASURE_BINARY_OPERATION__POST;
+
+	/**
 	 * The feature id for the '<em><b>Uncertainty</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1168,6 +1240,15 @@ public interface EelPackage extends EPackage {
 	 * @ordered
 	 */
 	int MEASURE_BINARY_SUM_OPERATION__TARGET_OPERATION = MEASURE_BINARY_OPERATION__TARGET_OPERATION;
+
+	/**
+	 * The feature id for the '<em><b>Post</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE_BINARY_SUM_OPERATION__POST = MEASURE_BINARY_OPERATION__POST;
 
 	/**
 	 * The feature id for the '<em><b>Uncertainty</b></em>' containment reference.
@@ -1297,6 +1378,15 @@ public interface EelPackage extends EPackage {
 	int ENERGY_COMPUTATION__TARGET_OPERATION = MEASURE_BINARY_PRODUCT_OPERATION__TARGET_OPERATION;
 
 	/**
+	 * The feature id for the '<em><b>Post</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENERGY_COMPUTATION__POST = MEASURE_BINARY_PRODUCT_OPERATION__POST;
+
+	/**
 	 * The feature id for the '<em><b>Uncertainty</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1422,6 +1512,15 @@ public interface EelPackage extends EPackage {
 	 * @ordered
 	 */
 	int POWER_COMPUTATION__TARGET_OPERATION = MEASURE_BINARY_PRODUCT_OPERATION__TARGET_OPERATION;
+
+	/**
+	 * The feature id for the '<em><b>Post</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POWER_COMPUTATION__POST = MEASURE_BINARY_PRODUCT_OPERATION__POST;
 
 	/**
 	 * The feature id for the '<em><b>Uncertainty</b></em>' containment reference.
@@ -1551,6 +1650,15 @@ public interface EelPackage extends EPackage {
 	int REAL_TIME_DURATION__TARGET_OPERATION = MEASURE_VALUE__TARGET_OPERATION;
 
 	/**
+	 * The feature id for the '<em><b>Post</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REAL_TIME_DURATION__POST = MEASURE_VALUE__POST;
+
+	/**
 	 * The feature id for the '<em><b>Uncertainty</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1667,6 +1775,15 @@ public interface EelPackage extends EPackage {
 	 * @ordered
 	 */
 	int MEASURE_UNBOUND_OPERATION__TARGET_OPERATION = TYPED_MEASURE__TARGET_OPERATION;
+
+	/**
+	 * The feature id for the '<em><b>Post</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE_UNBOUND_OPERATION__POST = TYPED_MEASURE__POST;
 
 	/**
 	 * The feature id for the '<em><b>Uncertainty</b></em>' containment reference.
@@ -1787,6 +1904,15 @@ public interface EelPackage extends EPackage {
 	int MEASURE_UNBOUND_SUM_OPERATION__TARGET_OPERATION = MEASURE_UNBOUND_OPERATION__TARGET_OPERATION;
 
 	/**
+	 * The feature id for the '<em><b>Post</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE_UNBOUND_SUM_OPERATION__POST = MEASURE_UNBOUND_OPERATION__POST;
+
+	/**
 	 * The feature id for the '<em><b>Uncertainty</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1903,6 +2029,15 @@ public interface EelPackage extends EPackage {
 	 * @ordered
 	 */
 	int MEASURE_UNBOUND_PRODUCT_OPERATION__TARGET_OPERATION = MEASURE_UNBOUND_OPERATION__TARGET_OPERATION;
+
+	/**
+	 * The feature id for the '<em><b>Post</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE_UNBOUND_PRODUCT_OPERATION__POST = MEASURE_UNBOUND_OPERATION__POST;
 
 	/**
 	 * The feature id for the '<em><b>Uncertainty</b></em>' containment reference.
@@ -2431,6 +2566,17 @@ public interface EelPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getMeasure_TargetOperation();
+
+	/**
+	 * Returns the meta object for the attribute '{@link fr.tblf.energy.estimation.eel.Measure#getPost <em>Post</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Post</em>'.
+	 * @see fr.tblf.energy.estimation.eel.Measure#getPost()
+	 * @see #getMeasure()
+	 * @generated
+	 */
+	EAttribute getMeasure_Post();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link fr.tblf.energy.estimation.eel.Measure#getUncertainty <em>Uncertainty</em>}'.
@@ -3164,6 +3310,14 @@ public interface EelPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute MEASURE__TARGET_OPERATION = eINSTANCE.getMeasure_TargetOperation();
+
+		/**
+		 * The meta object literal for the '<em><b>Post</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MEASURE__POST = eINSTANCE.getMeasure_Post();
 
 		/**
 		 * The meta object literal for the '<em><b>Uncertainty</b></em>' containment reference feature.

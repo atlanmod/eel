@@ -566,10 +566,24 @@ ruleMeasureValue_Impl returns [EObject current=null]
 		)
 		(
 			(
+				lv_post_1_0='post'
 				{
-					newCompositeNode(grammarAccess.getMeasureValue_ImplAccess().getTargetClassEStringParserRuleCall_1_0());
+					newLeafNode(lv_post_1_0, grammarAccess.getMeasureValue_ImplAccess().getPostPostKeyword_1_0());
 				}
-				lv_targetClass_1_0=ruleEString
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getMeasureValue_ImplRule());
+					}
+					setWithLastConsumed($current, "post", true, "post");
+				}
+			)
+		)?
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getMeasureValue_ImplAccess().getTargetClassEStringParserRuleCall_2_0());
+				}
+				lv_targetClass_2_0=ruleEString
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getMeasureValue_ImplRule());
@@ -577,23 +591,23 @@ ruleMeasureValue_Impl returns [EObject current=null]
 					set(
 						$current,
 						"targetClass",
-						lv_targetClass_1_0,
+						lv_targetClass_2_0,
 						"fr.tblf.energy.estimation.Eel.EString");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
 		(
-			otherlv_2='#'
+			otherlv_3='#'
 			{
-				newLeafNode(otherlv_2, grammarAccess.getMeasureValue_ImplAccess().getNumberSignKeyword_2_0());
+				newLeafNode(otherlv_3, grammarAccess.getMeasureValue_ImplAccess().getNumberSignKeyword_3_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getMeasureValue_ImplAccess().getTargetOperationEStringParserRuleCall_2_1_0());
+						newCompositeNode(grammarAccess.getMeasureValue_ImplAccess().getTargetOperationEStringParserRuleCall_3_1_0());
 					}
-					lv_targetOperation_3_0=ruleEString
+					lv_targetOperation_4_0=ruleEString
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getMeasureValue_ImplRule());
@@ -601,24 +615,24 @@ ruleMeasureValue_Impl returns [EObject current=null]
 						set(
 							$current,
 							"targetOperation",
-							lv_targetOperation_3_0,
+							lv_targetOperation_4_0,
 							"fr.tblf.energy.estimation.Eel.EString");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 		)?
-		otherlv_4='.'
+		otherlv_5='.'
 		{
-			newLeafNode(otherlv_4, grammarAccess.getMeasureValue_ImplAccess().getFullStopKeyword_3());
+			newLeafNode(otherlv_5, grammarAccess.getMeasureValue_ImplAccess().getFullStopKeyword_4());
 		}
 		(
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getMeasureValue_ImplAccess().getTypeTypeEnumRuleCall_4_0_0());
+						newCompositeNode(grammarAccess.getMeasureValue_ImplAccess().getTypeTypeEnumRuleCall_5_0_0());
 					}
-					lv_type_5_0=ruleType
+					lv_type_6_0=ruleType
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getMeasureValue_ImplRule());
@@ -626,7 +640,7 @@ ruleMeasureValue_Impl returns [EObject current=null]
 						set(
 							$current,
 							"type",
-							lv_type_5_0,
+							lv_type_6_0,
 							"fr.tblf.energy.estimation.Eel.Type");
 						afterParserOrEnumRuleCall();
 					}
@@ -636,9 +650,9 @@ ruleMeasureValue_Impl returns [EObject current=null]
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getMeasureValue_ImplAccess().getSubnameEStringParserRuleCall_4_1_0());
+						newCompositeNode(grammarAccess.getMeasureValue_ImplAccess().getSubnameEStringParserRuleCall_5_1_0());
 					}
-					lv_subname_6_0=ruleEString
+					lv_subname_7_0=ruleEString
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getMeasureValue_ImplRule());
@@ -646,23 +660,23 @@ ruleMeasureValue_Impl returns [EObject current=null]
 						set(
 							$current,
 							"subname",
-							lv_subname_6_0,
+							lv_subname_7_0,
 							"fr.tblf.energy.estimation.Eel.EString");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 		)
-		otherlv_7='='
+		otherlv_8='='
 		{
-			newLeafNode(otherlv_7, grammarAccess.getMeasureValue_ImplAccess().getEqualsSignKeyword_5());
+			newLeafNode(otherlv_8, grammarAccess.getMeasureValue_ImplAccess().getEqualsSignKeyword_6());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getMeasureValue_ImplAccess().getValueEBigDecimalParserRuleCall_6_0());
+					newCompositeNode(grammarAccess.getMeasureValue_ImplAccess().getValueEBigDecimalParserRuleCall_7_0());
 				}
-				lv_value_8_0=ruleEBigDecimal
+				lv_value_9_0=ruleEBigDecimal
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getMeasureValue_ImplRule());
@@ -670,35 +684,10 @@ ruleMeasureValue_Impl returns [EObject current=null]
 					set(
 						$current,
 						"value",
-						lv_value_8_0,
+						lv_value_9_0,
 						"fr.tblf.energy.estimation.Eel.EBigDecimal");
 					afterParserOrEnumRuleCall();
 				}
-			)
-		)?
-		(
-			otherlv_9='uncertainty'
-			{
-				newLeafNode(otherlv_9, grammarAccess.getMeasureValue_ImplAccess().getUncertaintyKeyword_7_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getMeasureValue_ImplAccess().getUncertaintyMeasurementUncertaintyParserRuleCall_7_1_0());
-					}
-					lv_uncertainty_10_0=ruleMeasurementUncertainty
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getMeasureValue_ImplRule());
-						}
-						set(
-							$current,
-							"uncertainty",
-							lv_uncertainty_10_0,
-							"fr.tblf.energy.estimation.Eel.MeasurementUncertainty");
-						afterParserOrEnumRuleCall();
-					}
-				)
 			)
 		)?
 	)
@@ -729,10 +718,24 @@ ruleMeasureOCL returns [EObject current=null]
 		)
 		(
 			(
+				lv_post_1_0='post'
 				{
-					newCompositeNode(grammarAccess.getMeasureOCLAccess().getTargetClassEStringParserRuleCall_1_0());
+					newLeafNode(lv_post_1_0, grammarAccess.getMeasureOCLAccess().getPostPostKeyword_1_0());
 				}
-				lv_targetClass_1_0=ruleEString
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getMeasureOCLRule());
+					}
+					setWithLastConsumed($current, "post", true, "post");
+				}
+			)
+		)?
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getMeasureOCLAccess().getTargetClassEStringParserRuleCall_2_0());
+				}
+				lv_targetClass_2_0=ruleEString
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getMeasureOCLRule());
@@ -740,23 +743,23 @@ ruleMeasureOCL returns [EObject current=null]
 					set(
 						$current,
 						"targetClass",
-						lv_targetClass_1_0,
+						lv_targetClass_2_0,
 						"fr.tblf.energy.estimation.Eel.EString");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
 		(
-			otherlv_2='#'
+			otherlv_3='#'
 			{
-				newLeafNode(otherlv_2, grammarAccess.getMeasureOCLAccess().getNumberSignKeyword_2_0());
+				newLeafNode(otherlv_3, grammarAccess.getMeasureOCLAccess().getNumberSignKeyword_3_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getMeasureOCLAccess().getTargetOperationEStringParserRuleCall_2_1_0());
+						newCompositeNode(grammarAccess.getMeasureOCLAccess().getTargetOperationEStringParserRuleCall_3_1_0());
 					}
-					lv_targetOperation_3_0=ruleEString
+					lv_targetOperation_4_0=ruleEString
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getMeasureOCLRule());
@@ -764,24 +767,24 @@ ruleMeasureOCL returns [EObject current=null]
 						set(
 							$current,
 							"targetOperation",
-							lv_targetOperation_3_0,
+							lv_targetOperation_4_0,
 							"fr.tblf.energy.estimation.Eel.EString");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 		)?
-		otherlv_4='.'
+		otherlv_5='.'
 		{
-			newLeafNode(otherlv_4, grammarAccess.getMeasureOCLAccess().getFullStopKeyword_3());
+			newLeafNode(otherlv_5, grammarAccess.getMeasureOCLAccess().getFullStopKeyword_4());
 		}
 		(
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getMeasureOCLAccess().getTypeTypeEnumRuleCall_4_0_0());
+						newCompositeNode(grammarAccess.getMeasureOCLAccess().getTypeTypeEnumRuleCall_5_0_0());
 					}
-					lv_type_5_0=ruleType
+					lv_type_6_0=ruleType
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getMeasureOCLRule());
@@ -789,7 +792,7 @@ ruleMeasureOCL returns [EObject current=null]
 						set(
 							$current,
 							"type",
-							lv_type_5_0,
+							lv_type_6_0,
 							"fr.tblf.energy.estimation.Eel.Type");
 						afterParserOrEnumRuleCall();
 					}
@@ -799,9 +802,9 @@ ruleMeasureOCL returns [EObject current=null]
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getMeasureOCLAccess().getSubnameEStringParserRuleCall_4_1_0());
+						newCompositeNode(grammarAccess.getMeasureOCLAccess().getSubnameEStringParserRuleCall_5_1_0());
 					}
-					lv_subname_6_0=ruleEString
+					lv_subname_7_0=ruleEString
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getMeasureOCLRule());
@@ -809,27 +812,27 @@ ruleMeasureOCL returns [EObject current=null]
 						set(
 							$current,
 							"subname",
-							lv_subname_6_0,
+							lv_subname_7_0,
 							"fr.tblf.energy.estimation.Eel.EString");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 		)
-		otherlv_7='='
+		otherlv_8='='
 		{
-			newLeafNode(otherlv_7, grammarAccess.getMeasureOCLAccess().getEqualsSignKeyword_5());
+			newLeafNode(otherlv_8, grammarAccess.getMeasureOCLAccess().getEqualsSignKeyword_6());
 		}
-		otherlv_8='ocl:'
+		otherlv_9='ocl:'
 		{
-			newLeafNode(otherlv_8, grammarAccess.getMeasureOCLAccess().getOclKeyword_6());
+			newLeafNode(otherlv_9, grammarAccess.getMeasureOCLAccess().getOclKeyword_7());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getMeasureOCLAccess().getOclQueryEStringParserRuleCall_7_0());
+					newCompositeNode(grammarAccess.getMeasureOCLAccess().getOclQueryEStringParserRuleCall_8_0());
 				}
-				lv_oclQuery_9_0=ruleEString
+				lv_oclQuery_10_0=ruleEString
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getMeasureOCLRule());
@@ -837,37 +840,12 @@ ruleMeasureOCL returns [EObject current=null]
 					set(
 						$current,
 						"oclQuery",
-						lv_oclQuery_9_0,
+						lv_oclQuery_10_0,
 						"fr.tblf.energy.estimation.Eel.EString");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		(
-			otherlv_10='uncertainty'
-			{
-				newLeafNode(otherlv_10, grammarAccess.getMeasureOCLAccess().getUncertaintyKeyword_8_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getMeasureOCLAccess().getUncertaintyMeasurementUncertaintyParserRuleCall_8_1_0());
-					}
-					lv_uncertainty_11_0=ruleMeasurementUncertainty
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getMeasureOCLRule());
-						}
-						set(
-							$current,
-							"uncertainty",
-							lv_uncertainty_11_0,
-							"fr.tblf.energy.estimation.Eel.MeasurementUncertainty");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)?
 	)
 ;
 
@@ -896,10 +874,24 @@ ruleMeasureAttribute returns [EObject current=null]
 		)
 		(
 			(
+				lv_post_1_0='post'
 				{
-					newCompositeNode(grammarAccess.getMeasureAttributeAccess().getTargetClassEStringParserRuleCall_1_0());
+					newLeafNode(lv_post_1_0, grammarAccess.getMeasureAttributeAccess().getPostPostKeyword_1_0());
 				}
-				lv_targetClass_1_0=ruleEString
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getMeasureAttributeRule());
+					}
+					setWithLastConsumed($current, "post", true, "post");
+				}
+			)
+		)?
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getMeasureAttributeAccess().getTargetClassEStringParserRuleCall_2_0());
+				}
+				lv_targetClass_2_0=ruleEString
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getMeasureAttributeRule());
@@ -907,23 +899,23 @@ ruleMeasureAttribute returns [EObject current=null]
 					set(
 						$current,
 						"targetClass",
-						lv_targetClass_1_0,
+						lv_targetClass_2_0,
 						"fr.tblf.energy.estimation.Eel.EString");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
 		(
-			otherlv_2='#'
+			otherlv_3='#'
 			{
-				newLeafNode(otherlv_2, grammarAccess.getMeasureAttributeAccess().getNumberSignKeyword_2_0());
+				newLeafNode(otherlv_3, grammarAccess.getMeasureAttributeAccess().getNumberSignKeyword_3_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getMeasureAttributeAccess().getTargetOperationEStringParserRuleCall_2_1_0());
+						newCompositeNode(grammarAccess.getMeasureAttributeAccess().getTargetOperationEStringParserRuleCall_3_1_0());
 					}
-					lv_targetOperation_3_0=ruleEString
+					lv_targetOperation_4_0=ruleEString
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getMeasureAttributeRule());
@@ -931,24 +923,24 @@ ruleMeasureAttribute returns [EObject current=null]
 						set(
 							$current,
 							"targetOperation",
-							lv_targetOperation_3_0,
+							lv_targetOperation_4_0,
 							"fr.tblf.energy.estimation.Eel.EString");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 		)?
-		otherlv_4='.'
+		otherlv_5='.'
 		{
-			newLeafNode(otherlv_4, grammarAccess.getMeasureAttributeAccess().getFullStopKeyword_3());
+			newLeafNode(otherlv_5, grammarAccess.getMeasureAttributeAccess().getFullStopKeyword_4());
 		}
 		(
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getMeasureAttributeAccess().getTypeTypeEnumRuleCall_4_0_0());
+						newCompositeNode(grammarAccess.getMeasureAttributeAccess().getTypeTypeEnumRuleCall_5_0_0());
 					}
-					lv_type_5_0=ruleType
+					lv_type_6_0=ruleType
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getMeasureAttributeRule());
@@ -956,7 +948,7 @@ ruleMeasureAttribute returns [EObject current=null]
 						set(
 							$current,
 							"type",
-							lv_type_5_0,
+							lv_type_6_0,
 							"fr.tblf.energy.estimation.Eel.Type");
 						afterParserOrEnumRuleCall();
 					}
@@ -966,9 +958,9 @@ ruleMeasureAttribute returns [EObject current=null]
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getMeasureAttributeAccess().getSubnameEStringParserRuleCall_4_1_0());
+						newCompositeNode(grammarAccess.getMeasureAttributeAccess().getSubnameEStringParserRuleCall_5_1_0());
 					}
-					lv_subname_6_0=ruleEString
+					lv_subname_7_0=ruleEString
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getMeasureAttributeRule());
@@ -976,27 +968,27 @@ ruleMeasureAttribute returns [EObject current=null]
 						set(
 							$current,
 							"subname",
-							lv_subname_6_0,
+							lv_subname_7_0,
 							"fr.tblf.energy.estimation.Eel.EString");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 		)
-		otherlv_7='='
+		otherlv_8='='
 		{
-			newLeafNode(otherlv_7, grammarAccess.getMeasureAttributeAccess().getEqualsSignKeyword_5());
+			newLeafNode(otherlv_8, grammarAccess.getMeasureAttributeAccess().getEqualsSignKeyword_6());
 		}
-		otherlv_8='attribute:'
+		otherlv_9='attribute:'
 		{
-			newLeafNode(otherlv_8, grammarAccess.getMeasureAttributeAccess().getAttributeKeyword_6());
+			newLeafNode(otherlv_9, grammarAccess.getMeasureAttributeAccess().getAttributeKeyword_7());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getMeasureAttributeAccess().getAttEStringParserRuleCall_7_0());
+					newCompositeNode(grammarAccess.getMeasureAttributeAccess().getAttEStringParserRuleCall_8_0());
 				}
-				lv_att_9_0=ruleEString
+				lv_att_10_0=ruleEString
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getMeasureAttributeRule());
@@ -1004,37 +996,12 @@ ruleMeasureAttribute returns [EObject current=null]
 					set(
 						$current,
 						"att",
-						lv_att_9_0,
+						lv_att_10_0,
 						"fr.tblf.energy.estimation.Eel.EString");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		(
-			otherlv_10='uncertainty'
-			{
-				newLeafNode(otherlv_10, grammarAccess.getMeasureAttributeAccess().getUncertaintyKeyword_8_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getMeasureAttributeAccess().getUncertaintyMeasurementUncertaintyParserRuleCall_8_1_0());
-					}
-					lv_uncertainty_11_0=ruleMeasurementUncertainty
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getMeasureAttributeRule());
-						}
-						set(
-							$current,
-							"uncertainty",
-							lv_uncertainty_11_0,
-							"fr.tblf.energy.estimation.Eel.MeasurementUncertainty");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)?
 	)
 ;
 
@@ -1063,10 +1030,24 @@ ruleMeasureCast returns [EObject current=null]
 		)
 		(
 			(
+				lv_post_1_0='post'
 				{
-					newCompositeNode(grammarAccess.getMeasureCastAccess().getTargetClassEStringParserRuleCall_1_0());
+					newLeafNode(lv_post_1_0, grammarAccess.getMeasureCastAccess().getPostPostKeyword_1_0());
 				}
-				lv_targetClass_1_0=ruleEString
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getMeasureCastRule());
+					}
+					setWithLastConsumed($current, "post", true, "post");
+				}
+			)
+		)?
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getMeasureCastAccess().getTargetClassEStringParserRuleCall_2_0());
+				}
+				lv_targetClass_2_0=ruleEString
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getMeasureCastRule());
@@ -1074,23 +1055,23 @@ ruleMeasureCast returns [EObject current=null]
 					set(
 						$current,
 						"targetClass",
-						lv_targetClass_1_0,
+						lv_targetClass_2_0,
 						"fr.tblf.energy.estimation.Eel.EString");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
 		(
-			otherlv_2='#'
+			otherlv_3='#'
 			{
-				newLeafNode(otherlv_2, grammarAccess.getMeasureCastAccess().getNumberSignKeyword_2_0());
+				newLeafNode(otherlv_3, grammarAccess.getMeasureCastAccess().getNumberSignKeyword_3_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getMeasureCastAccess().getTargetOperationEStringParserRuleCall_2_1_0());
+						newCompositeNode(grammarAccess.getMeasureCastAccess().getTargetOperationEStringParserRuleCall_3_1_0());
 					}
-					lv_targetOperation_3_0=ruleEString
+					lv_targetOperation_4_0=ruleEString
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getMeasureCastRule());
@@ -1098,23 +1079,23 @@ ruleMeasureCast returns [EObject current=null]
 						set(
 							$current,
 							"targetOperation",
-							lv_targetOperation_3_0,
+							lv_targetOperation_4_0,
 							"fr.tblf.energy.estimation.Eel.EString");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 		)?
-		otherlv_4='.'
+		otherlv_5='.'
 		{
-			newLeafNode(otherlv_4, grammarAccess.getMeasureCastAccess().getFullStopKeyword_3());
+			newLeafNode(otherlv_5, grammarAccess.getMeasureCastAccess().getFullStopKeyword_4());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getMeasureCastAccess().getSubnameEStringParserRuleCall_4_0());
+					newCompositeNode(grammarAccess.getMeasureCastAccess().getSubnameEStringParserRuleCall_5_0());
 				}
-				lv_subname_5_0=ruleEString
+				lv_subname_6_0=ruleEString
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getMeasureCastRule());
@@ -1122,15 +1103,15 @@ ruleMeasureCast returns [EObject current=null]
 					set(
 						$current,
 						"subname",
-						lv_subname_5_0,
+						lv_subname_6_0,
 						"fr.tblf.energy.estimation.Eel.EString");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_6='='
+		otherlv_7='='
 		{
-			newLeafNode(otherlv_6, grammarAccess.getMeasureCastAccess().getEqualsSignKeyword_5());
+			newLeafNode(otherlv_7, grammarAccess.getMeasureCastAccess().getEqualsSignKeyword_6());
 		}
 		(
 			(
@@ -1140,7 +1121,7 @@ ruleMeasureCast returns [EObject current=null]
 					}
 				}
 				{
-					newCompositeNode(grammarAccess.getMeasureCastAccess().getMeasureMeasureCrossReference_6_0());
+					newCompositeNode(grammarAccess.getMeasureCastAccess().getMeasureMeasureCrossReference_7_0());
 				}
 				ruleEString
 				{
@@ -1148,16 +1129,16 @@ ruleMeasureCast returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_8='as'
+		otherlv_9='as'
 		{
-			newLeafNode(otherlv_8, grammarAccess.getMeasureCastAccess().getAsKeyword_7());
+			newLeafNode(otherlv_9, grammarAccess.getMeasureCastAccess().getAsKeyword_8());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getMeasureCastAccess().getTypeTypeEnumRuleCall_8_0());
+					newCompositeNode(grammarAccess.getMeasureCastAccess().getTypeTypeEnumRuleCall_9_0());
 				}
-				lv_type_9_0=ruleType
+				lv_type_10_0=ruleType
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getMeasureCastRule());
@@ -1165,37 +1146,12 @@ ruleMeasureCast returns [EObject current=null]
 					set(
 						$current,
 						"type",
-						lv_type_9_0,
+						lv_type_10_0,
 						"fr.tblf.energy.estimation.Eel.Type");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		(
-			otherlv_10='uncertainty'
-			{
-				newLeafNode(otherlv_10, grammarAccess.getMeasureCastAccess().getUncertaintyKeyword_9_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getMeasureCastAccess().getUncertaintyMeasurementUncertaintyParserRuleCall_9_1_0());
-					}
-					lv_uncertainty_11_0=ruleMeasurementUncertainty
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getMeasureCastRule());
-						}
-						set(
-							$current,
-							"uncertainty",
-							lv_uncertainty_11_0,
-							"fr.tblf.energy.estimation.Eel.MeasurementUncertainty");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)?
 	)
 ;
 
@@ -1224,10 +1180,24 @@ ruleRealTimeDuration returns [EObject current=null]
 		)
 		(
 			(
+				lv_post_1_0='post'
 				{
-					newCompositeNode(grammarAccess.getRealTimeDurationAccess().getTargetClassEStringParserRuleCall_1_0());
+					newLeafNode(lv_post_1_0, grammarAccess.getRealTimeDurationAccess().getPostPostKeyword_1_0());
 				}
-				lv_targetClass_1_0=ruleEString
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getRealTimeDurationRule());
+					}
+					setWithLastConsumed($current, "post", true, "post");
+				}
+			)
+		)?
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getRealTimeDurationAccess().getTargetClassEStringParserRuleCall_2_0());
+				}
+				lv_targetClass_2_0=ruleEString
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getRealTimeDurationRule());
@@ -1235,23 +1205,23 @@ ruleRealTimeDuration returns [EObject current=null]
 					set(
 						$current,
 						"targetClass",
-						lv_targetClass_1_0,
+						lv_targetClass_2_0,
 						"fr.tblf.energy.estimation.Eel.EString");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
 		(
-			otherlv_2='#'
+			otherlv_3='#'
 			{
-				newLeafNode(otherlv_2, grammarAccess.getRealTimeDurationAccess().getNumberSignKeyword_2_0());
+				newLeafNode(otherlv_3, grammarAccess.getRealTimeDurationAccess().getNumberSignKeyword_3_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getRealTimeDurationAccess().getTargetOperationEStringParserRuleCall_2_1_0());
+						newCompositeNode(grammarAccess.getRealTimeDurationAccess().getTargetOperationEStringParserRuleCall_3_1_0());
 					}
-					lv_targetOperation_3_0=ruleEString
+					lv_targetOperation_4_0=ruleEString
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getRealTimeDurationRule());
@@ -1259,42 +1229,17 @@ ruleRealTimeDuration returns [EObject current=null]
 						set(
 							$current,
 							"targetOperation",
-							lv_targetOperation_3_0,
+							lv_targetOperation_4_0,
 							"fr.tblf.energy.estimation.Eel.EString");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 		)?
-		otherlv_4='.RealDuration'
+		otherlv_5='.absoluteTime'
 		{
-			newLeafNode(otherlv_4, grammarAccess.getRealTimeDurationAccess().getRealDurationKeyword_3());
+			newLeafNode(otherlv_5, grammarAccess.getRealTimeDurationAccess().getAbsoluteTimeKeyword_4());
 		}
-		(
-			otherlv_5='uncertainty'
-			{
-				newLeafNode(otherlv_5, grammarAccess.getRealTimeDurationAccess().getUncertaintyKeyword_4_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getRealTimeDurationAccess().getUncertaintyMeasurementUncertaintyParserRuleCall_4_1_0());
-					}
-					lv_uncertainty_6_0=ruleMeasurementUncertainty
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getRealTimeDurationRule());
-						}
-						set(
-							$current,
-							"uncertainty",
-							lv_uncertainty_6_0,
-							"fr.tblf.energy.estimation.Eel.MeasurementUncertainty");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)?
 	)
 ;
 
@@ -1323,10 +1268,24 @@ ruleMeasureUnboundSumOperation returns [EObject current=null]
 		)
 		(
 			(
+				lv_post_1_0='post'
 				{
-					newCompositeNode(grammarAccess.getMeasureUnboundSumOperationAccess().getTargetClassEStringParserRuleCall_1_0());
+					newLeafNode(lv_post_1_0, grammarAccess.getMeasureUnboundSumOperationAccess().getPostPostKeyword_1_0());
 				}
-				lv_targetClass_1_0=ruleEString
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getMeasureUnboundSumOperationRule());
+					}
+					setWithLastConsumed($current, "post", true, "post");
+				}
+			)
+		)?
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getMeasureUnboundSumOperationAccess().getTargetClassEStringParserRuleCall_2_0());
+				}
+				lv_targetClass_2_0=ruleEString
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getMeasureUnboundSumOperationRule());
@@ -1334,23 +1293,23 @@ ruleMeasureUnboundSumOperation returns [EObject current=null]
 					set(
 						$current,
 						"targetClass",
-						lv_targetClass_1_0,
+						lv_targetClass_2_0,
 						"fr.tblf.energy.estimation.Eel.EString");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
 		(
-			otherlv_2='#'
+			otherlv_3='#'
 			{
-				newLeafNode(otherlv_2, grammarAccess.getMeasureUnboundSumOperationAccess().getNumberSignKeyword_2_0());
+				newLeafNode(otherlv_3, grammarAccess.getMeasureUnboundSumOperationAccess().getNumberSignKeyword_3_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getMeasureUnboundSumOperationAccess().getTargetOperationEStringParserRuleCall_2_1_0());
+						newCompositeNode(grammarAccess.getMeasureUnboundSumOperationAccess().getTargetOperationEStringParserRuleCall_3_1_0());
 					}
-					lv_targetOperation_3_0=ruleEString
+					lv_targetOperation_4_0=ruleEString
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getMeasureUnboundSumOperationRule());
@@ -1358,24 +1317,24 @@ ruleMeasureUnboundSumOperation returns [EObject current=null]
 						set(
 							$current,
 							"targetOperation",
-							lv_targetOperation_3_0,
+							lv_targetOperation_4_0,
 							"fr.tblf.energy.estimation.Eel.EString");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 		)?
-		otherlv_4='.'
+		otherlv_5='.'
 		{
-			newLeafNode(otherlv_4, grammarAccess.getMeasureUnboundSumOperationAccess().getFullStopKeyword_3());
+			newLeafNode(otherlv_5, grammarAccess.getMeasureUnboundSumOperationAccess().getFullStopKeyword_4());
 		}
 		(
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getMeasureUnboundSumOperationAccess().getTypeTypeEnumRuleCall_4_0_0());
+						newCompositeNode(grammarAccess.getMeasureUnboundSumOperationAccess().getTypeTypeEnumRuleCall_5_0_0());
 					}
-					lv_type_5_0=ruleType
+					lv_type_6_0=ruleType
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getMeasureUnboundSumOperationRule());
@@ -1383,7 +1342,7 @@ ruleMeasureUnboundSumOperation returns [EObject current=null]
 						set(
 							$current,
 							"type",
-							lv_type_5_0,
+							lv_type_6_0,
 							"fr.tblf.energy.estimation.Eel.Type");
 						afterParserOrEnumRuleCall();
 					}
@@ -1393,9 +1352,9 @@ ruleMeasureUnboundSumOperation returns [EObject current=null]
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getMeasureUnboundSumOperationAccess().getSubnameEStringParserRuleCall_4_1_0());
+						newCompositeNode(grammarAccess.getMeasureUnboundSumOperationAccess().getSubnameEStringParserRuleCall_5_1_0());
 					}
-					lv_subname_6_0=ruleEString
+					lv_subname_7_0=ruleEString
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getMeasureUnboundSumOperationRule());
@@ -1403,16 +1362,16 @@ ruleMeasureUnboundSumOperation returns [EObject current=null]
 						set(
 							$current,
 							"subname",
-							lv_subname_6_0,
+							lv_subname_7_0,
 							"fr.tblf.energy.estimation.Eel.EString");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 		)
-		otherlv_7='='
+		otherlv_8='='
 		{
-			newLeafNode(otherlv_7, grammarAccess.getMeasureUnboundSumOperationAccess().getEqualsSignKeyword_5());
+			newLeafNode(otherlv_8, grammarAccess.getMeasureUnboundSumOperationAccess().getEqualsSignKeyword_6());
 		}
 		(
 			(
@@ -1422,7 +1381,7 @@ ruleMeasureUnboundSumOperation returns [EObject current=null]
 					}
 				}
 				{
-					newCompositeNode(grammarAccess.getMeasureUnboundSumOperationAccess().getMeasuresMeasureCrossReference_6_0());
+					newCompositeNode(grammarAccess.getMeasureUnboundSumOperationAccess().getMeasuresMeasureCrossReference_7_0());
 				}
 				ruleEString
 				{
@@ -1431,9 +1390,9 @@ ruleMeasureUnboundSumOperation returns [EObject current=null]
 			)
 		)
 		(
-			otherlv_9='+'
+			otherlv_10='+'
 			{
-				newLeafNode(otherlv_9, grammarAccess.getMeasureUnboundSumOperationAccess().getPlusSignKeyword_7_0());
+				newLeafNode(otherlv_10, grammarAccess.getMeasureUnboundSumOperationAccess().getPlusSignKeyword_8_0());
 			}
 			(
 				(
@@ -1443,7 +1402,7 @@ ruleMeasureUnboundSumOperation returns [EObject current=null]
 						}
 					}
 					{
-						newCompositeNode(grammarAccess.getMeasureUnboundSumOperationAccess().getMeasuresMeasureCrossReference_7_1_0());
+						newCompositeNode(grammarAccess.getMeasureUnboundSumOperationAccess().getMeasuresMeasureCrossReference_8_1_0());
 					}
 					ruleEString
 					{
@@ -1452,31 +1411,6 @@ ruleMeasureUnboundSumOperation returns [EObject current=null]
 				)
 			)
 		)+
-		(
-			otherlv_11='uncertainty'
-			{
-				newLeafNode(otherlv_11, grammarAccess.getMeasureUnboundSumOperationAccess().getUncertaintyKeyword_8_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getMeasureUnboundSumOperationAccess().getUncertaintyMeasurementUncertaintyParserRuleCall_8_1_0());
-					}
-					lv_uncertainty_12_0=ruleMeasurementUncertainty
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getMeasureUnboundSumOperationRule());
-						}
-						set(
-							$current,
-							"uncertainty",
-							lv_uncertainty_12_0,
-							"fr.tblf.energy.estimation.Eel.MeasurementUncertainty");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)?
 	)
 ;
 
@@ -1505,10 +1439,24 @@ ruleMeasureUnboundProductOperation returns [EObject current=null]
 		)
 		(
 			(
+				lv_post_1_0='post'
 				{
-					newCompositeNode(grammarAccess.getMeasureUnboundProductOperationAccess().getTargetClassEStringParserRuleCall_1_0());
+					newLeafNode(lv_post_1_0, grammarAccess.getMeasureUnboundProductOperationAccess().getPostPostKeyword_1_0());
 				}
-				lv_targetClass_1_0=ruleEString
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getMeasureUnboundProductOperationRule());
+					}
+					setWithLastConsumed($current, "post", true, "post");
+				}
+			)
+		)?
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getMeasureUnboundProductOperationAccess().getTargetClassEStringParserRuleCall_2_0());
+				}
+				lv_targetClass_2_0=ruleEString
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getMeasureUnboundProductOperationRule());
@@ -1516,23 +1464,23 @@ ruleMeasureUnboundProductOperation returns [EObject current=null]
 					set(
 						$current,
 						"targetClass",
-						lv_targetClass_1_0,
+						lv_targetClass_2_0,
 						"fr.tblf.energy.estimation.Eel.EString");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
 		(
-			otherlv_2='#'
+			otherlv_3='#'
 			{
-				newLeafNode(otherlv_2, grammarAccess.getMeasureUnboundProductOperationAccess().getNumberSignKeyword_2_0());
+				newLeafNode(otherlv_3, grammarAccess.getMeasureUnboundProductOperationAccess().getNumberSignKeyword_3_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getMeasureUnboundProductOperationAccess().getTargetOperationEStringParserRuleCall_2_1_0());
+						newCompositeNode(grammarAccess.getMeasureUnboundProductOperationAccess().getTargetOperationEStringParserRuleCall_3_1_0());
 					}
-					lv_targetOperation_3_0=ruleEString
+					lv_targetOperation_4_0=ruleEString
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getMeasureUnboundProductOperationRule());
@@ -1540,24 +1488,24 @@ ruleMeasureUnboundProductOperation returns [EObject current=null]
 						set(
 							$current,
 							"targetOperation",
-							lv_targetOperation_3_0,
+							lv_targetOperation_4_0,
 							"fr.tblf.energy.estimation.Eel.EString");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 		)?
-		otherlv_4='.'
+		otherlv_5='.'
 		{
-			newLeafNode(otherlv_4, grammarAccess.getMeasureUnboundProductOperationAccess().getFullStopKeyword_3());
+			newLeafNode(otherlv_5, grammarAccess.getMeasureUnboundProductOperationAccess().getFullStopKeyword_4());
 		}
 		(
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getMeasureUnboundProductOperationAccess().getTypeTypeEnumRuleCall_4_0_0());
+						newCompositeNode(grammarAccess.getMeasureUnboundProductOperationAccess().getTypeTypeEnumRuleCall_5_0_0());
 					}
-					lv_type_5_0=ruleType
+					lv_type_6_0=ruleType
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getMeasureUnboundProductOperationRule());
@@ -1565,7 +1513,7 @@ ruleMeasureUnboundProductOperation returns [EObject current=null]
 						set(
 							$current,
 							"type",
-							lv_type_5_0,
+							lv_type_6_0,
 							"fr.tblf.energy.estimation.Eel.Type");
 						afterParserOrEnumRuleCall();
 					}
@@ -1575,9 +1523,9 @@ ruleMeasureUnboundProductOperation returns [EObject current=null]
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getMeasureUnboundProductOperationAccess().getSubnameEStringParserRuleCall_4_1_0());
+						newCompositeNode(grammarAccess.getMeasureUnboundProductOperationAccess().getSubnameEStringParserRuleCall_5_1_0());
 					}
-					lv_subname_6_0=ruleEString
+					lv_subname_7_0=ruleEString
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getMeasureUnboundProductOperationRule());
@@ -1585,16 +1533,16 @@ ruleMeasureUnboundProductOperation returns [EObject current=null]
 						set(
 							$current,
 							"subname",
-							lv_subname_6_0,
+							lv_subname_7_0,
 							"fr.tblf.energy.estimation.Eel.EString");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 		)
-		otherlv_7='='
+		otherlv_8='='
 		{
-			newLeafNode(otherlv_7, grammarAccess.getMeasureUnboundProductOperationAccess().getEqualsSignKeyword_5());
+			newLeafNode(otherlv_8, grammarAccess.getMeasureUnboundProductOperationAccess().getEqualsSignKeyword_6());
 		}
 		(
 			(
@@ -1604,7 +1552,7 @@ ruleMeasureUnboundProductOperation returns [EObject current=null]
 					}
 				}
 				{
-					newCompositeNode(grammarAccess.getMeasureUnboundProductOperationAccess().getMeasuresMeasureCrossReference_6_0());
+					newCompositeNode(grammarAccess.getMeasureUnboundProductOperationAccess().getMeasuresMeasureCrossReference_7_0());
 				}
 				ruleEString
 				{
@@ -1613,9 +1561,9 @@ ruleMeasureUnboundProductOperation returns [EObject current=null]
 			)
 		)
 		(
-			otherlv_9='*'
+			otherlv_10='*'
 			{
-				newLeafNode(otherlv_9, grammarAccess.getMeasureUnboundProductOperationAccess().getAsteriskKeyword_7_0());
+				newLeafNode(otherlv_10, grammarAccess.getMeasureUnboundProductOperationAccess().getAsteriskKeyword_8_0());
 			}
 			(
 				(
@@ -1625,7 +1573,7 @@ ruleMeasureUnboundProductOperation returns [EObject current=null]
 						}
 					}
 					{
-						newCompositeNode(grammarAccess.getMeasureUnboundProductOperationAccess().getMeasuresMeasureCrossReference_7_1_0());
+						newCompositeNode(grammarAccess.getMeasureUnboundProductOperationAccess().getMeasuresMeasureCrossReference_8_1_0());
 					}
 					ruleEString
 					{
@@ -1634,119 +1582,6 @@ ruleMeasureUnboundProductOperation returns [EObject current=null]
 				)
 			)
 		)+
-		(
-			otherlv_11='uncertainty'
-			{
-				newLeafNode(otherlv_11, grammarAccess.getMeasureUnboundProductOperationAccess().getUncertaintyKeyword_8_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getMeasureUnboundProductOperationAccess().getUncertaintyMeasurementUncertaintyParserRuleCall_8_1_0());
-					}
-					lv_uncertainty_12_0=ruleMeasurementUncertainty
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getMeasureUnboundProductOperationRule());
-						}
-						set(
-							$current,
-							"uncertainty",
-							lv_uncertainty_12_0,
-							"fr.tblf.energy.estimation.Eel.MeasurementUncertainty");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)?
-	)
-;
-
-// Entry rule entryRuleMeasurementUncertainty
-entryRuleMeasurementUncertainty returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getMeasurementUncertaintyRule()); }
-	iv_ruleMeasurementUncertainty=ruleMeasurementUncertainty
-	{ $current=$iv_ruleMeasurementUncertainty.current; }
-	EOF;
-
-// Rule MeasurementUncertainty
-ruleMeasurementUncertainty returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		(
-			{
-				$current = forceCreateModelElement(
-					grammarAccess.getMeasurementUncertaintyAccess().getMeasurementUncertaintyAction_0(),
-					$current);
-			}
-		)
-		otherlv_1='MeasurementUncertainty'
-		{
-			newLeafNode(otherlv_1, grammarAccess.getMeasurementUncertaintyAccess().getMeasurementUncertaintyKeyword_1());
-		}
-		otherlv_2='{'
-		{
-			newLeafNode(otherlv_2, grammarAccess.getMeasurementUncertaintyAccess().getLeftCurlyBracketKeyword_2());
-		}
-		(
-			otherlv_3='standardUncertainty'
-			{
-				newLeafNode(otherlv_3, grammarAccess.getMeasurementUncertaintyAccess().getStandardUncertaintyKeyword_3_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getMeasurementUncertaintyAccess().getStandardUncertaintyEBigDecimalParserRuleCall_3_1_0());
-					}
-					lv_standardUncertainty_4_0=ruleEBigDecimal
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getMeasurementUncertaintyRule());
-						}
-						set(
-							$current,
-							"standardUncertainty",
-							lv_standardUncertainty_4_0,
-							"fr.tblf.energy.estimation.Eel.EBigDecimal");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)?
-		(
-			otherlv_5='information'
-			{
-				newLeafNode(otherlv_5, grammarAccess.getMeasurementUncertaintyAccess().getInformationKeyword_4_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getMeasurementUncertaintyAccess().getInformationMeasurementUncertaintyInformationParserRuleCall_4_1_0());
-					}
-					lv_information_6_0=ruleMeasurementUncertaintyInformation
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getMeasurementUncertaintyRule());
-						}
-						set(
-							$current,
-							"information",
-							lv_information_6_0,
-							"fr.tblf.energy.estimation.Eel.MeasurementUncertaintyInformation");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)?
-		otherlv_7='}'
-		{
-			newLeafNode(otherlv_7, grammarAccess.getMeasurementUncertaintyAccess().getRightCurlyBracketKeyword_5());
-		}
 	)
 ;
 
@@ -5846,7 +5681,7 @@ ruleType returns [Enumerator current=null]
 		)
 		    |
 		(
-			enumLiteral_1='Duration'
+			enumLiteral_1='duration'
 			{
 				$current = grammarAccess.getTypeAccess().getDurationEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
 				newLeafNode(enumLiteral_1, grammarAccess.getTypeAccess().getDurationEnumLiteralDeclaration_1());
@@ -5854,7 +5689,7 @@ ruleType returns [Enumerator current=null]
 		)
 		    |
 		(
-			enumLiteral_2='Energy'
+			enumLiteral_2='energy'
 			{
 				$current = grammarAccess.getTypeAccess().getEnergyEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
 				newLeafNode(enumLiteral_2, grammarAccess.getTypeAccess().getEnergyEnumLiteralDeclaration_2());
@@ -5862,7 +5697,7 @@ ruleType returns [Enumerator current=null]
 		)
 		    |
 		(
-			enumLiteral_3='Frequency'
+			enumLiteral_3='frequency'
 			{
 				$current = grammarAccess.getTypeAccess().getFrequencyEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
 				newLeafNode(enumLiteral_3, grammarAccess.getTypeAccess().getFrequencyEnumLiteralDeclaration_3());
@@ -5870,7 +5705,7 @@ ruleType returns [Enumerator current=null]
 		)
 		    |
 		(
-			enumLiteral_4='Power'
+			enumLiteral_4='power'
 			{
 				$current = grammarAccess.getTypeAccess().getPowerEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
 				newLeafNode(enumLiteral_4, grammarAccess.getTypeAccess().getPowerEnumLiteralDeclaration_4());
@@ -5878,7 +5713,7 @@ ruleType returns [Enumerator current=null]
 		)
 		    |
 		(
-			enumLiteral_5='Voltage'
+			enumLiteral_5='voltage'
 			{
 				$current = grammarAccess.getTypeAccess().getVoltageEnumLiteralDeclaration_5().getEnumLiteral().getInstance();
 				newLeafNode(enumLiteral_5, grammarAccess.getTypeAccess().getVoltageEnumLiteralDeclaration_5());
@@ -5886,7 +5721,7 @@ ruleType returns [Enumerator current=null]
 		)
 		    |
 		(
-			enumLiteral_6='Scalar'
+			enumLiteral_6='scalar'
 			{
 				$current = grammarAccess.getTypeAccess().getScalarEnumLiteralDeclaration_6().getEnumLiteral().getInstance();
 				newLeafNode(enumLiteral_6, grammarAccess.getTypeAccess().getScalarEnumLiteralDeclaration_6());

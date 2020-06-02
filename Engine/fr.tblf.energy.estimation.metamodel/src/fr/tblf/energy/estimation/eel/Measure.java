@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link fr.tblf.energy.estimation.eel.Measure#getSubname <em>Subname</em>}</li>
  *   <li>{@link fr.tblf.energy.estimation.eel.Measure#getTargetClass <em>Target Class</em>}</li>
  *   <li>{@link fr.tblf.energy.estimation.eel.Measure#getTargetOperation <em>Target Operation</em>}</li>
+ *   <li>{@link fr.tblf.energy.estimation.eel.Measure#getPost <em>Post</em>}</li>
  *   <li>{@link fr.tblf.energy.estimation.eel.Measure#getUncertainty <em>Uncertainty</em>}</li>
  * </ul>
  *
@@ -133,6 +134,32 @@ public interface Measure extends EObject {
 	 * @generated
 	 */
 	void setTargetOperation(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Post</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Post</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Post</em>' attribute.
+	 * @see #setPost(Boolean)
+	 * @see fr.tblf.energy.estimation.eel.EelPackage#getMeasure_Post()
+	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot derivation='false'"
+	 * @generated
+	 */
+	Boolean getPost();
+
+	/**
+	 * Sets the value of the '{@link fr.tblf.energy.estimation.eel.Measure#getPost <em>Post</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Post</em>' attribute.
+	 * @see #getPost()
+	 * @generated
+	 */
+	void setPost(Boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Uncertainty</b></em>' containment reference.

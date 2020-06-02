@@ -67,6 +67,7 @@ public class MeasureItemProvider
 			addSubnamePropertyDescriptor(object);
 			addTargetClassPropertyDescriptor(object);
 			addTargetOperationPropertyDescriptor(object);
+			addPostPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -160,6 +161,28 @@ public class MeasureItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Post feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPostPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Measure_post_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Measure_post_feature", "_UI_Measure_type"),
+				 EelPackage.Literals.MEASURE__POST,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -219,6 +242,7 @@ public class MeasureItemProvider
 			case EelPackage.MEASURE__NAME:
 			case EelPackage.MEASURE__SUBNAME:
 			case EelPackage.MEASURE__TARGET_OPERATION:
+			case EelPackage.MEASURE__POST:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case EelPackage.MEASURE__UNCERTAINTY:

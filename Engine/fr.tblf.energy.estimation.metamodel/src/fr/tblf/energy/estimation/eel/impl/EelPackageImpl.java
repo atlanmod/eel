@@ -410,8 +410,17 @@ public class EelPackageImpl extends EPackageImpl implements EelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getMeasure_Post() {
+		return (EAttribute)measureEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getMeasure_Uncertainty() {
-		return (EReference)measureEClass.getEStructuralFeatures().get(4);
+		return (EReference)measureEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -970,6 +979,7 @@ public class EelPackageImpl extends EPackageImpl implements EelPackage {
 		createEAttribute(measureEClass, MEASURE__SUBNAME);
 		createEAttribute(measureEClass, MEASURE__TARGET_CLASS);
 		createEAttribute(measureEClass, MEASURE__TARGET_OPERATION);
+		createEAttribute(measureEClass, MEASURE__POST);
 		createEReference(measureEClass, MEASURE__UNCERTAINTY);
 		createEOperation(measureEClass, MEASURE___TYPE);
 		createEOperation(measureEClass, MEASURE___VALUE);
@@ -1116,6 +1126,7 @@ public class EelPackageImpl extends EPackageImpl implements EelPackage {
 		initEAttribute(getMeasure_Subname(), ecorePackage.getEString(), "subname", null, 0, 1, Measure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMeasure_TargetClass(), ecorePackage.getEString(), "targetClass", null, 0, 1, Measure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMeasure_TargetOperation(), ecorePackage.getEString(), "targetOperation", null, 0, 1, Measure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMeasure_Post(), ecorePackage.getEBooleanObject(), "post", null, 0, 1, Measure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMeasure_Uncertainty(), this.getMeasurementUncertainty(), null, "uncertainty", null, 0, 1, Measure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEOperation(getMeasure__Type(), this.getType(), "type", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -1302,6 +1313,12 @@ public class EelPackageImpl extends EPackageImpl implements EelPackage {
 		   source,
 		   new String[] {
 			   "derivation", "name()"
+		   });
+		addAnnotation
+		  (getMeasure_Post(),
+		   source,
+		   new String[] {
+			   "derivation", "false"
 		   });
 		addAnnotation
 		  (getTypedMeasure__Type(),

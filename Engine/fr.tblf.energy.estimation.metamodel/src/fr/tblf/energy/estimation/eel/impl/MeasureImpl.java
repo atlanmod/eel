@@ -37,6 +37,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link fr.tblf.energy.estimation.eel.impl.MeasureImpl#getSubname <em>Subname</em>}</li>
  *   <li>{@link fr.tblf.energy.estimation.eel.impl.MeasureImpl#getTargetClass <em>Target Class</em>}</li>
  *   <li>{@link fr.tblf.energy.estimation.eel.impl.MeasureImpl#getTargetOperation <em>Target Operation</em>}</li>
+ *   <li>{@link fr.tblf.energy.estimation.eel.impl.MeasureImpl#getPost <em>Post</em>}</li>
  *   <li>{@link fr.tblf.energy.estimation.eel.impl.MeasureImpl#getUncertainty <em>Uncertainty</em>}</li>
  * </ul>
  *
@@ -112,6 +113,16 @@ public abstract class MeasureImpl extends MinimalEObjectImpl.Container implement
 	 * @ordered
 	 */
 	protected String targetOperation = TARGET_OPERATION_EDEFAULT;
+
+	/**
+	 * The cached setting delegate for the '{@link #getPost() <em>Post</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPost()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate POST__ESETTING_DELEGATE = ((EStructuralFeature.Internal)EelPackage.Literals.MEASURE__POST).getSettingDelegate();
 
 	/**
 	 * The cached value of the '{@link #getUncertainty() <em>Uncertainty</em>}' containment reference.
@@ -221,6 +232,24 @@ public abstract class MeasureImpl extends MinimalEObjectImpl.Container implement
 		targetOperation = newTargetOperation;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EelPackage.MEASURE__TARGET_OPERATION, oldTargetOperation, targetOperation));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Boolean getPost() {
+		return (Boolean)POST__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPost(Boolean newPost) {
+		POST__ESETTING_DELEGATE.dynamicSet(this, null, 0, newPost);
 	}
 
 	/**
@@ -368,6 +397,8 @@ public abstract class MeasureImpl extends MinimalEObjectImpl.Container implement
 				return getTargetClass();
 			case EelPackage.MEASURE__TARGET_OPERATION:
 				return getTargetOperation();
+			case EelPackage.MEASURE__POST:
+				return getPost();
 			case EelPackage.MEASURE__UNCERTAINTY:
 				return getUncertainty();
 		}
@@ -393,6 +424,9 @@ public abstract class MeasureImpl extends MinimalEObjectImpl.Container implement
 				return;
 			case EelPackage.MEASURE__TARGET_OPERATION:
 				setTargetOperation((String)newValue);
+				return;
+			case EelPackage.MEASURE__POST:
+				setPost((Boolean)newValue);
 				return;
 			case EelPackage.MEASURE__UNCERTAINTY:
 				setUncertainty((MeasurementUncertainty)newValue);
@@ -421,6 +455,9 @@ public abstract class MeasureImpl extends MinimalEObjectImpl.Container implement
 			case EelPackage.MEASURE__TARGET_OPERATION:
 				setTargetOperation(TARGET_OPERATION_EDEFAULT);
 				return;
+			case EelPackage.MEASURE__POST:
+				POST__ESETTING_DELEGATE.dynamicUnset(this, null, 0);
+				return;
 			case EelPackage.MEASURE__UNCERTAINTY:
 				setUncertainty((MeasurementUncertainty)null);
 				return;
@@ -444,6 +481,8 @@ public abstract class MeasureImpl extends MinimalEObjectImpl.Container implement
 				return TARGET_CLASS_EDEFAULT == null ? targetClass != null : !TARGET_CLASS_EDEFAULT.equals(targetClass);
 			case EelPackage.MEASURE__TARGET_OPERATION:
 				return TARGET_OPERATION_EDEFAULT == null ? targetOperation != null : !TARGET_OPERATION_EDEFAULT.equals(targetOperation);
+			case EelPackage.MEASURE__POST:
+				return POST__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case EelPackage.MEASURE__UNCERTAINTY:
 				return uncertainty != null;
 		}

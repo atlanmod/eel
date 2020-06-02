@@ -216,8 +216,8 @@ public class EngineAddon implements IEngineAddon {
 		//System.out.println(m.getName()+" : "+m.value()+" "+m.type().getLiteral());
 	}	
 	
-	public static boolean hasRealTimeDuration(Measure m) {			
-		if (m instanceof RealTimeDuration) {
+	public static boolean hasRealTimeDuration(Measure m) {					
+		if (m.getPost()) {
 			return true;
 		} 
 		

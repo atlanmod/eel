@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="eel" nsURI="http://fr.tblf.energy.estimation/eel/" nsPrefix="fr.tblf.energy.estimation.eel">
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    name="eel" nsURI="http://fr.tblf.energy.estimation/eel/" nsPrefix="fr.tblf.energy.estimation.eel">
   <eAnnotations source="http://www.eclipse.org/OCL/Import">
     <details key="ecore" value="http://www.eclipse.org/emf/2002/Ecore"/>
   </eAnnotations>
@@ -11,16 +11,13 @@
   </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="Platform">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="variables" upperBound="-1"
-        eType="#//Variable" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="measures" upperBound="-1"
-        eType="#//Measure" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="variables" upperBound="-1" eType="#//Variable" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="measures" upperBound="-1" eType="#//Measure" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Variable">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="vibility" lowerBound="1"
-        eType="#//Visibility"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="vibility" lowerBound="1" eType="#//Visibility"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="Visibility">
     <eLiterals name="LOCAL"/>
@@ -53,8 +50,12 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="subname" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="targetClass" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="targetOperation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="uncertainty" eType="#//MeasurementUncertainty"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="post" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+        <details key="derivation" value="false"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="uncertainty" eType="#//MeasurementUncertainty" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TypedMeasure" abstract="true" eSuperTypes="#//Measure">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -70,8 +71,7 @@
         <details key="body" value="targetClass+'.'+ if subname &lt;> null then subname else type().toString() endif"/>
       </eAnnotations>
     </eOperations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="#//Type"
-        transient="true" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="#//Type" transient="true" derived="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MeasureValue" eSuperTypes="#//TypedMeasure">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -97,11 +97,9 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Changes the type of a Measure"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="measure" lowerBound="1"
-        eType="#//Measure"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="measure" lowerBound="1" eType="#//Measure"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MeasureBinaryOperation" abstract="true"
-      eSuperTypes="#//TypedMeasure">
+  <eClassifiers xsi:type="ecore:EClass" name="MeasureBinaryOperation" abstract="true" eSuperTypes="#//TypedMeasure">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Define the measure computed through operations between measures."/>
     </eAnnotations>
@@ -170,13 +168,11 @@
       </eAnnotations>
     </eOperations>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MeasureUnboundOperation" abstract="true"
-      eSuperTypes="#//TypedMeasure">
+  <eClassifiers xsi:type="ecore:EClass" name="MeasureUnboundOperation" abstract="true" eSuperTypes="#//TypedMeasure">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Measures computed by a non-finite set of measures"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="measures" ordered="false"
-        lowerBound="1" upperBound="-1" eType="#//Measure">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="measures" ordered="false" lowerBound="1" upperBound="-1" eType="#//Measure">
       <eAnnotations source="http://www.eclipse.org/OCL/Collection">
         <details key="nullFree" value="false"/>
       </eAnnotations>
@@ -212,8 +208,7 @@
     <eLiterals name="Frequency" value="6"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MeasurementUncertainty">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="information" eType="#//MeasurementUncertaintyInformation"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="information" eType="#//MeasurementUncertaintyInformation" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="standardUncertainty" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="NormalDistribution" eSuperTypes="#//MeasurementUncertaintyInformation">
@@ -231,24 +226,19 @@
     </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Interval" eSuperTypes="#//MeasurementUncertaintyInformation">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="lowerEndpoint" lowerBound="1"
-        eType="#//Measure" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="upperEndpoint" lowerBound="1"
-        eType="#//Measure" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="lowerEndpoint" lowerBound="1" eType="#//Measure" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="upperEndpoint" lowerBound="1" eType="#//Measure" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MeasurementUncertaintyInformation" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="Sampling" eSuperTypes="#//MeasurementUncertaintyInformation">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="samples" upperBound="-1"
-        eType="#//Sample" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="samples" upperBound="-1" eType="#//Sample" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="measurementProcedure" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Integral" eSuperTypes="#//MeasurementUncertaintyInformation">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="interval" lowerBound="1"
-        eType="#//Interval"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="interval" lowerBound="1" eType="#//Interval"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="function" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Sample">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="quantity" upperBound="-1"
-        eType="#//Measure" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="quantity" upperBound="-1" eType="#//Measure" containment="true"/>
   </eClassifiers>
 </ecore:EPackage>

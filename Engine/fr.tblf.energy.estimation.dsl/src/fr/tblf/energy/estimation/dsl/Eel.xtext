@@ -36,12 +36,12 @@ EBigDecimal returns ecore::EBigDecimal:
 
 enum Type returns Type:
 	Current="current" |
-	Duration |
-	Energy |
-	Frequency |
-	Power |
-	Voltage |
-	Scalar  
+	Duration="duration"  |
+	Energy="energy"  |
+	Frequency="frequency"  |
+	Power="power"  |
+	Voltage="voltage"  |
+	Scalar="scalar"   
 ;
 
 enum Visibility returns Visibility:
@@ -49,52 +49,38 @@ enum Visibility returns Visibility:
 
 MeasureValue_Impl returns MeasureValue:
 	{MeasureValue}	
-	targetClass=EString ('#' targetOperation=EString)? ('.') (type=Type | subname = EString) "=" (value=EBigDecimal)? ('uncertainty' uncertainty=MeasurementUncertainty)?	
+	(post ?= 'post')? targetClass=EString ('#' targetOperation=EString)? ('.') (type=Type | subname = EString) "=" (value=EBigDecimal)? 	
 ;
 
 MeasureOCL returns MeasureOCL:
 	{MeasureOCL}
-	targetClass=EString ('#' targetOperation=EString)? ('.') (type=Type | subname = EString) "=" 'ocl:' oclQuery=EString  ('uncertainty' uncertainty=MeasurementUncertainty)?	
+	(post ?= 'post')? targetClass=EString ('#' targetOperation=EString)? ('.') (type=Type | subname = EString) "=" 'ocl:' oclQuery=EString  	
 ;
-
 
 MeasureAttribute returns MeasureAttribute:
 	{MeasureAttribute}
-	targetClass=EString ('#' targetOperation=EString)? ('.') (type=Type | subname = EString) "=" "attribute:" att=EString  ('uncertainty' uncertainty=MeasurementUncertainty)?		
+	(post ?= 'post')? targetClass=EString ('#' targetOperation=EString)? ('.') (type=Type | subname = EString) "=" "attribute:" att=EString  		
 ;
-
 
 MeasureCast returns MeasureCast:
 	{MeasureCast}
-	targetClass=EString ('#' targetOperation=EString)? ('.') subname=EString "=" measure=[Measure|EString] "as" type=Type ('uncertainty' uncertainty=MeasurementUncertainty)?	
+	(post ?= 'post')? targetClass=EString ('#' targetOperation=EString)? ('.') subname=EString "=" measure=[Measure|EString] "as" type=Type 	
 ;
 
-/*
-MeasureBinaryProductOperation returns MeasureBinaryProductOperation:
-	{MeasureBinaryProductOperation}
-	targetClass=[ecore::EClass|EString]('#' targetOperation=EString)?('.') (type=Type | name = EString) "="  left=[Measure|EString] '*' right=[Measure|EString] ('uncertainty' uncertainty=MeasurementUncertainty)?	
-;
-
-
-MeasureBinarySumOperation returns MeasureBinarySumOperation:
-	{MeasureBinarySumOperation}
-	targetClass=[ecore::EClass|EString]('#' targetOperation=EString)?('.') (type=Type | name = EString) "=" left=[Measure|EString] '+' right=[Measure|EString] ('uncertainty' uncertainty=MeasurementUncertainty)?		
-;
- */
 RealTimeDuration returns RealTimeDuration:
 	{RealTimeDuration}
-	targetClass=EString ('#' targetOperation=EString)? ('.RealDuration') ('uncertainty' uncertainty=MeasurementUncertainty)?
+	(post ?= 'post')? targetClass=EString ('#' targetOperation=EString)? ('.absoluteTime') 
 ;
 
 
 MeasureUnboundSumOperation returns MeasureUnboundSumOperation:
 	{MeasureUnboundSumOperation}
-	targetClass=EString ('#' targetOperation=EString)? ('.') (type=Type | subname = EString) "="  measures+=[Measure|EString] ('+' measures+=[Measure|EString])+ ('uncertainty' uncertainty=MeasurementUncertainty)?		
+	(post ?= 'post')? targetClass=EString ('#' targetOperation=EString)? ('.') (type=Type | subname = EString) "="  measures+=[Measure|EString] ('+' measures+=[Measure|EString])+ 		
 ;
 
 MeasureUnboundProductOperation returns MeasureUnboundProductOperation:
 	{MeasureUnboundProductOperation}
-	targetClass=EString ('#' targetOperation=EString)? ('.') (type=Type | subname = EString) "="  measures+=[Measure|EString] ('*' measures+=[Measure|EString])+ ('uncertainty' uncertainty=MeasurementUncertainty)?		
+	(post ?= 'post')? targetClass=EString ('#' targetOperation=EString)? ('.') (type=Type | subname = EString) "="  measures+=[Measure|EString] ('*' measures+=[Measure|EString])+ 		
 ;
  
  
