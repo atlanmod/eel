@@ -15,6 +15,6 @@ Require-Bundle: fr.tblf.energy.estimation.dsl.ui,
  org.eclipse.xtext.xbase.junit,
  org.eclipse.core.runtime,
  org.eclipse.ui.workbench;resolution:=optional
-Bundle-RequiredExecutionEnvironment: JavaSE-9
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: fr.tblf.energy.estimation.ui.tests;x-internal=true
 
