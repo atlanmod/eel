@@ -1,0 +1,13 @@
+# Created by Octave 5.2.0, Mon May 04 11:17:48 2020 GMT <unknown@DESKTOP-5OFQEFG>
+# name: est2
+# type: matrix
+# rows: 6
+# columns: 2
+ 1 120.5
+ 1.9990000000000001 120.5
+ 2 162.75
+ 2.9990000000000001 162.75
+ 3 120.5
+ 3.9990000000000001 120.5
+
+
