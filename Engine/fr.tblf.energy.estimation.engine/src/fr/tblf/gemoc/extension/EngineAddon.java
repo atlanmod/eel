@@ -87,7 +87,6 @@ public class EngineAddon implements IEngineAddon {
 						mapClassEstimation.put(((Measure) eObject).getTargetClass()+"#"+((Measure) eObject).getTargetOperation(), (Measure)eObject);
 					}
 				});
-				systemPower = platform.getMeasures().stream().filter(m -> m.getName().equals("Board.systemPower")).findAny().get();				
 				System.out.println(platform.getName()+" estimation model loaded");
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -196,6 +195,7 @@ public class EngineAddon implements IEngineAddon {
 	
 	private void updateMeasure(CompositeMeasure m, EObject caller, EOperation operation) {
 		if (m instanceof LogisticMeasure) {
+			System.out.println("Updating logistic measure");
 			LogisticMeasure lm = (LogisticMeasure) m;
 			
 			updateMeasure(lm.getK(), caller, operation);

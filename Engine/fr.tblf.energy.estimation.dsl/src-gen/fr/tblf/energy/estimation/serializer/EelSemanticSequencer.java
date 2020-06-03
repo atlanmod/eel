@@ -427,7 +427,7 @@ public class EelSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     ExponentialMeasure returns ExponentialMeasure
 	 *
 	 * Constraint:
-	 *     (post?='post'? targetClass=EString targetOperation=EString? (type=Type | subname=EString) x=[Measure|ID])
+	 *     (post?='post'? targetClass=EString targetOperation=EString? (type=Type | subname=EString) x=[Measure|EString])
 	 */
 	protected void sequence_ExponentialMeasure(ISerializationContext context, ExponentialMeasure semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -457,7 +457,7 @@ public class EelSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *         targetClass=EString 
 	 *         targetOperation=EString? 
 	 *         (type=Type | subname=EString) 
-	 *         function=[CompositeMeasure|ID] 
+	 *         function=[CompositeMeasure|EString] 
 	 *         leftBound=EBigDecimal 
 	 *         rightBound=EBigDecimal
 	 *     )
@@ -501,10 +501,10 @@ public class EelSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *         targetClass=EString 
 	 *         targetOperation=EString? 
 	 *         (type=Type | subname=EString) 
-	 *         L=[Measure|ID] 
-	 *         k=[Measure|ID] 
-	 *         x=[Measure|ID] 
-	 *         x0=[Measure|ID]
+	 *         L=[Measure|EString] 
+	 *         k=[Measure|EString] 
+	 *         x0=[Measure|EString] 
+	 *         x=[Measure|EString]
 	 *     )
 	 */
 	protected void sequence_LogisticMeasure(ISerializationContext context, LogisticMeasure semanticObject) {

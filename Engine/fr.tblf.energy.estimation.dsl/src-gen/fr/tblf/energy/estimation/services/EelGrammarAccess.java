@@ -985,17 +985,18 @@ public class EelGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cSubnameAssignment_5_1 = (Assignment)cAlternatives_5.eContents().get(1);
 		private final RuleCall cSubnameEStringParserRuleCall_5_1_0 = (RuleCall)cSubnameAssignment_5_1.eContents().get(0);
 		private final Keyword cEqualsSignKeyword_6 = (Keyword)cGroup.eContents().get(6);
-		private final Assignment cXAssignment_7 = (Assignment)cGroup.eContents().get(7);
-		private final CrossReference cXMeasureCrossReference_7_0 = (CrossReference)cXAssignment_7.eContents().get(0);
-		private final RuleCall cXMeasureIDTerminalRuleCall_7_0_1 = (RuleCall)cXMeasureCrossReference_7_0.eContents().get(1);
+		private final Keyword cExpKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Assignment cXAssignment_8 = (Assignment)cGroup.eContents().get(8);
+		private final CrossReference cXMeasureCrossReference_8_0 = (CrossReference)cXAssignment_8.eContents().get(0);
+		private final RuleCall cXMeasureEStringParserRuleCall_8_0_1 = (RuleCall)cXMeasureCrossReference_8_0.eContents().get(1);
 		
 		//ExponentialMeasure:
 		//	{ExponentialMeasure} post?='post'? targetClass=EString ('#' targetOperation=EString)? '.' (type=Type |
-		//	subname=EString) "=" x=[Measure];
+		//	subname=EString) "=" "exp" x=[Measure|EString];
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{ExponentialMeasure} post?='post'? targetClass=EString ('#' targetOperation=EString)? '.' (type=Type | subname=EString)
-		//"=" x=[Measure]
+		//"=" "exp" x=[Measure|EString]
 		public Group getGroup() { return cGroup; }
 		
 		//{ExponentialMeasure}
@@ -1046,14 +1047,17 @@ public class EelGrammarAccess extends AbstractGrammarElementFinder {
 		//"="
 		public Keyword getEqualsSignKeyword_6() { return cEqualsSignKeyword_6; }
 		
-		//x=[Measure]
-		public Assignment getXAssignment_7() { return cXAssignment_7; }
+		//"exp"
+		public Keyword getExpKeyword_7() { return cExpKeyword_7; }
 		
-		//[Measure]
-		public CrossReference getXMeasureCrossReference_7_0() { return cXMeasureCrossReference_7_0; }
+		//x=[Measure|EString]
+		public Assignment getXAssignment_8() { return cXAssignment_8; }
 		
-		//ID
-		public RuleCall getXMeasureIDTerminalRuleCall_7_0_1() { return cXMeasureIDTerminalRuleCall_7_0_1; }
+		//[Measure|EString]
+		public CrossReference getXMeasureCrossReference_8_0() { return cXMeasureCrossReference_8_0; }
+		
+		//EString
+		public RuleCall getXMeasureEStringParserRuleCall_8_0_1() { return cXMeasureEStringParserRuleCall_8_0_1; }
 	}
 	public class LogisticMeasureElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.tblf.energy.estimation.Eel.LogisticMeasure");
@@ -1074,26 +1078,27 @@ public class EelGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cSubnameAssignment_5_1 = (Assignment)cAlternatives_5.eContents().get(1);
 		private final RuleCall cSubnameEStringParserRuleCall_5_1_0 = (RuleCall)cSubnameAssignment_5_1.eContents().get(0);
 		private final Keyword cEqualsSignKeyword_6 = (Keyword)cGroup.eContents().get(6);
-		private final Assignment cLAssignment_7 = (Assignment)cGroup.eContents().get(7);
-		private final CrossReference cLMeasureCrossReference_7_0 = (CrossReference)cLAssignment_7.eContents().get(0);
-		private final RuleCall cLMeasureIDTerminalRuleCall_7_0_1 = (RuleCall)cLMeasureCrossReference_7_0.eContents().get(1);
-		private final Assignment cKAssignment_8 = (Assignment)cGroup.eContents().get(8);
-		private final CrossReference cKMeasureCrossReference_8_0 = (CrossReference)cKAssignment_8.eContents().get(0);
-		private final RuleCall cKMeasureIDTerminalRuleCall_8_0_1 = (RuleCall)cKMeasureCrossReference_8_0.eContents().get(1);
-		private final Assignment cXAssignment_9 = (Assignment)cGroup.eContents().get(9);
-		private final CrossReference cXMeasureCrossReference_9_0 = (CrossReference)cXAssignment_9.eContents().get(0);
-		private final RuleCall cXMeasureIDTerminalRuleCall_9_0_1 = (RuleCall)cXMeasureCrossReference_9_0.eContents().get(1);
+		private final Keyword cLogisticKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Assignment cLAssignment_8 = (Assignment)cGroup.eContents().get(8);
+		private final CrossReference cLMeasureCrossReference_8_0 = (CrossReference)cLAssignment_8.eContents().get(0);
+		private final RuleCall cLMeasureEStringParserRuleCall_8_0_1 = (RuleCall)cLMeasureCrossReference_8_0.eContents().get(1);
+		private final Assignment cKAssignment_9 = (Assignment)cGroup.eContents().get(9);
+		private final CrossReference cKMeasureCrossReference_9_0 = (CrossReference)cKAssignment_9.eContents().get(0);
+		private final RuleCall cKMeasureEStringParserRuleCall_9_0_1 = (RuleCall)cKMeasureCrossReference_9_0.eContents().get(1);
 		private final Assignment cX0Assignment_10 = (Assignment)cGroup.eContents().get(10);
 		private final CrossReference cX0MeasureCrossReference_10_0 = (CrossReference)cX0Assignment_10.eContents().get(0);
-		private final RuleCall cX0MeasureIDTerminalRuleCall_10_0_1 = (RuleCall)cX0MeasureCrossReference_10_0.eContents().get(1);
+		private final RuleCall cX0MeasureEStringParserRuleCall_10_0_1 = (RuleCall)cX0MeasureCrossReference_10_0.eContents().get(1);
+		private final Assignment cXAssignment_11 = (Assignment)cGroup.eContents().get(11);
+		private final CrossReference cXMeasureCrossReference_11_0 = (CrossReference)cXAssignment_11.eContents().get(0);
+		private final RuleCall cXMeasureEStringParserRuleCall_11_0_1 = (RuleCall)cXMeasureCrossReference_11_0.eContents().get(1);
 		
 		//LogisticMeasure:
 		//	{LogisticMeasure} post?='post'? targetClass=EString ('#' targetOperation=EString)? '.' (type=Type | subname=EString)
-		//	"=" L=[Measure] k=[Measure] x=[Measure] x0=[Measure];
+		//	"=" "logistic" L=[Measure|EString] k=[Measure|EString] x0=[Measure|EString] x=[Measure|EString];
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{LogisticMeasure} post?='post'? targetClass=EString ('#' targetOperation=EString)? '.' (type=Type | subname=EString) "="
-		//L=[Measure] k=[Measure] x=[Measure] x0=[Measure]
+		//"logistic" L=[Measure|EString] k=[Measure|EString] x0=[Measure|EString] x=[Measure|EString]
 		public Group getGroup() { return cGroup; }
 		
 		//{LogisticMeasure}
@@ -1144,41 +1149,44 @@ public class EelGrammarAccess extends AbstractGrammarElementFinder {
 		//"="
 		public Keyword getEqualsSignKeyword_6() { return cEqualsSignKeyword_6; }
 		
-		//L=[Measure]
-		public Assignment getLAssignment_7() { return cLAssignment_7; }
+		//"logistic"
+		public Keyword getLogisticKeyword_7() { return cLogisticKeyword_7; }
 		
-		//[Measure]
-		public CrossReference getLMeasureCrossReference_7_0() { return cLMeasureCrossReference_7_0; }
+		//L=[Measure|EString]
+		public Assignment getLAssignment_8() { return cLAssignment_8; }
 		
-		//ID
-		public RuleCall getLMeasureIDTerminalRuleCall_7_0_1() { return cLMeasureIDTerminalRuleCall_7_0_1; }
+		//[Measure|EString]
+		public CrossReference getLMeasureCrossReference_8_0() { return cLMeasureCrossReference_8_0; }
 		
-		//k=[Measure]
-		public Assignment getKAssignment_8() { return cKAssignment_8; }
+		//EString
+		public RuleCall getLMeasureEStringParserRuleCall_8_0_1() { return cLMeasureEStringParserRuleCall_8_0_1; }
 		
-		//[Measure]
-		public CrossReference getKMeasureCrossReference_8_0() { return cKMeasureCrossReference_8_0; }
+		//k=[Measure|EString]
+		public Assignment getKAssignment_9() { return cKAssignment_9; }
 		
-		//ID
-		public RuleCall getKMeasureIDTerminalRuleCall_8_0_1() { return cKMeasureIDTerminalRuleCall_8_0_1; }
+		//[Measure|EString]
+		public CrossReference getKMeasureCrossReference_9_0() { return cKMeasureCrossReference_9_0; }
 		
-		//x=[Measure]
-		public Assignment getXAssignment_9() { return cXAssignment_9; }
+		//EString
+		public RuleCall getKMeasureEStringParserRuleCall_9_0_1() { return cKMeasureEStringParserRuleCall_9_0_1; }
 		
-		//[Measure]
-		public CrossReference getXMeasureCrossReference_9_0() { return cXMeasureCrossReference_9_0; }
-		
-		//ID
-		public RuleCall getXMeasureIDTerminalRuleCall_9_0_1() { return cXMeasureIDTerminalRuleCall_9_0_1; }
-		
-		//x0=[Measure]
+		//x0=[Measure|EString]
 		public Assignment getX0Assignment_10() { return cX0Assignment_10; }
 		
-		//[Measure]
+		//[Measure|EString]
 		public CrossReference getX0MeasureCrossReference_10_0() { return cX0MeasureCrossReference_10_0; }
 		
-		//ID
-		public RuleCall getX0MeasureIDTerminalRuleCall_10_0_1() { return cX0MeasureIDTerminalRuleCall_10_0_1; }
+		//EString
+		public RuleCall getX0MeasureEStringParserRuleCall_10_0_1() { return cX0MeasureEStringParserRuleCall_10_0_1; }
+		
+		//x=[Measure|EString]
+		public Assignment getXAssignment_11() { return cXAssignment_11; }
+		
+		//[Measure|EString]
+		public CrossReference getXMeasureCrossReference_11_0() { return cXMeasureCrossReference_11_0; }
+		
+		//EString
+		public RuleCall getXMeasureEStringParserRuleCall_11_0_1() { return cXMeasureEStringParserRuleCall_11_0_1; }
 	}
 	public class IntegrationMeasureElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.tblf.energy.estimation.Eel.IntegrationMeasure");
@@ -1199,24 +1207,26 @@ public class EelGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cSubnameAssignment_5_1 = (Assignment)cAlternatives_5.eContents().get(1);
 		private final RuleCall cSubnameEStringParserRuleCall_5_1_0 = (RuleCall)cSubnameAssignment_5_1.eContents().get(0);
 		private final Keyword cEqualsSignKeyword_6 = (Keyword)cGroup.eContents().get(6);
-		private final Assignment cFunctionAssignment_7 = (Assignment)cGroup.eContents().get(7);
-		private final CrossReference cFunctionCompositeMeasureCrossReference_7_0 = (CrossReference)cFunctionAssignment_7.eContents().get(0);
-		private final RuleCall cFunctionCompositeMeasureIDTerminalRuleCall_7_0_1 = (RuleCall)cFunctionCompositeMeasureCrossReference_7_0.eContents().get(1);
-		private final Keyword cLeftSquareBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
-		private final Assignment cLeftBoundAssignment_9 = (Assignment)cGroup.eContents().get(9);
-		private final RuleCall cLeftBoundEBigDecimalParserRuleCall_9_0 = (RuleCall)cLeftBoundAssignment_9.eContents().get(0);
-		private final Keyword cSemicolonKeyword_10 = (Keyword)cGroup.eContents().get(10);
-		private final Assignment cRightBoundAssignment_11 = (Assignment)cGroup.eContents().get(11);
-		private final RuleCall cRightBoundEBigDecimalParserRuleCall_11_0 = (RuleCall)cRightBoundAssignment_11.eContents().get(0);
-		private final Keyword cRightSquareBracketKeyword_12 = (Keyword)cGroup.eContents().get(12);
+		private final Keyword cIntegralKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Assignment cFunctionAssignment_8 = (Assignment)cGroup.eContents().get(8);
+		private final CrossReference cFunctionCompositeMeasureCrossReference_8_0 = (CrossReference)cFunctionAssignment_8.eContents().get(0);
+		private final RuleCall cFunctionCompositeMeasureEStringParserRuleCall_8_0_1 = (RuleCall)cFunctionCompositeMeasureCrossReference_8_0.eContents().get(1);
+		private final Keyword cLeftSquareBracketKeyword_9 = (Keyword)cGroup.eContents().get(9);
+		private final Assignment cLeftBoundAssignment_10 = (Assignment)cGroup.eContents().get(10);
+		private final RuleCall cLeftBoundEBigDecimalParserRuleCall_10_0 = (RuleCall)cLeftBoundAssignment_10.eContents().get(0);
+		private final Keyword cSemicolonKeyword_11 = (Keyword)cGroup.eContents().get(11);
+		private final Assignment cRightBoundAssignment_12 = (Assignment)cGroup.eContents().get(12);
+		private final RuleCall cRightBoundEBigDecimalParserRuleCall_12_0 = (RuleCall)cRightBoundAssignment_12.eContents().get(0);
+		private final Keyword cRightSquareBracketKeyword_13 = (Keyword)cGroup.eContents().get(13);
 		
 		//IntegrationMeasure:
 		//	{IntegrationMeasure} post?='post'? targetClass=EString ('#' targetOperation=EString)? '.' (type=Type |
-		//	subname=EString) "=" function=[CompositeMeasure] '[' leftBound=EBigDecimal ';' rightBound=EBigDecimal ']';
+		//	subname=EString) "=" "integral" function=[CompositeMeasure|EString] '[' leftBound=EBigDecimal ';'
+		//	rightBound=EBigDecimal ']';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{IntegrationMeasure} post?='post'? targetClass=EString ('#' targetOperation=EString)? '.' (type=Type | subname=EString)
-		//"=" function=[CompositeMeasure] '[' leftBound=EBigDecimal ';' rightBound=EBigDecimal ']'
+		//"=" "integral" function=[CompositeMeasure|EString] '[' leftBound=EBigDecimal ';' rightBound=EBigDecimal ']'
 		public Group getGroup() { return cGroup; }
 		
 		//{IntegrationMeasure}
@@ -1267,35 +1277,38 @@ public class EelGrammarAccess extends AbstractGrammarElementFinder {
 		//"="
 		public Keyword getEqualsSignKeyword_6() { return cEqualsSignKeyword_6; }
 		
-		//function=[CompositeMeasure]
-		public Assignment getFunctionAssignment_7() { return cFunctionAssignment_7; }
+		//"integral"
+		public Keyword getIntegralKeyword_7() { return cIntegralKeyword_7; }
 		
-		//[CompositeMeasure]
-		public CrossReference getFunctionCompositeMeasureCrossReference_7_0() { return cFunctionCompositeMeasureCrossReference_7_0; }
+		//function=[CompositeMeasure|EString]
+		public Assignment getFunctionAssignment_8() { return cFunctionAssignment_8; }
 		
-		//ID
-		public RuleCall getFunctionCompositeMeasureIDTerminalRuleCall_7_0_1() { return cFunctionCompositeMeasureIDTerminalRuleCall_7_0_1; }
+		//[CompositeMeasure|EString]
+		public CrossReference getFunctionCompositeMeasureCrossReference_8_0() { return cFunctionCompositeMeasureCrossReference_8_0; }
+		
+		//EString
+		public RuleCall getFunctionCompositeMeasureEStringParserRuleCall_8_0_1() { return cFunctionCompositeMeasureEStringParserRuleCall_8_0_1; }
 		
 		//'['
-		public Keyword getLeftSquareBracketKeyword_8() { return cLeftSquareBracketKeyword_8; }
+		public Keyword getLeftSquareBracketKeyword_9() { return cLeftSquareBracketKeyword_9; }
 		
 		//leftBound=EBigDecimal
-		public Assignment getLeftBoundAssignment_9() { return cLeftBoundAssignment_9; }
+		public Assignment getLeftBoundAssignment_10() { return cLeftBoundAssignment_10; }
 		
 		//EBigDecimal
-		public RuleCall getLeftBoundEBigDecimalParserRuleCall_9_0() { return cLeftBoundEBigDecimalParserRuleCall_9_0; }
+		public RuleCall getLeftBoundEBigDecimalParserRuleCall_10_0() { return cLeftBoundEBigDecimalParserRuleCall_10_0; }
 		
 		//';'
-		public Keyword getSemicolonKeyword_10() { return cSemicolonKeyword_10; }
+		public Keyword getSemicolonKeyword_11() { return cSemicolonKeyword_11; }
 		
 		//rightBound=EBigDecimal
-		public Assignment getRightBoundAssignment_11() { return cRightBoundAssignment_11; }
+		public Assignment getRightBoundAssignment_12() { return cRightBoundAssignment_12; }
 		
 		//EBigDecimal
-		public RuleCall getRightBoundEBigDecimalParserRuleCall_11_0() { return cRightBoundEBigDecimalParserRuleCall_11_0; }
+		public RuleCall getRightBoundEBigDecimalParserRuleCall_12_0() { return cRightBoundEBigDecimalParserRuleCall_12_0; }
 		
 		//']'
-		public Keyword getRightSquareBracketKeyword_12() { return cRightSquareBracketKeyword_12; }
+		public Keyword getRightSquareBracketKeyword_13() { return cRightSquareBracketKeyword_13; }
 	}
 	public class MeasurementUncertaintyElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.tblf.energy.estimation.Eel.MeasurementUncertainty");
@@ -4710,7 +4723,7 @@ public class EelGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//ExponentialMeasure:
 	//	{ExponentialMeasure} post?='post'? targetClass=EString ('#' targetOperation=EString)? '.' (type=Type |
-	//	subname=EString) "=" x=[Measure];
+	//	subname=EString) "=" "exp" x=[Measure|EString];
 	public ExponentialMeasureElements getExponentialMeasureAccess() {
 		return pExponentialMeasure;
 	}
@@ -4721,7 +4734,7 @@ public class EelGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//LogisticMeasure:
 	//	{LogisticMeasure} post?='post'? targetClass=EString ('#' targetOperation=EString)? '.' (type=Type | subname=EString)
-	//	"=" L=[Measure] k=[Measure] x=[Measure] x0=[Measure];
+	//	"=" "logistic" L=[Measure|EString] k=[Measure|EString] x0=[Measure|EString] x=[Measure|EString];
 	public LogisticMeasureElements getLogisticMeasureAccess() {
 		return pLogisticMeasure;
 	}
@@ -4732,7 +4745,8 @@ public class EelGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//IntegrationMeasure:
 	//	{IntegrationMeasure} post?='post'? targetClass=EString ('#' targetOperation=EString)? '.' (type=Type |
-	//	subname=EString) "=" function=[CompositeMeasure] '[' leftBound=EBigDecimal ';' rightBound=EBigDecimal ']';
+	//	subname=EString) "=" "integral" function=[CompositeMeasure|EString] '[' leftBound=EBigDecimal ';'
+	//	rightBound=EBigDecimal ']';
 	public IntegrationMeasureElements getIntegrationMeasureAccess() {
 		return pIntegrationMeasure;
 	}

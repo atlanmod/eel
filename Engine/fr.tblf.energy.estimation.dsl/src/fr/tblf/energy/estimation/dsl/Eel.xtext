@@ -88,17 +88,17 @@ MeasureUnboundProductOperation returns MeasureUnboundProductOperation:
 
 ExponentialMeasure returns ExponentialMeasure:
 	{ExponentialMeasure}
-	(post ?= 'post')? targetClass=EString ('#' targetOperation=EString)? ('.') (type=Type | subname = EString) "=" 	x=[Measure]
+	(post ?= 'post')? targetClass=EString ('#' targetOperation=EString)? ('.') (type=Type | subname = EString) "=" "exp" x=[Measure|EString]
 ;	
 
 LogisticMeasure returns LogisticMeasure:
 	{LogisticMeasure} 
-	(post ?= 'post')? targetClass=EString ('#' targetOperation=EString)? ('.') (type=Type | subname = EString) "=" 	L=[Measure] k=[Measure] x=[Measure] x0=[Measure]	
+	(post ?= 'post')? targetClass=EString ('#' targetOperation=EString)? ('.') (type=Type | subname = EString) "=" "logistic" L=[Measure|EString] k=[Measure|EString] x0=[Measure|EString] x=[Measure|EString]	
 ;
 
 IntegrationMeasure returns IntegrationMeasure:
 	{IntegrationMeasure}
-	(post ?= 'post')? targetClass=EString ('#' targetOperation=EString)? ('.') (type=Type | subname = EString) "=" function=[CompositeMeasure] '['leftBound=EBigDecimal';'rightBound=EBigDecimal']';
+	(post ?= 'post')? targetClass=EString ('#' targetOperation=EString)? ('.') (type=Type | subname = EString) "=" "integral" function=[CompositeMeasure|EString] '['leftBound=EBigDecimal';'rightBound=EBigDecimal']';
 
 
 MeasurementUncertainty returns MeasurementUncertainty:

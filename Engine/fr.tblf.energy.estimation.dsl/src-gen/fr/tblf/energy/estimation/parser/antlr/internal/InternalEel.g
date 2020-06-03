@@ -1760,6 +1760,10 @@ ruleExponentialMeasure returns [EObject current=null]
 		{
 			newLeafNode(otherlv_8, grammarAccess.getExponentialMeasureAccess().getEqualsSignKeyword_6());
 		}
+		otherlv_9='exp'
+		{
+			newLeafNode(otherlv_9, grammarAccess.getExponentialMeasureAccess().getExpKeyword_7());
+		}
 		(
 			(
 				{
@@ -1767,9 +1771,12 @@ ruleExponentialMeasure returns [EObject current=null]
 						$current = createModelElement(grammarAccess.getExponentialMeasureRule());
 					}
 				}
-				otherlv_9=RULE_ID
 				{
-					newLeafNode(otherlv_9, grammarAccess.getExponentialMeasureAccess().getXMeasureCrossReference_7_0());
+					newCompositeNode(grammarAccess.getExponentialMeasureAccess().getXMeasureCrossReference_8_0());
+				}
+				ruleEString
+				{
+					afterParserOrEnumRuleCall();
 				}
 			)
 		)
@@ -1906,6 +1913,10 @@ ruleLogisticMeasure returns [EObject current=null]
 		{
 			newLeafNode(otherlv_8, grammarAccess.getLogisticMeasureAccess().getEqualsSignKeyword_6());
 		}
+		otherlv_9='logistic'
+		{
+			newLeafNode(otherlv_9, grammarAccess.getLogisticMeasureAccess().getLogisticKeyword_7());
+		}
 		(
 			(
 				{
@@ -1913,9 +1924,12 @@ ruleLogisticMeasure returns [EObject current=null]
 						$current = createModelElement(grammarAccess.getLogisticMeasureRule());
 					}
 				}
-				otherlv_9=RULE_ID
 				{
-					newLeafNode(otherlv_9, grammarAccess.getLogisticMeasureAccess().getLMeasureCrossReference_7_0());
+					newCompositeNode(grammarAccess.getLogisticMeasureAccess().getLMeasureCrossReference_8_0());
+				}
+				ruleEString
+				{
+					afterParserOrEnumRuleCall();
 				}
 			)
 		)
@@ -1926,9 +1940,12 @@ ruleLogisticMeasure returns [EObject current=null]
 						$current = createModelElement(grammarAccess.getLogisticMeasureRule());
 					}
 				}
-				otherlv_10=RULE_ID
 				{
-					newLeafNode(otherlv_10, grammarAccess.getLogisticMeasureAccess().getKMeasureCrossReference_8_0());
+					newCompositeNode(grammarAccess.getLogisticMeasureAccess().getKMeasureCrossReference_9_0());
+				}
+				ruleEString
+				{
+					afterParserOrEnumRuleCall();
 				}
 			)
 		)
@@ -1939,9 +1956,12 @@ ruleLogisticMeasure returns [EObject current=null]
 						$current = createModelElement(grammarAccess.getLogisticMeasureRule());
 					}
 				}
-				otherlv_11=RULE_ID
 				{
-					newLeafNode(otherlv_11, grammarAccess.getLogisticMeasureAccess().getXMeasureCrossReference_9_0());
+					newCompositeNode(grammarAccess.getLogisticMeasureAccess().getX0MeasureCrossReference_10_0());
+				}
+				ruleEString
+				{
+					afterParserOrEnumRuleCall();
 				}
 			)
 		)
@@ -1952,9 +1972,12 @@ ruleLogisticMeasure returns [EObject current=null]
 						$current = createModelElement(grammarAccess.getLogisticMeasureRule());
 					}
 				}
-				otherlv_12=RULE_ID
 				{
-					newLeafNode(otherlv_12, grammarAccess.getLogisticMeasureAccess().getX0MeasureCrossReference_10_0());
+					newCompositeNode(grammarAccess.getLogisticMeasureAccess().getXMeasureCrossReference_11_0());
+				}
+				ruleEString
+				{
+					afterParserOrEnumRuleCall();
 				}
 			)
 		)
