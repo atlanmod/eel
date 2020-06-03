@@ -255,6 +255,7 @@ public class EelSwitch<T> extends Switch<T> {
 			case EelPackage.COMPOSITE_MEASURE: {
 				CompositeMeasure compositeMeasure = (CompositeMeasure)theEObject;
 				T result = caseCompositeMeasure(compositeMeasure);
+				if (result == null) result = caseMeasureValue(compositeMeasure);
 				if (result == null) result = caseTypedMeasure(compositeMeasure);
 				if (result == null) result = caseMeasure(compositeMeasure);
 				if (result == null) result = defaultCase(theEObject);
@@ -264,6 +265,7 @@ public class EelSwitch<T> extends Switch<T> {
 				LogisticMeasure logisticMeasure = (LogisticMeasure)theEObject;
 				T result = caseLogisticMeasure(logisticMeasure);
 				if (result == null) result = caseCompositeMeasure(logisticMeasure);
+				if (result == null) result = caseMeasureValue(logisticMeasure);
 				if (result == null) result = caseTypedMeasure(logisticMeasure);
 				if (result == null) result = caseMeasure(logisticMeasure);
 				if (result == null) result = defaultCase(theEObject);
@@ -273,6 +275,7 @@ public class EelSwitch<T> extends Switch<T> {
 				ExponentialMeasure exponentialMeasure = (ExponentialMeasure)theEObject;
 				T result = caseExponentialMeasure(exponentialMeasure);
 				if (result == null) result = caseCompositeMeasure(exponentialMeasure);
+				if (result == null) result = caseMeasureValue(exponentialMeasure);
 				if (result == null) result = caseTypedMeasure(exponentialMeasure);
 				if (result == null) result = caseMeasure(exponentialMeasure);
 				if (result == null) result = defaultCase(theEObject);
@@ -282,6 +285,7 @@ public class EelSwitch<T> extends Switch<T> {
 				TailMeasure tailMeasure = (TailMeasure)theEObject;
 				T result = caseTailMeasure(tailMeasure);
 				if (result == null) result = caseCompositeMeasure(tailMeasure);
+				if (result == null) result = caseMeasureValue(tailMeasure);
 				if (result == null) result = caseTypedMeasure(tailMeasure);
 				if (result == null) result = caseMeasure(tailMeasure);
 				if (result == null) result = defaultCase(theEObject);
@@ -291,6 +295,7 @@ public class EelSwitch<T> extends Switch<T> {
 				IntegrationMeasure integrationMeasure = (IntegrationMeasure)theEObject;
 				T result = caseIntegrationMeasure(integrationMeasure);
 				if (result == null) result = caseCompositeMeasure(integrationMeasure);
+				if (result == null) result = caseMeasureValue(integrationMeasure);
 				if (result == null) result = caseTypedMeasure(integrationMeasure);
 				if (result == null) result = caseMeasure(integrationMeasure);
 				if (result == null) result = defaultCase(theEObject);

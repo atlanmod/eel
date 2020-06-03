@@ -256,7 +256,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="quantity" upperBound="-1"
         eType="#//Measure" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="CompositeMeasure" eSuperTypes="#//TypedMeasure"/>
+  <eClassifiers xsi:type="ecore:EClass" name="CompositeMeasure" eSuperTypes="#//MeasureValue"/>
   <eClassifiers xsi:type="ecore:EClass" name="LogisticMeasure" eSuperTypes="#//CompositeMeasure">
     <eStructuralFeatures xsi:type="ecore:EReference" name="L" lowerBound="1" eType="#//Measure"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="k" lowerBound="1" eType="#//Measure"/>

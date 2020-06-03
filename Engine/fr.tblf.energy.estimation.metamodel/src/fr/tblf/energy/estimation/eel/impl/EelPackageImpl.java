@@ -1284,7 +1284,7 @@ public class EelPackageImpl extends EPackageImpl implements EelPackage {
 		intervalEClass.getESuperTypes().add(this.getMeasurementUncertaintyInformation());
 		samplingEClass.getESuperTypes().add(this.getMeasurementUncertaintyInformation());
 		integralEClass.getESuperTypes().add(this.getMeasurementUncertaintyInformation());
-		compositeMeasureEClass.getESuperTypes().add(this.getTypedMeasure());
+		compositeMeasureEClass.getESuperTypes().add(this.getMeasureValue());
 		logisticMeasureEClass.getESuperTypes().add(this.getCompositeMeasure());
 		exponentialMeasureEClass.getESuperTypes().add(this.getCompositeMeasure());
 		tailMeasureEClass.getESuperTypes().add(this.getCompositeMeasure());

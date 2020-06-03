@@ -17,3 +17,5 @@ Require-Bundle: org.eclipse.gemoc.xdsmlframework.api;bundle-version="4.0.0",
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Automatic-Module-Name: fr.tblf.gemoc.extension
 Import-Package: org.eclipse.ocl.ecore
+Bundle-ClassPath: libs/commons-math3-3.6.1.jar,
+ .

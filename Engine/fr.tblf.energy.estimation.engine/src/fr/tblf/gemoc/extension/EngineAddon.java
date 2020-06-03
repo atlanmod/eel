@@ -10,13 +10,11 @@ import java.util.TreeMap;
 import java.util.function.Function;
 
 import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.gemoc.trace.commons.model.trace.Step;
 import org.eclipse.gemoc.xdsmlframework.api.core.IExecutionEngine;
 import org.eclipse.gemoc.xdsmlframework.api.engine_addon.IEngineAddon;
@@ -25,16 +23,19 @@ import org.eclipse.ocl.pivot.utilities.OCL;
 import org.eclipse.ocl.pivot.utilities.OCLHelper;
 import org.eclipse.ocl.pivot.utilities.ParserException;
 
+import fr.tblf.energy.estimation.eel.CompositeMeasure;
+import fr.tblf.energy.estimation.eel.ExponentialMeasure;
+import fr.tblf.energy.estimation.eel.IntegrationMeasure;
+import fr.tblf.energy.estimation.eel.LogisticMeasure;
 import fr.tblf.energy.estimation.eel.Measure;
 import fr.tblf.energy.estimation.eel.MeasureAttribute;
 import fr.tblf.energy.estimation.eel.MeasureBinaryOperation;
 import fr.tblf.energy.estimation.eel.MeasureCast;
 import fr.tblf.energy.estimation.eel.MeasureOCL;
 import fr.tblf.energy.estimation.eel.MeasureUnboundOperation;
-import fr.tblf.energy.estimation.eel.MeasureUnboundProductOperation;
-import fr.tblf.energy.estimation.eel.MeasureUnboundSumOperation;
 import fr.tblf.energy.estimation.eel.Platform;
 import fr.tblf.energy.estimation.eel.RealTimeDuration;
+import fr.tblf.gemoc.extension.calculus.CompositeMeasureCalculus;
 
 public class EngineAddon implements IEngineAddon {
 
@@ -193,6 +194,24 @@ public class EngineAddon implements IEngineAddon {
 		m.setValue(BigDecimal.valueOf(stepDurations.get(classOperation)));
 	}
 	
+	private void updateMeasure(CompositeMeasure m, EObject caller, EOperation operation) {
+		if (m instanceof LogisticMeasure) {
+			LogisticMeasure lm = (LogisticMeasure) m;
+			
+			updateMeasure(lm.getK(), caller, operation);
+			updateMeasure(lm.getL(), caller, operation);
+			updateMeasure(lm.getX(), caller, operation);
+			updateMeasure(lm.getX0(), caller, operation);		
+						
+			m.setValue(BigDecimal.valueOf(CompositeMeasureCalculus.computeLogisticFunction(lm)));
+		} else if (m instanceof ExponentialMeasure) {
+			updateMeasure(((ExponentialMeasure) m).getX(), caller, operation);
+			m.setValue(BigDecimal.valueOf(CompositeMeasureCalculus.computeExponentialFunction((ExponentialMeasure) m)));
+		} else if (m instanceof IntegrationMeasure) {
+			updateMeasure(((IntegrationMeasure) m).getFunction(), caller, operation);
+			m.setValue(BigDecimal.valueOf(CompositeMeasureCalculus.computeIntegralFunction((IntegrationMeasure) m))); 
+		}		
+	}
 	private void updateMeasure(Measure m, EObject caller, EOperation operation) {
 		if (m instanceof MeasureBinaryOperation) {
 			updateMeasure((MeasureBinaryOperation) m, caller, operation);
@@ -211,7 +230,10 @@ public class EngineAddon implements IEngineAddon {
 		} else 
 		if (m instanceof MeasureUnboundOperation) {
 			updateMeasure((MeasureUnboundOperation) m, caller, operation);
-		} 	
+		} else
+		if (m instanceof CompositeMeasure) {
+			updateMeasure((CompositeMeasure) m, caller, operation);
+		}
 		
 		//System.out.println(m.getName()+" : "+m.value()+" "+m.type().getLiteral());
 	}	

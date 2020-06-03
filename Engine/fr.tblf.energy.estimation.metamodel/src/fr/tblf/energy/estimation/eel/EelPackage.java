@@ -2423,7 +2423,7 @@ public interface EelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPOSITE_MEASURE__NAME = TYPED_MEASURE__NAME;
+	int COMPOSITE_MEASURE__NAME = MEASURE_VALUE__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Subname</b></em>' attribute.
@@ -2432,7 +2432,7 @@ public interface EelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPOSITE_MEASURE__SUBNAME = TYPED_MEASURE__SUBNAME;
+	int COMPOSITE_MEASURE__SUBNAME = MEASURE_VALUE__SUBNAME;
 
 	/**
 	 * The feature id for the '<em><b>Target Class</b></em>' attribute.
@@ -2441,7 +2441,7 @@ public interface EelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPOSITE_MEASURE__TARGET_CLASS = TYPED_MEASURE__TARGET_CLASS;
+	int COMPOSITE_MEASURE__TARGET_CLASS = MEASURE_VALUE__TARGET_CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Target Operation</b></em>' attribute.
@@ -2450,7 +2450,7 @@ public interface EelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPOSITE_MEASURE__TARGET_OPERATION = TYPED_MEASURE__TARGET_OPERATION;
+	int COMPOSITE_MEASURE__TARGET_OPERATION = MEASURE_VALUE__TARGET_OPERATION;
 
 	/**
 	 * The feature id for the '<em><b>Post</b></em>' attribute.
@@ -2459,7 +2459,7 @@ public interface EelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPOSITE_MEASURE__POST = TYPED_MEASURE__POST;
+	int COMPOSITE_MEASURE__POST = MEASURE_VALUE__POST;
 
 	/**
 	 * The feature id for the '<em><b>Uncertainty</b></em>' containment reference.
@@ -2468,7 +2468,7 @@ public interface EelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPOSITE_MEASURE__UNCERTAINTY = TYPED_MEASURE__UNCERTAINTY;
+	int COMPOSITE_MEASURE__UNCERTAINTY = MEASURE_VALUE__UNCERTAINTY;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -2477,7 +2477,16 @@ public interface EelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPOSITE_MEASURE__TYPE = TYPED_MEASURE__TYPE;
+	int COMPOSITE_MEASURE__TYPE = MEASURE_VALUE__TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_MEASURE__VALUE = MEASURE_VALUE__VALUE;
 
 	/**
 	 * The number of structural features of the '<em>Composite Measure</em>' class.
@@ -2486,16 +2495,7 @@ public interface EelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPOSITE_MEASURE_FEATURE_COUNT = TYPED_MEASURE_FEATURE_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Value</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPOSITE_MEASURE___VALUE = TYPED_MEASURE___VALUE;
+	int COMPOSITE_MEASURE_FEATURE_COUNT = MEASURE_VALUE_FEATURE_COUNT + 0;
 
 	/**
 	 * The operation id for the '<em>Type</em>' operation.
@@ -2504,7 +2504,7 @@ public interface EelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPOSITE_MEASURE___TYPE = TYPED_MEASURE___TYPE;
+	int COMPOSITE_MEASURE___TYPE = MEASURE_VALUE___TYPE;
 
 	/**
 	 * The operation id for the '<em>Name</em>' operation.
@@ -2513,7 +2513,16 @@ public interface EelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPOSITE_MEASURE___NAME = TYPED_MEASURE___NAME;
+	int COMPOSITE_MEASURE___NAME = MEASURE_VALUE___NAME;
+
+	/**
+	 * The operation id for the '<em>Value</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_MEASURE___VALUE = MEASURE_VALUE___VALUE;
 
 	/**
 	 * The number of operations of the '<em>Composite Measure</em>' class.
@@ -2522,7 +2531,7 @@ public interface EelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPOSITE_MEASURE_OPERATION_COUNT = TYPED_MEASURE_OPERATION_COUNT + 0;
+	int COMPOSITE_MEASURE_OPERATION_COUNT = MEASURE_VALUE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link fr.tblf.energy.estimation.eel.impl.LogisticMeasureImpl <em>Logistic Measure</em>}' class.
@@ -2598,6 +2607,15 @@ public interface EelPackage extends EPackage {
 	int LOGISTIC_MEASURE__TYPE = COMPOSITE_MEASURE__TYPE;
 
 	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOGISTIC_MEASURE__VALUE = COMPOSITE_MEASURE__VALUE;
+
+	/**
 	 * The feature id for the '<em><b>L</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2643,15 +2661,6 @@ public interface EelPackage extends EPackage {
 	int LOGISTIC_MEASURE_FEATURE_COUNT = COMPOSITE_MEASURE_FEATURE_COUNT + 4;
 
 	/**
-	 * The operation id for the '<em>Value</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LOGISTIC_MEASURE___VALUE = COMPOSITE_MEASURE___VALUE;
-
-	/**
 	 * The operation id for the '<em>Type</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2668,6 +2677,15 @@ public interface EelPackage extends EPackage {
 	 * @ordered
 	 */
 	int LOGISTIC_MEASURE___NAME = COMPOSITE_MEASURE___NAME;
+
+	/**
+	 * The operation id for the '<em>Value</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOGISTIC_MEASURE___VALUE = COMPOSITE_MEASURE___VALUE;
 
 	/**
 	 * The number of operations of the '<em>Logistic Measure</em>' class.
@@ -2752,6 +2770,15 @@ public interface EelPackage extends EPackage {
 	int EXPONENTIAL_MEASURE__TYPE = COMPOSITE_MEASURE__TYPE;
 
 	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXPONENTIAL_MEASURE__VALUE = COMPOSITE_MEASURE__VALUE;
+
+	/**
 	 * The feature id for the '<em><b>X</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2770,15 +2797,6 @@ public interface EelPackage extends EPackage {
 	int EXPONENTIAL_MEASURE_FEATURE_COUNT = COMPOSITE_MEASURE_FEATURE_COUNT + 1;
 
 	/**
-	 * The operation id for the '<em>Value</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXPONENTIAL_MEASURE___VALUE = COMPOSITE_MEASURE___VALUE;
-
-	/**
 	 * The operation id for the '<em>Type</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2795,6 +2813,15 @@ public interface EelPackage extends EPackage {
 	 * @ordered
 	 */
 	int EXPONENTIAL_MEASURE___NAME = COMPOSITE_MEASURE___NAME;
+
+	/**
+	 * The operation id for the '<em>Value</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXPONENTIAL_MEASURE___VALUE = COMPOSITE_MEASURE___VALUE;
 
 	/**
 	 * The number of operations of the '<em>Exponential Measure</em>' class.
@@ -2879,6 +2906,15 @@ public interface EelPackage extends EPackage {
 	int TAIL_MEASURE__TYPE = COMPOSITE_MEASURE__TYPE;
 
 	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TAIL_MEASURE__VALUE = COMPOSITE_MEASURE__VALUE;
+
+	/**
 	 * The number of structural features of the '<em>Tail Measure</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2886,15 +2922,6 @@ public interface EelPackage extends EPackage {
 	 * @ordered
 	 */
 	int TAIL_MEASURE_FEATURE_COUNT = COMPOSITE_MEASURE_FEATURE_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Value</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TAIL_MEASURE___VALUE = COMPOSITE_MEASURE___VALUE;
 
 	/**
 	 * The operation id for the '<em>Type</em>' operation.
@@ -2913,6 +2940,15 @@ public interface EelPackage extends EPackage {
 	 * @ordered
 	 */
 	int TAIL_MEASURE___NAME = COMPOSITE_MEASURE___NAME;
+
+	/**
+	 * The operation id for the '<em>Value</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TAIL_MEASURE___VALUE = COMPOSITE_MEASURE___VALUE;
 
 	/**
 	 * The number of operations of the '<em>Tail Measure</em>' class.
@@ -2997,6 +3033,15 @@ public interface EelPackage extends EPackage {
 	int INTEGRATION_MEASURE__TYPE = COMPOSITE_MEASURE__TYPE;
 
 	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTEGRATION_MEASURE__VALUE = COMPOSITE_MEASURE__VALUE;
+
+	/**
 	 * The feature id for the '<em><b>Function</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3033,15 +3078,6 @@ public interface EelPackage extends EPackage {
 	int INTEGRATION_MEASURE_FEATURE_COUNT = COMPOSITE_MEASURE_FEATURE_COUNT + 3;
 
 	/**
-	 * The operation id for the '<em>Value</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INTEGRATION_MEASURE___VALUE = COMPOSITE_MEASURE___VALUE;
-
-	/**
 	 * The operation id for the '<em>Type</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3058,6 +3094,15 @@ public interface EelPackage extends EPackage {
 	 * @ordered
 	 */
 	int INTEGRATION_MEASURE___NAME = COMPOSITE_MEASURE___NAME;
+
+	/**
+	 * The operation id for the '<em>Value</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTEGRATION_MEASURE___VALUE = COMPOSITE_MEASURE___VALUE;
 
 	/**
 	 * The number of operations of the '<em>Integration Measure</em>' class.
