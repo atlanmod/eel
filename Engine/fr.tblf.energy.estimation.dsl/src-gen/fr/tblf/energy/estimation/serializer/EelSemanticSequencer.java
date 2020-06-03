@@ -449,6 +449,8 @@ public class EelSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Contexts:
+	 *     Measure returns IntegrationMeasure
+	 *     CompositeMeasure returns IntegrationMeasure
 	 *     IntegrationMeasure returns IntegrationMeasure
 	 *
 	 * Constraint:

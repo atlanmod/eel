@@ -357,6 +357,15 @@ ruleCompositeMeasure returns [EObject current=null]
 			$current = $this_LogisticMeasure_1.current;
 			afterParserOrEnumRuleCall();
 		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getCompositeMeasureAccess().getIntegrationMeasureParserRuleCall_2());
+		}
+		this_IntegrationMeasure_2=ruleIntegrationMeasure
+		{
+			$current = $this_IntegrationMeasure_2.current;
+			afterParserOrEnumRuleCall();
+		}
 	)
 ;
 
@@ -1981,6 +1990,209 @@ ruleLogisticMeasure returns [EObject current=null]
 				}
 			)
 		)
+	)
+;
+
+// Entry rule entryRuleIntegrationMeasure
+entryRuleIntegrationMeasure returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getIntegrationMeasureRule()); }
+	iv_ruleIntegrationMeasure=ruleIntegrationMeasure
+	{ $current=$iv_ruleIntegrationMeasure.current; }
+	EOF;
+
+// Rule IntegrationMeasure
+ruleIntegrationMeasure returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getIntegrationMeasureAccess().getIntegrationMeasureAction_0(),
+					$current);
+			}
+		)
+		(
+			(
+				lv_post_1_0='post'
+				{
+					newLeafNode(lv_post_1_0, grammarAccess.getIntegrationMeasureAccess().getPostPostKeyword_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getIntegrationMeasureRule());
+					}
+					setWithLastConsumed($current, "post", true, "post");
+				}
+			)
+		)?
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getIntegrationMeasureAccess().getTargetClassEStringParserRuleCall_2_0());
+				}
+				lv_targetClass_2_0=ruleEString
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getIntegrationMeasureRule());
+					}
+					set(
+						$current,
+						"targetClass",
+						lv_targetClass_2_0,
+						"fr.tblf.energy.estimation.Eel.EString");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			otherlv_3='#'
+			{
+				newLeafNode(otherlv_3, grammarAccess.getIntegrationMeasureAccess().getNumberSignKeyword_3_0());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getIntegrationMeasureAccess().getTargetOperationEStringParserRuleCall_3_1_0());
+					}
+					lv_targetOperation_4_0=ruleEString
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getIntegrationMeasureRule());
+						}
+						set(
+							$current,
+							"targetOperation",
+							lv_targetOperation_4_0,
+							"fr.tblf.energy.estimation.Eel.EString");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)?
+		otherlv_5='.'
+		{
+			newLeafNode(otherlv_5, grammarAccess.getIntegrationMeasureAccess().getFullStopKeyword_4());
+		}
+		(
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getIntegrationMeasureAccess().getTypeTypeEnumRuleCall_5_0_0());
+					}
+					lv_type_6_0=ruleType
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getIntegrationMeasureRule());
+						}
+						set(
+							$current,
+							"type",
+							lv_type_6_0,
+							"fr.tblf.energy.estimation.Eel.Type");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+			    |
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getIntegrationMeasureAccess().getSubnameEStringParserRuleCall_5_1_0());
+					}
+					lv_subname_7_0=ruleEString
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getIntegrationMeasureRule());
+						}
+						set(
+							$current,
+							"subname",
+							lv_subname_7_0,
+							"fr.tblf.energy.estimation.Eel.EString");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)
+		otherlv_8='='
+		{
+			newLeafNode(otherlv_8, grammarAccess.getIntegrationMeasureAccess().getEqualsSignKeyword_6());
+		}
+		otherlv_9='integral'
+		{
+			newLeafNode(otherlv_9, grammarAccess.getIntegrationMeasureAccess().getIntegralKeyword_7());
+		}
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getIntegrationMeasureRule());
+					}
+				}
+				{
+					newCompositeNode(grammarAccess.getIntegrationMeasureAccess().getFunctionCompositeMeasureCrossReference_8_0());
+				}
+				ruleEString
+				{
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_11='['
+		{
+			newLeafNode(otherlv_11, grammarAccess.getIntegrationMeasureAccess().getLeftSquareBracketKeyword_9());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getIntegrationMeasureAccess().getLeftBoundEBigDecimalParserRuleCall_10_0());
+				}
+				lv_leftBound_12_0=ruleEBigDecimal
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getIntegrationMeasureRule());
+					}
+					set(
+						$current,
+						"leftBound",
+						lv_leftBound_12_0,
+						"fr.tblf.energy.estimation.Eel.EBigDecimal");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_13=';'
+		{
+			newLeafNode(otherlv_13, grammarAccess.getIntegrationMeasureAccess().getSemicolonKeyword_11());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getIntegrationMeasureAccess().getRightBoundEBigDecimalParserRuleCall_12_0());
+				}
+				lv_rightBound_14_0=ruleEBigDecimal
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getIntegrationMeasureRule());
+					}
+					set(
+						$current,
+						"rightBound",
+						lv_rightBound_14_0,
+						"fr.tblf.energy.estimation.Eel.EBigDecimal");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_15=']'
+		{
+			newLeafNode(otherlv_15, grammarAccess.getIntegrationMeasureAccess().getRightSquareBracketKeyword_13());
+		}
 	)
 ;
 

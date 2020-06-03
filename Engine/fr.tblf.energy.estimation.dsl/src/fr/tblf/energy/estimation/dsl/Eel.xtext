@@ -18,7 +18,7 @@ Measure returns Measure:
 	MeasureValue_Impl  | MeasureOCL | MeasureAttribute | MeasureCast | MeasureUnboundProductOperation | MeasureUnboundSumOperation | RealTimeDuration | CompositeMeasure /*| MeasureUnboundSumOperation | MeasureUnboundProductOperation */ ;
 
 CompositeMeasure returns CompositeMeasure:
-	ExponentialMeasure | LogisticMeasure
+	ExponentialMeasure | LogisticMeasure | IntegrationMeasure
 ;
 
 MeasurementUncertaintyInformation returns MeasurementUncertaintyInformation:
@@ -98,7 +98,8 @@ LogisticMeasure returns LogisticMeasure:
 
 IntegrationMeasure returns IntegrationMeasure:
 	{IntegrationMeasure}
-	(post ?= 'post')? targetClass=EString ('#' targetOperation=EString)? ('.') (type=Type | subname = EString) "=" "integral" function=[CompositeMeasure|EString] '['leftBound=EBigDecimal';'rightBound=EBigDecimal']';
+	(post ?= 'post')? targetClass=EString ('#' targetOperation=EString)? ('.') (type=Type | subname = EString) "=" "integral" function=[CompositeMeasure|EString] '['leftBound=EBigDecimal';'rightBound=EBigDecimal']'
+;
 
 
 MeasurementUncertainty returns MeasurementUncertainty:

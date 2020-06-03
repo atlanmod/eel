@@ -199,12 +199,13 @@ public class EelGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cExponentialMeasureParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cLogisticMeasureParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cIntegrationMeasureParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
 		//CompositeMeasure:
-		//	ExponentialMeasure | LogisticMeasure;
+		//	ExponentialMeasure | LogisticMeasure | IntegrationMeasure;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//ExponentialMeasure | LogisticMeasure
+		//ExponentialMeasure | LogisticMeasure | IntegrationMeasure
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//ExponentialMeasure
@@ -212,6 +213,9 @@ public class EelGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//LogisticMeasure
 		public RuleCall getLogisticMeasureParserRuleCall_1() { return cLogisticMeasureParserRuleCall_1; }
+		
+		//IntegrationMeasure
+		public RuleCall getIntegrationMeasureParserRuleCall_2() { return cIntegrationMeasureParserRuleCall_2; }
 	}
 	public class MeasurementUncertaintyInformationElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.tblf.energy.estimation.Eel.MeasurementUncertaintyInformation");
@@ -4566,7 +4570,7 @@ public class EelGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//CompositeMeasure:
-	//	ExponentialMeasure | LogisticMeasure;
+	//	ExponentialMeasure | LogisticMeasure | IntegrationMeasure;
 	public CompositeMeasureElements getCompositeMeasureAccess() {
 		return pCompositeMeasure;
 	}
