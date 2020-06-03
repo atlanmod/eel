@@ -1,0 +1,27 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: org.atlanmod.energy.estimation.dsl
+Bundle-ManifestVersion: 2
+Bundle-Name: org.atlanmod.energy.estimation.dsl
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: org.atlanmod.energy.estimation.dsl; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.atlanmod.energy.estimation.metamodel,
+ org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
+ org.antlr.runtime,
+ org.eclipse.xtext.util,
+ org.eclipse.xtend.lib;bundle-version="2.14.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-9
+Export-Package: org.atlanmod.energy.estimation.dsl.generator,
+ org.atlanmod.energy.estimation.dsl,
+ org.atlanmod.energy.estimation.dsl.scoping,
+ org.atlanmod.energy.estimation.dsl.parser.antlr.internal,
+ org.atlanmod.energy.estimation.dsl.services,
+ org.atlanmod.energy.estimation.dsl.parser.antlr,
+ org.atlanmod.energy.estimation.dsl.validation,
+ org.atlanmod.energy.estimation.dsl.serializer,
+ org.atlanmod.energy.estimation.dsl.formatting2
+Import-Package: org.apache.log4j

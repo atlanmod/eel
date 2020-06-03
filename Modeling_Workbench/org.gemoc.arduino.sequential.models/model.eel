@@ -48,7 +48,7 @@ Platform ATMega328p {
 		"WaitFor".clockCycles = 10.0, 
 		"WaitFor".callDuration = "WaitFor.clockCycles" * "Board.clockPeriod",
 		post "WaitFor".absoluteTime, //milliseconds
-		"WaitFor".realDurationAsSeconds = "WaitFor.\'http://fr.tblf.energy.estimation/eel/\'::Type::Duration" * "variables.milliToUnitFactor",
+		"WaitFor".realDurationAsSeconds = "WaitFor.\'http://www.atlanmod.org/eel\'::Type::Duration" * "variables.milliToUnitFactor",
 		"WaitFor".totalDuration = "WaitFor.realDurationAsSeconds" + "WaitFor.callDuration",
 		
 		"ModuleAssignment".clockCycles = 44.0, //digitalWrite
