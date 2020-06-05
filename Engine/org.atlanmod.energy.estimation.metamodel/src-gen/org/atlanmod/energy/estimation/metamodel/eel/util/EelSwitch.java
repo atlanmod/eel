@@ -248,6 +248,19 @@ public class EelSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
+		case EelPackage.MEASURE_UNBOUND_SUBSTRACT_OPERATION: {
+			MeasureUnboundSubstractOperation measureUnboundSubstractOperation = (MeasureUnboundSubstractOperation) theEObject;
+			T result = caseMeasureUnboundSubstractOperation(measureUnboundSubstractOperation);
+			if (result == null)
+				result = caseMeasureUnboundOperation(measureUnboundSubstractOperation);
+			if (result == null)
+				result = caseTypedMeasure(measureUnboundSubstractOperation);
+			if (result == null)
+				result = caseMeasure(measureUnboundSubstractOperation);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
 		case EelPackage.MEASURE_UNBOUND_PRODUCT_OPERATION: {
 			MeasureUnboundProductOperation measureUnboundProductOperation = (MeasureUnboundProductOperation) theEObject;
 			T result = caseMeasureUnboundProductOperation(measureUnboundProductOperation);
@@ -257,6 +270,19 @@ public class EelSwitch<T> extends Switch<T> {
 				result = caseTypedMeasure(measureUnboundProductOperation);
 			if (result == null)
 				result = caseMeasure(measureUnboundProductOperation);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case EelPackage.MEASURE_UNBOUND_DIVISION_OPERATION: {
+			MeasureUnboundDivisionOperation measureUnboundDivisionOperation = (MeasureUnboundDivisionOperation) theEObject;
+			T result = caseMeasureUnboundDivisionOperation(measureUnboundDivisionOperation);
+			if (result == null)
+				result = caseMeasureUnboundOperation(measureUnboundDivisionOperation);
+			if (result == null)
+				result = caseTypedMeasure(measureUnboundDivisionOperation);
+			if (result == null)
+				result = caseMeasure(measureUnboundDivisionOperation);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -637,6 +663,21 @@ public class EelSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Measure Unbound Substract Operation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Measure Unbound Substract Operation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMeasureUnboundSubstractOperation(MeasureUnboundSubstractOperation object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Measure Unbound Product Operation</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -648,6 +689,21 @@ public class EelSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseMeasureUnboundProductOperation(MeasureUnboundProductOperation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Measure Unbound Division Operation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Measure Unbound Division Operation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMeasureUnboundDivisionOperation(MeasureUnboundDivisionOperation object) {
 		return null;
 	}
 

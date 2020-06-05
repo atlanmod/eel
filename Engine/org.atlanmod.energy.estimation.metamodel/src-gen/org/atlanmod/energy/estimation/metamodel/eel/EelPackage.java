@@ -1985,6 +1985,133 @@ public interface EelPackage extends EPackage {
 	int MEASURE_UNBOUND_SUM_OPERATION_OPERATION_COUNT = MEASURE_UNBOUND_OPERATION_OPERATION_COUNT + 1;
 
 	/**
+	 * The meta object id for the '{@link org.atlanmod.energy.estimation.metamodel.eel.impl.MeasureUnboundSubstractOperationImpl <em>Measure Unbound Substract Operation</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.atlanmod.energy.estimation.metamodel.eel.impl.MeasureUnboundSubstractOperationImpl
+	 * @see org.atlanmod.energy.estimation.metamodel.eel.impl.EelPackageImpl#getMeasureUnboundSubstractOperation()
+	 * @generated
+	 */
+	int MEASURE_UNBOUND_SUBSTRACT_OPERATION = 16;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE_UNBOUND_SUBSTRACT_OPERATION__NAME = MEASURE_UNBOUND_OPERATION__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Subname</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE_UNBOUND_SUBSTRACT_OPERATION__SUBNAME = MEASURE_UNBOUND_OPERATION__SUBNAME;
+
+	/**
+	 * The feature id for the '<em><b>Target Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE_UNBOUND_SUBSTRACT_OPERATION__TARGET_CLASS = MEASURE_UNBOUND_OPERATION__TARGET_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Target Operation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE_UNBOUND_SUBSTRACT_OPERATION__TARGET_OPERATION = MEASURE_UNBOUND_OPERATION__TARGET_OPERATION;
+
+	/**
+	 * The feature id for the '<em><b>Post</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE_UNBOUND_SUBSTRACT_OPERATION__POST = MEASURE_UNBOUND_OPERATION__POST;
+
+	/**
+	 * The feature id for the '<em><b>Uncertainty</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE_UNBOUND_SUBSTRACT_OPERATION__UNCERTAINTY = MEASURE_UNBOUND_OPERATION__UNCERTAINTY;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE_UNBOUND_SUBSTRACT_OPERATION__TYPE = MEASURE_UNBOUND_OPERATION__TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Measures</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE_UNBOUND_SUBSTRACT_OPERATION__MEASURES = MEASURE_UNBOUND_OPERATION__MEASURES;
+
+	/**
+	 * The number of structural features of the '<em>Measure Unbound Substract Operation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE_UNBOUND_SUBSTRACT_OPERATION_FEATURE_COUNT = MEASURE_UNBOUND_OPERATION_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Type</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE_UNBOUND_SUBSTRACT_OPERATION___TYPE = MEASURE_UNBOUND_OPERATION___TYPE;
+
+	/**
+	 * The operation id for the '<em>Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE_UNBOUND_SUBSTRACT_OPERATION___NAME = MEASURE_UNBOUND_OPERATION___NAME;
+
+	/**
+	 * The operation id for the '<em>Value</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE_UNBOUND_SUBSTRACT_OPERATION___VALUE = MEASURE_UNBOUND_OPERATION_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Measure Unbound Substract Operation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE_UNBOUND_SUBSTRACT_OPERATION_OPERATION_COUNT = MEASURE_UNBOUND_OPERATION_OPERATION_COUNT + 1;
+
+	/**
 	 * The meta object id for the '{@link org.atlanmod.energy.estimation.metamodel.eel.impl.MeasureUnboundProductOperationImpl <em>Measure Unbound Product Operation</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1992,7 +2119,7 @@ public interface EelPackage extends EPackage {
 	 * @see org.atlanmod.energy.estimation.metamodel.eel.impl.EelPackageImpl#getMeasureUnboundProductOperation()
 	 * @generated
 	 */
-	int MEASURE_UNBOUND_PRODUCT_OPERATION = 16;
+	int MEASURE_UNBOUND_PRODUCT_OPERATION = 17;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2112,6 +2239,133 @@ public interface EelPackage extends EPackage {
 	int MEASURE_UNBOUND_PRODUCT_OPERATION_OPERATION_COUNT = MEASURE_UNBOUND_OPERATION_OPERATION_COUNT + 1;
 
 	/**
+	 * The meta object id for the '{@link org.atlanmod.energy.estimation.metamodel.eel.impl.MeasureUnboundDivisionOperationImpl <em>Measure Unbound Division Operation</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.atlanmod.energy.estimation.metamodel.eel.impl.MeasureUnboundDivisionOperationImpl
+	 * @see org.atlanmod.energy.estimation.metamodel.eel.impl.EelPackageImpl#getMeasureUnboundDivisionOperation()
+	 * @generated
+	 */
+	int MEASURE_UNBOUND_DIVISION_OPERATION = 18;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE_UNBOUND_DIVISION_OPERATION__NAME = MEASURE_UNBOUND_OPERATION__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Subname</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE_UNBOUND_DIVISION_OPERATION__SUBNAME = MEASURE_UNBOUND_OPERATION__SUBNAME;
+
+	/**
+	 * The feature id for the '<em><b>Target Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE_UNBOUND_DIVISION_OPERATION__TARGET_CLASS = MEASURE_UNBOUND_OPERATION__TARGET_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Target Operation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE_UNBOUND_DIVISION_OPERATION__TARGET_OPERATION = MEASURE_UNBOUND_OPERATION__TARGET_OPERATION;
+
+	/**
+	 * The feature id for the '<em><b>Post</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE_UNBOUND_DIVISION_OPERATION__POST = MEASURE_UNBOUND_OPERATION__POST;
+
+	/**
+	 * The feature id for the '<em><b>Uncertainty</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE_UNBOUND_DIVISION_OPERATION__UNCERTAINTY = MEASURE_UNBOUND_OPERATION__UNCERTAINTY;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE_UNBOUND_DIVISION_OPERATION__TYPE = MEASURE_UNBOUND_OPERATION__TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Measures</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE_UNBOUND_DIVISION_OPERATION__MEASURES = MEASURE_UNBOUND_OPERATION__MEASURES;
+
+	/**
+	 * The number of structural features of the '<em>Measure Unbound Division Operation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE_UNBOUND_DIVISION_OPERATION_FEATURE_COUNT = MEASURE_UNBOUND_OPERATION_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Type</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE_UNBOUND_DIVISION_OPERATION___TYPE = MEASURE_UNBOUND_OPERATION___TYPE;
+
+	/**
+	 * The operation id for the '<em>Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE_UNBOUND_DIVISION_OPERATION___NAME = MEASURE_UNBOUND_OPERATION___NAME;
+
+	/**
+	 * The operation id for the '<em>Value</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE_UNBOUND_DIVISION_OPERATION___VALUE = MEASURE_UNBOUND_OPERATION_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Measure Unbound Division Operation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE_UNBOUND_DIVISION_OPERATION_OPERATION_COUNT = MEASURE_UNBOUND_OPERATION_OPERATION_COUNT + 1;
+
+	/**
 	 * The meta object id for the '{@link org.atlanmod.energy.estimation.metamodel.eel.impl.MeasurementUncertaintyImpl <em>Measurement Uncertainty</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2119,7 +2373,7 @@ public interface EelPackage extends EPackage {
 	 * @see org.atlanmod.energy.estimation.metamodel.eel.impl.EelPackageImpl#getMeasurementUncertainty()
 	 * @generated
 	 */
-	int MEASUREMENT_UNCERTAINTY = 17;
+	int MEASUREMENT_UNCERTAINTY = 19;
 
 	/**
 	 * The feature id for the '<em><b>Information</b></em>' containment reference.
@@ -2165,7 +2419,7 @@ public interface EelPackage extends EPackage {
 	 * @see org.atlanmod.energy.estimation.metamodel.eel.impl.EelPackageImpl#getMeasurementUncertaintyInformation()
 	 * @generated
 	 */
-	int MEASUREMENT_UNCERTAINTY_INFORMATION = 20;
+	int MEASUREMENT_UNCERTAINTY_INFORMATION = 22;
 
 	/**
 	 * The number of structural features of the '<em>Measurement Uncertainty Information</em>' class.
@@ -2193,7 +2447,7 @@ public interface EelPackage extends EPackage {
 	 * @see org.atlanmod.energy.estimation.metamodel.eel.impl.EelPackageImpl#getNormalDistribution()
 	 * @generated
 	 */
-	int NORMAL_DISTRIBUTION = 18;
+	int NORMAL_DISTRIBUTION = 20;
 
 	/**
 	 * The feature id for the '<em><b>Mean Value</b></em>' attribute.
@@ -2239,7 +2493,7 @@ public interface EelPackage extends EPackage {
 	 * @see org.atlanmod.energy.estimation.metamodel.eel.impl.EelPackageImpl#getInterval()
 	 * @generated
 	 */
-	int INTERVAL = 19;
+	int INTERVAL = 21;
 
 	/**
 	 * The feature id for the '<em><b>Lower Endpoint</b></em>' containment reference.
@@ -2285,7 +2539,7 @@ public interface EelPackage extends EPackage {
 	 * @see org.atlanmod.energy.estimation.metamodel.eel.impl.EelPackageImpl#getSampling()
 	 * @generated
 	 */
-	int SAMPLING = 21;
+	int SAMPLING = 23;
 
 	/**
 	 * The feature id for the '<em><b>Samples</b></em>' containment reference list.
@@ -2331,7 +2585,7 @@ public interface EelPackage extends EPackage {
 	 * @see org.atlanmod.energy.estimation.metamodel.eel.impl.EelPackageImpl#getIntegral()
 	 * @generated
 	 */
-	int INTEGRAL = 22;
+	int INTEGRAL = 24;
 
 	/**
 	 * The feature id for the '<em><b>Interval</b></em>' reference.
@@ -2377,7 +2631,7 @@ public interface EelPackage extends EPackage {
 	 * @see org.atlanmod.energy.estimation.metamodel.eel.impl.EelPackageImpl#getSample()
 	 * @generated
 	 */
-	int SAMPLE = 23;
+	int SAMPLE = 25;
 
 	/**
 	 * The feature id for the '<em><b>Quantity</b></em>' containment reference list.
@@ -2414,7 +2668,7 @@ public interface EelPackage extends EPackage {
 	 * @see org.atlanmod.energy.estimation.metamodel.eel.impl.EelPackageImpl#getCompositeMeasure()
 	 * @generated
 	 */
-	int COMPOSITE_MEASURE = 24;
+	int COMPOSITE_MEASURE = 26;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2541,7 +2795,7 @@ public interface EelPackage extends EPackage {
 	 * @see org.atlanmod.energy.estimation.metamodel.eel.impl.EelPackageImpl#getLogisticMeasure()
 	 * @generated
 	 */
-	int LOGISTIC_MEASURE = 25;
+	int LOGISTIC_MEASURE = 27;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2704,7 +2958,7 @@ public interface EelPackage extends EPackage {
 	 * @see org.atlanmod.energy.estimation.metamodel.eel.impl.EelPackageImpl#getExponentialMeasure()
 	 * @generated
 	 */
-	int EXPONENTIAL_MEASURE = 26;
+	int EXPONENTIAL_MEASURE = 28;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2840,7 +3094,7 @@ public interface EelPackage extends EPackage {
 	 * @see org.atlanmod.energy.estimation.metamodel.eel.impl.EelPackageImpl#getTailMeasure()
 	 * @generated
 	 */
-	int TAIL_MEASURE = 27;
+	int TAIL_MEASURE = 29;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2967,7 +3221,7 @@ public interface EelPackage extends EPackage {
 	 * @see org.atlanmod.energy.estimation.metamodel.eel.impl.EelPackageImpl#getIntegrationMeasure()
 	 * @generated
 	 */
-	int INTEGRATION_MEASURE = 28;
+	int INTEGRATION_MEASURE = 30;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3121,7 +3375,7 @@ public interface EelPackage extends EPackage {
 	 * @see org.atlanmod.energy.estimation.metamodel.eel.impl.EelPackageImpl#getVisibility()
 	 * @generated
 	 */
-	int VISIBILITY = 29;
+	int VISIBILITY = 31;
 
 	/**
 	 * The meta object id for the '{@link org.atlanmod.energy.estimation.metamodel.eel.Type <em>Type</em>}' enum.
@@ -3131,7 +3385,7 @@ public interface EelPackage extends EPackage {
 	 * @see org.atlanmod.energy.estimation.metamodel.eel.impl.EelPackageImpl#getType()
 	 * @generated
 	 */
-	int TYPE = 30;
+	int TYPE = 32;
 
 	/**
 	 * Returns the meta object for class '{@link org.atlanmod.energy.estimation.metamodel.eel.Platform <em>Platform</em>}'.
@@ -3654,6 +3908,26 @@ public interface EelPackage extends EPackage {
 	EOperation getMeasureUnboundSumOperation__Value();
 
 	/**
+	 * Returns the meta object for class '{@link org.atlanmod.energy.estimation.metamodel.eel.MeasureUnboundSubstractOperation <em>Measure Unbound Substract Operation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Measure Unbound Substract Operation</em>'.
+	 * @see org.atlanmod.energy.estimation.metamodel.eel.MeasureUnboundSubstractOperation
+	 * @generated
+	 */
+	EClass getMeasureUnboundSubstractOperation();
+
+	/**
+	 * Returns the meta object for the '{@link org.atlanmod.energy.estimation.metamodel.eel.MeasureUnboundSubstractOperation#value() <em>Value</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Value</em>' operation.
+	 * @see org.atlanmod.energy.estimation.metamodel.eel.MeasureUnboundSubstractOperation#value()
+	 * @generated
+	 */
+	EOperation getMeasureUnboundSubstractOperation__Value();
+
+	/**
 	 * Returns the meta object for class '{@link org.atlanmod.energy.estimation.metamodel.eel.MeasureUnboundProductOperation <em>Measure Unbound Product Operation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3672,6 +3946,26 @@ public interface EelPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getMeasureUnboundProductOperation__Value();
+
+	/**
+	 * Returns the meta object for class '{@link org.atlanmod.energy.estimation.metamodel.eel.MeasureUnboundDivisionOperation <em>Measure Unbound Division Operation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Measure Unbound Division Operation</em>'.
+	 * @see org.atlanmod.energy.estimation.metamodel.eel.MeasureUnboundDivisionOperation
+	 * @generated
+	 */
+	EClass getMeasureUnboundDivisionOperation();
+
+	/**
+	 * Returns the meta object for the '{@link org.atlanmod.energy.estimation.metamodel.eel.MeasureUnboundDivisionOperation#value() <em>Value</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Value</em>' operation.
+	 * @see org.atlanmod.energy.estimation.metamodel.eel.MeasureUnboundDivisionOperation#value()
+	 * @generated
+	 */
+	EOperation getMeasureUnboundDivisionOperation__Value();
 
 	/**
 	 * Returns the meta object for class '{@link org.atlanmod.energy.estimation.metamodel.eel.MeasurementUncertainty <em>Measurement Uncertainty</em>}'.
@@ -4478,6 +4772,24 @@ public interface EelPackage extends EPackage {
 		EOperation MEASURE_UNBOUND_SUM_OPERATION___VALUE = eINSTANCE.getMeasureUnboundSumOperation__Value();
 
 		/**
+		 * The meta object literal for the '{@link org.atlanmod.energy.estimation.metamodel.eel.impl.MeasureUnboundSubstractOperationImpl <em>Measure Unbound Substract Operation</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.atlanmod.energy.estimation.metamodel.eel.impl.MeasureUnboundSubstractOperationImpl
+		 * @see org.atlanmod.energy.estimation.metamodel.eel.impl.EelPackageImpl#getMeasureUnboundSubstractOperation()
+		 * @generated
+		 */
+		EClass MEASURE_UNBOUND_SUBSTRACT_OPERATION = eINSTANCE.getMeasureUnboundSubstractOperation();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation MEASURE_UNBOUND_SUBSTRACT_OPERATION___VALUE = eINSTANCE.getMeasureUnboundSubstractOperation__Value();
+
+		/**
 		 * The meta object literal for the '{@link org.atlanmod.energy.estimation.metamodel.eel.impl.MeasureUnboundProductOperationImpl <em>Measure Unbound Product Operation</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4494,6 +4806,24 @@ public interface EelPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation MEASURE_UNBOUND_PRODUCT_OPERATION___VALUE = eINSTANCE.getMeasureUnboundProductOperation__Value();
+
+		/**
+		 * The meta object literal for the '{@link org.atlanmod.energy.estimation.metamodel.eel.impl.MeasureUnboundDivisionOperationImpl <em>Measure Unbound Division Operation</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.atlanmod.energy.estimation.metamodel.eel.impl.MeasureUnboundDivisionOperationImpl
+		 * @see org.atlanmod.energy.estimation.metamodel.eel.impl.EelPackageImpl#getMeasureUnboundDivisionOperation()
+		 * @generated
+		 */
+		EClass MEASURE_UNBOUND_DIVISION_OPERATION = eINSTANCE.getMeasureUnboundDivisionOperation();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation MEASURE_UNBOUND_DIVISION_OPERATION___VALUE = eINSTANCE.getMeasureUnboundDivisionOperation__Value();
 
 		/**
 		 * The meta object literal for the '{@link org.atlanmod.energy.estimation.metamodel.eel.impl.MeasurementUncertaintyImpl <em>Measurement Uncertainty</em>}' class.

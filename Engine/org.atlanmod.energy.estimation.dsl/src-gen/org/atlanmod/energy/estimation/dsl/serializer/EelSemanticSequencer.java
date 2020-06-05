@@ -16,7 +16,9 @@ import org.atlanmod.energy.estimation.metamodel.eel.LogisticMeasure;
 import org.atlanmod.energy.estimation.metamodel.eel.MeasureAttribute;
 import org.atlanmod.energy.estimation.metamodel.eel.MeasureCast;
 import org.atlanmod.energy.estimation.metamodel.eel.MeasureOCL;
+import org.atlanmod.energy.estimation.metamodel.eel.MeasureUnboundDivisionOperation;
 import org.atlanmod.energy.estimation.metamodel.eel.MeasureUnboundProductOperation;
+import org.atlanmod.energy.estimation.metamodel.eel.MeasureUnboundSubstractOperation;
 import org.atlanmod.energy.estimation.metamodel.eel.MeasureUnboundSumOperation;
 import org.atlanmod.energy.estimation.metamodel.eel.MeasureValue;
 import org.atlanmod.energy.estimation.metamodel.eel.MeasurementUncertainty;
@@ -128,8 +130,14 @@ public class EelSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			case EelPackage.MEASURE_OCL:
 				sequence_MeasureOCL(context, (MeasureOCL) semanticObject); 
 				return; 
+			case EelPackage.MEASURE_UNBOUND_DIVISION_OPERATION:
+				sequence_MeasureUnboundDivisionOperation(context, (MeasureUnboundDivisionOperation) semanticObject); 
+				return; 
 			case EelPackage.MEASURE_UNBOUND_PRODUCT_OPERATION:
 				sequence_MeasureUnboundProductOperation(context, (MeasureUnboundProductOperation) semanticObject); 
+				return; 
+			case EelPackage.MEASURE_UNBOUND_SUBSTRACT_OPERATION:
+				sequence_MeasureUnboundSubstractOperation(context, (MeasureUnboundSubstractOperation) semanticObject); 
 				return; 
 			case EelPackage.MEASURE_UNBOUND_SUM_OPERATION:
 				sequence_MeasureUnboundSumOperation(context, (MeasureUnboundSumOperation) semanticObject); 
@@ -562,6 +570,26 @@ public class EelSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Contexts:
+	 *     Measure returns MeasureUnboundDivisionOperation
+	 *     MeasureUnboundDivisionOperation returns MeasureUnboundDivisionOperation
+	 *
+	 * Constraint:
+	 *     (
+	 *         post?='post'? 
+	 *         targetClass=EString 
+	 *         targetOperation=EString? 
+	 *         (type=Type | subname=EString) 
+	 *         measures+=[Measure|EString] 
+	 *         measures+=[Measure|EString]+
+	 *     )
+	 */
+	protected void sequence_MeasureUnboundDivisionOperation(ISerializationContext context, MeasureUnboundDivisionOperation semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     Measure returns MeasureUnboundProductOperation
 	 *     MeasureUnboundProductOperation returns MeasureUnboundProductOperation
 	 *
@@ -576,6 +604,26 @@ public class EelSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     )
 	 */
 	protected void sequence_MeasureUnboundProductOperation(ISerializationContext context, MeasureUnboundProductOperation semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Measure returns MeasureUnboundSubstractOperation
+	 *     MeasureUnboundSubstractOperation returns MeasureUnboundSubstractOperation
+	 *
+	 * Constraint:
+	 *     (
+	 *         post?='post'? 
+	 *         targetClass=EString 
+	 *         targetOperation=EString? 
+	 *         (type=Type | subname=EString) 
+	 *         measures+=[Measure|EString] 
+	 *         measures+=[Measure|EString]+
+	 *     )
+	 */
+	protected void sequence_MeasureUnboundSubstractOperation(ISerializationContext context, MeasureUnboundSubstractOperation semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

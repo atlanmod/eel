@@ -130,6 +130,15 @@ public interface EelFactory extends EFactory {
 	MeasureUnboundSumOperation createMeasureUnboundSumOperation();
 
 	/**
+	 * Returns a new object of class '<em>Measure Unbound Substract Operation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Measure Unbound Substract Operation</em>'.
+	 * @generated
+	 */
+	MeasureUnboundSubstractOperation createMeasureUnboundSubstractOperation();
+
+	/**
 	 * Returns a new object of class '<em>Measure Unbound Product Operation</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -137,6 +146,15 @@ public interface EelFactory extends EFactory {
 	 * @generated
 	 */
 	MeasureUnboundProductOperation createMeasureUnboundProductOperation();
+
+	/**
+	 * Returns a new object of class '<em>Measure Unbound Division Operation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Measure Unbound Division Operation</em>'.
+	 * @generated
+	 */
+	MeasureUnboundDivisionOperation createMeasureUnboundDivisionOperation();
 
 	/**
 	 * Returns a new object of class '<em>Measurement Uncertainty</em>'.

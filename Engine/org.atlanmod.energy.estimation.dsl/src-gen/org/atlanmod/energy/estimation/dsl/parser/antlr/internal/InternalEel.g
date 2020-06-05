@@ -305,20 +305,38 @@ ruleMeasure returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getMeasureAccess().getRealTimeDurationParserRuleCall_6());
+			newCompositeNode(grammarAccess.getMeasureAccess().getMeasureUnboundDivisionOperationParserRuleCall_6());
 		}
-		this_RealTimeDuration_6=ruleRealTimeDuration
+		this_MeasureUnboundDivisionOperation_6=ruleMeasureUnboundDivisionOperation
 		{
-			$current = $this_RealTimeDuration_6.current;
+			$current = $this_MeasureUnboundDivisionOperation_6.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getMeasureAccess().getCompositeMeasureParserRuleCall_7());
+			newCompositeNode(grammarAccess.getMeasureAccess().getMeasureUnboundSubstractOperationParserRuleCall_7());
 		}
-		this_CompositeMeasure_7=ruleCompositeMeasure
+		this_MeasureUnboundSubstractOperation_7=ruleMeasureUnboundSubstractOperation
 		{
-			$current = $this_CompositeMeasure_7.current;
+			$current = $this_MeasureUnboundSubstractOperation_7.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getMeasureAccess().getRealTimeDurationParserRuleCall_8());
+		}
+		this_RealTimeDuration_8=ruleRealTimeDuration
+		{
+			$current = $this_RealTimeDuration_8.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getMeasureAccess().getCompositeMeasureParserRuleCall_9());
+		}
+		this_CompositeMeasure_9=ruleCompositeMeasure
+		{
+			$current = $this_CompositeMeasure_9.current;
 			afterParserOrEnumRuleCall();
 		}
 	)
@@ -1468,6 +1486,177 @@ ruleMeasureUnboundSumOperation returns [EObject current=null]
 	)
 ;
 
+// Entry rule entryRuleMeasureUnboundSubstractOperation
+entryRuleMeasureUnboundSubstractOperation returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getMeasureUnboundSubstractOperationRule()); }
+	iv_ruleMeasureUnboundSubstractOperation=ruleMeasureUnboundSubstractOperation
+	{ $current=$iv_ruleMeasureUnboundSubstractOperation.current; }
+	EOF;
+
+// Rule MeasureUnboundSubstractOperation
+ruleMeasureUnboundSubstractOperation returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getMeasureUnboundSubstractOperationAccess().getMeasureUnboundSubstractOperationAction_0(),
+					$current);
+			}
+		)
+		(
+			(
+				lv_post_1_0='post'
+				{
+					newLeafNode(lv_post_1_0, grammarAccess.getMeasureUnboundSubstractOperationAccess().getPostPostKeyword_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getMeasureUnboundSubstractOperationRule());
+					}
+					setWithLastConsumed($current, "post", true, "post");
+				}
+			)
+		)?
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getMeasureUnboundSubstractOperationAccess().getTargetClassEStringParserRuleCall_2_0());
+				}
+				lv_targetClass_2_0=ruleEString
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getMeasureUnboundSubstractOperationRule());
+					}
+					set(
+						$current,
+						"targetClass",
+						lv_targetClass_2_0,
+						"org.atlanmod.energy.estimation.dsl.Eel.EString");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			otherlv_3='#'
+			{
+				newLeafNode(otherlv_3, grammarAccess.getMeasureUnboundSubstractOperationAccess().getNumberSignKeyword_3_0());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getMeasureUnboundSubstractOperationAccess().getTargetOperationEStringParserRuleCall_3_1_0());
+					}
+					lv_targetOperation_4_0=ruleEString
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getMeasureUnboundSubstractOperationRule());
+						}
+						set(
+							$current,
+							"targetOperation",
+							lv_targetOperation_4_0,
+							"org.atlanmod.energy.estimation.dsl.Eel.EString");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)?
+		otherlv_5='.'
+		{
+			newLeafNode(otherlv_5, grammarAccess.getMeasureUnboundSubstractOperationAccess().getFullStopKeyword_4());
+		}
+		(
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getMeasureUnboundSubstractOperationAccess().getTypeTypeEnumRuleCall_5_0_0());
+					}
+					lv_type_6_0=ruleType
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getMeasureUnboundSubstractOperationRule());
+						}
+						set(
+							$current,
+							"type",
+							lv_type_6_0,
+							"org.atlanmod.energy.estimation.dsl.Eel.Type");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+			    |
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getMeasureUnboundSubstractOperationAccess().getSubnameEStringParserRuleCall_5_1_0());
+					}
+					lv_subname_7_0=ruleEString
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getMeasureUnboundSubstractOperationRule());
+						}
+						set(
+							$current,
+							"subname",
+							lv_subname_7_0,
+							"org.atlanmod.energy.estimation.dsl.Eel.EString");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)
+		otherlv_8='='
+		{
+			newLeafNode(otherlv_8, grammarAccess.getMeasureUnboundSubstractOperationAccess().getEqualsSignKeyword_6());
+		}
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getMeasureUnboundSubstractOperationRule());
+					}
+				}
+				{
+					newCompositeNode(grammarAccess.getMeasureUnboundSubstractOperationAccess().getMeasuresMeasureCrossReference_7_0());
+				}
+				ruleEString
+				{
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			otherlv_10='-'
+			{
+				newLeafNode(otherlv_10, grammarAccess.getMeasureUnboundSubstractOperationAccess().getHyphenMinusKeyword_8_0());
+			}
+			(
+				(
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getMeasureUnboundSubstractOperationRule());
+						}
+					}
+					{
+						newCompositeNode(grammarAccess.getMeasureUnboundSubstractOperationAccess().getMeasuresMeasureCrossReference_8_1_0());
+					}
+					ruleEString
+					{
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)+
+	)
+;
+
 // Entry rule entryRuleMeasureUnboundProductOperation
 entryRuleMeasureUnboundProductOperation returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getMeasureUnboundProductOperationRule()); }
@@ -1628,6 +1817,177 @@ ruleMeasureUnboundProductOperation returns [EObject current=null]
 					}
 					{
 						newCompositeNode(grammarAccess.getMeasureUnboundProductOperationAccess().getMeasuresMeasureCrossReference_8_1_0());
+					}
+					ruleEString
+					{
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)+
+	)
+;
+
+// Entry rule entryRuleMeasureUnboundDivisionOperation
+entryRuleMeasureUnboundDivisionOperation returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getMeasureUnboundDivisionOperationRule()); }
+	iv_ruleMeasureUnboundDivisionOperation=ruleMeasureUnboundDivisionOperation
+	{ $current=$iv_ruleMeasureUnboundDivisionOperation.current; }
+	EOF;
+
+// Rule MeasureUnboundDivisionOperation
+ruleMeasureUnboundDivisionOperation returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getMeasureUnboundDivisionOperationAccess().getMeasureUnboundDivisionOperationAction_0(),
+					$current);
+			}
+		)
+		(
+			(
+				lv_post_1_0='post'
+				{
+					newLeafNode(lv_post_1_0, grammarAccess.getMeasureUnboundDivisionOperationAccess().getPostPostKeyword_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getMeasureUnboundDivisionOperationRule());
+					}
+					setWithLastConsumed($current, "post", true, "post");
+				}
+			)
+		)?
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getMeasureUnboundDivisionOperationAccess().getTargetClassEStringParserRuleCall_2_0());
+				}
+				lv_targetClass_2_0=ruleEString
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getMeasureUnboundDivisionOperationRule());
+					}
+					set(
+						$current,
+						"targetClass",
+						lv_targetClass_2_0,
+						"org.atlanmod.energy.estimation.dsl.Eel.EString");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			otherlv_3='#'
+			{
+				newLeafNode(otherlv_3, grammarAccess.getMeasureUnboundDivisionOperationAccess().getNumberSignKeyword_3_0());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getMeasureUnboundDivisionOperationAccess().getTargetOperationEStringParserRuleCall_3_1_0());
+					}
+					lv_targetOperation_4_0=ruleEString
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getMeasureUnboundDivisionOperationRule());
+						}
+						set(
+							$current,
+							"targetOperation",
+							lv_targetOperation_4_0,
+							"org.atlanmod.energy.estimation.dsl.Eel.EString");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)?
+		otherlv_5='.'
+		{
+			newLeafNode(otherlv_5, grammarAccess.getMeasureUnboundDivisionOperationAccess().getFullStopKeyword_4());
+		}
+		(
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getMeasureUnboundDivisionOperationAccess().getTypeTypeEnumRuleCall_5_0_0());
+					}
+					lv_type_6_0=ruleType
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getMeasureUnboundDivisionOperationRule());
+						}
+						set(
+							$current,
+							"type",
+							lv_type_6_0,
+							"org.atlanmod.energy.estimation.dsl.Eel.Type");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+			    |
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getMeasureUnboundDivisionOperationAccess().getSubnameEStringParserRuleCall_5_1_0());
+					}
+					lv_subname_7_0=ruleEString
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getMeasureUnboundDivisionOperationRule());
+						}
+						set(
+							$current,
+							"subname",
+							lv_subname_7_0,
+							"org.atlanmod.energy.estimation.dsl.Eel.EString");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)
+		otherlv_8='='
+		{
+			newLeafNode(otherlv_8, grammarAccess.getMeasureUnboundDivisionOperationAccess().getEqualsSignKeyword_6());
+		}
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getMeasureUnboundDivisionOperationRule());
+					}
+				}
+				{
+					newCompositeNode(grammarAccess.getMeasureUnboundDivisionOperationAccess().getMeasuresMeasureCrossReference_7_0());
+				}
+				ruleEString
+				{
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			otherlv_10='/'
+			{
+				newLeafNode(otherlv_10, grammarAccess.getMeasureUnboundDivisionOperationAccess().getSolidusKeyword_8_0());
+			}
+			(
+				(
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getMeasureUnboundDivisionOperationRule());
+						}
+					}
+					{
+						newCompositeNode(grammarAccess.getMeasureUnboundDivisionOperationAccess().getMeasuresMeasureCrossReference_8_1_0());
 					}
 					ruleEString
 					{

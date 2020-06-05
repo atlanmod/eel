@@ -181,7 +181,13 @@ public class SampleItemProvider extends ItemProviderAdapter implements IEditingD
 				EelFactory.eINSTANCE.createMeasureUnboundSumOperation()));
 
 		newChildDescriptors.add(createChildParameter(EelPackage.Literals.SAMPLE__QUANTITY,
+				EelFactory.eINSTANCE.createMeasureUnboundSubstractOperation()));
+
+		newChildDescriptors.add(createChildParameter(EelPackage.Literals.SAMPLE__QUANTITY,
 				EelFactory.eINSTANCE.createMeasureUnboundProductOperation()));
+
+		newChildDescriptors.add(createChildParameter(EelPackage.Literals.SAMPLE__QUANTITY,
+				EelFactory.eINSTANCE.createMeasureUnboundDivisionOperation()));
 
 		newChildDescriptors.add(createChildParameter(EelPackage.Literals.SAMPLE__QUANTITY,
 				EelFactory.eINSTANCE.createCompositeMeasure()));

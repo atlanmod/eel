@@ -349,6 +349,29 @@ public class EelItemProviderAdapterFactory extends EelAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.atlanmod.energy.estimation.metamodel.eel.MeasureUnboundSubstractOperation} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected MeasureUnboundSubstractOperationItemProvider measureUnboundSubstractOperationItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.atlanmod.energy.estimation.metamodel.eel.MeasureUnboundSubstractOperation}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createMeasureUnboundSubstractOperationAdapter() {
+		if (measureUnboundSubstractOperationItemProvider == null) {
+			measureUnboundSubstractOperationItemProvider = new MeasureUnboundSubstractOperationItemProvider(this);
+		}
+
+		return measureUnboundSubstractOperationItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link org.atlanmod.energy.estimation.metamodel.eel.MeasureUnboundProductOperation} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -369,6 +392,29 @@ public class EelItemProviderAdapterFactory extends EelAdapterFactory
 		}
 
 		return measureUnboundProductOperationItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.atlanmod.energy.estimation.metamodel.eel.MeasureUnboundDivisionOperation} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected MeasureUnboundDivisionOperationItemProvider measureUnboundDivisionOperationItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.atlanmod.energy.estimation.metamodel.eel.MeasureUnboundDivisionOperation}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createMeasureUnboundDivisionOperationAdapter() {
+		if (measureUnboundDivisionOperationItemProvider == null) {
+			measureUnboundDivisionOperationItemProvider = new MeasureUnboundDivisionOperationItemProvider(this);
+		}
+
+		return measureUnboundDivisionOperationItemProvider;
 	}
 
 	/**
@@ -724,8 +770,12 @@ public class EelItemProviderAdapterFactory extends EelAdapterFactory
 			realTimeDurationItemProvider.dispose();
 		if (measureUnboundSumOperationItemProvider != null)
 			measureUnboundSumOperationItemProvider.dispose();
+		if (measureUnboundSubstractOperationItemProvider != null)
+			measureUnboundSubstractOperationItemProvider.dispose();
 		if (measureUnboundProductOperationItemProvider != null)
 			measureUnboundProductOperationItemProvider.dispose();
+		if (measureUnboundDivisionOperationItemProvider != null)
+			measureUnboundDivisionOperationItemProvider.dispose();
 		if (measurementUncertaintyItemProvider != null)
 			measurementUncertaintyItemProvider.dispose();
 		if (normalDistributionItemProvider != null)

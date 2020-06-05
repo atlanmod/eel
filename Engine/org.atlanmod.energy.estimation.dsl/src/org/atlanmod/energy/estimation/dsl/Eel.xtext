@@ -15,7 +15,7 @@ Platform returns Platform:
 	'}';
 
 Measure returns Measure:
-	MeasureValue_Impl  | MeasureOCL | MeasureAttribute | MeasureCast | MeasureUnboundProductOperation | MeasureUnboundSumOperation | RealTimeDuration | CompositeMeasure /*| MeasureUnboundSumOperation | MeasureUnboundProductOperation */ ;
+	MeasureValue_Impl  | MeasureOCL | MeasureAttribute | MeasureCast | MeasureUnboundProductOperation | MeasureUnboundSumOperation | MeasureUnboundDivisionOperation | MeasureUnboundSubstractOperation | RealTimeDuration | CompositeMeasure /*| MeasureUnboundSumOperation | MeasureUnboundProductOperation */ ;
 
 CompositeMeasure returns CompositeMeasure:
 	ExponentialMeasure | LogisticMeasure | IntegrationMeasure
@@ -81,9 +81,19 @@ MeasureUnboundSumOperation returns MeasureUnboundSumOperation:
 	(post ?= 'post')? targetClass=EString ('#' targetOperation=EString)? ('.') (type=Type | subname = EString) "="  measures+=[Measure|EString] ('+' measures+=[Measure|EString])+ 		
 ;
 
+MeasureUnboundSubstractOperation returns MeasureUnboundSubstractOperation:
+	{MeasureUnboundSubstractOperation}
+	(post ?= 'post')? targetClass=EString ('#' targetOperation=EString)? ('.') (type=Type | subname = EString) "="  measures+=[Measure|EString] ('-' measures+=[Measure|EString])+ 		
+;
+
 MeasureUnboundProductOperation returns MeasureUnboundProductOperation:
 	{MeasureUnboundProductOperation}
 	(post ?= 'post')? targetClass=EString ('#' targetOperation=EString)? ('.') (type=Type | subname = EString) "="  measures+=[Measure|EString] ('*' measures+=[Measure|EString])+ 		
+;
+
+MeasureUnboundDivisionOperation returns MeasureUnboundDivisionOperation:
+	{MeasureUnboundDivisionOperation}
+	(post ?= 'post')? targetClass=EString ('#' targetOperation=EString)? ('.') (type=Type | subname = EString) "="  measures+=[Measure|EString] ('/' measures+=[Measure|EString])+ 		
 ;
 
 ExponentialMeasure returns ExponentialMeasure:

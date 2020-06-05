@@ -157,17 +157,20 @@ public class EelGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cMeasureCastParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
 		private final RuleCall cMeasureUnboundProductOperationParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
 		private final RuleCall cMeasureUnboundSumOperationParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
-		private final RuleCall cRealTimeDurationParserRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
-		private final RuleCall cCompositeMeasureParserRuleCall_7 = (RuleCall)cAlternatives.eContents().get(7);
+		private final RuleCall cMeasureUnboundDivisionOperationParserRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
+		private final RuleCall cMeasureUnboundSubstractOperationParserRuleCall_7 = (RuleCall)cAlternatives.eContents().get(7);
+		private final RuleCall cRealTimeDurationParserRuleCall_8 = (RuleCall)cAlternatives.eContents().get(8);
+		private final RuleCall cCompositeMeasureParserRuleCall_9 = (RuleCall)cAlternatives.eContents().get(9);
 		
 		//Measure:
 		//	MeasureValue_Impl | MeasureOCL | MeasureAttribute | MeasureCast | MeasureUnboundProductOperation |
-		//	MeasureUnboundSumOperation | RealTimeDuration | CompositeMeasure
-		//	/*| MeasureUnboundSumOperation | MeasureUnboundProductOperation */;
+		//	MeasureUnboundSumOperation | MeasureUnboundDivisionOperation | MeasureUnboundSubstractOperation | RealTimeDuration |
+		//	CompositeMeasure /*| MeasureUnboundSumOperation | MeasureUnboundProductOperation */;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//MeasureValue_Impl | MeasureOCL | MeasureAttribute | MeasureCast | MeasureUnboundProductOperation |
-		//MeasureUnboundSumOperation | RealTimeDuration | CompositeMeasure
+		//MeasureUnboundSumOperation | MeasureUnboundDivisionOperation | MeasureUnboundSubstractOperation | RealTimeDuration |
+		//CompositeMeasure
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//MeasureValue_Impl
@@ -188,11 +191,17 @@ public class EelGrammarAccess extends AbstractGrammarElementFinder {
 		//MeasureUnboundSumOperation
 		public RuleCall getMeasureUnboundSumOperationParserRuleCall_5() { return cMeasureUnboundSumOperationParserRuleCall_5; }
 		
+		//MeasureUnboundDivisionOperation
+		public RuleCall getMeasureUnboundDivisionOperationParserRuleCall_6() { return cMeasureUnboundDivisionOperationParserRuleCall_6; }
+		
+		//MeasureUnboundSubstractOperation
+		public RuleCall getMeasureUnboundSubstractOperationParserRuleCall_7() { return cMeasureUnboundSubstractOperationParserRuleCall_7; }
+		
 		//RealTimeDuration
-		public RuleCall getRealTimeDurationParserRuleCall_6() { return cRealTimeDurationParserRuleCall_6; }
+		public RuleCall getRealTimeDurationParserRuleCall_8() { return cRealTimeDurationParserRuleCall_8; }
 		
 		//CompositeMeasure
-		public RuleCall getCompositeMeasureParserRuleCall_7() { return cCompositeMeasureParserRuleCall_7; }
+		public RuleCall getCompositeMeasureParserRuleCall_9() { return cCompositeMeasureParserRuleCall_9; }
 	}
 	public class CompositeMeasureElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.atlanmod.energy.estimation.dsl.Eel.CompositeMeasure");
@@ -861,6 +870,115 @@ public class EelGrammarAccess extends AbstractGrammarElementFinder {
 		//EString
 		public RuleCall getMeasuresMeasureEStringParserRuleCall_8_1_0_1() { return cMeasuresMeasureEStringParserRuleCall_8_1_0_1; }
 	}
+	public class MeasureUnboundSubstractOperationElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.atlanmod.energy.estimation.dsl.Eel.MeasureUnboundSubstractOperation");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cMeasureUnboundSubstractOperationAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cPostAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final Keyword cPostPostKeyword_1_0 = (Keyword)cPostAssignment_1.eContents().get(0);
+		private final Assignment cTargetClassAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cTargetClassEStringParserRuleCall_2_0 = (RuleCall)cTargetClassAssignment_2.eContents().get(0);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Keyword cNumberSignKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Assignment cTargetOperationAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final RuleCall cTargetOperationEStringParserRuleCall_3_1_0 = (RuleCall)cTargetOperationAssignment_3_1.eContents().get(0);
+		private final Keyword cFullStopKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Alternatives cAlternatives_5 = (Alternatives)cGroup.eContents().get(5);
+		private final Assignment cTypeAssignment_5_0 = (Assignment)cAlternatives_5.eContents().get(0);
+		private final RuleCall cTypeTypeEnumRuleCall_5_0_0 = (RuleCall)cTypeAssignment_5_0.eContents().get(0);
+		private final Assignment cSubnameAssignment_5_1 = (Assignment)cAlternatives_5.eContents().get(1);
+		private final RuleCall cSubnameEStringParserRuleCall_5_1_0 = (RuleCall)cSubnameAssignment_5_1.eContents().get(0);
+		private final Keyword cEqualsSignKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Assignment cMeasuresAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final CrossReference cMeasuresMeasureCrossReference_7_0 = (CrossReference)cMeasuresAssignment_7.eContents().get(0);
+		private final RuleCall cMeasuresMeasureEStringParserRuleCall_7_0_1 = (RuleCall)cMeasuresMeasureCrossReference_7_0.eContents().get(1);
+		private final Group cGroup_8 = (Group)cGroup.eContents().get(8);
+		private final Keyword cHyphenMinusKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
+		private final Assignment cMeasuresAssignment_8_1 = (Assignment)cGroup_8.eContents().get(1);
+		private final CrossReference cMeasuresMeasureCrossReference_8_1_0 = (CrossReference)cMeasuresAssignment_8_1.eContents().get(0);
+		private final RuleCall cMeasuresMeasureEStringParserRuleCall_8_1_0_1 = (RuleCall)cMeasuresMeasureCrossReference_8_1_0.eContents().get(1);
+		
+		//MeasureUnboundSubstractOperation:
+		//	{MeasureUnboundSubstractOperation} post?='post'? targetClass=EString ('#' targetOperation=EString)? '.' (type=Type |
+		//	subname=EString) "=" measures+=[Measure|EString] ('-' measures+=[Measure|EString])+;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{MeasureUnboundSubstractOperation} post?='post'? targetClass=EString ('#' targetOperation=EString)? '.' (type=Type |
+		//subname=EString) "=" measures+=[Measure|EString] ('-' measures+=[Measure|EString])+
+		public Group getGroup() { return cGroup; }
+		
+		//{MeasureUnboundSubstractOperation}
+		public Action getMeasureUnboundSubstractOperationAction_0() { return cMeasureUnboundSubstractOperationAction_0; }
+		
+		//post?='post'?
+		public Assignment getPostAssignment_1() { return cPostAssignment_1; }
+		
+		//'post'
+		public Keyword getPostPostKeyword_1_0() { return cPostPostKeyword_1_0; }
+		
+		//targetClass=EString
+		public Assignment getTargetClassAssignment_2() { return cTargetClassAssignment_2; }
+		
+		//EString
+		public RuleCall getTargetClassEStringParserRuleCall_2_0() { return cTargetClassEStringParserRuleCall_2_0; }
+		
+		//('#' targetOperation=EString)?
+		public Group getGroup_3() { return cGroup_3; }
+		
+		//'#'
+		public Keyword getNumberSignKeyword_3_0() { return cNumberSignKeyword_3_0; }
+		
+		//targetOperation=EString
+		public Assignment getTargetOperationAssignment_3_1() { return cTargetOperationAssignment_3_1; }
+		
+		//EString
+		public RuleCall getTargetOperationEStringParserRuleCall_3_1_0() { return cTargetOperationEStringParserRuleCall_3_1_0; }
+		
+		//'.'
+		public Keyword getFullStopKeyword_4() { return cFullStopKeyword_4; }
+		
+		//type=Type | subname=EString
+		public Alternatives getAlternatives_5() { return cAlternatives_5; }
+		
+		//type=Type
+		public Assignment getTypeAssignment_5_0() { return cTypeAssignment_5_0; }
+		
+		//Type
+		public RuleCall getTypeTypeEnumRuleCall_5_0_0() { return cTypeTypeEnumRuleCall_5_0_0; }
+		
+		//subname=EString
+		public Assignment getSubnameAssignment_5_1() { return cSubnameAssignment_5_1; }
+		
+		//EString
+		public RuleCall getSubnameEStringParserRuleCall_5_1_0() { return cSubnameEStringParserRuleCall_5_1_0; }
+		
+		//"="
+		public Keyword getEqualsSignKeyword_6() { return cEqualsSignKeyword_6; }
+		
+		//measures+=[Measure|EString]
+		public Assignment getMeasuresAssignment_7() { return cMeasuresAssignment_7; }
+		
+		//[Measure|EString]
+		public CrossReference getMeasuresMeasureCrossReference_7_0() { return cMeasuresMeasureCrossReference_7_0; }
+		
+		//EString
+		public RuleCall getMeasuresMeasureEStringParserRuleCall_7_0_1() { return cMeasuresMeasureEStringParserRuleCall_7_0_1; }
+		
+		//('-' measures+=[Measure|EString])+
+		public Group getGroup_8() { return cGroup_8; }
+		
+		//'-'
+		public Keyword getHyphenMinusKeyword_8_0() { return cHyphenMinusKeyword_8_0; }
+		
+		//measures+=[Measure|EString]
+		public Assignment getMeasuresAssignment_8_1() { return cMeasuresAssignment_8_1; }
+		
+		//[Measure|EString]
+		public CrossReference getMeasuresMeasureCrossReference_8_1_0() { return cMeasuresMeasureCrossReference_8_1_0; }
+		
+		//EString
+		public RuleCall getMeasuresMeasureEStringParserRuleCall_8_1_0_1() { return cMeasuresMeasureEStringParserRuleCall_8_1_0_1; }
+	}
 	public class MeasureUnboundProductOperationElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.atlanmod.energy.estimation.dsl.Eel.MeasureUnboundProductOperation");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -960,6 +1078,115 @@ public class EelGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//'*'
 		public Keyword getAsteriskKeyword_8_0() { return cAsteriskKeyword_8_0; }
+		
+		//measures+=[Measure|EString]
+		public Assignment getMeasuresAssignment_8_1() { return cMeasuresAssignment_8_1; }
+		
+		//[Measure|EString]
+		public CrossReference getMeasuresMeasureCrossReference_8_1_0() { return cMeasuresMeasureCrossReference_8_1_0; }
+		
+		//EString
+		public RuleCall getMeasuresMeasureEStringParserRuleCall_8_1_0_1() { return cMeasuresMeasureEStringParserRuleCall_8_1_0_1; }
+	}
+	public class MeasureUnboundDivisionOperationElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.atlanmod.energy.estimation.dsl.Eel.MeasureUnboundDivisionOperation");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cMeasureUnboundDivisionOperationAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cPostAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final Keyword cPostPostKeyword_1_0 = (Keyword)cPostAssignment_1.eContents().get(0);
+		private final Assignment cTargetClassAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cTargetClassEStringParserRuleCall_2_0 = (RuleCall)cTargetClassAssignment_2.eContents().get(0);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Keyword cNumberSignKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Assignment cTargetOperationAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final RuleCall cTargetOperationEStringParserRuleCall_3_1_0 = (RuleCall)cTargetOperationAssignment_3_1.eContents().get(0);
+		private final Keyword cFullStopKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Alternatives cAlternatives_5 = (Alternatives)cGroup.eContents().get(5);
+		private final Assignment cTypeAssignment_5_0 = (Assignment)cAlternatives_5.eContents().get(0);
+		private final RuleCall cTypeTypeEnumRuleCall_5_0_0 = (RuleCall)cTypeAssignment_5_0.eContents().get(0);
+		private final Assignment cSubnameAssignment_5_1 = (Assignment)cAlternatives_5.eContents().get(1);
+		private final RuleCall cSubnameEStringParserRuleCall_5_1_0 = (RuleCall)cSubnameAssignment_5_1.eContents().get(0);
+		private final Keyword cEqualsSignKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Assignment cMeasuresAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final CrossReference cMeasuresMeasureCrossReference_7_0 = (CrossReference)cMeasuresAssignment_7.eContents().get(0);
+		private final RuleCall cMeasuresMeasureEStringParserRuleCall_7_0_1 = (RuleCall)cMeasuresMeasureCrossReference_7_0.eContents().get(1);
+		private final Group cGroup_8 = (Group)cGroup.eContents().get(8);
+		private final Keyword cSolidusKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
+		private final Assignment cMeasuresAssignment_8_1 = (Assignment)cGroup_8.eContents().get(1);
+		private final CrossReference cMeasuresMeasureCrossReference_8_1_0 = (CrossReference)cMeasuresAssignment_8_1.eContents().get(0);
+		private final RuleCall cMeasuresMeasureEStringParserRuleCall_8_1_0_1 = (RuleCall)cMeasuresMeasureCrossReference_8_1_0.eContents().get(1);
+		
+		//MeasureUnboundDivisionOperation:
+		//	{MeasureUnboundDivisionOperation} post?='post'? targetClass=EString ('#' targetOperation=EString)? '.' (type=Type |
+		//	subname=EString) "=" measures+=[Measure|EString] ('/' measures+=[Measure|EString])+;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{MeasureUnboundDivisionOperation} post?='post'? targetClass=EString ('#' targetOperation=EString)? '.' (type=Type |
+		//subname=EString) "=" measures+=[Measure|EString] ('/' measures+=[Measure|EString])+
+		public Group getGroup() { return cGroup; }
+		
+		//{MeasureUnboundDivisionOperation}
+		public Action getMeasureUnboundDivisionOperationAction_0() { return cMeasureUnboundDivisionOperationAction_0; }
+		
+		//post?='post'?
+		public Assignment getPostAssignment_1() { return cPostAssignment_1; }
+		
+		//'post'
+		public Keyword getPostPostKeyword_1_0() { return cPostPostKeyword_1_0; }
+		
+		//targetClass=EString
+		public Assignment getTargetClassAssignment_2() { return cTargetClassAssignment_2; }
+		
+		//EString
+		public RuleCall getTargetClassEStringParserRuleCall_2_0() { return cTargetClassEStringParserRuleCall_2_0; }
+		
+		//('#' targetOperation=EString)?
+		public Group getGroup_3() { return cGroup_3; }
+		
+		//'#'
+		public Keyword getNumberSignKeyword_3_0() { return cNumberSignKeyword_3_0; }
+		
+		//targetOperation=EString
+		public Assignment getTargetOperationAssignment_3_1() { return cTargetOperationAssignment_3_1; }
+		
+		//EString
+		public RuleCall getTargetOperationEStringParserRuleCall_3_1_0() { return cTargetOperationEStringParserRuleCall_3_1_0; }
+		
+		//'.'
+		public Keyword getFullStopKeyword_4() { return cFullStopKeyword_4; }
+		
+		//type=Type | subname=EString
+		public Alternatives getAlternatives_5() { return cAlternatives_5; }
+		
+		//type=Type
+		public Assignment getTypeAssignment_5_0() { return cTypeAssignment_5_0; }
+		
+		//Type
+		public RuleCall getTypeTypeEnumRuleCall_5_0_0() { return cTypeTypeEnumRuleCall_5_0_0; }
+		
+		//subname=EString
+		public Assignment getSubnameAssignment_5_1() { return cSubnameAssignment_5_1; }
+		
+		//EString
+		public RuleCall getSubnameEStringParserRuleCall_5_1_0() { return cSubnameEStringParserRuleCall_5_1_0; }
+		
+		//"="
+		public Keyword getEqualsSignKeyword_6() { return cEqualsSignKeyword_6; }
+		
+		//measures+=[Measure|EString]
+		public Assignment getMeasuresAssignment_7() { return cMeasuresAssignment_7; }
+		
+		//[Measure|EString]
+		public CrossReference getMeasuresMeasureCrossReference_7_0() { return cMeasuresMeasureCrossReference_7_0; }
+		
+		//EString
+		public RuleCall getMeasuresMeasureEStringParserRuleCall_7_0_1() { return cMeasuresMeasureEStringParserRuleCall_7_0_1; }
+		
+		//('/' measures+=[Measure|EString])+
+		public Group getGroup_8() { return cGroup_8; }
+		
+		//'/'
+		public Keyword getSolidusKeyword_8_0() { return cSolidusKeyword_8_0; }
 		
 		//measures+=[Measure|EString]
 		public Assignment getMeasuresAssignment_8_1() { return cMeasuresAssignment_8_1; }
@@ -4442,7 +4669,9 @@ public class EelGrammarAccess extends AbstractGrammarElementFinder {
 	private final MeasureCastElements pMeasureCast;
 	private final RealTimeDurationElements pRealTimeDuration;
 	private final MeasureUnboundSumOperationElements pMeasureUnboundSumOperation;
+	private final MeasureUnboundSubstractOperationElements pMeasureUnboundSubstractOperation;
 	private final MeasureUnboundProductOperationElements pMeasureUnboundProductOperation;
+	private final MeasureUnboundDivisionOperationElements pMeasureUnboundDivisionOperation;
 	private final ExponentialMeasureElements pExponentialMeasure;
 	private final LogisticMeasureElements pLogisticMeasure;
 	private final IntegrationMeasureElements pIntegrationMeasure;
@@ -4494,7 +4723,9 @@ public class EelGrammarAccess extends AbstractGrammarElementFinder {
 		this.pMeasureCast = new MeasureCastElements();
 		this.pRealTimeDuration = new RealTimeDurationElements();
 		this.pMeasureUnboundSumOperation = new MeasureUnboundSumOperationElements();
+		this.pMeasureUnboundSubstractOperation = new MeasureUnboundSubstractOperationElements();
 		this.pMeasureUnboundProductOperation = new MeasureUnboundProductOperationElements();
+		this.pMeasureUnboundDivisionOperation = new MeasureUnboundDivisionOperationElements();
 		this.pExponentialMeasure = new ExponentialMeasureElements();
 		this.pLogisticMeasure = new LogisticMeasureElements();
 		this.pIntegrationMeasure = new IntegrationMeasureElements();
@@ -4567,8 +4798,8 @@ public class EelGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//Measure:
 	//	MeasureValue_Impl | MeasureOCL | MeasureAttribute | MeasureCast | MeasureUnboundProductOperation |
-	//	MeasureUnboundSumOperation | RealTimeDuration | CompositeMeasure
-	//	/*| MeasureUnboundSumOperation | MeasureUnboundProductOperation */;
+	//	MeasureUnboundSumOperation | MeasureUnboundDivisionOperation | MeasureUnboundSubstractOperation | RealTimeDuration |
+	//	CompositeMeasure /*| MeasureUnboundSumOperation | MeasureUnboundProductOperation */;
 	public MeasureElements getMeasureAccess() {
 		return pMeasure;
 	}
@@ -4722,6 +4953,17 @@ public class EelGrammarAccess extends AbstractGrammarElementFinder {
 		return getMeasureUnboundSumOperationAccess().getRule();
 	}
 	
+	//MeasureUnboundSubstractOperation:
+	//	{MeasureUnboundSubstractOperation} post?='post'? targetClass=EString ('#' targetOperation=EString)? '.' (type=Type |
+	//	subname=EString) "=" measures+=[Measure|EString] ('-' measures+=[Measure|EString])+;
+	public MeasureUnboundSubstractOperationElements getMeasureUnboundSubstractOperationAccess() {
+		return pMeasureUnboundSubstractOperation;
+	}
+	
+	public ParserRule getMeasureUnboundSubstractOperationRule() {
+		return getMeasureUnboundSubstractOperationAccess().getRule();
+	}
+	
 	//MeasureUnboundProductOperation:
 	//	{MeasureUnboundProductOperation} post?='post'? targetClass=EString ('#' targetOperation=EString)? '.' (type=Type |
 	//	subname=EString) "=" measures+=[Measure|EString] ('*' measures+=[Measure|EString])+;
@@ -4731,6 +4973,17 @@ public class EelGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getMeasureUnboundProductOperationRule() {
 		return getMeasureUnboundProductOperationAccess().getRule();
+	}
+	
+	//MeasureUnboundDivisionOperation:
+	//	{MeasureUnboundDivisionOperation} post?='post'? targetClass=EString ('#' targetOperation=EString)? '.' (type=Type |
+	//	subname=EString) "=" measures+=[Measure|EString] ('/' measures+=[Measure|EString])+;
+	public MeasureUnboundDivisionOperationElements getMeasureUnboundDivisionOperationAccess() {
+		return pMeasureUnboundDivisionOperation;
+	}
+	
+	public ParserRule getMeasureUnboundDivisionOperationRule() {
+		return getMeasureUnboundDivisionOperationAccess().getRule();
 	}
 	
 	//ExponentialMeasure:

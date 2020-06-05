@@ -174,7 +174,13 @@ public class IntervalItemProvider extends MeasurementUncertaintyInformationItemP
 				EelFactory.eINSTANCE.createMeasureUnboundSumOperation()));
 
 		newChildDescriptors.add(createChildParameter(EelPackage.Literals.INTERVAL__LOWER_ENDPOINT,
+				EelFactory.eINSTANCE.createMeasureUnboundSubstractOperation()));
+
+		newChildDescriptors.add(createChildParameter(EelPackage.Literals.INTERVAL__LOWER_ENDPOINT,
 				EelFactory.eINSTANCE.createMeasureUnboundProductOperation()));
+
+		newChildDescriptors.add(createChildParameter(EelPackage.Literals.INTERVAL__LOWER_ENDPOINT,
+				EelFactory.eINSTANCE.createMeasureUnboundDivisionOperation()));
 
 		newChildDescriptors.add(createChildParameter(EelPackage.Literals.INTERVAL__LOWER_ENDPOINT,
 				EelFactory.eINSTANCE.createCompositeMeasure()));
@@ -219,7 +225,13 @@ public class IntervalItemProvider extends MeasurementUncertaintyInformationItemP
 				EelFactory.eINSTANCE.createMeasureUnboundSumOperation()));
 
 		newChildDescriptors.add(createChildParameter(EelPackage.Literals.INTERVAL__UPPER_ENDPOINT,
+				EelFactory.eINSTANCE.createMeasureUnboundSubstractOperation()));
+
+		newChildDescriptors.add(createChildParameter(EelPackage.Literals.INTERVAL__UPPER_ENDPOINT,
 				EelFactory.eINSTANCE.createMeasureUnboundProductOperation()));
+
+		newChildDescriptors.add(createChildParameter(EelPackage.Literals.INTERVAL__UPPER_ENDPOINT,
+				EelFactory.eINSTANCE.createMeasureUnboundDivisionOperation()));
 
 		newChildDescriptors.add(createChildParameter(EelPackage.Literals.INTERVAL__UPPER_ENDPOINT,
 				EelFactory.eINSTANCE.createCompositeMeasure()));

@@ -80,8 +80,12 @@ public class EelFactoryImpl extends EFactoryImpl implements EelFactory {
 			return createRealTimeDuration();
 		case EelPackage.MEASURE_UNBOUND_SUM_OPERATION:
 			return createMeasureUnboundSumOperation();
+		case EelPackage.MEASURE_UNBOUND_SUBSTRACT_OPERATION:
+			return createMeasureUnboundSubstractOperation();
 		case EelPackage.MEASURE_UNBOUND_PRODUCT_OPERATION:
 			return createMeasureUnboundProductOperation();
+		case EelPackage.MEASURE_UNBOUND_DIVISION_OPERATION:
+			return createMeasureUnboundDivisionOperation();
 		case EelPackage.MEASUREMENT_UNCERTAINTY:
 			return createMeasurementUncertainty();
 		case EelPackage.NORMAL_DISTRIBUTION:
@@ -266,9 +270,29 @@ public class EelFactoryImpl extends EFactoryImpl implements EelFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public MeasureUnboundSubstractOperation createMeasureUnboundSubstractOperation() {
+		MeasureUnboundSubstractOperationImpl measureUnboundSubstractOperation = new MeasureUnboundSubstractOperationImpl();
+		return measureUnboundSubstractOperation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public MeasureUnboundProductOperation createMeasureUnboundProductOperation() {
 		MeasureUnboundProductOperationImpl measureUnboundProductOperation = new MeasureUnboundProductOperationImpl();
 		return measureUnboundProductOperation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MeasureUnboundDivisionOperation createMeasureUnboundDivisionOperation() {
+		MeasureUnboundDivisionOperationImpl measureUnboundDivisionOperation = new MeasureUnboundDivisionOperationImpl();
+		return measureUnboundDivisionOperation;
 	}
 
 	/**

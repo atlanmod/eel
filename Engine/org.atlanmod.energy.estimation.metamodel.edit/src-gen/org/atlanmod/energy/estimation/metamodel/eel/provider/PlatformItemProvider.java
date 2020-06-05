@@ -210,7 +210,13 @@ public class PlatformItemProvider extends ItemProviderAdapter implements IEditin
 				EelFactory.eINSTANCE.createMeasureUnboundSumOperation()));
 
 		newChildDescriptors.add(createChildParameter(EelPackage.Literals.PLATFORM__MEASURES,
+				EelFactory.eINSTANCE.createMeasureUnboundSubstractOperation()));
+
+		newChildDescriptors.add(createChildParameter(EelPackage.Literals.PLATFORM__MEASURES,
 				EelFactory.eINSTANCE.createMeasureUnboundProductOperation()));
+
+		newChildDescriptors.add(createChildParameter(EelPackage.Literals.PLATFORM__MEASURES,
+				EelFactory.eINSTANCE.createMeasureUnboundDivisionOperation()));
 
 		newChildDescriptors.add(createChildParameter(EelPackage.Literals.PLATFORM__MEASURES,
 				EelFactory.eINSTANCE.createCompositeMeasure()));

@@ -147,8 +147,18 @@ public class EelAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseMeasureUnboundSubstractOperation(MeasureUnboundSubstractOperation object) {
+			return createMeasureUnboundSubstractOperationAdapter();
+		}
+
+		@Override
 		public Adapter caseMeasureUnboundProductOperation(MeasureUnboundProductOperation object) {
 			return createMeasureUnboundProductOperationAdapter();
+		}
+
+		@Override
+		public Adapter caseMeasureUnboundDivisionOperation(MeasureUnboundDivisionOperation object) {
+			return createMeasureUnboundDivisionOperationAdapter();
 		}
 
 		@Override
@@ -455,6 +465,20 @@ public class EelAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link org.atlanmod.energy.estimation.metamodel.eel.MeasureUnboundSubstractOperation <em>Measure Unbound Substract Operation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.atlanmod.energy.estimation.metamodel.eel.MeasureUnboundSubstractOperation
+	 * @generated
+	 */
+	public Adapter createMeasureUnboundSubstractOperationAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link org.atlanmod.energy.estimation.metamodel.eel.MeasureUnboundProductOperation <em>Measure Unbound Product Operation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -465,6 +489,20 @@ public class EelAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createMeasureUnboundProductOperationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.atlanmod.energy.estimation.metamodel.eel.MeasureUnboundDivisionOperation <em>Measure Unbound Division Operation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.atlanmod.energy.estimation.metamodel.eel.MeasureUnboundDivisionOperation
+	 * @generated
+	 */
+	public Adapter createMeasureUnboundDivisionOperationAdapter() {
 		return null;
 	}
 

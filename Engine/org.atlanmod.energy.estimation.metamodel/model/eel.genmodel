@@ -90,8 +90,14 @@
     <genClasses ecoreClass="eel.ecore#//MeasureUnboundSumOperation">
       <genOperations ecoreOperation="eel.ecore#//MeasureUnboundSumOperation/value"/>
     </genClasses>
+    <genClasses ecoreClass="eel.ecore#//MeasureUnboundSubstractOperation">
+      <genOperations ecoreOperation="eel.ecore#//MeasureUnboundSubstractOperation/value"/>
+    </genClasses>
     <genClasses ecoreClass="eel.ecore#//MeasureUnboundProductOperation">
       <genOperations ecoreOperation="eel.ecore#//MeasureUnboundProductOperation/value"/>
+    </genClasses>
+    <genClasses ecoreClass="eel.ecore#//MeasureUnboundDivisionOperation">
+      <genOperations ecoreOperation="eel.ecore#//MeasureUnboundDivisionOperation/value"/>
     </genClasses>
     <genClasses ecoreClass="eel.ecore#//MeasurementUncertainty">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eel.ecore#//MeasurementUncertainty/information"/>
@@ -130,8 +136,8 @@
     <genClasses image="false" ecoreClass="eel.ecore#//TailMeasure"/>
     <genClasses ecoreClass="eel.ecore#//IntegrationMeasure">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eel.ecore#//IntegrationMeasure/function"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eel.ecore#//IntegrationMeasure/leftBound"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eel.ecore#//IntegrationMeasure/rightBound"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference eel.ecore#//IntegrationMeasure/leftBound"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference eel.ecore#//IntegrationMeasure/rightBound"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

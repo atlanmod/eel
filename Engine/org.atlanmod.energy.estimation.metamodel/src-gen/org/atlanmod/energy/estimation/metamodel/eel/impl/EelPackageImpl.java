@@ -18,8 +18,10 @@ import org.atlanmod.energy.estimation.metamodel.eel.MeasureBinaryProductOperatio
 import org.atlanmod.energy.estimation.metamodel.eel.MeasureBinarySumOperation;
 import org.atlanmod.energy.estimation.metamodel.eel.MeasureCast;
 import org.atlanmod.energy.estimation.metamodel.eel.MeasureOCL;
+import org.atlanmod.energy.estimation.metamodel.eel.MeasureUnboundDivisionOperation;
 import org.atlanmod.energy.estimation.metamodel.eel.MeasureUnboundOperation;
 import org.atlanmod.energy.estimation.metamodel.eel.MeasureUnboundProductOperation;
+import org.atlanmod.energy.estimation.metamodel.eel.MeasureUnboundSubstractOperation;
 import org.atlanmod.energy.estimation.metamodel.eel.MeasureUnboundSumOperation;
 import org.atlanmod.energy.estimation.metamodel.eel.MeasureValue;
 import org.atlanmod.energy.estimation.metamodel.eel.MeasurementUncertainty;
@@ -169,7 +171,21 @@ public class EelPackageImpl extends EPackageImpl implements EelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass measureUnboundSubstractOperationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass measureUnboundProductOperationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass measureUnboundDivisionOperationEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -788,6 +804,24 @@ public class EelPackageImpl extends EPackageImpl implements EelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getMeasureUnboundSubstractOperation() {
+		return measureUnboundSubstractOperationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getMeasureUnboundSubstractOperation__Value() {
+		return measureUnboundSubstractOperationEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getMeasureUnboundProductOperation() {
 		return measureUnboundProductOperationEClass;
 	}
@@ -799,6 +833,24 @@ public class EelPackageImpl extends EPackageImpl implements EelPackage {
 	 */
 	public EOperation getMeasureUnboundProductOperation__Value() {
 		return measureUnboundProductOperationEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getMeasureUnboundDivisionOperation() {
+		return measureUnboundDivisionOperationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getMeasureUnboundDivisionOperation__Value() {
+		return measureUnboundDivisionOperationEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -1193,8 +1245,14 @@ public class EelPackageImpl extends EPackageImpl implements EelPackage {
 		measureUnboundSumOperationEClass = createEClass(MEASURE_UNBOUND_SUM_OPERATION);
 		createEOperation(measureUnboundSumOperationEClass, MEASURE_UNBOUND_SUM_OPERATION___VALUE);
 
+		measureUnboundSubstractOperationEClass = createEClass(MEASURE_UNBOUND_SUBSTRACT_OPERATION);
+		createEOperation(measureUnboundSubstractOperationEClass, MEASURE_UNBOUND_SUBSTRACT_OPERATION___VALUE);
+
 		measureUnboundProductOperationEClass = createEClass(MEASURE_UNBOUND_PRODUCT_OPERATION);
 		createEOperation(measureUnboundProductOperationEClass, MEASURE_UNBOUND_PRODUCT_OPERATION___VALUE);
+
+		measureUnboundDivisionOperationEClass = createEClass(MEASURE_UNBOUND_DIVISION_OPERATION);
+		createEOperation(measureUnboundDivisionOperationEClass, MEASURE_UNBOUND_DIVISION_OPERATION___VALUE);
 
 		measurementUncertaintyEClass = createEClass(MEASUREMENT_UNCERTAINTY);
 		createEReference(measurementUncertaintyEClass, MEASUREMENT_UNCERTAINTY__INFORMATION);
@@ -1286,7 +1344,9 @@ public class EelPackageImpl extends EPackageImpl implements EelPackage {
 		realTimeDurationEClass.getESuperTypes().add(this.getMeasureValue());
 		measureUnboundOperationEClass.getESuperTypes().add(this.getTypedMeasure());
 		measureUnboundSumOperationEClass.getESuperTypes().add(this.getMeasureUnboundOperation());
+		measureUnboundSubstractOperationEClass.getESuperTypes().add(this.getMeasureUnboundOperation());
 		measureUnboundProductOperationEClass.getESuperTypes().add(this.getMeasureUnboundOperation());
+		measureUnboundDivisionOperationEClass.getESuperTypes().add(this.getMeasureUnboundOperation());
 		normalDistributionEClass.getESuperTypes().add(this.getMeasurementUncertaintyInformation());
 		intervalEClass.getESuperTypes().add(this.getMeasurementUncertaintyInformation());
 		samplingEClass.getESuperTypes().add(this.getMeasurementUncertaintyInformation());
@@ -1426,10 +1486,22 @@ public class EelPackageImpl extends EPackageImpl implements EelPackage {
 		initEOperation(getMeasureUnboundSumOperation__Value(), ecorePackage.getEBigDecimal(), "value", 0, 1, IS_UNIQUE,
 				IS_ORDERED);
 
+		initEClass(measureUnboundSubstractOperationEClass, MeasureUnboundSubstractOperation.class,
+				"MeasureUnboundSubstractOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEOperation(getMeasureUnboundSubstractOperation__Value(), ecorePackage.getEBigDecimal(), "value", 0, 1,
+				IS_UNIQUE, IS_ORDERED);
+
 		initEClass(measureUnboundProductOperationEClass, MeasureUnboundProductOperation.class,
 				"MeasureUnboundProductOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEOperation(getMeasureUnboundProductOperation__Value(), ecorePackage.getEBigDecimal(), "value", 0, 1,
+				IS_UNIQUE, IS_ORDERED);
+
+		initEClass(measureUnboundDivisionOperationEClass, MeasureUnboundDivisionOperation.class,
+				"MeasureUnboundDivisionOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEOperation(getMeasureUnboundDivisionOperation__Value(), ecorePackage.getEBigDecimal(), "value", 0, 1,
 				IS_UNIQUE, IS_ORDERED);
 
 		initEClass(measurementUncertaintyEClass, MeasurementUncertainty.class, "MeasurementUncertainty", !IS_ABSTRACT,
@@ -1608,8 +1680,12 @@ public class EelPackageImpl extends EPackageImpl implements EelPackage {
 		addAnnotation(getRealTimeDuration__Type(), source, new String[] { "body", "Type::Duration" });
 		addAnnotation(getMeasureUnboundSumOperation__Value(), source,
 				new String[] { "body", "self.measures -> iterate(m: Measure; acc: Real = 0.0 | acc + m.value())" });
+		addAnnotation(getMeasureUnboundSubstractOperation__Value(), source,
+				new String[] { "body", "self.measures -> iterate(m: Measure; acc: Real = 0.0 | acc - m.value())" });
 		addAnnotation(getMeasureUnboundProductOperation__Value(), source,
 				new String[] { "body", "self.measures -> iterate(m: Measure; acc: Real = 1.0 | acc * m.value())" });
+		addAnnotation(getMeasureUnboundDivisionOperation__Value(), source,
+				new String[] { "body", "self.measures -> iterate(m: Measure; acc: Real = 1.0 |  m.value() / acc)" });
 		addAnnotation(getNormalDistribution_MeanValue(), source, new String[] { "derivation",
 				"Measure.allInstances()->select(v |\n\t\t\t\t\tv.uncertainty = (MeasurementUncertainty.allInstances()->select(u |\n\t\t\t\t\t\tu.information = self)->asOrderedSet()->first()))->asOrderedSet()->first().value()" });
 		addAnnotation(getNormalDistribution_StandardDeviation(), source, new String[] { "derivation",
