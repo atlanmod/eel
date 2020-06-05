@@ -10,29 +10,32 @@ Platform ATMega328p {
 	Board.cpuPowerIdle ="Board.currentIdle" * "Board.Voltage",  
 					
 	LED.Voltage = 5.0,
-	LED.Current = 0.0088,		 		
-	LED.numberOfLedsRunning = ocl:"LED.allInstances() -> select(it | it.oclContainer().oclAsType(Pin).level = 1) -> size()",						
-	LED.currentOfLedsRunning = "LED.Current" * "LED.numberOfLedsRunning",
-	LED.powerOfLedsRunning = "LED.currentOfLedsRunning" * "LED.numberOfLedsRunning" * "LED.Voltage",
+	LED.Current = 0.0088,	
+		 		
+	Board.numberOfLedsRunning = ocl:"LED.allInstances() -> select(it | it.oclContainer().oclAsType(Pin).level = 1) -> size()",						
+	Board.currentOfLedsRunning = "LED.Current" * "Board.numberOfLedsRunning",
+	Board.powerOfLedsRunning = "Board.currentOfLedsRunning" * "Board.numberOfLedsRunning" * "LED.Voltage",
 	
 	InfraRedSensor.Voltage = 5.0,
 	InfraRedSensor.Current = 0.0043,			
 	InfraRedSensor.internalLedCurrent = 0.00085,
-	InfraRedSensor.numberOfSensorsRunning = ocl: "InfraRedSensor.allInstances() -> size()",
-	InfraRedSensor.numberOnObstacle = ocl:"InfraRedSensor.allInstances() -> select(it | it.oclContainer.oclAsType(Pin).level = 0) -> asSequence() -> size()",
-	InfraRedSensor.powerOfInfraRedSensorsOnIdle = "InfraRedSensor.numberOfSensorsRunning" * "InfraRedSensor.Voltage" * "InfraRedSensor.Current", 
-	InfraRedSensor.powerOfInfraRedSensorsOnObstacle = "InfraRedSensor.numberOnObstacle" * "InfraRedSensor.internalLedCurrent" * "InfraRedSensor.Voltage", 
-	InfraRedSensor.powerOfInfraRedSensors = "InfraRedSensor.powerOfInfraRedSensorsOnIdle" + "InfraRedSensor.powerOfInfraRedSensorsOnObstacle",
+	
+	Board.numberOfSensorsRunning = ocl: "InfraRedSensor.allInstances() -> size()",
+	Board.numberOnObstacle = ocl:"InfraRedSensor.allInstances() -> select(it | it.oclContainer.oclAsType(Pin).level = 0) -> asSequence() -> size()",
+	Board.powerOfInfraRedSensorsOnIdle = "Board.numberOfSensorsRunning" * "InfraRedSensor.Voltage" * "InfraRedSensor.Current", 
+	Board.powerOfInfraRedSensorsOnObstacle = "Board.numberOnObstacle" * "InfraRedSensor.internalLedCurrent" * "InfraRedSensor.Voltage", 
+	Board.powerOfInfraRedSensors = "Board.powerOfInfraRedSensorsOnIdle" + "Board.powerOfInfraRedSensorsOnObstacle",
 	
 	MicroServo.Current = 0.0025704,		
 	MicroServo.Voltage = 5.0,
-	MicroServo.numberOfServoRunning = ocl: "MicroServo.allInstances() -> size()",
-	MicroServo.currentOfServoRunning = "MicroServo.numberOfServoRunning" * "MicroServo.Current",
-	MicroServo.Power = "MicroServo.currentOfServoRunning" * "Board.Voltage", 
 	MicroServo.mahRise = ocl:"let rotation = if (self.operand.oclIsKindOf(IntegerVariableRef)) then (self.operand.oclAsType(IntegerVariableRef).variable.initialValue - self.module.oclContainer.oclAsType(Pin).level) else 0.0 endif in if (rotation > 6) then 0.00805608 else 11189 * 0.000004 * rotation * rotation * 5 / 1000 endif", 	
 	MicroServo.mahFall = ocl:"let rotation = if (self.operand.oclIsKindOf(IntegerVariableRef)) then (self.operand.oclAsType(IntegerVariableRef).variable.initialValue - self.module.oclContainer.oclAsType(Pin).level) else 0.0 endif in if (rotation > 6) then if (rotation > 70) then 16.949*5/1000 else (80.346*rotation + 5.82474) *5 / 1000 endif else 0.0 endif",
 	MicroServo.mahConstant = ocl:"let rotation = if (self.operand.oclIsKindOf(IntegerVariableRef)) then (self.operand.oclAsType(IntegerVariableRef).variable.initialValue - self.module.oclContainer.oclAsType(Pin).level) else 0.0 endif in if (rotation > 70) then 83.5 * (rotation * 0.002 - 0.14) * 5 / 1000 else 0.0 endif",
-	MicroServo.Energy = "MicroServo.mahRise" + "MicroServo.mahFall" + "MicroServo.mahConstant",		
+	MicroServo.Energy = "MicroServo.mahRise" + "MicroServo.mahFall" + "MicroServo.mahConstant",
+	
+	Board.numberOfServoRunning = ocl: "MicroServo.allInstances() -> size()",
+	Board.currentOfServoRunning = "Board.numberOfServoRunning" * "MicroServo.Current",
+	Board.powerOfServoRunning = "Board.currentOfServoRunning" * "Board.Voltage", 				
 	 
 	// value * voltsPerUnit = internalVoltage, * conductance = Intensity, * board voltage = power consumption for all sensors 		
 	AmbientLightSensor.Current = ocl:"AmbientLightSensor.allInstances() -> iterate( it: AmbientLightSensor; acc: Real = 0.0 | acc + it.oclContainer.oclAsType(Pin).level * 0.0049 * 0.004545455)",		
@@ -71,7 +74,7 @@ Platform ATMega328p {
 	VariableAssignement.clockCycles = 2.0,
 	VariableAssignement.callDuration = "VariableAssignement.clockCycles" * "Board.clockPeriod",
 		
-	Board.devicesPower = "LED.powerOfLedsRunning" + "InfraRedSensor.powerOfInfraRedSensors" + "AmbientLightSensor.Power" + "MicroServo.Power",
+	Board.devicesPower = "Board.powerOfLedsRunning" + "Board.powerOfInfraRedSensors" + "AmbientLightSensor.Power" + "Board.powerOfServoRunning",
 	Board.systemPower = "Board.cpuPower" + "Board.devicesPower",				
 	Board.systemPowerOnIdle = "Board.cpuPowerIdle" + "Board.devicesPower",	
 	
