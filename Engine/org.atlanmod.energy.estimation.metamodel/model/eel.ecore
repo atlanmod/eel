@@ -254,7 +254,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="TailMeasure" abstract="true" eSuperTypes="#//CompositeMeasure"/>
   <eClassifiers xsi:type="ecore:EClass" name="IntegrationMeasure" eSuperTypes="#//CompositeMeasure">
     <eStructuralFeatures xsi:type="ecore:EReference" name="function" lowerBound="1" eType="#//CompositeMeasure"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="leftBound" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rightBound" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="leftBound" lowerBound="1" eType="#//Measure"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rightBound" lowerBound="1" eType="#//Measure"/>
   </eClassifiers>
 </ecore:EPackage>

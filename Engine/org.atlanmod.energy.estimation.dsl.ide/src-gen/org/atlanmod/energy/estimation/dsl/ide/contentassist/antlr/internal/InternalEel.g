@@ -19696,9 +19696,13 @@ rule__IntegrationMeasure__LeftBoundAssignment_10
 	}
 :
 	(
-		{ before(grammarAccess.getIntegrationMeasureAccess().getLeftBoundEBigDecimalParserRuleCall_10_0()); }
-		ruleEBigDecimal
-		{ after(grammarAccess.getIntegrationMeasureAccess().getLeftBoundEBigDecimalParserRuleCall_10_0()); }
+		{ before(grammarAccess.getIntegrationMeasureAccess().getLeftBoundMeasureCrossReference_10_0()); }
+		(
+			{ before(grammarAccess.getIntegrationMeasureAccess().getLeftBoundMeasureEStringParserRuleCall_10_0_1()); }
+			ruleEString
+			{ after(grammarAccess.getIntegrationMeasureAccess().getLeftBoundMeasureEStringParserRuleCall_10_0_1()); }
+		)
+		{ after(grammarAccess.getIntegrationMeasureAccess().getLeftBoundMeasureCrossReference_10_0()); }
 	)
 ;
 finally {
@@ -19711,9 +19715,13 @@ rule__IntegrationMeasure__RightBoundAssignment_12
 	}
 :
 	(
-		{ before(grammarAccess.getIntegrationMeasureAccess().getRightBoundEBigDecimalParserRuleCall_12_0()); }
-		ruleEBigDecimal
-		{ after(grammarAccess.getIntegrationMeasureAccess().getRightBoundEBigDecimalParserRuleCall_12_0()); }
+		{ before(grammarAccess.getIntegrationMeasureAccess().getRightBoundMeasureCrossReference_12_0()); }
+		(
+			{ before(grammarAccess.getIntegrationMeasureAccess().getRightBoundMeasureEStringParserRuleCall_12_0_1()); }
+			ruleEString
+			{ after(grammarAccess.getIntegrationMeasureAccess().getRightBoundMeasureEStringParserRuleCall_12_0_1()); }
+		)
+		{ after(grammarAccess.getIntegrationMeasureAccess().getRightBoundMeasureCrossReference_12_0()); }
 	)
 ;
 finally {

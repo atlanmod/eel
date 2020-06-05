@@ -4467,16 +4467,16 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
                         }
                         }
                         break;
-                    case 99:
-                    case 118:
-                        {
-                        alt13=2;
-                        }
-                        break;
                     case 96:
                     case 117:
                         {
                         alt13=1;
+                        }
+                        break;
+                    case 99:
+                    case 118:
+                        {
+                        alt13=2;
                         }
                         break;
                     default:
@@ -4632,16 +4632,16 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
                     }
                     }
                     break;
-                case 99:
-                case 118:
-                    {
-                    alt13=2;
-                    }
-                    break;
                 case 96:
                 case 117:
                     {
                     alt13=1;
+                    }
+                    break;
+                case 99:
+                case 118:
+                    {
+                    alt13=2;
                     }
                     break;
                 default:
@@ -17012,7 +17012,7 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
             // InternalEel.g:5360:1: ( rule__IntegrationMeasure__Group__9__Impl rule__IntegrationMeasure__Group__10 )
             // InternalEel.g:5361:2: rule__IntegrationMeasure__Group__9__Impl rule__IntegrationMeasure__Group__10
             {
-            pushFollow(FOLLOW_14);
+            pushFollow(FOLLOW_4);
             rule__IntegrationMeasure__Group__9__Impl();
 
             state._fsp--;
@@ -17172,7 +17172,7 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
             // InternalEel.g:5414:1: ( rule__IntegrationMeasure__Group__11__Impl rule__IntegrationMeasure__Group__12 )
             // InternalEel.g:5415:2: rule__IntegrationMeasure__Group__11__Impl rule__IntegrationMeasure__Group__12
             {
-            pushFollow(FOLLOW_14);
+            pushFollow(FOLLOW_4);
             rule__IntegrationMeasure__Group__11__Impl();
 
             state._fsp--;
@@ -60034,25 +60034,33 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IntegrationMeasure__LeftBoundAssignment_10"
-    // InternalEel.g:19693:1: rule__IntegrationMeasure__LeftBoundAssignment_10 : ( ruleEBigDecimal ) ;
+    // InternalEel.g:19693:1: rule__IntegrationMeasure__LeftBoundAssignment_10 : ( ( ruleEString ) ) ;
     public final void rule__IntegrationMeasure__LeftBoundAssignment_10() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:19697:1: ( ( ruleEBigDecimal ) )
-            // InternalEel.g:19698:2: ( ruleEBigDecimal )
+            // InternalEel.g:19697:1: ( ( ( ruleEString ) ) )
+            // InternalEel.g:19698:2: ( ( ruleEString ) )
             {
-            // InternalEel.g:19698:2: ( ruleEBigDecimal )
-            // InternalEel.g:19699:3: ruleEBigDecimal
+            // InternalEel.g:19698:2: ( ( ruleEString ) )
+            // InternalEel.g:19699:3: ( ruleEString )
             {
-             before(grammarAccess.getIntegrationMeasureAccess().getLeftBoundEBigDecimalParserRuleCall_10_0()); 
+             before(grammarAccess.getIntegrationMeasureAccess().getLeftBoundMeasureCrossReference_10_0()); 
+            // InternalEel.g:19700:3: ( ruleEString )
+            // InternalEel.g:19701:4: ruleEString
+            {
+             before(grammarAccess.getIntegrationMeasureAccess().getLeftBoundMeasureEStringParserRuleCall_10_0_1()); 
             pushFollow(FOLLOW_2);
-            ruleEBigDecimal();
+            ruleEString();
 
             state._fsp--;
 
-             after(grammarAccess.getIntegrationMeasureAccess().getLeftBoundEBigDecimalParserRuleCall_10_0()); 
+             after(grammarAccess.getIntegrationMeasureAccess().getLeftBoundMeasureEStringParserRuleCall_10_0_1()); 
+
+            }
+
+             after(grammarAccess.getIntegrationMeasureAccess().getLeftBoundMeasureCrossReference_10_0()); 
 
             }
 
@@ -60075,25 +60083,33 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IntegrationMeasure__RightBoundAssignment_12"
-    // InternalEel.g:19708:1: rule__IntegrationMeasure__RightBoundAssignment_12 : ( ruleEBigDecimal ) ;
+    // InternalEel.g:19712:1: rule__IntegrationMeasure__RightBoundAssignment_12 : ( ( ruleEString ) ) ;
     public final void rule__IntegrationMeasure__RightBoundAssignment_12() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:19712:1: ( ( ruleEBigDecimal ) )
-            // InternalEel.g:19713:2: ( ruleEBigDecimal )
+            // InternalEel.g:19716:1: ( ( ( ruleEString ) ) )
+            // InternalEel.g:19717:2: ( ( ruleEString ) )
             {
-            // InternalEel.g:19713:2: ( ruleEBigDecimal )
-            // InternalEel.g:19714:3: ruleEBigDecimal
+            // InternalEel.g:19717:2: ( ( ruleEString ) )
+            // InternalEel.g:19718:3: ( ruleEString )
             {
-             before(grammarAccess.getIntegrationMeasureAccess().getRightBoundEBigDecimalParserRuleCall_12_0()); 
+             before(grammarAccess.getIntegrationMeasureAccess().getRightBoundMeasureCrossReference_12_0()); 
+            // InternalEel.g:19719:3: ( ruleEString )
+            // InternalEel.g:19720:4: ruleEString
+            {
+             before(grammarAccess.getIntegrationMeasureAccess().getRightBoundMeasureEStringParserRuleCall_12_0_1()); 
             pushFollow(FOLLOW_2);
-            ruleEBigDecimal();
+            ruleEString();
 
             state._fsp--;
 
-             after(grammarAccess.getIntegrationMeasureAccess().getRightBoundEBigDecimalParserRuleCall_12_0()); 
+             after(grammarAccess.getIntegrationMeasureAccess().getRightBoundMeasureEStringParserRuleCall_12_0_1()); 
+
+            }
+
+             after(grammarAccess.getIntegrationMeasureAccess().getRightBoundMeasureCrossReference_12_0()); 
 
             }
 
@@ -60116,17 +60132,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Interval__LowerEndpointAssignment_3"
-    // InternalEel.g:19723:1: rule__Interval__LowerEndpointAssignment_3 : ( ruleMeasure ) ;
+    // InternalEel.g:19731:1: rule__Interval__LowerEndpointAssignment_3 : ( ruleMeasure ) ;
     public final void rule__Interval__LowerEndpointAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:19727:1: ( ( ruleMeasure ) )
-            // InternalEel.g:19728:2: ( ruleMeasure )
+            // InternalEel.g:19735:1: ( ( ruleMeasure ) )
+            // InternalEel.g:19736:2: ( ruleMeasure )
             {
-            // InternalEel.g:19728:2: ( ruleMeasure )
-            // InternalEel.g:19729:3: ruleMeasure
+            // InternalEel.g:19736:2: ( ruleMeasure )
+            // InternalEel.g:19737:3: ruleMeasure
             {
              before(grammarAccess.getIntervalAccess().getLowerEndpointMeasureParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
@@ -60157,17 +60173,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Interval__UpperEndpointAssignment_5"
-    // InternalEel.g:19738:1: rule__Interval__UpperEndpointAssignment_5 : ( ruleMeasure ) ;
+    // InternalEel.g:19746:1: rule__Interval__UpperEndpointAssignment_5 : ( ruleMeasure ) ;
     public final void rule__Interval__UpperEndpointAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:19742:1: ( ( ruleMeasure ) )
-            // InternalEel.g:19743:2: ( ruleMeasure )
+            // InternalEel.g:19750:1: ( ( ruleMeasure ) )
+            // InternalEel.g:19751:2: ( ruleMeasure )
             {
-            // InternalEel.g:19743:2: ( ruleMeasure )
-            // InternalEel.g:19744:3: ruleMeasure
+            // InternalEel.g:19751:2: ( ruleMeasure )
+            // InternalEel.g:19752:3: ruleMeasure
             {
              before(grammarAccess.getIntervalAccess().getUpperEndpointMeasureParserRuleCall_5_0()); 
             pushFollow(FOLLOW_2);
@@ -60198,17 +60214,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Sampling__MeasurementProcedureAssignment_3_1"
-    // InternalEel.g:19753:1: rule__Sampling__MeasurementProcedureAssignment_3_1 : ( ruleEString ) ;
+    // InternalEel.g:19761:1: rule__Sampling__MeasurementProcedureAssignment_3_1 : ( ruleEString ) ;
     public final void rule__Sampling__MeasurementProcedureAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:19757:1: ( ( ruleEString ) )
-            // InternalEel.g:19758:2: ( ruleEString )
+            // InternalEel.g:19765:1: ( ( ruleEString ) )
+            // InternalEel.g:19766:2: ( ruleEString )
             {
-            // InternalEel.g:19758:2: ( ruleEString )
-            // InternalEel.g:19759:3: ruleEString
+            // InternalEel.g:19766:2: ( ruleEString )
+            // InternalEel.g:19767:3: ruleEString
             {
              before(grammarAccess.getSamplingAccess().getMeasurementProcedureEStringParserRuleCall_3_1_0()); 
             pushFollow(FOLLOW_2);
@@ -60239,17 +60255,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Sampling__SamplesAssignment_4_2"
-    // InternalEel.g:19768:1: rule__Sampling__SamplesAssignment_4_2 : ( ruleSample ) ;
+    // InternalEel.g:19776:1: rule__Sampling__SamplesAssignment_4_2 : ( ruleSample ) ;
     public final void rule__Sampling__SamplesAssignment_4_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:19772:1: ( ( ruleSample ) )
-            // InternalEel.g:19773:2: ( ruleSample )
+            // InternalEel.g:19780:1: ( ( ruleSample ) )
+            // InternalEel.g:19781:2: ( ruleSample )
             {
-            // InternalEel.g:19773:2: ( ruleSample )
-            // InternalEel.g:19774:3: ruleSample
+            // InternalEel.g:19781:2: ( ruleSample )
+            // InternalEel.g:19782:3: ruleSample
             {
              before(grammarAccess.getSamplingAccess().getSamplesSampleParserRuleCall_4_2_0()); 
             pushFollow(FOLLOW_2);
@@ -60280,17 +60296,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Sampling__SamplesAssignment_4_3_1"
-    // InternalEel.g:19783:1: rule__Sampling__SamplesAssignment_4_3_1 : ( ruleSample ) ;
+    // InternalEel.g:19791:1: rule__Sampling__SamplesAssignment_4_3_1 : ( ruleSample ) ;
     public final void rule__Sampling__SamplesAssignment_4_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:19787:1: ( ( ruleSample ) )
-            // InternalEel.g:19788:2: ( ruleSample )
+            // InternalEel.g:19795:1: ( ( ruleSample ) )
+            // InternalEel.g:19796:2: ( ruleSample )
             {
-            // InternalEel.g:19788:2: ( ruleSample )
-            // InternalEel.g:19789:3: ruleSample
+            // InternalEel.g:19796:2: ( ruleSample )
+            // InternalEel.g:19797:3: ruleSample
             {
              before(grammarAccess.getSamplingAccess().getSamplesSampleParserRuleCall_4_3_1_0()); 
             pushFollow(FOLLOW_2);
@@ -60321,17 +60337,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Integral__FunctionAssignment_2_1"
-    // InternalEel.g:19798:1: rule__Integral__FunctionAssignment_2_1 : ( ruleEString ) ;
+    // InternalEel.g:19806:1: rule__Integral__FunctionAssignment_2_1 : ( ruleEString ) ;
     public final void rule__Integral__FunctionAssignment_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:19802:1: ( ( ruleEString ) )
-            // InternalEel.g:19803:2: ( ruleEString )
+            // InternalEel.g:19810:1: ( ( ruleEString ) )
+            // InternalEel.g:19811:2: ( ruleEString )
             {
-            // InternalEel.g:19803:2: ( ruleEString )
-            // InternalEel.g:19804:3: ruleEString
+            // InternalEel.g:19811:2: ( ruleEString )
+            // InternalEel.g:19812:3: ruleEString
             {
              before(grammarAccess.getIntegralAccess().getFunctionEStringParserRuleCall_2_1_0()); 
             pushFollow(FOLLOW_2);
@@ -60362,21 +60378,21 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Integral__IntervalAssignment_4"
-    // InternalEel.g:19813:1: rule__Integral__IntervalAssignment_4 : ( ( ruleEString ) ) ;
+    // InternalEel.g:19821:1: rule__Integral__IntervalAssignment_4 : ( ( ruleEString ) ) ;
     public final void rule__Integral__IntervalAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:19817:1: ( ( ( ruleEString ) ) )
-            // InternalEel.g:19818:2: ( ( ruleEString ) )
+            // InternalEel.g:19825:1: ( ( ( ruleEString ) ) )
+            // InternalEel.g:19826:2: ( ( ruleEString ) )
             {
-            // InternalEel.g:19818:2: ( ( ruleEString ) )
-            // InternalEel.g:19819:3: ( ruleEString )
+            // InternalEel.g:19826:2: ( ( ruleEString ) )
+            // InternalEel.g:19827:3: ( ruleEString )
             {
              before(grammarAccess.getIntegralAccess().getIntervalIntervalCrossReference_4_0()); 
-            // InternalEel.g:19820:3: ( ruleEString )
-            // InternalEel.g:19821:4: ruleEString
+            // InternalEel.g:19828:3: ( ruleEString )
+            // InternalEel.g:19829:4: ruleEString
             {
              before(grammarAccess.getIntegralAccess().getIntervalIntervalEStringParserRuleCall_4_0_1()); 
             pushFollow(FOLLOW_2);
@@ -60411,17 +60427,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Sample__QuantityAssignment_3_2"
-    // InternalEel.g:19832:1: rule__Sample__QuantityAssignment_3_2 : ( ruleMeasure ) ;
+    // InternalEel.g:19840:1: rule__Sample__QuantityAssignment_3_2 : ( ruleMeasure ) ;
     public final void rule__Sample__QuantityAssignment_3_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:19836:1: ( ( ruleMeasure ) )
-            // InternalEel.g:19837:2: ( ruleMeasure )
+            // InternalEel.g:19844:1: ( ( ruleMeasure ) )
+            // InternalEel.g:19845:2: ( ruleMeasure )
             {
-            // InternalEel.g:19837:2: ( ruleMeasure )
-            // InternalEel.g:19838:3: ruleMeasure
+            // InternalEel.g:19845:2: ( ruleMeasure )
+            // InternalEel.g:19846:3: ruleMeasure
             {
              before(grammarAccess.getSampleAccess().getQuantityMeasureParserRuleCall_3_2_0()); 
             pushFollow(FOLLOW_2);
@@ -60452,17 +60468,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Sample__QuantityAssignment_3_3_1"
-    // InternalEel.g:19847:1: rule__Sample__QuantityAssignment_3_3_1 : ( ruleMeasure ) ;
+    // InternalEel.g:19855:1: rule__Sample__QuantityAssignment_3_3_1 : ( ruleMeasure ) ;
     public final void rule__Sample__QuantityAssignment_3_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:19851:1: ( ( ruleMeasure ) )
-            // InternalEel.g:19852:2: ( ruleMeasure )
+            // InternalEel.g:19859:1: ( ( ruleMeasure ) )
+            // InternalEel.g:19860:2: ( ruleMeasure )
             {
-            // InternalEel.g:19852:2: ( ruleMeasure )
-            // InternalEel.g:19853:3: ruleMeasure
+            // InternalEel.g:19860:2: ( ruleMeasure )
+            // InternalEel.g:19861:3: ruleMeasure
             {
              before(grammarAccess.getSampleAccess().getQuantityMeasureParserRuleCall_3_3_1_0()); 
             pushFollow(FOLLOW_2);
@@ -60493,21 +60509,21 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EClass__AbstractAssignment_1"
-    // InternalEel.g:19862:1: rule__EClass__AbstractAssignment_1 : ( ( 'abstract' ) ) ;
+    // InternalEel.g:19870:1: rule__EClass__AbstractAssignment_1 : ( ( 'abstract' ) ) ;
     public final void rule__EClass__AbstractAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:19866:1: ( ( ( 'abstract' ) ) )
-            // InternalEel.g:19867:2: ( ( 'abstract' ) )
+            // InternalEel.g:19874:1: ( ( ( 'abstract' ) ) )
+            // InternalEel.g:19875:2: ( ( 'abstract' ) )
             {
-            // InternalEel.g:19867:2: ( ( 'abstract' ) )
-            // InternalEel.g:19868:3: ( 'abstract' )
+            // InternalEel.g:19875:2: ( ( 'abstract' ) )
+            // InternalEel.g:19876:3: ( 'abstract' )
             {
              before(grammarAccess.getEClassAccess().getAbstractAbstractKeyword_1_0()); 
-            // InternalEel.g:19869:3: ( 'abstract' )
-            // InternalEel.g:19870:4: 'abstract'
+            // InternalEel.g:19877:3: ( 'abstract' )
+            // InternalEel.g:19878:4: 'abstract'
             {
              before(grammarAccess.getEClassAccess().getAbstractAbstractKeyword_1_0()); 
             match(input,111,FOLLOW_2); 
@@ -60538,21 +60554,21 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EClass__InterfaceAssignment_2"
-    // InternalEel.g:19881:1: rule__EClass__InterfaceAssignment_2 : ( ( 'interface' ) ) ;
+    // InternalEel.g:19889:1: rule__EClass__InterfaceAssignment_2 : ( ( 'interface' ) ) ;
     public final void rule__EClass__InterfaceAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:19885:1: ( ( ( 'interface' ) ) )
-            // InternalEel.g:19886:2: ( ( 'interface' ) )
+            // InternalEel.g:19893:1: ( ( ( 'interface' ) ) )
+            // InternalEel.g:19894:2: ( ( 'interface' ) )
             {
-            // InternalEel.g:19886:2: ( ( 'interface' ) )
-            // InternalEel.g:19887:3: ( 'interface' )
+            // InternalEel.g:19894:2: ( ( 'interface' ) )
+            // InternalEel.g:19895:3: ( 'interface' )
             {
              before(grammarAccess.getEClassAccess().getInterfaceInterfaceKeyword_2_0()); 
-            // InternalEel.g:19888:3: ( 'interface' )
-            // InternalEel.g:19889:4: 'interface'
+            // InternalEel.g:19896:3: ( 'interface' )
+            // InternalEel.g:19897:4: 'interface'
             {
              before(grammarAccess.getEClassAccess().getInterfaceInterfaceKeyword_2_0()); 
             match(input,112,FOLLOW_2); 
@@ -60583,17 +60599,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EClass__NameAssignment_4"
-    // InternalEel.g:19900:1: rule__EClass__NameAssignment_4 : ( ruleEString ) ;
+    // InternalEel.g:19908:1: rule__EClass__NameAssignment_4 : ( ruleEString ) ;
     public final void rule__EClass__NameAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:19904:1: ( ( ruleEString ) )
-            // InternalEel.g:19905:2: ( ruleEString )
+            // InternalEel.g:19912:1: ( ( ruleEString ) )
+            // InternalEel.g:19913:2: ( ruleEString )
             {
-            // InternalEel.g:19905:2: ( ruleEString )
-            // InternalEel.g:19906:3: ruleEString
+            // InternalEel.g:19913:2: ( ruleEString )
+            // InternalEel.g:19914:3: ruleEString
             {
              before(grammarAccess.getEClassAccess().getNameEStringParserRuleCall_4_0()); 
             pushFollow(FOLLOW_2);
@@ -60624,17 +60640,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EClass__InstanceClassNameAssignment_6_1"
-    // InternalEel.g:19915:1: rule__EClass__InstanceClassNameAssignment_6_1 : ( ruleEString ) ;
+    // InternalEel.g:19923:1: rule__EClass__InstanceClassNameAssignment_6_1 : ( ruleEString ) ;
     public final void rule__EClass__InstanceClassNameAssignment_6_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:19919:1: ( ( ruleEString ) )
-            // InternalEel.g:19920:2: ( ruleEString )
+            // InternalEel.g:19927:1: ( ( ruleEString ) )
+            // InternalEel.g:19928:2: ( ruleEString )
             {
-            // InternalEel.g:19920:2: ( ruleEString )
-            // InternalEel.g:19921:3: ruleEString
+            // InternalEel.g:19928:2: ( ruleEString )
+            // InternalEel.g:19929:3: ruleEString
             {
              before(grammarAccess.getEClassAccess().getInstanceClassNameEStringParserRuleCall_6_1_0()); 
             pushFollow(FOLLOW_2);
@@ -60665,17 +60681,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EClass__InstanceTypeNameAssignment_7_1"
-    // InternalEel.g:19930:1: rule__EClass__InstanceTypeNameAssignment_7_1 : ( ruleEString ) ;
+    // InternalEel.g:19938:1: rule__EClass__InstanceTypeNameAssignment_7_1 : ( ruleEString ) ;
     public final void rule__EClass__InstanceTypeNameAssignment_7_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:19934:1: ( ( ruleEString ) )
-            // InternalEel.g:19935:2: ( ruleEString )
+            // InternalEel.g:19942:1: ( ( ruleEString ) )
+            // InternalEel.g:19943:2: ( ruleEString )
             {
-            // InternalEel.g:19935:2: ( ruleEString )
-            // InternalEel.g:19936:3: ruleEString
+            // InternalEel.g:19943:2: ( ruleEString )
+            // InternalEel.g:19944:3: ruleEString
             {
              before(grammarAccess.getEClassAccess().getInstanceTypeNameEStringParserRuleCall_7_1_0()); 
             pushFollow(FOLLOW_2);
@@ -60706,21 +60722,21 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EClass__ESuperTypesAssignment_8_2"
-    // InternalEel.g:19945:1: rule__EClass__ESuperTypesAssignment_8_2 : ( ( ruleEString ) ) ;
+    // InternalEel.g:19953:1: rule__EClass__ESuperTypesAssignment_8_2 : ( ( ruleEString ) ) ;
     public final void rule__EClass__ESuperTypesAssignment_8_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:19949:1: ( ( ( ruleEString ) ) )
-            // InternalEel.g:19950:2: ( ( ruleEString ) )
+            // InternalEel.g:19957:1: ( ( ( ruleEString ) ) )
+            // InternalEel.g:19958:2: ( ( ruleEString ) )
             {
-            // InternalEel.g:19950:2: ( ( ruleEString ) )
-            // InternalEel.g:19951:3: ( ruleEString )
+            // InternalEel.g:19958:2: ( ( ruleEString ) )
+            // InternalEel.g:19959:3: ( ruleEString )
             {
              before(grammarAccess.getEClassAccess().getESuperTypesEClassCrossReference_8_2_0()); 
-            // InternalEel.g:19952:3: ( ruleEString )
-            // InternalEel.g:19953:4: ruleEString
+            // InternalEel.g:19960:3: ( ruleEString )
+            // InternalEel.g:19961:4: ruleEString
             {
              before(grammarAccess.getEClassAccess().getESuperTypesEClassEStringParserRuleCall_8_2_0_1()); 
             pushFollow(FOLLOW_2);
@@ -60755,21 +60771,21 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EClass__ESuperTypesAssignment_8_3_1"
-    // InternalEel.g:19964:1: rule__EClass__ESuperTypesAssignment_8_3_1 : ( ( ruleEString ) ) ;
+    // InternalEel.g:19972:1: rule__EClass__ESuperTypesAssignment_8_3_1 : ( ( ruleEString ) ) ;
     public final void rule__EClass__ESuperTypesAssignment_8_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:19968:1: ( ( ( ruleEString ) ) )
-            // InternalEel.g:19969:2: ( ( ruleEString ) )
+            // InternalEel.g:19976:1: ( ( ( ruleEString ) ) )
+            // InternalEel.g:19977:2: ( ( ruleEString ) )
             {
-            // InternalEel.g:19969:2: ( ( ruleEString ) )
-            // InternalEel.g:19970:3: ( ruleEString )
+            // InternalEel.g:19977:2: ( ( ruleEString ) )
+            // InternalEel.g:19978:3: ( ruleEString )
             {
              before(grammarAccess.getEClassAccess().getESuperTypesEClassCrossReference_8_3_1_0()); 
-            // InternalEel.g:19971:3: ( ruleEString )
-            // InternalEel.g:19972:4: ruleEString
+            // InternalEel.g:19979:3: ( ruleEString )
+            // InternalEel.g:19980:4: ruleEString
             {
              before(grammarAccess.getEClassAccess().getESuperTypesEClassEStringParserRuleCall_8_3_1_0_1()); 
             pushFollow(FOLLOW_2);
@@ -60804,17 +60820,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EClass__EAnnotationsAssignment_9_2"
-    // InternalEel.g:19983:1: rule__EClass__EAnnotationsAssignment_9_2 : ( ruleEAnnotation ) ;
+    // InternalEel.g:19991:1: rule__EClass__EAnnotationsAssignment_9_2 : ( ruleEAnnotation ) ;
     public final void rule__EClass__EAnnotationsAssignment_9_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:19987:1: ( ( ruleEAnnotation ) )
-            // InternalEel.g:19988:2: ( ruleEAnnotation )
+            // InternalEel.g:19995:1: ( ( ruleEAnnotation ) )
+            // InternalEel.g:19996:2: ( ruleEAnnotation )
             {
-            // InternalEel.g:19988:2: ( ruleEAnnotation )
-            // InternalEel.g:19989:3: ruleEAnnotation
+            // InternalEel.g:19996:2: ( ruleEAnnotation )
+            // InternalEel.g:19997:3: ruleEAnnotation
             {
              before(grammarAccess.getEClassAccess().getEAnnotationsEAnnotationParserRuleCall_9_2_0()); 
             pushFollow(FOLLOW_2);
@@ -60845,17 +60861,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EClass__EAnnotationsAssignment_9_3_1"
-    // InternalEel.g:19998:1: rule__EClass__EAnnotationsAssignment_9_3_1 : ( ruleEAnnotation ) ;
+    // InternalEel.g:20006:1: rule__EClass__EAnnotationsAssignment_9_3_1 : ( ruleEAnnotation ) ;
     public final void rule__EClass__EAnnotationsAssignment_9_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:20002:1: ( ( ruleEAnnotation ) )
-            // InternalEel.g:20003:2: ( ruleEAnnotation )
+            // InternalEel.g:20010:1: ( ( ruleEAnnotation ) )
+            // InternalEel.g:20011:2: ( ruleEAnnotation )
             {
-            // InternalEel.g:20003:2: ( ruleEAnnotation )
-            // InternalEel.g:20004:3: ruleEAnnotation
+            // InternalEel.g:20011:2: ( ruleEAnnotation )
+            // InternalEel.g:20012:3: ruleEAnnotation
             {
              before(grammarAccess.getEClassAccess().getEAnnotationsEAnnotationParserRuleCall_9_3_1_0()); 
             pushFollow(FOLLOW_2);
@@ -60886,17 +60902,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EClass__ETypeParametersAssignment_10_2"
-    // InternalEel.g:20013:1: rule__EClass__ETypeParametersAssignment_10_2 : ( ruleETypeParameter ) ;
+    // InternalEel.g:20021:1: rule__EClass__ETypeParametersAssignment_10_2 : ( ruleETypeParameter ) ;
     public final void rule__EClass__ETypeParametersAssignment_10_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:20017:1: ( ( ruleETypeParameter ) )
-            // InternalEel.g:20018:2: ( ruleETypeParameter )
+            // InternalEel.g:20025:1: ( ( ruleETypeParameter ) )
+            // InternalEel.g:20026:2: ( ruleETypeParameter )
             {
-            // InternalEel.g:20018:2: ( ruleETypeParameter )
-            // InternalEel.g:20019:3: ruleETypeParameter
+            // InternalEel.g:20026:2: ( ruleETypeParameter )
+            // InternalEel.g:20027:3: ruleETypeParameter
             {
              before(grammarAccess.getEClassAccess().getETypeParametersETypeParameterParserRuleCall_10_2_0()); 
             pushFollow(FOLLOW_2);
@@ -60927,17 +60943,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EClass__ETypeParametersAssignment_10_3_1"
-    // InternalEel.g:20028:1: rule__EClass__ETypeParametersAssignment_10_3_1 : ( ruleETypeParameter ) ;
+    // InternalEel.g:20036:1: rule__EClass__ETypeParametersAssignment_10_3_1 : ( ruleETypeParameter ) ;
     public final void rule__EClass__ETypeParametersAssignment_10_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:20032:1: ( ( ruleETypeParameter ) )
-            // InternalEel.g:20033:2: ( ruleETypeParameter )
+            // InternalEel.g:20040:1: ( ( ruleETypeParameter ) )
+            // InternalEel.g:20041:2: ( ruleETypeParameter )
             {
-            // InternalEel.g:20033:2: ( ruleETypeParameter )
-            // InternalEel.g:20034:3: ruleETypeParameter
+            // InternalEel.g:20041:2: ( ruleETypeParameter )
+            // InternalEel.g:20042:3: ruleETypeParameter
             {
              before(grammarAccess.getEClassAccess().getETypeParametersETypeParameterParserRuleCall_10_3_1_0()); 
             pushFollow(FOLLOW_2);
@@ -60968,17 +60984,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EClass__EOperationsAssignment_11_2"
-    // InternalEel.g:20043:1: rule__EClass__EOperationsAssignment_11_2 : ( ruleEOperation ) ;
+    // InternalEel.g:20051:1: rule__EClass__EOperationsAssignment_11_2 : ( ruleEOperation ) ;
     public final void rule__EClass__EOperationsAssignment_11_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:20047:1: ( ( ruleEOperation ) )
-            // InternalEel.g:20048:2: ( ruleEOperation )
+            // InternalEel.g:20055:1: ( ( ruleEOperation ) )
+            // InternalEel.g:20056:2: ( ruleEOperation )
             {
-            // InternalEel.g:20048:2: ( ruleEOperation )
-            // InternalEel.g:20049:3: ruleEOperation
+            // InternalEel.g:20056:2: ( ruleEOperation )
+            // InternalEel.g:20057:3: ruleEOperation
             {
              before(grammarAccess.getEClassAccess().getEOperationsEOperationParserRuleCall_11_2_0()); 
             pushFollow(FOLLOW_2);
@@ -61009,17 +61025,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EClass__EOperationsAssignment_11_3_1"
-    // InternalEel.g:20058:1: rule__EClass__EOperationsAssignment_11_3_1 : ( ruleEOperation ) ;
+    // InternalEel.g:20066:1: rule__EClass__EOperationsAssignment_11_3_1 : ( ruleEOperation ) ;
     public final void rule__EClass__EOperationsAssignment_11_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:20062:1: ( ( ruleEOperation ) )
-            // InternalEel.g:20063:2: ( ruleEOperation )
+            // InternalEel.g:20070:1: ( ( ruleEOperation ) )
+            // InternalEel.g:20071:2: ( ruleEOperation )
             {
-            // InternalEel.g:20063:2: ( ruleEOperation )
-            // InternalEel.g:20064:3: ruleEOperation
+            // InternalEel.g:20071:2: ( ruleEOperation )
+            // InternalEel.g:20072:3: ruleEOperation
             {
              before(grammarAccess.getEClassAccess().getEOperationsEOperationParserRuleCall_11_3_1_0()); 
             pushFollow(FOLLOW_2);
@@ -61050,17 +61066,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EClass__EStructuralFeaturesAssignment_12_2"
-    // InternalEel.g:20073:1: rule__EClass__EStructuralFeaturesAssignment_12_2 : ( ruleEStructuralFeature ) ;
+    // InternalEel.g:20081:1: rule__EClass__EStructuralFeaturesAssignment_12_2 : ( ruleEStructuralFeature ) ;
     public final void rule__EClass__EStructuralFeaturesAssignment_12_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:20077:1: ( ( ruleEStructuralFeature ) )
-            // InternalEel.g:20078:2: ( ruleEStructuralFeature )
+            // InternalEel.g:20085:1: ( ( ruleEStructuralFeature ) )
+            // InternalEel.g:20086:2: ( ruleEStructuralFeature )
             {
-            // InternalEel.g:20078:2: ( ruleEStructuralFeature )
-            // InternalEel.g:20079:3: ruleEStructuralFeature
+            // InternalEel.g:20086:2: ( ruleEStructuralFeature )
+            // InternalEel.g:20087:3: ruleEStructuralFeature
             {
              before(grammarAccess.getEClassAccess().getEStructuralFeaturesEStructuralFeatureParserRuleCall_12_2_0()); 
             pushFollow(FOLLOW_2);
@@ -61091,17 +61107,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EClass__EStructuralFeaturesAssignment_12_3_1"
-    // InternalEel.g:20088:1: rule__EClass__EStructuralFeaturesAssignment_12_3_1 : ( ruleEStructuralFeature ) ;
+    // InternalEel.g:20096:1: rule__EClass__EStructuralFeaturesAssignment_12_3_1 : ( ruleEStructuralFeature ) ;
     public final void rule__EClass__EStructuralFeaturesAssignment_12_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:20092:1: ( ( ruleEStructuralFeature ) )
-            // InternalEel.g:20093:2: ( ruleEStructuralFeature )
+            // InternalEel.g:20100:1: ( ( ruleEStructuralFeature ) )
+            // InternalEel.g:20101:2: ( ruleEStructuralFeature )
             {
-            // InternalEel.g:20093:2: ( ruleEStructuralFeature )
-            // InternalEel.g:20094:3: ruleEStructuralFeature
+            // InternalEel.g:20101:2: ( ruleEStructuralFeature )
+            // InternalEel.g:20102:3: ruleEStructuralFeature
             {
              before(grammarAccess.getEClassAccess().getEStructuralFeaturesEStructuralFeatureParserRuleCall_12_3_1_0()); 
             pushFollow(FOLLOW_2);
@@ -61132,17 +61148,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EClass__EGenericSuperTypesAssignment_13_2"
-    // InternalEel.g:20103:1: rule__EClass__EGenericSuperTypesAssignment_13_2 : ( ruleEGenericType ) ;
+    // InternalEel.g:20111:1: rule__EClass__EGenericSuperTypesAssignment_13_2 : ( ruleEGenericType ) ;
     public final void rule__EClass__EGenericSuperTypesAssignment_13_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:20107:1: ( ( ruleEGenericType ) )
-            // InternalEel.g:20108:2: ( ruleEGenericType )
+            // InternalEel.g:20115:1: ( ( ruleEGenericType ) )
+            // InternalEel.g:20116:2: ( ruleEGenericType )
             {
-            // InternalEel.g:20108:2: ( ruleEGenericType )
-            // InternalEel.g:20109:3: ruleEGenericType
+            // InternalEel.g:20116:2: ( ruleEGenericType )
+            // InternalEel.g:20117:3: ruleEGenericType
             {
              before(grammarAccess.getEClassAccess().getEGenericSuperTypesEGenericTypeParserRuleCall_13_2_0()); 
             pushFollow(FOLLOW_2);
@@ -61173,17 +61189,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EClass__EGenericSuperTypesAssignment_13_3_1"
-    // InternalEel.g:20118:1: rule__EClass__EGenericSuperTypesAssignment_13_3_1 : ( ruleEGenericType ) ;
+    // InternalEel.g:20126:1: rule__EClass__EGenericSuperTypesAssignment_13_3_1 : ( ruleEGenericType ) ;
     public final void rule__EClass__EGenericSuperTypesAssignment_13_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:20122:1: ( ( ruleEGenericType ) )
-            // InternalEel.g:20123:2: ( ruleEGenericType )
+            // InternalEel.g:20130:1: ( ( ruleEGenericType ) )
+            // InternalEel.g:20131:2: ( ruleEGenericType )
             {
-            // InternalEel.g:20123:2: ( ruleEGenericType )
-            // InternalEel.g:20124:3: ruleEGenericType
+            // InternalEel.g:20131:2: ( ruleEGenericType )
+            // InternalEel.g:20132:3: ruleEGenericType
             {
              before(grammarAccess.getEClassAccess().getEGenericSuperTypesEGenericTypeParserRuleCall_13_3_1_0()); 
             pushFollow(FOLLOW_2);
@@ -61214,17 +61230,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EOperation__NameAssignment_2"
-    // InternalEel.g:20133:1: rule__EOperation__NameAssignment_2 : ( ruleEString ) ;
+    // InternalEel.g:20141:1: rule__EOperation__NameAssignment_2 : ( ruleEString ) ;
     public final void rule__EOperation__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:20137:1: ( ( ruleEString ) )
-            // InternalEel.g:20138:2: ( ruleEString )
+            // InternalEel.g:20145:1: ( ( ruleEString ) )
+            // InternalEel.g:20146:2: ( ruleEString )
             {
-            // InternalEel.g:20138:2: ( ruleEString )
-            // InternalEel.g:20139:3: ruleEString
+            // InternalEel.g:20146:2: ( ruleEString )
+            // InternalEel.g:20147:3: ruleEString
             {
              before(grammarAccess.getEOperationAccess().getNameEStringParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -61255,17 +61271,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EOperation__OrderedAssignment_4_1"
-    // InternalEel.g:20148:1: rule__EOperation__OrderedAssignment_4_1 : ( ruleEBoolean ) ;
+    // InternalEel.g:20156:1: rule__EOperation__OrderedAssignment_4_1 : ( ruleEBoolean ) ;
     public final void rule__EOperation__OrderedAssignment_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:20152:1: ( ( ruleEBoolean ) )
-            // InternalEel.g:20153:2: ( ruleEBoolean )
+            // InternalEel.g:20160:1: ( ( ruleEBoolean ) )
+            // InternalEel.g:20161:2: ( ruleEBoolean )
             {
-            // InternalEel.g:20153:2: ( ruleEBoolean )
-            // InternalEel.g:20154:3: ruleEBoolean
+            // InternalEel.g:20161:2: ( ruleEBoolean )
+            // InternalEel.g:20162:3: ruleEBoolean
             {
              before(grammarAccess.getEOperationAccess().getOrderedEBooleanParserRuleCall_4_1_0()); 
             pushFollow(FOLLOW_2);
@@ -61296,17 +61312,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EOperation__UniqueAssignment_5_1"
-    // InternalEel.g:20163:1: rule__EOperation__UniqueAssignment_5_1 : ( ruleEBoolean ) ;
+    // InternalEel.g:20171:1: rule__EOperation__UniqueAssignment_5_1 : ( ruleEBoolean ) ;
     public final void rule__EOperation__UniqueAssignment_5_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:20167:1: ( ( ruleEBoolean ) )
-            // InternalEel.g:20168:2: ( ruleEBoolean )
+            // InternalEel.g:20175:1: ( ( ruleEBoolean ) )
+            // InternalEel.g:20176:2: ( ruleEBoolean )
             {
-            // InternalEel.g:20168:2: ( ruleEBoolean )
-            // InternalEel.g:20169:3: ruleEBoolean
+            // InternalEel.g:20176:2: ( ruleEBoolean )
+            // InternalEel.g:20177:3: ruleEBoolean
             {
              before(grammarAccess.getEOperationAccess().getUniqueEBooleanParserRuleCall_5_1_0()); 
             pushFollow(FOLLOW_2);
@@ -61337,17 +61353,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EOperation__LowerBoundAssignment_6_1"
-    // InternalEel.g:20178:1: rule__EOperation__LowerBoundAssignment_6_1 : ( ruleEInt ) ;
+    // InternalEel.g:20186:1: rule__EOperation__LowerBoundAssignment_6_1 : ( ruleEInt ) ;
     public final void rule__EOperation__LowerBoundAssignment_6_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:20182:1: ( ( ruleEInt ) )
-            // InternalEel.g:20183:2: ( ruleEInt )
+            // InternalEel.g:20190:1: ( ( ruleEInt ) )
+            // InternalEel.g:20191:2: ( ruleEInt )
             {
-            // InternalEel.g:20183:2: ( ruleEInt )
-            // InternalEel.g:20184:3: ruleEInt
+            // InternalEel.g:20191:2: ( ruleEInt )
+            // InternalEel.g:20192:3: ruleEInt
             {
              before(grammarAccess.getEOperationAccess().getLowerBoundEIntParserRuleCall_6_1_0()); 
             pushFollow(FOLLOW_2);
@@ -61378,17 +61394,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EOperation__UpperBoundAssignment_7_1"
-    // InternalEel.g:20193:1: rule__EOperation__UpperBoundAssignment_7_1 : ( ruleEInt ) ;
+    // InternalEel.g:20201:1: rule__EOperation__UpperBoundAssignment_7_1 : ( ruleEInt ) ;
     public final void rule__EOperation__UpperBoundAssignment_7_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:20197:1: ( ( ruleEInt ) )
-            // InternalEel.g:20198:2: ( ruleEInt )
+            // InternalEel.g:20205:1: ( ( ruleEInt ) )
+            // InternalEel.g:20206:2: ( ruleEInt )
             {
-            // InternalEel.g:20198:2: ( ruleEInt )
-            // InternalEel.g:20199:3: ruleEInt
+            // InternalEel.g:20206:2: ( ruleEInt )
+            // InternalEel.g:20207:3: ruleEInt
             {
              before(grammarAccess.getEOperationAccess().getUpperBoundEIntParserRuleCall_7_1_0()); 
             pushFollow(FOLLOW_2);
@@ -61419,21 +61435,21 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EOperation__ETypeAssignment_8_1"
-    // InternalEel.g:20208:1: rule__EOperation__ETypeAssignment_8_1 : ( ( ruleEString ) ) ;
+    // InternalEel.g:20216:1: rule__EOperation__ETypeAssignment_8_1 : ( ( ruleEString ) ) ;
     public final void rule__EOperation__ETypeAssignment_8_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:20212:1: ( ( ( ruleEString ) ) )
-            // InternalEel.g:20213:2: ( ( ruleEString ) )
+            // InternalEel.g:20220:1: ( ( ( ruleEString ) ) )
+            // InternalEel.g:20221:2: ( ( ruleEString ) )
             {
-            // InternalEel.g:20213:2: ( ( ruleEString ) )
-            // InternalEel.g:20214:3: ( ruleEString )
+            // InternalEel.g:20221:2: ( ( ruleEString ) )
+            // InternalEel.g:20222:3: ( ruleEString )
             {
              before(grammarAccess.getEOperationAccess().getETypeEClassifierCrossReference_8_1_0()); 
-            // InternalEel.g:20215:3: ( ruleEString )
-            // InternalEel.g:20216:4: ruleEString
+            // InternalEel.g:20223:3: ( ruleEString )
+            // InternalEel.g:20224:4: ruleEString
             {
              before(grammarAccess.getEOperationAccess().getETypeEClassifierEStringParserRuleCall_8_1_0_1()); 
             pushFollow(FOLLOW_2);
@@ -61468,21 +61484,21 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EOperation__EExceptionsAssignment_9_2"
-    // InternalEel.g:20227:1: rule__EOperation__EExceptionsAssignment_9_2 : ( ( ruleEString ) ) ;
+    // InternalEel.g:20235:1: rule__EOperation__EExceptionsAssignment_9_2 : ( ( ruleEString ) ) ;
     public final void rule__EOperation__EExceptionsAssignment_9_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:20231:1: ( ( ( ruleEString ) ) )
-            // InternalEel.g:20232:2: ( ( ruleEString ) )
+            // InternalEel.g:20239:1: ( ( ( ruleEString ) ) )
+            // InternalEel.g:20240:2: ( ( ruleEString ) )
             {
-            // InternalEel.g:20232:2: ( ( ruleEString ) )
-            // InternalEel.g:20233:3: ( ruleEString )
+            // InternalEel.g:20240:2: ( ( ruleEString ) )
+            // InternalEel.g:20241:3: ( ruleEString )
             {
              before(grammarAccess.getEOperationAccess().getEExceptionsEClassifierCrossReference_9_2_0()); 
-            // InternalEel.g:20234:3: ( ruleEString )
-            // InternalEel.g:20235:4: ruleEString
+            // InternalEel.g:20242:3: ( ruleEString )
+            // InternalEel.g:20243:4: ruleEString
             {
              before(grammarAccess.getEOperationAccess().getEExceptionsEClassifierEStringParserRuleCall_9_2_0_1()); 
             pushFollow(FOLLOW_2);
@@ -61517,21 +61533,21 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EOperation__EExceptionsAssignment_9_3_1"
-    // InternalEel.g:20246:1: rule__EOperation__EExceptionsAssignment_9_3_1 : ( ( ruleEString ) ) ;
+    // InternalEel.g:20254:1: rule__EOperation__EExceptionsAssignment_9_3_1 : ( ( ruleEString ) ) ;
     public final void rule__EOperation__EExceptionsAssignment_9_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:20250:1: ( ( ( ruleEString ) ) )
-            // InternalEel.g:20251:2: ( ( ruleEString ) )
+            // InternalEel.g:20258:1: ( ( ( ruleEString ) ) )
+            // InternalEel.g:20259:2: ( ( ruleEString ) )
             {
-            // InternalEel.g:20251:2: ( ( ruleEString ) )
-            // InternalEel.g:20252:3: ( ruleEString )
+            // InternalEel.g:20259:2: ( ( ruleEString ) )
+            // InternalEel.g:20260:3: ( ruleEString )
             {
              before(grammarAccess.getEOperationAccess().getEExceptionsEClassifierCrossReference_9_3_1_0()); 
-            // InternalEel.g:20253:3: ( ruleEString )
-            // InternalEel.g:20254:4: ruleEString
+            // InternalEel.g:20261:3: ( ruleEString )
+            // InternalEel.g:20262:4: ruleEString
             {
              before(grammarAccess.getEOperationAccess().getEExceptionsEClassifierEStringParserRuleCall_9_3_1_0_1()); 
             pushFollow(FOLLOW_2);
@@ -61566,17 +61582,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EOperation__EAnnotationsAssignment_10_2"
-    // InternalEel.g:20265:1: rule__EOperation__EAnnotationsAssignment_10_2 : ( ruleEAnnotation ) ;
+    // InternalEel.g:20273:1: rule__EOperation__EAnnotationsAssignment_10_2 : ( ruleEAnnotation ) ;
     public final void rule__EOperation__EAnnotationsAssignment_10_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:20269:1: ( ( ruleEAnnotation ) )
-            // InternalEel.g:20270:2: ( ruleEAnnotation )
+            // InternalEel.g:20277:1: ( ( ruleEAnnotation ) )
+            // InternalEel.g:20278:2: ( ruleEAnnotation )
             {
-            // InternalEel.g:20270:2: ( ruleEAnnotation )
-            // InternalEel.g:20271:3: ruleEAnnotation
+            // InternalEel.g:20278:2: ( ruleEAnnotation )
+            // InternalEel.g:20279:3: ruleEAnnotation
             {
              before(grammarAccess.getEOperationAccess().getEAnnotationsEAnnotationParserRuleCall_10_2_0()); 
             pushFollow(FOLLOW_2);
@@ -61607,17 +61623,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EOperation__EAnnotationsAssignment_10_3_1"
-    // InternalEel.g:20280:1: rule__EOperation__EAnnotationsAssignment_10_3_1 : ( ruleEAnnotation ) ;
+    // InternalEel.g:20288:1: rule__EOperation__EAnnotationsAssignment_10_3_1 : ( ruleEAnnotation ) ;
     public final void rule__EOperation__EAnnotationsAssignment_10_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:20284:1: ( ( ruleEAnnotation ) )
-            // InternalEel.g:20285:2: ( ruleEAnnotation )
+            // InternalEel.g:20292:1: ( ( ruleEAnnotation ) )
+            // InternalEel.g:20293:2: ( ruleEAnnotation )
             {
-            // InternalEel.g:20285:2: ( ruleEAnnotation )
-            // InternalEel.g:20286:3: ruleEAnnotation
+            // InternalEel.g:20293:2: ( ruleEAnnotation )
+            // InternalEel.g:20294:3: ruleEAnnotation
             {
              before(grammarAccess.getEOperationAccess().getEAnnotationsEAnnotationParserRuleCall_10_3_1_0()); 
             pushFollow(FOLLOW_2);
@@ -61648,17 +61664,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EOperation__EGenericTypeAssignment_11_1"
-    // InternalEel.g:20295:1: rule__EOperation__EGenericTypeAssignment_11_1 : ( ruleEGenericType ) ;
+    // InternalEel.g:20303:1: rule__EOperation__EGenericTypeAssignment_11_1 : ( ruleEGenericType ) ;
     public final void rule__EOperation__EGenericTypeAssignment_11_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:20299:1: ( ( ruleEGenericType ) )
-            // InternalEel.g:20300:2: ( ruleEGenericType )
+            // InternalEel.g:20307:1: ( ( ruleEGenericType ) )
+            // InternalEel.g:20308:2: ( ruleEGenericType )
             {
-            // InternalEel.g:20300:2: ( ruleEGenericType )
-            // InternalEel.g:20301:3: ruleEGenericType
+            // InternalEel.g:20308:2: ( ruleEGenericType )
+            // InternalEel.g:20309:3: ruleEGenericType
             {
              before(grammarAccess.getEOperationAccess().getEGenericTypeEGenericTypeParserRuleCall_11_1_0()); 
             pushFollow(FOLLOW_2);
@@ -61689,17 +61705,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EOperation__ETypeParametersAssignment_12_2"
-    // InternalEel.g:20310:1: rule__EOperation__ETypeParametersAssignment_12_2 : ( ruleETypeParameter ) ;
+    // InternalEel.g:20318:1: rule__EOperation__ETypeParametersAssignment_12_2 : ( ruleETypeParameter ) ;
     public final void rule__EOperation__ETypeParametersAssignment_12_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:20314:1: ( ( ruleETypeParameter ) )
-            // InternalEel.g:20315:2: ( ruleETypeParameter )
+            // InternalEel.g:20322:1: ( ( ruleETypeParameter ) )
+            // InternalEel.g:20323:2: ( ruleETypeParameter )
             {
-            // InternalEel.g:20315:2: ( ruleETypeParameter )
-            // InternalEel.g:20316:3: ruleETypeParameter
+            // InternalEel.g:20323:2: ( ruleETypeParameter )
+            // InternalEel.g:20324:3: ruleETypeParameter
             {
              before(grammarAccess.getEOperationAccess().getETypeParametersETypeParameterParserRuleCall_12_2_0()); 
             pushFollow(FOLLOW_2);
@@ -61730,17 +61746,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EOperation__ETypeParametersAssignment_12_3_1"
-    // InternalEel.g:20325:1: rule__EOperation__ETypeParametersAssignment_12_3_1 : ( ruleETypeParameter ) ;
+    // InternalEel.g:20333:1: rule__EOperation__ETypeParametersAssignment_12_3_1 : ( ruleETypeParameter ) ;
     public final void rule__EOperation__ETypeParametersAssignment_12_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:20329:1: ( ( ruleETypeParameter ) )
-            // InternalEel.g:20330:2: ( ruleETypeParameter )
+            // InternalEel.g:20337:1: ( ( ruleETypeParameter ) )
+            // InternalEel.g:20338:2: ( ruleETypeParameter )
             {
-            // InternalEel.g:20330:2: ( ruleETypeParameter )
-            // InternalEel.g:20331:3: ruleETypeParameter
+            // InternalEel.g:20338:2: ( ruleETypeParameter )
+            // InternalEel.g:20339:3: ruleETypeParameter
             {
              before(grammarAccess.getEOperationAccess().getETypeParametersETypeParameterParserRuleCall_12_3_1_0()); 
             pushFollow(FOLLOW_2);
@@ -61771,17 +61787,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EOperation__EParametersAssignment_13_2"
-    // InternalEel.g:20340:1: rule__EOperation__EParametersAssignment_13_2 : ( ruleEParameter ) ;
+    // InternalEel.g:20348:1: rule__EOperation__EParametersAssignment_13_2 : ( ruleEParameter ) ;
     public final void rule__EOperation__EParametersAssignment_13_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:20344:1: ( ( ruleEParameter ) )
-            // InternalEel.g:20345:2: ( ruleEParameter )
+            // InternalEel.g:20352:1: ( ( ruleEParameter ) )
+            // InternalEel.g:20353:2: ( ruleEParameter )
             {
-            // InternalEel.g:20345:2: ( ruleEParameter )
-            // InternalEel.g:20346:3: ruleEParameter
+            // InternalEel.g:20353:2: ( ruleEParameter )
+            // InternalEel.g:20354:3: ruleEParameter
             {
              before(grammarAccess.getEOperationAccess().getEParametersEParameterParserRuleCall_13_2_0()); 
             pushFollow(FOLLOW_2);
@@ -61812,17 +61828,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EOperation__EParametersAssignment_13_3_1"
-    // InternalEel.g:20355:1: rule__EOperation__EParametersAssignment_13_3_1 : ( ruleEParameter ) ;
+    // InternalEel.g:20363:1: rule__EOperation__EParametersAssignment_13_3_1 : ( ruleEParameter ) ;
     public final void rule__EOperation__EParametersAssignment_13_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:20359:1: ( ( ruleEParameter ) )
-            // InternalEel.g:20360:2: ( ruleEParameter )
+            // InternalEel.g:20367:1: ( ( ruleEParameter ) )
+            // InternalEel.g:20368:2: ( ruleEParameter )
             {
-            // InternalEel.g:20360:2: ( ruleEParameter )
-            // InternalEel.g:20361:3: ruleEParameter
+            // InternalEel.g:20368:2: ( ruleEParameter )
+            // InternalEel.g:20369:3: ruleEParameter
             {
              before(grammarAccess.getEOperationAccess().getEParametersEParameterParserRuleCall_13_3_1_0()); 
             pushFollow(FOLLOW_2);
@@ -61853,17 +61869,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EOperation__EGenericExceptionsAssignment_14_2"
-    // InternalEel.g:20370:1: rule__EOperation__EGenericExceptionsAssignment_14_2 : ( ruleEGenericType ) ;
+    // InternalEel.g:20378:1: rule__EOperation__EGenericExceptionsAssignment_14_2 : ( ruleEGenericType ) ;
     public final void rule__EOperation__EGenericExceptionsAssignment_14_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:20374:1: ( ( ruleEGenericType ) )
-            // InternalEel.g:20375:2: ( ruleEGenericType )
+            // InternalEel.g:20382:1: ( ( ruleEGenericType ) )
+            // InternalEel.g:20383:2: ( ruleEGenericType )
             {
-            // InternalEel.g:20375:2: ( ruleEGenericType )
-            // InternalEel.g:20376:3: ruleEGenericType
+            // InternalEel.g:20383:2: ( ruleEGenericType )
+            // InternalEel.g:20384:3: ruleEGenericType
             {
              before(grammarAccess.getEOperationAccess().getEGenericExceptionsEGenericTypeParserRuleCall_14_2_0()); 
             pushFollow(FOLLOW_2);
@@ -61894,17 +61910,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EOperation__EGenericExceptionsAssignment_14_3_1"
-    // InternalEel.g:20385:1: rule__EOperation__EGenericExceptionsAssignment_14_3_1 : ( ruleEGenericType ) ;
+    // InternalEel.g:20393:1: rule__EOperation__EGenericExceptionsAssignment_14_3_1 : ( ruleEGenericType ) ;
     public final void rule__EOperation__EGenericExceptionsAssignment_14_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:20389:1: ( ( ruleEGenericType ) )
-            // InternalEel.g:20390:2: ( ruleEGenericType )
+            // InternalEel.g:20397:1: ( ( ruleEGenericType ) )
+            // InternalEel.g:20398:2: ( ruleEGenericType )
             {
-            // InternalEel.g:20390:2: ( ruleEGenericType )
-            // InternalEel.g:20391:3: ruleEGenericType
+            // InternalEel.g:20398:2: ( ruleEGenericType )
+            // InternalEel.g:20399:3: ruleEGenericType
             {
              before(grammarAccess.getEOperationAccess().getEGenericExceptionsEGenericTypeParserRuleCall_14_3_1_0()); 
             pushFollow(FOLLOW_2);
@@ -61935,17 +61951,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EAnnotation__SourceAssignment_3_1"
-    // InternalEel.g:20400:1: rule__EAnnotation__SourceAssignment_3_1 : ( ruleEString ) ;
+    // InternalEel.g:20408:1: rule__EAnnotation__SourceAssignment_3_1 : ( ruleEString ) ;
     public final void rule__EAnnotation__SourceAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:20404:1: ( ( ruleEString ) )
-            // InternalEel.g:20405:2: ( ruleEString )
+            // InternalEel.g:20412:1: ( ( ruleEString ) )
+            // InternalEel.g:20413:2: ( ruleEString )
             {
-            // InternalEel.g:20405:2: ( ruleEString )
-            // InternalEel.g:20406:3: ruleEString
+            // InternalEel.g:20413:2: ( ruleEString )
+            // InternalEel.g:20414:3: ruleEString
             {
              before(grammarAccess.getEAnnotationAccess().getSourceEStringParserRuleCall_3_1_0()); 
             pushFollow(FOLLOW_2);
@@ -61976,21 +61992,21 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EAnnotation__ReferencesAssignment_4_2"
-    // InternalEel.g:20415:1: rule__EAnnotation__ReferencesAssignment_4_2 : ( ( ruleEString ) ) ;
+    // InternalEel.g:20423:1: rule__EAnnotation__ReferencesAssignment_4_2 : ( ( ruleEString ) ) ;
     public final void rule__EAnnotation__ReferencesAssignment_4_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:20419:1: ( ( ( ruleEString ) ) )
-            // InternalEel.g:20420:2: ( ( ruleEString ) )
+            // InternalEel.g:20427:1: ( ( ( ruleEString ) ) )
+            // InternalEel.g:20428:2: ( ( ruleEString ) )
             {
-            // InternalEel.g:20420:2: ( ( ruleEString ) )
-            // InternalEel.g:20421:3: ( ruleEString )
+            // InternalEel.g:20428:2: ( ( ruleEString ) )
+            // InternalEel.g:20429:3: ( ruleEString )
             {
              before(grammarAccess.getEAnnotationAccess().getReferencesEObjectCrossReference_4_2_0()); 
-            // InternalEel.g:20422:3: ( ruleEString )
-            // InternalEel.g:20423:4: ruleEString
+            // InternalEel.g:20430:3: ( ruleEString )
+            // InternalEel.g:20431:4: ruleEString
             {
              before(grammarAccess.getEAnnotationAccess().getReferencesEObjectEStringParserRuleCall_4_2_0_1()); 
             pushFollow(FOLLOW_2);
@@ -62025,21 +62041,21 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EAnnotation__ReferencesAssignment_4_3_1"
-    // InternalEel.g:20434:1: rule__EAnnotation__ReferencesAssignment_4_3_1 : ( ( ruleEString ) ) ;
+    // InternalEel.g:20442:1: rule__EAnnotation__ReferencesAssignment_4_3_1 : ( ( ruleEString ) ) ;
     public final void rule__EAnnotation__ReferencesAssignment_4_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:20438:1: ( ( ( ruleEString ) ) )
-            // InternalEel.g:20439:2: ( ( ruleEString ) )
+            // InternalEel.g:20446:1: ( ( ( ruleEString ) ) )
+            // InternalEel.g:20447:2: ( ( ruleEString ) )
             {
-            // InternalEel.g:20439:2: ( ( ruleEString ) )
-            // InternalEel.g:20440:3: ( ruleEString )
+            // InternalEel.g:20447:2: ( ( ruleEString ) )
+            // InternalEel.g:20448:3: ( ruleEString )
             {
              before(grammarAccess.getEAnnotationAccess().getReferencesEObjectCrossReference_4_3_1_0()); 
-            // InternalEel.g:20441:3: ( ruleEString )
-            // InternalEel.g:20442:4: ruleEString
+            // InternalEel.g:20449:3: ( ruleEString )
+            // InternalEel.g:20450:4: ruleEString
             {
              before(grammarAccess.getEAnnotationAccess().getReferencesEObjectEStringParserRuleCall_4_3_1_0_1()); 
             pushFollow(FOLLOW_2);
@@ -62074,17 +62090,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EAnnotation__EAnnotationsAssignment_5_2"
-    // InternalEel.g:20453:1: rule__EAnnotation__EAnnotationsAssignment_5_2 : ( ruleEAnnotation ) ;
+    // InternalEel.g:20461:1: rule__EAnnotation__EAnnotationsAssignment_5_2 : ( ruleEAnnotation ) ;
     public final void rule__EAnnotation__EAnnotationsAssignment_5_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:20457:1: ( ( ruleEAnnotation ) )
-            // InternalEel.g:20458:2: ( ruleEAnnotation )
+            // InternalEel.g:20465:1: ( ( ruleEAnnotation ) )
+            // InternalEel.g:20466:2: ( ruleEAnnotation )
             {
-            // InternalEel.g:20458:2: ( ruleEAnnotation )
-            // InternalEel.g:20459:3: ruleEAnnotation
+            // InternalEel.g:20466:2: ( ruleEAnnotation )
+            // InternalEel.g:20467:3: ruleEAnnotation
             {
              before(grammarAccess.getEAnnotationAccess().getEAnnotationsEAnnotationParserRuleCall_5_2_0()); 
             pushFollow(FOLLOW_2);
@@ -62115,17 +62131,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EAnnotation__EAnnotationsAssignment_5_3_1"
-    // InternalEel.g:20468:1: rule__EAnnotation__EAnnotationsAssignment_5_3_1 : ( ruleEAnnotation ) ;
+    // InternalEel.g:20476:1: rule__EAnnotation__EAnnotationsAssignment_5_3_1 : ( ruleEAnnotation ) ;
     public final void rule__EAnnotation__EAnnotationsAssignment_5_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:20472:1: ( ( ruleEAnnotation ) )
-            // InternalEel.g:20473:2: ( ruleEAnnotation )
+            // InternalEel.g:20480:1: ( ( ruleEAnnotation ) )
+            // InternalEel.g:20481:2: ( ruleEAnnotation )
             {
-            // InternalEel.g:20473:2: ( ruleEAnnotation )
-            // InternalEel.g:20474:3: ruleEAnnotation
+            // InternalEel.g:20481:2: ( ruleEAnnotation )
+            // InternalEel.g:20482:3: ruleEAnnotation
             {
              before(grammarAccess.getEAnnotationAccess().getEAnnotationsEAnnotationParserRuleCall_5_3_1_0()); 
             pushFollow(FOLLOW_2);
@@ -62156,17 +62172,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EAnnotation__DetailsAssignment_6_2"
-    // InternalEel.g:20483:1: rule__EAnnotation__DetailsAssignment_6_2 : ( ruleEStringToStringMapEntry ) ;
+    // InternalEel.g:20491:1: rule__EAnnotation__DetailsAssignment_6_2 : ( ruleEStringToStringMapEntry ) ;
     public final void rule__EAnnotation__DetailsAssignment_6_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:20487:1: ( ( ruleEStringToStringMapEntry ) )
-            // InternalEel.g:20488:2: ( ruleEStringToStringMapEntry )
+            // InternalEel.g:20495:1: ( ( ruleEStringToStringMapEntry ) )
+            // InternalEel.g:20496:2: ( ruleEStringToStringMapEntry )
             {
-            // InternalEel.g:20488:2: ( ruleEStringToStringMapEntry )
-            // InternalEel.g:20489:3: ruleEStringToStringMapEntry
+            // InternalEel.g:20496:2: ( ruleEStringToStringMapEntry )
+            // InternalEel.g:20497:3: ruleEStringToStringMapEntry
             {
              before(grammarAccess.getEAnnotationAccess().getDetailsEStringToStringMapEntryParserRuleCall_6_2_0()); 
             pushFollow(FOLLOW_2);
@@ -62197,17 +62213,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EAnnotation__DetailsAssignment_6_3_1"
-    // InternalEel.g:20498:1: rule__EAnnotation__DetailsAssignment_6_3_1 : ( ruleEStringToStringMapEntry ) ;
+    // InternalEel.g:20506:1: rule__EAnnotation__DetailsAssignment_6_3_1 : ( ruleEStringToStringMapEntry ) ;
     public final void rule__EAnnotation__DetailsAssignment_6_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:20502:1: ( ( ruleEStringToStringMapEntry ) )
-            // InternalEel.g:20503:2: ( ruleEStringToStringMapEntry )
+            // InternalEel.g:20510:1: ( ( ruleEStringToStringMapEntry ) )
+            // InternalEel.g:20511:2: ( ruleEStringToStringMapEntry )
             {
-            // InternalEel.g:20503:2: ( ruleEStringToStringMapEntry )
-            // InternalEel.g:20504:3: ruleEStringToStringMapEntry
+            // InternalEel.g:20511:2: ( ruleEStringToStringMapEntry )
+            // InternalEel.g:20512:3: ruleEStringToStringMapEntry
             {
              before(grammarAccess.getEAnnotationAccess().getDetailsEStringToStringMapEntryParserRuleCall_6_3_1_0()); 
             pushFollow(FOLLOW_2);
@@ -62238,17 +62254,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EAnnotation__ContentsAssignment_7_2"
-    // InternalEel.g:20513:1: rule__EAnnotation__ContentsAssignment_7_2 : ( ruleEObject ) ;
+    // InternalEel.g:20521:1: rule__EAnnotation__ContentsAssignment_7_2 : ( ruleEObject ) ;
     public final void rule__EAnnotation__ContentsAssignment_7_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:20517:1: ( ( ruleEObject ) )
-            // InternalEel.g:20518:2: ( ruleEObject )
+            // InternalEel.g:20525:1: ( ( ruleEObject ) )
+            // InternalEel.g:20526:2: ( ruleEObject )
             {
-            // InternalEel.g:20518:2: ( ruleEObject )
-            // InternalEel.g:20519:3: ruleEObject
+            // InternalEel.g:20526:2: ( ruleEObject )
+            // InternalEel.g:20527:3: ruleEObject
             {
              before(grammarAccess.getEAnnotationAccess().getContentsEObjectParserRuleCall_7_2_0()); 
             pushFollow(FOLLOW_2);
@@ -62279,17 +62295,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EAnnotation__ContentsAssignment_7_3_1"
-    // InternalEel.g:20528:1: rule__EAnnotation__ContentsAssignment_7_3_1 : ( ruleEObject ) ;
+    // InternalEel.g:20536:1: rule__EAnnotation__ContentsAssignment_7_3_1 : ( ruleEObject ) ;
     public final void rule__EAnnotation__ContentsAssignment_7_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:20532:1: ( ( ruleEObject ) )
-            // InternalEel.g:20533:2: ( ruleEObject )
+            // InternalEel.g:20540:1: ( ( ruleEObject ) )
+            // InternalEel.g:20541:2: ( ruleEObject )
             {
-            // InternalEel.g:20533:2: ( ruleEObject )
-            // InternalEel.g:20534:3: ruleEObject
+            // InternalEel.g:20541:2: ( ruleEObject )
+            // InternalEel.g:20542:3: ruleEObject
             {
              before(grammarAccess.getEAnnotationAccess().getContentsEObjectParserRuleCall_7_3_1_0()); 
             pushFollow(FOLLOW_2);
@@ -62320,17 +62336,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ETypeParameter__NameAssignment_2"
-    // InternalEel.g:20543:1: rule__ETypeParameter__NameAssignment_2 : ( ruleEString ) ;
+    // InternalEel.g:20551:1: rule__ETypeParameter__NameAssignment_2 : ( ruleEString ) ;
     public final void rule__ETypeParameter__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:20547:1: ( ( ruleEString ) )
-            // InternalEel.g:20548:2: ( ruleEString )
+            // InternalEel.g:20555:1: ( ( ruleEString ) )
+            // InternalEel.g:20556:2: ( ruleEString )
             {
-            // InternalEel.g:20548:2: ( ruleEString )
-            // InternalEel.g:20549:3: ruleEString
+            // InternalEel.g:20556:2: ( ruleEString )
+            // InternalEel.g:20557:3: ruleEString
             {
              before(grammarAccess.getETypeParameterAccess().getNameEStringParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -62361,17 +62377,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ETypeParameter__EAnnotationsAssignment_4_2"
-    // InternalEel.g:20558:1: rule__ETypeParameter__EAnnotationsAssignment_4_2 : ( ruleEAnnotation ) ;
+    // InternalEel.g:20566:1: rule__ETypeParameter__EAnnotationsAssignment_4_2 : ( ruleEAnnotation ) ;
     public final void rule__ETypeParameter__EAnnotationsAssignment_4_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:20562:1: ( ( ruleEAnnotation ) )
-            // InternalEel.g:20563:2: ( ruleEAnnotation )
+            // InternalEel.g:20570:1: ( ( ruleEAnnotation ) )
+            // InternalEel.g:20571:2: ( ruleEAnnotation )
             {
-            // InternalEel.g:20563:2: ( ruleEAnnotation )
-            // InternalEel.g:20564:3: ruleEAnnotation
+            // InternalEel.g:20571:2: ( ruleEAnnotation )
+            // InternalEel.g:20572:3: ruleEAnnotation
             {
              before(grammarAccess.getETypeParameterAccess().getEAnnotationsEAnnotationParserRuleCall_4_2_0()); 
             pushFollow(FOLLOW_2);
@@ -62402,17 +62418,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ETypeParameter__EAnnotationsAssignment_4_3_1"
-    // InternalEel.g:20573:1: rule__ETypeParameter__EAnnotationsAssignment_4_3_1 : ( ruleEAnnotation ) ;
+    // InternalEel.g:20581:1: rule__ETypeParameter__EAnnotationsAssignment_4_3_1 : ( ruleEAnnotation ) ;
     public final void rule__ETypeParameter__EAnnotationsAssignment_4_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:20577:1: ( ( ruleEAnnotation ) )
-            // InternalEel.g:20578:2: ( ruleEAnnotation )
+            // InternalEel.g:20585:1: ( ( ruleEAnnotation ) )
+            // InternalEel.g:20586:2: ( ruleEAnnotation )
             {
-            // InternalEel.g:20578:2: ( ruleEAnnotation )
-            // InternalEel.g:20579:3: ruleEAnnotation
+            // InternalEel.g:20586:2: ( ruleEAnnotation )
+            // InternalEel.g:20587:3: ruleEAnnotation
             {
              before(grammarAccess.getETypeParameterAccess().getEAnnotationsEAnnotationParserRuleCall_4_3_1_0()); 
             pushFollow(FOLLOW_2);
@@ -62443,17 +62459,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ETypeParameter__EBoundsAssignment_5_2"
-    // InternalEel.g:20588:1: rule__ETypeParameter__EBoundsAssignment_5_2 : ( ruleEGenericType ) ;
+    // InternalEel.g:20596:1: rule__ETypeParameter__EBoundsAssignment_5_2 : ( ruleEGenericType ) ;
     public final void rule__ETypeParameter__EBoundsAssignment_5_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:20592:1: ( ( ruleEGenericType ) )
-            // InternalEel.g:20593:2: ( ruleEGenericType )
+            // InternalEel.g:20600:1: ( ( ruleEGenericType ) )
+            // InternalEel.g:20601:2: ( ruleEGenericType )
             {
-            // InternalEel.g:20593:2: ( ruleEGenericType )
-            // InternalEel.g:20594:3: ruleEGenericType
+            // InternalEel.g:20601:2: ( ruleEGenericType )
+            // InternalEel.g:20602:3: ruleEGenericType
             {
              before(grammarAccess.getETypeParameterAccess().getEBoundsEGenericTypeParserRuleCall_5_2_0()); 
             pushFollow(FOLLOW_2);
@@ -62484,17 +62500,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ETypeParameter__EBoundsAssignment_5_3_1"
-    // InternalEel.g:20603:1: rule__ETypeParameter__EBoundsAssignment_5_3_1 : ( ruleEGenericType ) ;
+    // InternalEel.g:20611:1: rule__ETypeParameter__EBoundsAssignment_5_3_1 : ( ruleEGenericType ) ;
     public final void rule__ETypeParameter__EBoundsAssignment_5_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:20607:1: ( ( ruleEGenericType ) )
-            // InternalEel.g:20608:2: ( ruleEGenericType )
+            // InternalEel.g:20615:1: ( ( ruleEGenericType ) )
+            // InternalEel.g:20616:2: ( ruleEGenericType )
             {
-            // InternalEel.g:20608:2: ( ruleEGenericType )
-            // InternalEel.g:20609:3: ruleEGenericType
+            // InternalEel.g:20616:2: ( ruleEGenericType )
+            // InternalEel.g:20617:3: ruleEGenericType
             {
              before(grammarAccess.getETypeParameterAccess().getEBoundsEGenericTypeParserRuleCall_5_3_1_0()); 
             pushFollow(FOLLOW_2);
@@ -62525,21 +62541,21 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EGenericType__ETypeParameterAssignment_3_1"
-    // InternalEel.g:20618:1: rule__EGenericType__ETypeParameterAssignment_3_1 : ( ( ruleEString ) ) ;
+    // InternalEel.g:20626:1: rule__EGenericType__ETypeParameterAssignment_3_1 : ( ( ruleEString ) ) ;
     public final void rule__EGenericType__ETypeParameterAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:20622:1: ( ( ( ruleEString ) ) )
-            // InternalEel.g:20623:2: ( ( ruleEString ) )
+            // InternalEel.g:20630:1: ( ( ( ruleEString ) ) )
+            // InternalEel.g:20631:2: ( ( ruleEString ) )
             {
-            // InternalEel.g:20623:2: ( ( ruleEString ) )
-            // InternalEel.g:20624:3: ( ruleEString )
+            // InternalEel.g:20631:2: ( ( ruleEString ) )
+            // InternalEel.g:20632:3: ( ruleEString )
             {
              before(grammarAccess.getEGenericTypeAccess().getETypeParameterETypeParameterCrossReference_3_1_0()); 
-            // InternalEel.g:20625:3: ( ruleEString )
-            // InternalEel.g:20626:4: ruleEString
+            // InternalEel.g:20633:3: ( ruleEString )
+            // InternalEel.g:20634:4: ruleEString
             {
              before(grammarAccess.getEGenericTypeAccess().getETypeParameterETypeParameterEStringParserRuleCall_3_1_0_1()); 
             pushFollow(FOLLOW_2);
@@ -62574,21 +62590,21 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EGenericType__EClassifierAssignment_4_1"
-    // InternalEel.g:20637:1: rule__EGenericType__EClassifierAssignment_4_1 : ( ( ruleEString ) ) ;
+    // InternalEel.g:20645:1: rule__EGenericType__EClassifierAssignment_4_1 : ( ( ruleEString ) ) ;
     public final void rule__EGenericType__EClassifierAssignment_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:20641:1: ( ( ( ruleEString ) ) )
-            // InternalEel.g:20642:2: ( ( ruleEString ) )
+            // InternalEel.g:20649:1: ( ( ( ruleEString ) ) )
+            // InternalEel.g:20650:2: ( ( ruleEString ) )
             {
-            // InternalEel.g:20642:2: ( ( ruleEString ) )
-            // InternalEel.g:20643:3: ( ruleEString )
+            // InternalEel.g:20650:2: ( ( ruleEString ) )
+            // InternalEel.g:20651:3: ( ruleEString )
             {
              before(grammarAccess.getEGenericTypeAccess().getEClassifierEClassifierCrossReference_4_1_0()); 
-            // InternalEel.g:20644:3: ( ruleEString )
-            // InternalEel.g:20645:4: ruleEString
+            // InternalEel.g:20652:3: ( ruleEString )
+            // InternalEel.g:20653:4: ruleEString
             {
              before(grammarAccess.getEGenericTypeAccess().getEClassifierEClassifierEStringParserRuleCall_4_1_0_1()); 
             pushFollow(FOLLOW_2);
@@ -62623,17 +62639,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EGenericType__EUpperBoundAssignment_5_1"
-    // InternalEel.g:20656:1: rule__EGenericType__EUpperBoundAssignment_5_1 : ( ruleEGenericType ) ;
+    // InternalEel.g:20664:1: rule__EGenericType__EUpperBoundAssignment_5_1 : ( ruleEGenericType ) ;
     public final void rule__EGenericType__EUpperBoundAssignment_5_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:20660:1: ( ( ruleEGenericType ) )
-            // InternalEel.g:20661:2: ( ruleEGenericType )
+            // InternalEel.g:20668:1: ( ( ruleEGenericType ) )
+            // InternalEel.g:20669:2: ( ruleEGenericType )
             {
-            // InternalEel.g:20661:2: ( ruleEGenericType )
-            // InternalEel.g:20662:3: ruleEGenericType
+            // InternalEel.g:20669:2: ( ruleEGenericType )
+            // InternalEel.g:20670:3: ruleEGenericType
             {
              before(grammarAccess.getEGenericTypeAccess().getEUpperBoundEGenericTypeParserRuleCall_5_1_0()); 
             pushFollow(FOLLOW_2);
@@ -62664,17 +62680,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EGenericType__ETypeArgumentsAssignment_6_2"
-    // InternalEel.g:20671:1: rule__EGenericType__ETypeArgumentsAssignment_6_2 : ( ruleEGenericType ) ;
+    // InternalEel.g:20679:1: rule__EGenericType__ETypeArgumentsAssignment_6_2 : ( ruleEGenericType ) ;
     public final void rule__EGenericType__ETypeArgumentsAssignment_6_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:20675:1: ( ( ruleEGenericType ) )
-            // InternalEel.g:20676:2: ( ruleEGenericType )
+            // InternalEel.g:20683:1: ( ( ruleEGenericType ) )
+            // InternalEel.g:20684:2: ( ruleEGenericType )
             {
-            // InternalEel.g:20676:2: ( ruleEGenericType )
-            // InternalEel.g:20677:3: ruleEGenericType
+            // InternalEel.g:20684:2: ( ruleEGenericType )
+            // InternalEel.g:20685:3: ruleEGenericType
             {
              before(grammarAccess.getEGenericTypeAccess().getETypeArgumentsEGenericTypeParserRuleCall_6_2_0()); 
             pushFollow(FOLLOW_2);
@@ -62705,17 +62721,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EGenericType__ETypeArgumentsAssignment_6_3_1"
-    // InternalEel.g:20686:1: rule__EGenericType__ETypeArgumentsAssignment_6_3_1 : ( ruleEGenericType ) ;
+    // InternalEel.g:20694:1: rule__EGenericType__ETypeArgumentsAssignment_6_3_1 : ( ruleEGenericType ) ;
     public final void rule__EGenericType__ETypeArgumentsAssignment_6_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:20690:1: ( ( ruleEGenericType ) )
-            // InternalEel.g:20691:2: ( ruleEGenericType )
+            // InternalEel.g:20698:1: ( ( ruleEGenericType ) )
+            // InternalEel.g:20699:2: ( ruleEGenericType )
             {
-            // InternalEel.g:20691:2: ( ruleEGenericType )
-            // InternalEel.g:20692:3: ruleEGenericType
+            // InternalEel.g:20699:2: ( ruleEGenericType )
+            // InternalEel.g:20700:3: ruleEGenericType
             {
              before(grammarAccess.getEGenericTypeAccess().getETypeArgumentsEGenericTypeParserRuleCall_6_3_1_0()); 
             pushFollow(FOLLOW_2);
@@ -62746,17 +62762,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EGenericType__ELowerBoundAssignment_7_1"
-    // InternalEel.g:20701:1: rule__EGenericType__ELowerBoundAssignment_7_1 : ( ruleEGenericType ) ;
+    // InternalEel.g:20709:1: rule__EGenericType__ELowerBoundAssignment_7_1 : ( ruleEGenericType ) ;
     public final void rule__EGenericType__ELowerBoundAssignment_7_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:20705:1: ( ( ruleEGenericType ) )
-            // InternalEel.g:20706:2: ( ruleEGenericType )
+            // InternalEel.g:20713:1: ( ( ruleEGenericType ) )
+            // InternalEel.g:20714:2: ( ruleEGenericType )
             {
-            // InternalEel.g:20706:2: ( ruleEGenericType )
-            // InternalEel.g:20707:3: ruleEGenericType
+            // InternalEel.g:20714:2: ( ruleEGenericType )
+            // InternalEel.g:20715:3: ruleEGenericType
             {
              before(grammarAccess.getEGenericTypeAccess().getELowerBoundEGenericTypeParserRuleCall_7_1_0()); 
             pushFollow(FOLLOW_2);
@@ -62787,17 +62803,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EStringToStringMapEntry__KeyAssignment_3_1"
-    // InternalEel.g:20716:1: rule__EStringToStringMapEntry__KeyAssignment_3_1 : ( ruleEString ) ;
+    // InternalEel.g:20724:1: rule__EStringToStringMapEntry__KeyAssignment_3_1 : ( ruleEString ) ;
     public final void rule__EStringToStringMapEntry__KeyAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:20720:1: ( ( ruleEString ) )
-            // InternalEel.g:20721:2: ( ruleEString )
+            // InternalEel.g:20728:1: ( ( ruleEString ) )
+            // InternalEel.g:20729:2: ( ruleEString )
             {
-            // InternalEel.g:20721:2: ( ruleEString )
-            // InternalEel.g:20722:3: ruleEString
+            // InternalEel.g:20729:2: ( ruleEString )
+            // InternalEel.g:20730:3: ruleEString
             {
              before(grammarAccess.getEStringToStringMapEntryAccess().getKeyEStringParserRuleCall_3_1_0()); 
             pushFollow(FOLLOW_2);
@@ -62828,17 +62844,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EStringToStringMapEntry__ValueAssignment_4_1"
-    // InternalEel.g:20731:1: rule__EStringToStringMapEntry__ValueAssignment_4_1 : ( ruleEString ) ;
+    // InternalEel.g:20739:1: rule__EStringToStringMapEntry__ValueAssignment_4_1 : ( ruleEString ) ;
     public final void rule__EStringToStringMapEntry__ValueAssignment_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:20735:1: ( ( ruleEString ) )
-            // InternalEel.g:20736:2: ( ruleEString )
+            // InternalEel.g:20743:1: ( ( ruleEString ) )
+            // InternalEel.g:20744:2: ( ruleEString )
             {
-            // InternalEel.g:20736:2: ( ruleEString )
-            // InternalEel.g:20737:3: ruleEString
+            // InternalEel.g:20744:2: ( ruleEString )
+            // InternalEel.g:20745:3: ruleEString
             {
              before(grammarAccess.getEStringToStringMapEntryAccess().getValueEStringParserRuleCall_4_1_0()); 
             pushFollow(FOLLOW_2);
@@ -62869,21 +62885,21 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EAttribute__VolatileAssignment_1"
-    // InternalEel.g:20746:1: rule__EAttribute__VolatileAssignment_1 : ( ( 'volatile' ) ) ;
+    // InternalEel.g:20754:1: rule__EAttribute__VolatileAssignment_1 : ( ( 'volatile' ) ) ;
     public final void rule__EAttribute__VolatileAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:20750:1: ( ( ( 'volatile' ) ) )
-            // InternalEel.g:20751:2: ( ( 'volatile' ) )
+            // InternalEel.g:20758:1: ( ( ( 'volatile' ) ) )
+            // InternalEel.g:20759:2: ( ( 'volatile' ) )
             {
-            // InternalEel.g:20751:2: ( ( 'volatile' ) )
-            // InternalEel.g:20752:3: ( 'volatile' )
+            // InternalEel.g:20759:2: ( ( 'volatile' ) )
+            // InternalEel.g:20760:3: ( 'volatile' )
             {
              before(grammarAccess.getEAttributeAccess().getVolatileVolatileKeyword_1_0()); 
-            // InternalEel.g:20753:3: ( 'volatile' )
-            // InternalEel.g:20754:4: 'volatile'
+            // InternalEel.g:20761:3: ( 'volatile' )
+            // InternalEel.g:20762:4: 'volatile'
             {
              before(grammarAccess.getEAttributeAccess().getVolatileVolatileKeyword_1_0()); 
             match(input,113,FOLLOW_2); 
@@ -62914,21 +62930,21 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EAttribute__TransientAssignment_2"
-    // InternalEel.g:20765:1: rule__EAttribute__TransientAssignment_2 : ( ( 'transient' ) ) ;
+    // InternalEel.g:20773:1: rule__EAttribute__TransientAssignment_2 : ( ( 'transient' ) ) ;
     public final void rule__EAttribute__TransientAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:20769:1: ( ( ( 'transient' ) ) )
-            // InternalEel.g:20770:2: ( ( 'transient' ) )
+            // InternalEel.g:20777:1: ( ( ( 'transient' ) ) )
+            // InternalEel.g:20778:2: ( ( 'transient' ) )
             {
-            // InternalEel.g:20770:2: ( ( 'transient' ) )
-            // InternalEel.g:20771:3: ( 'transient' )
+            // InternalEel.g:20778:2: ( ( 'transient' ) )
+            // InternalEel.g:20779:3: ( 'transient' )
             {
              before(grammarAccess.getEAttributeAccess().getTransientTransientKeyword_2_0()); 
-            // InternalEel.g:20772:3: ( 'transient' )
-            // InternalEel.g:20773:4: 'transient'
+            // InternalEel.g:20780:3: ( 'transient' )
+            // InternalEel.g:20781:4: 'transient'
             {
              before(grammarAccess.getEAttributeAccess().getTransientTransientKeyword_2_0()); 
             match(input,114,FOLLOW_2); 
@@ -62959,21 +62975,21 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EAttribute__UnsettableAssignment_3"
-    // InternalEel.g:20784:1: rule__EAttribute__UnsettableAssignment_3 : ( ( 'unsettable' ) ) ;
+    // InternalEel.g:20792:1: rule__EAttribute__UnsettableAssignment_3 : ( ( 'unsettable' ) ) ;
     public final void rule__EAttribute__UnsettableAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:20788:1: ( ( ( 'unsettable' ) ) )
-            // InternalEel.g:20789:2: ( ( 'unsettable' ) )
+            // InternalEel.g:20796:1: ( ( ( 'unsettable' ) ) )
+            // InternalEel.g:20797:2: ( ( 'unsettable' ) )
             {
-            // InternalEel.g:20789:2: ( ( 'unsettable' ) )
-            // InternalEel.g:20790:3: ( 'unsettable' )
+            // InternalEel.g:20797:2: ( ( 'unsettable' ) )
+            // InternalEel.g:20798:3: ( 'unsettable' )
             {
              before(grammarAccess.getEAttributeAccess().getUnsettableUnsettableKeyword_3_0()); 
-            // InternalEel.g:20791:3: ( 'unsettable' )
-            // InternalEel.g:20792:4: 'unsettable'
+            // InternalEel.g:20799:3: ( 'unsettable' )
+            // InternalEel.g:20800:4: 'unsettable'
             {
              before(grammarAccess.getEAttributeAccess().getUnsettableUnsettableKeyword_3_0()); 
             match(input,115,FOLLOW_2); 
@@ -63004,21 +63020,21 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EAttribute__DerivedAssignment_4"
-    // InternalEel.g:20803:1: rule__EAttribute__DerivedAssignment_4 : ( ( 'derived' ) ) ;
+    // InternalEel.g:20811:1: rule__EAttribute__DerivedAssignment_4 : ( ( 'derived' ) ) ;
     public final void rule__EAttribute__DerivedAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:20807:1: ( ( ( 'derived' ) ) )
-            // InternalEel.g:20808:2: ( ( 'derived' ) )
+            // InternalEel.g:20815:1: ( ( ( 'derived' ) ) )
+            // InternalEel.g:20816:2: ( ( 'derived' ) )
             {
-            // InternalEel.g:20808:2: ( ( 'derived' ) )
-            // InternalEel.g:20809:3: ( 'derived' )
+            // InternalEel.g:20816:2: ( ( 'derived' ) )
+            // InternalEel.g:20817:3: ( 'derived' )
             {
              before(grammarAccess.getEAttributeAccess().getDerivedDerivedKeyword_4_0()); 
-            // InternalEel.g:20810:3: ( 'derived' )
-            // InternalEel.g:20811:4: 'derived'
+            // InternalEel.g:20818:3: ( 'derived' )
+            // InternalEel.g:20819:4: 'derived'
             {
              before(grammarAccess.getEAttributeAccess().getDerivedDerivedKeyword_4_0()); 
             match(input,116,FOLLOW_2); 
@@ -63049,21 +63065,21 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EAttribute__IDAssignment_5"
-    // InternalEel.g:20822:1: rule__EAttribute__IDAssignment_5 : ( ( 'iD' ) ) ;
+    // InternalEel.g:20830:1: rule__EAttribute__IDAssignment_5 : ( ( 'iD' ) ) ;
     public final void rule__EAttribute__IDAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:20826:1: ( ( ( 'iD' ) ) )
-            // InternalEel.g:20827:2: ( ( 'iD' ) )
+            // InternalEel.g:20834:1: ( ( ( 'iD' ) ) )
+            // InternalEel.g:20835:2: ( ( 'iD' ) )
             {
-            // InternalEel.g:20827:2: ( ( 'iD' ) )
-            // InternalEel.g:20828:3: ( 'iD' )
+            // InternalEel.g:20835:2: ( ( 'iD' ) )
+            // InternalEel.g:20836:3: ( 'iD' )
             {
              before(grammarAccess.getEAttributeAccess().getIDIDKeyword_5_0()); 
-            // InternalEel.g:20829:3: ( 'iD' )
-            // InternalEel.g:20830:4: 'iD'
+            // InternalEel.g:20837:3: ( 'iD' )
+            // InternalEel.g:20838:4: 'iD'
             {
              before(grammarAccess.getEAttributeAccess().getIDIDKeyword_5_0()); 
             match(input,117,FOLLOW_2); 
@@ -63094,17 +63110,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EAttribute__NameAssignment_7"
-    // InternalEel.g:20841:1: rule__EAttribute__NameAssignment_7 : ( ruleEString ) ;
+    // InternalEel.g:20849:1: rule__EAttribute__NameAssignment_7 : ( ruleEString ) ;
     public final void rule__EAttribute__NameAssignment_7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:20845:1: ( ( ruleEString ) )
-            // InternalEel.g:20846:2: ( ruleEString )
+            // InternalEel.g:20853:1: ( ( ruleEString ) )
+            // InternalEel.g:20854:2: ( ruleEString )
             {
-            // InternalEel.g:20846:2: ( ruleEString )
-            // InternalEel.g:20847:3: ruleEString
+            // InternalEel.g:20854:2: ( ruleEString )
+            // InternalEel.g:20855:3: ruleEString
             {
              before(grammarAccess.getEAttributeAccess().getNameEStringParserRuleCall_7_0()); 
             pushFollow(FOLLOW_2);
@@ -63135,17 +63151,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EAttribute__OrderedAssignment_9_1"
-    // InternalEel.g:20856:1: rule__EAttribute__OrderedAssignment_9_1 : ( ruleEBoolean ) ;
+    // InternalEel.g:20864:1: rule__EAttribute__OrderedAssignment_9_1 : ( ruleEBoolean ) ;
     public final void rule__EAttribute__OrderedAssignment_9_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:20860:1: ( ( ruleEBoolean ) )
-            // InternalEel.g:20861:2: ( ruleEBoolean )
+            // InternalEel.g:20868:1: ( ( ruleEBoolean ) )
+            // InternalEel.g:20869:2: ( ruleEBoolean )
             {
-            // InternalEel.g:20861:2: ( ruleEBoolean )
-            // InternalEel.g:20862:3: ruleEBoolean
+            // InternalEel.g:20869:2: ( ruleEBoolean )
+            // InternalEel.g:20870:3: ruleEBoolean
             {
              before(grammarAccess.getEAttributeAccess().getOrderedEBooleanParserRuleCall_9_1_0()); 
             pushFollow(FOLLOW_2);
@@ -63176,17 +63192,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EAttribute__UniqueAssignment_10_1"
-    // InternalEel.g:20871:1: rule__EAttribute__UniqueAssignment_10_1 : ( ruleEBoolean ) ;
+    // InternalEel.g:20879:1: rule__EAttribute__UniqueAssignment_10_1 : ( ruleEBoolean ) ;
     public final void rule__EAttribute__UniqueAssignment_10_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:20875:1: ( ( ruleEBoolean ) )
-            // InternalEel.g:20876:2: ( ruleEBoolean )
+            // InternalEel.g:20883:1: ( ( ruleEBoolean ) )
+            // InternalEel.g:20884:2: ( ruleEBoolean )
             {
-            // InternalEel.g:20876:2: ( ruleEBoolean )
-            // InternalEel.g:20877:3: ruleEBoolean
+            // InternalEel.g:20884:2: ( ruleEBoolean )
+            // InternalEel.g:20885:3: ruleEBoolean
             {
              before(grammarAccess.getEAttributeAccess().getUniqueEBooleanParserRuleCall_10_1_0()); 
             pushFollow(FOLLOW_2);
@@ -63217,17 +63233,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EAttribute__LowerBoundAssignment_11_1"
-    // InternalEel.g:20886:1: rule__EAttribute__LowerBoundAssignment_11_1 : ( ruleEInt ) ;
+    // InternalEel.g:20894:1: rule__EAttribute__LowerBoundAssignment_11_1 : ( ruleEInt ) ;
     public final void rule__EAttribute__LowerBoundAssignment_11_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:20890:1: ( ( ruleEInt ) )
-            // InternalEel.g:20891:2: ( ruleEInt )
+            // InternalEel.g:20898:1: ( ( ruleEInt ) )
+            // InternalEel.g:20899:2: ( ruleEInt )
             {
-            // InternalEel.g:20891:2: ( ruleEInt )
-            // InternalEel.g:20892:3: ruleEInt
+            // InternalEel.g:20899:2: ( ruleEInt )
+            // InternalEel.g:20900:3: ruleEInt
             {
              before(grammarAccess.getEAttributeAccess().getLowerBoundEIntParserRuleCall_11_1_0()); 
             pushFollow(FOLLOW_2);
@@ -63258,17 +63274,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EAttribute__UpperBoundAssignment_12_1"
-    // InternalEel.g:20901:1: rule__EAttribute__UpperBoundAssignment_12_1 : ( ruleEInt ) ;
+    // InternalEel.g:20909:1: rule__EAttribute__UpperBoundAssignment_12_1 : ( ruleEInt ) ;
     public final void rule__EAttribute__UpperBoundAssignment_12_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:20905:1: ( ( ruleEInt ) )
-            // InternalEel.g:20906:2: ( ruleEInt )
+            // InternalEel.g:20913:1: ( ( ruleEInt ) )
+            // InternalEel.g:20914:2: ( ruleEInt )
             {
-            // InternalEel.g:20906:2: ( ruleEInt )
-            // InternalEel.g:20907:3: ruleEInt
+            // InternalEel.g:20914:2: ( ruleEInt )
+            // InternalEel.g:20915:3: ruleEInt
             {
              before(grammarAccess.getEAttributeAccess().getUpperBoundEIntParserRuleCall_12_1_0()); 
             pushFollow(FOLLOW_2);
@@ -63299,17 +63315,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EAttribute__ChangeableAssignment_13_1"
-    // InternalEel.g:20916:1: rule__EAttribute__ChangeableAssignment_13_1 : ( ruleEBoolean ) ;
+    // InternalEel.g:20924:1: rule__EAttribute__ChangeableAssignment_13_1 : ( ruleEBoolean ) ;
     public final void rule__EAttribute__ChangeableAssignment_13_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:20920:1: ( ( ruleEBoolean ) )
-            // InternalEel.g:20921:2: ( ruleEBoolean )
+            // InternalEel.g:20928:1: ( ( ruleEBoolean ) )
+            // InternalEel.g:20929:2: ( ruleEBoolean )
             {
-            // InternalEel.g:20921:2: ( ruleEBoolean )
-            // InternalEel.g:20922:3: ruleEBoolean
+            // InternalEel.g:20929:2: ( ruleEBoolean )
+            // InternalEel.g:20930:3: ruleEBoolean
             {
              before(grammarAccess.getEAttributeAccess().getChangeableEBooleanParserRuleCall_13_1_0()); 
             pushFollow(FOLLOW_2);
@@ -63340,17 +63356,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EAttribute__DefaultValueLiteralAssignment_14_1"
-    // InternalEel.g:20931:1: rule__EAttribute__DefaultValueLiteralAssignment_14_1 : ( ruleEString ) ;
+    // InternalEel.g:20939:1: rule__EAttribute__DefaultValueLiteralAssignment_14_1 : ( ruleEString ) ;
     public final void rule__EAttribute__DefaultValueLiteralAssignment_14_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:20935:1: ( ( ruleEString ) )
-            // InternalEel.g:20936:2: ( ruleEString )
+            // InternalEel.g:20943:1: ( ( ruleEString ) )
+            // InternalEel.g:20944:2: ( ruleEString )
             {
-            // InternalEel.g:20936:2: ( ruleEString )
-            // InternalEel.g:20937:3: ruleEString
+            // InternalEel.g:20944:2: ( ruleEString )
+            // InternalEel.g:20945:3: ruleEString
             {
              before(grammarAccess.getEAttributeAccess().getDefaultValueLiteralEStringParserRuleCall_14_1_0()); 
             pushFollow(FOLLOW_2);
@@ -63381,21 +63397,21 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EAttribute__ETypeAssignment_15_1"
-    // InternalEel.g:20946:1: rule__EAttribute__ETypeAssignment_15_1 : ( ( ruleEString ) ) ;
+    // InternalEel.g:20954:1: rule__EAttribute__ETypeAssignment_15_1 : ( ( ruleEString ) ) ;
     public final void rule__EAttribute__ETypeAssignment_15_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:20950:1: ( ( ( ruleEString ) ) )
-            // InternalEel.g:20951:2: ( ( ruleEString ) )
+            // InternalEel.g:20958:1: ( ( ( ruleEString ) ) )
+            // InternalEel.g:20959:2: ( ( ruleEString ) )
             {
-            // InternalEel.g:20951:2: ( ( ruleEString ) )
-            // InternalEel.g:20952:3: ( ruleEString )
+            // InternalEel.g:20959:2: ( ( ruleEString ) )
+            // InternalEel.g:20960:3: ( ruleEString )
             {
              before(grammarAccess.getEAttributeAccess().getETypeEClassifierCrossReference_15_1_0()); 
-            // InternalEel.g:20953:3: ( ruleEString )
-            // InternalEel.g:20954:4: ruleEString
+            // InternalEel.g:20961:3: ( ruleEString )
+            // InternalEel.g:20962:4: ruleEString
             {
              before(grammarAccess.getEAttributeAccess().getETypeEClassifierEStringParserRuleCall_15_1_0_1()); 
             pushFollow(FOLLOW_2);
@@ -63430,17 +63446,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EAttribute__EAnnotationsAssignment_16_2"
-    // InternalEel.g:20965:1: rule__EAttribute__EAnnotationsAssignment_16_2 : ( ruleEAnnotation ) ;
+    // InternalEel.g:20973:1: rule__EAttribute__EAnnotationsAssignment_16_2 : ( ruleEAnnotation ) ;
     public final void rule__EAttribute__EAnnotationsAssignment_16_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:20969:1: ( ( ruleEAnnotation ) )
-            // InternalEel.g:20970:2: ( ruleEAnnotation )
+            // InternalEel.g:20977:1: ( ( ruleEAnnotation ) )
+            // InternalEel.g:20978:2: ( ruleEAnnotation )
             {
-            // InternalEel.g:20970:2: ( ruleEAnnotation )
-            // InternalEel.g:20971:3: ruleEAnnotation
+            // InternalEel.g:20978:2: ( ruleEAnnotation )
+            // InternalEel.g:20979:3: ruleEAnnotation
             {
              before(grammarAccess.getEAttributeAccess().getEAnnotationsEAnnotationParserRuleCall_16_2_0()); 
             pushFollow(FOLLOW_2);
@@ -63471,17 +63487,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EAttribute__EAnnotationsAssignment_16_3_1"
-    // InternalEel.g:20980:1: rule__EAttribute__EAnnotationsAssignment_16_3_1 : ( ruleEAnnotation ) ;
+    // InternalEel.g:20988:1: rule__EAttribute__EAnnotationsAssignment_16_3_1 : ( ruleEAnnotation ) ;
     public final void rule__EAttribute__EAnnotationsAssignment_16_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:20984:1: ( ( ruleEAnnotation ) )
-            // InternalEel.g:20985:2: ( ruleEAnnotation )
+            // InternalEel.g:20992:1: ( ( ruleEAnnotation ) )
+            // InternalEel.g:20993:2: ( ruleEAnnotation )
             {
-            // InternalEel.g:20985:2: ( ruleEAnnotation )
-            // InternalEel.g:20986:3: ruleEAnnotation
+            // InternalEel.g:20993:2: ( ruleEAnnotation )
+            // InternalEel.g:20994:3: ruleEAnnotation
             {
              before(grammarAccess.getEAttributeAccess().getEAnnotationsEAnnotationParserRuleCall_16_3_1_0()); 
             pushFollow(FOLLOW_2);
@@ -63512,17 +63528,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EAttribute__EGenericTypeAssignment_17_1"
-    // InternalEel.g:20995:1: rule__EAttribute__EGenericTypeAssignment_17_1 : ( ruleEGenericType ) ;
+    // InternalEel.g:21003:1: rule__EAttribute__EGenericTypeAssignment_17_1 : ( ruleEGenericType ) ;
     public final void rule__EAttribute__EGenericTypeAssignment_17_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:20999:1: ( ( ruleEGenericType ) )
-            // InternalEel.g:21000:2: ( ruleEGenericType )
+            // InternalEel.g:21007:1: ( ( ruleEGenericType ) )
+            // InternalEel.g:21008:2: ( ruleEGenericType )
             {
-            // InternalEel.g:21000:2: ( ruleEGenericType )
-            // InternalEel.g:21001:3: ruleEGenericType
+            // InternalEel.g:21008:2: ( ruleEGenericType )
+            // InternalEel.g:21009:3: ruleEGenericType
             {
              before(grammarAccess.getEAttributeAccess().getEGenericTypeEGenericTypeParserRuleCall_17_1_0()); 
             pushFollow(FOLLOW_2);
@@ -63553,21 +63569,21 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EReference__VolatileAssignment_1"
-    // InternalEel.g:21010:1: rule__EReference__VolatileAssignment_1 : ( ( 'volatile' ) ) ;
+    // InternalEel.g:21018:1: rule__EReference__VolatileAssignment_1 : ( ( 'volatile' ) ) ;
     public final void rule__EReference__VolatileAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:21014:1: ( ( ( 'volatile' ) ) )
-            // InternalEel.g:21015:2: ( ( 'volatile' ) )
+            // InternalEel.g:21022:1: ( ( ( 'volatile' ) ) )
+            // InternalEel.g:21023:2: ( ( 'volatile' ) )
             {
-            // InternalEel.g:21015:2: ( ( 'volatile' ) )
-            // InternalEel.g:21016:3: ( 'volatile' )
+            // InternalEel.g:21023:2: ( ( 'volatile' ) )
+            // InternalEel.g:21024:3: ( 'volatile' )
             {
              before(grammarAccess.getEReferenceAccess().getVolatileVolatileKeyword_1_0()); 
-            // InternalEel.g:21017:3: ( 'volatile' )
-            // InternalEel.g:21018:4: 'volatile'
+            // InternalEel.g:21025:3: ( 'volatile' )
+            // InternalEel.g:21026:4: 'volatile'
             {
              before(grammarAccess.getEReferenceAccess().getVolatileVolatileKeyword_1_0()); 
             match(input,113,FOLLOW_2); 
@@ -63598,21 +63614,21 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EReference__TransientAssignment_2"
-    // InternalEel.g:21029:1: rule__EReference__TransientAssignment_2 : ( ( 'transient' ) ) ;
+    // InternalEel.g:21037:1: rule__EReference__TransientAssignment_2 : ( ( 'transient' ) ) ;
     public final void rule__EReference__TransientAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:21033:1: ( ( ( 'transient' ) ) )
-            // InternalEel.g:21034:2: ( ( 'transient' ) )
+            // InternalEel.g:21041:1: ( ( ( 'transient' ) ) )
+            // InternalEel.g:21042:2: ( ( 'transient' ) )
             {
-            // InternalEel.g:21034:2: ( ( 'transient' ) )
-            // InternalEel.g:21035:3: ( 'transient' )
+            // InternalEel.g:21042:2: ( ( 'transient' ) )
+            // InternalEel.g:21043:3: ( 'transient' )
             {
              before(grammarAccess.getEReferenceAccess().getTransientTransientKeyword_2_0()); 
-            // InternalEel.g:21036:3: ( 'transient' )
-            // InternalEel.g:21037:4: 'transient'
+            // InternalEel.g:21044:3: ( 'transient' )
+            // InternalEel.g:21045:4: 'transient'
             {
              before(grammarAccess.getEReferenceAccess().getTransientTransientKeyword_2_0()); 
             match(input,114,FOLLOW_2); 
@@ -63643,21 +63659,21 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EReference__UnsettableAssignment_3"
-    // InternalEel.g:21048:1: rule__EReference__UnsettableAssignment_3 : ( ( 'unsettable' ) ) ;
+    // InternalEel.g:21056:1: rule__EReference__UnsettableAssignment_3 : ( ( 'unsettable' ) ) ;
     public final void rule__EReference__UnsettableAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:21052:1: ( ( ( 'unsettable' ) ) )
-            // InternalEel.g:21053:2: ( ( 'unsettable' ) )
+            // InternalEel.g:21060:1: ( ( ( 'unsettable' ) ) )
+            // InternalEel.g:21061:2: ( ( 'unsettable' ) )
             {
-            // InternalEel.g:21053:2: ( ( 'unsettable' ) )
-            // InternalEel.g:21054:3: ( 'unsettable' )
+            // InternalEel.g:21061:2: ( ( 'unsettable' ) )
+            // InternalEel.g:21062:3: ( 'unsettable' )
             {
              before(grammarAccess.getEReferenceAccess().getUnsettableUnsettableKeyword_3_0()); 
-            // InternalEel.g:21055:3: ( 'unsettable' )
-            // InternalEel.g:21056:4: 'unsettable'
+            // InternalEel.g:21063:3: ( 'unsettable' )
+            // InternalEel.g:21064:4: 'unsettable'
             {
              before(grammarAccess.getEReferenceAccess().getUnsettableUnsettableKeyword_3_0()); 
             match(input,115,FOLLOW_2); 
@@ -63688,21 +63704,21 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EReference__DerivedAssignment_4"
-    // InternalEel.g:21067:1: rule__EReference__DerivedAssignment_4 : ( ( 'derived' ) ) ;
+    // InternalEel.g:21075:1: rule__EReference__DerivedAssignment_4 : ( ( 'derived' ) ) ;
     public final void rule__EReference__DerivedAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:21071:1: ( ( ( 'derived' ) ) )
-            // InternalEel.g:21072:2: ( ( 'derived' ) )
+            // InternalEel.g:21079:1: ( ( ( 'derived' ) ) )
+            // InternalEel.g:21080:2: ( ( 'derived' ) )
             {
-            // InternalEel.g:21072:2: ( ( 'derived' ) )
-            // InternalEel.g:21073:3: ( 'derived' )
+            // InternalEel.g:21080:2: ( ( 'derived' ) )
+            // InternalEel.g:21081:3: ( 'derived' )
             {
              before(grammarAccess.getEReferenceAccess().getDerivedDerivedKeyword_4_0()); 
-            // InternalEel.g:21074:3: ( 'derived' )
-            // InternalEel.g:21075:4: 'derived'
+            // InternalEel.g:21082:3: ( 'derived' )
+            // InternalEel.g:21083:4: 'derived'
             {
              before(grammarAccess.getEReferenceAccess().getDerivedDerivedKeyword_4_0()); 
             match(input,116,FOLLOW_2); 
@@ -63733,21 +63749,21 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EReference__ContainmentAssignment_5"
-    // InternalEel.g:21086:1: rule__EReference__ContainmentAssignment_5 : ( ( 'containment' ) ) ;
+    // InternalEel.g:21094:1: rule__EReference__ContainmentAssignment_5 : ( ( 'containment' ) ) ;
     public final void rule__EReference__ContainmentAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:21090:1: ( ( ( 'containment' ) ) )
-            // InternalEel.g:21091:2: ( ( 'containment' ) )
+            // InternalEel.g:21098:1: ( ( ( 'containment' ) ) )
+            // InternalEel.g:21099:2: ( ( 'containment' ) )
             {
-            // InternalEel.g:21091:2: ( ( 'containment' ) )
-            // InternalEel.g:21092:3: ( 'containment' )
+            // InternalEel.g:21099:2: ( ( 'containment' ) )
+            // InternalEel.g:21100:3: ( 'containment' )
             {
              before(grammarAccess.getEReferenceAccess().getContainmentContainmentKeyword_5_0()); 
-            // InternalEel.g:21093:3: ( 'containment' )
-            // InternalEel.g:21094:4: 'containment'
+            // InternalEel.g:21101:3: ( 'containment' )
+            // InternalEel.g:21102:4: 'containment'
             {
              before(grammarAccess.getEReferenceAccess().getContainmentContainmentKeyword_5_0()); 
             match(input,118,FOLLOW_2); 
@@ -63778,17 +63794,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EReference__NameAssignment_7"
-    // InternalEel.g:21105:1: rule__EReference__NameAssignment_7 : ( ruleEString ) ;
+    // InternalEel.g:21113:1: rule__EReference__NameAssignment_7 : ( ruleEString ) ;
     public final void rule__EReference__NameAssignment_7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:21109:1: ( ( ruleEString ) )
-            // InternalEel.g:21110:2: ( ruleEString )
+            // InternalEel.g:21117:1: ( ( ruleEString ) )
+            // InternalEel.g:21118:2: ( ruleEString )
             {
-            // InternalEel.g:21110:2: ( ruleEString )
-            // InternalEel.g:21111:3: ruleEString
+            // InternalEel.g:21118:2: ( ruleEString )
+            // InternalEel.g:21119:3: ruleEString
             {
              before(grammarAccess.getEReferenceAccess().getNameEStringParserRuleCall_7_0()); 
             pushFollow(FOLLOW_2);
@@ -63819,17 +63835,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EReference__OrderedAssignment_9_1"
-    // InternalEel.g:21120:1: rule__EReference__OrderedAssignment_9_1 : ( ruleEBoolean ) ;
+    // InternalEel.g:21128:1: rule__EReference__OrderedAssignment_9_1 : ( ruleEBoolean ) ;
     public final void rule__EReference__OrderedAssignment_9_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:21124:1: ( ( ruleEBoolean ) )
-            // InternalEel.g:21125:2: ( ruleEBoolean )
+            // InternalEel.g:21132:1: ( ( ruleEBoolean ) )
+            // InternalEel.g:21133:2: ( ruleEBoolean )
             {
-            // InternalEel.g:21125:2: ( ruleEBoolean )
-            // InternalEel.g:21126:3: ruleEBoolean
+            // InternalEel.g:21133:2: ( ruleEBoolean )
+            // InternalEel.g:21134:3: ruleEBoolean
             {
              before(grammarAccess.getEReferenceAccess().getOrderedEBooleanParserRuleCall_9_1_0()); 
             pushFollow(FOLLOW_2);
@@ -63860,17 +63876,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EReference__UniqueAssignment_10_1"
-    // InternalEel.g:21135:1: rule__EReference__UniqueAssignment_10_1 : ( ruleEBoolean ) ;
+    // InternalEel.g:21143:1: rule__EReference__UniqueAssignment_10_1 : ( ruleEBoolean ) ;
     public final void rule__EReference__UniqueAssignment_10_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:21139:1: ( ( ruleEBoolean ) )
-            // InternalEel.g:21140:2: ( ruleEBoolean )
+            // InternalEel.g:21147:1: ( ( ruleEBoolean ) )
+            // InternalEel.g:21148:2: ( ruleEBoolean )
             {
-            // InternalEel.g:21140:2: ( ruleEBoolean )
-            // InternalEel.g:21141:3: ruleEBoolean
+            // InternalEel.g:21148:2: ( ruleEBoolean )
+            // InternalEel.g:21149:3: ruleEBoolean
             {
              before(grammarAccess.getEReferenceAccess().getUniqueEBooleanParserRuleCall_10_1_0()); 
             pushFollow(FOLLOW_2);
@@ -63901,17 +63917,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EReference__LowerBoundAssignment_11_1"
-    // InternalEel.g:21150:1: rule__EReference__LowerBoundAssignment_11_1 : ( ruleEInt ) ;
+    // InternalEel.g:21158:1: rule__EReference__LowerBoundAssignment_11_1 : ( ruleEInt ) ;
     public final void rule__EReference__LowerBoundAssignment_11_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:21154:1: ( ( ruleEInt ) )
-            // InternalEel.g:21155:2: ( ruleEInt )
+            // InternalEel.g:21162:1: ( ( ruleEInt ) )
+            // InternalEel.g:21163:2: ( ruleEInt )
             {
-            // InternalEel.g:21155:2: ( ruleEInt )
-            // InternalEel.g:21156:3: ruleEInt
+            // InternalEel.g:21163:2: ( ruleEInt )
+            // InternalEel.g:21164:3: ruleEInt
             {
              before(grammarAccess.getEReferenceAccess().getLowerBoundEIntParserRuleCall_11_1_0()); 
             pushFollow(FOLLOW_2);
@@ -63942,17 +63958,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EReference__UpperBoundAssignment_12_1"
-    // InternalEel.g:21165:1: rule__EReference__UpperBoundAssignment_12_1 : ( ruleEInt ) ;
+    // InternalEel.g:21173:1: rule__EReference__UpperBoundAssignment_12_1 : ( ruleEInt ) ;
     public final void rule__EReference__UpperBoundAssignment_12_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:21169:1: ( ( ruleEInt ) )
-            // InternalEel.g:21170:2: ( ruleEInt )
+            // InternalEel.g:21177:1: ( ( ruleEInt ) )
+            // InternalEel.g:21178:2: ( ruleEInt )
             {
-            // InternalEel.g:21170:2: ( ruleEInt )
-            // InternalEel.g:21171:3: ruleEInt
+            // InternalEel.g:21178:2: ( ruleEInt )
+            // InternalEel.g:21179:3: ruleEInt
             {
              before(grammarAccess.getEReferenceAccess().getUpperBoundEIntParserRuleCall_12_1_0()); 
             pushFollow(FOLLOW_2);
@@ -63983,17 +63999,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EReference__ChangeableAssignment_13_1"
-    // InternalEel.g:21180:1: rule__EReference__ChangeableAssignment_13_1 : ( ruleEBoolean ) ;
+    // InternalEel.g:21188:1: rule__EReference__ChangeableAssignment_13_1 : ( ruleEBoolean ) ;
     public final void rule__EReference__ChangeableAssignment_13_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:21184:1: ( ( ruleEBoolean ) )
-            // InternalEel.g:21185:2: ( ruleEBoolean )
+            // InternalEel.g:21192:1: ( ( ruleEBoolean ) )
+            // InternalEel.g:21193:2: ( ruleEBoolean )
             {
-            // InternalEel.g:21185:2: ( ruleEBoolean )
-            // InternalEel.g:21186:3: ruleEBoolean
+            // InternalEel.g:21193:2: ( ruleEBoolean )
+            // InternalEel.g:21194:3: ruleEBoolean
             {
              before(grammarAccess.getEReferenceAccess().getChangeableEBooleanParserRuleCall_13_1_0()); 
             pushFollow(FOLLOW_2);
@@ -64024,17 +64040,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EReference__DefaultValueLiteralAssignment_14_1"
-    // InternalEel.g:21195:1: rule__EReference__DefaultValueLiteralAssignment_14_1 : ( ruleEString ) ;
+    // InternalEel.g:21203:1: rule__EReference__DefaultValueLiteralAssignment_14_1 : ( ruleEString ) ;
     public final void rule__EReference__DefaultValueLiteralAssignment_14_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:21199:1: ( ( ruleEString ) )
-            // InternalEel.g:21200:2: ( ruleEString )
+            // InternalEel.g:21207:1: ( ( ruleEString ) )
+            // InternalEel.g:21208:2: ( ruleEString )
             {
-            // InternalEel.g:21200:2: ( ruleEString )
-            // InternalEel.g:21201:3: ruleEString
+            // InternalEel.g:21208:2: ( ruleEString )
+            // InternalEel.g:21209:3: ruleEString
             {
              before(grammarAccess.getEReferenceAccess().getDefaultValueLiteralEStringParserRuleCall_14_1_0()); 
             pushFollow(FOLLOW_2);
@@ -64065,17 +64081,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EReference__ResolveProxiesAssignment_15_1"
-    // InternalEel.g:21210:1: rule__EReference__ResolveProxiesAssignment_15_1 : ( ruleEBoolean ) ;
+    // InternalEel.g:21218:1: rule__EReference__ResolveProxiesAssignment_15_1 : ( ruleEBoolean ) ;
     public final void rule__EReference__ResolveProxiesAssignment_15_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:21214:1: ( ( ruleEBoolean ) )
-            // InternalEel.g:21215:2: ( ruleEBoolean )
+            // InternalEel.g:21222:1: ( ( ruleEBoolean ) )
+            // InternalEel.g:21223:2: ( ruleEBoolean )
             {
-            // InternalEel.g:21215:2: ( ruleEBoolean )
-            // InternalEel.g:21216:3: ruleEBoolean
+            // InternalEel.g:21223:2: ( ruleEBoolean )
+            // InternalEel.g:21224:3: ruleEBoolean
             {
              before(grammarAccess.getEReferenceAccess().getResolveProxiesEBooleanParserRuleCall_15_1_0()); 
             pushFollow(FOLLOW_2);
@@ -64106,21 +64122,21 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EReference__ETypeAssignment_16_1"
-    // InternalEel.g:21225:1: rule__EReference__ETypeAssignment_16_1 : ( ( ruleEString ) ) ;
+    // InternalEel.g:21233:1: rule__EReference__ETypeAssignment_16_1 : ( ( ruleEString ) ) ;
     public final void rule__EReference__ETypeAssignment_16_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:21229:1: ( ( ( ruleEString ) ) )
-            // InternalEel.g:21230:2: ( ( ruleEString ) )
+            // InternalEel.g:21237:1: ( ( ( ruleEString ) ) )
+            // InternalEel.g:21238:2: ( ( ruleEString ) )
             {
-            // InternalEel.g:21230:2: ( ( ruleEString ) )
-            // InternalEel.g:21231:3: ( ruleEString )
+            // InternalEel.g:21238:2: ( ( ruleEString ) )
+            // InternalEel.g:21239:3: ( ruleEString )
             {
              before(grammarAccess.getEReferenceAccess().getETypeEClassifierCrossReference_16_1_0()); 
-            // InternalEel.g:21232:3: ( ruleEString )
-            // InternalEel.g:21233:4: ruleEString
+            // InternalEel.g:21240:3: ( ruleEString )
+            // InternalEel.g:21241:4: ruleEString
             {
              before(grammarAccess.getEReferenceAccess().getETypeEClassifierEStringParserRuleCall_16_1_0_1()); 
             pushFollow(FOLLOW_2);
@@ -64155,21 +64171,21 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EReference__EOppositeAssignment_17_1"
-    // InternalEel.g:21244:1: rule__EReference__EOppositeAssignment_17_1 : ( ( ruleEString ) ) ;
+    // InternalEel.g:21252:1: rule__EReference__EOppositeAssignment_17_1 : ( ( ruleEString ) ) ;
     public final void rule__EReference__EOppositeAssignment_17_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:21248:1: ( ( ( ruleEString ) ) )
-            // InternalEel.g:21249:2: ( ( ruleEString ) )
+            // InternalEel.g:21256:1: ( ( ( ruleEString ) ) )
+            // InternalEel.g:21257:2: ( ( ruleEString ) )
             {
-            // InternalEel.g:21249:2: ( ( ruleEString ) )
-            // InternalEel.g:21250:3: ( ruleEString )
+            // InternalEel.g:21257:2: ( ( ruleEString ) )
+            // InternalEel.g:21258:3: ( ruleEString )
             {
              before(grammarAccess.getEReferenceAccess().getEOppositeEReferenceCrossReference_17_1_0()); 
-            // InternalEel.g:21251:3: ( ruleEString )
-            // InternalEel.g:21252:4: ruleEString
+            // InternalEel.g:21259:3: ( ruleEString )
+            // InternalEel.g:21260:4: ruleEString
             {
              before(grammarAccess.getEReferenceAccess().getEOppositeEReferenceEStringParserRuleCall_17_1_0_1()); 
             pushFollow(FOLLOW_2);
@@ -64204,21 +64220,21 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EReference__EKeysAssignment_18_2"
-    // InternalEel.g:21263:1: rule__EReference__EKeysAssignment_18_2 : ( ( ruleEString ) ) ;
+    // InternalEel.g:21271:1: rule__EReference__EKeysAssignment_18_2 : ( ( ruleEString ) ) ;
     public final void rule__EReference__EKeysAssignment_18_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:21267:1: ( ( ( ruleEString ) ) )
-            // InternalEel.g:21268:2: ( ( ruleEString ) )
+            // InternalEel.g:21275:1: ( ( ( ruleEString ) ) )
+            // InternalEel.g:21276:2: ( ( ruleEString ) )
             {
-            // InternalEel.g:21268:2: ( ( ruleEString ) )
-            // InternalEel.g:21269:3: ( ruleEString )
+            // InternalEel.g:21276:2: ( ( ruleEString ) )
+            // InternalEel.g:21277:3: ( ruleEString )
             {
              before(grammarAccess.getEReferenceAccess().getEKeysEAttributeCrossReference_18_2_0()); 
-            // InternalEel.g:21270:3: ( ruleEString )
-            // InternalEel.g:21271:4: ruleEString
+            // InternalEel.g:21278:3: ( ruleEString )
+            // InternalEel.g:21279:4: ruleEString
             {
              before(grammarAccess.getEReferenceAccess().getEKeysEAttributeEStringParserRuleCall_18_2_0_1()); 
             pushFollow(FOLLOW_2);
@@ -64253,21 +64269,21 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EReference__EKeysAssignment_18_3_1"
-    // InternalEel.g:21282:1: rule__EReference__EKeysAssignment_18_3_1 : ( ( ruleEString ) ) ;
+    // InternalEel.g:21290:1: rule__EReference__EKeysAssignment_18_3_1 : ( ( ruleEString ) ) ;
     public final void rule__EReference__EKeysAssignment_18_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:21286:1: ( ( ( ruleEString ) ) )
-            // InternalEel.g:21287:2: ( ( ruleEString ) )
+            // InternalEel.g:21294:1: ( ( ( ruleEString ) ) )
+            // InternalEel.g:21295:2: ( ( ruleEString ) )
             {
-            // InternalEel.g:21287:2: ( ( ruleEString ) )
-            // InternalEel.g:21288:3: ( ruleEString )
+            // InternalEel.g:21295:2: ( ( ruleEString ) )
+            // InternalEel.g:21296:3: ( ruleEString )
             {
              before(grammarAccess.getEReferenceAccess().getEKeysEAttributeCrossReference_18_3_1_0()); 
-            // InternalEel.g:21289:3: ( ruleEString )
-            // InternalEel.g:21290:4: ruleEString
+            // InternalEel.g:21297:3: ( ruleEString )
+            // InternalEel.g:21298:4: ruleEString
             {
              before(grammarAccess.getEReferenceAccess().getEKeysEAttributeEStringParserRuleCall_18_3_1_0_1()); 
             pushFollow(FOLLOW_2);
@@ -64302,17 +64318,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EReference__EAnnotationsAssignment_19_2"
-    // InternalEel.g:21301:1: rule__EReference__EAnnotationsAssignment_19_2 : ( ruleEAnnotation ) ;
+    // InternalEel.g:21309:1: rule__EReference__EAnnotationsAssignment_19_2 : ( ruleEAnnotation ) ;
     public final void rule__EReference__EAnnotationsAssignment_19_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:21305:1: ( ( ruleEAnnotation ) )
-            // InternalEel.g:21306:2: ( ruleEAnnotation )
+            // InternalEel.g:21313:1: ( ( ruleEAnnotation ) )
+            // InternalEel.g:21314:2: ( ruleEAnnotation )
             {
-            // InternalEel.g:21306:2: ( ruleEAnnotation )
-            // InternalEel.g:21307:3: ruleEAnnotation
+            // InternalEel.g:21314:2: ( ruleEAnnotation )
+            // InternalEel.g:21315:3: ruleEAnnotation
             {
              before(grammarAccess.getEReferenceAccess().getEAnnotationsEAnnotationParserRuleCall_19_2_0()); 
             pushFollow(FOLLOW_2);
@@ -64343,17 +64359,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EReference__EAnnotationsAssignment_19_3_1"
-    // InternalEel.g:21316:1: rule__EReference__EAnnotationsAssignment_19_3_1 : ( ruleEAnnotation ) ;
+    // InternalEel.g:21324:1: rule__EReference__EAnnotationsAssignment_19_3_1 : ( ruleEAnnotation ) ;
     public final void rule__EReference__EAnnotationsAssignment_19_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:21320:1: ( ( ruleEAnnotation ) )
-            // InternalEel.g:21321:2: ( ruleEAnnotation )
+            // InternalEel.g:21328:1: ( ( ruleEAnnotation ) )
+            // InternalEel.g:21329:2: ( ruleEAnnotation )
             {
-            // InternalEel.g:21321:2: ( ruleEAnnotation )
-            // InternalEel.g:21322:3: ruleEAnnotation
+            // InternalEel.g:21329:2: ( ruleEAnnotation )
+            // InternalEel.g:21330:3: ruleEAnnotation
             {
              before(grammarAccess.getEReferenceAccess().getEAnnotationsEAnnotationParserRuleCall_19_3_1_0()); 
             pushFollow(FOLLOW_2);
@@ -64384,17 +64400,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EReference__EGenericTypeAssignment_20_1"
-    // InternalEel.g:21331:1: rule__EReference__EGenericTypeAssignment_20_1 : ( ruleEGenericType ) ;
+    // InternalEel.g:21339:1: rule__EReference__EGenericTypeAssignment_20_1 : ( ruleEGenericType ) ;
     public final void rule__EReference__EGenericTypeAssignment_20_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:21335:1: ( ( ruleEGenericType ) )
-            // InternalEel.g:21336:2: ( ruleEGenericType )
+            // InternalEel.g:21343:1: ( ( ruleEGenericType ) )
+            // InternalEel.g:21344:2: ( ruleEGenericType )
             {
-            // InternalEel.g:21336:2: ( ruleEGenericType )
-            // InternalEel.g:21337:3: ruleEGenericType
+            // InternalEel.g:21344:2: ( ruleEGenericType )
+            // InternalEel.g:21345:3: ruleEGenericType
             {
              before(grammarAccess.getEReferenceAccess().getEGenericTypeEGenericTypeParserRuleCall_20_1_0()); 
             pushFollow(FOLLOW_2);
@@ -64425,17 +64441,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EDataType_Impl__NameAssignment_2"
-    // InternalEel.g:21346:1: rule__EDataType_Impl__NameAssignment_2 : ( ruleEString ) ;
+    // InternalEel.g:21354:1: rule__EDataType_Impl__NameAssignment_2 : ( ruleEString ) ;
     public final void rule__EDataType_Impl__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:21350:1: ( ( ruleEString ) )
-            // InternalEel.g:21351:2: ( ruleEString )
+            // InternalEel.g:21358:1: ( ( ruleEString ) )
+            // InternalEel.g:21359:2: ( ruleEString )
             {
-            // InternalEel.g:21351:2: ( ruleEString )
-            // InternalEel.g:21352:3: ruleEString
+            // InternalEel.g:21359:2: ( ruleEString )
+            // InternalEel.g:21360:3: ruleEString
             {
              before(grammarAccess.getEDataType_ImplAccess().getNameEStringParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -64466,17 +64482,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EDataType_Impl__InstanceClassNameAssignment_4_1"
-    // InternalEel.g:21361:1: rule__EDataType_Impl__InstanceClassNameAssignment_4_1 : ( ruleEString ) ;
+    // InternalEel.g:21369:1: rule__EDataType_Impl__InstanceClassNameAssignment_4_1 : ( ruleEString ) ;
     public final void rule__EDataType_Impl__InstanceClassNameAssignment_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:21365:1: ( ( ruleEString ) )
-            // InternalEel.g:21366:2: ( ruleEString )
+            // InternalEel.g:21373:1: ( ( ruleEString ) )
+            // InternalEel.g:21374:2: ( ruleEString )
             {
-            // InternalEel.g:21366:2: ( ruleEString )
-            // InternalEel.g:21367:3: ruleEString
+            // InternalEel.g:21374:2: ( ruleEString )
+            // InternalEel.g:21375:3: ruleEString
             {
              before(grammarAccess.getEDataType_ImplAccess().getInstanceClassNameEStringParserRuleCall_4_1_0()); 
             pushFollow(FOLLOW_2);
@@ -64507,17 +64523,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EDataType_Impl__InstanceTypeNameAssignment_5_1"
-    // InternalEel.g:21376:1: rule__EDataType_Impl__InstanceTypeNameAssignment_5_1 : ( ruleEString ) ;
+    // InternalEel.g:21384:1: rule__EDataType_Impl__InstanceTypeNameAssignment_5_1 : ( ruleEString ) ;
     public final void rule__EDataType_Impl__InstanceTypeNameAssignment_5_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:21380:1: ( ( ruleEString ) )
-            // InternalEel.g:21381:2: ( ruleEString )
+            // InternalEel.g:21388:1: ( ( ruleEString ) )
+            // InternalEel.g:21389:2: ( ruleEString )
             {
-            // InternalEel.g:21381:2: ( ruleEString )
-            // InternalEel.g:21382:3: ruleEString
+            // InternalEel.g:21389:2: ( ruleEString )
+            // InternalEel.g:21390:3: ruleEString
             {
              before(grammarAccess.getEDataType_ImplAccess().getInstanceTypeNameEStringParserRuleCall_5_1_0()); 
             pushFollow(FOLLOW_2);
@@ -64548,17 +64564,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EDataType_Impl__SerializableAssignment_6_1"
-    // InternalEel.g:21391:1: rule__EDataType_Impl__SerializableAssignment_6_1 : ( ruleEBoolean ) ;
+    // InternalEel.g:21399:1: rule__EDataType_Impl__SerializableAssignment_6_1 : ( ruleEBoolean ) ;
     public final void rule__EDataType_Impl__SerializableAssignment_6_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:21395:1: ( ( ruleEBoolean ) )
-            // InternalEel.g:21396:2: ( ruleEBoolean )
+            // InternalEel.g:21403:1: ( ( ruleEBoolean ) )
+            // InternalEel.g:21404:2: ( ruleEBoolean )
             {
-            // InternalEel.g:21396:2: ( ruleEBoolean )
-            // InternalEel.g:21397:3: ruleEBoolean
+            // InternalEel.g:21404:2: ( ruleEBoolean )
+            // InternalEel.g:21405:3: ruleEBoolean
             {
              before(grammarAccess.getEDataType_ImplAccess().getSerializableEBooleanParserRuleCall_6_1_0()); 
             pushFollow(FOLLOW_2);
@@ -64589,17 +64605,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EDataType_Impl__EAnnotationsAssignment_7_2"
-    // InternalEel.g:21406:1: rule__EDataType_Impl__EAnnotationsAssignment_7_2 : ( ruleEAnnotation ) ;
+    // InternalEel.g:21414:1: rule__EDataType_Impl__EAnnotationsAssignment_7_2 : ( ruleEAnnotation ) ;
     public final void rule__EDataType_Impl__EAnnotationsAssignment_7_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:21410:1: ( ( ruleEAnnotation ) )
-            // InternalEel.g:21411:2: ( ruleEAnnotation )
+            // InternalEel.g:21418:1: ( ( ruleEAnnotation ) )
+            // InternalEel.g:21419:2: ( ruleEAnnotation )
             {
-            // InternalEel.g:21411:2: ( ruleEAnnotation )
-            // InternalEel.g:21412:3: ruleEAnnotation
+            // InternalEel.g:21419:2: ( ruleEAnnotation )
+            // InternalEel.g:21420:3: ruleEAnnotation
             {
              before(grammarAccess.getEDataType_ImplAccess().getEAnnotationsEAnnotationParserRuleCall_7_2_0()); 
             pushFollow(FOLLOW_2);
@@ -64630,17 +64646,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EDataType_Impl__EAnnotationsAssignment_7_3_1"
-    // InternalEel.g:21421:1: rule__EDataType_Impl__EAnnotationsAssignment_7_3_1 : ( ruleEAnnotation ) ;
+    // InternalEel.g:21429:1: rule__EDataType_Impl__EAnnotationsAssignment_7_3_1 : ( ruleEAnnotation ) ;
     public final void rule__EDataType_Impl__EAnnotationsAssignment_7_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:21425:1: ( ( ruleEAnnotation ) )
-            // InternalEel.g:21426:2: ( ruleEAnnotation )
+            // InternalEel.g:21433:1: ( ( ruleEAnnotation ) )
+            // InternalEel.g:21434:2: ( ruleEAnnotation )
             {
-            // InternalEel.g:21426:2: ( ruleEAnnotation )
-            // InternalEel.g:21427:3: ruleEAnnotation
+            // InternalEel.g:21434:2: ( ruleEAnnotation )
+            // InternalEel.g:21435:3: ruleEAnnotation
             {
              before(grammarAccess.getEDataType_ImplAccess().getEAnnotationsEAnnotationParserRuleCall_7_3_1_0()); 
             pushFollow(FOLLOW_2);
@@ -64671,17 +64687,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EDataType_Impl__ETypeParametersAssignment_8_2"
-    // InternalEel.g:21436:1: rule__EDataType_Impl__ETypeParametersAssignment_8_2 : ( ruleETypeParameter ) ;
+    // InternalEel.g:21444:1: rule__EDataType_Impl__ETypeParametersAssignment_8_2 : ( ruleETypeParameter ) ;
     public final void rule__EDataType_Impl__ETypeParametersAssignment_8_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:21440:1: ( ( ruleETypeParameter ) )
-            // InternalEel.g:21441:2: ( ruleETypeParameter )
+            // InternalEel.g:21448:1: ( ( ruleETypeParameter ) )
+            // InternalEel.g:21449:2: ( ruleETypeParameter )
             {
-            // InternalEel.g:21441:2: ( ruleETypeParameter )
-            // InternalEel.g:21442:3: ruleETypeParameter
+            // InternalEel.g:21449:2: ( ruleETypeParameter )
+            // InternalEel.g:21450:3: ruleETypeParameter
             {
              before(grammarAccess.getEDataType_ImplAccess().getETypeParametersETypeParameterParserRuleCall_8_2_0()); 
             pushFollow(FOLLOW_2);
@@ -64712,17 +64728,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EDataType_Impl__ETypeParametersAssignment_8_3_1"
-    // InternalEel.g:21451:1: rule__EDataType_Impl__ETypeParametersAssignment_8_3_1 : ( ruleETypeParameter ) ;
+    // InternalEel.g:21459:1: rule__EDataType_Impl__ETypeParametersAssignment_8_3_1 : ( ruleETypeParameter ) ;
     public final void rule__EDataType_Impl__ETypeParametersAssignment_8_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:21455:1: ( ( ruleETypeParameter ) )
-            // InternalEel.g:21456:2: ( ruleETypeParameter )
+            // InternalEel.g:21463:1: ( ( ruleETypeParameter ) )
+            // InternalEel.g:21464:2: ( ruleETypeParameter )
             {
-            // InternalEel.g:21456:2: ( ruleETypeParameter )
-            // InternalEel.g:21457:3: ruleETypeParameter
+            // InternalEel.g:21464:2: ( ruleETypeParameter )
+            // InternalEel.g:21465:3: ruleETypeParameter
             {
              before(grammarAccess.getEDataType_ImplAccess().getETypeParametersETypeParameterParserRuleCall_8_3_1_0()); 
             pushFollow(FOLLOW_2);
@@ -64753,17 +64769,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EEnum__NameAssignment_2"
-    // InternalEel.g:21466:1: rule__EEnum__NameAssignment_2 : ( ruleEString ) ;
+    // InternalEel.g:21474:1: rule__EEnum__NameAssignment_2 : ( ruleEString ) ;
     public final void rule__EEnum__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:21470:1: ( ( ruleEString ) )
-            // InternalEel.g:21471:2: ( ruleEString )
+            // InternalEel.g:21478:1: ( ( ruleEString ) )
+            // InternalEel.g:21479:2: ( ruleEString )
             {
-            // InternalEel.g:21471:2: ( ruleEString )
-            // InternalEel.g:21472:3: ruleEString
+            // InternalEel.g:21479:2: ( ruleEString )
+            // InternalEel.g:21480:3: ruleEString
             {
              before(grammarAccess.getEEnumAccess().getNameEStringParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -64794,17 +64810,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EEnum__InstanceClassNameAssignment_4_1"
-    // InternalEel.g:21481:1: rule__EEnum__InstanceClassNameAssignment_4_1 : ( ruleEString ) ;
+    // InternalEel.g:21489:1: rule__EEnum__InstanceClassNameAssignment_4_1 : ( ruleEString ) ;
     public final void rule__EEnum__InstanceClassNameAssignment_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:21485:1: ( ( ruleEString ) )
-            // InternalEel.g:21486:2: ( ruleEString )
+            // InternalEel.g:21493:1: ( ( ruleEString ) )
+            // InternalEel.g:21494:2: ( ruleEString )
             {
-            // InternalEel.g:21486:2: ( ruleEString )
-            // InternalEel.g:21487:3: ruleEString
+            // InternalEel.g:21494:2: ( ruleEString )
+            // InternalEel.g:21495:3: ruleEString
             {
              before(grammarAccess.getEEnumAccess().getInstanceClassNameEStringParserRuleCall_4_1_0()); 
             pushFollow(FOLLOW_2);
@@ -64835,17 +64851,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EEnum__InstanceTypeNameAssignment_5_1"
-    // InternalEel.g:21496:1: rule__EEnum__InstanceTypeNameAssignment_5_1 : ( ruleEString ) ;
+    // InternalEel.g:21504:1: rule__EEnum__InstanceTypeNameAssignment_5_1 : ( ruleEString ) ;
     public final void rule__EEnum__InstanceTypeNameAssignment_5_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:21500:1: ( ( ruleEString ) )
-            // InternalEel.g:21501:2: ( ruleEString )
+            // InternalEel.g:21508:1: ( ( ruleEString ) )
+            // InternalEel.g:21509:2: ( ruleEString )
             {
-            // InternalEel.g:21501:2: ( ruleEString )
-            // InternalEel.g:21502:3: ruleEString
+            // InternalEel.g:21509:2: ( ruleEString )
+            // InternalEel.g:21510:3: ruleEString
             {
              before(grammarAccess.getEEnumAccess().getInstanceTypeNameEStringParserRuleCall_5_1_0()); 
             pushFollow(FOLLOW_2);
@@ -64876,17 +64892,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EEnum__SerializableAssignment_6_1"
-    // InternalEel.g:21511:1: rule__EEnum__SerializableAssignment_6_1 : ( ruleEBoolean ) ;
+    // InternalEel.g:21519:1: rule__EEnum__SerializableAssignment_6_1 : ( ruleEBoolean ) ;
     public final void rule__EEnum__SerializableAssignment_6_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:21515:1: ( ( ruleEBoolean ) )
-            // InternalEel.g:21516:2: ( ruleEBoolean )
+            // InternalEel.g:21523:1: ( ( ruleEBoolean ) )
+            // InternalEel.g:21524:2: ( ruleEBoolean )
             {
-            // InternalEel.g:21516:2: ( ruleEBoolean )
-            // InternalEel.g:21517:3: ruleEBoolean
+            // InternalEel.g:21524:2: ( ruleEBoolean )
+            // InternalEel.g:21525:3: ruleEBoolean
             {
              before(grammarAccess.getEEnumAccess().getSerializableEBooleanParserRuleCall_6_1_0()); 
             pushFollow(FOLLOW_2);
@@ -64917,17 +64933,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EEnum__EAnnotationsAssignment_7_2"
-    // InternalEel.g:21526:1: rule__EEnum__EAnnotationsAssignment_7_2 : ( ruleEAnnotation ) ;
+    // InternalEel.g:21534:1: rule__EEnum__EAnnotationsAssignment_7_2 : ( ruleEAnnotation ) ;
     public final void rule__EEnum__EAnnotationsAssignment_7_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:21530:1: ( ( ruleEAnnotation ) )
-            // InternalEel.g:21531:2: ( ruleEAnnotation )
+            // InternalEel.g:21538:1: ( ( ruleEAnnotation ) )
+            // InternalEel.g:21539:2: ( ruleEAnnotation )
             {
-            // InternalEel.g:21531:2: ( ruleEAnnotation )
-            // InternalEel.g:21532:3: ruleEAnnotation
+            // InternalEel.g:21539:2: ( ruleEAnnotation )
+            // InternalEel.g:21540:3: ruleEAnnotation
             {
              before(grammarAccess.getEEnumAccess().getEAnnotationsEAnnotationParserRuleCall_7_2_0()); 
             pushFollow(FOLLOW_2);
@@ -64958,17 +64974,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EEnum__EAnnotationsAssignment_7_3_1"
-    // InternalEel.g:21541:1: rule__EEnum__EAnnotationsAssignment_7_3_1 : ( ruleEAnnotation ) ;
+    // InternalEel.g:21549:1: rule__EEnum__EAnnotationsAssignment_7_3_1 : ( ruleEAnnotation ) ;
     public final void rule__EEnum__EAnnotationsAssignment_7_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:21545:1: ( ( ruleEAnnotation ) )
-            // InternalEel.g:21546:2: ( ruleEAnnotation )
+            // InternalEel.g:21553:1: ( ( ruleEAnnotation ) )
+            // InternalEel.g:21554:2: ( ruleEAnnotation )
             {
-            // InternalEel.g:21546:2: ( ruleEAnnotation )
-            // InternalEel.g:21547:3: ruleEAnnotation
+            // InternalEel.g:21554:2: ( ruleEAnnotation )
+            // InternalEel.g:21555:3: ruleEAnnotation
             {
              before(grammarAccess.getEEnumAccess().getEAnnotationsEAnnotationParserRuleCall_7_3_1_0()); 
             pushFollow(FOLLOW_2);
@@ -64999,17 +65015,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EEnum__ETypeParametersAssignment_8_2"
-    // InternalEel.g:21556:1: rule__EEnum__ETypeParametersAssignment_8_2 : ( ruleETypeParameter ) ;
+    // InternalEel.g:21564:1: rule__EEnum__ETypeParametersAssignment_8_2 : ( ruleETypeParameter ) ;
     public final void rule__EEnum__ETypeParametersAssignment_8_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:21560:1: ( ( ruleETypeParameter ) )
-            // InternalEel.g:21561:2: ( ruleETypeParameter )
+            // InternalEel.g:21568:1: ( ( ruleETypeParameter ) )
+            // InternalEel.g:21569:2: ( ruleETypeParameter )
             {
-            // InternalEel.g:21561:2: ( ruleETypeParameter )
-            // InternalEel.g:21562:3: ruleETypeParameter
+            // InternalEel.g:21569:2: ( ruleETypeParameter )
+            // InternalEel.g:21570:3: ruleETypeParameter
             {
              before(grammarAccess.getEEnumAccess().getETypeParametersETypeParameterParserRuleCall_8_2_0()); 
             pushFollow(FOLLOW_2);
@@ -65040,17 +65056,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EEnum__ETypeParametersAssignment_8_3_1"
-    // InternalEel.g:21571:1: rule__EEnum__ETypeParametersAssignment_8_3_1 : ( ruleETypeParameter ) ;
+    // InternalEel.g:21579:1: rule__EEnum__ETypeParametersAssignment_8_3_1 : ( ruleETypeParameter ) ;
     public final void rule__EEnum__ETypeParametersAssignment_8_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:21575:1: ( ( ruleETypeParameter ) )
-            // InternalEel.g:21576:2: ( ruleETypeParameter )
+            // InternalEel.g:21583:1: ( ( ruleETypeParameter ) )
+            // InternalEel.g:21584:2: ( ruleETypeParameter )
             {
-            // InternalEel.g:21576:2: ( ruleETypeParameter )
-            // InternalEel.g:21577:3: ruleETypeParameter
+            // InternalEel.g:21584:2: ( ruleETypeParameter )
+            // InternalEel.g:21585:3: ruleETypeParameter
             {
              before(grammarAccess.getEEnumAccess().getETypeParametersETypeParameterParserRuleCall_8_3_1_0()); 
             pushFollow(FOLLOW_2);
@@ -65081,17 +65097,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EEnum__ELiteralsAssignment_9_2"
-    // InternalEel.g:21586:1: rule__EEnum__ELiteralsAssignment_9_2 : ( ruleEEnumLiteral ) ;
+    // InternalEel.g:21594:1: rule__EEnum__ELiteralsAssignment_9_2 : ( ruleEEnumLiteral ) ;
     public final void rule__EEnum__ELiteralsAssignment_9_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:21590:1: ( ( ruleEEnumLiteral ) )
-            // InternalEel.g:21591:2: ( ruleEEnumLiteral )
+            // InternalEel.g:21598:1: ( ( ruleEEnumLiteral ) )
+            // InternalEel.g:21599:2: ( ruleEEnumLiteral )
             {
-            // InternalEel.g:21591:2: ( ruleEEnumLiteral )
-            // InternalEel.g:21592:3: ruleEEnumLiteral
+            // InternalEel.g:21599:2: ( ruleEEnumLiteral )
+            // InternalEel.g:21600:3: ruleEEnumLiteral
             {
              before(grammarAccess.getEEnumAccess().getELiteralsEEnumLiteralParserRuleCall_9_2_0()); 
             pushFollow(FOLLOW_2);
@@ -65122,17 +65138,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EEnum__ELiteralsAssignment_9_3_1"
-    // InternalEel.g:21601:1: rule__EEnum__ELiteralsAssignment_9_3_1 : ( ruleEEnumLiteral ) ;
+    // InternalEel.g:21609:1: rule__EEnum__ELiteralsAssignment_9_3_1 : ( ruleEEnumLiteral ) ;
     public final void rule__EEnum__ELiteralsAssignment_9_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:21605:1: ( ( ruleEEnumLiteral ) )
-            // InternalEel.g:21606:2: ( ruleEEnumLiteral )
+            // InternalEel.g:21613:1: ( ( ruleEEnumLiteral ) )
+            // InternalEel.g:21614:2: ( ruleEEnumLiteral )
             {
-            // InternalEel.g:21606:2: ( ruleEEnumLiteral )
-            // InternalEel.g:21607:3: ruleEEnumLiteral
+            // InternalEel.g:21614:2: ( ruleEEnumLiteral )
+            // InternalEel.g:21615:3: ruleEEnumLiteral
             {
              before(grammarAccess.getEEnumAccess().getELiteralsEEnumLiteralParserRuleCall_9_3_1_0()); 
             pushFollow(FOLLOW_2);
@@ -65163,17 +65179,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EEnumLiteral__NameAssignment_2"
-    // InternalEel.g:21616:1: rule__EEnumLiteral__NameAssignment_2 : ( ruleEString ) ;
+    // InternalEel.g:21624:1: rule__EEnumLiteral__NameAssignment_2 : ( ruleEString ) ;
     public final void rule__EEnumLiteral__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:21620:1: ( ( ruleEString ) )
-            // InternalEel.g:21621:2: ( ruleEString )
+            // InternalEel.g:21628:1: ( ( ruleEString ) )
+            // InternalEel.g:21629:2: ( ruleEString )
             {
-            // InternalEel.g:21621:2: ( ruleEString )
-            // InternalEel.g:21622:3: ruleEString
+            // InternalEel.g:21629:2: ( ruleEString )
+            // InternalEel.g:21630:3: ruleEString
             {
              before(grammarAccess.getEEnumLiteralAccess().getNameEStringParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -65204,17 +65220,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EEnumLiteral__ValueAssignment_4_1"
-    // InternalEel.g:21631:1: rule__EEnumLiteral__ValueAssignment_4_1 : ( ruleEInt ) ;
+    // InternalEel.g:21639:1: rule__EEnumLiteral__ValueAssignment_4_1 : ( ruleEInt ) ;
     public final void rule__EEnumLiteral__ValueAssignment_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:21635:1: ( ( ruleEInt ) )
-            // InternalEel.g:21636:2: ( ruleEInt )
+            // InternalEel.g:21643:1: ( ( ruleEInt ) )
+            // InternalEel.g:21644:2: ( ruleEInt )
             {
-            // InternalEel.g:21636:2: ( ruleEInt )
-            // InternalEel.g:21637:3: ruleEInt
+            // InternalEel.g:21644:2: ( ruleEInt )
+            // InternalEel.g:21645:3: ruleEInt
             {
              before(grammarAccess.getEEnumLiteralAccess().getValueEIntParserRuleCall_4_1_0()); 
             pushFollow(FOLLOW_2);
@@ -65245,17 +65261,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EEnumLiteral__LiteralAssignment_5_1"
-    // InternalEel.g:21646:1: rule__EEnumLiteral__LiteralAssignment_5_1 : ( ruleEString ) ;
+    // InternalEel.g:21654:1: rule__EEnumLiteral__LiteralAssignment_5_1 : ( ruleEString ) ;
     public final void rule__EEnumLiteral__LiteralAssignment_5_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:21650:1: ( ( ruleEString ) )
-            // InternalEel.g:21651:2: ( ruleEString )
+            // InternalEel.g:21658:1: ( ( ruleEString ) )
+            // InternalEel.g:21659:2: ( ruleEString )
             {
-            // InternalEel.g:21651:2: ( ruleEString )
-            // InternalEel.g:21652:3: ruleEString
+            // InternalEel.g:21659:2: ( ruleEString )
+            // InternalEel.g:21660:3: ruleEString
             {
              before(grammarAccess.getEEnumLiteralAccess().getLiteralEStringParserRuleCall_5_1_0()); 
             pushFollow(FOLLOW_2);
@@ -65286,17 +65302,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EEnumLiteral__EAnnotationsAssignment_6_2"
-    // InternalEel.g:21661:1: rule__EEnumLiteral__EAnnotationsAssignment_6_2 : ( ruleEAnnotation ) ;
+    // InternalEel.g:21669:1: rule__EEnumLiteral__EAnnotationsAssignment_6_2 : ( ruleEAnnotation ) ;
     public final void rule__EEnumLiteral__EAnnotationsAssignment_6_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:21665:1: ( ( ruleEAnnotation ) )
-            // InternalEel.g:21666:2: ( ruleEAnnotation )
+            // InternalEel.g:21673:1: ( ( ruleEAnnotation ) )
+            // InternalEel.g:21674:2: ( ruleEAnnotation )
             {
-            // InternalEel.g:21666:2: ( ruleEAnnotation )
-            // InternalEel.g:21667:3: ruleEAnnotation
+            // InternalEel.g:21674:2: ( ruleEAnnotation )
+            // InternalEel.g:21675:3: ruleEAnnotation
             {
              before(grammarAccess.getEEnumLiteralAccess().getEAnnotationsEAnnotationParserRuleCall_6_2_0()); 
             pushFollow(FOLLOW_2);
@@ -65327,17 +65343,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EEnumLiteral__EAnnotationsAssignment_6_3_1"
-    // InternalEel.g:21676:1: rule__EEnumLiteral__EAnnotationsAssignment_6_3_1 : ( ruleEAnnotation ) ;
+    // InternalEel.g:21684:1: rule__EEnumLiteral__EAnnotationsAssignment_6_3_1 : ( ruleEAnnotation ) ;
     public final void rule__EEnumLiteral__EAnnotationsAssignment_6_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:21680:1: ( ( ruleEAnnotation ) )
-            // InternalEel.g:21681:2: ( ruleEAnnotation )
+            // InternalEel.g:21688:1: ( ( ruleEAnnotation ) )
+            // InternalEel.g:21689:2: ( ruleEAnnotation )
             {
-            // InternalEel.g:21681:2: ( ruleEAnnotation )
-            // InternalEel.g:21682:3: ruleEAnnotation
+            // InternalEel.g:21689:2: ( ruleEAnnotation )
+            // InternalEel.g:21690:3: ruleEAnnotation
             {
              before(grammarAccess.getEEnumLiteralAccess().getEAnnotationsEAnnotationParserRuleCall_6_3_1_0()); 
             pushFollow(FOLLOW_2);
@@ -65368,17 +65384,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EParameter__NameAssignment_2"
-    // InternalEel.g:21691:1: rule__EParameter__NameAssignment_2 : ( ruleEString ) ;
+    // InternalEel.g:21699:1: rule__EParameter__NameAssignment_2 : ( ruleEString ) ;
     public final void rule__EParameter__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:21695:1: ( ( ruleEString ) )
-            // InternalEel.g:21696:2: ( ruleEString )
+            // InternalEel.g:21703:1: ( ( ruleEString ) )
+            // InternalEel.g:21704:2: ( ruleEString )
             {
-            // InternalEel.g:21696:2: ( ruleEString )
-            // InternalEel.g:21697:3: ruleEString
+            // InternalEel.g:21704:2: ( ruleEString )
+            // InternalEel.g:21705:3: ruleEString
             {
              before(grammarAccess.getEParameterAccess().getNameEStringParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -65409,17 +65425,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EParameter__OrderedAssignment_4_1"
-    // InternalEel.g:21706:1: rule__EParameter__OrderedAssignment_4_1 : ( ruleEBoolean ) ;
+    // InternalEel.g:21714:1: rule__EParameter__OrderedAssignment_4_1 : ( ruleEBoolean ) ;
     public final void rule__EParameter__OrderedAssignment_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:21710:1: ( ( ruleEBoolean ) )
-            // InternalEel.g:21711:2: ( ruleEBoolean )
+            // InternalEel.g:21718:1: ( ( ruleEBoolean ) )
+            // InternalEel.g:21719:2: ( ruleEBoolean )
             {
-            // InternalEel.g:21711:2: ( ruleEBoolean )
-            // InternalEel.g:21712:3: ruleEBoolean
+            // InternalEel.g:21719:2: ( ruleEBoolean )
+            // InternalEel.g:21720:3: ruleEBoolean
             {
              before(grammarAccess.getEParameterAccess().getOrderedEBooleanParserRuleCall_4_1_0()); 
             pushFollow(FOLLOW_2);
@@ -65450,17 +65466,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EParameter__UniqueAssignment_5_1"
-    // InternalEel.g:21721:1: rule__EParameter__UniqueAssignment_5_1 : ( ruleEBoolean ) ;
+    // InternalEel.g:21729:1: rule__EParameter__UniqueAssignment_5_1 : ( ruleEBoolean ) ;
     public final void rule__EParameter__UniqueAssignment_5_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:21725:1: ( ( ruleEBoolean ) )
-            // InternalEel.g:21726:2: ( ruleEBoolean )
+            // InternalEel.g:21733:1: ( ( ruleEBoolean ) )
+            // InternalEel.g:21734:2: ( ruleEBoolean )
             {
-            // InternalEel.g:21726:2: ( ruleEBoolean )
-            // InternalEel.g:21727:3: ruleEBoolean
+            // InternalEel.g:21734:2: ( ruleEBoolean )
+            // InternalEel.g:21735:3: ruleEBoolean
             {
              before(grammarAccess.getEParameterAccess().getUniqueEBooleanParserRuleCall_5_1_0()); 
             pushFollow(FOLLOW_2);
@@ -65491,17 +65507,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EParameter__LowerBoundAssignment_6_1"
-    // InternalEel.g:21736:1: rule__EParameter__LowerBoundAssignment_6_1 : ( ruleEInt ) ;
+    // InternalEel.g:21744:1: rule__EParameter__LowerBoundAssignment_6_1 : ( ruleEInt ) ;
     public final void rule__EParameter__LowerBoundAssignment_6_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:21740:1: ( ( ruleEInt ) )
-            // InternalEel.g:21741:2: ( ruleEInt )
+            // InternalEel.g:21748:1: ( ( ruleEInt ) )
+            // InternalEel.g:21749:2: ( ruleEInt )
             {
-            // InternalEel.g:21741:2: ( ruleEInt )
-            // InternalEel.g:21742:3: ruleEInt
+            // InternalEel.g:21749:2: ( ruleEInt )
+            // InternalEel.g:21750:3: ruleEInt
             {
              before(grammarAccess.getEParameterAccess().getLowerBoundEIntParserRuleCall_6_1_0()); 
             pushFollow(FOLLOW_2);
@@ -65532,17 +65548,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EParameter__UpperBoundAssignment_7_1"
-    // InternalEel.g:21751:1: rule__EParameter__UpperBoundAssignment_7_1 : ( ruleEInt ) ;
+    // InternalEel.g:21759:1: rule__EParameter__UpperBoundAssignment_7_1 : ( ruleEInt ) ;
     public final void rule__EParameter__UpperBoundAssignment_7_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:21755:1: ( ( ruleEInt ) )
-            // InternalEel.g:21756:2: ( ruleEInt )
+            // InternalEel.g:21763:1: ( ( ruleEInt ) )
+            // InternalEel.g:21764:2: ( ruleEInt )
             {
-            // InternalEel.g:21756:2: ( ruleEInt )
-            // InternalEel.g:21757:3: ruleEInt
+            // InternalEel.g:21764:2: ( ruleEInt )
+            // InternalEel.g:21765:3: ruleEInt
             {
              before(grammarAccess.getEParameterAccess().getUpperBoundEIntParserRuleCall_7_1_0()); 
             pushFollow(FOLLOW_2);
@@ -65573,21 +65589,21 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EParameter__ETypeAssignment_8_1"
-    // InternalEel.g:21766:1: rule__EParameter__ETypeAssignment_8_1 : ( ( ruleEString ) ) ;
+    // InternalEel.g:21774:1: rule__EParameter__ETypeAssignment_8_1 : ( ( ruleEString ) ) ;
     public final void rule__EParameter__ETypeAssignment_8_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:21770:1: ( ( ( ruleEString ) ) )
-            // InternalEel.g:21771:2: ( ( ruleEString ) )
+            // InternalEel.g:21778:1: ( ( ( ruleEString ) ) )
+            // InternalEel.g:21779:2: ( ( ruleEString ) )
             {
-            // InternalEel.g:21771:2: ( ( ruleEString ) )
-            // InternalEel.g:21772:3: ( ruleEString )
+            // InternalEel.g:21779:2: ( ( ruleEString ) )
+            // InternalEel.g:21780:3: ( ruleEString )
             {
              before(grammarAccess.getEParameterAccess().getETypeEClassifierCrossReference_8_1_0()); 
-            // InternalEel.g:21773:3: ( ruleEString )
-            // InternalEel.g:21774:4: ruleEString
+            // InternalEel.g:21781:3: ( ruleEString )
+            // InternalEel.g:21782:4: ruleEString
             {
              before(grammarAccess.getEParameterAccess().getETypeEClassifierEStringParserRuleCall_8_1_0_1()); 
             pushFollow(FOLLOW_2);
@@ -65622,17 +65638,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EParameter__EAnnotationsAssignment_9_2"
-    // InternalEel.g:21785:1: rule__EParameter__EAnnotationsAssignment_9_2 : ( ruleEAnnotation ) ;
+    // InternalEel.g:21793:1: rule__EParameter__EAnnotationsAssignment_9_2 : ( ruleEAnnotation ) ;
     public final void rule__EParameter__EAnnotationsAssignment_9_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:21789:1: ( ( ruleEAnnotation ) )
-            // InternalEel.g:21790:2: ( ruleEAnnotation )
+            // InternalEel.g:21797:1: ( ( ruleEAnnotation ) )
+            // InternalEel.g:21798:2: ( ruleEAnnotation )
             {
-            // InternalEel.g:21790:2: ( ruleEAnnotation )
-            // InternalEel.g:21791:3: ruleEAnnotation
+            // InternalEel.g:21798:2: ( ruleEAnnotation )
+            // InternalEel.g:21799:3: ruleEAnnotation
             {
              before(grammarAccess.getEParameterAccess().getEAnnotationsEAnnotationParserRuleCall_9_2_0()); 
             pushFollow(FOLLOW_2);
@@ -65663,17 +65679,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EParameter__EAnnotationsAssignment_9_3_1"
-    // InternalEel.g:21800:1: rule__EParameter__EAnnotationsAssignment_9_3_1 : ( ruleEAnnotation ) ;
+    // InternalEel.g:21808:1: rule__EParameter__EAnnotationsAssignment_9_3_1 : ( ruleEAnnotation ) ;
     public final void rule__EParameter__EAnnotationsAssignment_9_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:21804:1: ( ( ruleEAnnotation ) )
-            // InternalEel.g:21805:2: ( ruleEAnnotation )
+            // InternalEel.g:21812:1: ( ( ruleEAnnotation ) )
+            // InternalEel.g:21813:2: ( ruleEAnnotation )
             {
-            // InternalEel.g:21805:2: ( ruleEAnnotation )
-            // InternalEel.g:21806:3: ruleEAnnotation
+            // InternalEel.g:21813:2: ( ruleEAnnotation )
+            // InternalEel.g:21814:3: ruleEAnnotation
             {
              before(grammarAccess.getEParameterAccess().getEAnnotationsEAnnotationParserRuleCall_9_3_1_0()); 
             pushFollow(FOLLOW_2);
@@ -65704,17 +65720,17 @@ public class InternalEelParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EParameter__EGenericTypeAssignment_10_1"
-    // InternalEel.g:21815:1: rule__EParameter__EGenericTypeAssignment_10_1 : ( ruleEGenericType ) ;
+    // InternalEel.g:21823:1: rule__EParameter__EGenericTypeAssignment_10_1 : ( ruleEGenericType ) ;
     public final void rule__EParameter__EGenericTypeAssignment_10_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEel.g:21819:1: ( ( ruleEGenericType ) )
-            // InternalEel.g:21820:2: ( ruleEGenericType )
+            // InternalEel.g:21827:1: ( ( ruleEGenericType ) )
+            // InternalEel.g:21828:2: ( ruleEGenericType )
             {
-            // InternalEel.g:21820:2: ( ruleEGenericType )
-            // InternalEel.g:21821:3: ruleEGenericType
+            // InternalEel.g:21828:2: ( ruleEGenericType )
+            // InternalEel.g:21829:3: ruleEGenericType
             {
              before(grammarAccess.getEParameterAccess().getEGenericTypeEGenericTypeParserRuleCall_10_1_0()); 
             pushFollow(FOLLOW_2);

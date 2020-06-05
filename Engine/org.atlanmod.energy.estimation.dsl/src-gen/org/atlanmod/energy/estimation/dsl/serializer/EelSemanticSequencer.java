@@ -460,8 +460,8 @@ public class EelSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *         targetOperation=EString? 
 	 *         (type=Type | subname=EString) 
 	 *         function=[CompositeMeasure|EString] 
-	 *         leftBound=EBigDecimal 
-	 *         rightBound=EBigDecimal
+	 *         leftBound=[Measure|EString] 
+	 *         rightBound=[Measure|EString]
 	 *     )
 	 */
 	protected void sequence_IntegrationMeasure(ISerializationContext context, IntegrationMeasure semanticObject) {

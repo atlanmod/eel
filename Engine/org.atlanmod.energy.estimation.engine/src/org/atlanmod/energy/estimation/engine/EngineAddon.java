@@ -205,6 +205,8 @@ public class EngineAddon implements IEngineAddon {
 			m.setValue(BigDecimal.valueOf(CompositeMeasureCalculus.computeExponentialFunction((ExponentialMeasure) m)));
 		} else if (m instanceof IntegrationMeasure) {
 			updateMeasure(((IntegrationMeasure) m).getFunction(), caller, operation);
+			updateMeasure(((IntegrationMeasure) m).getLeftBound(), caller, operation);
+			updateMeasure(((IntegrationMeasure) m).getRightBound(), caller, operation);
 			m.setValue(BigDecimal.valueOf(CompositeMeasureCalculus.computeIntegralFunction((IntegrationMeasure) m))); 
 		}		
 	}

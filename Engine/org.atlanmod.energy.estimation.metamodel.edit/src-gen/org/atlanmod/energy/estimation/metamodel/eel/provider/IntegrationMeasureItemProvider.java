@@ -13,7 +13,6 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
@@ -78,8 +77,7 @@ public class IntegrationMeasureItemProvider extends CompositeMeasureItemProvider
 						getResourceLocator(), getString("_UI_IntegrationMeasure_leftBound_feature"),
 						getString("_UI_PropertyDescriptor_description", "_UI_IntegrationMeasure_leftBound_feature",
 								"_UI_IntegrationMeasure_type"),
-						EelPackage.Literals.INTEGRATION_MEASURE__LEFT_BOUND, true, false, false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+						EelPackage.Literals.INTEGRATION_MEASURE__LEFT_BOUND, true, false, false, null, null, null));
 	}
 
 	/**
@@ -94,8 +92,7 @@ public class IntegrationMeasureItemProvider extends CompositeMeasureItemProvider
 						getResourceLocator(), getString("_UI_IntegrationMeasure_rightBound_feature"),
 						getString("_UI_PropertyDescriptor_description", "_UI_IntegrationMeasure_rightBound_feature",
 								"_UI_IntegrationMeasure_type"),
-						EelPackage.Literals.INTEGRATION_MEASURE__RIGHT_BOUND, true, false, false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+						EelPackage.Literals.INTEGRATION_MEASURE__RIGHT_BOUND, true, false, false, null, null, null));
 	}
 
 	/**

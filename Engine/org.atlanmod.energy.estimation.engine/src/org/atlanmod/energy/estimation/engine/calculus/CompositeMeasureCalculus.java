@@ -26,7 +26,7 @@ public class CompositeMeasureCalculus {
 		UnivariateFunction fun = generateFunctionForIntegration(m);
 		UnivariateIntegrator in = new SimpsonIntegrator();
 		
-		return in.integrate(20000, fun, m.getLeftBound().doubleValue(), m.getRightBound().doubleValue());		
+		return in.integrate(20000, fun, m.getLeftBound().value().doubleValue(), m.getRightBound().value().doubleValue());		
 	}
 	
 	private static UnivariateFunction generateFunctionForIntegration(IntegrationMeasure m) {

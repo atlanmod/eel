@@ -1217,20 +1217,22 @@ public class EelGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cFunctionCompositeMeasureEStringParserRuleCall_8_0_1 = (RuleCall)cFunctionCompositeMeasureCrossReference_8_0.eContents().get(1);
 		private final Keyword cLeftSquareBracketKeyword_9 = (Keyword)cGroup.eContents().get(9);
 		private final Assignment cLeftBoundAssignment_10 = (Assignment)cGroup.eContents().get(10);
-		private final RuleCall cLeftBoundEBigDecimalParserRuleCall_10_0 = (RuleCall)cLeftBoundAssignment_10.eContents().get(0);
+		private final CrossReference cLeftBoundMeasureCrossReference_10_0 = (CrossReference)cLeftBoundAssignment_10.eContents().get(0);
+		private final RuleCall cLeftBoundMeasureEStringParserRuleCall_10_0_1 = (RuleCall)cLeftBoundMeasureCrossReference_10_0.eContents().get(1);
 		private final Keyword cSemicolonKeyword_11 = (Keyword)cGroup.eContents().get(11);
 		private final Assignment cRightBoundAssignment_12 = (Assignment)cGroup.eContents().get(12);
-		private final RuleCall cRightBoundEBigDecimalParserRuleCall_12_0 = (RuleCall)cRightBoundAssignment_12.eContents().get(0);
+		private final CrossReference cRightBoundMeasureCrossReference_12_0 = (CrossReference)cRightBoundAssignment_12.eContents().get(0);
+		private final RuleCall cRightBoundMeasureEStringParserRuleCall_12_0_1 = (RuleCall)cRightBoundMeasureCrossReference_12_0.eContents().get(1);
 		private final Keyword cRightSquareBracketKeyword_13 = (Keyword)cGroup.eContents().get(13);
 		
 		//IntegrationMeasure:
 		//	{IntegrationMeasure} post?='post'? targetClass=EString ('#' targetOperation=EString)? '.' (type=Type |
-		//	subname=EString) "=" "integral" function=[CompositeMeasure|EString] '[' leftBound=EBigDecimal ';'
-		//	rightBound=EBigDecimal ']';
+		//	subname=EString) "=" "integral" function=[CompositeMeasure|EString] '[' leftBound=[Measure|EString] ';'
+		//	rightBound=[Measure|EString] ']';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{IntegrationMeasure} post?='post'? targetClass=EString ('#' targetOperation=EString)? '.' (type=Type | subname=EString)
-		//"=" "integral" function=[CompositeMeasure|EString] '[' leftBound=EBigDecimal ';' rightBound=EBigDecimal ']'
+		//"=" "integral" function=[CompositeMeasure|EString] '[' leftBound=[Measure|EString] ';' rightBound=[Measure|EString] ']'
 		public Group getGroup() { return cGroup; }
 		
 		//{IntegrationMeasure}
@@ -1296,20 +1298,26 @@ public class EelGrammarAccess extends AbstractGrammarElementFinder {
 		//'['
 		public Keyword getLeftSquareBracketKeyword_9() { return cLeftSquareBracketKeyword_9; }
 		
-		//leftBound=EBigDecimal
+		//leftBound=[Measure|EString]
 		public Assignment getLeftBoundAssignment_10() { return cLeftBoundAssignment_10; }
 		
-		//EBigDecimal
-		public RuleCall getLeftBoundEBigDecimalParserRuleCall_10_0() { return cLeftBoundEBigDecimalParserRuleCall_10_0; }
+		//[Measure|EString]
+		public CrossReference getLeftBoundMeasureCrossReference_10_0() { return cLeftBoundMeasureCrossReference_10_0; }
+		
+		//EString
+		public RuleCall getLeftBoundMeasureEStringParserRuleCall_10_0_1() { return cLeftBoundMeasureEStringParserRuleCall_10_0_1; }
 		
 		//';'
 		public Keyword getSemicolonKeyword_11() { return cSemicolonKeyword_11; }
 		
-		//rightBound=EBigDecimal
+		//rightBound=[Measure|EString]
 		public Assignment getRightBoundAssignment_12() { return cRightBoundAssignment_12; }
 		
-		//EBigDecimal
-		public RuleCall getRightBoundEBigDecimalParserRuleCall_12_0() { return cRightBoundEBigDecimalParserRuleCall_12_0; }
+		//[Measure|EString]
+		public CrossReference getRightBoundMeasureCrossReference_12_0() { return cRightBoundMeasureCrossReference_12_0; }
+		
+		//EString
+		public RuleCall getRightBoundMeasureEStringParserRuleCall_12_0_1() { return cRightBoundMeasureEStringParserRuleCall_12_0_1; }
 		
 		//']'
 		public Keyword getRightSquareBracketKeyword_13() { return cRightSquareBracketKeyword_13; }
@@ -4749,8 +4757,8 @@ public class EelGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//IntegrationMeasure:
 	//	{IntegrationMeasure} post?='post'? targetClass=EString ('#' targetOperation=EString)? '.' (type=Type |
-	//	subname=EString) "=" "integral" function=[CompositeMeasure|EString] '[' leftBound=EBigDecimal ';'
-	//	rightBound=EBigDecimal ']';
+	//	subname=EString) "=" "integral" function=[CompositeMeasure|EString] '[' leftBound=[Measure|EString] ';'
+	//	rightBound=[Measure|EString] ']';
 	public IntegrationMeasureElements getIntegrationMeasureAccess() {
 		return pIntegrationMeasure;
 	}

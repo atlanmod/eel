@@ -3051,7 +3051,7 @@ public interface EelPackage extends EPackage {
 	int INTEGRATION_MEASURE__FUNCTION = COMPOSITE_MEASURE_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Left Bound</b></em>' attribute.
+	 * The feature id for the '<em><b>Left Bound</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -3060,7 +3060,7 @@ public interface EelPackage extends EPackage {
 	int INTEGRATION_MEASURE__LEFT_BOUND = COMPOSITE_MEASURE_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Right Bound</b></em>' attribute.
+	 * The feature id for the '<em><b>Right Bound</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -3981,26 +3981,26 @@ public interface EelPackage extends EPackage {
 	EReference getIntegrationMeasure_Function();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.atlanmod.energy.estimation.metamodel.eel.IntegrationMeasure#getLeftBound <em>Left Bound</em>}'.
+	 * Returns the meta object for the reference '{@link org.atlanmod.energy.estimation.metamodel.eel.IntegrationMeasure#getLeftBound <em>Left Bound</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Left Bound</em>'.
+	 * @return the meta object for the reference '<em>Left Bound</em>'.
 	 * @see org.atlanmod.energy.estimation.metamodel.eel.IntegrationMeasure#getLeftBound()
 	 * @see #getIntegrationMeasure()
 	 * @generated
 	 */
-	EAttribute getIntegrationMeasure_LeftBound();
+	EReference getIntegrationMeasure_LeftBound();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.atlanmod.energy.estimation.metamodel.eel.IntegrationMeasure#getRightBound <em>Right Bound</em>}'.
+	 * Returns the meta object for the reference '{@link org.atlanmod.energy.estimation.metamodel.eel.IntegrationMeasure#getRightBound <em>Right Bound</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Right Bound</em>'.
+	 * @return the meta object for the reference '<em>Right Bound</em>'.
 	 * @see org.atlanmod.energy.estimation.metamodel.eel.IntegrationMeasure#getRightBound()
 	 * @see #getIntegrationMeasure()
 	 * @generated
 	 */
-	EAttribute getIntegrationMeasure_RightBound();
+	EReference getIntegrationMeasure_RightBound();
 
 	/**
 	 * Returns the meta object for enum '{@link org.atlanmod.energy.estimation.metamodel.eel.Visibility <em>Visibility</em>}'.
@@ -4753,20 +4753,20 @@ public interface EelPackage extends EPackage {
 		EReference INTEGRATION_MEASURE__FUNCTION = eINSTANCE.getIntegrationMeasure_Function();
 
 		/**
-		 * The meta object literal for the '<em><b>Left Bound</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Left Bound</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute INTEGRATION_MEASURE__LEFT_BOUND = eINSTANCE.getIntegrationMeasure_LeftBound();
+		EReference INTEGRATION_MEASURE__LEFT_BOUND = eINSTANCE.getIntegrationMeasure_LeftBound();
 
 		/**
-		 * The meta object literal for the '<em><b>Right Bound</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Right Bound</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute INTEGRATION_MEASURE__RIGHT_BOUND = eINSTANCE.getIntegrationMeasure_RightBound();
+		EReference INTEGRATION_MEASURE__RIGHT_BOUND = eINSTANCE.getIntegrationMeasure_RightBound();
 
 		/**
 		 * The meta object literal for the '{@link org.atlanmod.energy.estimation.metamodel.eel.Visibility <em>Visibility</em>}' enum.

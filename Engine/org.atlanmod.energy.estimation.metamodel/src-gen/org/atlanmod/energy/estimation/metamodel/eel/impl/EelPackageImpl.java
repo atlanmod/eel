@@ -1067,8 +1067,8 @@ public class EelPackageImpl extends EPackageImpl implements EelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getIntegrationMeasure_LeftBound() {
-		return (EAttribute) integrationMeasureEClass.getEStructuralFeatures().get(1);
+	public EReference getIntegrationMeasure_LeftBound() {
+		return (EReference) integrationMeasureEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1076,8 +1076,8 @@ public class EelPackageImpl extends EPackageImpl implements EelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getIntegrationMeasure_RightBound() {
-		return (EAttribute) integrationMeasureEClass.getEStructuralFeatures().get(2);
+	public EReference getIntegrationMeasure_RightBound() {
+		return (EReference) integrationMeasureEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1236,8 +1236,8 @@ public class EelPackageImpl extends EPackageImpl implements EelPackage {
 
 		integrationMeasureEClass = createEClass(INTEGRATION_MEASURE);
 		createEReference(integrationMeasureEClass, INTEGRATION_MEASURE__FUNCTION);
-		createEAttribute(integrationMeasureEClass, INTEGRATION_MEASURE__LEFT_BOUND);
-		createEAttribute(integrationMeasureEClass, INTEGRATION_MEASURE__RIGHT_BOUND);
+		createEReference(integrationMeasureEClass, INTEGRATION_MEASURE__LEFT_BOUND);
+		createEReference(integrationMeasureEClass, INTEGRATION_MEASURE__RIGHT_BOUND);
 
 		// Create enums
 		visibilityEEnum = createEEnum(VISIBILITY);
@@ -1516,12 +1516,12 @@ public class EelPackageImpl extends EPackageImpl implements EelPackage {
 		initEReference(getIntegrationMeasure_Function(), this.getCompositeMeasure(), null, "function", null, 1, 1,
 				IntegrationMeasure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getIntegrationMeasure_LeftBound(), ecorePackage.getEBigDecimal(), "leftBound", null, 1, 1,
-				IntegrationMeasure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
-				!IS_DERIVED, IS_ORDERED);
-		initEAttribute(getIntegrationMeasure_RightBound(), ecorePackage.getEBigDecimal(), "rightBound", null, 1, 1,
-				IntegrationMeasure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
-				!IS_DERIVED, IS_ORDERED);
+		initEReference(getIntegrationMeasure_LeftBound(), this.getMeasure(), null, "leftBound", null, 1, 1,
+				IntegrationMeasure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getIntegrationMeasure_RightBound(), this.getMeasure(), null, "rightBound", null, 1, 1,
+				IntegrationMeasure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(visibilityEEnum, Visibility.class, "Visibility");

@@ -2150,18 +2150,15 @@ ruleIntegrationMeasure returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getIntegrationMeasureAccess().getLeftBoundEBigDecimalParserRuleCall_10_0());
-				}
-				lv_leftBound_12_0=ruleEBigDecimal
-				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getIntegrationMeasureRule());
+						$current = createModelElement(grammarAccess.getIntegrationMeasureRule());
 					}
-					set(
-						$current,
-						"leftBound",
-						lv_leftBound_12_0,
-						"org.atlanmod.energy.estimation.dsl.Eel.EBigDecimal");
+				}
+				{
+					newCompositeNode(grammarAccess.getIntegrationMeasureAccess().getLeftBoundMeasureCrossReference_10_0());
+				}
+				ruleEString
+				{
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -2173,18 +2170,15 @@ ruleIntegrationMeasure returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getIntegrationMeasureAccess().getRightBoundEBigDecimalParserRuleCall_12_0());
-				}
-				lv_rightBound_14_0=ruleEBigDecimal
-				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getIntegrationMeasureRule());
+						$current = createModelElement(grammarAccess.getIntegrationMeasureRule());
 					}
-					set(
-						$current,
-						"rightBound",
-						lv_rightBound_14_0,
-						"org.atlanmod.energy.estimation.dsl.Eel.EBigDecimal");
+				}
+				{
+					newCompositeNode(grammarAccess.getIntegrationMeasureAccess().getRightBoundMeasureCrossReference_12_0());
+				}
+				ruleEString
+				{
 					afterParserOrEnumRuleCall();
 				}
 			)
