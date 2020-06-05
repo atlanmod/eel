@@ -1,0 +1,26 @@
+Platform SystemCallTraces {
+	measures {
+		system.iterator = 1.0,		
+		
+		mmap2.power = 10.0,
+		mmap2#execute.count =, // declaration 
+		mmap2#execute.count = "mmap2.count" + "system.iterator", 
+		mmap2.totalPower = "SystemCallTraces.mmap2.'http://www.atlanmod.org/eel'::Type::Power" * "mmap2.count",
+		
+		open.power = 5.0,
+		open#execute.count =,
+		open#execute.count = "open.count" + "system.iterator",		
+		open.totalPower = "SystemCallTraces.open.'http://www.atlanmod.org/eel'::Type::Power" * "open.count",
+		
+		// this counts the number of time each system call is performed
+		app.absoluteTime,
+		app#execute.startTime = "SystemCallTraces.app.'http://www.atlanmod.org/eel'::Type::Duration" as duration, 
+		post app#execute.calls = "open.count" + "mmap2.count", // + every different system call
+		
+		app.totalPower = "open.totalPower" + "mmap2.totalPower", // + every different systemCall total power 
+		post app#execute.power = "app.calls" / "app.totalPower", // average power consumed by the application
+		
+		post app#execute.duration = "SystemCallTraces.app.'http://www.atlanmod.org/eel'::Type::Duration" - "app.startTime",
+		post app#execute.energy = "SystemCallTraces.app.'http://www.atlanmod.org/eel'::Type::Power" * "SystemCallTraces.app.'http://www.atlanmod.org/eel'::Type::Duration"
+	}
+}

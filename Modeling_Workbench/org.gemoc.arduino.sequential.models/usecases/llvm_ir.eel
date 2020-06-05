@@ -1,0 +1,8 @@
+Platform LLVM_IR {
+	measures {
+		call#execute.energy = 10.0,
+		op#execute.energy = 10.0,
+		memload#execute.energy = 10.0
+		// ...
+	}
+}
