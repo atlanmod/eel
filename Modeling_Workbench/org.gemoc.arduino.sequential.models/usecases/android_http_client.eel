@@ -1,22 +1,19 @@
 Platform Android {
-	measures {
-		HttpClient.cpuEnergyCost = 10.0, // random value, we don't have data
-		HttpClient.wifiEnergyCost = 23.0, 
-		HttpClient.tailFunctionK = 1.0,
-		HttpClient.tailFunctionL = 1.0,
-		HttpClient.tailFunctionX = 0.0,
-		HttpClient.tailFunctionX0 = 1.0,
-		HttpClient.tailFunction = logistic "Android.HttpClient.tailFunctionK" "Android.HttpClient.tailFunctionL" "Android.HttpClient.tailFunctionX0" "Android.HttpClient.tailFunctionX",
-		
-		HttpClient#execute.Duration = 10.0, // random value, we don't have data		
-		HttpClient.absoluteTime,
-		HttpClient#execute.ATSinceLastCallStart = "Android.HttpClient.'http://www.atlanmod.org/eel'::Type::Duration" as duration,
-		
-		HttpClient#execute.callEnergy = "HttpClient.cpuEnergyCost" + "HttpClient.wifiEnergyCost",
-		HttpClient#execute.tailEnergy = integral "HttpClient.tailFunction" ["HttpClient.ATSinceLastCallStart";"HttpClient.ATSinceLastCallEnd"],
-		HttpClient#execute.energy = "HttpClient.callEnergy" + "HttpClient.tailEnergy",
-		
-		HttpClient#execute.ATSinceLastCallEnd = "Android.HttpClient.'http://www.atlanmod.org/eel'::Type::Duration" + "HttpClient.Duration"
-	}
+	HttpClient.cpuEnergyCost = 10.0, // random value, we don't have data
+	HttpClient.wifiEnergyCost = 23.0, 
+	HttpClient.tailFunctionK = 1.0,
+	HttpClient.tailFunctionL = 1.0,
+	HttpClient.tailFunctionX = 0.0,
+	HttpClient.tailFunctionX0 = 1.0,
+	HttpClient.tailFunction = logistic "Android.HttpClient.tailFunctionK" "Android.HttpClient.tailFunctionL" "Android.HttpClient.tailFunctionX0" "Android.HttpClient.tailFunctionX",
 	
+	HttpClient#execute.Duration = 10.0, // random value, we don't have data		
+	HttpClient.absoluteTime,
+	HttpClient#execute.ATSinceLastCallStart = "Android.HttpClient.'http://www.atlanmod.org/eel'::Type::Duration" as duration,
+	
+	HttpClient#execute.callEnergy = "HttpClient.cpuEnergyCost" + "HttpClient.wifiEnergyCost",
+	HttpClient#execute.tailEnergy = integral "HttpClient.tailFunction" ["HttpClient.ATSinceLastCallStart";"HttpClient.ATSinceLastCallEnd"],
+	HttpClient#execute.energy = "HttpClient.callEnergy" + "HttpClient.tailEnergy",
+	
+	HttpClient#execute.ATSinceLastCallEnd = "Android.HttpClient.'http://www.atlanmod.org/eel'::Type::Duration" + "HttpClient.Duration"	
 }

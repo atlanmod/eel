@@ -112,78 +112,37 @@ rulePlatform returns [EObject current=null]
 			newLeafNode(otherlv_3, grammarAccess.getPlatformAccess().getLeftCurlyBracketKeyword_3());
 		}
 		(
-			otherlv_4='variables'
-			{
-				newLeafNode(otherlv_4, grammarAccess.getPlatformAccess().getVariablesKeyword_4_0());
-			}
-			otherlv_5='{'
-			{
-				newLeafNode(otherlv_5, grammarAccess.getPlatformAccess().getLeftCurlyBracketKeyword_4_1());
-			}
 			(
-				(
-					{
-						newCompositeNode(grammarAccess.getPlatformAccess().getVariablesVariableParserRuleCall_4_2_0());
-					}
-					lv_variables_6_0=ruleVariable
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getPlatformRule());
-						}
-						add(
-							$current,
-							"variables",
-							lv_variables_6_0,
-							"org.atlanmod.energy.estimation.dsl.Eel.Variable");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-			(
-				otherlv_7=','
 				{
-					newLeafNode(otherlv_7, grammarAccess.getPlatformAccess().getCommaKeyword_4_3_0());
+					newCompositeNode(grammarAccess.getPlatformAccess().getMeasuresMeasureParserRuleCall_4_0());
 				}
-				(
-					(
-						{
-							newCompositeNode(grammarAccess.getPlatformAccess().getVariablesVariableParserRuleCall_4_3_1_0());
-						}
-						lv_variables_8_0=ruleVariable
-						{
-							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getPlatformRule());
-							}
-							add(
-								$current,
-								"variables",
-								lv_variables_8_0,
-								"org.atlanmod.energy.estimation.dsl.Eel.Variable");
-							afterParserOrEnumRuleCall();
-						}
-					)
-				)
-			)*
-			otherlv_9='}'
-			{
-				newLeafNode(otherlv_9, grammarAccess.getPlatformAccess().getRightCurlyBracketKeyword_4_4());
-			}
-		)?
+				lv_measures_4_0=ruleMeasure
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getPlatformRule());
+					}
+					add(
+						$current,
+						"measures",
+						lv_measures_4_0,
+						"org.atlanmod.energy.estimation.dsl.Eel.Measure");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
 		(
-			otherlv_10='measures'
-			{
-				newLeafNode(otherlv_10, grammarAccess.getPlatformAccess().getMeasuresKeyword_5_0());
-			}
-			otherlv_11='{'
-			{
-				newLeafNode(otherlv_11, grammarAccess.getPlatformAccess().getLeftCurlyBracketKeyword_5_1());
-			}
+			(
+				otherlv_5=','
+				{
+					newLeafNode(otherlv_5, grammarAccess.getPlatformAccess().getCommaKeyword_5_0());
+				}
+			)?
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getPlatformAccess().getMeasuresMeasureParserRuleCall_5_2_0());
+						newCompositeNode(grammarAccess.getPlatformAccess().getMeasuresMeasureParserRuleCall_5_1_0());
 					}
-					lv_measures_12_0=ruleMeasure
+					lv_measures_6_0=ruleMeasure
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getPlatformRule());
@@ -191,45 +150,16 @@ rulePlatform returns [EObject current=null]
 						add(
 							$current,
 							"measures",
-							lv_measures_12_0,
+							lv_measures_6_0,
 							"org.atlanmod.energy.estimation.dsl.Eel.Measure");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
-			(
-				otherlv_13=','
-				{
-					newLeafNode(otherlv_13, grammarAccess.getPlatformAccess().getCommaKeyword_5_3_0());
-				}
-				(
-					(
-						{
-							newCompositeNode(grammarAccess.getPlatformAccess().getMeasuresMeasureParserRuleCall_5_3_1_0());
-						}
-						lv_measures_14_0=ruleMeasure
-						{
-							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getPlatformRule());
-							}
-							add(
-								$current,
-								"measures",
-								lv_measures_14_0,
-								"org.atlanmod.energy.estimation.dsl.Eel.Measure");
-							afterParserOrEnumRuleCall();
-						}
-					)
-				)
-			)*
-			otherlv_15='}'
-			{
-				newLeafNode(otherlv_15, grammarAccess.getPlatformAccess().getRightCurlyBracketKeyword_5_4());
-			}
-		)?
-		otherlv_16='}'
+		)*
+		otherlv_7='}'
 		{
-			newLeafNode(otherlv_16, grammarAccess.getPlatformAccess().getRightCurlyBracketKeyword_6());
+			newLeafNode(otherlv_7, grammarAccess.getPlatformAccess().getRightCurlyBracketKeyword_6());
 		}
 	)
 ;
@@ -471,104 +401,6 @@ ruleEString returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()
 		}
 		{
 			newLeafNode(this_ID_1, grammarAccess.getEStringAccess().getIDTerminalRuleCall_1());
-		}
-	)
-;
-
-// Entry rule entryRuleVariable
-entryRuleVariable returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getVariableRule()); }
-	iv_ruleVariable=ruleVariable
-	{ $current=$iv_ruleVariable.current; }
-	EOF;
-
-// Rule Variable
-ruleVariable returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		otherlv_0='Variable'
-		{
-			newLeafNode(otherlv_0, grammarAccess.getVariableAccess().getVariableKeyword_0());
-		}
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getVariableAccess().getNameEStringParserRuleCall_1_0());
-				}
-				lv_name_1_0=ruleEString
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getVariableRule());
-					}
-					set(
-						$current,
-						"name",
-						lv_name_1_0,
-						"org.atlanmod.energy.estimation.dsl.Eel.EString");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		otherlv_2='{'
-		{
-			newLeafNode(otherlv_2, grammarAccess.getVariableAccess().getLeftCurlyBracketKeyword_2());
-		}
-		(
-			otherlv_3='value'
-			{
-				newLeafNode(otherlv_3, grammarAccess.getVariableAccess().getValueKeyword_3_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getVariableAccess().getValueEBigDecimalParserRuleCall_3_1_0());
-					}
-					lv_value_4_0=ruleEBigDecimal
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getVariableRule());
-						}
-						set(
-							$current,
-							"value",
-							lv_value_4_0,
-							"org.atlanmod.energy.estimation.dsl.Eel.EBigDecimal");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)?
-		otherlv_5='vibility'
-		{
-			newLeafNode(otherlv_5, grammarAccess.getVariableAccess().getVibilityKeyword_4());
-		}
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getVariableAccess().getVibilityVisibilityEnumRuleCall_5_0());
-				}
-				lv_vibility_6_0=ruleVisibility
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getVariableRule());
-					}
-					set(
-						$current,
-						"vibility",
-						lv_vibility_6_0,
-						"org.atlanmod.energy.estimation.dsl.Eel.Visibility");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		otherlv_7='}'
-		{
-			newLeafNode(otherlv_7, grammarAccess.getVariableAccess().getRightCurlyBracketKeyword_6());
 		}
 	)
 ;

@@ -691,7 +691,7 @@ public class EelSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Platform returns Platform
 	 *
 	 * Constraint:
-	 *     (name=EString (variables+=Variable variables+=Variable*)? (measures+=Measure measures+=Measure*)?)
+	 *     (name=EString measures+=Measure measures+=Measure*)
 	 */
 	protected void sequence_Platform(ISerializationContext context, Platform semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

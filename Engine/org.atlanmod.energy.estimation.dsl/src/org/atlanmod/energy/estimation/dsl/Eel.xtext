@@ -10,8 +10,7 @@ Platform returns Platform:
 	'Platform'
 	name=EString
 	'{'
-		('variables' '{' variables+=Variable ( "," variables+=Variable)* '}' )?
-		('measures' '{' measures+=Measure ( "," measures+=Measure)* '}' )?
+		measures+=Measure ( (",")? measures+=Measure)* 
 	'}';
 
 Measure returns Measure:

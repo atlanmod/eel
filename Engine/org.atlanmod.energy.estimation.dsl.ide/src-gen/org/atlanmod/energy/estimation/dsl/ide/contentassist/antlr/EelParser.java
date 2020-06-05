@@ -51,10 +51,7 @@ public class EelParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getTypeAccess().getAlternatives(), "rule__Type__Alternatives");
 			builder.put(grammarAccess.getVisibilityAccess().getAlternatives(), "rule__Visibility__Alternatives");
 			builder.put(grammarAccess.getPlatformAccess().getGroup(), "rule__Platform__Group__0");
-			builder.put(grammarAccess.getPlatformAccess().getGroup_4(), "rule__Platform__Group_4__0");
-			builder.put(grammarAccess.getPlatformAccess().getGroup_4_3(), "rule__Platform__Group_4_3__0");
 			builder.put(grammarAccess.getPlatformAccess().getGroup_5(), "rule__Platform__Group_5__0");
-			builder.put(grammarAccess.getPlatformAccess().getGroup_5_3(), "rule__Platform__Group_5_3__0");
 			builder.put(grammarAccess.getVariableAccess().getGroup(), "rule__Variable__Group__0");
 			builder.put(grammarAccess.getVariableAccess().getGroup_3(), "rule__Variable__Group_3__0");
 			builder.put(grammarAccess.getEBigDecimalAccess().getGroup(), "rule__EBigDecimal__Group__0");
@@ -218,10 +215,8 @@ public class EelParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getEParameterAccess().getGroup_9_3(), "rule__EParameter__Group_9_3__0");
 			builder.put(grammarAccess.getEParameterAccess().getGroup_10(), "rule__EParameter__Group_10__0");
 			builder.put(grammarAccess.getPlatformAccess().getNameAssignment_2(), "rule__Platform__NameAssignment_2");
-			builder.put(grammarAccess.getPlatformAccess().getVariablesAssignment_4_2(), "rule__Platform__VariablesAssignment_4_2");
-			builder.put(grammarAccess.getPlatformAccess().getVariablesAssignment_4_3_1(), "rule__Platform__VariablesAssignment_4_3_1");
-			builder.put(grammarAccess.getPlatformAccess().getMeasuresAssignment_5_2(), "rule__Platform__MeasuresAssignment_5_2");
-			builder.put(grammarAccess.getPlatformAccess().getMeasuresAssignment_5_3_1(), "rule__Platform__MeasuresAssignment_5_3_1");
+			builder.put(grammarAccess.getPlatformAccess().getMeasuresAssignment_4(), "rule__Platform__MeasuresAssignment_4");
+			builder.put(grammarAccess.getPlatformAccess().getMeasuresAssignment_5_1(), "rule__Platform__MeasuresAssignment_5_1");
 			builder.put(grammarAccess.getVariableAccess().getNameAssignment_1(), "rule__Variable__NameAssignment_1");
 			builder.put(grammarAccess.getVariableAccess().getValueAssignment_3_1(), "rule__Variable__ValueAssignment_3_1");
 			builder.put(grammarAccess.getVariableAccess().getVibilityAssignment_5(), "rule__Variable__VibilityAssignment_5");

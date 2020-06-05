@@ -1,88 +1,86 @@
-Platform ATMega328p {
-	measures {				
-		"variables".milliToUnitFactor = 0.001,	
-		"variables".voltsPerUnit = 0.0049,
-			
-		"Board".clockPeriod = 0.000000062,
-		"Board".Voltage = 5.0,		
-		"Board".Current = 0.0244,
-		"Board".currentIdle = 0.0099, 
-		"Board".cpuPower = "Board.Current" * "Board.Voltage",
-		"Board".cpuPowerIdle ="Board.currentIdle" * "Board.Voltage",  
-						
-		"LED".Voltage = 5.0,
-		"LED".Current = 0.0088,		 		
-		"LED".numberOfLedsRunning = ocl:"LED.allInstances() -> select(it | it.oclContainer().oclAsType(Pin).level = 1) -> size()",						
-		"LED".currentOfLedsRunning = "LED.Current" * "LED.numberOfLedsRunning",
-		"LED".powerOfLedsRunning = "LED.currentOfLedsRunning" * "LED.numberOfLedsRunning" * "LED.Voltage",
+Platform ATMega328p {	
+	variables.milliToUnitFactor = 0.001,	
+	variables.voltsPerUnit = 0.0049,
 		
-		"InfraRedSensor".Voltage = 5.0,
-		"InfraRedSensor".Current = 0.0043,			
-		"InfraRedSensor".internalLedCurrent = 0.00085,
-		"InfraRedSensor".numberOfSensorsRunning = ocl: "InfraRedSensor.allInstances() -> size()",
-		"InfraRedSensor".numberOnObstacle = ocl:"InfraRedSensor.allInstances() -> select(it | it.oclContainer.oclAsType(Pin).level = 0) -> asSequence() -> size()",
-		"InfraRedSensor".powerOfInfraRedSensorsOnIdle = "InfraRedSensor.numberOfSensorsRunning" * "InfraRedSensor.Voltage" * "InfraRedSensor.Current", 
-		"InfraRedSensor".powerOfInfraRedSensorsOnObstacle = "InfraRedSensor.numberOnObstacle" * "InfraRedSensor.internalLedCurrent" * "InfraRedSensor.Voltage", 
-		"InfraRedSensor".powerOfInfraRedSensors = "InfraRedSensor.powerOfInfraRedSensorsOnIdle" + "InfraRedSensor.powerOfInfraRedSensorsOnObstacle",
-		
-		"MicroServo".Current = 0.0025704,		
-		"MicroServo".Voltage = 5.0,
-		"MicroServo".numberOfServoRunning = ocl: "MicroServo.allInstances() -> size()",
-		"MicroServo".currentOfServoRunning = "MicroServo.numberOfServoRunning" * "MicroServo.Current",
-		"MicroServo".Power = "MicroServo.currentOfServoRunning" * "Board.Voltage", 
-		"MicroServo".mahRise = ocl:"let rotation = if (self.operand.oclIsKindOf(IntegerVariableRef)) then (self.operand.oclAsType(IntegerVariableRef).variable.initialValue - self.module.oclContainer.oclAsType(Pin).level) else 0.0 endif in if (rotation > 6) then 0.00805608 else 11189 * 0.000004 * rotation * rotation * 5 / 1000 endif", 	
-		"MicroServo".mahFall = ocl:"let rotation = if (self.operand.oclIsKindOf(IntegerVariableRef)) then (self.operand.oclAsType(IntegerVariableRef).variable.initialValue - self.module.oclContainer.oclAsType(Pin).level) else 0.0 endif in if (rotation > 6) then if (rotation > 70) then 16.949*5/1000 else (80.346*rotation + 5.82474) *5 / 1000 endif else 0.0 endif",
-		"MicroServo".mahConstant = ocl:"let rotation = if (self.operand.oclIsKindOf(IntegerVariableRef)) then (self.operand.oclAsType(IntegerVariableRef).variable.initialValue - self.module.oclContainer.oclAsType(Pin).level) else 0.0 endif in if (rotation > 70) then 83.5 * (rotation * 0.002 - 0.14) * 5 / 1000 else 0.0 endif",
-		"MicroServo".Energy = "MicroServo.mahRise" + "MicroServo.mahFall" + "MicroServo.mahConstant",		
-		 
-		// value * voltsPerUnit = internalVoltage, * conductance = Intensity, * board voltage = power consumption for all sensors 		
-		"AmbientLightSensor".Current = ocl:"AmbientLightSensor.allInstances() -> iterate( it: AmbientLightSensor; acc: Real = 0.0 | acc + it.oclContainer.oclAsType(Pin).level * 0.0049 * 0.004545455)",		
-		"AmbientLightSensor".Power = "Board.Voltage" * "AmbientLightSensor.Current",
-		
-		"Delay".delayDurationMs = ocl:"self.value", // milliseconds
-		"Delay".delayDuration = "Delay.delayDurationMs" * "variables.milliToUnitFactor",	
-		"Delay".clockCyles = 76.0,
-		"Delay".callDuration = "Delay.clockCyles" * "Board.clockPeriod",
-		"Delay".Duration = "Delay.callDuration" + "Delay.delayDuration",
-		
-		"WaitFor".clockCycles = 10.0, 
-		"WaitFor".callDuration = "WaitFor.clockCycles" * "Board.clockPeriod",
-		post "WaitFor".absoluteTime, //milliseconds
-		"WaitFor".realDurationAsSeconds = "WaitFor.\'http://www.atlanmod.org/eel\'::Type::Duration" * "variables.milliToUnitFactor",
-		"WaitFor".totalDuration = "WaitFor.realDurationAsSeconds" + "WaitFor.callDuration",
-		
-		"ModuleAssignment".clockCycles = 44.0, //digitalWrite
-		"ModuleAssignment".callDuration = "ModuleAssignment.clockCycles" * "Board.clockPeriod",					
-		"ModuleAssignment".controlsServo = ocl:"if (self.module.oclIsKindOf(MicroServo)) then 1.0 else 0.0 endif",
-		"ModuleAssignment".energyImpact = "ModuleAssignment.controlsServo" * "MicroServo.Energy",		
-		"ModuleAssignment".energyFromCall = "ModuleAssignment.callDuration" * "Board.systemPower",
-		
-		"BooleanModuleGet".clockCycles = 51.0, //digitalRead
-		"BooleanModuleGet".callDuration = "BooleanModuleGet.clockCycles" * "Board.clockPeriod",
+	Board.clockPeriod = 0.000000062,
+	Board.Voltage = 5.0,		
+	Board.Current = 0.0244,
+	Board.currentIdle = 0.0099, 
+	Board.cpuPower = "Board.Current" * "Board.Voltage",
+	Board.cpuPowerIdle ="Board.currentIdle" * "Board.Voltage",  
+					
+	LED.Voltage = 5.0,
+	LED.Current = 0.0088,		 		
+	LED.numberOfLedsRunning = ocl:"LED.allInstances() -> select(it | it.oclContainer().oclAsType(Pin).level = 1) -> size()",						
+	LED.currentOfLedsRunning = "LED.Current" * "LED.numberOfLedsRunning",
+	LED.powerOfLedsRunning = "LED.currentOfLedsRunning" * "LED.numberOfLedsRunning" * "LED.Voltage",
+	
+	InfraRedSensor.Voltage = 5.0,
+	InfraRedSensor.Current = 0.0043,			
+	InfraRedSensor.internalLedCurrent = 0.00085,
+	InfraRedSensor.numberOfSensorsRunning = ocl: "InfraRedSensor.allInstances() -> size()",
+	InfraRedSensor.numberOnObstacle = ocl:"InfraRedSensor.allInstances() -> select(it | it.oclContainer.oclAsType(Pin).level = 0) -> asSequence() -> size()",
+	InfraRedSensor.powerOfInfraRedSensorsOnIdle = "InfraRedSensor.numberOfSensorsRunning" * "InfraRedSensor.Voltage" * "InfraRedSensor.Current", 
+	InfraRedSensor.powerOfInfraRedSensorsOnObstacle = "InfraRedSensor.numberOnObstacle" * "InfraRedSensor.internalLedCurrent" * "InfraRedSensor.Voltage", 
+	InfraRedSensor.powerOfInfraRedSensors = "InfraRedSensor.powerOfInfraRedSensorsOnIdle" + "InfraRedSensor.powerOfInfraRedSensorsOnObstacle",
+	
+	MicroServo.Current = 0.0025704,		
+	MicroServo.Voltage = 5.0,
+	MicroServo.numberOfServoRunning = ocl: "MicroServo.allInstances() -> size()",
+	MicroServo.currentOfServoRunning = "MicroServo.numberOfServoRunning" * "MicroServo.Current",
+	MicroServo.Power = "MicroServo.currentOfServoRunning" * "Board.Voltage", 
+	MicroServo.mahRise = ocl:"let rotation = if (self.operand.oclIsKindOf(IntegerVariableRef)) then (self.operand.oclAsType(IntegerVariableRef).variable.initialValue - self.module.oclContainer.oclAsType(Pin).level) else 0.0 endif in if (rotation > 6) then 0.00805608 else 11189 * 0.000004 * rotation * rotation * 5 / 1000 endif", 	
+	MicroServo.mahFall = ocl:"let rotation = if (self.operand.oclIsKindOf(IntegerVariableRef)) then (self.operand.oclAsType(IntegerVariableRef).variable.initialValue - self.module.oclContainer.oclAsType(Pin).level) else 0.0 endif in if (rotation > 6) then if (rotation > 70) then 16.949*5/1000 else (80.346*rotation + 5.82474) *5 / 1000 endif else 0.0 endif",
+	MicroServo.mahConstant = ocl:"let rotation = if (self.operand.oclIsKindOf(IntegerVariableRef)) then (self.operand.oclAsType(IntegerVariableRef).variable.initialValue - self.module.oclContainer.oclAsType(Pin).level) else 0.0 endif in if (rotation > 70) then 83.5 * (rotation * 0.002 - 0.14) * 5 / 1000 else 0.0 endif",
+	MicroServo.Energy = "MicroServo.mahRise" + "MicroServo.mahFall" + "MicroServo.mahConstant",		
+	 
+	// value * voltsPerUnit = internalVoltage, * conductance = Intensity, * board voltage = power consumption for all sensors 		
+	AmbientLightSensor.Current = ocl:"AmbientLightSensor.allInstances() -> iterate( it: AmbientLightSensor; acc: Real = 0.0 | acc + it.oclContainer.oclAsType(Pin).level * 0.0049 * 0.004545455)",		
+	AmbientLightSensor.Power = "Board.Voltage" * "AmbientLightSensor.Current",
+	
+	Delay.delayDurationMs = ocl:"self.value", // milliseconds
+	Delay.delayDuration = "Delay.delayDurationMs" * "variables.milliToUnitFactor",	
+	Delay.clockCyles = 76.0,
+	Delay.callDuration = "Delay.clockCyles" * "Board.clockPeriod",
+	Delay.Duration = "Delay.callDuration" + "Delay.delayDuration",
+	
+	WaitFor.clockCycles = 10.0, 
+	WaitFor.callDuration = "WaitFor.clockCycles" * "Board.clockPeriod",
+	post WaitFor.absoluteTime, //milliseconds
+	WaitFor.realDurationAsSeconds = "WaitFor.\'http://www.atlanmod.org/eel\'::Type::Duration" * "variables.milliToUnitFactor",
+	WaitFor.totalDuration = "WaitFor.realDurationAsSeconds" + "WaitFor.callDuration",
+	
+	ModuleAssignment.clockCycles = 44.0, //digitalWrite
+	ModuleAssignment.callDuration = "ModuleAssignment.clockCycles" * "Board.clockPeriod",					
+	ModuleAssignment.controlsServo = ocl:"if (self.module.oclIsKindOf(MicroServo)) then 1.0 else 0.0 endif",
+	ModuleAssignment.energyImpact = "ModuleAssignment.controlsServo" * "MicroServo.Energy",		
+	ModuleAssignment.energyFromCall = "ModuleAssignment.callDuration" * "Board.systemPower",
+	
+	BooleanModuleGet.clockCycles = 51.0, //digitalRead
+	BooleanModuleGet.callDuration = "BooleanModuleGet.clockCycles" * "Board.clockPeriod",
 
-		"IntegerModuleGet".clockCycles = 51.0, //digitalRead
-		"IntegerModuleGet".callDuration = "IntegerModuleGet.clockCycles" * "Board.clockPeriod",	
-				
-		"BinaryIntegerExpression".clockCycles = 6.0, //7  if false
-		"BinaryIntegerExpression".callDuration = "BinaryIntegerExpression.clockCycles" * "Board.clockPeriod",
-		
-		"VariableDeclaration".clockCycles = 1.0,
-		"VariableDeclaration".callDuration = "VariableDeclaration.clockCycles" * "Board.clockPeriod",
-		
-		"VariableAssignement".clockCycles = 2.0,
-		"VariableAssignement".callDuration = "VariableAssignement.clockCycles" * "Board.clockPeriod",
+	IntegerModuleGet.clockCycles = 51.0, //digitalRead
+	IntegerModuleGet.callDuration = "IntegerModuleGet.clockCycles" * "Board.clockPeriod",	
 			
-		"Board".devicesPower = "LED.powerOfLedsRunning" + "InfraRedSensor.powerOfInfraRedSensors" + "AmbientLightSensor.Power" + "MicroServo.Power",
-		"Board".systemPower = "Board.cpuPower" + "Board.devicesPower",				
-		"Board".systemPowerOnIdle = "Board.cpuPowerIdle" + "Board.devicesPower",	
+	BinaryIntegerExpression.clockCycles = 6.0, //7  if false
+	BinaryIntegerExpression.callDuration = "BinaryIntegerExpression.clockCycles" * "Board.clockPeriod",
+	
+	VariableDeclaration.clockCycles = 1.0,
+	VariableDeclaration.callDuration = "VariableDeclaration.clockCycles" * "Board.clockPeriod",
+	
+	VariableAssignement.clockCycles = 2.0,
+	VariableAssignement.callDuration = "VariableAssignement.clockCycles" * "Board.clockPeriod",
 		
-		"WaitFor"#execute.Energy = "Board.systemPowerOnIdle" * "WaitFor.totalDuration",
-		"Delay"#execute.Energy = "Delay.Duration" * "Board.systemPower",			
-		"ModuleAssignment"#execute.Energy = "ModuleAssignment.energyFromCall" + "ModuleAssignment.energyImpact",
-		"IntegerModuleGet"#evaluate.Energy = "IntegerModuleGet.callDuration" * "Board.systemPower",
-		"VariableAssignment"#execute.Energy = "VariableAssignement.callDuration" * "Board.systemPower",
-		"VariableDeclaration"#execute.Energy = "VariableDeclaration.callDuration" * "Board.systemPower",		
-		"BinaryIntegerExpression"#evaluate.Energy = "BinaryIntegerExpression.callDuration" * "Board.systemPower",
-		"BooleanModuleGet"#evaluate.Energy = "BooleanModuleGet.callDuration" * "Board.systemPower"				 		 	
-	}
+	Board.devicesPower = "LED.powerOfLedsRunning" + "InfraRedSensor.powerOfInfraRedSensors" + "AmbientLightSensor.Power" + "MicroServo.Power",
+	Board.systemPower = "Board.cpuPower" + "Board.devicesPower",				
+	Board.systemPowerOnIdle = "Board.cpuPowerIdle" + "Board.devicesPower",	
+	
+	WaitFor#execute.Energy = "Board.systemPowerOnIdle" * "WaitFor.totalDuration",
+	Delay#execute.Energy = "Delay.Duration" * "Board.systemPower",			
+	ModuleAssignment#execute.Energy = "ModuleAssignment.energyFromCall" + "ModuleAssignment.energyImpact",
+	IntegerModuleGet#evaluate.Energy = "IntegerModuleGet.callDuration" * "Board.systemPower",
+	VariableAssignment#execute.Energy = "VariableAssignement.callDuration" * "Board.systemPower",
+	VariableDeclaration#execute.Energy = "VariableDeclaration.callDuration" * "Board.systemPower",		
+	BinaryIntegerExpression#evaluate.Energy = "BinaryIntegerExpression.callDuration" * "Board.systemPower",
+	BooleanModuleGet#evaluate.Energy = "BooleanModuleGet.callDuration" * "Board.systemPower"				 		 		
 }

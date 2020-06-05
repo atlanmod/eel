@@ -35,39 +35,24 @@ public class EelGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cNameEStringParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Keyword cVariablesKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
-		private final Assignment cVariablesAssignment_4_2 = (Assignment)cGroup_4.eContents().get(2);
-		private final RuleCall cVariablesVariableParserRuleCall_4_2_0 = (RuleCall)cVariablesAssignment_4_2.eContents().get(0);
-		private final Group cGroup_4_3 = (Group)cGroup_4.eContents().get(3);
-		private final Keyword cCommaKeyword_4_3_0 = (Keyword)cGroup_4_3.eContents().get(0);
-		private final Assignment cVariablesAssignment_4_3_1 = (Assignment)cGroup_4_3.eContents().get(1);
-		private final RuleCall cVariablesVariableParserRuleCall_4_3_1_0 = (RuleCall)cVariablesAssignment_4_3_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_4_4 = (Keyword)cGroup_4.eContents().get(4);
+		private final Assignment cMeasuresAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cMeasuresMeasureParserRuleCall_4_0 = (RuleCall)cMeasuresAssignment_4.eContents().get(0);
 		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Keyword cMeasuresKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_5_1 = (Keyword)cGroup_5.eContents().get(1);
-		private final Assignment cMeasuresAssignment_5_2 = (Assignment)cGroup_5.eContents().get(2);
-		private final RuleCall cMeasuresMeasureParserRuleCall_5_2_0 = (RuleCall)cMeasuresAssignment_5_2.eContents().get(0);
-		private final Group cGroup_5_3 = (Group)cGroup_5.eContents().get(3);
-		private final Keyword cCommaKeyword_5_3_0 = (Keyword)cGroup_5_3.eContents().get(0);
-		private final Assignment cMeasuresAssignment_5_3_1 = (Assignment)cGroup_5_3.eContents().get(1);
-		private final RuleCall cMeasuresMeasureParserRuleCall_5_3_1_0 = (RuleCall)cMeasuresAssignment_5_3_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_5_4 = (Keyword)cGroup_5.eContents().get(4);
+		private final Keyword cCommaKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Assignment cMeasuresAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
+		private final RuleCall cMeasuresMeasureParserRuleCall_5_1_0 = (RuleCall)cMeasuresAssignment_5_1.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//Platform:
 		//	{Platform}
 		//	'Platform'
 		//	name=EString
-		//	'{' ('variables' '{' variables+=Variable ("," variables+=Variable)* '}')? ('measures' '{' measures+=Measure (","
-		//	measures+=Measure)* '}')?
+		//	'{'
+		//	measures+=Measure (","? measures+=Measure)*
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{Platform} 'Platform' name=EString '{' ('variables' '{' variables+=Variable ("," variables+=Variable)* '}')? ('measures'
-		//'{' measures+=Measure ("," measures+=Measure)* '}')? '}'
+		//{Platform} 'Platform' name=EString '{' measures+=Measure (","? measures+=Measure)* '}'
 		public Group getGroup() { return cGroup; }
 		
 		//{Platform}
@@ -85,65 +70,23 @@ public class EelGrammarAccess extends AbstractGrammarElementFinder {
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
 		
-		//('variables' '{' variables+=Variable ("," variables+=Variable)* '}')?
-		public Group getGroup_4() { return cGroup_4; }
+		//measures+=Measure
+		public Assignment getMeasuresAssignment_4() { return cMeasuresAssignment_4; }
 		
-		//'variables'
-		public Keyword getVariablesKeyword_4_0() { return cVariablesKeyword_4_0; }
+		//Measure
+		public RuleCall getMeasuresMeasureParserRuleCall_4_0() { return cMeasuresMeasureParserRuleCall_4_0; }
 		
-		//'{'
-		public Keyword getLeftCurlyBracketKeyword_4_1() { return cLeftCurlyBracketKeyword_4_1; }
-		
-		//variables+=Variable
-		public Assignment getVariablesAssignment_4_2() { return cVariablesAssignment_4_2; }
-		
-		//Variable
-		public RuleCall getVariablesVariableParserRuleCall_4_2_0() { return cVariablesVariableParserRuleCall_4_2_0; }
-		
-		//("," variables+=Variable)*
-		public Group getGroup_4_3() { return cGroup_4_3; }
-		
-		//","
-		public Keyword getCommaKeyword_4_3_0() { return cCommaKeyword_4_3_0; }
-		
-		//variables+=Variable
-		public Assignment getVariablesAssignment_4_3_1() { return cVariablesAssignment_4_3_1; }
-		
-		//Variable
-		public RuleCall getVariablesVariableParserRuleCall_4_3_1_0() { return cVariablesVariableParserRuleCall_4_3_1_0; }
-		
-		//'}'
-		public Keyword getRightCurlyBracketKeyword_4_4() { return cRightCurlyBracketKeyword_4_4; }
-		
-		//('measures' '{' measures+=Measure ("," measures+=Measure)* '}')?
+		//(","? measures+=Measure)*
 		public Group getGroup_5() { return cGroup_5; }
 		
-		//'measures'
-		public Keyword getMeasuresKeyword_5_0() { return cMeasuresKeyword_5_0; }
-		
-		//'{'
-		public Keyword getLeftCurlyBracketKeyword_5_1() { return cLeftCurlyBracketKeyword_5_1; }
+		//","?
+		public Keyword getCommaKeyword_5_0() { return cCommaKeyword_5_0; }
 		
 		//measures+=Measure
-		public Assignment getMeasuresAssignment_5_2() { return cMeasuresAssignment_5_2; }
+		public Assignment getMeasuresAssignment_5_1() { return cMeasuresAssignment_5_1; }
 		
 		//Measure
-		public RuleCall getMeasuresMeasureParserRuleCall_5_2_0() { return cMeasuresMeasureParserRuleCall_5_2_0; }
-		
-		//("," measures+=Measure)*
-		public Group getGroup_5_3() { return cGroup_5_3; }
-		
-		//","
-		public Keyword getCommaKeyword_5_3_0() { return cCommaKeyword_5_3_0; }
-		
-		//measures+=Measure
-		public Assignment getMeasuresAssignment_5_3_1() { return cMeasuresAssignment_5_3_1; }
-		
-		//Measure
-		public RuleCall getMeasuresMeasureParserRuleCall_5_3_1_0() { return cMeasuresMeasureParserRuleCall_5_3_1_0; }
-		
-		//'}'
-		public Keyword getRightCurlyBracketKeyword_5_4() { return cRightCurlyBracketKeyword_5_4; }
+		public RuleCall getMeasuresMeasureParserRuleCall_5_1_0() { return cMeasuresMeasureParserRuleCall_5_1_0; }
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
@@ -4785,8 +4728,8 @@ public class EelGrammarAccess extends AbstractGrammarElementFinder {
 	//	{Platform}
 	//	'Platform'
 	//	name=EString
-	//	'{' ('variables' '{' variables+=Variable ("," variables+=Variable)* '}')? ('measures' '{' measures+=Measure (","
-	//	measures+=Measure)* '}')?
+	//	'{'
+	//	measures+=Measure (","? measures+=Measure)*
 	//	'}';
 	public PlatformElements getPlatformAccess() {
 		return pPlatform;
