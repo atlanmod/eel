@@ -8,8 +8,8 @@
             addonGroupId="General.AddonGroup"
             class="org.atlanmod.energy.estimation.engine.EngineAddon"
             id="org.atlanmod.energy.estimation.engine.addon"
-            name="EnergyEstimation"
-            shortDescription="requires an energy estimation model as a parameter">
+            name="Energy estimation"
+            shortDescription="Requires an energy estimation model as a parameter">
       </addon>
    </extension>
    <extension
@@ -43,11 +43,11 @@
    </extension>
    <extension
          id="General.AddonGroup"
-         name="General"
+         name="EEL"
          point="org.eclipse.gemoc.gemoc_language_workbench.engine_addon_group">
       <addonGroup
             id="General.AddonGroup"
-            name="General">
+            name="EEL">
       </addonGroup>
    </extension>
 
