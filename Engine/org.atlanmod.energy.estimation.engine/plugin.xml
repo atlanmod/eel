@@ -4,12 +4,13 @@
    <extension
          id="extensionId"
          point="org.eclipse.gemoc.gemoc_language_workbench.engine_addon">
-      <Addon
-            Class="org.atlanmod.energy.estimation.engine.EngineAddon"
-            Name="EnergyEstimation"
-            ShortDescription="requires an energy estimation model as a parameter"
-            id="fr.tblf.gemoc.extension.Addon">
-      </Addon>
+      <addon
+            addonGroupId="General.AddonGroup"
+            class="org.atlanmod.energy.estimation.engine.EngineAddon"
+            id="org.atlanmod.energy.estimation.engine.addon"
+            name="Energy estimation"
+            shortDescription="Requires an energy estimation model as a parameter">
+      </addon>
    </extension>
    <extension
          id="fr.tblf.energy.estimation.menu"
@@ -39,6 +40,15 @@
             id="fr.tblf.energy.estimation.engine.setmodelcommand"
             name="setmodel">
       </command>
+   </extension>
+   <extension
+         id="General.AddonGroup"
+         name="EEL"
+         point="org.eclipse.gemoc.gemoc_language_workbench.engine_addon_group">
+      <addonGroup
+            id="General.AddonGroup"
+            name="EEL">
+      </addonGroup>
    </extension>
 
 </plugin>
