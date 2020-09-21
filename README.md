@@ -1,6 +1,6 @@
-# SLE Artifact Evaluation
+# Energy Estimation Language: EEL
 
-## Content of the Archive
+## Content of the Repository
 
 ### Engine
 
