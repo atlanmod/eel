@@ -42,11 +42,11 @@ These results were compared with the energy estimations provided by EEL.
 ## Installation guide
 
 This artifact evaluation is performed on [GEMOC Studio V3.2.0](http://gemoc.org/studio_releases/eclipse_package/updatesite/2020/06/16/V3.2.0.html).
-It relies on xText, which needs Java 9 (at least).
+It relies on xText, which needs Java 9. We used Java 9.0.4 for the evaluation.
 
 ### Language workbench configuration
 
-1. Start GEMOC and create a new workbench
+1. Start GEMOC and create a new workbench. Make sure that the JRE version used ny GEMOC is Java 9, as well as the Compiler Compliance.
 2. `File > Import > General > Existing Projects into Workspace`
 3. Pick `eel/language_workbench` directory
 4. Same for `eel/engine` directory. picture/step4.png shows the state of the workspace.
