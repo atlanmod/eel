@@ -14,6 +14,7 @@ This directory contains all the Eclipse plugins to perform energy estimations us
 ### Language_Workbench
 
 This directory contains the Eclipse plugins that define ArduinoML:
+
 - The ArduinoML meta-model: `org.gemoc.arduino.sequential.model(.*)?`
 - ArduinoML operational semantics, defined with K3: `org.gemoc.arduino.sequential.k3dsa`
 - An Acceleo plugin for generating C code for Arduino out of ArduinoML models: `fr.obeo.dsl.arduino.gen`
@@ -42,17 +43,17 @@ These results were compared with the energy estimations provided by EEL.
 ## Installation guide
 
 This artifact evaluation is performed on [GEMOC Studio V3.2.0](http://gemoc.org/studio_releases/eclipse_package/updatesite/2020/06/16/V3.2.0.html).
-It relies on xText, which needs Java 9. We used Java 9.0.4 for the evaluation.
+It relies on xText, which needs Java ≥ 9. We used Java 9.0.4 for the evaluation.
 
 ### Language workbench configuration
 
-1. Start GEMOC and create a new workbench. Make sure that the JRE version used ny GEMOC is Java 9, as well as the Compiler Compliance.
+1. Start GEMOC and create a new workbench. Make sure that the JRE version used by GEMOC is Java 9, as well as the Compiler Compliance.
 2. `File > Import > General > Existing Projects into Workspace`
 3. Pick `eel/language_workbench` directory
-4. Same for `eel/engine` directory. picture/step4.png shows the state of the workspace.
+4. Same for `eel/engine` directory.
 5. `Run > Run configuration > New Eclipse Application`
    1. Make sure that the product is `gemoc_studio`, and the execution environment is Java 9.
-6. Run (Gemoc might throw some errors about egit, but that's not related to our app.)
+6. Run (Gemoc might throw some errors related to egit, but that's not related to our app.)
 
 ### Modeling workbench configuration
 
@@ -86,11 +87,11 @@ Link: https://youtu.be/oZBt1Jiggvw
 
 ## Troubleshooting
 
-### `java.lang.ClassNotFoundException: org.eclipse.jgit.lfs.BuiltinLFS cannot be found by org.eclipse.egit.core_5.0.0.201806131550-r`
+    java.lang.ClassNotFoundException: org.eclipse.jgit.lfs.BuiltinLFS cannot be found by org.eclipse.egit.core_5.0.0.201806131550-r
 
 This is not due to EEL, and thus can be ignored.
 
-### `class has been compiled by a more recent version of the Java Runtime (class file version 54.0), this version of the Java Runtime only recognizes class file versions up to 53.0`
+    class has been compiled by a more recent version of the Java Runtime (class file version 54.0), this version of the Java Runtime only recognizes class file versions up to 53.0
 
 The compiler compliance level do not match the jdk used. To fix:
 `Window > Preferences > Java > Compiler > Compiler compliance level > 9`
