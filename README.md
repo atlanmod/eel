@@ -13,7 +13,9 @@ This directory contains all the Eclipse plugins to perform energy estimations us
 
 ### Language_Workbench
 
-This directory contains the Eclipse plugins that define ArduinoML:
+This directory contains the Eclipse plugins that define ArduinoML.
+We provide minor changes to the operational semantics, first described [here](https://github.com/gemoc/arduinomodeling)
+This directory contains: 
 
 - The ArduinoML meta-model: `org.gemoc.arduino.sequential.model(.*)?`
 - ArduinoML operational semantics, defined with K3: `org.gemoc.arduino.sequential.k3dsa`
@@ -27,7 +29,7 @@ Note that all the plugins defined in `Language_Workbench` and `Engine` are meant
 This directory contains the models to be executed in GEMOC.
 They are all located in the same repository: `org.gemoc.arduino.sequential.models`.
 It contains:
-- ArduinoML models, with the `.arduino` extension, corresponding to the Arduino models used as benchmarks, and estimated in the evaluation.
+- ArduinoML models, with the `.arduino` extension, corresponding to the Arduino models used as benchmarks, and estimated in the evaluation of the paper.
   - `activeWaitIRBlueLED.arduino` corresponds to the Arduino model in Figure 2.
   - `waitForIRBlueLED.arduino` corresponds to the Arduino model in Figure 5.
   - `blink.arduino`, `photoresistor.arduino` and `servo9g.arduino` corresponds to the models used as benchmarks in Figure 8.
@@ -96,3 +98,4 @@ This is not due to EEL, and thus can be ignored.
 The compiler compliance level do not match the jdk used. To fix:
 `Window > Preferences > Java > Compiler > Compiler compliance level > 9`
 
+Note that we could not run GEMOC on MacOS (Catalina)
