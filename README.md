@@ -47,7 +47,7 @@ It relies on xText, which needs Java ≥ 9. We used Java 9.0.4 for the evaluatio
 
 ### Language workbench configuration
 
-1. Start GEMOC and create a new workbench. Make sure that the JRE version used by GEMOC is Java 9, as well as the Compiler Compliance.
+1. Start GEMOC and create a new workspace. Make sure that the JRE version used by GEMOC is Java 9, as well as the Compiler Compliance.
 2. `File > Import > General > Existing Projects into Workspace`
 3. Pick `eel/language_workbench` directory
 4. Same for `eel/engine` directory.
@@ -69,8 +69,8 @@ It relies on xText, which needs Java ≥ 9. We used Java 9.0.4 for the evaluatio
 3. `Run > Run configuration > Executable model with Gemoc Java Engine`
 4. Complete the configuration with the following data:
    1. Model to execute: `blink.arduino`
-   2. Language: `Arduino`
-   3. Main method: `Project_ExecutableAspect.main()`
+   2. Language: `org.gemoc.arduino.sequential.arduino.Arduino`
+   3. Main method: `org.gemoc.arduino.sequential.k3dsa.Project_ExecutableAspect.main(org.gemoc.sequential.model.arduino.Project)`
    4. Main model element path: `Project` (This is the root of the Arduino model)
 5. In the Engine addon tab, check `Energy estimation`.
 6. Run. The energy estimations should be printed, at runtime, in the Language workbench.
