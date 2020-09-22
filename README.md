@@ -64,7 +64,7 @@ It relies on xText, which needs Java ≥ 9. We used Java 9.0.4 for the evaluatio
 
 ### Execution
 
-1. In the Gemoc Runtime, click on the `Energy > Estimation model > Load model`
+1. In the Gemoc Runtime, click on the `Energy > Estimation model > Set model`
 2. Select `model.eel`, validate. A `Done` message should appear in the console, confirming that the energy estimation model is properly loaded.
 3. `Run > Run configuration > Executable model with Gemoc Java Engine`
 4. Complete the configuration with the following data:
