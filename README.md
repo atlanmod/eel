@@ -1,5 +1,10 @@
 # Energy Estimation Language: EEL
 
+## General information
+
+This is the implementation of EEL (Energy Estimation Language), presented in the SLE 2020 paper "Annotating Executable DSLs with Energy Estimation Formulas".
+Note that GEMOC Studio 3.2.0 do not work on MacOS.
+
 ## Content of the Repository
 
 ### Engine
@@ -98,4 +103,3 @@ This is not due to EEL, and thus can be ignored.
 The compiler compliance level do not match the jdk used. To fix:
 `Window > Preferences > Java > Compiler > Compiler compliance level > 9`
 
-Note that we could not run GEMOC on MacOS (Catalina)
