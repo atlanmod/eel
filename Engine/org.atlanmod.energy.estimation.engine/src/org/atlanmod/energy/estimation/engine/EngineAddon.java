@@ -22,6 +22,9 @@ import org.atlanmod.energy.estimation.metamodel.eel.MeasureOCL;
 import org.atlanmod.energy.estimation.metamodel.eel.MeasureUnboundOperation;
 import org.atlanmod.energy.estimation.metamodel.eel.Platform;
 import org.atlanmod.energy.estimation.metamodel.eel.RealTimeDuration;
+import org.atlanmod.energy.estimation.smm.SmmModeler;
+import org.atlanmod.energy.estimation.smm.SmmModelerToMM;
+import org.atlanmod.energy.estimation.smm.SmmModelerToModel;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EOperation;
@@ -29,6 +32,7 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.gemoc.trace.commons.model.trace.Step;
+import org.eclipse.gemoc.xdsmlframework.api.core.IExecutionContext;
 import org.eclipse.gemoc.xdsmlframework.api.core.IExecutionEngine;
 import org.eclipse.gemoc.xdsmlframework.api.engine_addon.IEngineAddon;
 import org.eclipse.ocl.pivot.ExpressionInOCL;
@@ -43,9 +47,15 @@ public class EngineAddon implements IEngineAddon {
 	private OCL ocl = OCL.newInstance();
 	private Map<String, Measure> mapClassEstimation;
 	private Map<String, Long> stepDurations;
+	private SmmModeler modeler; //TODO: future update should enable multiple modelers at the same time
 	
 	@Override
-	public void engineAboutToStart(IExecutionEngine<?> executionEngine) {	
+	public void engineAboutToStart(IExecutionEngine<?> executionEngine) {				
+		
+		IExecutionContext<?, ?, ?> ctx = executionEngine.getExecutionContext();
+		Boolean smmMm = ctx.getRunConfiguration().getAttribute("org.atlanmod.energy.estimation.engine.smm_metamodel", false);
+		Boolean smmModel = ctx.getRunConfiguration().getAttribute("org.atlanmod.energy.estimation.engine.smm_model", false);
+		
 		if (MODEL == null) {
 			System.out.println("No model chosen ! Please choose an energy estimation model !");
 		} else {
@@ -83,6 +93,15 @@ public class EngineAddon implements IEngineAddon {
 						mapClassEstimation.put(((Measure) eObject).getTargetClass()+"#"+((Measure) eObject).getTargetOperation(), (Measure)eObject);
 					}
 				});
+				
+				if (smmMm) {
+					modeler = new SmmModelerToMM(resourceSet);
+					modeler.initializeSmmModelWithEelPlatform(platform);
+				} else if (smmModel) {
+					modeler = new SmmModelerToModel(resourceSet);
+					modeler.initializeSmmModelWithEelPlatform(platform);
+				}
+				
 				System.out.println(platform.getName()+" estimation model loaded");
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -116,8 +135,12 @@ public class EngineAddon implements IEngineAddon {
 		if (m != null && !(hasRealTimeDuration(m))) {			
 			updateMeasure(m, caller, operation);
 			try {
-				System.out.println(classOperation+" consumed "+m.value());	
-			} catch (Exception e) {
+				BigDecimal output = m.value();
+				System.out.println(classOperation+" consumed "+output);	
+				
+				modeler.persistMeasurement(m,output.doubleValue(), modeler.callerToTarget(caller));
+				
+			} catch (Exception e) {				
 				System.out.println(m.getName()+" - "+m.getSubname()+" cannot compute energy consumption");
 			}
 			
@@ -129,6 +152,15 @@ public class EngineAddon implements IEngineAddon {
 	}
 	
 	
+	
+	
+	@Override
+	public void engineStopped(IExecutionEngine<?> engine) {
+		Resource resource = modeler.saveModel();
+		System.out.println(resource.getURI()+ " saved.");
+		IEngineAddon.super.engineStopped(engine);
+	}
+
 	public void stepExecuted(IExecutionEngine<?> engine, Step<?> stepToExecute) {
 		EObject caller = stepToExecute.getMseoccurrence().getMse().getCaller();						
 		EOperation operation = stepToExecute.getMseoccurrence().getMse().getAction();
@@ -191,7 +223,6 @@ public class EngineAddon implements IEngineAddon {
 	
 	private void updateMeasure(CompositeMeasure m, EObject caller, EOperation operation) {
 		if (m instanceof LogisticMeasure) {
-			System.out.println("Updating logistic measure");
 			LogisticMeasure lm = (LogisticMeasure) m;
 			
 			updateMeasure(lm.getK(), caller, operation);
