@@ -2,7 +2,7 @@
 <?eclipse version="3.4"?>
 <plugin>
    <extension
-         id="extensionId"
+         id="org.atlanmod.energy.estimation.engine.extension"
          point="org.eclipse.gemoc.gemoc_language_workbench.engine_addon">
       <addon
             addonGroupId="General.AddonGroup"
@@ -10,6 +10,18 @@
             id="org.atlanmod.energy.estimation.engine.addon"
             name="Energy estimation"
             shortDescription="Requires an energy estimation model as a parameter">
+         <addon_booleanOption
+               defaultValue="false"
+               id="org.atlanmod.energy.estimation.engine.smm_metamodel"
+               name="SMM to meta-model"
+               shortDescription="Models the estimations with SMM, and attach estimations to the meta-model">
+         </addon_booleanOption>
+         <addon_booleanOption
+               defaultValue="false"
+               id="org.atlanmod.energy.estimation.engine.smm_model"
+               name="SMM to model"
+               shortDescription="Models the estimations with SMM, and attach estimations to the model">
+         </addon_booleanOption>
       </addon>
    </extension>
    <extension
