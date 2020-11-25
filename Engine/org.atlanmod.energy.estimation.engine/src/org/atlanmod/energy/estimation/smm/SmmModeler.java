@@ -1,21 +1,26 @@
 package org.atlanmod.energy.estimation.smm;
 
-import java.io.File;
 import java.io.IOException;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.Map;
+import java.util.Optional;
 import java.util.function.Predicate;
 
 import org.atlanmod.energy.estimation.metamodel.eel.Measure;
+import org.atlanmod.energy.estimation.metamodel.eel.MeasureUnboundOperation;
 import org.atlanmod.energy.estimation.metamodel.eel.Platform;
-import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EAttribute;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
+import org.eclipse.modisco.omg.smm.AbstractMeasureElement;
+import org.eclipse.modisco.omg.smm.BaseMeasureRelationship;
+import org.eclipse.modisco.omg.smm.CollectiveMeasure;
+import org.eclipse.modisco.omg.smm.DimensionalMeasure;
+import org.eclipse.modisco.omg.smm.DimensionalMeasurement;
 import org.eclipse.modisco.omg.smm.MeasureLibrary;
 import org.eclipse.modisco.omg.smm.Measurement;
+import org.eclipse.modisco.omg.smm.MeasurementRelationship;
 import org.eclipse.modisco.omg.smm.Observation;
 import org.eclipse.modisco.omg.smm.ObservedMeasure;
 import org.eclipse.modisco.omg.smm.SmmFactory;
@@ -36,16 +41,9 @@ public abstract class SmmModeler<T, U extends EObject> {
 	 * 
 	 * @param resourceSet the ResourceSet containing EEL model and executable models
 	 */
-	public SmmModeler(ResourceSet resourceSet) {	
-		model = SmmFactory.eINSTANCE.createSmmModel();
-		
-        Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;
-        Map<String, Object> m = reg.getExtensionToFactoryMap();
-        m.put("xmi", new XMIResourceFactoryImpl());        
-        
-		Resource resource = resourceSet.createResource(URI.createURI(new File("smmModelToMM.xmi").toURI().toString()));
-		resource.getContents().add(model);
-		
+	public SmmModeler(SmmModel model) {
+
+		this.model = model;
 		eelToSmm = new HashMap<>();
 		
 	}
@@ -60,22 +58,84 @@ public abstract class SmmModeler<T, U extends EObject> {
 	 * @param platform a EEL {@link Platform}
 	 */
 	public void initializeSmmModelWithEelPlatform(Platform platform) {
-		MeasureLibrary mlibrary = SmmFactory.eINSTANCE.createMeasureLibrary();
-		mlibrary.setName(platform.getName());
-		model.getLibrairies().add(mlibrary);		
+		MeasureLibrary mlibrary;				
 		
-		Observation observation = SmmFactory.eINSTANCE.createObservation();
+		// Check if the SMM model already contains a MeasureLibrary corresponding to the chosen platform.
+		Optional<MeasureLibrary> optMeasureLibrary = model.getLibrairies().stream().filter(lib -> platform.getName().equals(lib.getName())).findAny();
+		if (optMeasureLibrary.isPresent())
+			mlibrary = optMeasureLibrary.get();
+		else {
+			mlibrary = SmmFactory.eINSTANCE.createMeasureLibrary();
+			mlibrary.setName(platform.getName());
+			model.getLibrairies().add(mlibrary);		
+		}
+		
+		// An Observation per couple <execution , SmmModeler> 
+		Observation observation = SmmFactory.eINSTANCE.createObservation();		
 		model.getObservations().add(observation);
 		
+		// All Measures defined with EEL are also modeled with SMM, with an attached Observed Measure. 
+		modelEelMeasureWithSMM(platform, mlibrary, observation);
+		
+		// Now that all measures are modeled with SMM, relationships have to be defined as well.
+		// We consider measures that have an unbound number of dependencies. This should be extended to other measures too: binaries, functions, ...
+		createRelationshipsBetweenMeasurements(platform);
+	}
+	
+	/**
+	 * Add into the {@link MeasureLibrary} all the EEL {@link Measure}s 
+	 * @param platform the Eel {@link Platform}
+	 * @param mlibrary the SMM {@link MeasureLibrary}
+	 * @param observation the SMM {@link Observation}
+	 */
+	private void modelEelMeasureWithSMM(Platform platform, MeasureLibrary mlibrary, Observation observation) {
 		platform.getMeasures().forEach(measure -> {
 			org.eclipse.modisco.omg.smm.Measure smmMeasure = createMeasure(measure);
-			mlibrary.getMeasureElements().add(smmMeasure);
 			ObservedMeasure observedMeasure = SmmFactory.eINSTANCE.createObservedMeasure();
+			
+			//Check if the SMM model already contains the Measure. 
+			Optional<AbstractMeasureElement> optMeasure = mlibrary.getMeasureElements().stream()
+					.filter(measureElement -> measureElement instanceof org.eclipse.modisco.omg.smm.Measure && 
+							smmMeasure.getName().equals(measureElement.getName()))
+					.findFirst();
+			
+			if (!optMeasure.isPresent()) {				
+				mlibrary.getMeasureElements().add(smmMeasure);
+				
+				observedMeasure.setMeasure(smmMeasure);
+			} else {
+				observedMeasure.setMeasure((org.eclipse.modisco.omg.smm.Measure) optMeasure.get());
+			}
+							
 			observedMeasure.setMeasure(smmMeasure);
 			observation.getObservedMeasures().add(observedMeasure);
 			eelToSmm.put(measure, observedMeasure);
 		});
-		
+	}
+	
+	/**
+	 * Create the {@link MeasurementRelationship} in the SMM Model based on the EEL {@link Measure}s
+	 * @param platform the EEL {@link Platform}
+	 */
+	private void createRelationshipsBetweenMeasurements(Platform platform) {
+		platform.getMeasures().stream()
+		.filter(measure -> measure instanceof MeasureUnboundOperation)
+		.map(measure -> (MeasureUnboundOperation) measure)
+		.forEach(eelMeasure -> {
+			CollectiveMeasure smmMeasure = (CollectiveMeasure) eelToSmm.get(eelMeasure).getMeasure();
+			eelMeasure.getMeasures().forEach(eelDependency -> {					
+				org.eclipse.modisco.omg.smm.Measure smmDependency = eelToSmm.get(eelDependency).getMeasure();
+				// If the relationship does not exist, we create it.
+				if (smmMeasure.getMeasureRelationships().stream().noneMatch(smmRs -> smmRs.getTo().equals(smmDependency))) {
+					BaseMeasureRelationship measureRelationship = SmmFactory.eINSTANCE.createBaseMeasureRelationship();
+					measureRelationship.setFrom(smmMeasure);
+					measureRelationship.setTo((DimensionalMeasure) smmDependency);
+					smmMeasure.getMeasureRelationships().add(measureRelationship);
+				}
+					
+					
+			});
+		});			
 	}
 	
 	/** 
@@ -84,10 +144,18 @@ public abstract class SmmModeler<T, U extends EObject> {
 	 * @return a SMM {@link org.eclipse.modisco.omg.smm.Measure}
 	 */
 	protected org.eclipse.modisco.omg.smm.Measure createMeasure(Measure eelMeasure) {
-		org.eclipse.modisco.omg.smm.Measure smmMeasure = SmmFactory.eINSTANCE.createDirectMeasure();
+		org.eclipse.modisco.omg.smm.Measure smmMeasure;
+		if (eelMeasure instanceof MeasureUnboundOperation) { 
+			// this is a collective measure that depends on other measures.
+			smmMeasure = SmmFactory.eINSTANCE.createCollectiveMeasure();
+		} else {
+			smmMeasure = SmmFactory.eINSTANCE.createDirectMeasure();
+		}
+		 
 		StringBuilder sb = new StringBuilder();
 		sb.append(eelMeasure.getTargetClass());		
-		
+		sb.append(".");
+		sb.append(eelMeasure.getSubname());
 		if (!(eelMeasure.getTargetOperation() == null || eelMeasure.getTargetOperation() == "")) {
 			sb.append("#");
 			sb.append(eelMeasure.getTargetOperation());
@@ -100,6 +168,7 @@ public abstract class SmmModeler<T, U extends EObject> {
 	
 	/**
 	 * Transforms the element executed by the engine to the Object looked for the Modeler.
+	 * This method needs to be overriden by subclass modelers to define how to get the measurand.
 	 * @param caller the object executed by the Engine, usually EObjects.
 	 * @return U 
 	 */
@@ -112,7 +181,34 @@ public abstract class SmmModeler<T, U extends EObject> {
 	 * @param target the element to be referenced as Measurand by the {@link Measurement} returned.
 	 * @return an SMM {@link Measurement}
 	 */
-	abstract public Measurement persistMeasurement(Measure eelMeasure, T estimation, U target);
+	public Measurement persistMeasurement(Measure eelMeasure, T estimation, U target) {
+		System.out.println("Persisting "+eelMeasure+" value: "+estimation+" to "+ target);
+		DimensionalMeasurement measurement = SmmFactory.eINSTANCE.createDirectMeasurement();
+		// FIXME: This is only viable for simple estimations and dimensional measurements
+		// Future update should consider other kinds of measurements
+		measurement.setValue((double) estimation); 
+		measurement.setName(String.format("%s: %s", getName(target), estimation.toString()));
+		measurement.setMeasurand(target);		
+		ObservedMeasure observedMeasure = eelToSmm.get(eelMeasure);
+		
+		if (observedMeasure != null) {
+			 observedMeasure.getMeasurements().add(measurement);			
+		} else {
+			System.out.println("Error, cannot find corresponding observed measure! "+eelMeasure.getName()+"."+eelMeasure.getSubname());
+		}
+		
+		return measurement;	
+	}
+	
+	private static String getName(EObject eObject) {
+		for (EAttribute eAttribute : eObject.eClass().getEAllAttributes()) {
+	        if (eAttribute.getName().equals("name")) {
+	            String name = (String) eObject.eGet(eAttribute);
+	            return name;
+	        }           
+	    }
+		return eObject.eClass().getName();
+	}
 	
 	public Resource saveModel() {
 		try {
@@ -125,8 +221,7 @@ public abstract class SmmModeler<T, U extends EObject> {
 			
 			model.eResource().save(Collections.EMPTY_MAP);			
 		} catch (IOException e) {
-			System.out.println("Could not save the model.");
-			e.printStackTrace();
+			System.out.println("An error occured while saving the model: "+e.getMessage());			
 		}
 		return model.eResource();
 	}
