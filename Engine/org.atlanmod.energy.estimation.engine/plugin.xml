@@ -20,8 +20,14 @@
                defaultValue="false"
                id="org.atlanmod.energy.estimation.engine.smm_model"
                name="SMM to model"
-               shortDescription="Models the estimations with SMM, and attach estimations to the model">
+               shortDescription="Models the estimations with SMM, and attach estimations to the model.">
          </addon_booleanOption>
+         <addon_stringOption
+               defaultValue="SMMModel"
+               id="org.atlanmod.energy.estimation.engine.smm_file"
+               name="Model filename"
+               shortDescription="XMI file destination to persist the SMM model.">
+         </addon_stringOption>
       </addon>
    </extension>
    <extension
