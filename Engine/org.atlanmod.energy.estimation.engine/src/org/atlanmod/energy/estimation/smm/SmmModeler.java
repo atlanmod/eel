@@ -10,7 +10,6 @@ import org.atlanmod.energy.estimation.metamodel.eel.Measure;
 import org.atlanmod.energy.estimation.metamodel.eel.MeasureUnboundOperation;
 import org.atlanmod.energy.estimation.metamodel.eel.Platform;
 import org.eclipse.emf.ecore.EAttribute;
-import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.modisco.omg.smm.AbstractMeasureElement;
@@ -23,6 +22,7 @@ import org.eclipse.modisco.omg.smm.Measurement;
 import org.eclipse.modisco.omg.smm.MeasurementRelationship;
 import org.eclipse.modisco.omg.smm.Observation;
 import org.eclipse.modisco.omg.smm.ObservedMeasure;
+import org.eclipse.modisco.omg.smm.RefinementMeasurementRelationship;
 import org.eclipse.modisco.omg.smm.SmmFactory;
 import org.eclipse.modisco.omg.smm.SmmModel;
 
@@ -36,6 +36,7 @@ import org.eclipse.modisco.omg.smm.SmmModel;
 public abstract class SmmModeler<T, U extends EObject> {
 	protected SmmModel model;
 	protected HashMap<Measure, ObservedMeasure> eelToSmm;
+	protected Measurement previous;
 	
 	/**
 	 * 
@@ -130,6 +131,7 @@ public abstract class SmmModeler<T, U extends EObject> {
 					BaseMeasureRelationship measureRelationship = SmmFactory.eINSTANCE.createBaseMeasureRelationship();
 					measureRelationship.setFrom(smmMeasure);
 					measureRelationship.setTo((DimensionalMeasure) smmDependency);
+					measureRelationship.setName("depends on");
 					smmMeasure.getMeasureRelationships().add(measureRelationship);
 				}
 					
@@ -192,7 +194,8 @@ public abstract class SmmModeler<T, U extends EObject> {
 		ObservedMeasure observedMeasure = eelToSmm.get(eelMeasure);
 		
 		if (observedMeasure != null) {
-			 observedMeasure.getMeasurements().add(measurement);			
+			 observedMeasure.getMeasurements().add(measurement);		
+			 createMeasurementRelationshipTowardsPreviousMeasurement(measurement);
 		} else {
 			System.out.println("Error, cannot find corresponding observed measure! "+eelMeasure.getName()+"."+eelMeasure.getSubname());
 		}
@@ -200,6 +203,29 @@ public abstract class SmmModeler<T, U extends EObject> {
 		return measurement;	
 	}
 	
+	/**
+	 * Create a {@link MeasurementRelationship} between the last estimation performed and the current one.
+	 * @param currentMeasurement the {@link Measurement} where the {@link MeasurementRelationship} is going towards.
+	 */
+	public void createMeasurementRelationshipTowardsPreviousMeasurement(Measurement currentMeasurement) {
+		if (previous == null) {
+			previous = currentMeasurement;
+			return;
+		}
+		
+		RefinementMeasurementRelationship rs = SmmFactory.eINSTANCE.createRefinementMeasurementRelationship();
+		rs.setFrom(previous);
+		rs.setTo(currentMeasurement);
+		rs.setName("executed next");
+		previous.getMeasurementRelationships().add(rs);
+		previous = currentMeasurement;
+	}
+	
+	/**
+	 * Return the name of an eObject using its {@link EAttribute} "name". Return the name of its class if it has no name.
+	 * @param eObject an {@link EObject}
+	 * @return the name as a {@link String}
+	 */
 	private static String getName(EObject eObject) {
 		for (EAttribute eAttribute : eObject.eClass().getEAllAttributes()) {
 	        if (eAttribute.getName().equals("name")) {
@@ -210,6 +236,10 @@ public abstract class SmmModeler<T, U extends EObject> {
 		return eObject.eClass().getName();
 	}
 	
+	/**
+	 * Persist the SMM model with XMI.
+	 * @return the {@link Resource} saved.
+	 */
 	public Resource saveModel() {
 		try {
 			Predicate<ObservedMeasure> predicate = obsMeasure -> obsMeasure.getMeasurements().isEmpty();
