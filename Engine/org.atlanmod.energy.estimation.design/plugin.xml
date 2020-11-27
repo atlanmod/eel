@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+  <extension point="org.eclipse.sirius.componentization">
+    <component class="org.atlanmod.energy.estimation.design.Activator"
+               id="org.atlanmod.energy.estimation.design"
+	       name="estimation">
+    </component>
+  </extension>
+</plugin>
