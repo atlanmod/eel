@@ -41,6 +41,7 @@ import org.eclipse.gemoc.xdsmlframework.api.engine_addon.IEngineAddon;
 import org.eclipse.modisco.omg.smm.SmmFactory;
 import org.eclipse.modisco.omg.smm.SmmModel;
 import org.eclipse.modisco.omg.smm.SmmPackage;
+import org.eclipse.modisco.omg.smm.impl.SmmModelImpl;
 import org.eclipse.ocl.pivot.ExpressionInOCL;
 import org.eclipse.ocl.pivot.utilities.OCL;
 import org.eclipse.ocl.pivot.utilities.OCLHelper;
@@ -125,7 +126,11 @@ public class EngineAddon implements IEngineAddon {
 		Boolean isSmmModelToXMM = ctx.getRunConfiguration().getAttribute("org.atlanmod.energy.estimation.engine.smm_metamodel", false);
 		Boolean isSmmModelToXModel = ctx.getRunConfiguration().getAttribute("org.atlanmod.energy.estimation.engine.smm_model", false);
 		String smmModelFileAsString = ctx.getRunConfiguration().getAttribute("org.atlanmod.energy.estimation.engine.smm_file", "SmmModel");
-				
+		
+		if(! isSmmModelToXMM && !isSmmModelToXModel) {
+			return;
+		}
+		
 		File xModelFile = new File(MODEL.getAbsolutePath());		
 		File xModelRepositoryFile = new File(xModelFile.getParent());
 		
@@ -143,7 +148,7 @@ public class EngineAddon implements IEngineAddon {
         
 		if (smmModelFile.exists()) { // Loading the SMM Model
 			Resource smmResource = resourceSet.getResource(URI.createURI(smmModelFile.toURI().toString()), true);
-			smmModel = (SmmModel) smmResource.getContents().get(0);			
+			smmModel = (SmmModelImpl) smmResource.getContents().get(0);			
 		} else { // Creating the SMM Model
 			smmModelFile.createNewFile();
 			smmModel = SmmFactory.eINSTANCE.createSmmModel();

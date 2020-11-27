@@ -96,7 +96,7 @@ public abstract class SmmModeler<T, U extends EObject> {
 	 */
 	private void modelEelMeasureWithSMM(Platform platform, MeasureLibrary mlibrary, Observation observation) {
 		platform.getMeasures().forEach(measure -> {
-			org.eclipse.modisco.omg.smm.Measure smmMeasure = createMeasure(measure);
+			org.eclipse.modisco.omg.smm.Measure smmMeasure = createOrGetMeasure(measure, mlibrary);
 			ObservedMeasure observedMeasure = SmmFactory.eINSTANCE.createObservedMeasure();
 			
 			//Check if the SMM model already contains the Measure. 
@@ -143,19 +143,15 @@ public abstract class SmmModeler<T, U extends EObject> {
 	}
 	
 	/** 
-	 * Create a SMM {@link org.eclipse.modisco.omg.smm.Measure} out of an EEL {@link Measure}
+	 * Check in the {@link MeasureLibrary} if the eelMeasure has been created, and return it.
+	 * If it did not, create a SMM {@link org.eclipse.modisco.omg.smm.Measure} out of an EEL {@link Measure}
 	 * @param eelMeasure an EEL {@link Measure}
+	 * @param library the SMM {@link MeasureLibrary}
 	 * @return a SMM {@link org.eclipse.modisco.omg.smm.Measure}
 	 */
-	protected org.eclipse.modisco.omg.smm.Measure createMeasure(Measure eelMeasure) {
+	protected org.eclipse.modisco.omg.smm.Measure createOrGetMeasure(Measure eelMeasure, MeasureLibrary library) {
 		org.eclipse.modisco.omg.smm.Measure smmMeasure;
-		if (eelMeasure instanceof MeasureUnboundOperation) { 
-			// this is a collective measure that depends on other measures.
-			smmMeasure = SmmFactory.eINSTANCE.createCollectiveMeasure();
-		} else {
-			smmMeasure = SmmFactory.eINSTANCE.createDirectMeasure();
-		}
-		 
+		
 		StringBuilder sb = new StringBuilder();
 		sb.append(eelMeasure.getTargetClass());		
 		sb.append(".");
@@ -164,9 +160,20 @@ public abstract class SmmModeler<T, U extends EObject> {
 			sb.append("#");
 			sb.append(eelMeasure.getTargetOperation());
 		}
-			
-		smmMeasure.setName(sb.toString());
 		
+		String name = sb.toString();
+		Optional<AbstractMeasureElement> measureElementOptional = library.getMeasureElements().stream().filter(measureElement -> name.equals(measureElement.getName())).findFirst();
+		if (measureElementOptional.isPresent())
+			smmMeasure = (org.eclipse.modisco.omg.smm.Measure) measureElementOptional.get();
+		else {
+			if (eelMeasure instanceof MeasureUnboundOperation) { 
+				// this is a collective measure that depends on other measures.
+				smmMeasure = SmmFactory.eINSTANCE.createCollectiveMeasure();
+			} else {
+				smmMeasure = SmmFactory.eINSTANCE.createDirectMeasure();
+			}
+			smmMeasure.setName(sb.toString());
+		}		
 		return smmMeasure;
 	}
 	
@@ -274,7 +281,6 @@ public abstract class SmmModeler<T, U extends EObject> {
 	protected Double sum(DimensionalMeasurement measurement) {
 		
 		Optional<MeasurementRelationship> optRelationship = measurement.getMeasurementRelationships().stream().filter(rs -> "executed next".equals(rs.getName())).findAny();
-		System.out.println(measurement.getValue()+" : "+optRelationship.isPresent());
 		return optRelationship.isPresent() ? sum((DimensionalMeasurement) optRelationship.get().getTo()) + measurement.getValue() : measurement.getValue() ;				
 	}
 	
