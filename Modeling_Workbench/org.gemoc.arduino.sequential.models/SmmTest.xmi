@@ -1,0 +1,2228 @@
+<?xml version="1.0" encoding="ASCII"?>
+<smm:SmmModel
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:smm="http://www.eclipse.org/MoDisco/SMM/1.0.Beta2/smm">
+  <observations
+      name="#0"
+      description="0.8200030504000001"
+      whenObserved="1970-01-01T01:00:00.000+0100">
+    <observedMeasures
+        measure="//@librairies.0/@measureElements.61">
+      <measurements
+          xsi:type="smm:DirectMeasurement"
+          name="Delay: 0.244000574864"
+          refinementTo="//@observations.0/@observedMeasures.0/@measurements.0/@measurementRelationships.0"
+          refinementFrom="//@observations.0/@observedMeasures.1/@measurements.0/@measurementRelationships.0"
+          value="0.244000574864">
+        <measurand
+            href="http://www.obeo.fr/arduino#//Delay"/>
+        <measurementRelationships
+            xsi:type="smm:RefinementMeasurementRelationship"
+            name="executed next"
+            from="//@observations.0/@observedMeasures.0/@measurements.0"
+            to="//@observations.0/@observedMeasures.1/@measurements.1"/>
+      </measurements>
+      <measurements
+          xsi:type="smm:DirectMeasurement"
+          name="Delay: 0.332000782192"
+          refinementTo="//@observations.0/@observedMeasures.0/@measurements.1/@measurementRelationships.0"
+          refinementFrom="//@observations.0/@observedMeasures.1/@measurements.1/@measurementRelationships.0"
+          value="0.332000782192">
+        <measurand
+            href="http://www.obeo.fr/arduino#//Delay"/>
+        <measurementRelationships
+            xsi:type="smm:RefinementMeasurementRelationship"
+            name="executed next"
+            from="//@observations.0/@observedMeasures.0/@measurements.1"
+            to="//@observations.0/@observedMeasures.1/@measurements.2"/>
+      </measurements>
+      <measurements
+          xsi:type="smm:DirectMeasurement"
+          name="Delay: 0.244000574864"
+          refinementFrom="//@observations.0/@observedMeasures.1/@measurements.2/@measurementRelationships.0"
+          value="0.244000574864">
+        <measurand
+            href="http://www.obeo.fr/arduino#//Delay"/>
+      </measurements>
+    </observedMeasures>
+    <observedMeasures
+        measure="//@librairies.0/@measureElements.62">
+      <measurements
+          xsi:type="smm:DirectMeasurement"
+          name="ModuleAssignment: 3.32816E-7"
+          refinementTo="//@observations.0/@observedMeasures.1/@measurements.0/@measurementRelationships.0"
+          value="3.32816E-7"
+          baseMeasurement1From="//@observations.0/@measurementRelations.0">
+        <measurand
+            href="http://www.obeo.fr/arduino#//ModuleAssignment"/>
+        <measurementRelationships
+            xsi:type="smm:RefinementMeasurementRelationship"
+            name="executed next"
+            from="//@observations.0/@observedMeasures.1/@measurements.0"
+            to="//@observations.0/@observedMeasures.0/@measurements.0"/>
+      </measurements>
+      <measurements
+          xsi:type="smm:DirectMeasurement"
+          name="ModuleAssignment: 3.32816E-7"
+          refinementTo="//@observations.0/@observedMeasures.1/@measurements.1/@measurementRelationships.0"
+          refinementFrom="//@observations.0/@observedMeasures.0/@measurements.0/@measurementRelationships.0"
+          value="3.32816E-7">
+        <measurand
+            href="http://www.obeo.fr/arduino#//ModuleAssignment"/>
+        <measurementRelationships
+            xsi:type="smm:RefinementMeasurementRelationship"
+            name="executed next"
+            from="//@observations.0/@observedMeasures.1/@measurements.1"
+            to="//@observations.0/@observedMeasures.0/@measurements.1"/>
+      </measurements>
+      <measurements
+          xsi:type="smm:DirectMeasurement"
+          name="ModuleAssignment: 4.52848E-7"
+          refinementTo="//@observations.0/@observedMeasures.1/@measurements.2/@measurementRelationships.0"
+          refinementFrom="//@observations.0/@observedMeasures.0/@measurements.1/@measurementRelationships.0"
+          value="4.52848E-7">
+        <measurand
+            href="http://www.obeo.fr/arduino#//ModuleAssignment"/>
+        <measurementRelationships
+            xsi:type="smm:RefinementMeasurementRelationship"
+            name="executed next"
+            from="//@observations.0/@observedMeasures.1/@measurements.2"
+            to="//@observations.0/@observedMeasures.0/@measurements.2"/>
+      </measurements>
+    </observedMeasures>
+    <measurementRelations
+        xsi:type="smm:Base1MeasurementRelationship"
+        name="start"
+        to="//@observations.0/@observedMeasures.1/@measurements.0"/>
+  </observations>
+  <observations
+      name="#1"
+      description="0.5760020226879999"
+      whenObserved="1970-01-01T01:00:00.000+0100">
+    <observedMeasures>
+      <measurements
+          xsi:type="smm:DirectMeasurement"
+          name="Delay: 0.244000574864"
+          refinementTo="//@observations.1/@observedMeasures.0/@measurements.0/@measurementRelationships.0"
+          refinementFrom="//@observations.1/@observedMeasures.1/@measurements.0/@measurementRelationships.0"
+          value="0.244000574864">
+        <measurand
+            href="http://www.obeo.fr/arduino#//Delay"/>
+        <measurementRelationships
+            xsi:type="smm:RefinementMeasurementRelationship"
+            name="executed next"
+            from="//@observations.1/@observedMeasures.0/@measurements.0"
+            to="//@observations.1/@observedMeasures.1/@measurements.1"/>
+      </measurements>
+      <measurements
+          xsi:type="smm:DirectMeasurement"
+          name="Delay: 0.332000782192"
+          refinementFrom="//@observations.1/@observedMeasures.1/@measurements.1/@measurementRelationships.0"
+          value="0.332000782192">
+        <measurand
+            href="http://www.obeo.fr/arduino#//Delay"/>
+      </measurements>
+    </observedMeasures>
+    <observedMeasures>
+      <measurements
+          xsi:type="smm:DirectMeasurement"
+          name="ModuleAssignment: 3.32816E-7"
+          refinementTo="//@observations.1/@observedMeasures.1/@measurements.0/@measurementRelationships.0"
+          value="3.32816E-7"
+          baseMeasurement1From="//@observations.1/@measurementRelations.0">
+        <measurand
+            href="http://www.obeo.fr/arduino#//ModuleAssignment"/>
+        <measurementRelationships
+            xsi:type="smm:RefinementMeasurementRelationship"
+            name="executed next"
+            from="//@observations.1/@observedMeasures.1/@measurements.0"
+            to="//@observations.1/@observedMeasures.0/@measurements.0"/>
+      </measurements>
+      <measurements
+          xsi:type="smm:DirectMeasurement"
+          name="ModuleAssignment: 3.32816E-7"
+          refinementTo="//@observations.1/@observedMeasures.1/@measurements.1/@measurementRelationships.0"
+          refinementFrom="//@observations.1/@observedMeasures.0/@measurements.0/@measurementRelationships.0"
+          value="3.32816E-7">
+        <measurand
+            href="http://www.obeo.fr/arduino#//ModuleAssignment"/>
+        <measurementRelationships
+            xsi:type="smm:RefinementMeasurementRelationship"
+            name="executed next"
+            from="//@observations.1/@observedMeasures.1/@measurements.1"
+            to="//@observations.1/@observedMeasures.0/@measurements.1"/>
+      </measurements>
+    </observedMeasures>
+    <measurementRelations
+        xsi:type="smm:Base1MeasurementRelationship"
+        name="start"
+        to="//@observations.1/@observedMeasures.1/@measurements.0"/>
+  </observations>
+  <observations
+      name="#2"
+      description="0.5760020226879999"
+      whenObserved="1970-01-01T01:00:00.000+0100">
+    <observedMeasures>
+      <measurements
+          xsi:type="smm:DirectMeasurement"
+          name="Delay: 0.244000574864"
+          refinementTo="//@observations.2/@observedMeasures.0/@measurements.0/@measurementRelationships.0"
+          refinementFrom="//@observations.2/@observedMeasures.1/@measurements.0/@measurementRelationships.0"
+          value="0.244000574864">
+        <measurand
+            href="http://www.obeo.fr/arduino#//Delay"/>
+        <measurementRelationships
+            xsi:type="smm:RefinementMeasurementRelationship"
+            name="executed next"
+            from="//@observations.2/@observedMeasures.0/@measurements.0"
+            to="//@observations.2/@observedMeasures.1/@measurements.1"/>
+      </measurements>
+      <measurements
+          xsi:type="smm:DirectMeasurement"
+          name="Delay: 0.332000782192"
+          refinementFrom="//@observations.2/@observedMeasures.1/@measurements.1/@measurementRelationships.0"
+          value="0.332000782192">
+        <measurand
+            href="http://www.obeo.fr/arduino#//Delay"/>
+      </measurements>
+    </observedMeasures>
+    <observedMeasures>
+      <measurements
+          xsi:type="smm:DirectMeasurement"
+          name="ModuleAssignment: 3.32816E-7"
+          refinementTo="//@observations.2/@observedMeasures.1/@measurements.0/@measurementRelationships.0"
+          value="3.32816E-7"
+          baseMeasurement1From="//@observations.2/@measurementRelations.0">
+        <measurand
+            href="http://www.obeo.fr/arduino#//ModuleAssignment"/>
+        <measurementRelationships
+            xsi:type="smm:RefinementMeasurementRelationship"
+            name="executed next"
+            from="//@observations.2/@observedMeasures.1/@measurements.0"
+            to="//@observations.2/@observedMeasures.0/@measurements.0"/>
+      </measurements>
+      <measurements
+          xsi:type="smm:DirectMeasurement"
+          name="ModuleAssignment: 3.32816E-7"
+          refinementTo="//@observations.2/@observedMeasures.1/@measurements.1/@measurementRelationships.0"
+          refinementFrom="//@observations.2/@observedMeasures.0/@measurements.0/@measurementRelationships.0"
+          value="3.32816E-7">
+        <measurand
+            href="http://www.obeo.fr/arduino#//ModuleAssignment"/>
+        <measurementRelationships
+            xsi:type="smm:RefinementMeasurementRelationship"
+            name="executed next"
+            from="//@observations.2/@observedMeasures.1/@measurements.1"
+            to="//@observations.2/@observedMeasures.0/@measurements.1"/>
+      </measurements>
+    </observedMeasures>
+    <measurementRelations
+        xsi:type="smm:Base1MeasurementRelationship"
+        name="start"
+        to="//@observations.2/@observedMeasures.1/@measurements.0"/>
+  </observations>
+  <observations
+      name="#3"
+      description="0.4100030504"
+      whenObserved="1970-01-01T01:00:00.000+0100">
+    <observedMeasures>
+      <measurements
+          xsi:type="smm:DirectMeasurement"
+          name="Delay: 0.122000574864"
+          refinementTo="//@observations.3/@observedMeasures.0/@measurements.0/@measurementRelationships.0"
+          refinementFrom="//@observations.3/@observedMeasures.1/@measurements.0/@measurementRelationships.0"
+          value="0.122000574864">
+        <measurand
+            href="http://www.obeo.fr/arduino#//Delay"/>
+        <measurementRelationships
+            xsi:type="smm:RefinementMeasurementRelationship"
+            name="executed next"
+            from="//@observations.3/@observedMeasures.0/@measurements.0"
+            to="//@observations.3/@observedMeasures.1/@measurements.1"/>
+      </measurements>
+      <measurements
+          xsi:type="smm:DirectMeasurement"
+          name="Delay: 0.166000782192"
+          refinementTo="//@observations.3/@observedMeasures.0/@measurements.1/@measurementRelationships.0"
+          refinementFrom="//@observations.3/@observedMeasures.1/@measurements.1/@measurementRelationships.0"
+          value="0.166000782192">
+        <measurand
+            href="http://www.obeo.fr/arduino#//Delay"/>
+        <measurementRelationships
+            xsi:type="smm:RefinementMeasurementRelationship"
+            name="executed next"
+            from="//@observations.3/@observedMeasures.0/@measurements.1"
+            to="//@observations.3/@observedMeasures.1/@measurements.2"/>
+      </measurements>
+      <measurements
+          xsi:type="smm:DirectMeasurement"
+          name="Delay: 0.122000574864"
+          refinementFrom="//@observations.3/@observedMeasures.1/@measurements.2/@measurementRelationships.0"
+          value="0.122000574864">
+        <measurand
+            href="http://www.obeo.fr/arduino#//Delay"/>
+      </measurements>
+    </observedMeasures>
+    <observedMeasures>
+      <measurements
+          xsi:type="smm:DirectMeasurement"
+          name="ModuleAssignment: 3.32816E-7"
+          refinementTo="//@observations.3/@observedMeasures.1/@measurements.0/@measurementRelationships.0"
+          value="3.32816E-7"
+          baseMeasurement1From="//@observations.3/@measurementRelations.0">
+        <measurand
+            href="http://www.obeo.fr/arduino#//ModuleAssignment"/>
+        <measurementRelationships
+            xsi:type="smm:RefinementMeasurementRelationship"
+            name="executed next"
+            from="//@observations.3/@observedMeasures.1/@measurements.0"
+            to="//@observations.3/@observedMeasures.0/@measurements.0"/>
+      </measurements>
+      <measurements
+          xsi:type="smm:DirectMeasurement"
+          name="ModuleAssignment: 3.32816E-7"
+          refinementTo="//@observations.3/@observedMeasures.1/@measurements.1/@measurementRelationships.0"
+          refinementFrom="//@observations.3/@observedMeasures.0/@measurements.0/@measurementRelationships.0"
+          value="3.32816E-7">
+        <measurand
+            href="http://www.obeo.fr/arduino#//ModuleAssignment"/>
+        <measurementRelationships
+            xsi:type="smm:RefinementMeasurementRelationship"
+            name="executed next"
+            from="//@observations.3/@observedMeasures.1/@measurements.1"
+            to="//@observations.3/@observedMeasures.0/@measurements.1"/>
+      </measurements>
+      <measurements
+          xsi:type="smm:DirectMeasurement"
+          name="ModuleAssignment: 4.52848E-7"
+          refinementTo="//@observations.3/@observedMeasures.1/@measurements.2/@measurementRelationships.0"
+          refinementFrom="//@observations.3/@observedMeasures.0/@measurements.1/@measurementRelationships.0"
+          value="4.52848E-7">
+        <measurand
+            href="http://www.obeo.fr/arduino#//ModuleAssignment"/>
+        <measurementRelationships
+            xsi:type="smm:RefinementMeasurementRelationship"
+            name="executed next"
+            from="//@observations.3/@observedMeasures.1/@measurements.2"
+            to="//@observations.3/@observedMeasures.0/@measurements.2"/>
+      </measurements>
+    </observedMeasures>
+    <measurementRelations
+        xsi:type="smm:Base1MeasurementRelationship"
+        name="start"
+        to="//@observations.3/@observedMeasures.1/@measurements.0"/>
+  </observations>
+  <observations
+      name="#4"
+      description="0.4100030504"
+      whenObserved="2020-11-25T16:32:27.653+0100">
+    <observedMeasures>
+      <measurements
+          xsi:type="smm:DirectMeasurement"
+          name="Delay: 0.122000574864"
+          refinementTo="//@observations.4/@observedMeasures.0/@measurements.0/@measurementRelationships.0"
+          refinementFrom="//@observations.4/@observedMeasures.1/@measurements.0/@measurementRelationships.0"
+          value="0.122000574864">
+        <measurand
+            href="http://www.obeo.fr/arduino#//Delay"/>
+        <measurementRelationships
+            xsi:type="smm:RefinementMeasurementRelationship"
+            name="executed next"
+            from="//@observations.4/@observedMeasures.0/@measurements.0"
+            to="//@observations.4/@observedMeasures.1/@measurements.1"/>
+      </measurements>
+      <measurements
+          xsi:type="smm:DirectMeasurement"
+          name="Delay: 0.166000782192"
+          refinementTo="//@observations.4/@observedMeasures.0/@measurements.1/@measurementRelationships.0"
+          refinementFrom="//@observations.4/@observedMeasures.1/@measurements.1/@measurementRelationships.0"
+          value="0.166000782192">
+        <measurand
+            href="http://www.obeo.fr/arduino#//Delay"/>
+        <measurementRelationships
+            xsi:type="smm:RefinementMeasurementRelationship"
+            name="executed next"
+            from="//@observations.4/@observedMeasures.0/@measurements.1"
+            to="//@observations.4/@observedMeasures.1/@measurements.2"/>
+      </measurements>
+      <measurements
+          xsi:type="smm:DirectMeasurement"
+          name="Delay: 0.122000574864"
+          refinementFrom="//@observations.4/@observedMeasures.1/@measurements.2/@measurementRelationships.0"
+          value="0.122000574864">
+        <measurand
+            href="http://www.obeo.fr/arduino#//Delay"/>
+      </measurements>
+    </observedMeasures>
+    <observedMeasures>
+      <measurements
+          xsi:type="smm:DirectMeasurement"
+          name="ModuleAssignment: 3.32816E-7"
+          refinementTo="//@observations.4/@observedMeasures.1/@measurements.0/@measurementRelationships.0"
+          value="3.32816E-7"
+          baseMeasurement1From="//@observations.4/@measurementRelations.0">
+        <measurand
+            href="http://www.obeo.fr/arduino#//ModuleAssignment"/>
+        <measurementRelationships
+            xsi:type="smm:RefinementMeasurementRelationship"
+            name="executed next"
+            from="//@observations.4/@observedMeasures.1/@measurements.0"
+            to="//@observations.4/@observedMeasures.0/@measurements.0"/>
+      </measurements>
+      <measurements
+          xsi:type="smm:DirectMeasurement"
+          name="ModuleAssignment: 3.32816E-7"
+          refinementTo="//@observations.4/@observedMeasures.1/@measurements.1/@measurementRelationships.0"
+          refinementFrom="//@observations.4/@observedMeasures.0/@measurements.0/@measurementRelationships.0"
+          value="3.32816E-7">
+        <measurand
+            href="http://www.obeo.fr/arduino#//ModuleAssignment"/>
+        <measurementRelationships
+            xsi:type="smm:RefinementMeasurementRelationship"
+            name="executed next"
+            from="//@observations.4/@observedMeasures.1/@measurements.1"
+            to="//@observations.4/@observedMeasures.0/@measurements.1"/>
+      </measurements>
+      <measurements
+          xsi:type="smm:DirectMeasurement"
+          name="ModuleAssignment: 4.52848E-7"
+          refinementTo="//@observations.4/@observedMeasures.1/@measurements.2/@measurementRelationships.0"
+          refinementFrom="//@observations.4/@observedMeasures.0/@measurements.1/@measurementRelationships.0"
+          value="4.52848E-7">
+        <measurand
+            href="http://www.obeo.fr/arduino#//ModuleAssignment"/>
+        <measurementRelationships
+            xsi:type="smm:RefinementMeasurementRelationship"
+            name="executed next"
+            from="//@observations.4/@observedMeasures.1/@measurements.2"
+            to="//@observations.4/@observedMeasures.0/@measurements.2"/>
+      </measurements>
+    </observedMeasures>
+    <measurementRelations
+        xsi:type="smm:Base1MeasurementRelationship"
+        name="start"
+        to="//@observations.4/@observedMeasures.1/@measurements.0"/>
+  </observations>
+  <observations
+      name="#5"
+      description="0.12200090767999999"
+      whenObserved="2020-11-26T10:24:59.276+0100">
+    <observedMeasures>
+      <measurements
+          xsi:type="smm:DirectMeasurement"
+          name="Delay: 0.122000574864"
+          refinementFrom="//@observations.5/@observedMeasures.1/@measurements.0/@measurementRelationships.0"
+          value="0.122000574864">
+        <measurand
+            href="http://www.obeo.fr/arduino#//Delay"/>
+      </measurements>
+    </observedMeasures>
+    <observedMeasures>
+      <measurements
+          xsi:type="smm:DirectMeasurement"
+          name="ModuleAssignment: 3.32816E-7"
+          refinementTo="//@observations.5/@observedMeasures.1/@measurements.0/@measurementRelationships.0"
+          value="3.32816E-7"
+          baseMeasurement1From="//@observations.5/@measurementRelations.0">
+        <measurand
+            href="http://www.obeo.fr/arduino#//ModuleAssignment"/>
+        <measurementRelationships
+            xsi:type="smm:RefinementMeasurementRelationship"
+            name="executed next"
+            from="//@observations.5/@observedMeasures.1/@measurements.0"
+            to="//@observations.5/@observedMeasures.0/@measurements.0"/>
+      </measurements>
+    </observedMeasures>
+    <measurementRelations
+        xsi:type="smm:Base1MeasurementRelationship"
+        name="start"
+        to="//@observations.5/@observedMeasures.1/@measurements.0"/>
+  </observations>
+  <observations
+      name="#6"
+      description="0.4235630626264001"
+      whenObserved="2020-11-27T10:32:32.697+0100">
+    <observedMeasures>
+      <measurements
+          xsi:type="smm:DirectMeasurement"
+          name="Delay: 0.08964042238368"
+          refinementTo="//@observations.6/@observedMeasures.0/@measurements.0/@measurementRelationships.0"
+          refinementFrom="//@observations.6/@observedMeasures.1/@measurements.0/@measurementRelationships.0"
+          value="0.08964042238368">
+        <measurand
+            href="http://www.obeo.fr/arduino#//Delay"/>
+        <measurementRelationships
+            xsi:type="smm:RefinementMeasurementRelationship"
+            name="executed next"
+            from="//@observations.6/@observedMeasures.0/@measurements.0"
+            to="//@observations.6/@observedMeasures.1/@measurements.1"/>
+      </measurements>
+      <measurements
+          xsi:type="smm:DirectMeasurement"
+          name="Delay: 0.12214057552368"
+          refinementTo="//@observations.6/@observedMeasures.0/@measurements.1/@measurementRelationships.0"
+          refinementFrom="//@observations.6/@observedMeasures.1/@measurements.1/@measurementRelationships.0"
+          value="0.12214057552368">
+        <measurand
+            href="http://www.obeo.fr/arduino#//Delay"/>
+        <measurementRelationships
+            xsi:type="smm:RefinementMeasurementRelationship"
+            name="executed next"
+            from="//@observations.6/@observedMeasures.0/@measurements.1"
+            to="//@observations.6/@observedMeasures.1/@measurements.2"/>
+      </measurements>
+      <measurements
+          xsi:type="smm:DirectMeasurement"
+          name="Delay: 0.08964042238368"
+          refinementTo="//@observations.6/@observedMeasures.0/@measurements.2/@measurementRelationships.0"
+          refinementFrom="//@observations.6/@observedMeasures.1/@measurements.2/@measurementRelationships.0"
+          value="0.08964042238368">
+        <measurand
+            href="http://www.obeo.fr/arduino#//Delay"/>
+        <measurementRelationships
+            xsi:type="smm:RefinementMeasurementRelationship"
+            name="executed next"
+            from="//@observations.6/@observedMeasures.0/@measurements.2"
+            to="//@observations.6/@observedMeasures.1/@measurements.3"/>
+      </measurements>
+      <measurements
+          xsi:type="smm:DirectMeasurement"
+          name="Delay: 0.12214057552368"
+          refinementFrom="//@observations.6/@observedMeasures.1/@measurements.3/@measurementRelationships.0"
+          value="0.12214057552368">
+        <measurand
+            href="http://www.obeo.fr/arduino#//Delay"/>
+      </measurements>
+    </observedMeasures>
+    <observedMeasures>
+      <measurements
+          xsi:type="smm:DirectMeasurement"
+          name="ModuleAssignment: 2.4453792E-7"
+          refinementTo="//@observations.6/@observedMeasures.1/@measurements.0/@measurementRelationships.0"
+          value="2.4453792E-7"
+          baseMeasurement1From="//@observations.6/@measurementRelations.0">
+        <measurand
+            href="http://www.obeo.fr/arduino#//ModuleAssignment"/>
+        <measurementRelationships
+            xsi:type="smm:RefinementMeasurementRelationship"
+            name="executed next"
+            from="//@observations.6/@observedMeasures.1/@measurements.0"
+            to="//@observations.6/@observedMeasures.0/@measurements.0"/>
+      </measurements>
+      <measurements
+          xsi:type="smm:DirectMeasurement"
+          name="ModuleAssignment: 2.4453792E-7"
+          refinementTo="//@observations.6/@observedMeasures.1/@measurements.1/@measurementRelationships.0"
+          refinementFrom="//@observations.6/@observedMeasures.0/@measurements.0/@measurementRelationships.0"
+          value="2.4453792E-7">
+        <measurand
+            href="http://www.obeo.fr/arduino#//ModuleAssignment"/>
+        <measurementRelationships
+            xsi:type="smm:RefinementMeasurementRelationship"
+            name="executed next"
+            from="//@observations.6/@observedMeasures.1/@measurements.1"
+            to="//@observations.6/@observedMeasures.0/@measurements.1"/>
+      </measurements>
+      <measurements
+          xsi:type="smm:DirectMeasurement"
+          name="ModuleAssignment: 3.3319792E-7"
+          refinementTo="//@observations.6/@observedMeasures.1/@measurements.2/@measurementRelationships.0"
+          refinementFrom="//@observations.6/@observedMeasures.0/@measurements.1/@measurementRelationships.0"
+          value="3.3319792E-7">
+        <measurand
+            href="http://www.obeo.fr/arduino#//ModuleAssignment"/>
+        <measurementRelationships
+            xsi:type="smm:RefinementMeasurementRelationship"
+            name="executed next"
+            from="//@observations.6/@observedMeasures.1/@measurements.2"
+            to="//@observations.6/@observedMeasures.0/@measurements.2"/>
+      </measurements>
+      <measurements
+          xsi:type="smm:DirectMeasurement"
+          name="ModuleAssignment: 2.4453792E-7"
+          refinementTo="//@observations.6/@observedMeasures.1/@measurements.3/@measurementRelationships.0"
+          refinementFrom="//@observations.6/@observedMeasures.0/@measurements.2/@measurementRelationships.0"
+          value="2.4453792E-7">
+        <measurand
+            href="http://www.obeo.fr/arduino#//ModuleAssignment"/>
+        <measurementRelationships
+            xsi:type="smm:RefinementMeasurementRelationship"
+            name="executed next"
+            from="//@observations.6/@observedMeasures.1/@measurements.3"
+            to="//@observations.6/@observedMeasures.0/@measurements.3"/>
+      </measurements>
+    </observedMeasures>
+    <measurementRelations
+        xsi:type="smm:Base1MeasurementRelationship"
+        name="start"
+        to="//@observations.6/@observedMeasures.1/@measurements.0"/>
+  </observations>
+  <observations
+      name="#7"
+      description="0.4235630626264001"
+      whenObserved="2020-11-27T10:45:01.519+0100">
+    <observedMeasures>
+      <measurements
+          xsi:type="smm:DirectMeasurement"
+          name="Delay: 0.08964042238368"
+          refinementTo="//@observations.7/@observedMeasures.0/@measurements.0/@measurementRelationships.0"
+          refinementFrom="//@observations.7/@observedMeasures.1/@measurements.0/@measurementRelationships.0"
+          value="0.08964042238368">
+        <measurand
+            href="http://www.obeo.fr/arduino#//Delay"/>
+        <measurementRelationships
+            xsi:type="smm:RefinementMeasurementRelationship"
+            name="executed next"
+            from="//@observations.7/@observedMeasures.0/@measurements.0"
+            to="//@observations.7/@observedMeasures.1/@measurements.1"/>
+      </measurements>
+      <measurements
+          xsi:type="smm:DirectMeasurement"
+          name="Delay: 0.12214057552368"
+          refinementTo="//@observations.7/@observedMeasures.0/@measurements.1/@measurementRelationships.0"
+          refinementFrom="//@observations.7/@observedMeasures.1/@measurements.1/@measurementRelationships.0"
+          value="0.12214057552368">
+        <measurand
+            href="http://www.obeo.fr/arduino#//Delay"/>
+        <measurementRelationships
+            xsi:type="smm:RefinementMeasurementRelationship"
+            name="executed next"
+            from="//@observations.7/@observedMeasures.0/@measurements.1"
+            to="//@observations.7/@observedMeasures.1/@measurements.2"/>
+      </measurements>
+      <measurements
+          xsi:type="smm:DirectMeasurement"
+          name="Delay: 0.08964042238368"
+          refinementTo="//@observations.7/@observedMeasures.0/@measurements.2/@measurementRelationships.0"
+          refinementFrom="//@observations.7/@observedMeasures.1/@measurements.2/@measurementRelationships.0"
+          value="0.08964042238368">
+        <measurand
+            href="http://www.obeo.fr/arduino#//Delay"/>
+        <measurementRelationships
+            xsi:type="smm:RefinementMeasurementRelationship"
+            name="executed next"
+            from="//@observations.7/@observedMeasures.0/@measurements.2"
+            to="//@observations.7/@observedMeasures.1/@measurements.3"/>
+      </measurements>
+      <measurements
+          xsi:type="smm:DirectMeasurement"
+          name="Delay: 0.12214057552368"
+          refinementFrom="//@observations.7/@observedMeasures.1/@measurements.3/@measurementRelationships.0"
+          value="0.12214057552368">
+        <measurand
+            href="http://www.obeo.fr/arduino#//Delay"/>
+      </measurements>
+    </observedMeasures>
+    <observedMeasures>
+      <measurements
+          xsi:type="smm:DirectMeasurement"
+          name="ModuleAssignment: 2.4453792E-7"
+          refinementTo="//@observations.7/@observedMeasures.1/@measurements.0/@measurementRelationships.0"
+          value="2.4453792E-7"
+          baseMeasurement1From="//@observations.7/@measurementRelations.0">
+        <measurand
+            href="http://www.obeo.fr/arduino#//ModuleAssignment"/>
+        <measurementRelationships
+            xsi:type="smm:RefinementMeasurementRelationship"
+            name="executed next"
+            from="//@observations.7/@observedMeasures.1/@measurements.0"
+            to="//@observations.7/@observedMeasures.0/@measurements.0"/>
+      </measurements>
+      <measurements
+          xsi:type="smm:DirectMeasurement"
+          name="ModuleAssignment: 2.4453792E-7"
+          refinementTo="//@observations.7/@observedMeasures.1/@measurements.1/@measurementRelationships.0"
+          refinementFrom="//@observations.7/@observedMeasures.0/@measurements.0/@measurementRelationships.0"
+          value="2.4453792E-7">
+        <measurand
+            href="http://www.obeo.fr/arduino#//ModuleAssignment"/>
+        <measurementRelationships
+            xsi:type="smm:RefinementMeasurementRelationship"
+            name="executed next"
+            from="//@observations.7/@observedMeasures.1/@measurements.1"
+            to="//@observations.7/@observedMeasures.0/@measurements.1"/>
+      </measurements>
+      <measurements
+          xsi:type="smm:DirectMeasurement"
+          name="ModuleAssignment: 3.3319792E-7"
+          refinementTo="//@observations.7/@observedMeasures.1/@measurements.2/@measurementRelationships.0"
+          refinementFrom="//@observations.7/@observedMeasures.0/@measurements.1/@measurementRelationships.0"
+          value="3.3319792E-7">
+        <measurand
+            href="http://www.obeo.fr/arduino#//ModuleAssignment"/>
+        <measurementRelationships
+            xsi:type="smm:RefinementMeasurementRelationship"
+            name="executed next"
+            from="//@observations.7/@observedMeasures.1/@measurements.2"
+            to="//@observations.7/@observedMeasures.0/@measurements.2"/>
+      </measurements>
+      <measurements
+          xsi:type="smm:DirectMeasurement"
+          name="ModuleAssignment: 2.4453792E-7"
+          refinementTo="//@observations.7/@observedMeasures.1/@measurements.3/@measurementRelationships.0"
+          refinementFrom="//@observations.7/@observedMeasures.0/@measurements.2/@measurementRelationships.0"
+          value="2.4453792E-7">
+        <measurand
+            href="http://www.obeo.fr/arduino#//ModuleAssignment"/>
+        <measurementRelationships
+            xsi:type="smm:RefinementMeasurementRelationship"
+            name="executed next"
+            from="//@observations.7/@observedMeasures.1/@measurements.3"
+            to="//@observations.7/@observedMeasures.0/@measurements.3"/>
+      </measurements>
+    </observedMeasures>
+    <measurementRelations
+        xsi:type="smm:Base1MeasurementRelationship"
+        name="start"
+        to="//@observations.7/@observedMeasures.1/@measurements.0"/>
+  </observations>
+  <observations
+      name="#8"
+      description="0.30142224256480005"
+      whenObserved="2020-11-27T10:46:00.609+0100">
+    <observedMeasures
+        measure="//@librairies.1/@measureElements.61">
+      <measurements
+          xsi:type="smm:DirectMeasurement"
+          name="Delay: 0.08964042238368"
+          refinementTo="//@observations.8/@observedMeasures.0/@measurements.0/@measurementRelationships.0"
+          refinementFrom="//@observations.8/@observedMeasures.1/@measurements.0/@measurementRelationships.0"
+          value="0.08964042238368">
+        <measurand
+            href="http://www.obeo.fr/arduino#//Delay"/>
+        <measurementRelationships
+            xsi:type="smm:RefinementMeasurementRelationship"
+            name="executed next"
+            from="//@observations.8/@observedMeasures.0/@measurements.0"
+            to="//@observations.8/@observedMeasures.1/@measurements.1"/>
+      </measurements>
+      <measurements
+          xsi:type="smm:DirectMeasurement"
+          name="Delay: 0.12214057552368"
+          refinementTo="//@observations.8/@observedMeasures.0/@measurements.1/@measurementRelationships.0"
+          refinementFrom="//@observations.8/@observedMeasures.1/@measurements.1/@measurementRelationships.0"
+          value="0.12214057552368">
+        <measurand
+            href="http://www.obeo.fr/arduino#//Delay"/>
+        <measurementRelationships
+            xsi:type="smm:RefinementMeasurementRelationship"
+            name="executed next"
+            from="//@observations.8/@observedMeasures.0/@measurements.1"
+            to="//@observations.8/@observedMeasures.1/@measurements.2"/>
+      </measurements>
+      <measurements
+          xsi:type="smm:DirectMeasurement"
+          name="Delay: 0.08964042238368"
+          refinementFrom="//@observations.8/@observedMeasures.1/@measurements.2/@measurementRelationships.0"
+          value="0.08964042238368">
+        <measurand
+            href="http://www.obeo.fr/arduino#//Delay"/>
+      </measurements>
+    </observedMeasures>
+    <observedMeasures
+        measure="//@librairies.1/@measureElements.62">
+      <measurements
+          xsi:type="smm:DirectMeasurement"
+          name="ModuleAssignment: 2.4453792E-7"
+          refinementTo="//@observations.8/@observedMeasures.1/@measurements.0/@measurementRelationships.0"
+          value="2.4453792E-7"
+          baseMeasurement1From="//@observations.8/@measurementRelations.0">
+        <measurand
+            href="http://www.obeo.fr/arduino#//ModuleAssignment"/>
+        <measurementRelationships
+            xsi:type="smm:RefinementMeasurementRelationship"
+            name="executed next"
+            from="//@observations.8/@observedMeasures.1/@measurements.0"
+            to="//@observations.8/@observedMeasures.0/@measurements.0"/>
+      </measurements>
+      <measurements
+          xsi:type="smm:DirectMeasurement"
+          name="ModuleAssignment: 2.4453792E-7"
+          refinementTo="//@observations.8/@observedMeasures.1/@measurements.1/@measurementRelationships.0"
+          refinementFrom="//@observations.8/@observedMeasures.0/@measurements.0/@measurementRelationships.0"
+          value="2.4453792E-7">
+        <measurand
+            href="http://www.obeo.fr/arduino#//ModuleAssignment"/>
+        <measurementRelationships
+            xsi:type="smm:RefinementMeasurementRelationship"
+            name="executed next"
+            from="//@observations.8/@observedMeasures.1/@measurements.1"
+            to="//@observations.8/@observedMeasures.0/@measurements.1"/>
+      </measurements>
+      <measurements
+          xsi:type="smm:DirectMeasurement"
+          name="ModuleAssignment: 3.3319792E-7"
+          refinementTo="//@observations.8/@observedMeasures.1/@measurements.2/@measurementRelationships.0"
+          refinementFrom="//@observations.8/@observedMeasures.0/@measurements.1/@measurementRelationships.0"
+          value="3.3319792E-7">
+        <measurand
+            href="http://www.obeo.fr/arduino#//ModuleAssignment"/>
+        <measurementRelationships
+            xsi:type="smm:RefinementMeasurementRelationship"
+            name="executed next"
+            from="//@observations.8/@observedMeasures.1/@measurements.2"
+            to="//@observations.8/@observedMeasures.0/@measurements.2"/>
+      </measurements>
+    </observedMeasures>
+    <measurementRelations
+        xsi:type="smm:Base1MeasurementRelationship"
+        name="start"
+        to="//@observations.8/@observedMeasures.1/@measurements.0"/>
+  </observations>
+  <librairies
+      name="ATMega328p">
+    <measureElements
+        xsi:type="smm:DirectMeasure"
+        name="variables.milliToUnitFactor"
+        baseMeasureFrom="//@librairies.0/@measureElements.33/@measureRelationships.1 //@librairies.0/@measureElements.40/@measureRelationships.1"/>
+    <measureElements
+        xsi:type="smm:DirectMeasure"
+        name="variables.voltsPerUnit"/>
+    <measureElements
+        xsi:type="smm:DirectMeasure"
+        name="Board.clockPeriod"
+        baseMeasureFrom="//@librairies.0/@measureElements.35/@measureRelationships.1 //@librairies.0/@measureElements.38/@measureRelationships.1 //@librairies.0/@measureElements.43/@measureRelationships.1 //@librairies.0/@measureElements.48/@measureRelationships.1 //@librairies.0/@measureElements.50/@measureRelationships.1 //@librairies.0/@measureElements.52/@measureRelationships.1 //@librairies.0/@measureElements.54/@measureRelationships.1 //@librairies.0/@measureElements.56/@measureRelationships.1"/>
+    <measureElements
+        xsi:type="smm:DirectMeasure"
+        name="Board.Voltage"
+        baseMeasureFrom="//@librairies.0/@measureElements.6/@measureRelationships.1 //@librairies.0/@measureElements.7/@measureRelationships.1 //@librairies.0/@measureElements.29/@measureRelationships.1 //@librairies.0/@measureElements.31/@measureRelationships.0"/>
+    <measureElements
+        xsi:type="smm:DirectMeasure"
+        name="Board.Current"
+        baseMeasureFrom="//@librairies.0/@measureElements.6/@measureRelationships.0"/>
+    <measureElements
+        xsi:type="smm:DirectMeasure"
+        name="Board.currentIdle"
+        baseMeasureFrom="//@librairies.0/@measureElements.7/@measureRelationships.0"/>
+    <measureElements
+        xsi:type="smm:CollectiveMeasure"
+        name="Board.cpuPower"
+        baseMeasureFrom="//@librairies.0/@measureElements.58/@measureRelationships.0"
+        baseMeasureTo="//@librairies.0/@measureElements.6/@measureRelationships.0 //@librairies.0/@measureElements.6/@measureRelationships.1">
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.0/@measureElements.6"
+          to="//@librairies.0/@measureElements.4"/>
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.0/@measureElements.6"
+          to="//@librairies.0/@measureElements.3"/>
+    </measureElements>
+    <measureElements
+        xsi:type="smm:CollectiveMeasure"
+        name="Board.cpuPowerIdle"
+        baseMeasureFrom="//@librairies.0/@measureElements.59/@measureRelationships.0"
+        baseMeasureTo="//@librairies.0/@measureElements.7/@measureRelationships.0 //@librairies.0/@measureElements.7/@measureRelationships.1">
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.0/@measureElements.7"
+          to="//@librairies.0/@measureElements.5"/>
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.0/@measureElements.7"
+          to="//@librairies.0/@measureElements.3"/>
+    </measureElements>
+    <measureElements
+        xsi:type="smm:DirectMeasure"
+        name="LED.Voltage"
+        baseMeasureFrom="//@librairies.0/@measureElements.12/@measureRelationships.2"/>
+    <measureElements
+        xsi:type="smm:DirectMeasure"
+        name="LED.Current"
+        baseMeasureFrom="//@librairies.0/@measureElements.11/@measureRelationships.0"/>
+    <measureElements
+        xsi:type="smm:DirectMeasure"
+        name="Board.numberOfLedsRunning"
+        baseMeasureFrom="//@librairies.0/@measureElements.11/@measureRelationships.1 //@librairies.0/@measureElements.12/@measureRelationships.1"/>
+    <measureElements
+        xsi:type="smm:CollectiveMeasure"
+        name="Board.currentOfLedsRunning"
+        baseMeasureFrom="//@librairies.0/@measureElements.12/@measureRelationships.0"
+        baseMeasureTo="//@librairies.0/@measureElements.11/@measureRelationships.0 //@librairies.0/@measureElements.11/@measureRelationships.1">
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.0/@measureElements.11"
+          to="//@librairies.0/@measureElements.9"/>
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.0/@measureElements.11"
+          to="//@librairies.0/@measureElements.10"/>
+    </measureElements>
+    <measureElements
+        xsi:type="smm:CollectiveMeasure"
+        name="Board.powerOfLedsRunning"
+        baseMeasureFrom="//@librairies.0/@measureElements.57/@measureRelationships.0"
+        baseMeasureTo="//@librairies.0/@measureElements.12/@measureRelationships.0 //@librairies.0/@measureElements.12/@measureRelationships.1 //@librairies.0/@measureElements.12/@measureRelationships.2">
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.0/@measureElements.12"
+          to="//@librairies.0/@measureElements.11"/>
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.0/@measureElements.12"
+          to="//@librairies.0/@measureElements.10"/>
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.0/@measureElements.12"
+          to="//@librairies.0/@measureElements.8"/>
+    </measureElements>
+    <measureElements
+        xsi:type="smm:DirectMeasure"
+        name="InfraRedSensor.Voltage"
+        baseMeasureFrom="//@librairies.0/@measureElements.18/@measureRelationships.1 //@librairies.0/@measureElements.19/@measureRelationships.2"/>
+    <measureElements
+        xsi:type="smm:DirectMeasure"
+        name="InfraRedSensor.Current"
+        baseMeasureFrom="//@librairies.0/@measureElements.18/@measureRelationships.2"/>
+    <measureElements
+        xsi:type="smm:DirectMeasure"
+        name="InfraRedSensor.internalLedCurrent"
+        baseMeasureFrom="//@librairies.0/@measureElements.19/@measureRelationships.1"/>
+    <measureElements
+        xsi:type="smm:DirectMeasure"
+        name="Board.numberOfSensorsRunning"
+        baseMeasureFrom="//@librairies.0/@measureElements.18/@measureRelationships.0"/>
+    <measureElements
+        xsi:type="smm:DirectMeasure"
+        name="Board.numberOnObstacle"
+        baseMeasureFrom="//@librairies.0/@measureElements.19/@measureRelationships.0"/>
+    <measureElements
+        xsi:type="smm:CollectiveMeasure"
+        name="Board.powerOfInfraRedSensorsOnIdle"
+        baseMeasureFrom="//@librairies.0/@measureElements.20/@measureRelationships.0"
+        baseMeasureTo="//@librairies.0/@measureElements.18/@measureRelationships.0 //@librairies.0/@measureElements.18/@measureRelationships.1 //@librairies.0/@measureElements.18/@measureRelationships.2">
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.0/@measureElements.18"
+          to="//@librairies.0/@measureElements.16"/>
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.0/@measureElements.18"
+          to="//@librairies.0/@measureElements.13"/>
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.0/@measureElements.18"
+          to="//@librairies.0/@measureElements.14"/>
+    </measureElements>
+    <measureElements
+        xsi:type="smm:CollectiveMeasure"
+        name="Board.powerOfInfraRedSensorsOnObstacle"
+        baseMeasureFrom="//@librairies.0/@measureElements.20/@measureRelationships.1"
+        baseMeasureTo="//@librairies.0/@measureElements.19/@measureRelationships.0 //@librairies.0/@measureElements.19/@measureRelationships.1 //@librairies.0/@measureElements.19/@measureRelationships.2">
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.0/@measureElements.19"
+          to="//@librairies.0/@measureElements.17"/>
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.0/@measureElements.19"
+          to="//@librairies.0/@measureElements.15"/>
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.0/@measureElements.19"
+          to="//@librairies.0/@measureElements.13"/>
+    </measureElements>
+    <measureElements
+        xsi:type="smm:CollectiveMeasure"
+        name="Board.powerOfInfraRedSensors"
+        baseMeasureFrom="//@librairies.0/@measureElements.57/@measureRelationships.1"
+        baseMeasureTo="//@librairies.0/@measureElements.20/@measureRelationships.0 //@librairies.0/@measureElements.20/@measureRelationships.1">
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.0/@measureElements.20"
+          to="//@librairies.0/@measureElements.18"/>
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.0/@measureElements.20"
+          to="//@librairies.0/@measureElements.19"/>
+    </measureElements>
+    <measureElements
+        xsi:type="smm:DirectMeasure"
+        name="MicroServo.Current"
+        baseMeasureFrom="//@librairies.0/@measureElements.28/@measureRelationships.1"/>
+    <measureElements
+        xsi:type="smm:DirectMeasure"
+        name="MicroServo.Voltage"/>
+    <measureElements
+        xsi:type="smm:DirectMeasure"
+        name="MicroServo.mahRise"
+        baseMeasureFrom="//@librairies.0/@measureElements.26/@measureRelationships.0"/>
+    <measureElements
+        xsi:type="smm:DirectMeasure"
+        name="MicroServo.mahFall"
+        baseMeasureFrom="//@librairies.0/@measureElements.26/@measureRelationships.1"/>
+    <measureElements
+        xsi:type="smm:DirectMeasure"
+        name="MicroServo.mahConstant"
+        baseMeasureFrom="//@librairies.0/@measureElements.26/@measureRelationships.2"/>
+    <measureElements
+        xsi:type="smm:CollectiveMeasure"
+        name="MicroServo.Energy"
+        baseMeasureFrom="//@librairies.0/@measureElements.45/@measureRelationships.1"
+        baseMeasureTo="//@librairies.0/@measureElements.26/@measureRelationships.0 //@librairies.0/@measureElements.26/@measureRelationships.1 //@librairies.0/@measureElements.26/@measureRelationships.2">
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.0/@measureElements.26"
+          to="//@librairies.0/@measureElements.23"/>
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.0/@measureElements.26"
+          to="//@librairies.0/@measureElements.24"/>
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.0/@measureElements.26"
+          to="//@librairies.0/@measureElements.25"/>
+    </measureElements>
+    <measureElements
+        xsi:type="smm:DirectMeasure"
+        name="Board.numberOfServoRunning"
+        baseMeasureFrom="//@librairies.0/@measureElements.28/@measureRelationships.0"/>
+    <measureElements
+        xsi:type="smm:CollectiveMeasure"
+        name="Board.currentOfServoRunning"
+        baseMeasureFrom="//@librairies.0/@measureElements.29/@measureRelationships.0"
+        baseMeasureTo="//@librairies.0/@measureElements.28/@measureRelationships.0 //@librairies.0/@measureElements.28/@measureRelationships.1">
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.0/@measureElements.28"
+          to="//@librairies.0/@measureElements.27"/>
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.0/@measureElements.28"
+          to="//@librairies.0/@measureElements.21"/>
+    </measureElements>
+    <measureElements
+        xsi:type="smm:CollectiveMeasure"
+        name="Board.powerOfServoRunning"
+        baseMeasureFrom="//@librairies.0/@measureElements.57/@measureRelationships.3"
+        baseMeasureTo="//@librairies.0/@measureElements.29/@measureRelationships.0 //@librairies.0/@measureElements.29/@measureRelationships.1">
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.0/@measureElements.29"
+          to="//@librairies.0/@measureElements.28"/>
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.0/@measureElements.29"
+          to="//@librairies.0/@measureElements.3"/>
+    </measureElements>
+    <measureElements
+        xsi:type="smm:DirectMeasure"
+        name="AmbientLightSensor.Current"
+        baseMeasureFrom="//@librairies.0/@measureElements.31/@measureRelationships.1"/>
+    <measureElements
+        xsi:type="smm:CollectiveMeasure"
+        name="AmbientLightSensor.Power"
+        baseMeasureFrom="//@librairies.0/@measureElements.57/@measureRelationships.2"
+        baseMeasureTo="//@librairies.0/@measureElements.31/@measureRelationships.0 //@librairies.0/@measureElements.31/@measureRelationships.1">
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.0/@measureElements.31"
+          to="//@librairies.0/@measureElements.3"/>
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.0/@measureElements.31"
+          to="//@librairies.0/@measureElements.30"/>
+    </measureElements>
+    <measureElements
+        xsi:type="smm:DirectMeasure"
+        name="Delay.delayDurationMs"
+        baseMeasureFrom="//@librairies.0/@measureElements.33/@measureRelationships.0"/>
+    <measureElements
+        xsi:type="smm:CollectiveMeasure"
+        name="Delay.delayDuration"
+        baseMeasureFrom="//@librairies.0/@measureElements.36/@measureRelationships.1"
+        baseMeasureTo="//@librairies.0/@measureElements.33/@measureRelationships.0 //@librairies.0/@measureElements.33/@measureRelationships.1">
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.0/@measureElements.33"
+          to="//@librairies.0/@measureElements.32"/>
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.0/@measureElements.33"
+          to="//@librairies.0/@measureElements.0"/>
+    </measureElements>
+    <measureElements
+        xsi:type="smm:DirectMeasure"
+        name="Delay.clockCyles"
+        baseMeasureFrom="//@librairies.0/@measureElements.35/@measureRelationships.0"/>
+    <measureElements
+        xsi:type="smm:CollectiveMeasure"
+        name="Delay.callDuration"
+        baseMeasureFrom="//@librairies.0/@measureElements.36/@measureRelationships.0"
+        baseMeasureTo="//@librairies.0/@measureElements.35/@measureRelationships.0 //@librairies.0/@measureElements.35/@measureRelationships.1">
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.0/@measureElements.35"
+          to="//@librairies.0/@measureElements.34"/>
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.0/@measureElements.35"
+          to="//@librairies.0/@measureElements.2"/>
+    </measureElements>
+    <measureElements
+        xsi:type="smm:CollectiveMeasure"
+        name="Delay.Duration"
+        baseMeasureFrom="//@librairies.0/@measureElements.61/@measureRelationships.0"
+        baseMeasureTo="//@librairies.0/@measureElements.36/@measureRelationships.0 //@librairies.0/@measureElements.36/@measureRelationships.1">
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.0/@measureElements.36"
+          to="//@librairies.0/@measureElements.35"/>
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.0/@measureElements.36"
+          to="//@librairies.0/@measureElements.33"/>
+    </measureElements>
+    <measureElements
+        xsi:type="smm:DirectMeasure"
+        name="WaitFor.clockCycles"
+        baseMeasureFrom="//@librairies.0/@measureElements.38/@measureRelationships.0"/>
+    <measureElements
+        xsi:type="smm:CollectiveMeasure"
+        name="WaitFor.callDuration"
+        baseMeasureFrom="//@librairies.0/@measureElements.41/@measureRelationships.1"
+        baseMeasureTo="//@librairies.0/@measureElements.38/@measureRelationships.0 //@librairies.0/@measureElements.38/@measureRelationships.1">
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.0/@measureElements.38"
+          to="//@librairies.0/@measureElements.37"/>
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.0/@measureElements.38"
+          to="//@librairies.0/@measureElements.2"/>
+    </measureElements>
+    <measureElements
+        xsi:type="smm:DirectMeasure"
+        name="WaitFor.null"
+        baseMeasureFrom="//@librairies.0/@measureElements.40/@measureRelationships.0"/>
+    <measureElements
+        xsi:type="smm:CollectiveMeasure"
+        name="WaitFor.realDurationAsSeconds"
+        baseMeasureFrom="//@librairies.0/@measureElements.41/@measureRelationships.0"
+        baseMeasureTo="//@librairies.0/@measureElements.40/@measureRelationships.0 //@librairies.0/@measureElements.40/@measureRelationships.1">
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.0/@measureElements.40"
+          to="//@librairies.0/@measureElements.39"/>
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.0/@measureElements.40"
+          to="//@librairies.0/@measureElements.0"/>
+    </measureElements>
+    <measureElements
+        xsi:type="smm:CollectiveMeasure"
+        name="WaitFor.totalDuration"
+        baseMeasureFrom="//@librairies.0/@measureElements.60/@measureRelationships.1"
+        baseMeasureTo="//@librairies.0/@measureElements.41/@measureRelationships.0 //@librairies.0/@measureElements.41/@measureRelationships.1">
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.0/@measureElements.41"
+          to="//@librairies.0/@measureElements.40"/>
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.0/@measureElements.41"
+          to="//@librairies.0/@measureElements.38"/>
+    </measureElements>
+    <measureElements
+        xsi:type="smm:DirectMeasure"
+        name="ModuleAssignment.clockCycles"
+        baseMeasureFrom="//@librairies.0/@measureElements.43/@measureRelationships.0"/>
+    <measureElements
+        xsi:type="smm:CollectiveMeasure"
+        name="ModuleAssignment.callDuration"
+        baseMeasureFrom="//@librairies.0/@measureElements.46/@measureRelationships.0"
+        baseMeasureTo="//@librairies.0/@measureElements.43/@measureRelationships.0 //@librairies.0/@measureElements.43/@measureRelationships.1">
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.0/@measureElements.43"
+          to="//@librairies.0/@measureElements.42"/>
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.0/@measureElements.43"
+          to="//@librairies.0/@measureElements.2"/>
+    </measureElements>
+    <measureElements
+        xsi:type="smm:DirectMeasure"
+        name="ModuleAssignment.controlsServo"
+        baseMeasureFrom="//@librairies.0/@measureElements.45/@measureRelationships.0"/>
+    <measureElements
+        xsi:type="smm:CollectiveMeasure"
+        name="ModuleAssignment.energyImpact"
+        baseMeasureFrom="//@librairies.0/@measureElements.62/@measureRelationships.1"
+        baseMeasureTo="//@librairies.0/@measureElements.45/@measureRelationships.0 //@librairies.0/@measureElements.45/@measureRelationships.1">
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.0/@measureElements.45"
+          to="//@librairies.0/@measureElements.44"/>
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.0/@measureElements.45"
+          to="//@librairies.0/@measureElements.26"/>
+    </measureElements>
+    <measureElements
+        xsi:type="smm:CollectiveMeasure"
+        name="ModuleAssignment.energyFromCall"
+        baseMeasureFrom="//@librairies.0/@measureElements.62/@measureRelationships.0"
+        baseMeasureTo="//@librairies.0/@measureElements.46/@measureRelationships.0 //@librairies.0/@measureElements.46/@measureRelationships.1">
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.0/@measureElements.46"
+          to="//@librairies.0/@measureElements.43"/>
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.0/@measureElements.46"
+          to="//@librairies.0/@measureElements.58"/>
+    </measureElements>
+    <measureElements
+        xsi:type="smm:DirectMeasure"
+        name="BooleanModuleGet.clockCycles"
+        baseMeasureFrom="//@librairies.0/@measureElements.48/@measureRelationships.0"/>
+    <measureElements
+        xsi:type="smm:CollectiveMeasure"
+        name="BooleanModuleGet.callDuration"
+        baseMeasureFrom="//@librairies.0/@measureElements.67/@measureRelationships.0"
+        baseMeasureTo="//@librairies.0/@measureElements.48/@measureRelationships.0 //@librairies.0/@measureElements.48/@measureRelationships.1">
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.0/@measureElements.48"
+          to="//@librairies.0/@measureElements.47"/>
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.0/@measureElements.48"
+          to="//@librairies.0/@measureElements.2"/>
+    </measureElements>
+    <measureElements
+        xsi:type="smm:DirectMeasure"
+        name="IntegerModuleGet.clockCycles"
+        baseMeasureFrom="//@librairies.0/@measureElements.50/@measureRelationships.0"/>
+    <measureElements
+        xsi:type="smm:CollectiveMeasure"
+        name="IntegerModuleGet.callDuration"
+        baseMeasureFrom="//@librairies.0/@measureElements.63/@measureRelationships.0"
+        baseMeasureTo="//@librairies.0/@measureElements.50/@measureRelationships.0 //@librairies.0/@measureElements.50/@measureRelationships.1">
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.0/@measureElements.50"
+          to="//@librairies.0/@measureElements.49"/>
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.0/@measureElements.50"
+          to="//@librairies.0/@measureElements.2"/>
+    </measureElements>
+    <measureElements
+        xsi:type="smm:DirectMeasure"
+        name="BinaryIntegerExpression.clockCycles"
+        baseMeasureFrom="//@librairies.0/@measureElements.52/@measureRelationships.0"/>
+    <measureElements
+        xsi:type="smm:CollectiveMeasure"
+        name="BinaryIntegerExpression.callDuration"
+        baseMeasureFrom="//@librairies.0/@measureElements.66/@measureRelationships.0"
+        baseMeasureTo="//@librairies.0/@measureElements.52/@measureRelationships.0 //@librairies.0/@measureElements.52/@measureRelationships.1">
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.0/@measureElements.52"
+          to="//@librairies.0/@measureElements.51"/>
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.0/@measureElements.52"
+          to="//@librairies.0/@measureElements.2"/>
+    </measureElements>
+    <measureElements
+        xsi:type="smm:DirectMeasure"
+        name="VariableDeclaration.clockCycles"
+        baseMeasureFrom="//@librairies.0/@measureElements.54/@measureRelationships.0"/>
+    <measureElements
+        xsi:type="smm:CollectiveMeasure"
+        name="VariableDeclaration.callDuration"
+        baseMeasureFrom="//@librairies.0/@measureElements.65/@measureRelationships.0"
+        baseMeasureTo="//@librairies.0/@measureElements.54/@measureRelationships.0 //@librairies.0/@measureElements.54/@measureRelationships.1">
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.0/@measureElements.54"
+          to="//@librairies.0/@measureElements.53"/>
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.0/@measureElements.54"
+          to="//@librairies.0/@measureElements.2"/>
+    </measureElements>
+    <measureElements
+        xsi:type="smm:DirectMeasure"
+        name="VariableAssignement.clockCycles"
+        baseMeasureFrom="//@librairies.0/@measureElements.56/@measureRelationships.0"/>
+    <measureElements
+        xsi:type="smm:CollectiveMeasure"
+        name="VariableAssignement.callDuration"
+        baseMeasureFrom="//@librairies.0/@measureElements.64/@measureRelationships.0"
+        baseMeasureTo="//@librairies.0/@measureElements.56/@measureRelationships.0 //@librairies.0/@measureElements.56/@measureRelationships.1">
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.0/@measureElements.56"
+          to="//@librairies.0/@measureElements.55"/>
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.0/@measureElements.56"
+          to="//@librairies.0/@measureElements.2"/>
+    </measureElements>
+    <measureElements
+        xsi:type="smm:CollectiveMeasure"
+        name="Board.devicesPower"
+        baseMeasureFrom="//@librairies.0/@measureElements.58/@measureRelationships.1 //@librairies.0/@measureElements.59/@measureRelationships.1"
+        baseMeasureTo="//@librairies.0/@measureElements.57/@measureRelationships.0 //@librairies.0/@measureElements.57/@measureRelationships.1 //@librairies.0/@measureElements.57/@measureRelationships.2 //@librairies.0/@measureElements.57/@measureRelationships.3">
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.0/@measureElements.57"
+          to="//@librairies.0/@measureElements.12"/>
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.0/@measureElements.57"
+          to="//@librairies.0/@measureElements.20"/>
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.0/@measureElements.57"
+          to="//@librairies.0/@measureElements.31"/>
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.0/@measureElements.57"
+          to="//@librairies.0/@measureElements.29"/>
+    </measureElements>
+    <measureElements
+        xsi:type="smm:CollectiveMeasure"
+        name="Board.systemPower"
+        baseMeasureFrom="//@librairies.0/@measureElements.46/@measureRelationships.1 //@librairies.0/@measureElements.61/@measureRelationships.1 //@librairies.0/@measureElements.63/@measureRelationships.1 //@librairies.0/@measureElements.64/@measureRelationships.1 //@librairies.0/@measureElements.65/@measureRelationships.1 //@librairies.0/@measureElements.66/@measureRelationships.1 //@librairies.0/@measureElements.67/@measureRelationships.1"
+        baseMeasureTo="//@librairies.0/@measureElements.58/@measureRelationships.0 //@librairies.0/@measureElements.58/@measureRelationships.1">
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.0/@measureElements.58"
+          to="//@librairies.0/@measureElements.6"/>
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.0/@measureElements.58"
+          to="//@librairies.0/@measureElements.57"/>
+    </measureElements>
+    <measureElements
+        xsi:type="smm:CollectiveMeasure"
+        name="Board.systemPowerOnIdle"
+        baseMeasureFrom="//@librairies.0/@measureElements.60/@measureRelationships.0"
+        baseMeasureTo="//@librairies.0/@measureElements.59/@measureRelationships.0 //@librairies.0/@measureElements.59/@measureRelationships.1">
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.0/@measureElements.59"
+          to="//@librairies.0/@measureElements.7"/>
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.0/@measureElements.59"
+          to="//@librairies.0/@measureElements.57"/>
+    </measureElements>
+    <measureElements
+        xsi:type="smm:CollectiveMeasure"
+        name="WaitFor.Energy#execute"
+        baseMeasureTo="//@librairies.0/@measureElements.60/@measureRelationships.0 //@librairies.0/@measureElements.60/@measureRelationships.1">
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.0/@measureElements.60"
+          to="//@librairies.0/@measureElements.59"/>
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.0/@measureElements.60"
+          to="//@librairies.0/@measureElements.41"/>
+    </measureElements>
+    <measureElements
+        xsi:type="smm:CollectiveMeasure"
+        name="Delay.Energy#execute"
+        baseMeasureTo="//@librairies.0/@measureElements.61/@measureRelationships.0 //@librairies.0/@measureElements.61/@measureRelationships.1">
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.0/@measureElements.61"
+          to="//@librairies.0/@measureElements.36"/>
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.0/@measureElements.61"
+          to="//@librairies.0/@measureElements.58"/>
+    </measureElements>
+    <measureElements
+        xsi:type="smm:CollectiveMeasure"
+        name="ModuleAssignment.Energy#execute"
+        baseMeasureTo="//@librairies.0/@measureElements.62/@measureRelationships.0 //@librairies.0/@measureElements.62/@measureRelationships.1">
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.0/@measureElements.62"
+          to="//@librairies.0/@measureElements.46"/>
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.0/@measureElements.62"
+          to="//@librairies.0/@measureElements.45"/>
+    </measureElements>
+    <measureElements
+        xsi:type="smm:CollectiveMeasure"
+        name="IntegerModuleGet.Energy#evaluate"
+        baseMeasureTo="//@librairies.0/@measureElements.63/@measureRelationships.0 //@librairies.0/@measureElements.63/@measureRelationships.1">
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.0/@measureElements.63"
+          to="//@librairies.0/@measureElements.50"/>
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.0/@measureElements.63"
+          to="//@librairies.0/@measureElements.58"/>
+    </measureElements>
+    <measureElements
+        xsi:type="smm:CollectiveMeasure"
+        name="VariableAssignment.Energy#execute"
+        baseMeasureTo="//@librairies.0/@measureElements.64/@measureRelationships.0 //@librairies.0/@measureElements.64/@measureRelationships.1">
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.0/@measureElements.64"
+          to="//@librairies.0/@measureElements.56"/>
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.0/@measureElements.64"
+          to="//@librairies.0/@measureElements.58"/>
+    </measureElements>
+    <measureElements
+        xsi:type="smm:CollectiveMeasure"
+        name="VariableDeclaration.Energy#execute"
+        baseMeasureTo="//@librairies.0/@measureElements.65/@measureRelationships.0 //@librairies.0/@measureElements.65/@measureRelationships.1">
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.0/@measureElements.65"
+          to="//@librairies.0/@measureElements.54"/>
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.0/@measureElements.65"
+          to="//@librairies.0/@measureElements.58"/>
+    </measureElements>
+    <measureElements
+        xsi:type="smm:CollectiveMeasure"
+        name="BinaryIntegerExpression.Energy#evaluate"
+        baseMeasureTo="//@librairies.0/@measureElements.66/@measureRelationships.0 //@librairies.0/@measureElements.66/@measureRelationships.1">
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.0/@measureElements.66"
+          to="//@librairies.0/@measureElements.52"/>
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.0/@measureElements.66"
+          to="//@librairies.0/@measureElements.58"/>
+    </measureElements>
+    <measureElements
+        xsi:type="smm:CollectiveMeasure"
+        name="BooleanModuleGet.Energy#evaluate"
+        baseMeasureTo="//@librairies.0/@measureElements.67/@measureRelationships.0 //@librairies.0/@measureElements.67/@measureRelationships.1">
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.0/@measureElements.67"
+          to="//@librairies.0/@measureElements.48"/>
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.0/@measureElements.67"
+          to="//@librairies.0/@measureElements.58"/>
+    </measureElements>
+  </librairies>
+  <librairies
+      name="ArduinoMini">
+    <measureElements
+        xsi:type="smm:DirectMeasure"
+        name="variables.milliToUnitFactor"
+        baseMeasureFrom="//@librairies.1/@measureElements.33/@measureRelationships.1 //@librairies.1/@measureElements.40/@measureRelationships.1"/>
+    <measureElements
+        xsi:type="smm:DirectMeasure"
+        name="variables.voltsPerUnit"/>
+    <measureElements
+        xsi:type="smm:DirectMeasure"
+        name="Board.clockPeriod"
+        baseMeasureFrom="//@librairies.1/@measureElements.35/@measureRelationships.1 //@librairies.1/@measureElements.38/@measureRelationships.1 //@librairies.1/@measureElements.43/@measureRelationships.1 //@librairies.1/@measureElements.48/@measureRelationships.1 //@librairies.1/@measureElements.50/@measureRelationships.1 //@librairies.1/@measureElements.52/@measureRelationships.1 //@librairies.1/@measureElements.54/@measureRelationships.1 //@librairies.1/@measureElements.56/@measureRelationships.1"/>
+    <measureElements
+        xsi:type="smm:DirectMeasure"
+        name="Board.Voltage"
+        baseMeasureFrom="//@librairies.1/@measureElements.6/@measureRelationships.1 //@librairies.1/@measureElements.7/@measureRelationships.1 //@librairies.1/@measureElements.29/@measureRelationships.1 //@librairies.1/@measureElements.31/@measureRelationships.0"/>
+    <measureElements
+        xsi:type="smm:DirectMeasure"
+        name="Board.Current"
+        baseMeasureFrom="//@librairies.1/@measureElements.6/@measureRelationships.0"/>
+    <measureElements
+        xsi:type="smm:DirectMeasure"
+        name="Board.currentIdle"
+        baseMeasureFrom="//@librairies.1/@measureElements.7/@measureRelationships.0"/>
+    <measureElements
+        xsi:type="smm:CollectiveMeasure"
+        name="Board.cpuPower"
+        baseMeasureFrom="//@librairies.1/@measureElements.58/@measureRelationships.0"
+        baseMeasureTo="//@librairies.1/@measureElements.6/@measureRelationships.0 //@librairies.1/@measureElements.6/@measureRelationships.1">
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.1/@measureElements.6"
+          to="//@librairies.1/@measureElements.4"/>
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.1/@measureElements.6"
+          to="//@librairies.1/@measureElements.3"/>
+    </measureElements>
+    <measureElements
+        xsi:type="smm:CollectiveMeasure"
+        name="Board.cpuPowerIdle"
+        baseMeasureFrom="//@librairies.1/@measureElements.59/@measureRelationships.0"
+        baseMeasureTo="//@librairies.1/@measureElements.7/@measureRelationships.0 //@librairies.1/@measureElements.7/@measureRelationships.1">
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.1/@measureElements.7"
+          to="//@librairies.1/@measureElements.5"/>
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.1/@measureElements.7"
+          to="//@librairies.1/@measureElements.3"/>
+    </measureElements>
+    <measureElements
+        xsi:type="smm:DirectMeasure"
+        name="LED.Voltage"
+        baseMeasureFrom="//@librairies.1/@measureElements.12/@measureRelationships.2"/>
+    <measureElements
+        xsi:type="smm:DirectMeasure"
+        name="LED.Current"
+        baseMeasureFrom="//@librairies.1/@measureElements.11/@measureRelationships.0"/>
+    <measureElements
+        xsi:type="smm:DirectMeasure"
+        name="Board.numberOfLedsRunning"
+        baseMeasureFrom="//@librairies.1/@measureElements.11/@measureRelationships.1 //@librairies.1/@measureElements.12/@measureRelationships.1"/>
+    <measureElements
+        xsi:type="smm:CollectiveMeasure"
+        name="Board.currentOfLedsRunning"
+        baseMeasureFrom="//@librairies.1/@measureElements.12/@measureRelationships.0"
+        baseMeasureTo="//@librairies.1/@measureElements.11/@measureRelationships.0 //@librairies.1/@measureElements.11/@measureRelationships.1">
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.1/@measureElements.11"
+          to="//@librairies.1/@measureElements.9"/>
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.1/@measureElements.11"
+          to="//@librairies.1/@measureElements.10"/>
+    </measureElements>
+    <measureElements
+        xsi:type="smm:CollectiveMeasure"
+        name="Board.powerOfLedsRunning"
+        baseMeasureFrom="//@librairies.1/@measureElements.57/@measureRelationships.0"
+        baseMeasureTo="//@librairies.1/@measureElements.12/@measureRelationships.0 //@librairies.1/@measureElements.12/@measureRelationships.1 //@librairies.1/@measureElements.12/@measureRelationships.2">
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.1/@measureElements.12"
+          to="//@librairies.1/@measureElements.11"/>
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.1/@measureElements.12"
+          to="//@librairies.1/@measureElements.10"/>
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.1/@measureElements.12"
+          to="//@librairies.1/@measureElements.8"/>
+    </measureElements>
+    <measureElements
+        xsi:type="smm:DirectMeasure"
+        name="InfraRedSensor.Voltage"
+        baseMeasureFrom="//@librairies.1/@measureElements.18/@measureRelationships.1 //@librairies.1/@measureElements.19/@measureRelationships.2"/>
+    <measureElements
+        xsi:type="smm:DirectMeasure"
+        name="InfraRedSensor.Current"
+        baseMeasureFrom="//@librairies.1/@measureElements.18/@measureRelationships.2"/>
+    <measureElements
+        xsi:type="smm:DirectMeasure"
+        name="InfraRedSensor.internalLedCurrent"
+        baseMeasureFrom="//@librairies.1/@measureElements.19/@measureRelationships.1"/>
+    <measureElements
+        xsi:type="smm:DirectMeasure"
+        name="Board.numberOfSensorsRunning"
+        baseMeasureFrom="//@librairies.1/@measureElements.18/@measureRelationships.0"/>
+    <measureElements
+        xsi:type="smm:DirectMeasure"
+        name="Board.numberOnObstacle"
+        baseMeasureFrom="//@librairies.1/@measureElements.19/@measureRelationships.0"/>
+    <measureElements
+        xsi:type="smm:CollectiveMeasure"
+        name="Board.powerOfInfraRedSensorsOnIdle"
+        baseMeasureFrom="//@librairies.1/@measureElements.20/@measureRelationships.0"
+        baseMeasureTo="//@librairies.1/@measureElements.18/@measureRelationships.0 //@librairies.1/@measureElements.18/@measureRelationships.1 //@librairies.1/@measureElements.18/@measureRelationships.2">
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.1/@measureElements.18"
+          to="//@librairies.1/@measureElements.16"/>
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.1/@measureElements.18"
+          to="//@librairies.1/@measureElements.13"/>
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.1/@measureElements.18"
+          to="//@librairies.1/@measureElements.14"/>
+    </measureElements>
+    <measureElements
+        xsi:type="smm:CollectiveMeasure"
+        name="Board.powerOfInfraRedSensorsOnObstacle"
+        baseMeasureFrom="//@librairies.1/@measureElements.20/@measureRelationships.1"
+        baseMeasureTo="//@librairies.1/@measureElements.19/@measureRelationships.0 //@librairies.1/@measureElements.19/@measureRelationships.1 //@librairies.1/@measureElements.19/@measureRelationships.2">
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.1/@measureElements.19"
+          to="//@librairies.1/@measureElements.17"/>
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.1/@measureElements.19"
+          to="//@librairies.1/@measureElements.15"/>
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.1/@measureElements.19"
+          to="//@librairies.1/@measureElements.13"/>
+    </measureElements>
+    <measureElements
+        xsi:type="smm:CollectiveMeasure"
+        name="Board.powerOfInfraRedSensors"
+        baseMeasureFrom="//@librairies.1/@measureElements.57/@measureRelationships.1"
+        baseMeasureTo="//@librairies.1/@measureElements.20/@measureRelationships.0 //@librairies.1/@measureElements.20/@measureRelationships.1">
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.1/@measureElements.20"
+          to="//@librairies.1/@measureElements.18"/>
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.1/@measureElements.20"
+          to="//@librairies.1/@measureElements.19"/>
+    </measureElements>
+    <measureElements
+        xsi:type="smm:DirectMeasure"
+        name="MicroServo.Current"
+        baseMeasureFrom="//@librairies.1/@measureElements.28/@measureRelationships.1"/>
+    <measureElements
+        xsi:type="smm:DirectMeasure"
+        name="MicroServo.Voltage"/>
+    <measureElements
+        xsi:type="smm:DirectMeasure"
+        name="MicroServo.mahRise"
+        baseMeasureFrom="//@librairies.1/@measureElements.26/@measureRelationships.0"/>
+    <measureElements
+        xsi:type="smm:DirectMeasure"
+        name="MicroServo.mahFall"
+        baseMeasureFrom="//@librairies.1/@measureElements.26/@measureRelationships.1"/>
+    <measureElements
+        xsi:type="smm:DirectMeasure"
+        name="MicroServo.mahConstant"
+        baseMeasureFrom="//@librairies.1/@measureElements.26/@measureRelationships.2"/>
+    <measureElements
+        xsi:type="smm:CollectiveMeasure"
+        name="MicroServo.Energy"
+        baseMeasureFrom="//@librairies.1/@measureElements.45/@measureRelationships.1"
+        baseMeasureTo="//@librairies.1/@measureElements.26/@measureRelationships.0 //@librairies.1/@measureElements.26/@measureRelationships.1 //@librairies.1/@measureElements.26/@measureRelationships.2">
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.1/@measureElements.26"
+          to="//@librairies.1/@measureElements.23"/>
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.1/@measureElements.26"
+          to="//@librairies.1/@measureElements.24"/>
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.1/@measureElements.26"
+          to="//@librairies.1/@measureElements.25"/>
+    </measureElements>
+    <measureElements
+        xsi:type="smm:DirectMeasure"
+        name="Board.numberOfServoRunning"
+        baseMeasureFrom="//@librairies.1/@measureElements.28/@measureRelationships.0"/>
+    <measureElements
+        xsi:type="smm:CollectiveMeasure"
+        name="Board.currentOfServoRunning"
+        baseMeasureFrom="//@librairies.1/@measureElements.29/@measureRelationships.0"
+        baseMeasureTo="//@librairies.1/@measureElements.28/@measureRelationships.0 //@librairies.1/@measureElements.28/@measureRelationships.1">
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.1/@measureElements.28"
+          to="//@librairies.1/@measureElements.27"/>
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.1/@measureElements.28"
+          to="//@librairies.1/@measureElements.21"/>
+    </measureElements>
+    <measureElements
+        xsi:type="smm:CollectiveMeasure"
+        name="Board.powerOfServoRunning"
+        baseMeasureFrom="//@librairies.1/@measureElements.57/@measureRelationships.3"
+        baseMeasureTo="//@librairies.1/@measureElements.29/@measureRelationships.0 //@librairies.1/@measureElements.29/@measureRelationships.1">
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.1/@measureElements.29"
+          to="//@librairies.1/@measureElements.28"/>
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.1/@measureElements.29"
+          to="//@librairies.1/@measureElements.3"/>
+    </measureElements>
+    <measureElements
+        xsi:type="smm:DirectMeasure"
+        name="AmbientLightSensor.Current"
+        baseMeasureFrom="//@librairies.1/@measureElements.31/@measureRelationships.1"/>
+    <measureElements
+        xsi:type="smm:CollectiveMeasure"
+        name="AmbientLightSensor.Power"
+        baseMeasureFrom="//@librairies.1/@measureElements.57/@measureRelationships.2"
+        baseMeasureTo="//@librairies.1/@measureElements.31/@measureRelationships.0 //@librairies.1/@measureElements.31/@measureRelationships.1">
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.1/@measureElements.31"
+          to="//@librairies.1/@measureElements.3"/>
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.1/@measureElements.31"
+          to="//@librairies.1/@measureElements.30"/>
+    </measureElements>
+    <measureElements
+        xsi:type="smm:DirectMeasure"
+        name="Delay.delayDurationMs"
+        baseMeasureFrom="//@librairies.1/@measureElements.33/@measureRelationships.0"/>
+    <measureElements
+        xsi:type="smm:CollectiveMeasure"
+        name="Delay.delayDuration"
+        baseMeasureFrom="//@librairies.1/@measureElements.36/@measureRelationships.1"
+        baseMeasureTo="//@librairies.1/@measureElements.33/@measureRelationships.0 //@librairies.1/@measureElements.33/@measureRelationships.1">
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.1/@measureElements.33"
+          to="//@librairies.1/@measureElements.32"/>
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.1/@measureElements.33"
+          to="//@librairies.1/@measureElements.0"/>
+    </measureElements>
+    <measureElements
+        xsi:type="smm:DirectMeasure"
+        name="Delay.clockCyles"
+        baseMeasureFrom="//@librairies.1/@measureElements.35/@measureRelationships.0"/>
+    <measureElements
+        xsi:type="smm:CollectiveMeasure"
+        name="Delay.callDuration"
+        baseMeasureFrom="//@librairies.1/@measureElements.36/@measureRelationships.0"
+        baseMeasureTo="//@librairies.1/@measureElements.35/@measureRelationships.0 //@librairies.1/@measureElements.35/@measureRelationships.1">
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.1/@measureElements.35"
+          to="//@librairies.1/@measureElements.34"/>
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.1/@measureElements.35"
+          to="//@librairies.1/@measureElements.2"/>
+    </measureElements>
+    <measureElements
+        xsi:type="smm:CollectiveMeasure"
+        name="Delay.Duration"
+        baseMeasureFrom="//@librairies.1/@measureElements.61/@measureRelationships.0"
+        baseMeasureTo="//@librairies.1/@measureElements.36/@measureRelationships.0 //@librairies.1/@measureElements.36/@measureRelationships.1">
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.1/@measureElements.36"
+          to="//@librairies.1/@measureElements.35"/>
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.1/@measureElements.36"
+          to="//@librairies.1/@measureElements.33"/>
+    </measureElements>
+    <measureElements
+        xsi:type="smm:DirectMeasure"
+        name="WaitFor.clockCycles"
+        baseMeasureFrom="//@librairies.1/@measureElements.38/@measureRelationships.0"/>
+    <measureElements
+        xsi:type="smm:CollectiveMeasure"
+        name="WaitFor.callDuration"
+        baseMeasureFrom="//@librairies.1/@measureElements.41/@measureRelationships.1"
+        baseMeasureTo="//@librairies.1/@measureElements.38/@measureRelationships.0 //@librairies.1/@measureElements.38/@measureRelationships.1">
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.1/@measureElements.38"
+          to="//@librairies.1/@measureElements.37"/>
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.1/@measureElements.38"
+          to="//@librairies.1/@measureElements.2"/>
+    </measureElements>
+    <measureElements
+        xsi:type="smm:DirectMeasure"
+        name="WaitFor.null"
+        baseMeasureFrom="//@librairies.1/@measureElements.40/@measureRelationships.0"/>
+    <measureElements
+        xsi:type="smm:CollectiveMeasure"
+        name="WaitFor.realDurationAsSeconds"
+        baseMeasureFrom="//@librairies.1/@measureElements.41/@measureRelationships.0"
+        baseMeasureTo="//@librairies.1/@measureElements.40/@measureRelationships.0 //@librairies.1/@measureElements.40/@measureRelationships.1">
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.1/@measureElements.40"
+          to="//@librairies.1/@measureElements.39"/>
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.1/@measureElements.40"
+          to="//@librairies.1/@measureElements.0"/>
+    </measureElements>
+    <measureElements
+        xsi:type="smm:CollectiveMeasure"
+        name="WaitFor.totalDuration"
+        baseMeasureFrom="//@librairies.1/@measureElements.60/@measureRelationships.1"
+        baseMeasureTo="//@librairies.1/@measureElements.41/@measureRelationships.0 //@librairies.1/@measureElements.41/@measureRelationships.1">
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.1/@measureElements.41"
+          to="//@librairies.1/@measureElements.40"/>
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.1/@measureElements.41"
+          to="//@librairies.1/@measureElements.38"/>
+    </measureElements>
+    <measureElements
+        xsi:type="smm:DirectMeasure"
+        name="ModuleAssignment.clockCycles"
+        baseMeasureFrom="//@librairies.1/@measureElements.43/@measureRelationships.0"/>
+    <measureElements
+        xsi:type="smm:CollectiveMeasure"
+        name="ModuleAssignment.callDuration"
+        baseMeasureFrom="//@librairies.1/@measureElements.46/@measureRelationships.0"
+        baseMeasureTo="//@librairies.1/@measureElements.43/@measureRelationships.0 //@librairies.1/@measureElements.43/@measureRelationships.1">
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.1/@measureElements.43"
+          to="//@librairies.1/@measureElements.42"/>
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.1/@measureElements.43"
+          to="//@librairies.1/@measureElements.2"/>
+    </measureElements>
+    <measureElements
+        xsi:type="smm:DirectMeasure"
+        name="ModuleAssignment.controlsServo"
+        baseMeasureFrom="//@librairies.1/@measureElements.45/@measureRelationships.0"/>
+    <measureElements
+        xsi:type="smm:CollectiveMeasure"
+        name="ModuleAssignment.energyImpact"
+        baseMeasureFrom="//@librairies.1/@measureElements.62/@measureRelationships.1"
+        baseMeasureTo="//@librairies.1/@measureElements.45/@measureRelationships.0 //@librairies.1/@measureElements.45/@measureRelationships.1">
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.1/@measureElements.45"
+          to="//@librairies.1/@measureElements.44"/>
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.1/@measureElements.45"
+          to="//@librairies.1/@measureElements.26"/>
+    </measureElements>
+    <measureElements
+        xsi:type="smm:CollectiveMeasure"
+        name="ModuleAssignment.energyFromCall"
+        baseMeasureFrom="//@librairies.1/@measureElements.62/@measureRelationships.0"
+        baseMeasureTo="//@librairies.1/@measureElements.46/@measureRelationships.0 //@librairies.1/@measureElements.46/@measureRelationships.1">
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.1/@measureElements.46"
+          to="//@librairies.1/@measureElements.43"/>
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.1/@measureElements.46"
+          to="//@librairies.1/@measureElements.58"/>
+    </measureElements>
+    <measureElements
+        xsi:type="smm:DirectMeasure"
+        name="BooleanModuleGet.clockCycles"
+        baseMeasureFrom="//@librairies.1/@measureElements.48/@measureRelationships.0"/>
+    <measureElements
+        xsi:type="smm:CollectiveMeasure"
+        name="BooleanModuleGet.callDuration"
+        baseMeasureFrom="//@librairies.1/@measureElements.67/@measureRelationships.0"
+        baseMeasureTo="//@librairies.1/@measureElements.48/@measureRelationships.0 //@librairies.1/@measureElements.48/@measureRelationships.1">
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.1/@measureElements.48"
+          to="//@librairies.1/@measureElements.47"/>
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.1/@measureElements.48"
+          to="//@librairies.1/@measureElements.2"/>
+    </measureElements>
+    <measureElements
+        xsi:type="smm:DirectMeasure"
+        name="IntegerModuleGet.clockCycles"
+        baseMeasureFrom="//@librairies.1/@measureElements.50/@measureRelationships.0"/>
+    <measureElements
+        xsi:type="smm:CollectiveMeasure"
+        name="IntegerModuleGet.callDuration"
+        baseMeasureFrom="//@librairies.1/@measureElements.63/@measureRelationships.0"
+        baseMeasureTo="//@librairies.1/@measureElements.50/@measureRelationships.0 //@librairies.1/@measureElements.50/@measureRelationships.1">
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.1/@measureElements.50"
+          to="//@librairies.1/@measureElements.49"/>
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.1/@measureElements.50"
+          to="//@librairies.1/@measureElements.2"/>
+    </measureElements>
+    <measureElements
+        xsi:type="smm:DirectMeasure"
+        name="BinaryIntegerExpression.clockCycles"
+        baseMeasureFrom="//@librairies.1/@measureElements.52/@measureRelationships.0"/>
+    <measureElements
+        xsi:type="smm:CollectiveMeasure"
+        name="BinaryIntegerExpression.callDuration"
+        baseMeasureFrom="//@librairies.1/@measureElements.66/@measureRelationships.0"
+        baseMeasureTo="//@librairies.1/@measureElements.52/@measureRelationships.0 //@librairies.1/@measureElements.52/@measureRelationships.1">
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.1/@measureElements.52"
+          to="//@librairies.1/@measureElements.51"/>
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.1/@measureElements.52"
+          to="//@librairies.1/@measureElements.2"/>
+    </measureElements>
+    <measureElements
+        xsi:type="smm:DirectMeasure"
+        name="VariableDeclaration.clockCycles"
+        baseMeasureFrom="//@librairies.1/@measureElements.54/@measureRelationships.0"/>
+    <measureElements
+        xsi:type="smm:CollectiveMeasure"
+        name="VariableDeclaration.callDuration"
+        baseMeasureFrom="//@librairies.1/@measureElements.65/@measureRelationships.0"
+        baseMeasureTo="//@librairies.1/@measureElements.54/@measureRelationships.0 //@librairies.1/@measureElements.54/@measureRelationships.1">
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.1/@measureElements.54"
+          to="//@librairies.1/@measureElements.53"/>
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.1/@measureElements.54"
+          to="//@librairies.1/@measureElements.2"/>
+    </measureElements>
+    <measureElements
+        xsi:type="smm:DirectMeasure"
+        name="VariableAssignement.clockCycles"
+        baseMeasureFrom="//@librairies.1/@measureElements.56/@measureRelationships.0"/>
+    <measureElements
+        xsi:type="smm:CollectiveMeasure"
+        name="VariableAssignement.callDuration"
+        baseMeasureFrom="//@librairies.1/@measureElements.64/@measureRelationships.0"
+        baseMeasureTo="//@librairies.1/@measureElements.56/@measureRelationships.0 //@librairies.1/@measureElements.56/@measureRelationships.1">
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.1/@measureElements.56"
+          to="//@librairies.1/@measureElements.55"/>
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.1/@measureElements.56"
+          to="//@librairies.1/@measureElements.2"/>
+    </measureElements>
+    <measureElements
+        xsi:type="smm:CollectiveMeasure"
+        name="Board.devicesPower"
+        baseMeasureFrom="//@librairies.1/@measureElements.58/@measureRelationships.1 //@librairies.1/@measureElements.59/@measureRelationships.1"
+        baseMeasureTo="//@librairies.1/@measureElements.57/@measureRelationships.0 //@librairies.1/@measureElements.57/@measureRelationships.1 //@librairies.1/@measureElements.57/@measureRelationships.2 //@librairies.1/@measureElements.57/@measureRelationships.3">
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.1/@measureElements.57"
+          to="//@librairies.1/@measureElements.12"/>
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.1/@measureElements.57"
+          to="//@librairies.1/@measureElements.20"/>
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.1/@measureElements.57"
+          to="//@librairies.1/@measureElements.31"/>
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.1/@measureElements.57"
+          to="//@librairies.1/@measureElements.29"/>
+    </measureElements>
+    <measureElements
+        xsi:type="smm:CollectiveMeasure"
+        name="Board.systemPower"
+        baseMeasureFrom="//@librairies.1/@measureElements.46/@measureRelationships.1 //@librairies.1/@measureElements.61/@measureRelationships.1 //@librairies.1/@measureElements.63/@measureRelationships.1 //@librairies.1/@measureElements.64/@measureRelationships.1 //@librairies.1/@measureElements.65/@measureRelationships.1 //@librairies.1/@measureElements.66/@measureRelationships.1 //@librairies.1/@measureElements.67/@measureRelationships.1"
+        baseMeasureTo="//@librairies.1/@measureElements.58/@measureRelationships.0 //@librairies.1/@measureElements.58/@measureRelationships.1">
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.1/@measureElements.58"
+          to="//@librairies.1/@measureElements.6"/>
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.1/@measureElements.58"
+          to="//@librairies.1/@measureElements.57"/>
+    </measureElements>
+    <measureElements
+        xsi:type="smm:CollectiveMeasure"
+        name="Board.systemPowerOnIdle"
+        baseMeasureFrom="//@librairies.1/@measureElements.60/@measureRelationships.0"
+        baseMeasureTo="//@librairies.1/@measureElements.59/@measureRelationships.0 //@librairies.1/@measureElements.59/@measureRelationships.1">
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.1/@measureElements.59"
+          to="//@librairies.1/@measureElements.7"/>
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.1/@measureElements.59"
+          to="//@librairies.1/@measureElements.57"/>
+    </measureElements>
+    <measureElements
+        xsi:type="smm:CollectiveMeasure"
+        name="WaitFor.Energy#execute"
+        baseMeasureTo="//@librairies.1/@measureElements.60/@measureRelationships.0 //@librairies.1/@measureElements.60/@measureRelationships.1">
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.1/@measureElements.60"
+          to="//@librairies.1/@measureElements.59"/>
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.1/@measureElements.60"
+          to="//@librairies.1/@measureElements.41"/>
+    </measureElements>
+    <measureElements
+        xsi:type="smm:CollectiveMeasure"
+        name="Delay.Energy#execute"
+        baseMeasureTo="//@librairies.1/@measureElements.61/@measureRelationships.0 //@librairies.1/@measureElements.61/@measureRelationships.1">
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.1/@measureElements.61"
+          to="//@librairies.1/@measureElements.36"/>
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.1/@measureElements.61"
+          to="//@librairies.1/@measureElements.58"/>
+    </measureElements>
+    <measureElements
+        xsi:type="smm:CollectiveMeasure"
+        name="ModuleAssignment.Energy#execute"
+        baseMeasureTo="//@librairies.1/@measureElements.62/@measureRelationships.0 //@librairies.1/@measureElements.62/@measureRelationships.1">
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.1/@measureElements.62"
+          to="//@librairies.1/@measureElements.46"/>
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.1/@measureElements.62"
+          to="//@librairies.1/@measureElements.45"/>
+    </measureElements>
+    <measureElements
+        xsi:type="smm:CollectiveMeasure"
+        name="IntegerModuleGet.Energy#evaluate"
+        baseMeasureTo="//@librairies.1/@measureElements.63/@measureRelationships.0 //@librairies.1/@measureElements.63/@measureRelationships.1">
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.1/@measureElements.63"
+          to="//@librairies.1/@measureElements.50"/>
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.1/@measureElements.63"
+          to="//@librairies.1/@measureElements.58"/>
+    </measureElements>
+    <measureElements
+        xsi:type="smm:CollectiveMeasure"
+        name="VariableAssignment.Energy#execute"
+        baseMeasureTo="//@librairies.1/@measureElements.64/@measureRelationships.0 //@librairies.1/@measureElements.64/@measureRelationships.1">
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.1/@measureElements.64"
+          to="//@librairies.1/@measureElements.56"/>
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.1/@measureElements.64"
+          to="//@librairies.1/@measureElements.58"/>
+    </measureElements>
+    <measureElements
+        xsi:type="smm:CollectiveMeasure"
+        name="VariableDeclaration.Energy#execute"
+        baseMeasureTo="//@librairies.1/@measureElements.65/@measureRelationships.0 //@librairies.1/@measureElements.65/@measureRelationships.1">
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.1/@measureElements.65"
+          to="//@librairies.1/@measureElements.54"/>
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.1/@measureElements.65"
+          to="//@librairies.1/@measureElements.58"/>
+    </measureElements>
+    <measureElements
+        xsi:type="smm:CollectiveMeasure"
+        name="BinaryIntegerExpression.Energy#evaluate"
+        baseMeasureTo="//@librairies.1/@measureElements.66/@measureRelationships.0 //@librairies.1/@measureElements.66/@measureRelationships.1">
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.1/@measureElements.66"
+          to="//@librairies.1/@measureElements.52"/>
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.1/@measureElements.66"
+          to="//@librairies.1/@measureElements.58"/>
+    </measureElements>
+    <measureElements
+        xsi:type="smm:CollectiveMeasure"
+        name="BooleanModuleGet.Energy#evaluate"
+        baseMeasureTo="//@librairies.1/@measureElements.67/@measureRelationships.0 //@librairies.1/@measureElements.67/@measureRelationships.1">
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.1/@measureElements.67"
+          to="//@librairies.1/@measureElements.48"/>
+      <measureRelationships
+          xsi:type="smm:BaseMeasureRelationship"
+          name="depends on"
+          from="//@librairies.1/@measureElements.67"
+          to="//@librairies.1/@measureElements.58"/>
+    </measureElements>
+  </librairies>
+</smm:SmmModel>
