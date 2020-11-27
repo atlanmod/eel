@@ -90,7 +90,7 @@ It relies on xText, which needs Java ≥ 9. We used Java 9.0.4 for the evaluatio
 
 ## Video guide
 
-Link: https://youtu.be/oZBt1Jiggvw
+Link: https://youtu.be/MgnarNZ2q6E
 
 ## Troubleshooting
 
