@@ -1,7 +1,9 @@
 package org.atlanmod.energy.estimation.smm;
 
 import java.io.IOException;
+import java.time.Instant;
 import java.util.Collections;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Optional;
 import java.util.function.Predicate;
@@ -13,6 +15,7 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.modisco.omg.smm.AbstractMeasureElement;
+import org.eclipse.modisco.omg.smm.Base1MeasurementRelationship;
 import org.eclipse.modisco.omg.smm.BaseMeasureRelationship;
 import org.eclipse.modisco.omg.smm.CollectiveMeasure;
 import org.eclipse.modisco.omg.smm.DimensionalMeasure;
@@ -73,6 +76,8 @@ public abstract class SmmModeler<T, U extends EObject> {
 		
 		// An Observation per couple <execution , SmmModeler> 
 		Observation observation = SmmFactory.eINSTANCE.createObservation();		
+		observation.setName("#"+model.getObservations().size());
+		observation.setWhenObserved(Date.from(Instant.now()));
 		model.getObservations().add(observation);
 		
 		// All Measures defined with EEL are also modeled with SMM, with an attached Observed Measure. 
@@ -80,7 +85,7 @@ public abstract class SmmModeler<T, U extends EObject> {
 		
 		// Now that all measures are modeled with SMM, relationships have to be defined as well.
 		// We consider measures that have an unbound number of dependencies. This should be extended to other measures too: binaries, functions, ...
-		createRelationshipsBetweenMeasurements(platform);
+		createRelationshipsBetweenMeasures(platform);
 	}
 	
 	/**
@@ -101,8 +106,7 @@ public abstract class SmmModeler<T, U extends EObject> {
 					.findFirst();
 			
 			if (!optMeasure.isPresent()) {				
-				mlibrary.getMeasureElements().add(smmMeasure);
-				
+				mlibrary.getMeasureElements().add(smmMeasure);				
 				observedMeasure.setMeasure(smmMeasure);
 			} else {
 				observedMeasure.setMeasure((org.eclipse.modisco.omg.smm.Measure) optMeasure.get());
@@ -118,7 +122,7 @@ public abstract class SmmModeler<T, U extends EObject> {
 	 * Create the {@link MeasurementRelationship} in the SMM Model based on the EEL {@link Measure}s
 	 * @param platform the EEL {@link Platform}
 	 */
-	private void createRelationshipsBetweenMeasurements(Platform platform) {
+	private void createRelationshipsBetweenMeasures(Platform platform) {
 		platform.getMeasures().stream()
 		.filter(measure -> measure instanceof MeasureUnboundOperation)
 		.map(measure -> (MeasureUnboundOperation) measure)
@@ -133,9 +137,7 @@ public abstract class SmmModeler<T, U extends EObject> {
 					measureRelationship.setTo((DimensionalMeasure) smmDependency);
 					measureRelationship.setName("depends on");
 					smmMeasure.getMeasureRelationships().add(measureRelationship);
-				}
-					
-					
+				}									
 			});
 		});			
 	}
@@ -183,8 +185,7 @@ public abstract class SmmModeler<T, U extends EObject> {
 	 * @param target the element to be referenced as Measurand by the {@link Measurement} returned.
 	 * @return an SMM {@link Measurement}
 	 */
-	public Measurement persistMeasurement(Measure eelMeasure, T estimation, U target) {
-		System.out.println("Persisting "+eelMeasure+" value: "+estimation+" to "+ target);
+	public Measurement persistMeasurement(Measure eelMeasure, T estimation, U target) {		
 		DimensionalMeasurement measurement = SmmFactory.eINSTANCE.createDirectMeasurement();
 		// FIXME: This is only viable for simple estimations and dimensional measurements
 		// Future update should consider other kinds of measurements
@@ -210,6 +211,12 @@ public abstract class SmmModeler<T, U extends EObject> {
 	public void createMeasurementRelationshipTowardsPreviousMeasurement(Measurement currentMeasurement) {
 		if (previous == null) {
 			previous = currentMeasurement;
+			ObservedMeasure observedMeasure = (ObservedMeasure) currentMeasurement.eContainer();
+			Observation observation = (Observation) observedMeasure.eContainer();
+			Base1MeasurementRelationship measurementRelationship = SmmFactory.eINSTANCE.createBase1MeasurementRelationship();
+			measurementRelationship.setTo((DimensionalMeasurement) currentMeasurement);			
+			measurementRelationship.setName("start");
+			observation.getMeasurementRelations().add(measurementRelationship);
 			return;
 		}
 		
@@ -246,7 +253,10 @@ public abstract class SmmModeler<T, U extends EObject> {
 			
 			// We remove observed measure with no elements in it to ease analysis.
 			model.getObservations().forEach(observation -> {
-				observation.getObservedMeasures().removeIf(predicate);
+				observation.getObservedMeasures().removeIf(predicate);			
+				MeasurementRelationship start = (MeasurementRelationship) observation.getMeasurementRelations().get(0);
+				Measurement measurement = start.getTo();
+				observation.setDescription(String.valueOf(sum((DimensionalMeasurement) measurement)));
 			});
 			
 			model.eResource().save(Collections.EMPTY_MAP);			
@@ -254,6 +264,18 @@ public abstract class SmmModeler<T, U extends EObject> {
 			System.out.println("An error occured while saving the model: "+e.getMessage());			
 		}
 		return model.eResource();
+	}
+	
+	/**
+	 * Recursively sum the values contained in the chain of {@link DimensionalMeasurement}
+	 * @param measurement a {@link DimensionalMeasure} with a value defined as a {@link Double}
+	 * @return a {@link Double}, sum of all the measurements.
+	 */
+	protected Double sum(DimensionalMeasurement measurement) {
+		
+		Optional<MeasurementRelationship> optRelationship = measurement.getMeasurementRelationships().stream().filter(rs -> "executed next".equals(rs.getName())).findAny();
+		System.out.println(measurement.getValue()+" : "+optRelationship.isPresent());
+		return optRelationship.isPresent() ? sum((DimensionalMeasurement) optRelationship.get().getTo()) + measurement.getValue() : measurement.getValue() ;				
 	}
 	
 }

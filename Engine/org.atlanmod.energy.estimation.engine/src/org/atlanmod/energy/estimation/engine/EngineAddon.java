@@ -184,7 +184,6 @@ public class EngineAddon implements IEngineAddon {
 		String callerClass = caller.getClass().getInterfaces()[0].getSimpleName();		
 		String callerOperation = operation.getName();
 		String classOperation = callerClass.concat("#").concat(callerOperation);
-		System.out.println(classOperation);
 		Measure m = mapClassEstimation.get(classOperation);
 		
 		stepDurations.put(classOperation, Long.valueOf(System.currentTimeMillis()));
@@ -217,15 +216,8 @@ public class EngineAddon implements IEngineAddon {
 		}				
 	}
 		
-	@Override
-	public void engineStopped(IExecutionEngine<?> engine) {
-		if (smmModelers.size() > 0) {
-			Resource resource = smmModelers.get(0).saveModel();
-			System.out.println(resource.getURI()+ " saved.");
-		}
-		IEngineAddon.super.engineStopped(engine);
-	}
 
+	@Override
 	public void stepExecuted(IExecutionEngine<?> engine, Step<?> stepToExecute) {
 		EObject caller = stepToExecute.getMseoccurrence().getMse().getCaller();						
 		EOperation operation = stepToExecute.getMseoccurrence().getMse().getAction();
@@ -237,13 +229,22 @@ public class EngineAddon implements IEngineAddon {
 		
 		stepDurations.put(classOperation, Long.valueOf(duration));
 		
-		if (m != null && (hasRealTimeDuration(m))) {
-			System.out.println("lasted "+duration);
+		if (m != null && (hasRealTimeDuration(m))) {			
 			updateMeasure(m, caller, operation);
-			System.out.println(classOperation+" consumed "+m.value());			
+			System.out.println(classOperation+" consumed "+m.value());
+			manageEstimation(m, caller);
 		}		
 		
 		IEngineAddon.super.stepExecuted(engine, stepToExecute);
+	}
+	
+	@Override
+	public void engineStopped(IExecutionEngine<?> engine) {
+		if (smmModelers.size() > 0) {
+			Resource resource = smmModelers.get(0).saveModel();
+			System.out.println(resource.getURI()+ " saved.");
+		}
+		IEngineAddon.super.engineStopped(engine);
 	}
 	
 	private void updateMeasure(MeasureAttribute m, EObject caller, EOperation operation) {

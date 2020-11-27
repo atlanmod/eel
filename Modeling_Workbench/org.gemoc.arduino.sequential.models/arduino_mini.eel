@@ -1,4 +1,4 @@
-Platform ATMega328p {
+Platform ArduinoMini {
 	"variables".milliToUnitFactor = 0.001,	
 	"variables".voltsPerUnit = 0.0049,
 		
