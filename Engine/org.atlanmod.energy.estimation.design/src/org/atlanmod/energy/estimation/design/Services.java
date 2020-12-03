@@ -1,12 +1,16 @@
 package org.atlanmod.energy.estimation.design;
 
 import java.text.DecimalFormat;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
+import org.eclipse.emf.ecore.EAttribute;
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.modisco.omg.smm.DimensionalMeasurement;
 import org.eclipse.modisco.omg.smm.Measure;
@@ -146,5 +150,36 @@ public class Services {
 	
 	public void switchDisplayMeasure(EObject caller) {
 		isDisplayMeasure = ! isDisplayMeasure;
+	}
+	
+	public Collection<EObject> getAllMeasurands(Observation observation) {
+		EObject measurand = observation.getObservedMeasures().get(0).getMeasurements().get(0).getMeasurand();
+		Collection<EObject> objects;
+
+		if (measurand instanceof EClass) {
+			objects = ((EClass) measurand).getEPackage().eContents();		
+		} else {
+			objects = new ArrayList<>();
+			measurand.eResource().getAllContents().forEachRemaining(eobject -> objects.add(eobject));
+		}
+		
+		return objects;
+	}
+	
+	public String getNameOrClass(EObject object) {
+		StringBuilder builder = new StringBuilder();
+		EClass clazz = object.eClass();
+		Optional<EAttribute> nameAttribute = clazz.getEAllAttributes()
+				.stream()
+				.filter(attribute -> "name".equals(attribute.getName()))
+				.findFirst();
+		
+		if (nameAttribute.isPresent())
+			builder.append(object.eGet(nameAttribute.get()));
+		
+		builder.append(":");
+		builder.append(clazz.getName());
+		
+		return builder.toString();
 	}
 }

@@ -63,31 +63,12 @@
     </ownedRepresentations>
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="ObservationView" label="Measurements view" domainClass="smm::Observation" enablePopupBars="true">
       <filters xsi:type="filter:CompositeFilterDescription" name="Hide Measures">
-        <filters xsi:type="filter:MappingFilter" mappings="//@ownedViewpoints[name='SmmEEL']/@ownedRepresentations[name='ObservationView']/@defaultLayer/@edgeMappings[name='measureToMeasure'] //@ownedViewpoints[name='SmmEEL']/@ownedRepresentations[name='ObservationView']/@defaultLayer/@nodeMappings[name='MeasureNodeInMeasurementView'] //@ownedViewpoints[name='SmmEEL']/@ownedRepresentations[name='ObservationView']/@defaultLayer/@edgeMappings[name='observedMeasureToMeasure']"/>
+        <filters xsi:type="filter:MappingFilter" mappings="//@ownedViewpoints[name='SmmEEL']/@ownedRepresentations[name='ObservationView']/@additionalLayers[name='Measures']/@edgeMappings[name='measureToMeasure'] //@ownedViewpoints[name='SmmEEL']/@ownedRepresentations[name='ObservationView']/@additionalLayers[name='Measures']/@nodeMappings[name='MeasureNodeInMeasurementView'] //@ownedViewpoints[name='SmmEEL']/@ownedRepresentations[name='ObservationView']/@additionalLayers[name='Measures']/@edgeMappings[name='observedMeasureToMeasure']"/>
+      </filters>
+      <filters xsi:type="filter:CompositeFilterDescription" name="Hide Measures">
+        <filters xsi:type="filter:MappingFilter" mappings="//@ownedViewpoints[name='SmmEEL']/@ownedRepresentations[name='ObservationView']/@additionalLayers[name='Measures']/@edgeMappings[name='measureToMeasure'] //@ownedViewpoints[name='SmmEEL']/@ownedRepresentations[name='ObservationView']/@additionalLayers[name='Measures']/@nodeMappings[name='MeasureNodeInMeasurementView'] //@ownedViewpoints[name='SmmEEL']/@ownedRepresentations[name='ObservationView']/@additionalLayers[name='Measures']/@edgeMappings[name='observedMeasureToMeasure']"/>
       </filters>
       <defaultLayer name="MeasurementView">
-        <nodeMappings name="MeasureNodeInMeasurementView" semanticCandidatesExpression="aql:self.getMeasures()" domainClass="smm::Measure">
-          <style xsi:type="style:SquareDescription" showIcon="false" resizeKind="NSEW" width="7" height="2" color="//@userColorsPalettes[name='Colors']/@entries[name='measureColor']">
-            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-          </style>
-        </nodeMappings>
-        <edgeMappings name="measureToMeasure" sourceMapping="//@ownedViewpoints[name='SmmEEL']/@ownedRepresentations[name='ObservationView']/@defaultLayer/@nodeMappings[name='MeasureNodeInMeasurementView']" targetMapping="//@ownedViewpoints[name='SmmEEL']/@ownedRepresentations[name='ObservationView']/@defaultLayer/@nodeMappings[name='MeasureNodeInMeasurementView']" targetFinderExpression="aql:self.getDependencies()">
-          <style sizeComputationExpression="2">
-            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
-            <centerLabelStyleDescription labelSize="12">
-              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-            </centerLabelStyleDescription>
-          </style>
-        </edgeMappings>
-        <edgeMappings name="observedMeasureToMeasure" sourceMapping="//@ownedViewpoints[name='SmmEEL']/@ownedRepresentations[name='ObservationView']/@defaultLayer/@containerMappings[name='observedMeasure']" targetMapping="//@ownedViewpoints[name='SmmEEL']/@ownedRepresentations[name='ObservationView']/@defaultLayer/@nodeMappings[name='MeasureNodeInMeasurementView']" targetFinderExpression="aql:self.measure">
-          <style sizeComputationExpression="2" routingStyle="tree">
-            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
-            <centerLabelStyleDescription labelSize="12">
-              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-            </centerLabelStyleDescription>
-          </style>
-        </edgeMappings>
         <edgeMappings name="measurementToNextMeasurement" sourceMapping="//@ownedViewpoints[name='SmmEEL']/@ownedRepresentations[name='ObservationView']/@defaultLayer/@containerMappings[name='observedMeasure']/@subNodeMappings[name='MeasurementNode']" targetMapping="//@ownedViewpoints[name='SmmEEL']/@ownedRepresentations[name='ObservationView']/@defaultLayer/@containerMappings[name='observedMeasure']/@subNodeMappings[name='MeasurementNode']" targetFinderExpression="aql:self.measurementRelationships -> collect (rs | rs.to)">
           <style sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
@@ -111,6 +92,71 @@
           </style>
         </containerMappings>
       </defaultLayer>
+      <additionalLayers name="Targets">
+        <nodeMappings name="EObjects" semanticCandidatesExpression="aql:self.getAllMeasurands()" domainClass="EObject">
+          <style xsi:type="style:SquareDescription" showIcon="false" labelExpression="aql:self.getNameOrClass()" labelPosition="node" resizeKind="NSEW" width="10" height="5">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+          </style>
+        </nodeMappings>
+        <edgeMappings name="containmentRelationship" sourceMapping="//@ownedViewpoints[name='SmmEEL']/@ownedRepresentations[name='ObservationView']/@additionalLayers[name='Targets']/@nodeMappings[name='EObjects']" targetMapping="//@ownedViewpoints[name='SmmEEL']/@ownedRepresentations[name='ObservationView']/@additionalLayers[name='Targets']/@nodeMappings[name='EObjects']" targetFinderExpression="aql:self.eContainer()">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="measurandRelationship" sourceMapping="//@ownedViewpoints[name='SmmEEL']/@ownedRepresentations[name='ObservationView']/@defaultLayer/@containerMappings[name='observedMeasure']/@subNodeMappings[name='MeasurementNode']" targetMapping="//@ownedViewpoints[name='SmmEEL']/@ownedRepresentations[name='ObservationView']/@additionalLayers[name='Targets']/@nodeMappings[name='EObjects']" targetFinderExpression="aql:self.measurand">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="eReferenceBetweenEClassesRelationship" sourceMapping="//@ownedViewpoints[name='SmmEEL']/@ownedRepresentations[name='ObservationView']/@additionalLayers[name='Targets']/@nodeMappings[name='EObjects']" targetMapping="//@ownedViewpoints[name='SmmEEL']/@ownedRepresentations[name='ObservationView']/@additionalLayers[name='Targets']/@nodeMappings[name='EObjects']" targetFinderExpression="aql:self.eReferences -> select(r | r.containment) -> collect ( i | i.eReferenceType)">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="eSuperTypeBetweenEClassesRelationship" sourceMapping="//@ownedViewpoints[name='SmmEEL']/@ownedRepresentations[name='ObservationView']/@additionalLayers[name='Targets']/@nodeMappings[name='EObjects']" targetMapping="//@ownedViewpoints[name='SmmEEL']/@ownedRepresentations[name='ObservationView']/@additionalLayers[name='Targets']/@nodeMappings[name='EObjects']" targetFinderExpression="aql:self.eAllSuperTypes">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+      </additionalLayers>
+      <additionalLayers name="Measures">
+        <nodeMappings name="MeasureNodeInMeasurementView" domainClass="smm::Measure">
+          <style xsi:type="style:SquareDescription" showIcon="false" resizeKind="NSEW" width="7" height="2" color="//@userColorsPalettes[name='Colors']/@entries[name='measureColor']">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <edgeMappings name="measureToMeasure" sourceMapping="//@ownedViewpoints[name='SmmEEL']/@ownedRepresentations[name='ObservationView']/@additionalLayers[name='Measures']/@nodeMappings[name='MeasureNodeInMeasurementView']" targetMapping="//@ownedViewpoints[name='SmmEEL']/@ownedRepresentations[name='ObservationView']/@additionalLayers[name='Measures']/@nodeMappings[name='MeasureNodeInMeasurementView']" targetFinderExpression="aql:self.getDependencies()">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="observedMeasureToMeasure" sourceMapping="//@ownedViewpoints[name='SmmEEL']/@ownedRepresentations[name='ObservationView']/@defaultLayer/@containerMappings[name='observedMeasure']" targetMapping="//@ownedViewpoints[name='SmmEEL']/@ownedRepresentations[name='ObservationView']/@additionalLayers[name='Measures']/@nodeMappings[name='MeasureNodeInMeasurementView']" targetFinderExpression="aql:self.measure">
+          <style sizeComputationExpression="2" routingStyle="tree">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+      </additionalLayers>
     </ownedRepresentations>
     <ownedJavaExtensions qualifiedClassName="org.atlanmod.energy.estimation.design.Services"/>
   </ownedViewpoints>
