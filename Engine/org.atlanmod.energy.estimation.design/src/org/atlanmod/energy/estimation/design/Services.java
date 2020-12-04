@@ -1,12 +1,17 @@
 package org.atlanmod.energy.estimation.design;
 
+import java.math.BigDecimal;
 import java.text.DecimalFormat;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
+import org.eclipse.emf.ecore.EAttribute;
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.modisco.omg.smm.DimensionalMeasurement;
 import org.eclipse.modisco.omg.smm.Measure;
@@ -21,8 +26,10 @@ import org.eclipse.modisco.omg.smm.SmmModel;
 public class Services {
 	private HashMap<Measure, Integer> measureDepth;	
 	private int DEPTH = 0;
+	private double MAX_VALUE = 0;
 	private static final DecimalFormat DECIMAL_FORMAT = new DecimalFormat("#.###");
     private static boolean isDisplayMeasure = false;
+    private HashMap<EObject, Double> measurandValueMap;
     
     public EObject myService(EObject self, String arg) {
        // TODO Auto-generated code
@@ -101,6 +108,7 @@ public class Services {
 	
     /**
      * Compute the depth of each measure.
+     * FIXME: performance improvement: start from root and depth first search
      * @param lib
      */
 	private void buildMeasureDepthMap(MeasureLibrary lib) {
@@ -146,5 +154,116 @@ public class Services {
 	
 	public void switchDisplayMeasure(EObject caller) {
 		isDisplayMeasure = ! isDisplayMeasure;
+	}
+	
+	/**
+	 * Returns all the measurands for a given {@link Observation}
+	 * @param observation the {@link Observation}
+	 * @return a {@link Collection} of {@link EObject}
+	 */
+	public Collection<EObject> getAllMeasurands(Observation observation) {
+		EObject measurand = observation.getObservedMeasures().get(0).getMeasurements().get(0).getMeasurand();
+		Collection<EObject> objects;
+
+		if (measurand instanceof EClass) {
+			objects = ((EClass) measurand).getEPackage().eContents();		
+		} else {
+			objects = new ArrayList<>();
+			measurand.eResource().getAllContents().forEachRemaining(eobject -> objects.add(eobject));
+		}
+		
+		computePerMeasurandTotal(observation);
+		
+		return objects;
+	}
+
+	/**
+	 * For each measurand, associates the total energy consumption.	 * 
+	 * @param observation an {@link Observation}
+	 */
+	private void computePerMeasurandTotal(Observation observation) {
+		measurandValueMap = new HashMap<>();
+		
+		observation.getObservedMeasures().forEach(observedMeasure -> {
+			observedMeasure.getMeasurements().stream()
+			.filter(DimensionalMeasurement.class::isInstance)
+			.map(DimensionalMeasurement.class::cast)
+			.forEach(measurement -> {
+				EObject measurand = measurement.getMeasurand();				
+				if (measurandValueMap.containsKey(measurand)) {
+					measurandValueMap.compute(measurand, (k,v) -> measurement.getValue() + v); 
+				} else {
+					measurandValueMap.put(measurand, measurement.getValue());
+				}				
+			});
+		});
+				
+		// get a random measurand that we use as a starting point to get the root of the model.
+		// this can be eventually improved performance-wise.
+		EObject measurand = observation.getObservedMeasures().get(0).getMeasurements().get(0).getMeasurand(); 	
+		EObject root = getRoot(measurand);
+		computeEContainerMeasurandTotal(root);				
+	}
+
+	/**
+	 * Recursively get the root element in an EMF model
+	 * @param measurand an {@link EObject}
+	 * @return the root, an {@link EObject}
+	 */
+	private EObject getRoot(EObject measurand) {
+		if (measurand.eContainer() == null) {
+			return measurand;
+		} else return getRoot(measurand.eContainer());
+	}
+	
+	/**
+	 * Depth first search algorithm. For each node, recursively compute the sum of the values its children, and put it in the map 
+	 * @param object an {@link EObject}
+	 * @return the value computed for the {@link EObject}
+	 */
+	private double computeEContainerMeasurandTotal(EObject object) {			
+		final double childrenValue = object.eContents()
+				.stream()
+				.map(containedObject -> computeEContainerMeasurandTotal(containedObject))
+				.reduce(0.0d, (d1, d2) -> d1+d2);					
+
+		measurandValueMap.merge(object, childrenValue, (v1,v2) -> v1+v2);
+		
+		if (measurandValueMap.get(object) > MAX_VALUE) MAX_VALUE = measurandValueMap.get(object);
+		return measurandValueMap.get(object);
+	}
+
+	/**
+	 * Build the name of an {@link EObject} using its name {@link EAttribute} if it has one
+	 * Or using the name of its corresponding {@link EClass}
+	 * @param object
+	 * @return a {@link String}
+	 */
+	public String getNameOrClass(EObject object) {
+		StringBuilder builder = new StringBuilder();
+		EClass clazz = object.eClass();
+		Optional<EAttribute> nameAttribute = clazz.getEAllAttributes()
+				.stream()
+				.filter(attribute -> "name".equals(attribute.getName()))
+				.findFirst();
+		
+		if (nameAttribute.isPresent())
+			builder.append(object.eGet(nameAttribute.get()));
+		
+		builder.append(":");
+		builder.append(clazz.getName());
+		
+		return builder.toString();
+	}
+	
+	/**
+	 * Compute the color scheme of a measurand according to its total energy consumption 
+	 * @param eobject
+	 * @return an {@link Integer} corresponding to the color;
+	 */
+	public int computeMeasurandColor(EObject eobject) {
+		int colors = 9;
+		double value = measurandValueMap.get(eobject);
+    	return (int) Math.floor((colors * value) / MAX_VALUE);			
 	}
 }
