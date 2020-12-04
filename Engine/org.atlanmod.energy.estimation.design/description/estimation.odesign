@@ -62,10 +62,7 @@
       </defaultLayer>
     </ownedRepresentations>
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="ObservationView" label="Measurements view" domainClass="smm::Observation" enablePopupBars="true">
-      <filters xsi:type="filter:CompositeFilterDescription" name="Hide Measures">
-        <filters xsi:type="filter:MappingFilter" mappings="//@ownedViewpoints[name='SmmEEL']/@ownedRepresentations[name='ObservationView']/@additionalLayers[name='Measures']/@edgeMappings[name='measureToMeasure'] //@ownedViewpoints[name='SmmEEL']/@ownedRepresentations[name='ObservationView']/@additionalLayers[name='Measures']/@nodeMappings[name='MeasureNodeInMeasurementView'] //@ownedViewpoints[name='SmmEEL']/@ownedRepresentations[name='ObservationView']/@additionalLayers[name='Measures']/@edgeMappings[name='observedMeasureToMeasure']"/>
-      </filters>
-      <filters xsi:type="filter:CompositeFilterDescription" name="Hide Measures">
+      <filters xsi:type="filter:CompositeFilterDescription" name="Hide non used targets">
         <filters xsi:type="filter:MappingFilter" mappings="//@ownedViewpoints[name='SmmEEL']/@ownedRepresentations[name='ObservationView']/@additionalLayers[name='Measures']/@edgeMappings[name='measureToMeasure'] //@ownedViewpoints[name='SmmEEL']/@ownedRepresentations[name='ObservationView']/@additionalLayers[name='Measures']/@nodeMappings[name='MeasureNodeInMeasurementView'] //@ownedViewpoints[name='SmmEEL']/@ownedRepresentations[name='ObservationView']/@additionalLayers[name='Measures']/@edgeMappings[name='observedMeasureToMeasure']"/>
       </filters>
       <defaultLayer name="MeasurementView">
@@ -94,14 +91,13 @@
       </defaultLayer>
       <additionalLayers name="Targets">
         <nodeMappings name="EObjects" semanticCandidatesExpression="aql:self.getAllMeasurands()" domainClass="EObject">
-          <style xsi:type="style:SquareDescription" showIcon="false" labelExpression="aql:self.getNameOrClass()" labelPosition="node" resizeKind="NSEW" width="10" height="5">
+          <style xsi:type="style:SquareDescription" showIcon="false" labelExpression="aql:self.getNameOrClass()" labelPosition="node" resizeKind="NSEW" width="10" height="5" color="//@userColorsPalettes[name='Colors']/@entries[name='measurandColor']">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
           </style>
         </nodeMappings>
         <edgeMappings name="containmentRelationship" sourceMapping="//@ownedViewpoints[name='SmmEEL']/@ownedRepresentations[name='ObservationView']/@additionalLayers[name='Targets']/@nodeMappings[name='EObjects']" targetMapping="//@ownedViewpoints[name='SmmEEL']/@ownedRepresentations[name='ObservationView']/@additionalLayers[name='Targets']/@nodeMappings[name='EObjects']" targetFinderExpression="aql:self.eContainer()">
-          <style sizeComputationExpression="2">
+          <style targetArrow="NoDecoration" sizeComputationExpression="2" routingStyle="tree">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             <centerLabelStyleDescription labelSize="12">
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -109,15 +105,15 @@
           </style>
         </edgeMappings>
         <edgeMappings name="measurandRelationship" sourceMapping="//@ownedViewpoints[name='SmmEEL']/@ownedRepresentations[name='ObservationView']/@defaultLayer/@containerMappings[name='observedMeasure']/@subNodeMappings[name='MeasurementNode']" targetMapping="//@ownedViewpoints[name='SmmEEL']/@ownedRepresentations[name='ObservationView']/@additionalLayers[name='Targets']/@nodeMappings[name='EObjects']" targetFinderExpression="aql:self.measurand">
-          <style sizeComputationExpression="2">
+          <style lineStyle="dash" sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             <centerLabelStyleDescription labelSize="12">
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <edgeMappings name="eReferenceBetweenEClassesRelationship" sourceMapping="//@ownedViewpoints[name='SmmEEL']/@ownedRepresentations[name='ObservationView']/@additionalLayers[name='Targets']/@nodeMappings[name='EObjects']" targetMapping="//@ownedViewpoints[name='SmmEEL']/@ownedRepresentations[name='ObservationView']/@additionalLayers[name='Targets']/@nodeMappings[name='EObjects']" targetFinderExpression="aql:self.eReferences -> select(r | r.containment) -> collect ( i | i.eReferenceType)">
-          <style sizeComputationExpression="2">
+        <edgeMappings name="eContainmentReferenceBetweenEClassesRelationship" sourceMapping="//@ownedViewpoints[name='SmmEEL']/@ownedRepresentations[name='ObservationView']/@additionalLayers[name='Targets']/@nodeMappings[name='EObjects']" targetMapping="//@ownedViewpoints[name='SmmEEL']/@ownedRepresentations[name='ObservationView']/@additionalLayers[name='Targets']/@nodeMappings[name='EObjects']" targetFinderExpression="aql:self.eReferences -> select(r | r.containment) -> collect ( i | i.eReferenceType)">
+          <style sourceArrow="FillDiamond" targetArrow="NoDecoration" sizeComputationExpression="2" routingStyle="tree">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             <centerLabelStyleDescription labelSize="12">
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -125,7 +121,7 @@
           </style>
         </edgeMappings>
         <edgeMappings name="eSuperTypeBetweenEClassesRelationship" sourceMapping="//@ownedViewpoints[name='SmmEEL']/@ownedRepresentations[name='ObservationView']/@additionalLayers[name='Targets']/@nodeMappings[name='EObjects']" targetMapping="//@ownedViewpoints[name='SmmEEL']/@ownedRepresentations[name='ObservationView']/@additionalLayers[name='Targets']/@nodeMappings[name='EObjects']" targetFinderExpression="aql:self.eAllSuperTypes">
-          <style sizeComputationExpression="2">
+          <style targetArrow="InputClosedArrow" sizeComputationExpression="2" routingStyle="tree">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             <centerLabelStyleDescription labelSize="12">
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -206,6 +202,18 @@
       <colorSteps associatedValue="9" associatedColor="//@userColorsPalettes[name='Colors']/@entries[name='Aquamarine']"/>
     </entries>
     <entries xsi:type="description:InterpolatedColor" name="measurementColor" colorValueComputationExpression="aql:self.computeMeasurementColor()">
+      <colorSteps associatedValue="0" associatedColor="//@userColorsPalettes[name='Colors']/@entries[name='Wintergreen%20Dream']"/>
+      <colorSteps associatedValue="1" associatedColor="//@userColorsPalettes[name='Colors']/@entries[name='Granny%20Smith%20Apple']"/>
+      <colorSteps associatedValue="2" associatedColor="//@userColorsPalettes[name='Colors']/@entries[name='Granny%20Smith%20Apple%20light']"/>
+      <colorSteps associatedValue="3" associatedColor="//@userColorsPalettes[name='Colors']/@entries[name='Key%20Lime']"/>
+      <colorSteps associatedValue="4" associatedColor="//@userColorsPalettes[name='Colors']/@entries[name='Medium%20Champagne']"/>
+      <colorSteps associatedValue="5" associatedColor="//@userColorsPalettes[name='Colors']/@entries[name='Peach%20Puff']"/>
+      <colorSteps associatedValue="6" associatedColor="//@userColorsPalettes[name='Colors']/@entries[name='New%20York%20Pink']"/>
+      <colorSteps associatedValue="7" associatedColor="//@userColorsPalettes[name='Colors']/@entries[name='Candy%20Pink']"/>
+      <colorSteps associatedValue="8" associatedColor="//@userColorsPalettes[name='Colors']/@entries[name='Paradise%20Pink']"/>
+      <colorSteps associatedValue="9" associatedColor="//@userColorsPalettes[name='Colors']/@entries[name='Popstar']"/>
+    </entries>
+    <entries xsi:type="description:InterpolatedColor" name="measurandColor" colorValueComputationExpression="aql:self.computeMeasurandColor()">
       <colorSteps associatedValue="0" associatedColor="//@userColorsPalettes[name='Colors']/@entries[name='Wintergreen%20Dream']"/>
       <colorSteps associatedValue="1" associatedColor="//@userColorsPalettes[name='Colors']/@entries[name='Granny%20Smith%20Apple']"/>
       <colorSteps associatedValue="2" associatedColor="//@userColorsPalettes[name='Colors']/@entries[name='Granny%20Smith%20Apple%20light']"/>
