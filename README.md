@@ -88,6 +88,42 @@ It relies on xText, which needs Java ≥ 9. We used Java 9.0.4 for the evaluatio
 2. Changing the EEL model can be done through `Energy > Estimation model > Load model`, and selecting the other EEL model.
 3. Some Arduino models require external inputs. These are defined in the event addon. Thus, running the `waitForIRBlueLed.arduino` model requires to check the `Event addon` in the Engine addon tab, along with the `Energy estimation`.
 
+
+### Analysis
+
+Our EEL engine can automatically persist measures and measurements in a metamodel conforming to the SMM standard.
+In the `engine addon` tab, several options are available:
+
+![options](https://user-images.githubusercontent.com/6909730/101187095-350b0700-3654-11eb-9384-c30da89a1f69.PNG)
+
+1. The first one enables the modeled estimations to refer to the xDSL.
+2. The second one enables the modeled estimations to refer to the executed model.
+3. The third one refers to the SMM model that will be created, or that will be extended with additional estimations.
+
+A Sirius representation can be created on top of this SMM model, three views are available:
+
+1. The observation view displays the SMM model. Each model execution corresponds to one `Observation`. Furthermore, each EEL model used corresponds to one `MeasureLibrary`.
+The color of the observations refers to the total energy estimation of the model, compared to the other observations. This can be used to find the less energy consuming scenarios. 
+
+![image](https://user-images.githubusercontent.com/6909730/101187811-1f4a1180-3655-11eb-8d14-ede5b396a27b.png)
+
+2. Measures can be double-clicked to display the EEL model. The dependencies between eel estimations can be displayed, and are helpful for understanding how the estimations are computed.
+
+![image](https://user-images.githubusercontent.com/6909730/101187871-34bf3b80-3655-11eb-85e3-2825a18b6fd6.png)
+
+3. Observations can be double-clicked to display the SMM `Measurements`. Each measurement corresponds to one EEL energy estimation, and refer either to the xDSL or to the executed model. The relationship between `Measurements` can be followed to retrace the execution of the model. 
+
+![image](https://user-images.githubusercontent.com/6909730/101187999-66380700-3655-11eb-9323-8e98d158b4f0.png)
+
+4. This view can be customized in order to display the executed model, or the xDSL it conforms to. As usual, the color scheme can be used to locate energy consuming behaviour.
+
+![image](https://user-images.githubusercontent.com/6909730/101188449-08f08580-3656-11eb-83d1-f4c0429a718d.png)
+
+5. Finally, the measures used to perform the estimations can also be added to the view. 
+
+![image](https://user-images.githubusercontent.com/6909730/101188799-7dc3bf80-3656-11eb-817f-cdfe213be4ed.png)
+
+
 ## Video guide
 
 Link: https://youtu.be/MgnarNZ2q6E
